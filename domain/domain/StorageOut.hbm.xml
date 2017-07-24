@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="domain" namespace="domain">
+  <class name ="StorageFormMainOut" table="T_StorageFormMainOut" lazy="true">
+    
+    <id name="outStorageNumber" type="string" column="出库单号" length="100">
+      <generator class="assigned"/>
+    </id>
+
+    <property name="Storage" type="string">
+      <column name="发货仓库" length="100" sql-type="nvarchar(100)" />
+    </property>
+
+    <property name="StorageTime" type="DateTime">
+      <column name="出库日期"  sql-type="datetime2" />
+    </property>
+  </class>
+</hibernate-mapping>

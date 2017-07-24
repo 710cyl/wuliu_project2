@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="domain" namespace="domain">
+  <class name="StorageDetails" table="T_StorageDetails" lazy="true">
+    
+    <id name="StorageCode" type="string" column="StorageCode" length="100">
+      <generator class="assigned"/>
+    </id>
+    
+    <property name="StorageName" type="string">
+      <column name="StorageName" length="100" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="StorageTime" type="DateTime">
+      <column name="StorageTime"  not-null="false" sql-type="datetime2"/>
+    </property>
+
+    <property name="StorageWay" type="string">
+      <column name="StorageWay" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="CargoOwner" type="string">
+      <column name="CargoOwner" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="PackagesNumber" type="int">
+      <column name="PackagesNumber" length="20" not-null="false" />
+    </property>
+
+    <property name="Numbers" type="decimal" length="20" precision="3" >
+      <column name="Numbers" not-null="false" />
+    </property>
+
+    <property name="SendNumber" type="int">
+      <column name="SendNumber" length="20" not-null="false" sql-type="int"/>
+    </property>
+
+    <property name="SendQuantity" type="decimal" length="20" precision="3" >
+      <column name="SendQuantity" not-null="false" sql-type="decimal"/>
+    </property>
+
+    <property name="InventoryNumber" type="int">
+      <column name="InventoryNumber" length="20" not-null="false" sql-type="int"/>
+    </property>
+
+    <property name="StockQuantity" type="decimal" length="20" precision="3">
+      <column name="StockQuantity"  not-null="false" sql-type="decimal"/>
+    </property>
+
+    <property name="ProductionDate" type="DateTime">
+      <column name="ProductionDate"  not-null="false" sql-type="datetime2"/>
+    </property>
+
+    <property name="OrderNumber" type="string">
+      <column name="OrderNumber" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="ItemNumber" type="string">
+      <column name="ItemNumber" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="UnLoadingSpot" type="string">
+      <column name="UnLoadingSpot" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="UnLoadingCity" type="string">
+      <column name="UnLoadingCity" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="UnLoadingArea" type="string">
+      <column name="UnLoadingArea" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="ReelNumber" type="string">
+      <column name="ReelNumber" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="Variety" type="string">
+      <column name="Variety" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="Material" type="string">
+      <column name="Material" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="Specification" type="string">
+      <column name="Specification" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="CribNumber" type="string">
+      <column name="CribNumber" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="StorageFleet" type="string">
+      <column name="StorageFleet" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="CarNumber" type="string">
+      <column name="CarNumber" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="Drive" type="string">
+      <column name="Drive" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="LoadingCity" type="string">
+      <column name="LoadingCity" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="LoadingSpot" type="string">
+      <column name="LoadingSpot" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="LoadingArea" type="string">
+      <column name="LoadingArea" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="KeyBoarder" type="string">
+      <column name="KeyBoarder" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="KeyTime" type="DateTime">
+      <column name="KeyTime"  not-null="false" sql-type="datetime2"/>
+    </property>
+
+    <property name="Modifier" type="string">
+      <column name="Modifier" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="ModifyTime" type="DateTime">
+      <column name="ModifyTime"  not-null="false" sql-type="datetime2"/>
+    </property>
+
+    <property name="StorageKeeper" type="string">
+      <column name="StorageKeeper" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="Craneman" type="string">
+      <column name="Craneman" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="Loader" type="string">
+      <column name="Loader" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="Others" type="string">
+      <column name="Others" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="Statement" type="string">
+      <column name="Statement" length="500" not-null="false" sql-type="nvarchar(500)"/>
+    </property>
+
+    <property name="TeamLog" type="string">
+      <column name="TeamLog" length="100" not-null="false" sql-type="nvarchar(100)"/>
+    </property>
+    
+    <property name="Poll" type="int">
+      <column name="Poll" length="20" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="StorageNumber" type="string">
+      <column name="StorageNumber" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <!--<many-to-one name ="StorageFormMain" column="StorageNumber" />-->
+  </class>
+  
+  
+  <class name="StorageFormMain" table="T_StorageFormMain" lazy="true">
+    
+    <id name="StorageNumber" type="string" length="20" column="StorageNumber" >
+      <generator class="assigned"/>
+    </id>
+    
+    <property name="Storage" type="string">
+      <column name="Storage" length="100" sql-type="nvarchar(100)" />
+    </property>
+
+    <property name="StorageTime" type="DateTime">
+      <column name="StorageTime"  sql-type="datetime2" />
+    </property>
+
+    <property name="StorageWay" type="string">
+      <column name="StorageWay" length="20" sql-type="nvarchar(20)" />
+    </property>
+
+    <property name="StorageFleet" type="string">
+      <column name="StorageFleet" length="20"  sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="CarNumber" type="string">
+      <column name="CarNumber" length="20" sql-type="nvarchar(20)" />
+    </property>
+
+    <property name="Driver" type="string">
+      <column name="Driver" length="20" sql-type="nvarchar(20)" />
+    </property>
+
+    <property name="TotalStorage" type="decimal" length="20" precision="3">
+      <column name="TotalStorage"  />
+    </property>
+
+    <property name="LoadingCity" type="string">
+      <column name="LoadingCity" length="20" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="LoadingSpot" type="string">
+      <column name="LoadingSpot" length="20" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="LoadingArea" type="string">
+      <column name="LoadingArea" length="20" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="KeyBoarder" type="string">
+      <column name="KeyBoarder" length="20" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="KeyTime" type="DateTime">
+      <column name="KeyTime" sql-type="datetime2" />
+    </property>
+
+    <property name="Modifier" type="string">
+      <column name="Modifier" length="20"  sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="ModifyTime" type="DateTime">
+      <column name="ModifyTime"  sql-type="datetime2"/>
+    </property>
+
+    <property name="StorageKeeper" type="string">
+      <column name="StorageKeeper" length="20" sql-type="nvarchar(20)" />
+    </property>
+
+    <property name="Craneman" type="string">
+      <column name="Craneman" length="20" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="Loader" type="string">
+      <column name="Loader" length="20" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="Others" type="string">
+      <column name="Others" length="20" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="Statement" type="string">
+      <column name="Statement" length="500"  sql-type="nvarchar(500)"/>
+    </property>
+
+    <property name="UnLoadingSpot" type="string">
+      <column name="UnLoadingSpot" length="20" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="UnLoadingCity" type="string">
+      <column name="UnLoadingCity" length="20" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="UnLoadingArea" type="string">
+      <column name="UnLoadingArea" length="20" sql-type="nvarchar(20)"/>
+    </property>
+
+    <bag name="StorageDetails" inverse="true" cascade="all">
+      <key column="StorageNumber" />
+      <one-to-many class="StorageDetails"/>
+    </bag>
+  
+  </class>
+</hibernate-mapping>

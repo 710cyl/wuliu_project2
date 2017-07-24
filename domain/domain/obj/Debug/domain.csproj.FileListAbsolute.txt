@@ -1,0 +1,14 @@
+D:\git_wuliu\domain\domain\bin\Debug\domain.dll.config
+D:\git_wuliu\domain\domain\bin\Debug\domain.dll
+D:\git_wuliu\domain\domain\bin\Debug\domain.pdb
+D:\git_wuliu\domain\domain\bin\Debug\Antlr3.Runtime.dll
+D:\git_wuliu\domain\domain\bin\Debug\Castle.Core.dll
+D:\git_wuliu\domain\domain\bin\Debug\Iesi.Collections.dll
+D:\git_wuliu\domain\domain\bin\Debug\NHibernate.ByteCode.Castle.dll
+D:\git_wuliu\domain\domain\bin\Debug\NHibernate.dll
+D:\git_wuliu\domain\domain\bin\Debug\Remotion.Data.Linq.dll
+D:\git_wuliu\domain\domain\bin\Debug\NHibernate.xml
+D:\git_wuliu\domain\domain\bin\Debug\NHibernate.ByteCode.Castle.xml
+D:\git_wuliu\domain\domain\obj\Debug\domain.dll
+D:\git_wuliu\domain\domain\obj\Debug\domain.pdb
+D:\git_wuliu\domain\domain\obj\Debug\domain.csprojResolveAssemblyReference.cache

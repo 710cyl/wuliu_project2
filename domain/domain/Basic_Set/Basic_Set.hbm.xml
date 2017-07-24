@@ -1,0 +1,454 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="domain" namespace="domain">
+  <class name="Basic_Set" table="T_Basic_Set" >
+    
+    <id name="ID" column="编号" type="Guid">
+      <generator class="assigned" />
+    </id>
+
+    <property name="position_Set" type="string">
+      <column name="岗位设置" length="50"/>
+    </property>
+
+    <property name="account_Receive" type="decimal">
+      <column name="应收账款" length="12"/>
+      <column name="应收账款" precision="2"/>
+    </property>
+
+    <property name="account_Pay" type="decimal">
+      <column name="应付账款" length="12"/>
+      <column name="应付账款" precision="2"/>
+    </property>
+      
+    <property name="storage_Mode" type="string">
+      <column name="入库方式" length="50" />
+    </property>
+
+    <property name="outStorage_Mode" type="string">
+      <column name="出库方式" length="50" />
+    </property>
+
+    <property name="transportation_Mode" type="string">
+      <column name="运输方式" length="50"/>
+    </property>
+
+    <property name="post_Property" type="string">
+      <column name="岗位性质" length="50"/>
+    </property>
+
+    <property name="borrow_Property" type="string">
+      <column name="借款性质" length="50"/>
+    </property>
+
+    <property name="customer_Type" type="string">
+      <column name="客户类型" length="50" />
+    </property>
+
+    <property name ="expense_Category" type="string">
+      <column name="费用类型" length="50"/>
+    </property>
+
+    <property name="nationality" type="string">
+      <column name="名族" length="50" />
+    </property>
+
+    <property name="storage" type="string">
+      <column name="仓库" length="50"/>
+    </property>
+
+    <property name="refund_Mode" type="string">
+      <column name="报销类型" length="50"/>
+    </property>
+
+    <property name="oil_Varirety" type="string">
+      <column name="油气种类" length="50"/>
+    </property>
+
+  </class>
+
+  <class  name="Internal_Vehicle" table="T_Internal_Vehicle">
+     <id name="ID" column="编号" type="Guid">
+      <generator class="assigned" />
+    </id>
+  
+    <property name="motorcade" type="string">
+      <column name="车队" length="50"/>
+    </property>
+  
+    <property name="car_number" type="string">
+      <column name="车号" length="50"/>
+    </property>
+  
+    <property name="car_driver" type="string">
+      <column name="司机" length="50" />
+    </property>
+  
+    <property name="statement" type="string">
+      <column name="说明" length="50" />
+    </property>
+  </class>
+
+  <class name="Fund_Accounts" table="T_Fund_Accounts">
+    <id name="ID" column="编号" type="Guid">
+      <generator class="assigned" />
+    </id>
+
+    <property name="account_property" type="string">
+      <column name="账户性质" length="50"/>
+    </property>
+
+    <property name="account_name" type="string">
+      <column name="账户名称" length="50"/>
+    </property>
+
+    <property name="bank_deposit" type="string">
+      <column name="开户行" length="50"/>
+    </property>
+
+    <property name="account_number" type="int">
+      <column name="账号" length="20"/>
+    </property>
+
+    <property name="initial_balance" type="decimal">
+      <column name="期初余额" length="12" precision="2"/>
+    </property>
+
+    <property name="collection_sum" type="decimal">
+      <column name="收款总额" length="12" precision="2"/>
+    </property>
+
+    <property name="payment_sum" type="decimal">
+      <column name="付款总额" length="12" precision="2"/>
+    </property>
+
+    <property name="remaining_sum" type="decimal">
+      <column name="现余额" length="12" precision="2"/>
+    </property>
+
+    <property name="statement" type="string">
+      <column name="说明" length="50"/>
+    </property>
+  </class>
+
+  <class name="Office_Supply" table="T_Office_Supply">
+    <id name="ID" column="编号" type="Guid">
+      <generator class="assigned" />
+    </id>
+
+    <property name="quick_code" type="string">
+      <column name="速查码" length="50"/>
+    </property>
+
+    <property name="categort" type="string">
+      <column name="类别" length="50"/>
+    </property>
+
+    <property name="name" type="string">
+      <column name="名称" length="50"/>
+    </property>
+
+    <property name="remark" type="string">
+      <column name="备注" length="50"/>
+    </property>
+  </class>
+
+  <class name="Order_File" table="T_Order_File">
+    <id name="ID" type="int">
+      <generator class="assigned" />
+    </id>
+    
+    <property name="shipper" type="string">
+      <column name="货主" length="50"/>
+    </property>
+
+    <property name="remarks" type="string">
+      <column name="备注" length="50"/>
+    </property>
+  </class>
+
+  <class name="Repair_Material" table="T_Repair_Material">
+    <id name="ID" column="编号" type="Guid">
+      <generator class="assigned" />
+    </id>
+
+    <property name="quick_code" type="string">
+      <column name="速查码" length="50"/>
+    </property>
+
+    <property name="category" type="string">
+      <column name="类别" length="50"/>
+    </property>
+
+    <property name="name" type="string">
+      <column name="名称" length="50"/>
+    </property>
+
+    <property name="units" type="string">
+      <column name="单位" length="50"/>
+    </property>
+
+    <property name="remarks" type="string">
+      <column name="备注" length="50"/>
+    </property>
+  </class>
+
+<class name="Transportations" table="T_Transportations" >
+
+    <id name="ID" column="ID" type="Guid">
+      <generator class="assigned" />
+    </id>
+
+    <property name="transportation_place" type="string">
+      <column name="transportation_place" length="50"/>
+    </property>
+
+    <property name="city" type="string">
+      <column name="city" length="50"/>
+    </property>
+
+    <property name="region" type="string">
+      <column name="region" length="50" />
+    </property>
+
+    <property name="statement" type="string">
+      <column name="statement" length="50" />
+    </property>
+
+    <property name="linkman" type="string">
+      <column name="linkman" length="50"/>
+    </property>
+
+    <property name="phone_number" type="string">
+      <column name="phone_number" length="50"/>
+    </property>
+
+    <property name="adress" type="string">
+      <column name="adress" length="50"/>
+    </property>
+
+  </class>
+
+ <class name="Variety_Texture" table="T_Variety_Texture" >
+
+    <id name="ID" column="ID" type="Guid">
+      <generator class="assigned" />
+    </id>
+
+    <property name="variety" type="string">
+      <column name="variety" length="50"/>
+    </property>
+
+    <property name="texture" type="string">
+      <column name="texture" length="50"/>
+    </property>
+
+    <property name="statement" type="string">
+      <column name="statement" length="50" />
+    </property>
+
+  </class>
+
+<class name="Warehouse_Space" table="T_Warehouse_Space" >
+
+    <id name="ID" column="ID" type="Guid">
+      <generator class="assigned" />
+    </id>
+
+    <property name="storage" type="string">
+      <column name="storage" length="50"/>
+    </property>
+
+    <property name="crib_number" type="string">
+      <column name="crib_number" length="50"/>
+    </property>
+
+    <property name="statement" type="string">
+      <column name="statement" length="50" />
+    </property>
+
+  </class>
+
+<class name="Warehouse_Staff" table="T_Warehouse_Staff" >
+
+    <id name="ID" column="ID" type="Guid">
+      <generator class="assigned" />
+    </id>
+
+    <property name="inventory_keeper" type="string">
+      <column name="inventory_keeper" length="50"/>
+    </property>
+
+    <property name="crane" type="string">
+      <column name="crane" length="50"/>
+    </property>
+
+    <property name="loader" type="string">
+      <column name="loader" length="50" />
+    </property>
+
+    <property name="other" type="string">
+      <column name="other" length="50" />
+    </property>
+
+    <property name="statement" type="string">
+      <column name="statement" length="50"/>
+    </property>
+
+  </class>
+  
+<class name="Customer_File" table="T_Customer_File" >
+
+    <id name="ID" column="编号" type="Guid">
+      <generator class="assigned" />
+    </id>
+
+    <property name="customer_name" type="string">
+      <column name="客户编号" length="50"/>
+    </property>
+
+    <property name="customer_fullname" type="string">
+      <column name="客户全程" precision="2"/>
+    </property>
+
+    <property name="quick_code" type="string">
+      <column name="速查码" length="50" />
+    </property>
+
+    <property name="address" type="string">
+      <column name="地址" length="50" />
+    </property>
+
+    <property name="bank_deposit" type="string">
+      <column name="开户行" length="50"/>
+    </property>
+
+    <property name="duty_number" type="string">
+      <column name="税号" length="50"/>
+    </property>
+
+    <property name="linkman" type="string">
+      <column name="联系人" length="50"/>
+    </property>
+
+    <property name="phone_number" type="int">
+      <column name="电话" length="50" />
+    </property>
+
+    <property name ="customer_type1" type="string">
+      <column name="客户类型1" length="50"/>
+    </property>
+
+    <property name="customer_type2" type="string">
+      <column name="客户类型2" length="50" />
+    </property>
+
+    <property name="customer_type3" type="string">
+      <column name="客户类型3" length="50"/>
+    </property>
+
+    <property name="customer_type4" type="string">
+      <column name="客户类型4" length="50"/>
+    </property>
+
+    <property name="customer_type5" type="string">
+      <column name="客户类型5" length="50"/>
+    </property>
+
+  </class>
+
+  <class name="Decorate" table="T_Decorate" >
+
+    <id name="ID" column="编号" type="Guid">
+      <generator class="assigned" />
+    </id>
+
+    <property name="decorate_place" type="string">
+      <column name="装点" length="50"/>
+    </property>
+
+    <property name="city" type="string">
+      <column name="所在城市" length="50"/>
+    </property>
+
+    <property name="region" type="string">
+      <column name="所在区域" length="50" />
+    </property>
+
+    <property name="statement" type="string">
+      <column name="说明" length="50" />
+    </property>
+
+    <property name="linkman" type="string">
+      <column name="联系人" length="50"/>
+    </property>
+
+    <property name="phone_number" type="string">
+      <column name="电话" length="50"/>
+    </property>
+
+    <property name="adress" type="string">
+      <column name="地址" length="50"/>
+    </property>
+
+  </class>
+
+  <class name="Discharge" table="T_Discharge" >
+
+    <id name="ID" column="编号" type="Guid">
+      <generator class="assigned" />
+    </id>
+
+    <property name="discharge_place" type="string">
+      <column name="卸点" length="50"/>
+    </property>
+
+    <property name="city" type="string">
+      <column name="所在城市" length="50"/>
+    </property>
+
+    <property name="region" type="string">
+      <column name="所在区域" length="50" />
+    </property>
+
+    <property name="statement" type="string">
+      <column name="说明" length="50" />
+    </property>
+
+    <property name="linkman" type="string">
+      <column name="联系人" length="50"/>
+    </property>
+
+    <property name="phone_number" type="string">
+      <column name="电话" length="50"/>
+    </property>
+
+    <property name="adress" type="string">
+      <column name="地址" length="50"/>
+    </property>
+  </class>
+
+  <class name="External_Vehicle" table="T_External_Vehicle" >
+
+    <id name="ID" column="编号" type="Guid">
+      <generator class="assigned" />
+    </id>
+
+    <property name="motorcade" type="string">
+      <column name="车队" length="50"/>
+    </property>
+
+    <property name="car_number" type="string">
+      <column name="车号" length="50"/>
+    </property>
+
+    <property name="car_driver" type="string">
+      <column name="司机" length="50" />
+    </property>
+
+    <property name="statement" type="string">
+      <column name="说明" length="50" />
+    </property>
+  </class>
+
+</hibernate-mapping>
+

@@ -1,0 +1,644 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0646B2E6-D6CD-46A3-8D1E-EA88F9135D32}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Demo1._1._3</RootNamespace>
+    <AssemblyName>Demo1.1.3</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.1.3.42154, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Antlr.3.1.3.42154\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Core, Version=2.5.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Castle.Core.2.5.1\lib\NET35\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v15.2" />
+    <Reference Include="DevExpress.Data.v15.2" />
+    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.SpellChecker.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v15.2" />
+    <Reference Include="DevExpress.Sparkline.v15.2.Core" />
+    <Reference Include="DevExpress.XtraBars.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v15.2" />
+    <Reference Include="DevExpress.XtraGrid.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v15.2.Extensions, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraSpellChecker.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Iesi.Collections.1.0.1\lib\Iesi.Collections.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NHibernate, Version=3.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NHibernate.3.0.0.4000\lib\NHibernate.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle, Version=3.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NHibernate.3.0.0.4000\lib\NHibernate.ByteCode.Castle.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Remotion.Data.Linq, Version=1.13.41.2, Culture=neutral, PublicKeyToken=cab60358ab4081ea, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NHibernate.3.0.0.4000\lib\Remotion.Data.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="websocket-sharp">
+      <HintPath>..\..\..\..\物流系统项目\websocket-sharp-master\websocket-sharp-master\websocket-sharp\bin\Debug_Ubuntu\websocket-sharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FunctionClass.cs" />
+    <Compile Include="MyWorkBench_SkipForm\NewBasic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyWorkBench_SkipForm\NewBasic.designer.cs">
+      <DependentUpon>NewBasic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyWorkBench_SkipForm\New_CapitalAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyWorkBench_SkipForm\New_CapitalAccount.designer.cs">
+      <DependentUpon>New_CapitalAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyWorkBench_SkipForm\New_GoDownEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyWorkBench_SkipForm\New_GoDownEntry.Designer.cs">
+      <DependentUpon>New_GoDownEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyWorkBench_SkipForm\New_InternalFleet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyWorkBench_SkipForm\New_InternalFleet.designer.cs">
+      <DependentUpon>New_InternalFleet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyWorkBench_SkipForm\New_UnloadingPoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyWorkBench_SkipForm\New_UnloadingPoint.designer.cs">
+      <DependentUpon>New_UnloadingPoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyWorkBench_SkipForm\New_WarehouseFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyWorkBench_SkipForm\New_WarehouseFile.designer.cs">
+      <DependentUpon>New_WarehouseFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyWorkBench_SkipForm\New_WarehousingPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyWorkBench_SkipForm\New_WarehousingPrice.designer.cs">
+      <DependentUpon>New_WarehousingPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel1_SystemManagement\Journal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel1_SystemManagement\Journal.Designer.cs">
+      <DependentUpon>Journal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel1_SystemManagement\Link.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel1_SystemManagement\Link.Designer.cs">
+      <DependentUpon>Link.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel1_SystemManagement\TaskManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel1_SystemManagement\TaskManagement.Designer.cs">
+      <DependentUpon>TaskManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench\CarFee.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench\CarFee.Designer.cs">
+      <DependentUpon>CarFee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench\CarReimbursement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench\CarReimbursement.Designer.cs">
+      <DependentUpon>CarReimbursement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench\DriverCheck.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench\DriverCheck.Designer.cs">
+      <DependentUpon>DriverCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench\FleetPayment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench\FleetPayment.Designer.cs">
+      <DependentUpon>FleetPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench\FleetPrice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench\FleetPrice.Designer.cs">
+      <DependentUpon>FleetPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench\GodownEntry.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench\GodownEntry.Designer.cs">
+      <DependentUpon>GodownEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench\LotteryNumber.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench\LotteryNumber.Designer.cs">
+      <DependentUpon>LotteryNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench\OilGasRegister.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench\OilGasRegister.Designer.cs">
+      <DependentUpon>OilGasRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench\OutboundOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench\OutboundOrder.Designer.cs">
+      <DependentUpon>OutboundOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench\ShipperPrice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench\ShipperPrice.Designer.cs">
+      <DependentUpon>ShipperPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench\TransferList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench\TransferList.Designer.cs">
+      <DependentUpon>TransferList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench\TransportationClearing.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench\TransportationClearing.Designer.cs">
+      <DependentUpon>TransportationClearing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench\TransportationRegister.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench\TransportationRegister.Designer.cs">
+      <DependentUpon>TransportationRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench_Basic\CapitalAccount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench_Basic\CapitalAccount.Designer.cs">
+      <DependentUpon>CapitalAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench_Basic\CustomerFile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench_Basic\CustomerFile.Designer.cs">
+      <DependentUpon>CustomerFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench_Basic\ExternalFleet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench_Basic\ExternalFleet.Designer.cs">
+      <DependentUpon>ExternalFleet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench_Basic\Basic_Set.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench_Basic\Basic_Set.Designer.cs">
+      <DependentUpon>Basic_Set.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench_Basic\Internal_Fleet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench_Basic\Internal_Fleet.Designer.cs">
+      <DependentUpon>Internal_Fleet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench_Basic\MaintenanceMaterial.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench_Basic\MaintenanceMaterial.Designer.cs">
+      <DependentUpon>MaintenanceMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench_Basic\OfficeSupplies.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench_Basic\OfficeSupplies.Designer.cs">
+      <DependentUpon>OfficeSupplies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench_Basic\OrderFile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench_Basic\OrderFile.Designer.cs">
+      <DependentUpon>OrderFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench_Basic\OwnVehicle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench_Basic\OwnVehicle.Designer.cs">
+      <DependentUpon>OwnVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench_Basic\WarehousingPrice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench_Basic\WarehousingPrice.Designer.cs">
+      <DependentUpon>WarehousingPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel3_Design\DataSpecification.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel3_Design\DataSpecification.Designer.cs">
+      <DependentUpon>DataSpecification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel3_Design\RecentlyOpen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel3_Design\RecentlyOpen.Designer.cs">
+      <DependentUpon>RecentlyOpen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel3_Design\FunctionalModule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel3_Design\FunctionalModule.Designer.cs">
+      <DependentUpon>FunctionalModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Panel1_SystemManagement\MainOganization.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel1_SystemManagement\MainOganization.Designer.cs">
+      <DependentUpon>MainOganization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel1_SystemManagement\MainRole.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel1_SystemManagement\MainRole.Designer.cs">
+      <DependentUpon>MainRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel1_SystemManagement\MainUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel1_SystemManagement\MainUser.Designer.cs">
+      <DependentUpon>MainUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench_Basic\UnloadingPoint.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench_Basic\UnloadingPoint.Designer.cs">
+      <DependentUpon>UnloadingPoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench_Basic\VarietyMaterial.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench_Basic\VarietyMaterial.Designer.cs">
+      <DependentUpon>VarietyMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench_Basic\WarehouseFile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench_Basic\WarehouseFile.Designer.cs">
+      <DependentUpon>WarehouseFile.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MyWorkBench_SkipForm\NewBasic.resx">
+      <DependentUpon>NewBasic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyWorkBench_SkipForm\New_CapitalAccount.resx">
+      <DependentUpon>New_CapitalAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyWorkBench_SkipForm\New_GoDownEntry.resx">
+      <DependentUpon>New_GoDownEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyWorkBench_SkipForm\New_InternalFleet.resx">
+      <DependentUpon>New_InternalFleet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyWorkBench_SkipForm\New_UnloadingPoint.resx">
+      <DependentUpon>New_UnloadingPoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyWorkBench_SkipForm\New_WarehouseFile.resx">
+      <DependentUpon>New_WarehouseFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyWorkBench_SkipForm\New_WarehousingPrice.resx">
+      <DependentUpon>New_WarehousingPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel1_SystemManagement\Journal.resx">
+      <DependentUpon>Journal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel1_SystemManagement\Link.resx">
+      <DependentUpon>Link.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel1_SystemManagement\TaskManagement.resx">
+      <DependentUpon>TaskManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel2_MyWorkBench\CarFee.resx">
+      <DependentUpon>CarFee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel2_MyWorkBench\CarReimbursement.resx">
+      <DependentUpon>CarReimbursement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel2_MyWorkBench\DriverCheck.resx">
+      <DependentUpon>DriverCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel2_MyWorkBench\FleetPayment.resx">
+      <DependentUpon>FleetPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel2_MyWorkBench\FleetPrice.resx">
+      <DependentUpon>FleetPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel2_MyWorkBench\GodownEntry.resx">
+      <DependentUpon>GodownEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel2_MyWorkBench\LotteryNumber.resx">
+      <DependentUpon>LotteryNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel2_MyWorkBench\OilGasRegister.resx">
+      <DependentUpon>OilGasRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel2_MyWorkBench\OutboundOrder.resx">
+      <DependentUpon>OutboundOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel2_MyWorkBench\ShipperPrice.resx">
+      <DependentUpon>ShipperPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel2_MyWorkBench\TransferList.resx">
+      <DependentUpon>TransferList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel2_MyWorkBench\TransportationClearing.resx">
+      <DependentUpon>TransportationClearing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel2_MyWorkBench\TransportationRegister.resx">
+      <DependentUpon>TransportationRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel2_MyWorkBench_Basic\CapitalAccount.resx">
+      <DependentUpon>CapitalAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel2_MyWorkBench_Basic\CustomerFile.resx">
+      <DependentUpon>CustomerFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel2_MyWorkBench_Basic\ExternalFleet.resx">
+      <DependentUpon>ExternalFleet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel2_MyWorkBench_Basic\Basic_Set.resx">
+      <DependentUpon>Basic_Set.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel2_MyWorkBench_Basic\Internal_Fleet.resx">
+      <DependentUpon>Internal_Fleet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel2_MyWorkBench_Basic\MaintenanceMaterial.resx">
+      <DependentUpon>MaintenanceMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel2_MyWorkBench_Basic\OfficeSupplies.resx">
+      <DependentUpon>OfficeSupplies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel2_MyWorkBench_Basic\OrderFile.resx">
+      <DependentUpon>OrderFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel2_MyWorkBench_Basic\OwnVehicle.resx">
+      <DependentUpon>OwnVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel2_MyWorkBench_Basic\WarehousingPrice.resx">
+      <DependentUpon>WarehousingPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel3_Design\DataSpecification.resx">
+      <DependentUpon>DataSpecification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel3_Design\RecentlyOpen.resx">
+      <DependentUpon>RecentlyOpen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel3_Design\FunctionalModule.resx">
+      <DependentUpon>FunctionalModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Panel1_SystemManagement\MainOganization.resx">
+      <DependentUpon>MainOganization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel1_SystemManagement\MainRole.resx">
+      <DependentUpon>MainRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel1_SystemManagement\MainUser.resx">
+      <DependentUpon>MainUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel2_MyWorkBench_Basic\UnloadingPoint.resx">
+      <DependentUpon>UnloadingPoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel2_MyWorkBench_Basic\VarietyMaterial.resx">
+      <DependentUpon>VarietyMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel2_MyWorkBench_Basic\WarehouseFile.resx">
+      <DependentUpon>WarehouseFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zoom_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reset2_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chartsshowlegend_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\index_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\suggestion_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\publicfix_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\issue_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\documentmap_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\protectsheet_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Basic_SetTest\Basic_SetTest.csproj">
+      <Project>{16c0f460-44f2-4d00-b2bd-093cb964ab8a}</Project>
+      <Name>Basic_SetTest</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\domain\domain.csproj">
+      <Project>{691eef89-87d0-4e82-b229-171b44b2ab71}</Project>
+      <Name>domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_16x16.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

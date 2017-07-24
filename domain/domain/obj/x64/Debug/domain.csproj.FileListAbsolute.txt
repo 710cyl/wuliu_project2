@@ -1,0 +1,12 @@
+D:\git_wuliu\domain\domain\bin\x64\Debug\domain.dll
+D:\git_wuliu\domain\domain\bin\x64\Debug\domain.pdb
+D:\git_wuliu\domain\domain\bin\x64\Debug\Antlr3.Runtime.dll
+D:\git_wuliu\domain\domain\bin\x64\Debug\Castle.Core.dll
+D:\git_wuliu\domain\domain\bin\x64\Debug\Iesi.Collections.dll
+D:\git_wuliu\domain\domain\bin\x64\Debug\NHibernate.ByteCode.Castle.dll
+D:\git_wuliu\domain\domain\bin\x64\Debug\NHibernate.dll
+D:\git_wuliu\domain\domain\bin\x64\Debug\Remotion.Data.Linq.dll
+D:\git_wuliu\domain\domain\bin\x64\Debug\NHibernate.xml
+D:\git_wuliu\domain\domain\bin\x64\Debug\NHibernate.ByteCode.Castle.xml
+D:\git_wuliu\domain\domain\obj\x64\Debug\domain.dll
+D:\git_wuliu\domain\domain\obj\x64\Debug\domain.pdb

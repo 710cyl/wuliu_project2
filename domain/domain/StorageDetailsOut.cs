@@ -109,7 +109,7 @@ namespace domain
         /// <summary>
         /// 司机
         /// </summary>
-        public virtual string Drive { set; get; }
+        public virtual string Driver { set; get; }
 
         ///// <summary>
         ///// 入库单号

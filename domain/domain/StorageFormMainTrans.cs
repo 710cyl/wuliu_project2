@@ -109,5 +109,7 @@ namespace domain
         /// 装卸工1
         /// </summary>
         public virtual string Loader_1 { set; get; }
+
+        public virtual IList<StorageDetailsTrans> StorageDetailsTrans { set; get; }
     }
 }

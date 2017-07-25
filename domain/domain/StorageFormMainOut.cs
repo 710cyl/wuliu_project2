@@ -190,6 +190,6 @@ namespace domain
         /// <summary>
         /// 一对多，一个主表可以对应多
         /// </summary>
-        public virtual IList<StorageDetailsOut> StorageDetailOut { set; get; }
+        public virtual IList<StorageDetailsOut> StorageDetailsOut { set; get; }
     }
 }

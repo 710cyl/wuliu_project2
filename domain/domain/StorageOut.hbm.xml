@@ -54,7 +54,7 @@
       <column name="车号" length="20" not-null="false" sql-type="nvarchar(20)"/>
     </property>
 
-    <property name="Drive" type="string">
+    <property name="Driver" type="string">
       <column name="司机" length="20" not-null="false" sql-type="nvarchar(20)"/>
     </property>
 

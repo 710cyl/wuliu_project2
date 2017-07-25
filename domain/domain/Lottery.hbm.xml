@@ -13,7 +13,7 @@
       <column name="车号" length="20" not-null="false" sql-type="nvarchar(20)"/>
     </property>
 
-    <property name="Drive" type="string">
+    <property name="Driver" type="string">
       <column name="司机" length="20" not-null="false" sql-type="nvarchar(20)"/>
     </property>
 
@@ -56,7 +56,7 @@
       <column name="打包日期"  not-null="false" sql-type="datetime2"/>
     </property>
 
-    <property name="LotteryNum" type="decimal" length="20" precision="3">
+    <property name="LotteryNumber" type="decimal" length="20" precision="3">
       <column name="摇号单号" sql-type="decimal" />
     </property>
   </class>

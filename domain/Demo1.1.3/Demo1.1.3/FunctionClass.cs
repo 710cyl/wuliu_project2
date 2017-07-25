@@ -282,15 +282,14 @@ namespace Demo1._1._3
             {
                 wsn.Connect();
                 wsn.Send(detailsname);
-                
-
                 using (var ws = new WebSocket("ws://localhost:9000/FindDetails"))
                 {
                     ws.Connect();
+                    ws.Send(primaryKey);
                     while (msg == null)
                    {
-                        ws.Send(primaryKey);
-                        ws.OnMessage += (sender1, e1) =>
+                        
+                        ws.OnMessage += (sender, e1) =>
                         msg = e1.Data;
                     }
                     //sd = JsonConvert.DeserializeObject<List<domain.StorageDetails>>(msg);

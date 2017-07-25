@@ -354,6 +354,17 @@ namespace wuliu_server
                 });
                 return json;
             }
+            else if (s == "Outbound_Car")
+            {
+
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<Outbound_Car> Outbound_Car = session.QueryOver<Outbound_Car>().Skip((page - 1) * 5).Take(5).List();
+                string json = JsonConvert.SerializeObject(Outbound_Car, Formatting.None, new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+                return json;
+            }
             else
             return null;
         }
@@ -586,7 +597,7 @@ namespace wuliu_server
                 try
                 {
                     session = sessionFactory.OpenSession();
-                    json = SwitchDetail(session, GetClassName.classname, e.Data);//判断是那个明细表
+                    json = SwitchDetail(session,GetClassName.classname, e.Data);//判断是那个明细表
                     Send(json);
                 }
                 catch (Exception)
@@ -614,9 +625,20 @@ namespace wuliu_server
                     ReferenceLoopHandling = ReferenceLoopHandling.Ignore
                 });
             }
-            else if (true)
+            else if (classname == "Outbound_Car_Detail")
             {
-
+                
+                int page = Convert.ToInt32(NowPage.nowpage);
+                String sql = "select a.* from WL_sendcar b,WL_sendcar_detail a where a.order_num =b.order_num and a.order_num= ? ";
+                ISQLQuery query = session.CreateSQLQuery(sql)
+                .AddEntity("Outbound_Car_Detail", typeof(Outbound_Car_Detail));
+                query.SetString(0, primarykey);
+                IList<Outbound_Car_Detail> Outbound_Car_detail = query.List<Outbound_Car_Detail>();
+                json = JsonConvert.SerializeObject(Outbound_Car_detail, Formatting.None, new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+                
             }
             return json;
         }

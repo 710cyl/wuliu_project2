@@ -110,6 +110,8 @@
     <Compile Include="Basic_Set\Order_File.cs" />
     <Compile Include="LotteryDetails.cs" />
     <Compile Include="LottreyMain.cs" />
+    <Compile Include="Outbound_Car.cs" />
+    <Compile Include="Outbound_Car_Detail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Basic_Set\Repair_Material.cs" />
     <Compile Include="Basic_Set\Transportations.cs" />
@@ -145,6 +147,10 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Lottery.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Outbound_Car.hbm.xml" />
+    <EmbeddedResource Include="Outbound_Car_Detail.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

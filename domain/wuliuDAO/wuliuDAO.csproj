@@ -109,7 +109,11 @@
     <Compile Include="IInternal_VehicleDAO.cs" />
     <Compile Include="InterfaceDAO.cs" />
     <Compile Include="Internal_VehicleDAO.cs" />
+    <Compile Include="IOutbound_CarDAO.cs" />
+    <Compile Include="IOutbound_Car_DetailDAO.cs" />
     <Compile Include="IStorageDetail.cs" />
+    <Compile Include="Outbound_CarDAO.cs" />
+    <Compile Include="Outbound_Car_DetailDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

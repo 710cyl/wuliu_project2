@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="domain" namespace="domain">
+ 
+  <!-- 出库派车明细 start-->
+
+  <class name="Outbound_Car_Detail" table="WL_sendcar_detail" >
+
+   <!--入库标识码 -->
+    <id name="store_code" column="store_code" type="string">
+      <generator class="assigned" />
+    </id>
+   
+   <!-- <set name='order_num' table='WL_sendcar' generic='true' inverse='true'>
+      <key column='order_num' foreign-key='FK_TB_WL_sendcar_detail'></key>
+      <many-to-one class=''
+       <property name="order_num" type="string">
+      <column name="订单号" length="255"/>
+    </property>
+      />
+    </set> -->
+    <property name="order_num" type="string">
+      <column name="order_num"/>
+    </property>
+    <!--<many-to-one name="Outbound_Car" column="order_num"  insert="false" update="false"></many-to-one>-->
+
+    <!--入库性质 -->
+    <property name="store_kind" type="string">
+      <column name="store_kind" length="100"/>
+    </property>
+    <!--入库日期 -->
+    <property name="store_date" type="date">
+      <column name="store_date" sql-type="datetime2(7)"/>
+    </property>
+    <!--项目号 -->
+    <property name="pro_num" type="decimal">
+      <column name="pro_num" length="18" />
+    </property>
+    <!--卷号 -->
+    <property name="roll_num" type="string">
+      <column name="roll_num" length="50" />
+    </property>
+
+    <!--品种 -->
+    <property name="kind" type="string">
+      <column name="kind" length="50"/>
+    </property>
+    <!--材质 -->
+    <property name="textures" type="string">
+      <column name="textures" length="50" />
+    </property>
+    <!--规格 -->
+    <property name="norms" type="string">
+      <column name="norms" length="100" />
+    </property>
+    <!--可派件数 -->
+    <property name="piece" type="int">
+      <column name="piece"/>
+    </property>
+    <!--可派数量 -->
+    <property name="out_num" type="string">
+      <column name="out_num" length="50"/>
+    </property>
+    <!--拟发件数 -->
+    <property name="retail_piece" type="int">
+      <column name="retail_piece" />
+    </property>
+    <!--拟发数量 -->
+    <property name="retail_num" type="string">
+      <column name="retail_num" length="50" />
+    </property>
+    <!--派车时间 -->
+    <property name="sendcar_time" type="date">
+      <column name="sendcar_time" sql-type="datetime2(7)"/>
+    </property>
+    <!--订单卸城 -->
+    <property name="order_city" type="string">
+      <column name="order_city" length="50"/>
+    </property>
+    <!--订单卸区 -->
+    <property name="order_area" type="string">
+      <column name="order_area" length="50" />
+    </property>
+    <!--订单卸点 -->
+    <property name="order_point" type="string">
+      <column name="order_point" length="50" />
+    </property>
+    <!--垛位号 -->
+    <property name="crib_num" type="string">
+      <column name="crib_num" length="2" />
+    </property>
+    <!--备注 -->
+    <property name="remark" type="string">
+      <column name="remark" length="1000" />
+    </property>
+  </class>
+  <!-- 出库派车明细 end -->
+</hibernate-mapping>
+

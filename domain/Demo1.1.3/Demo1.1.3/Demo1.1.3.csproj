@@ -170,6 +170,12 @@
     <Compile Include="MyWorkBench_SkipForm\New_InternalFleet.designer.cs">
       <DependentUpon>New_InternalFleet.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyWorkBench_SkipForm\New_OutBound_Car.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyWorkBench_SkipForm\New_OutBound_Car.designer.cs">
+      <DependentUpon>New_OutBound_Car.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyWorkBench_SkipForm\New_UnloadingPoint.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -338,6 +344,12 @@
     <Compile Include="Panel2_MyWorkBench_Basic\OrderFile.Designer.cs">
       <DependentUpon>OrderFile.cs</DependentUpon>
     </Compile>
+    <Compile Include="Panel2_MyWorkBench_Basic\Outbound_Car.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench_Basic\Outbound_Car.designer.cs">
+      <DependentUpon>Outbound_Car.cs</DependentUpon>
+    </Compile>
     <Compile Include="Panel2_MyWorkBench_Basic\OwnVehicle.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -417,6 +429,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyWorkBench_SkipForm\New_InternalFleet.resx">
       <DependentUpon>New_InternalFleet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyWorkBench_SkipForm\New_OutBound_Car.resx">
+      <DependentUpon>New_OutBound_Car.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyWorkBench_SkipForm\New_UnloadingPoint.resx">
       <DependentUpon>New_UnloadingPoint.cs</DependentUpon>
@@ -501,6 +516,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Panel2_MyWorkBench_Basic\OrderFile.resx">
       <DependentUpon>OrderFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel2_MyWorkBench_Basic\Outbound_Car.resx">
+      <DependentUpon>Outbound_Car.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panel2_MyWorkBench_Basic\OwnVehicle.resx">
       <DependentUpon>OwnVehicle.cs</DependentUpon>

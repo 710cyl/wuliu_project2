@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="domain" namespace="domain">
+ 
+  <!-- 出库派车主表 start-->
+  <class name="Outbound_Car" table="WL_sendcar" >
+
+    <!--订单号-->
+   <id name="order_num" column="order_num" type="string">
+     <generator class="assigned" />
+    </id>
+
+    <!--一对多关系:一个客户可以有一个或者多个订单-->
+    <bag name="Outbound_Car_Detail" inverse="true" cascade="all">
+      <key column="order_num"></key>
+      <one-to-many class="Outbound_Car_Detail"></one-to-many>
+    </bag>
+    <!--派车单号-->
+    <property name="sendcar_num"  type="string">
+      <column name="sendcar_num" length="50"/>
+    </property>
+    <!--货主单位-->
+    <property name="owner_unit" type="string">
+      <column name="owner_unit" length="100"/>
+    </property>
+    <!--发货仓库-->
+    <property name="warehouse_send" type="string">
+      <column name="warehouse_send" length="50"/>
+    </property>
+    <!--发货量-->
+    <property name="deliver_quantity" type="decimal">
+      <column name="deliver_quantity" length="18" />
+    </property>
+    <!--出库方式-->
+    <property name="out_way" type="string">
+      <column name="out_way" length="50" />
+    </property>
+
+    <!--业务部门-->
+    <property name="oper_apart" type="string">
+      <column name="oper_apart" length="50"/>
+    </property>
+    <!--业务人员-->
+    <property name="oper_staff" type="string">
+      <column name="oper_staff" length="50" />
+    </property>
+    <!--付费单位-->
+    <property name="pay_unit" type="string">
+      <column name="pay_unit" length="100" />
+    </property>
+    <!--车队-->
+    <property name="cars" type="string">
+      <column name="cars" length="50"/>
+    </property>
+    <!--车号-->
+    <property name="carnum" type="string">
+      <column name="carnum" length="50"/>
+    </property>
+    <!--司机-->
+    <property name="driver" type="string">
+      <column name="driver" length="50" />
+    </property>
+    <!--派车人-->
+    <property name="sendcar_staff" type="string">
+      <column name="sendcar_staff" length="50" />
+    </property>
+    <!--派车时间-->
+    <property name="sendcar_time" type="date">
+      <column name="sendcar_time" sql-type="datetime2(7)"/>
+    </property>
+    <!--卸货城市-->
+    <property name="unload_city" type="string">
+      <column name="unload_city" length="50"/>
+    </property>
+    <!--卸货区域-->
+    <property name="unload_area" type="string">
+      <column name="unload_area" length="50" />
+    </property>
+    <!--实际卸点-->
+    <property name="unload_point" type="string">
+      <column name="unload_point" length="50" />
+    </property>
+    <!--打包-->
+    <property name="packge" type="string">
+      <column name="packge" length="10"/>
+    </property>
+    <!--关闭-->
+    <property name="is_close" type="string">
+      <column name="is_close" length="10"/>
+    </property>
+    <!--关闭人-->
+    <property name="close_staff" type="string">
+      <column name="close_staff" length="50"/>
+    </property>
+    <!--关闭时间-->
+    <property name="close_time" type="date">
+      <column name="close_time" sql-type="datetime2(7)" />
+    </property>
+    <!--说明-->
+    <property name="explain" type="string">
+      <column name="explain" length="1000" />
+    </property>
+  </class>
+  <!-- 出库派车主表 end -->
+  
+  
+</hibernate-mapping>
+

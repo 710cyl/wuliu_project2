@@ -107,8 +107,14 @@
     <Compile Include="IBasic_SetDAO.cs" />
     <Compile Include="IGoDownEntry.cs" />
     <Compile Include="IInternal_VehicleDAO.cs" />
+    <Compile Include="ILotteryDetails.cs" />
+    <Compile Include="ILotteryMain.cs" />
     <Compile Include="InterfaceDAO.cs" />
     <Compile Include="Internal_VehicleDAO.cs" />
+    <Compile Include="IOutBoundOrder.cs" />
+    <Compile Include="IOutBoundOrderDetails.cs" />
+    <Compile Include="IOutBoundOrderTrans.cs" />
+    <Compile Include="IOutBoundOrderTransDetails.cs" />
     <Compile Include="IStorageDetail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

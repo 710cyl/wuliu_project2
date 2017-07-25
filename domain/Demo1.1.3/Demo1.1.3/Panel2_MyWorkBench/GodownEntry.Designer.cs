@@ -481,7 +481,7 @@
             this.tabNavigationPage1.Controls.Add(this.gridControl2);
             this.tabNavigationPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
-            this.tabNavigationPage1.Size = new System.Drawing.Size(1361, 515);
+            this.tabNavigationPage1.Size = new System.Drawing.Size(1361, 516);
             // 
             // gridControl2
             // 
@@ -491,7 +491,7 @@
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1361, 515);
+            this.gridControl2.Size = new System.Drawing.Size(1361, 516);
             this.gridControl2.TabIndex = 22;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});

@@ -86,6 +86,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.panel_button = new System.Windows.Forms.Panel();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.panel_Main.SuspendLayout();
             this.panel_Details.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -96,6 +97,7 @@
             // panel_Main
             // 
             this.panel_Main.AutoScroll = true;
+            this.panel_Main.Controls.Add(this.simpleButton1);
             this.panel_Main.Controls.Add(this.dateTimePicker3);
             this.panel_Main.Controls.Add(this.dateTimePicker2);
             this.panel_Main.Controls.Add(this.dateTimePicker1);
@@ -614,6 +616,15 @@
             this.panel_button.Size = new System.Drawing.Size(168, 424);
             this.panel_button.TabIndex = 6;
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Image = global::Demo1._1._3.Properties.Resources.save_16x16;
+            this.simpleButton1.Location = new System.Drawing.Point(797, 245);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.TabIndex = 52;
+            this.simpleButton1.Text = "simpleButton1";
+            // 
             // New_GoDownEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -692,5 +703,6 @@
         public System.Windows.Forms.TextBox textBox6;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

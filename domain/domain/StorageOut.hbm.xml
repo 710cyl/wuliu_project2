@@ -13,5 +13,328 @@
     <property name="StorageTime" type="DateTime">
       <column name="出库日期"  sql-type="datetime2" />
     </property>
+
+    <property name="CargoOwner" type="string">
+      <column name="货主" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="PayUnits" type="string">
+      <column name="付费单位" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="TotalStorage" type="decimal" length="20" precision="3">
+      <column name="出库总量"  sql-type="decimal"/>
+    </property>
+
+    <property name="StorageFee" type="decimal" length="20" precision="3">
+      <column name="仓储费"  sql-type="decimal"/>
+    </property>
+
+    <property name="FeeReceive" type="decimal" length="20" precision="3">
+      <column name="实收金额"  sql-type="decimal"/>
+    </property>
+
+    <property name="unStorageFee" type="decimal" length="20" precision="3">
+      <column name="未收仓储费"  sql-type="decimal"/>
+    </property>
+
+    <property name="ReceiveComplete" type="string">
+      <column name="收款完成" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="StorageWay" type="string">
+      <column name="出库方式" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="StorageFleet" type="string">
+      <column name="车队" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="CarNumber" type="string">
+      <column name="车号" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="Drive" type="string">
+      <column name="司机" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="StorageKeeper" type="string">
+      <column name="库管" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="Craneman" type="string">
+      <column name="吊车" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="Loader" type="string">
+      <column name="装卸工" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="Loader_1" type="string">
+      <column name="装卸工1" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="Shipper" type="string">
+      <column name="发货人员" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="LogTime" type="DateTime">
+      <column name="登记时间"  not-null="false" sql-type="datetime2"/>
+    </property>
+
+    <property name="Modifier" type="string">
+      <column name="修改人" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="ModifyTime" type="DateTime">
+      <column name="修改时间"  not-null="false" sql-type="datetime2"/>
+    </property>
+
+    <property name="Statement" type="string">
+      <column name="备注" length="500" not-null="false" sql-type="nvarchar(500)"/>
+    </property>
+
+    <property name="LoadingCity" type="string">
+      <column name="发装城市" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="LoadingSpot" type="string">
+      <column name="发装地点" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="LoadingArea" type="string">
+      <column name="发装区域" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="UnLoadingSpotActual" type="string">
+      <column name="实际卸点" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="UnLoadingCity" type="string">
+      <column name="卸货城市" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="UnLoadingArea" type="string">
+      <column name="卸货区域" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="Payee" type="string">
+      <column name="收款人" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="CollectionTime" type="DateTime">
+      <column name="收款时间"  not-null="false" sql-type="datetime2"/>
+    </property>
+
+    <property name="Accountants" type="string">
+      <column name="资金账户" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="AccountName" type="string">
+      <column name="账户名称" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <bag name="StorageDetailsOut" inverse="true" cascade="all">
+      <key column="outStorageNumber" />
+      <one-to-many class="StorageDetailsOut"/>
+    </bag>
+  </class>
+
+  <class name="StorageDetailsOut" table="T_StorageDetailsOut" lazy="true">
+    
+    <id name="outStorageCode" type="string" column="出库单识别码" length="100">
+      <generator class="assigned"/>
+    </id>
+    
+    <property name="StorageName" type="string">
+      <column name="仓库" length="100" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+    
+    <!--出库单号-->
+
+    <property name="outStorageTime" type="DateTime">
+      <column name="出库日期"  not-null="false" sql-type="datetime2"/>
+    </property>
+
+    <property name="StorageProperty" type="string">
+      <column name="入库性质" length="100" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="StorageTime" type="DateTime">
+      <column name="入库日期"  not-null="false" sql-type="datetime2"/>
+    </property>
+    
+    <property name="outStorageNumber" type="string">
+      <column name="出库单号" length="100" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+    
+    <property name="OrderNumber" type="string">
+      <column name="订单号" length="100" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="ItemNumber" type="string">
+      <column name="项目号" length="100" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="CargoOwner" type="string">
+      <column name="货主" length="100" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="PayUnits" type="string">
+      <column name="付费单位" length="100" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="UnLoadingSpot" type="string">
+      <column name="订单卸点" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="UnLoadingCity" type="string">
+      <column name="订单卸货城市" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="UnLoadingArea" type="string">
+      <column name="订单卸货区域" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="ReelNumber" type="string">
+      <column name="卷号" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="Variety" type="string">
+      <column name="品种" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="Material" type="string">
+      <column name="材质" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="Specification" type="string">
+      <column name="规格" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="InventoryNumber" type="int">
+      <column name="库存件数"   sql-type="int"/>
+    </property>
+
+    <property name="StockQuantity" type="decimal" length="20" precision="3">
+      <column name="库存数量" sql-type="decimal" />
+    </property>
+
+    <property name="PackagesNumber" type="int">
+      <column name="实发件数"   sql-type="int"/>
+    </property>
+
+    <property name="Numbers" type="decimal" length="20" precision="3">
+      <column name="实发数量" sql-type="decimal" />
+    </property>
+
+    <property name="StoragePriceSingle" type="decimal" length="20" precision="3">
+      <column name="仓费单价" sql-type="decimal" />
+    </property>
+
+    <property name="BasicStoragePeriod" type="int">
+      <column name="基础存储期"   sql-type="int"/>
+    </property>
+
+    <property name="BasicStoragePeriodACT" type="int">
+      <column name="实际储存期"   sql-type="int"/>
+    </property>
+
+    <property name="ChaoQi" type="int">
+      <column name="超期"   sql-type="int"/>
+    </property>
+
+    <property name="StorageCode" type="string">
+      <column name="入库标识码" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="ChaoQiPriceSingle" type="decimal" length="20" precision="3">
+      <column name="超期单价" sql-type="decimal" />
+    </property>
+
+    <property name="BasicStoragePriceSingle" type="decimal" length="20" precision="3">
+      <column name="基本仓储单价" sql-type="decimal" />
+    </property>
+
+    <property name="StoragePrice" type="decimal" length="20" precision="3">
+      <column name="仓储费" sql-type="decimal" />
+    </property>
+
+    <property name="StorageFleet" type="string">
+      <column name="车队" length="20"  sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="CarNumber" type="string">
+      <column name="车号" length="20" sql-type="nvarchar(20)" />
+    </property>
+
+    <property name="Driver" type="string">
+      <column name="司机" length="20" sql-type="nvarchar(20)" />
+    </property>
+
+    <property name="shipperTime" type="DateTime">
+      <column name="发货时间"  not-null="false" sql-type="datetime2"/>
+    </property>
+
+    <property name="shipper" type="string">
+      <column name="发货员" length="20" sql-type="nvarchar(20)" />
+    </property>
+
+    <property name="StorageKeeper" type="string">
+      <column name="库管" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="Craneman" type="string">
+      <column name="吊车" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="Loader" type="string">
+      <column name="装卸工" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="Loader_1" type="string">
+      <column name="装卸工1" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="Statement" type="string">
+      <column name="备注" length="500" not-null="false" sql-type="nvarchar(500)"/>
+    </property>
+
+    <property name="UnLoadingSpotACT" type="string">
+      <column name="实际卸点" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="UnLoadingCityACT" type="string">
+      <column name="实际卸货城市" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="UnLoadingAreaACT" type="string">
+      <column name="实际卸货区域" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="LoadingCity" type="string">
+      <column name="发装城市" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="LoadingSpot" type="string">
+      <column name="发装地点" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="LoadingArea" type="string">
+      <column name="发装区域" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="CribNumber" type="string">
+      <column name="垛位号" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="Modifier" type="string">
+      <column name="修改人" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="ModifyTime" type="DateTime">
+      <column name="修改时间"  not-null="false" sql-type="datetime2"/>
+    </property>
+    
   </class>
 </hibernate-mapping>

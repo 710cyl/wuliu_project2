@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="domain" namespace="domain">
+  <class name ="LottreyMain" table="T_LottreyMain" lazy="true">
+    <id name="LotteryNumber" type="string" column="摇号单号" length="100">
+      <generator class="assigned"/>
+    </id>
+
+    <property name="StorageFleet" type="string">
+      <column name="车队" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="CarNumber" type="string">
+      <column name="车号" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="Drive" type="string">
+      <column name="司机" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="WinNumber" type="string">
+      <column name="中将单号" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="WinQuantity" type="decimal" length="20" precision="3">
+      <column name="中奖数量" sql-type="decimal" />
+    </property>
+
+    <property name="data" type="string">
+      <column name="数据" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="time" type="DateTime">
+      <column name="时间"  not-null="false" sql-type="datetime2"/>
+    </property>
+
+    <bag name="LotteryDetails" inverse="true" cascade="all">
+      <key column="LotteryNumber" />
+      <one-to-many class="LotteryDetails"/>
+    </bag>
+  </class>
+
+  <class name="LotteryDetails" table="T_LotteryDetails" lazy="true">
+     <id name="PackgingNumber" type="string" column="打包单号" length="100">
+      <generator class="assigned"/>
+    </id>
+
+    <property name="SendCarNumber" type="int">
+      <column name="派车单数量"   sql-type="int"/>
+    </property>
+
+    <property name="storageToltal" type="decimal" length="20" precision="3">
+      <column name="发货总量" sql-type="decimal" />
+    </property>
+
+    <property name="PackagingNumber" type="DateTime">
+      <column name="打包日期"  not-null="false" sql-type="datetime2"/>
+    </property>
+
+    <property name="LotteryNum" type="decimal" length="20" precision="3">
+      <column name="摇号单号" sql-type="decimal" />
+    </property>
+  </class>
+</hibernate-mapping>

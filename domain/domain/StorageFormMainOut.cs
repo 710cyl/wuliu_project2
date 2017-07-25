@@ -110,10 +110,10 @@ namespace domain
         /// </summary>
         public virtual string UnLoadingArea { set; get; }
 
-        /// <summary>
-        /// 车队标识
-        /// </summary>
-        public virtual string TeamLog { set; get; }
+        ///// <summary>
+        ///// 车队标识
+        ///// </summary>
+        //public virtual string TeamLog { set; get; }
 
 
         /// <summary>
@@ -179,13 +179,17 @@ namespace domain
         public virtual decimal unStorageFee { set; get; }
 
         /// <summary>
-        /// 装卸工
+        /// 装卸工1
         /// </summary>
         public virtual string Loader_1 { set; get; }
 
+        ///// <summary>
+        ///// 单位全称
+        ///// </summary>
+        //public virtual string UnitName { set; get; }
         /// <summary>
-        /// 单位全称
+        /// 一对多，一个主表可以对应多
         /// </summary>
-        public virtual string UnitName { set; get; }
+        public virtual IList<StorageDetailsOut> StorageDetailOut { set; get; }
     }
 }

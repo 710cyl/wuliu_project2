@@ -193,6 +193,10 @@ namespace domain
         public virtual DateTime outStorageTime { set; get; }
 
         /// <summary>
+        /// 出库单号
+        /// </summary>
+        public virtual string outStorageNumber { set; get; }
+        /// <summary>
         /// 垛位号
         /// </summary>
         public virtual string CribNumber { set; get; }

@@ -47,5 +47,10 @@ namespace domain
         /// 时间
         /// </summary>
         public virtual DateTime time { set; get; }
+
+        /// <summary>
+        /// 一对多关系
+        /// </summary>
+        public virtual IList<LotteryDetails> LotteryDetails { set; get; }
     }
 }

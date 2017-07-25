@@ -60,7 +60,10 @@ namespace domain
         /// </summary>
         public virtual string CribNumberOri { set; get; }
 
-
+        /// <summary>
+        /// 新垛位号
+        /// </summary>
+        public virtual string CribNumberNew { set; get; }
         /// <summary>
         /// 移库件数
         /// </summary>
@@ -90,5 +93,15 @@ namespace domain
         /// 出厂日期
         /// </summary>
         public virtual DateTime ProductionDate { set; get; }
+
+        /// <summary>
+        /// 备注
+        /// </summary>
+        public virtual string statement { set; get; }
+
+        /// <summary>
+        /// 移库单号
+        /// </summary>
+        public virtual string StorageNumber { set; get; }
     }
 }

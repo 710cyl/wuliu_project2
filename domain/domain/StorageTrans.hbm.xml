@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="domain" namespace="domain">
+  <class name="StorageFormMainTrans" table="T_StorageFormMainTrans" lazy="true">
+    <id name="StorageNumber" type="string" length="20" column="移库单号" >
+      <generator class="assigned"/>
+    </id>
+    
+    <property name="StorageName" type="string">
+      <column name="仓库名称" length="100" sql-type="nvarchar(100)" />
+    </property>
+
+    <property name="StorageWay" type="string">
+      <column name="移库方式" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="RemoveCustomer" type="string">
+      <column name="移出客户" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+    
+    <property name="InCustomer" type="string">
+      <column name="移入客户" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="StoragePriceUnit" type="string">
+      <column name="仓储费单位" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="StorageUnitPrice" type="string">
+      <column name="移库费单位" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="AccountDate" type="DateTime">
+      <column name="记账日期"  not-null="false" sql-type="datetime2"/>
+    </property>
+
+    <property name="TotalStorage" type="decimal" length="20" precision="3">
+      <column name="移库总量"  sql-type="decimal"/>
+    </property>
+
+    <property name="StoragePriceSingle" type="decimal" length="20" precision="3">
+      <column name="移库单价"  sql-type="decimal"/>
+    </property>
+
+    <property name="StoragePrice" type="decimal" length="20" precision="3">
+      <column name="移库金额"  sql-type="decimal"/>
+    </property>
+
+    <property name="KeyBoarder" type="string">
+      <column name="录入员" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="KeyTime" type="DateTime">
+      <column name="录入时间"  not-null="false" sql-type="datetime2"/>
+    </property>
+
+    <property name="Modifier" type="string">
+      <column name="修改人" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="ModifyTime" type="DateTime">
+      <column name="修改时间"  not-null="false" sql-type="datetime2"/>
+    </property>
+
+    <property name="StorageKeeper" type="string">
+      <column name="库管" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="Craneman" type="string">
+      <column name="吊车工" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="Loader" type="string">
+      <column name="装卸工" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="Loader_1" type="string">
+      <column name="装卸工1" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="Statement" type="string">
+      <column name="备注" length="500" not-null="false" sql-type="nvarchar(500)"/>
+    </property>
+
+
+    <bag name="StorageDetailsTrans" inverse="true" cascade="all">
+      <key column="StorageNumber"  />
+      <one-to-many class="StorageDetailsTrans"/>
+    </bag>
+  </class>
+
+  <class name="StorageDetailsTrans" table="T_StorageDetailsTrans" lazy="true">
+    <id name="transStorageCode" type="string" length="20" column="移库单识别码" >
+      <generator class="assigned"/>
+    </id>
+
+    <property name="StorageCode" type="string">
+      <column name="入库单识别码" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="OrderNumber" type="string">
+      <column name="订单号" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="ItemNumber" type="string">
+      <column name="项目号" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="ReelNumber" type="string">
+      <column name="卷号" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="Variety" type="string">
+      <column name="品种" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="Material" type="string">
+      <column name="材质" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="Specification" type="string">
+      <column name="规格" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="InventoryNumber" type="int">
+      <column name="库存件数"   sql-type="int"/>
+    </property>
+
+    <property name="StockQuantity" type="decimal" length="20" precision="3">
+      <column name="库存数量" sql-type="decimal" />
+    </property>
+
+    <property name="CribNumberOri" type="string">
+      <column name="原垛位号" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="InventoryNumberTrans" type="int">
+      <column name="移库件数" sql-type="int" />
+    </property>
+
+    <property name="StockQuantityTrans" type="decimal" length="20" precision="3">
+      <column name="移库数量" sql-type="decimal" />
+    </property>
+
+    <property name="CribNumberNew" type="string">
+      <column name="新垛位号" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="statement" type="string">
+      <column name="备注" length="500" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+
+    <property name="Poll" type="int">
+      <column name="票数" sql-type="int" />
+    </property>
+
+    <property name="ProductionDate" type="DateTime">
+      <column name="出厂时间"  not-null="false" sql-type="datetime2"/>
+    </property>
+
+    <property name="StorageTime" type="DateTime">
+      <column name="入库时间"  not-null="false" sql-type="datetime2"/>
+    </property>
+
+    <property name="StorageNumber" type="string">
+      <column name="移库单号" length="20" not-null="false" sql-type="nvarchar(20)"/>
+    </property>
+  </class>
+</hibernate-mapping>

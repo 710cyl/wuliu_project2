@@ -27,11 +27,11 @@ namespace domain
         /// <summary>
         /// 打包日期
         /// </summary>
-        public virtual DateTime PackagingNumber { set; get; }      
-        
+        public virtual DateTime PackagingNumber { set; get; }
+
         /// <summary>
-        /// 随机号
+        /// 摇号单号
         /// </summary>
-        public virtual decimal LotteryNumber { set; get; }     
+        public virtual decimal LotteryNumber { set; get; }
     }
 }

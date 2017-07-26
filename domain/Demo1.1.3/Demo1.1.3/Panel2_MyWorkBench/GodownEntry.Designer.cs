@@ -114,7 +114,7 @@
             this.toolStripSeparator14,
             this.toolStripTextBox1,
             this.toolStripButton9});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 254);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1383, 27);
             this.toolStrip1.TabIndex = 20;
@@ -471,7 +471,7 @@
             this.tabNavigationPage1.Controls.Add(this.gridControl2);
             this.tabNavigationPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
-            this.tabNavigationPage1.Size = new System.Drawing.Size(1361, 515);
+            this.tabNavigationPage1.Size = new System.Drawing.Size(1361, 516);
             // 
             // gridControl2
             // 
@@ -481,7 +481,7 @@
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1361, 515);
+            this.gridControl2.Size = new System.Drawing.Size(1361, 516);
             this.gridControl2.TabIndex = 22;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -539,6 +539,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.toolStrip1);
             this.panel1.Controls.Add(this.dataNavigator_Basic_Set);
             this.panel1.Controls.Add(this.gridControl1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -551,7 +552,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabPane1);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -566,8 +566,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

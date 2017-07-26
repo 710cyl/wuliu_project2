@@ -94,15 +94,15 @@
             this.tabPane1.BackColor = System.Drawing.SystemColors.Control;
             this.tabPane1.Controls.Add(this.tabNavigationPage1);
             this.tabPane1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tabPane1.Location = new System.Drawing.Point(0, 307);
+            this.tabPane1.Location = new System.Drawing.Point(0, 330);
             this.tabPane1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPane1.Name = "tabPane1";
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabNavigationPage1});
-            this.tabPane1.RegularSize = new System.Drawing.Size(1383, 555);
+            this.tabPane1.RegularSize = new System.Drawing.Size(1383, 532);
             this.tabPane1.SelectedPage = this.tabNavigationPage1;
             this.tabPane1.SelectedPageIndex = 0;
-            this.tabPane1.Size = new System.Drawing.Size(1383, 555);
+            this.tabPane1.Size = new System.Drawing.Size(1383, 532);
             this.tabPane1.TabIndex = 22;
             // 
             // tabNavigationPage1
@@ -113,13 +113,13 @@
             this.tabNavigationPage1.Controls.Add(this.gridControl2);
             this.tabNavigationPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
-            this.tabNavigationPage1.Size = new System.Drawing.Size(1361, 497);
+            this.tabNavigationPage1.Size = new System.Drawing.Size(1361, 474);
             // 
             // gridControl2
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.gridControl2.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
-            this.gridControl2.Location = new System.Drawing.Point(0, -18);
+            this.gridControl2.Location = new System.Drawing.Point(0, -41);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl2.Name = "gridControl2";
@@ -140,7 +140,7 @@
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
+            this.gridControl1.Location = new System.Drawing.Point(0, 27);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl1.Name = "gridControl1";
@@ -192,7 +192,7 @@
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 4, true, true, "下一页", "下一页"),
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 5, true, true, "尾页", "尾页")});
             this.dataNavigator_Basic_Set.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataNavigator_Basic_Set.Location = new System.Drawing.Point(0, 274);
+            this.dataNavigator_Basic_Set.Location = new System.Drawing.Point(0, 301);
             this.dataNavigator_Basic_Set.Name = "dataNavigator_Basic_Set";
             this.dataNavigator_Basic_Set.ShowToolTips = true;
             this.dataNavigator_Basic_Set.Size = new System.Drawing.Size(1383, 26);
@@ -205,7 +205,6 @@
             // toolStrip1
             // 
             this.toolStrip1.BackColor = System.Drawing.SystemColors.Control;
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripDropDownButton1,
@@ -226,9 +225,9 @@
             this.toolStripSeparator14,
             this.toolStripTextBox1,
             this.toolStripButton9});
-            this.toolStrip1.Location = new System.Drawing.Point(20, 0);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(896, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(1383, 27);
             this.toolStrip1.TabIndex = 20;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -541,8 +540,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dataNavigator_Basic_Set);
-            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.tabPane1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GodownEntry";

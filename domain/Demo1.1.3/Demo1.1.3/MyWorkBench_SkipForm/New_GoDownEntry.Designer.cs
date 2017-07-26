@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule2 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleDateOccuring formatConditionRuleDateOccuring2 = new DevExpress.XtraEditors.FormatConditionRuleDateOccuring();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleDateOccuring formatConditionRuleDateOccuring1 = new DevExpress.XtraEditors.FormatConditionRuleDateOccuring();
             this.panel_Main = new System.Windows.Forms.Panel();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -86,7 +86,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.panel_button = new System.Windows.Forms.Panel();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.panel_Main.SuspendLayout();
             this.panel_Details.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -97,7 +96,6 @@
             // panel_Main
             // 
             this.panel_Main.AutoScroll = true;
-            this.panel_Main.Controls.Add(this.simpleButton1);
             this.panel_Main.Controls.Add(this.dateTimePicker3);
             this.panel_Main.Controls.Add(this.dateTimePicker2);
             this.panel_Main.Controls.Add(this.dateTimePicker1);
@@ -552,10 +550,10 @@
             // 
             // gridView1
             // 
-            gridFormatRule2.Name = "Format0";
-            gridFormatRule2.Rule = formatConditionRuleDateOccuring2;
-            gridFormatRule2.Tag = new System.DateTime(1753, 1, 1, 11, 4, 32, 0);
-            this.gridView1.FormatRules.Add(gridFormatRule2);
+            gridFormatRule1.Name = "Format0";
+            gridFormatRule1.Rule = formatConditionRuleDateOccuring1;
+            gridFormatRule1.Tag = new System.DateTime(1753, 1, 1, 11, 4, 32, 0);
+            this.gridView1.FormatRules.Add(gridFormatRule1);
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.gridView1.Name = "gridView1";
@@ -615,15 +613,6 @@
             this.panel_button.Name = "panel_button";
             this.panel_button.Size = new System.Drawing.Size(168, 424);
             this.panel_button.TabIndex = 6;
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Image = global::Demo1._1._3.Properties.Resources.save_16x16;
-            this.simpleButton1.Location = new System.Drawing.Point(797, 245);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 52;
-            this.simpleButton1.Text = "simpleButton1";
             // 
             // New_GoDownEntry
             // 
@@ -703,6 +692,5 @@
         public System.Windows.Forms.TextBox textBox6;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

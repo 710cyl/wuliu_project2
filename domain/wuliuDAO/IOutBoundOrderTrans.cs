@@ -35,7 +35,7 @@ namespace wuliuDAO
         {
             using (ISession session = sessionFactory.OpenSession())
             {
-                session.Update(entity);
+                session.SaveOrUpdate(entity);
                 session.Flush();
             }
         }

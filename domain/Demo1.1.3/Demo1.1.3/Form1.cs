@@ -341,6 +341,9 @@ namespace Demo1._1._3
             obo.Dock = DockStyle.Fill;
             panel2.Controls.Clear();
             panel2.Controls.Add(obo);
+            domain.StorageFormMainOut sf = new domain.StorageFormMainOut();
+            obo.gridControl1.DataSource = showData<domain.StorageFormMainOut>(sf, obo.now_Page.ToString());
+            //obo.gridView1.Columns[23].Visible = false;
         }
 
         private void accordionControlElement64_Click(object sender, EventArgs e)
@@ -350,6 +353,8 @@ namespace Demo1._1._3
             tl.Dock = DockStyle.Fill;
             panel2.Controls.Clear();
             panel2.Controls.Add(tl);
+            domain.StorageFormMainTrans sf = new domain.StorageFormMainTrans();
+            tl.gridControl1.DataSource = showData<domain.StorageFormMainTrans>(sf, tl.now_Page.ToString());
         }
 
         private void accordionControlElement70_Click(object sender, EventArgs e)

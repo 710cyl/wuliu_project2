@@ -1,4 +1,4 @@
-﻿namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Warehouse
+﻿namespace Demo1._1._3.Views.MyWorkBench_SkipForm
 {
     partial class New_OutboundOrder
     {
@@ -38,12 +38,13 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.label38 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label37 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox16 = new System.Windows.Forms.TextBox();
             this.label36 = new System.Windows.Forms.Label();
@@ -71,7 +72,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox19 = new System.Windows.Forms.TextBox();
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.textBox17 = new System.Windows.Forms.TextBox();
             this.textBox14 = new System.Windows.Forms.TextBox();
@@ -133,8 +133,11 @@
             // gridView1
             // 
             this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ColumnAutoWidth = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanging);
             // 
             // barManager1
             // 
@@ -181,12 +184,13 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.AutoScrollMinSize = new System.Drawing.Size(1054, 229);
+            this.panel1.Controls.Add(this.dateTimePicker4);
+            this.panel1.Controls.Add(this.dateTimePicker3);
             this.panel1.Controls.Add(this.label38);
             this.panel1.Controls.Add(this.dateTimePicker2);
             this.panel1.Controls.Add(this.label37);
             this.panel1.Controls.Add(this.label35);
             this.panel1.Controls.Add(this.textBox13);
-            this.panel1.Controls.Add(this.textBox21);
             this.panel1.Controls.Add(this.textBox4);
             this.panel1.Controls.Add(this.textBox16);
             this.panel1.Controls.Add(this.label36);
@@ -214,7 +218,6 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.textBox19);
             this.panel1.Controls.Add(this.textBox18);
             this.panel1.Controls.Add(this.textBox17);
             this.panel1.Controls.Add(this.textBox14);
@@ -239,6 +242,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1405, 286);
             this.panel1.TabIndex = 14;
+            // 
+            // dateTimePicker4
+            // 
+            this.dateTimePicker4.Location = new System.Drawing.Point(1143, 227);
+            this.dateTimePicker4.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimePicker4.Name = "dateTimePicker4";
+            this.dateTimePicker4.Size = new System.Drawing.Size(183, 25);
+            this.dateTimePicker4.TabIndex = 297;
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Location = new System.Drawing.Point(499, 227);
+            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(183, 25);
+            this.dateTimePicker3.TabIndex = 296;
             // 
             // label38
             // 
@@ -287,19 +306,8 @@
             this.textBox13.Location = new System.Drawing.Point(175, 226);
             this.textBox13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox13.Name = "textBox13";
-            this.textBox13.ReadOnly = true;
             this.textBox13.Size = new System.Drawing.Size(183, 26);
             this.textBox13.TabIndex = 291;
-            // 
-            // textBox21
-            // 
-            this.textBox21.Font = new System.Drawing.Font("宋体", 9.5F);
-            this.textBox21.Location = new System.Drawing.Point(497, 226);
-            this.textBox21.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.ReadOnly = true;
-            this.textBox21.Size = new System.Drawing.Size(183, 26);
-            this.textBox21.TabIndex = 290;
             // 
             // textBox4
             // 
@@ -584,16 +592,6 @@
             this.label1.TabIndex = 264;
             this.label1.Text = "货主单位：";
             // 
-            // textBox19
-            // 
-            this.textBox19.Font = new System.Drawing.Font("宋体", 9.5F);
-            this.textBox19.Location = new System.Drawing.Point(1143, 226);
-            this.textBox19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.ReadOnly = true;
-            this.textBox19.Size = new System.Drawing.Size(183, 26);
-            this.textBox19.TabIndex = 262;
-            // 
             // textBox18
             // 
             this.textBox18.Font = new System.Drawing.Font("宋体", 9.5F);
@@ -627,7 +625,6 @@
             this.textBox12.Location = new System.Drawing.Point(820, 226);
             this.textBox12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox12.Name = "textBox12";
-            this.textBox12.ReadOnly = true;
             this.textBox12.Size = new System.Drawing.Size(183, 26);
             this.textBox12.TabIndex = 258;
             // 
@@ -785,6 +782,7 @@
             this.simpleButton2.Size = new System.Drawing.Size(100, 39);
             this.simpleButton2.TabIndex = 166;
             this.simpleButton2.Text = "取消";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // simpleButton5
             // 
@@ -797,6 +795,7 @@
             this.simpleButton5.Size = new System.Drawing.Size(100, 39);
             this.simpleButton5.TabIndex = 169;
             this.simpleButton5.Text = "保存";
+            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
             // 
             // simpleButton3
             // 
@@ -809,6 +808,7 @@
             this.simpleButton3.Size = new System.Drawing.Size(100, 39);
             this.simpleButton3.TabIndex = 168;
             this.simpleButton3.Text = "删除";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // simpleButton4
             // 
@@ -821,6 +821,7 @@
             this.simpleButton4.Size = new System.Drawing.Size(100, 39);
             this.simpleButton4.TabIndex = 167;
             this.simpleButton4.Text = "添加";
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
             // New_OutboundOrder
             // 
@@ -865,7 +866,6 @@
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox21;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox16;
         private System.Windows.Forms.Label label36;
@@ -893,7 +893,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox19;
         private System.Windows.Forms.TextBox textBox18;
         private System.Windows.Forms.TextBox textBox17;
         private System.Windows.Forms.TextBox textBox14;
@@ -916,5 +915,7 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private System.Windows.Forms.DateTimePicker dateTimePicker4;
+        private System.Windows.Forms.DateTimePicker dateTimePicker3;
     }
 }

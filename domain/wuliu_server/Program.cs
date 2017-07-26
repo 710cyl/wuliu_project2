@@ -87,6 +87,20 @@ namespace wuliu_server
                 IGoDownEntry gde = new IGoDownEntry();
                 gde.Update(sfm);
             }
+
+            else if (name == "StorageFormMainOut")
+            {
+                StorageFormMainOut sfm = JsonConvert.DeserializeObject<StorageFormMainOut>(data);
+                IOutBoundOrder gde = new IOutBoundOrder();
+                gde.Update(sfm);
+            }
+
+            else if (name == "StorageFormMainTrans")
+            {
+                StorageFormMainTrans sfm = JsonConvert.DeserializeObject<StorageFormMainTrans>(data);
+                IOutBoundOrderTrans gde = new IOutBoundOrderTrans();
+                gde.Update(sfm);
+            }
         }
     }
 
@@ -108,15 +122,43 @@ namespace wuliu_server
         }
 
         private void GetClass(string name, string data)
-        {
-            List<domain.StorageDetails> sd = null;
-            string json = null;
-            IStorageDetail isd = new IStorageDetail();
+        {  
             if (name == "StorageDetails")
             {
+                List<domain.StorageDetails> sd = null;
+                string json = null;
+                IStorageDetail isd = new IStorageDetail();
                 json = data;
                 sd = JsonConvert.DeserializeObject<List<domain.StorageDetails>>(json);
                 foreach (StorageDetails item in sd)
+                {
+                    isd.Update(item);
+                    Console.WriteLine("1111111111111111111");
+                }
+            }
+
+           else if (name == "StorageDetailsOut")
+            {
+                List<domain.StorageDetailsOut> sd = null;
+                string json = null;
+                IOutBoundOrderDetails isd = new IOutBoundOrderDetails();
+                json = data;
+                sd = JsonConvert.DeserializeObject<List<domain.StorageDetailsOut>>(json);
+                foreach (StorageDetailsOut item in sd)
+                {
+                    isd.Update(item);
+                    Console.WriteLine("1111111111111111111");
+                }
+            }
+
+            else if (name  == "StorageDetailsTrans")
+            {
+                List<domain.StorageDetailsTrans> sd = null;
+                string json = null;
+                IOutBoundOrderTransDetails isd = new IOutBoundOrderTransDetails();
+                json = data;
+                sd = JsonConvert.DeserializeObject<List<domain.StorageDetailsTrans>>(json);
+                foreach (StorageDetailsTrans item in sd)
                 {
                     isd.Update(item);
                     Console.WriteLine("1111111111111111111");
@@ -147,6 +189,18 @@ namespace wuliu_server
                 IGoDownEntry gde = new IGoDownEntry();
                 gde.Save(sfm);
             }
+            else if (name == "StorageFormMainOut")
+            {
+                StorageFormMainOut sfm = JsonConvert.DeserializeObject<StorageFormMainOut>(data);
+                IOutBoundOrder gde = new IOutBoundOrder();
+                gde.Save(sfm);
+            }
+            else if (name == "StorageFormMainTrans")
+            {
+                StorageFormMainTrans sfm = JsonConvert.DeserializeObject<StorageFormMainTrans>(data);
+                IOutBoundOrderTrans gde = new IOutBoundOrderTrans();
+                gde.Save(sfm);
+            }
         }
     }
     public class MutiSave : WebSocketBehavior  //明细表保存
@@ -165,14 +219,43 @@ namespace wuliu_server
          }
         private void GetClass(string name, string data)
         {
-            List<domain.StorageDetails> sd = null;
-            string json = null;
-            IStorageDetail isd = new IStorageDetail();
+           
             if (name == "StorageDetails")
             {
+                List<domain.StorageDetails> sd = null;
+                string json = null;
+                IStorageDetail isd = new IStorageDetail();
                 json = data;
                 sd = JsonConvert.DeserializeObject<List<domain.StorageDetails>>(json);
                 foreach (StorageDetails item in sd)
+                {
+                    isd.Save(item);
+                    Console.WriteLine("1111111111111111111");
+                }
+            }
+
+            else if (name == "StorageDetailsOut")
+            {
+                List<domain.StorageDetailsOut> sd = null;
+                string json = null;
+                IOutBoundOrderDetails isd = new IOutBoundOrderDetails();
+                json = data;
+                sd = JsonConvert.DeserializeObject<List<domain.StorageDetailsOut>>(json);
+                foreach (StorageDetailsOut item in sd)
+                {
+                    isd.Save(item);
+                    Console.WriteLine("1111111111111111111");
+                }
+            }
+
+            else if (name == "StorageDetailsTrans")
+            {
+                List<domain.StorageDetailsTrans> sd = null;
+                string json = null;
+                IOutBoundOrderTransDetails isd = new IOutBoundOrderTransDetails();
+                json = data;
+                sd = JsonConvert.DeserializeObject<List<domain.StorageDetailsTrans>>(json);
+                foreach (StorageDetailsTrans item in sd)
                 {
                     isd.Save(item);
                     Console.WriteLine("1111111111111111111");
@@ -210,12 +293,25 @@ namespace wuliu_server
 
         private string GetClass(string name, ISession session)
         {
-            List<domain.StorageDetails> sd = null;
             string json = null;
-            IStorageDetail isd = new IStorageDetail();
             if (name == "StorageDetails")
             {
+                List<domain.StorageDetails> sd = null;
+                IStorageDetail isd = new IStorageDetail();
                 IList<domain.StorageDetails> basic_set = session.QueryOver<domain.StorageDetails>().Skip(0).Take(0).List();
+                json = JsonConvert.SerializeObject(basic_set);
+            }
+            else if (name == "StorageDetailsOut")
+            {
+                IOutBoundOrderDetails isd = new IOutBoundOrderDetails();
+                IList<domain.StorageDetailsOut> basic_set = session.QueryOver<domain.StorageDetailsOut>().Skip(0).Take(0).List();
+                json = JsonConvert.SerializeObject(basic_set);
+            }
+
+            else if (name == "StorageDetailsTrans")
+            {
+                IOutBoundOrderTransDetails isd = new IOutBoundOrderTransDetails();
+                IList<domain.StorageDetailsTrans> basic_set = session.QueryOver<domain.StorageDetailsTrans>().Skip(0).Take(0).List();
                 json = JsonConvert.SerializeObject(basic_set);
             }
             return json;
@@ -354,7 +450,27 @@ namespace wuliu_server
                 });
                 return json;
             }
-            else
+            else if (s == "StorageFormMainOut")
+            {
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<StorageFormMainOut> fund_account = session.QueryOver<StorageFormMainOut>().Skip((page - 1) * 5).Take(5).List();
+                string json = JsonConvert.SerializeObject(fund_account, Formatting.None, new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+                return json;
+            }
+
+            else if (s == "StorageFormMainTrans")
+            {
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<StorageFormMainTrans> fund_account = session.QueryOver<StorageFormMainTrans>().Skip((page - 1) * 5).Take(5).List();
+                string json = JsonConvert.SerializeObject(fund_account, Formatting.None, new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+                return json;
+            }
             return null;
         }
     }
@@ -453,6 +569,18 @@ namespace wuliu_server
                 total = session.QueryOver<StorageFormMain>().RowCountInt64();
                 return total;
             }
+
+            else if (className == "StorageFormMainOut")
+            {
+                total = session.QueryOver<StorageFormMainOut>().RowCountInt64();
+                return total;
+            }
+            else if (className == "StorageFormMainTrans")
+            {
+                total = session.QueryOver<StorageFormMainTrans>().RowCountInt64();
+                return total;
+            }
+            
             return total;
         }
     }
@@ -518,6 +646,19 @@ namespace wuliu_server
                     var godownentry = gde.Get<StorageFormMain>(id);
                     gde.Delete<StorageFormMain>((StorageFormMain)godownentry);
                 }
+
+                else  if (classname == "StorageFormMainOut")
+                {
+                    IOutBoundOrder gde = new IOutBoundOrder();
+                    var godownentry = gde.Get<StorageFormMainOut>(id);
+                    gde.Delete<StorageFormMainOut>((StorageFormMainOut)godownentry);
+                }
+                else if (classname == "StorageFormMainTrans")
+                {
+                    IOutBoundOrderTrans gde = new IOutBoundOrderTrans();
+                    var godownentry = gde.Get<StorageFormMainTrans>(id);
+                    gde.Delete<StorageFormMainTrans>((StorageFormMainTrans)godownentry);
+                }
             }
             catch (Exception)
             {
@@ -539,11 +680,20 @@ namespace wuliu_server
             {
                 AddDataTableToDB(dt, "dbo.T_transportationRegister");
             }
+
             else if (GetClassName.classname == "StorageFormMain")
             {
                 AddDataTableToDB(dt, "dbo.T_StorageFormMain");
             }
 
+            else if (GetClassName.classname == "StorageFormMainOut")
+            {
+                AddDataTableToDB(dt, "dbo.T_StorageFormMainOut");
+            }
+            else if (GetClassName.classname == "StorageFormMainTrans")
+            {
+                AddDataTableToDB(dt, "dbo.T_StorageFormMainTrans");
+            }
         }
 
         public void AddDataTableToDB(DataTable dt,string dbName) //批量导入excel
@@ -598,11 +748,11 @@ namespace wuliu_server
 
         public string SwitchDetail(ISession session,string classname,string primarykey)
         {
-            IList<domain.StorageDetails> sd = null;
+           
             string json = null; 
             if (classname == "StorageDetails")
             {
-
+                IList<domain.StorageDetails> sd = null;
                 string sql = "select a.* from T_StorageFormMain b,T_StorageDetails a where a.StorageNumber =b.StorageNumber and a.StorageNumber= ? ";
                 ISQLQuery query = session.CreateSQLQuery(sql)
                 .AddEntity("StorageDetails", typeof(domain.StorageDetails));
@@ -614,9 +764,34 @@ namespace wuliu_server
                     ReferenceLoopHandling = ReferenceLoopHandling.Ignore
                 });
             }
-            else if (true)
+            else if (classname == "StorageDetailsOut")
             {
+                IList<domain.StorageDetailsOut> sd = null;
+                string sql = "select a.* from T_StorageFormMainOut b,T_StorageDetailsOut a where a.出库单号 =b.出库单号 and a.出库单号= ? ";
+                ISQLQuery query = session.CreateSQLQuery(sql)
+                .AddEntity("StorageDetailsOut", typeof(domain.StorageDetailsOut));
+                query.SetString(0, primarykey);
+                sd = query.List<StorageDetailsOut>();
 
+                json = JsonConvert.SerializeObject(sd, Formatting.None, new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+            }
+
+            else if (classname == "StorageDetailsTrans")
+            {
+                IList<domain.StorageDetailsTrans> sd = null;
+                string sql = "select a.* from T_StorageFormMainTrans b,T_StorageDetailsTrans a where a.移库单号 =b.移库单号 and a.移库单号= ? ";
+                ISQLQuery query = session.CreateSQLQuery(sql)
+                .AddEntity("StorageDetailsTrans", typeof(domain.StorageDetailsTrans));
+                query.SetString(0, primarykey);
+                sd = query.List<StorageDetailsTrans>();
+
+                json = JsonConvert.SerializeObject(sd, Formatting.None, new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
             }
             return json;
         }
@@ -706,7 +881,77 @@ namespace wuliu_server
                 });
                 return json;
             }
+            else if (s == "StorageFormMainOut")
+            {
+                int page = Convert.ToInt32(NowPage.nowpage);
+                string input_val = GetValLike.input_val;
+                String sql = "select c.* from T_StorageFormMainOut c where c.出库单号  like '%" + input_val + "%' or c.发货仓库  like '%" + input_val + "%'" +
+                      "or c.出库日期  like '%" + input_val + "%'or c.货主  like '%" + input_val + "%' or c.付费单位  like '%" + input_val + "%' or c.出库总量  like '%" + input_val + "%' " +
+                      "or c.仓储费  like '%" + input_val + "%'" +
+                       "or c.实收金额  like '%" + input_val + "%'" +
+                       "or c.未收仓储费  like '%" + input_val + "%'" +
+                       "or c.收款完成  like '%" + input_val + "%'" +
+                       "or c.出库方式  like '%" + input_val + "%'" +
+                       "or c.车队  like '%" + input_val + "%'" +
+                       "or c.车号  like '%" + input_val + "%'" +
+                       "or c.司机 like '%" + input_val + "%'" +
+                       "or c.库管  like '%" + input_val + "%'" +
+                       "or c.吊车  like '%" + input_val + "%'" +
+                       "or c.装卸工  like '%" + input_val + "%'" +
+                       "or c.装卸工1  like '%" + input_val + "%'" +
+                       "or c.发货人员  like '%" + input_val + "%'" +
+                       "or c.登记时间  like '%" + input_val + "%'" +
+                       "or c.修改人  like '%" + input_val + "%'" +
+                       "or c.修改时间  like '%" + input_val + "%'" +
+                       "or c.备注  like '%" + input_val + "%'" +
+                       "or c.发装城市  like '%" + input_val + "%'" +
+                       "or c.发装地点  like '%" + input_val + "%'" +
+                       "or c.发装区域  like '%" + input_val + "%'" +
+                       "or c.实际卸点  like '%" + input_val + "%'" +
+                       "or c.卸货城市  like '%" + input_val + "%'" +
+                       "or c.卸货区域  like '%" + input_val + "%'" +
+                       "or c.收款人  like '%" + input_val + "%'" +
+                       "or c.收款时间  like '%" + input_val + "%'";
+                ISQLQuery query = session.CreateSQLQuery(sql)
+               .AddEntity("StorageFormMainOut", typeof(domain.StorageFormMainOut));
+                IList<StorageFormMainOut> StorageFormMain = query.List<StorageFormMainOut>();
+                string json = JsonConvert.SerializeObject(StorageFormMain, Formatting.None, new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+                return json;
+            }
 
+            else if (s == "StorageFormMainTrans")
+            {
+                int page = Convert.ToInt32(NowPage.nowpage);
+                string input_val = GetValLike.input_val;
+                String sql = "select c.* from T_StorageFormMainTrans c where c.移库单号  like '%" + input_val + "%' or c.仓库名称  like '%" + input_val + "%'" +
+                      "or c.移库方式  like '%" + input_val + "%'or c.移出客户  like '%" + input_val + "%' or c.移入客户  like '%" + input_val + "%' or c.仓储费单位  like '%" + input_val + "%' " +
+                      "or c.移库费单位  like '%" + input_val + "%'" +
+                       "or c.记账日期  like '%" + input_val + "%'" +
+                       "or c.移库总量  like '%" + input_val + "%'" +
+                       "or c.移库单价  like '%" + input_val + "%'" +
+                       "or c.移库金额  like '%" + input_val + "%'" +
+                       "or c.录入员  like '%" + input_val + "%'" +
+                       "or c.录入时间  like '%" + input_val + "%'" +
+                       "or c.修改人 like '%" + input_val + "%'" +
+                       "or c.修改时间  like '%" + input_val + "%'" +
+                       "or c.库管  like '%" + input_val + "%'" +
+                       "or c.吊车工  like '%" + input_val + "%'" +
+                       "or c.装卸工1  like '%" + input_val + "%'" +
+                       "or c.装卸工  like '%" + input_val + "%'" +
+                       "or c.备注  like '%" + input_val + "%'";
+                       
+                ISQLQuery query = session.CreateSQLQuery(sql)
+               .AddEntity("StorageFormMainOut", typeof(domain.StorageFormMainTrans));
+                IList<StorageFormMainTrans> StorageFormMain = query.List<StorageFormMainTrans>();
+                string json = JsonConvert.SerializeObject(StorageFormMain, Formatting.None, new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+                return json;
+            }
             else if (s == "Fund_Accounts")
             {
                 IList<Fund_Accounts> fund_account = session.QueryOver<Fund_Accounts>().List();

@@ -28,3 +28,4 @@ D:\git_wuliu\domain\wuliu_server\obj\Debug\wuliu_server.csprojResolveAssemblyRef
 D:\git_wuliu\domain\wuliu_server\obj\Debug\wuliu_server.exe
 D:\git_wuliu\domain\wuliu_server\obj\Debug\wuliu_server.pdb
 D:\wuliu\domain\wuliu_server\bin\Debug\wuliu_server.exe.config
+D:\2-项目-物流\wuliu_project2\domain\wuliu_server\bin\Debug\wuliu_server.exe.config

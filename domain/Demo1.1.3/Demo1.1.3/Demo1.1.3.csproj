@@ -145,6 +145,72 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="1_NewViews\MyWorkBench\Basic\New_WarehousingPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1_NewViews\MyWorkBench\Basic\New_WarehousingPrice.designer.cs">
+      <DependentUpon>New_WarehousingPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="1_NewViews\MyWorkBench\Transfer\New_CarFee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1_NewViews\MyWorkBench\Transfer\New_CarFee.designer.cs">
+      <DependentUpon>New_CarFee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="1_NewViews\MyWorkBench\Transfer\New_FleetPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1_NewViews\MyWorkBench\Transfer\New_FleetPayment.designer.cs">
+      <DependentUpon>New_FleetPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="1_NewViews\MyWorkBench\Transfer\New_FleetPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1_NewViews\MyWorkBench\Transfer\New_FleetPrice.designer.cs">
+      <DependentUpon>New_FleetPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="1_NewViews\MyWorkBench\Transfer\New_OilGasRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1_NewViews\MyWorkBench\Transfer\New_OilGasRegister.designer.cs">
+      <DependentUpon>New_OilGasRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="1_NewViews\MyWorkBench\Transfer\New_ShipperPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1_NewViews\MyWorkBench\Transfer\New_ShipperPrice.designer.cs">
+      <DependentUpon>New_ShipperPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="1_NewViews\MyWorkBench\Transfer\New_TransportationClearing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1_NewViews\MyWorkBench\Transfer\New_TransportationClearing.designer.cs">
+      <DependentUpon>New_TransportationClearing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="1_NewViews\MyWorkBench\Transfer\New_TransportationRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1_NewViews\MyWorkBench\Transfer\New_TransportationRegister.designer.cs">
+      <DependentUpon>New_TransportationRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="1_NewViews\MyWorkBench\Warehouse\New_GoDownEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1_NewViews\MyWorkBench\Warehouse\New_GoDownEntry.designer.cs">
+      <DependentUpon>New_GoDownEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="1_NewViews\MyWorkBench\Warehouse\New_OutboundOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1_NewViews\MyWorkBench\Warehouse\New_OutboundOrder.designer.cs">
+      <DependentUpon>New_OutboundOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="1_NewViews\MyWorkBench\Warehouse\New_TransferList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1_NewViews\MyWorkBench\Warehouse\New_TransferList.designer.cs">
+      <DependentUpon>New_TransferList.cs</DependentUpon>
+    </Compile>
     <Compile Include="FunctionClass.cs" />
     <Compile Include="MyWorkBench_SkipForm\NewBasic.cs">
       <SubType>Form</SubType>
@@ -418,6 +484,39 @@
     <Compile Include="Panel2_MyWorkBench_Basic\WarehouseFile.Designer.cs">
       <DependentUpon>WarehouseFile.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="1_NewViews\MyWorkBench\Basic\New_WarehousingPrice.resx">
+      <DependentUpon>New_WarehousingPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="1_NewViews\MyWorkBench\Transfer\New_CarFee.resx">
+      <DependentUpon>New_CarFee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="1_NewViews\MyWorkBench\Transfer\New_FleetPayment.resx">
+      <DependentUpon>New_FleetPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="1_NewViews\MyWorkBench\Transfer\New_FleetPrice.resx">
+      <DependentUpon>New_FleetPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="1_NewViews\MyWorkBench\Transfer\New_OilGasRegister.resx">
+      <DependentUpon>New_OilGasRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="1_NewViews\MyWorkBench\Transfer\New_ShipperPrice.resx">
+      <DependentUpon>New_ShipperPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="1_NewViews\MyWorkBench\Transfer\New_TransportationClearing.resx">
+      <DependentUpon>New_TransportationClearing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="1_NewViews\MyWorkBench\Transfer\New_TransportationRegister.resx">
+      <DependentUpon>New_TransportationRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="1_NewViews\MyWorkBench\Warehouse\New_GoDownEntry.resx">
+      <DependentUpon>New_GoDownEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="1_NewViews\MyWorkBench\Warehouse\New_OutboundOrder.resx">
+      <DependentUpon>New_OutboundOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="1_NewViews\MyWorkBench\Warehouse\New_TransferList.resx">
+      <DependentUpon>New_TransferList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyWorkBench_SkipForm\NewBasic.resx">
       <DependentUpon>NewBasic.cs</DependentUpon>
     </EmbeddedResource>

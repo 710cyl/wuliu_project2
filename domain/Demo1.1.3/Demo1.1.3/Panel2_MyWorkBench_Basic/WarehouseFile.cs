@@ -15,5 +15,10 @@ namespace Demo1._1._3
         {
             InitializeComponent();
         }
+
+        private void dataNavigator2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

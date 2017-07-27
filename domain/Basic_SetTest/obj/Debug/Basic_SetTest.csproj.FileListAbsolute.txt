@@ -23,6 +23,7 @@ D:\git_wuliu\domain\Basic_SetTest\bin\Debug\nunit.framework.xml
 D:\git_wuliu\domain\Basic_SetTest\obj\Debug\Basic_SetTest.csprojResolveAssemblyReference.cache
 D:\git_wuliu\domain\Basic_SetTest\obj\Debug\Basic_SetTest.dll
 D:\git_wuliu\domain\Basic_SetTest\obj\Debug\Basic_SetTest.pdb
+F:\WULIU\wuliu_project2\domain\Basic_SetTest\obj\Debug\Basic_SetTest.csprojResolveAssemblyReference.cache
 F:\WULIU\wuliu_project2\domain\Basic_SetTest\bin\Debug\Config\hibernate.cfg.xml
 F:\WULIU\wuliu_project2\domain\Basic_SetTest\bin\Debug\LinFu.DynamicProxy.dll
 F:\WULIU\wuliu_project2\domain\Basic_SetTest\bin\Debug\NHibernate.ByteCode.LinFu.dll
@@ -45,6 +46,5 @@ F:\WULIU\wuliu_project2\domain\Basic_SetTest\bin\Debug\log4net.xml
 F:\WULIU\wuliu_project2\domain\Basic_SetTest\bin\Debug\NHibernate.xml
 F:\WULIU\wuliu_project2\domain\Basic_SetTest\bin\Debug\NHibernate.ByteCode.Castle.xml
 F:\WULIU\wuliu_project2\domain\Basic_SetTest\bin\Debug\nunit.framework.xml
-F:\WULIU\wuliu_project2\domain\Basic_SetTest\obj\Debug\Basic_SetTest.csprojResolveAssemblyReference.cache
 F:\WULIU\wuliu_project2\domain\Basic_SetTest\obj\Debug\Basic_SetTest.dll
 F:\WULIU\wuliu_project2\domain\Basic_SetTest\obj\Debug\Basic_SetTest.pdb

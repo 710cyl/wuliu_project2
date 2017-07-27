@@ -86,18 +86,12 @@ namespace Demo1._1._3
         }
 
 
-        public void DeleteMain(DevExpress.XtraGrid.Views.Grid.GridView gv,string classname,string name)  //删除主表信息
+        public void DeleteMain(DevExpress.XtraGrid.Views.Grid.GridView gv, string classname, string name)  //删除主表信息
         {
-
-            string deleteIndex = null;
-            if (classname == "StorageFormMain")
-            {
-                deleteIndex = gv.GetFocusedRowCellDisplayText(gv.Columns[name]);
-            }
-
+            string deleteIndex = gv.GetFocusedRowCellDisplayText(gv.Columns[name]);
             if (MessageBox.Show("是否删除此消息？", "删除", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.OK)
             {
-                deleteMain(deleteIndex,classname);
+                deleteMain(deleteIndex, classname);
                 gv.DeleteRow(gv.FocusedRowHandle);
             }
             else

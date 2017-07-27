@@ -45,6 +45,7 @@ namespace Demo1._1._3.Panel2_MyWorkBench
             InitializeComponent();
             total_Page = fc.getTotal<domain.StorageFormMainOut>(bs, total_Page);
             fc.InitPage(dataNavigator_Basic_Set, total_Page, now_Page);
+            fc.InitPage(dataNavigator1, 1, 1);
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e) //新建

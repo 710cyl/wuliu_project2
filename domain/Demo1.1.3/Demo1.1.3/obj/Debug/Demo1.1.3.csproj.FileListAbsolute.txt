@@ -498,13 +498,10 @@ F:\WULIU\wuliu_project2\domain\Demo1.1.3\Demo1.1.3\bin\Debug\ru\DevExpress.Pdf.v
 F:\WULIU\wuliu_project2\domain\Demo1.1.3\Demo1.1.3\obj\Debug\Demo1._1._3.Views.MyWorkBench_SkipForm.New_OutboundOrder.resources
 F:\WULIU\wuliu_project2\domain\Demo1.1.3\Demo1.1.3\obj\Debug\Demo1._1._3.Views.MyWorkBench_SkipForm.New_TransferList.resources
 F:\WULIU\wuliu_project2\domain\Demo1.1.3\Demo1.1.3\bin\Debug\websocket-sharp.dll
-D:\wuliu\domain\Demo1.1.3\Demo1.1.3\bin\Debug\Demo1.1.3.exe.config
-D:\wuliu\domain\Demo1.1.3\Demo1.1.3\obj\Debug\Demo1.1.3.exe
-D:\wuliu\domain\Demo1.1.3\Demo1.1.3\obj\Debug\Demo1.1.3.pdb
-D:\wuliu\domain\Demo1.1.3\Demo1.1.3\obj\Debug\Demo1.1.3.csprojResolveAssemblyReference.cache
 D:\wuliu\domain\Demo1.1.3\Demo1.1.3\bin\Debug\Config\hibernate.cfg.xml
 D:\wuliu\domain\Demo1.1.3\Demo1.1.3\bin\Debug\LinFu.DynamicProxy.dll
 D:\wuliu\domain\Demo1.1.3\Demo1.1.3\bin\Debug\NHibernate.ByteCode.LinFu.dll
+D:\wuliu\domain\Demo1.1.3\Demo1.1.3\bin\Debug\Demo1.1.3.exe.config
 D:\wuliu\domain\Demo1.1.3\Demo1.1.3\bin\Debug\Demo1.1.3.exe
 D:\wuliu\domain\Demo1.1.3\Demo1.1.3\bin\Debug\Demo1.1.3.pdb
 D:\wuliu\domain\Demo1.1.3\Demo1.1.3\bin\Debug\Antlr3.Runtime.dll
@@ -559,6 +556,7 @@ D:\wuliu\domain\Demo1.1.3\Demo1.1.3\bin\Debug\DevExpress.XtraTreeList.v15.2.xml
 D:\wuliu\domain\Demo1.1.3\Demo1.1.3\bin\Debug\Newtonsoft.Json.xml
 D:\wuliu\domain\Demo1.1.3\Demo1.1.3\bin\Debug\NHibernate.xml
 D:\wuliu\domain\Demo1.1.3\Demo1.1.3\bin\Debug\NHibernate.ByteCode.Castle.xml
+D:\wuliu\domain\Demo1.1.3\Demo1.1.3\bin\Debug\websocket-sharp.pdb
 D:\wuliu\domain\Demo1.1.3\Demo1.1.3\bin\Debug\nunit.framework.xml
 D:\wuliu\domain\Demo1.1.3\Demo1.1.3\bin\Debug\wuliuDAO.pdb
 D:\wuliu\domain\Demo1.1.3\Demo1.1.3\bin\Debug\DevExpress.RichEdit.v15.2.Core.xml
@@ -633,6 +631,7 @@ D:\wuliu\domain\Demo1.1.3\Demo1.1.3\bin\Debug\de\DevExpress.Pdf.v15.2.Core.resou
 D:\wuliu\domain\Demo1.1.3\Demo1.1.3\bin\Debug\es\DevExpress.Pdf.v15.2.Core.resources.dll
 D:\wuliu\domain\Demo1.1.3\Demo1.1.3\bin\Debug\ja\DevExpress.Pdf.v15.2.Core.resources.dll
 D:\wuliu\domain\Demo1.1.3\Demo1.1.3\bin\Debug\ru\DevExpress.Pdf.v15.2.Core.resources.dll
+D:\wuliu\domain\Demo1.1.3\Demo1.1.3\obj\Debug\Demo1.1.3.csprojResolveAssemblyReference.cache
 D:\wuliu\domain\Demo1.1.3\Demo1.1.3\obj\Debug\Demo1._1._3.MyWorkBench_SkipForm.NewBasic.resources
 D:\wuliu\domain\Demo1.1.3\Demo1.1.3\obj\Debug\Demo1._1._3.MyWorkBench_SkipForm.New_CapitalAccount.resources
 D:\wuliu\domain\Demo1.1.3\Demo1.1.3\obj\Debug\Demo1._1._3.MyWorkBench_SkipForm.New_GoDownEntry.resources
@@ -683,3 +682,5 @@ D:\wuliu\domain\Demo1.1.3\Demo1.1.3\obj\Debug\Demo1._1._3.VarietyMaterial.resour
 D:\wuliu\domain\Demo1.1.3\Demo1.1.3\obj\Debug\Demo1._1._3.WarehouseFile.resources
 D:\wuliu\domain\Demo1.1.3\Demo1.1.3\obj\Debug\Demo1.1.3.csproj.GenerateResource.Cache
 D:\wuliu\domain\Demo1.1.3\Demo1.1.3\obj\Debug\Demo1.1.3.exe.licenses
+D:\wuliu\domain\Demo1.1.3\Demo1.1.3\obj\Debug\Demo1.1.3.exe
+D:\wuliu\domain\Demo1.1.3\Demo1.1.3\obj\Debug\Demo1.1.3.pdb

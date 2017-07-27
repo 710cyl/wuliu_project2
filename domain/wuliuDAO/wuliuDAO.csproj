@@ -107,10 +107,14 @@
     <Compile Include="IBasic_SetDAO.cs" />
     <Compile Include="IGoDownEntry.cs" />
     <Compile Include="IInternal_VehicleDAO.cs" />
+    <Compile Include="ILotteryDetails.cs" />
+    <Compile Include="ILotteryMain.cs" />
     <Compile Include="InterfaceDAO.cs" />
     <Compile Include="Internal_VehicleDAO.cs" />
+
     <Compile Include="IOutbound_CarDAO.cs" />
     <Compile Include="IOutbound_Car_DetailDAO.cs" />
+
     <Compile Include="IStorageDetail.cs" />
     <Compile Include="Outbound_CarDAO.cs" />
     <Compile Include="Outbound_Car_DetailDAO.cs" />

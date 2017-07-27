@@ -55,3 +55,4 @@ F:\WULIU\wuliu_project2\domain\wuliu_server\bin\Debug\NHibernate.ByteCode.Castle
 F:\WULIU\wuliu_project2\domain\wuliu_server\bin\Debug\websocket-sharp.pdb
 F:\WULIU\wuliu_project2\domain\wuliu_server\bin\Debug\nunit.framework.xml
 F:\WULIU\wuliu_project2\domain\wuliu_server\obj\Debug\wuliu_server.csprojResolveAssemblyReference.cache
+F:\WULIU\wuliu_project2\domain\wuliu_server\bin\Debug\websocket-sharp.dll

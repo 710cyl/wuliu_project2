@@ -141,7 +141,7 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="websocket-sharp">
-      <HintPath>..\..\..\..\物流系统项目\websocket-sharp-master\websocket-sharp-master\websocket-sharp\bin\Debug_Ubuntu\websocket-sharp.dll</HintPath>
+      <HintPath>..\..\..\..\wuliu\domain\wuliu_server\bin\Debug\websocket-sharp.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -170,11 +170,23 @@
     <Compile Include="MyWorkBench_SkipForm\New_InternalFleet.designer.cs">
       <DependentUpon>New_InternalFleet.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyWorkBench_SkipForm\New_OutboundOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyWorkBench_SkipForm\New_OutboundOrder.Designer.cs">
+      <DependentUpon>New_OutboundOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyWorkBench_SkipForm\New_OutBound_Car.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MyWorkBench_SkipForm\New_OutBound_Car.designer.cs">
       <DependentUpon>New_OutBound_Car.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyWorkBench_SkipForm\New_TransferList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyWorkBench_SkipForm\New_TransferList.Designer.cs">
+      <DependentUpon>New_TransferList.cs</DependentUpon>
     </Compile>
     <Compile Include="MyWorkBench_SkipForm\New_UnloadingPoint.cs">
       <SubType>Form</SubType>
@@ -430,8 +442,14 @@
     <EmbeddedResource Include="MyWorkBench_SkipForm\New_InternalFleet.resx">
       <DependentUpon>New_InternalFleet.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyWorkBench_SkipForm\New_OutboundOrder.resx">
+      <DependentUpon>New_OutboundOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyWorkBench_SkipForm\New_OutBound_Car.resx">
       <DependentUpon>New_OutBound_Car.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyWorkBench_SkipForm\New_TransferList.resx">
+      <DependentUpon>New_TransferList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyWorkBench_SkipForm\New_UnloadingPoint.resx">
       <DependentUpon>New_UnloadingPoint.cs</DependentUpon>
@@ -651,6 +669,16 @@
   <ItemGroup>
     <None Include="Resources\save_16x16.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\add_16x16.png" />
+    <None Include="Resources\delete_16x162.png" />
+    <None Include="Resources\close_16x16.png" />
+    <None Include="Resources\save_16x163.png" />
+    <None Include="Resources\add_16x161.png" />
+    <Content Include="Resources\delete_16x16.png" />
+    <None Include="Resources\delete_16x161.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

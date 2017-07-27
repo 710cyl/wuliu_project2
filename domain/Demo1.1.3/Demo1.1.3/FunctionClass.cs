@@ -245,13 +245,13 @@ namespace Demo1._1._3
         /// 获取表头
         /// </summary>
         /// <returns></returns>
-        public string GridViewInit()
+        public string GridViewInit(string name)
         {
             string json = null;
             using (var wsn = new WebSocket("ws://localhost:9000/GetClassName/Main"))
             {
                 wsn.Connect();
-                wsn.Send("StorageDetails");
+                wsn.Send(name);
 
                 using (var ws = new WebSocket("ws://localhost:9000/GetField"))
                 {

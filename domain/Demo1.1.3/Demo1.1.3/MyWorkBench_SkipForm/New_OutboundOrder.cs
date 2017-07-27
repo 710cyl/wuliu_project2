@@ -82,7 +82,7 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm
         public void DataGridViewInit()
         {
             List<domain.StorageDetailsOut> sd = null;
-            sd = JsonConvert.DeserializeObject<List<domain.StorageDetailsOut>>(fc.GridViewInit());
+            sd = JsonConvert.DeserializeObject<List<domain.StorageDetailsOut>>(fc.GridViewInit("StorageDetailsOut"));
             StorageDetailsOut = new BindingList<domain.StorageDetailsOut>(sd);
             gridControl1.DataSource = StorageDetailsOut;
         }

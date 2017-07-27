@@ -52,7 +52,7 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm
                 comboBox5.Text = Panel2_MyWorkBench.TransferList.array[11];
                 comboBox2.Text = Panel2_MyWorkBench.TransferList.array[12];
                 comboBox6.Text = Panel2_MyWorkBench.TransferList.array[19];
-                textBox14.Text = Panel2_MyWorkBench.TransferList.array[15];
+                textBox14.Text = Panel2_MyWorkBench.TransferList.array[14];
                 textBox13.Text = Panel2_MyWorkBench.TransferList.array[6];
                 dateTimePicker2.Value =Convert.ToDateTime( Panel2_MyWorkBench.TransferList.array[7]);
                 textBox12.Text = Panel2_MyWorkBench.TransferList.array[8];
@@ -75,7 +75,7 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm
         public void DataGridViewInit()
         {
             List<domain.StorageDetailsTrans> sd = null;
-            sd = JsonConvert.DeserializeObject<List<domain.StorageDetailsTrans>>(fc.GridViewInit());
+            sd = JsonConvert.DeserializeObject<List<domain.StorageDetailsTrans>>(fc.GridViewInit("StorageDetailsTrans"));
             StorageDetails = new BindingList<domain.StorageDetailsTrans>(sd);
             gridControl1.DataSource = StorageDetails;
         }

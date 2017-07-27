@@ -16,3 +16,4 @@ D:\git_wuliu\domain\wuliuDAO\bin\Debug\NHibernate.ByteCode.Castle.xml
 D:\git_wuliu\domain\wuliuDAO\obj\Debug\wuliuDAO.csprojResolveAssemblyReference.cache
 D:\git_wuliu\domain\wuliuDAO\obj\Debug\wuliuDAO.dll
 D:\git_wuliu\domain\wuliuDAO\obj\Debug\wuliuDAO.pdb
+F:\WULIU\wuliu_project2\domain\wuliuDAO\obj\Debug\wuliuDAO.csprojResolveAssemblyReference.cache

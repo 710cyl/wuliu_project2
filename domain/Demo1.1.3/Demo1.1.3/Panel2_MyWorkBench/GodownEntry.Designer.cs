@@ -80,7 +80,6 @@
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.dataNavigator_Basic_Set = new DevExpress.XtraEditors.DataNavigator();
-            this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
             this.dataNavigator1 = new DevExpress.XtraEditors.DataNavigator();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -423,13 +422,14 @@
             this.toolStripButton9.Size = new System.Drawing.Size(93, 24);
             this.toolStripButton9.Text = "模糊查询";
             this.toolStripButton9.Click += new System.EventHandler(this.toolStripButton9_Click);
+            // 
             // gridControl1
             // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
+            this.gridControl1.Location = new System.Drawing.Point(0, 27);
             this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(1383, 254);
             this.gridControl1.TabIndex = 21;
@@ -451,15 +451,15 @@
             this.tabPane1.BackColor = System.Drawing.SystemColors.Control;
             this.tabPane1.Controls.Add(this.tabNavigationPage1);
             this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabPane1.Location = new System.Drawing.Point(0, 281);
-            this.tabPane1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPane1.Location = new System.Drawing.Point(0, 313);
+            this.tabPane1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPane1.Name = "tabPane1";
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabNavigationPage1});
-            this.tabPane1.RegularSize = new System.Drawing.Size(1383, 581);
+            this.tabPane1.RegularSize = new System.Drawing.Size(1383, 549);
             this.tabPane1.SelectedPage = this.tabNavigationPage1;
             this.tabPane1.SelectedPageIndex = 0;
-            this.tabPane1.Size = new System.Drawing.Size(1383, 581);
+            this.tabPane1.Size = new System.Drawing.Size(1383, 549);
             this.tabPane1.TabIndex = 22;
             // 
             // tabNavigationPage1
@@ -468,23 +468,19 @@
             this.tabNavigationPage1.Appearance.Options.UseBackColor = true;
             this.tabNavigationPage1.Caption = "入库单_明细";
             this.tabNavigationPage1.Controls.Add(this.gridControl2);
-
-            this.tabNavigationPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabNavigationPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
-            this.tabNavigationPage1.Size = new System.Drawing.Size(1361, 523);
-
+            this.tabNavigationPage1.Size = new System.Drawing.Size(1361, 490);
             // 
             // gridControl2
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridControl2.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl2.Location = new System.Drawing.Point(0, 0);
             this.gridControl2.MainView = this.gridView2;
-            this.gridControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridControl2.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl2.Name = "gridControl2";
-
-            this.gridControl2.Size = new System.Drawing.Size(1361, 523);
-
+            this.gridControl2.Size = new System.Drawing.Size(1361, 490);
             this.gridControl2.TabIndex = 22;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -529,11 +525,9 @@
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 1, true, true, "上一页", "上一页"),
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 4, true, true, "下一页", "下一页"),
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 5, true, true, "尾页", "尾页")});
-
-            this.dataNavigator_Basic_Set.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataNavigator_Basic_Set.Location = new System.Drawing.Point(0, 222);
+            this.dataNavigator_Basic_Set.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dataNavigator_Basic_Set.Location = new System.Drawing.Point(0, 281);
             this.dataNavigator_Basic_Set.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-
             this.dataNavigator_Basic_Set.Name = "dataNavigator_Basic_Set";
             this.dataNavigator_Basic_Set.ShowToolTips = true;
             this.dataNavigator_Basic_Set.Size = new System.Drawing.Size(1383, 32);
@@ -542,17 +536,6 @@
             this.dataNavigator_Basic_Set.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Begin;
             this.dataNavigator_Basic_Set.TextStringFormat = "第 {0}页，共 {1}页";
             this.dataNavigator_Basic_Set.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.dataNavigator_Basic_Set_ButtonClick);
-            // 
-
-
-            // splitterControl1
-            // 
-            this.splitterControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.splitterControl1.Location = new System.Drawing.Point(0, 307);
-            this.splitterControl1.Name = "splitterControl1";
-            this.splitterControl1.Size = new System.Drawing.Size(1383, 6);
-            this.splitterControl1.TabIndex = 24;
-            this.splitterControl1.TabStop = false;
             // 
             // dataNavigator1
             // 
@@ -595,23 +578,16 @@
             this.dataNavigator1.Text = "dataNavigator1";
             this.dataNavigator1.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Begin;
             this.dataNavigator1.TextStringFormat = "第 {0}页，共 {1}页";
-
             // 
             // GodownEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabPane1);
-           
-            this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-
-            this.Controls.Add(this.splitterControl1);
             this.Controls.Add(this.dataNavigator_Basic_Set);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.toolStrip1);
             this.Margin = new System.Windows.Forms.Padding(4);
-
             this.Name = "GodownEntry";
             this.Size = new System.Drawing.Size(1383, 862);
             this.toolStrip1.ResumeLayout(false);
@@ -622,8 +598,6 @@
             this.tabNavigationPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-
-
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -683,7 +657,6 @@
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
         private System.Windows.Forms.ToolStripButton toolStripButton9;
         public DevExpress.XtraEditors.DataNavigator dataNavigator_Basic_Set;
-        private DevExpress.XtraEditors.SplitterControl splitterControl1;
         public DevExpress.XtraEditors.DataNavigator dataNavigator1;
     }
 }

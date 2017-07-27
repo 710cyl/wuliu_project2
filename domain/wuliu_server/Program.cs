@@ -94,6 +94,20 @@ namespace wuliu_server
                 gde.Update(sfm);
                 Console.WriteLine("出库派车主表修改成功！");
             }
+
+            else if (name == "StorageFormMainOut")
+            {
+                StorageFormMainOut sfm = JsonConvert.DeserializeObject<StorageFormMainOut>(data);
+                IOutBoundOrder gde = new IOutBoundOrder();
+                gde.Update(sfm);
+            }
+
+            else if (name == "StorageFormMainTrans")
+            {
+                StorageFormMainTrans sfm = JsonConvert.DeserializeObject<StorageFormMainTrans>(data);
+                IOutBoundOrderTrans gde = new IOutBoundOrderTrans();
+                gde.Update(sfm);
+            }
         }
     }
 
@@ -130,7 +144,8 @@ namespace wuliu_server
                     isd.Update(item);
                     Console.WriteLine("1111111111111111111");
                 }
-            }else if (name == "Outbound_Car_Detail")
+            }
+            else if (name == "Outbound_Car_Detail")
             {
                 List<domain.Outbound_Car_Detail> sd = null;
                 Outbound_Car_DetailDAO isd = new Outbound_Car_DetailDAO();
@@ -142,8 +157,34 @@ namespace wuliu_server
                     Console.WriteLine("出库派车明细表修改成功！");
                 }
             }
+            else if (name == "StorageDetailsOut")
+            {
+                List<domain.StorageDetailsOut> sd = null;
+                
+                IOutBoundOrderDetails isd = new IOutBoundOrderDetails();
+                json = data;
+                sd = JsonConvert.DeserializeObject<List<domain.StorageDetailsOut>>(json);
+                foreach (StorageDetailsOut item in sd)
+                {
+                    isd.Update(item);
+                    Console.WriteLine("1111111111111111111");
+                }
+            }
 
-          
+            else if (name == "StorageDetailsTrans")
+            {
+                List<domain.StorageDetailsTrans> sd = null;
+                
+                IOutBoundOrderTransDetails isd = new IOutBoundOrderTransDetails();
+                json = data;
+                sd = JsonConvert.DeserializeObject<List<domain.StorageDetailsTrans>>(json);
+                foreach (StorageDetailsTrans item in sd)
+                {
+                    isd.Update(item);
+                    Console.WriteLine("1111111111111111111");
+                }
+            }
+
         }
     }
 
@@ -175,6 +216,19 @@ namespace wuliu_server
                 Outbound_CarDAO gde = new Outbound_CarDAO();
                 gde.Save(sfm);
                 Console.WriteLine("出库派车主表保存成功！");
+            }
+
+            else if (name == "StorageFormMainOut")
+            {
+                StorageFormMainOut sfm = JsonConvert.DeserializeObject<StorageFormMainOut>(data);
+                IOutBoundOrder gde = new IOutBoundOrder();
+                gde.Save(sfm);
+            }
+            else if (name == "StorageFormMainTrans")
+            {
+                StorageFormMainTrans sfm = JsonConvert.DeserializeObject<StorageFormMainTrans>(data);
+                IOutBoundOrderTrans gde = new IOutBoundOrderTrans();
+                gde.Save(sfm);
             }
         }
     }
@@ -220,6 +274,33 @@ namespace wuliu_server
                     }
                 }
 
+            else if (name == "StorageDetailsOut")
+            {
+                List<domain.StorageDetailsOut> sd = null;
+                
+                IOutBoundOrderDetails isd = new IOutBoundOrderDetails();
+                json = data;
+                sd = JsonConvert.DeserializeObject<List<domain.StorageDetailsOut>>(json);
+                foreach (StorageDetailsOut item in sd)
+                {
+                    isd.Save(item);
+                    Console.WriteLine("1111111111111111111");
+                }
+            }
+
+            else if (name == "StorageDetailsTrans")
+            {
+                List<domain.StorageDetailsTrans> sd = null;
+                
+                IOutBoundOrderTransDetails isd = new IOutBoundOrderTransDetails();
+                json = data;
+                sd = JsonConvert.DeserializeObject<List<domain.StorageDetailsTrans>>(json);
+                foreach (StorageDetailsTrans item in sd)
+                {
+                    isd.Save(item);
+                    Console.WriteLine("1111111111111111111");
+                }
+            }
         }
     }
 
@@ -264,6 +345,20 @@ namespace wuliu_server
             if (name == "Outbound_Car_Detail")
             {
                 IList<domain.Outbound_Car_Detail> basic_set = session.QueryOver<domain.Outbound_Car_Detail>().Skip(0).Take(0).List();
+                json = JsonConvert.SerializeObject(basic_set);
+            }
+
+            else if (name == "StorageDetailsOut")
+            {
+                IOutBoundOrderDetails isd = new IOutBoundOrderDetails();
+                IList<domain.StorageDetailsOut> basic_set = session.QueryOver<domain.StorageDetailsOut>().Skip(0).Take(0).List();
+                json = JsonConvert.SerializeObject(basic_set);
+            }
+
+            else if (name == "StorageDetailsTrans")
+            {
+                IOutBoundOrderTransDetails isd = new IOutBoundOrderTransDetails();
+                IList<domain.StorageDetailsTrans> basic_set = session.QueryOver<domain.StorageDetailsTrans>().Skip(0).Take(0).List();
                 json = JsonConvert.SerializeObject(basic_set);
             }
             return json;
@@ -614,6 +709,18 @@ namespace wuliu_server
                         var Outbound_Car = gde.Get<Outbound_Car>(id);
                         gde.Delete<Outbound_Car>((Outbound_Car)Outbound_Car);
                     }
+                else if (classname == "StorageFormMainOut")
+                {
+                    IOutBoundOrder gde = new IOutBoundOrder();
+                    var godownentry = gde.Get<StorageFormMainOut>(id);
+                    gde.Delete<StorageFormMainOut>((StorageFormMainOut)godownentry);
+                }
+                else if (classname == "StorageFormMainTrans")
+                {
+                    IOutBoundOrderTrans gde = new IOutBoundOrderTrans();
+                    var godownentry = gde.Get<StorageFormMainTrans>(id);
+                    gde.Delete<StorageFormMainTrans>((StorageFormMainTrans)godownentry);
+                }
             }
             catch (Exception)
             {
@@ -733,6 +840,36 @@ namespace wuliu_server
                         ReferenceLoopHandling = ReferenceLoopHandling.Ignore
                     });
                 }
+            else if (classname == "StorageDetailsOut")
+            {
+                IList<domain.StorageDetailsOut> sd = null;
+                string sql = "select a.* from T_StorageFormMainOut b,T_StorageDetailsOut a where a.出库单号 =b.出库单号 and a.出库单号= ? ";
+                ISQLQuery query = session.CreateSQLQuery(sql)
+                .AddEntity("StorageDetailsOut", typeof(domain.StorageDetailsOut));
+                query.SetString(0, primarykey);
+                sd = query.List<StorageDetailsOut>();
+
+                json = JsonConvert.SerializeObject(sd, Formatting.None, new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+            }
+
+            else if (classname == "StorageDetailsTrans")
+            {
+                IList<domain.StorageDetailsTrans> sd = null;
+                string sql = "select a.* from T_StorageFormMainTrans b,T_StorageDetailsTrans a where a.移库单号 =b.移库单号 and a.移库单号= ? ";
+                ISQLQuery query = session.CreateSQLQuery(sql)
+                .AddEntity("StorageDetailsTrans", typeof(domain.StorageDetailsTrans));
+                query.SetString(0, primarykey);
+                sd = query.List<StorageDetailsTrans>();
+
+                json = JsonConvert.SerializeObject(sd, Formatting.None, new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+            }
+
             return json;
         }
     }

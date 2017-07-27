@@ -170,9 +170,7 @@
     <Compile Include="MyWorkBench_SkipForm\New_InternalFleet.designer.cs">
       <DependentUpon>New_InternalFleet.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyWorkBench_SkipForm\New_OutboundOrder.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="MyWorkBench_SkipForm\New_OutboundOrder.cs" />
     <Compile Include="MyWorkBench_SkipForm\New_OutboundOrder.Designer.cs">
       <DependentUpon>New_OutboundOrder.cs</DependentUpon>
     </Compile>
@@ -182,9 +180,7 @@
     <Compile Include="MyWorkBench_SkipForm\New_OutBound_Car.designer.cs">
       <DependentUpon>New_OutBound_Car.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyWorkBench_SkipForm\New_TransferList.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="MyWorkBench_SkipForm\New_TransferList.cs" />
     <Compile Include="MyWorkBench_SkipForm\New_TransferList.Designer.cs">
       <DependentUpon>New_TransferList.cs</DependentUpon>
     </Compile>

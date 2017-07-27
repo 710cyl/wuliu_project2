@@ -16,6 +16,7 @@ D:\git_wuliu\domain\wuliuDAO\bin\Debug\NHibernate.ByteCode.Castle.xml
 D:\git_wuliu\domain\wuliuDAO\obj\Debug\wuliuDAO.csprojResolveAssemblyReference.cache
 D:\git_wuliu\domain\wuliuDAO\obj\Debug\wuliuDAO.dll
 D:\git_wuliu\domain\wuliuDAO\obj\Debug\wuliuDAO.pdb
+<<<<<<< HEAD
 F:\WULIU\wuliu_project2\domain\wuliuDAO\obj\Debug\wuliuDAO.csprojResolveAssemblyReference.cache
 F:\WULIU\wuliu_project2\domain\wuliuDAO\bin\Debug\wuliuDAO.dll.config
 F:\WULIU\wuliu_project2\domain\wuliuDAO\bin\Debug\wuliuDAO.dll
@@ -34,3 +35,23 @@ F:\WULIU\wuliu_project2\domain\wuliuDAO\bin\Debug\NHibernate.xml
 F:\WULIU\wuliu_project2\domain\wuliuDAO\bin\Debug\NHibernate.ByteCode.Castle.xml
 F:\WULIU\wuliu_project2\domain\wuliuDAO\obj\Debug\wuliuDAO.dll
 F:\WULIU\wuliu_project2\domain\wuliuDAO\obj\Debug\wuliuDAO.pdb
+=======
+D:\wuliu\domain\wuliuDAO\bin\Debug\wuliuDAO.dll.config
+D:\wuliu\domain\wuliuDAO\bin\Debug\wuliuDAO.dll
+D:\wuliu\domain\wuliuDAO\bin\Debug\wuliuDAO.pdb
+D:\wuliu\domain\wuliuDAO\bin\Debug\Antlr3.Runtime.dll
+D:\wuliu\domain\wuliuDAO\bin\Debug\Castle.Core.dll
+D:\wuliu\domain\wuliuDAO\bin\Debug\domain.dll
+D:\wuliu\domain\wuliuDAO\bin\Debug\Iesi.Collections.dll
+D:\wuliu\domain\wuliuDAO\bin\Debug\Newtonsoft.Json.dll
+D:\wuliu\domain\wuliuDAO\bin\Debug\NHibernate.ByteCode.Castle.dll
+D:\wuliu\domain\wuliuDAO\bin\Debug\NHibernate.dll
+D:\wuliu\domain\wuliuDAO\bin\Debug\Remotion.Data.Linq.dll
+D:\wuliu\domain\wuliuDAO\bin\Debug\domain.pdb
+D:\wuliu\domain\wuliuDAO\bin\Debug\Newtonsoft.Json.xml
+D:\wuliu\domain\wuliuDAO\bin\Debug\NHibernate.xml
+D:\wuliu\domain\wuliuDAO\bin\Debug\NHibernate.ByteCode.Castle.xml
+D:\wuliu\domain\wuliuDAO\obj\Debug\wuliuDAO.csprojResolveAssemblyReference.cache
+D:\wuliu\domain\wuliuDAO\obj\Debug\wuliuDAO.dll
+D:\wuliu\domain\wuliuDAO\obj\Debug\wuliuDAO.pdb
+>>>>>>> 1ffbe3147d4cf4eb0d91b0f18a4a2cf81319c50e

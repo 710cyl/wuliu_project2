@@ -39,7 +39,8 @@ namespace wuliuDAO
             }
         }
 
-        public void Delete(domain.Outbound_Car entity)
+        
+        public void Delete<Outbound_Car>(Outbound_Car entity)
         {
             using (ISession session = sessionFactory.OpenSession())
             {
@@ -48,6 +49,13 @@ namespace wuliuDAO
             }
         }
 
+        public object Get<Outbound_Car>(object id)
+        {
+            using (ISession session = sessionFactory.OpenSession())
+            {
+                return session.Get<domain.Outbound_Car>(id);
+            }
+        }
         public domain.Outbound_Car Get(object order_num)
         {
             using (ISession session = sessionFactory.OpenSession())

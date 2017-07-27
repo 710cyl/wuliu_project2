@@ -37,6 +37,7 @@ namespace wuliuDAO
                 session.Flush();
             }
         }
+       
 
         public void Delete(domain.Outbound_Car_Detail entity)
         {

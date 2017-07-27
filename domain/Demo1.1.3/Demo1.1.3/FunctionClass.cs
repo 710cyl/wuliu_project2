@@ -37,7 +37,7 @@ namespace Demo1._1._3
                 datanavigator.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
             }
 
-              public long getTotal<T>(T t,long total_Page) //获得总条目函数
+             public long getTotal<T>(T t,long total_Page) //获得总条目函数
             {
                  using (var ws = new WebSocket("ws://localhost:9000/GetCount"))
                {
@@ -49,6 +49,7 @@ namespace Demo1._1._3
                          ws.OnMessage += (sender, e) =>
                                     total_Page = (Convert.ToInt64(e.Data) / 5) + 1;
                     }
+                ws.Close();
                  }
                     return total_Page;
              }
@@ -87,7 +88,15 @@ namespace Demo1._1._3
 
         public void DeleteMain(DevExpress.XtraGrid.Views.Grid.GridView gv,string classname)  //删除主表信息
         {
-            string deleteIndex = gv.GetFocusedRowCellDisplayText(gv.Columns["StorageNumber"]);
+            string deleteIndex = null;
+            if (classname == "StorageFormMain")
+            {
+                deleteIndex = gv.GetFocusedRowCellDisplayText(gv.Columns["StorageNumber"]);
+            }
+            else if (classname == "Outbound_Car")
+            {
+                deleteIndex = gv.GetFocusedRowCellDisplayText(gv.Columns["order_num"]);
+            }
             if (MessageBox.Show("是否删除此消息？", "删除", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.OK)
             {
                 deleteMain(deleteIndex,classname);
@@ -245,13 +254,13 @@ namespace Demo1._1._3
         /// 获取表头
         /// </summary>
         /// <returns></returns>
-        public string GridViewInit()
+        public string GridViewInit(string name)
         {
             string json = null;
             using (var wsn = new WebSocket("ws://localhost:9000/GetClassName/Main"))
             {
                 wsn.Connect();
-                wsn.Send("StorageDetails");
+                wsn.Send(name);
 
                 using (var ws = new WebSocket("ws://localhost:9000/GetField"))
                 {
@@ -317,7 +326,7 @@ namespace Demo1._1._3
                 {
                     wsn.Connect();
                     wsn.Send(main);
-                    wsn.Close();
+                   
                 }
                 catch (Exception)
                 {
@@ -345,14 +354,13 @@ namespace Demo1._1._3
                         wsm.Close();
                     }
                 }
+                wsn.Close();
             }
-                    Thread.Sleep(1500);
+          Thread.Sleep(1500);
             using (var wsn = new WebSocket("ws://localhost:9000/GetClassName/Detail"))
             {
                 wsn.Connect();
                 wsn.Send(detail);
-                wsn.Close();
-
                 using (var ws = new WebSocket("ws://localhost:9000/DetailsChange")) //修改明细表
                 {
                     try
@@ -373,6 +381,7 @@ namespace Demo1._1._3
                         ws.Close();
                     }        
                 }
+                wsn.Close();
             }
         }
         public void PrintDocument(object sender, PrintPageEventArgs e)

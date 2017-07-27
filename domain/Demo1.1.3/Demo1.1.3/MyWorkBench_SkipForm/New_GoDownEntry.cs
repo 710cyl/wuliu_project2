@@ -89,7 +89,7 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
         public void DataGridViewInit()
         {
             List<domain.StorageDetails> sd = null;
-            sd =  JsonConvert.DeserializeObject<List<domain.StorageDetails>>(fc.GridViewInit());
+            sd =  JsonConvert.DeserializeObject<List<domain.StorageDetails>>(fc.GridViewInit("StorageDetails"));
             StorageDetails = new BindingList<domain.StorageDetails>(sd);
             gridControl1.DataSource = StorageDetails;
         }
@@ -98,30 +98,6 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
 
         private void button1_Click(object sender, EventArgs e) //添加数据
         {
-            //sfm.StorageNumber = textBox2.Text;
-            //sfm.Storage = textBox1.Text;
-            //sfm.StorageTime = dateTimePicker2.Value;
-            //sfm.StorageWay = textBox4.Text;
-            //sfm.StorageFleet = textBox5.Text;
-            //sfm.CarNumber = textBox8.Text;
-            //sfm.Driver = textBox9.Text;
-            //sfm.TotalStorage = Convert.ToDecimal(textBox6.Text); 
-            //sfm.LoadingCity = textBox10.Text;
-            //sfm.LoadingSpot = textBox12.Text;
-            //sfm.LoadingArea = textBox11.Text;
-            //sfm.KeyBoarder = textBox13.Text;
-            //sfm.KeyTime = dateTimePicker1.Value;
-            //sfm.Modifier = textBox14.Text;
-            //sfm.ModifyTime = dateTimePicker3.Value; 
-            //sfm.StorageKeeper = textBox16.Text;
-            //sfm.Craneman = textBox17.Text;
-            //sfm.Loader = textBox7.Text;
-            //sfm.Others = textBox18.Text;
-            //sfm.Statement = textBox19.Text;
-            //sfm.UnLoadingSpot = textBox15.Text;
-            //sfm.UnLoadingCity = textBox20.Text;
-            //sfm.UnLoadingArea = textBox21.Text;
-
             domain.StorageDetails  sd= new domain.StorageDetails() {/* StorageFormMain = sfm*/ };
             StorageDetails.Add(sd);
         }

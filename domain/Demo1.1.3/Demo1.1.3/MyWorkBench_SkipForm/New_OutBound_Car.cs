@@ -29,14 +29,15 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
         DateTimePicker dtp = new DateTimePicker();
         FunctionClass fc = new FunctionClass();
         domain.Outbound_Car bs = new domain.Outbound_Car();
-        
+        private BindingList<Outbound_Car_Detail> carDetailList;
+        List<domain.Outbound_Car_Detail> sd = new List<Outbound_Car_Detail>();
+        public static bool isExist = false;//执行修改操作时判断是否存在数据
+
         public New_OutBound_Car()
         {
             InitializeComponent();
-            dataGridView1.Controls.Add(dtp);
-            dtp.Visible = false;
-            dtp.Format = DateTimePickerFormat.Custom;
-            dtp.TextChanged += new EventHandler(dtp_TextChange);
+
+            DataGridViewInit();
         }
 
         private void dtp_TextChange(object sender, EventArgs e)
@@ -44,89 +45,67 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
             dataGridView1.CurrentCell.Value = dtp.Text; //时间控件选择时间时，就把时间赋给所在的单元格  
         }
 
-       
+
+        public void DataGridViewInit()
+        {
+            List<domain.Outbound_Car_Detail> sd = null;
+            String str ="Outbound_Car_Detail";
+            sd = JsonConvert.DeserializeObject<List<domain.Outbound_Car_Detail>>(fc.GridViewInit(str));
+            carDetailList = new BindingList<domain.Outbound_Car_Detail>(sd);
+            gridControl1.DataSource = carDetailList;
+        }
+        /***删除出库派车明细 fairy 2017-07-27**/
         private void button2_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.Rows.Count != 1)
+            try
             {
-                dataGridView1.Rows.RemoveAt(dataGridView1.SelectedRows.Count);
+                int index = gridView1.SelectedRowsCount + 1;
+                carDetailList.RemoveAt(index);
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("明细至少存在一条！");
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void button3_Click(object sender, EventArgs e) //保存按钮 
         {
-
-              bs.order_num = textEdit2.Text;
-              bs.sendcar_num = text_sendcar_num.Text ;
-              bs.owner_unit = text_owner_unit.Text;
-              bs.warehouse_send = text_warehouse_send.Text;
-              bs.deliver_quantity = Convert.ToDecimal(text_deliver_quantity.Text);
-              bs.out_way = checkedComboBoxout_way.Text;
-              bs.oper_apart = text_oper_apart.Text;
-              bs.oper_staff = text_oper_staff.Text;
-              bs.pay_unit = text_pay_unit.Text;
-              bs.cars = checkedComboBoxcars.Text;
-              bs.carnum = text_carnum.Text;
-              bs.driver = text_driver.Text;
-              bs.sendcar_staff = text_sendcar_staff.Text;
-              //bs.sendcar_time = Convert.ToDateTime(date_sendcar_time.SelectedText.ToString());
-              bs.packge = checkedComboBoxpackge.SelectedText.ToString();
-              // bs.packge = int.Parse(pac);
-              bs.unload_city = textEdit1.Text;
-              bs.unload_area = text_unload_area.Text;
-              bs.unload_point = text_unload_point.Text;
-              bs.is_close = checkedComboBoxclose.SelectedText.ToString();
-              //bs.is_close = int.Parse(clo);
-              bs.close_staff = text_close_staff.Text;
-             // bs.close_time = Convert.ToDateTime(date_close_time.SelectedText.ToString());
-              bs.explain = text_explain.Text;
-           
-               List<domain.Outbound_Car_Detail> list = new List<domain.Outbound_Car_Detail>();
-            for (int rowindex=0; rowindex < dataGridView1.Rows.Count-1; rowindex++) {
-                    domain.Outbound_Car_Detail bsDetail = new domain.Outbound_Car_Detail();
-                    bsDetail.store_code = dataGridView1.Rows[rowindex].Cells[0].Value.ToString();
-                    bsDetail.order_num = dataGridView1.Rows[rowindex].Cells[1].Value.ToString();
-                    if (!bs.order_num.Equals(bsDetail.order_num))
-                    {
-                        MessageBox.Show("订单号有误请重新输入！");
-                        break;
-                    }
-                    bsDetail.store_kind = dataGridView1.Rows[rowindex].Cells[2].Value.ToString();
-                   // bsDetail.store_date = Convert.ToDateTime(dataGridView1.Rows[rowindex].Cells[3].Value.ToString());
-                    bsDetail.pro_num = Convert.ToDecimal(dataGridView1.Rows[rowindex].Cells[4].Value.ToString());
-                    bsDetail.roll_num = dataGridView1.Rows[rowindex].Cells[5].Value.ToString();
-                    bsDetail.kind = dataGridView1.Rows[rowindex].Cells[6].Value.ToString();
-                    bsDetail.textures = dataGridView1.Rows[rowindex].Cells[7].Value.ToString();
-                    bsDetail.norms = dataGridView1.Rows[rowindex].Cells[8].Value.ToString();
-                    bsDetail.piece = Convert.ToInt32(dataGridView1.Rows[rowindex].Cells[9].Value.ToString());
-                    bsDetail.out_num = dataGridView1.Rows[rowindex].Cells[10].Value.ToString();
-                    bsDetail.crib_num = dataGridView1.Rows[rowindex].Cells[11].Value.ToString();
-                    bsDetail.retail_piece = Convert.ToInt32(dataGridView1.Rows[rowindex].Cells[12].Value.ToString());
-                    bsDetail.retail_num = dataGridView1.Rows[rowindex].Cells[13].Value.ToString();
-                   // bsDetail.sendcar_time = Convert.ToDateTime(dataGridView1.Rows[rowindex].Cells[14].Value.ToString());
-                    bsDetail.order_city = dataGridView1.Rows[rowindex].Cells[15].Value.ToString();
-                    bsDetail.order_area = dataGridView1.Rows[rowindex].Cells[16].Value.ToString();
-                    bsDetail.order_point = dataGridView1.Rows[rowindex].Cells[17].Value.ToString();
-                    bsDetail.remark = dataGridView1.Rows[rowindex].Cells[18].Value.ToString();
-                    list.Add(bsDetail);
-                    //list1.Insert(rowindex,bsDetail);
-
+            bs.order_num = textEdit2.Text;
+            bs.sendcar_num = text_sendcar_num.Text;
+            bs.owner_unit = text_owner_unit.Text;
+            bs.warehouse_send = text_warehouse_send.Text;
+            bs.deliver_quantity = Convert.ToDecimal(text_deliver_quantity.Text);
+            bs.out_way = checkedComboBoxout_way.Text;
+            bs.oper_apart = text_oper_apart.Text;
+            bs.oper_staff = text_oper_staff.Text;
+            bs.pay_unit = text_pay_unit.Text;
+            bs.cars = checkedComboBoxcars.Text;
+            bs.carnum = text_carnum.Text;
+            bs.driver = text_driver.Text;
+            bs.sendcar_staff = text_sendcar_staff.Text;
+            //bs.sendcar_time = Convert.ToDateTime(date_sendcar_time.SelectedText.ToString());
+            bs.packge = checkedComboBoxpackge.SelectedText.ToString();
+            // bs.packge = int.Parse(pac);
+            bs.unload_city = textEdit1.Text;
+            bs.unload_area = text_unload_area.Text;
+            bs.unload_point = text_unload_point.Text;
+            bs.is_close = checkedComboBoxclose.SelectedText.ToString();
+            //bs.is_close = int.Parse(clo);
+            bs.close_staff = text_close_staff.Text;
+            // bs.close_time = Convert.ToDateTime(date_close_time.SelectedText.ToString());
+            bs.explain = text_explain.Text;
+            List<domain.Outbound_Car_Detail> sd = carDetailList.ToList<Outbound_Car_Detail>();
+            string Json = JsonConvert.SerializeObject(sd);
+            string jsonMain = JsonConvert.SerializeObject(bs);
+            
+            if (Demo1._1._3.Outbound_Car.isExist) //保存修改数据
+            {
+                fc.ChangeData(jsonMain, Json, bs.GetType().Name.ToString(), "Outbound_Car_Detail");
             }
-                if (Outbound_Car_Detail.isExist)
-                    {
-                    DialogResult dr;
-                     dr = MessageBox.Show("该数据已存在，请重新输入！", "", MessageBoxButtons.YesNoCancel,
-                              MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
-                
-                }
-                else
-                {
-               
-               // fc.saveData(bs,list, bs.GetType().Name,list[0].GetType().Name);
+            else
+            {  //保存新增数据
+
+                fc.SaveData(jsonMain, Json, bs.GetType().Name.ToString(), "Outbound_Car_Detail");
             }
 
         }
@@ -178,12 +157,19 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
 
         private void button_Add_Click(object sender, EventArgs e)
         {
-            dataGridView1.Rows.Add();
+           domain.Outbound_Car_Detail sd = new domain.Outbound_Car_Detail() { };
+           carDetailList.Add(sd);
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

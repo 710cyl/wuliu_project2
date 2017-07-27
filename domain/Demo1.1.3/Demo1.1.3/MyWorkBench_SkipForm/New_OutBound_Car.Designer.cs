@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleDateOccuring formatConditionRuleDateOccuring1 = new DevExpress.XtraEditors.FormatConditionRuleDateOccuring();
             this.panel_Main = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
@@ -90,6 +92,9 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.label1 = new System.Windows.Forms.Label();
             this.panel_Details = new System.Windows.Forms.Panel();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -98,7 +103,6 @@
             this.button_Add = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel_Main.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
@@ -132,8 +136,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkedComboBoxout_way.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.text_order_num.Properties)).BeginInit();
             this.panel_Details.SuspendLayout();
-            this.panel_button.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel_button.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_Main
@@ -702,6 +708,7 @@
             // panel_Details
             // 
             this.panel_Details.AutoScroll = true;
+            this.panel_Details.Controls.Add(this.gridControl1);
             this.panel_Details.Controls.Add(this.dataGridView1);
             this.panel_Details.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_Details.Location = new System.Drawing.Point(0, 276);
@@ -709,6 +716,40 @@
             this.panel_Details.Name = "panel_Details";
             this.panel_Details.Size = new System.Drawing.Size(943, 301);
             this.panel_Details.TabIndex = 1;
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
+            this.gridControl1.Location = new System.Drawing.Point(0, 0);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(2);
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(943, 301);
+            this.gridControl1.TabIndex = 3;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            gridFormatRule1.Name = "Format0";
+            gridFormatRule1.Rule = formatConditionRuleDateOccuring1;
+            gridFormatRule1.Tag = new System.DateTime(1753, 1, 1, 11, 4, 32, 0);
+            this.gridView1.FormatRules.Add(gridFormatRule1);
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ColumnAutoWidth = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.Size = new System.Drawing.Size(798, 201);
+            this.dataGridView1.TabIndex = 2;
             // 
             // button1
             // 
@@ -748,6 +789,7 @@
             this.button4.TabIndex = 5;
             this.button4.Text = "关闭";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // panel_button
             // 
@@ -797,15 +839,6 @@
             this.button8.Text = "删除";
             this.button8.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(798, 201);
-            this.dataGridView1.TabIndex = 2;
-            // 
             // New_OutBound_Car
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -852,8 +885,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkedComboBoxout_way.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.text_order_num.Properties)).EndInit();
             this.panel_Details.ResumeLayout(false);
-            this.panel_button.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel_button.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -931,5 +966,7 @@
         private System.Windows.Forms.Button button8;
         public DevExpress.XtraEditors.TextEdit textEdit2;
         public System.Windows.Forms.DataGridView dataGridView1;
+        public DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }

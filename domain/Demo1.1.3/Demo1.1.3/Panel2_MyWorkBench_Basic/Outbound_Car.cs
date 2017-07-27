@@ -33,7 +33,7 @@ namespace Demo1._1._3
         public static bool isExist = false;//执行修改操作时判断是否存在数据
         public static int colCount = 0;//所有列数
         public static int count = 0;//明细表所有列数
-        public static string[] array;//
+        public static string[] array = null;//
 
         private BindingList<domain.Outbound_Car_Detail> carDetails;
 
@@ -46,6 +46,7 @@ namespace Demo1._1._3
         private object JavaScriptConvert;
         public static List<domain.Outbound_Car_Detail> sd = new List<Outbound_Car_Detail>(); //得到明细表的list
         private BindingList<Outbound_Car_Detail> carDetailList;
+        public static string str = null;
 
         public Outbound_Car()
         {
@@ -59,9 +60,10 @@ namespace Demo1._1._3
 
         }
 
-        private void toolStripButtonDelete_Click(object sender, EventArgs e) //Delete
+        private void toolStripButtonDelete_Click(object sender, EventArgs e) //删除出库派车主表
         {
-            fc.DeleteData(gridView2);
+            fc.DeleteMain(this.gridView1, "Outbound_Car");
+            
         }
 
        
@@ -179,7 +181,7 @@ namespace Demo1._1._3
         //主表触发明细 fairy
         private void gridControl1_MouseClick(object sender, MouseEventArgs e)
         {
-             hi = gridView1.CalcHitInfo(new Point(e.X, e.Y));
+            hi = gridView1.CalcHitInfo(new Point(e.X, e.Y));
             //单击的是列头
             if (hi.InColumn)
             {
@@ -207,13 +209,13 @@ namespace Demo1._1._3
         //新建 fairy 2017-07-12
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            isExist = false;
-            New_OutBound_Car nb = new New_OutBound_Car();
-            nb.ShowDialog();
+             
+             New_OutBound_Car nb = new New_OutBound_Car();
+             nb.ShowDialog();
         }
 
 
-        //修改数据
+        //修改数据 fairy 2017-07-12
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             if (gridView1.SelectedRowsCount > 0)// && gridView1.GetFocusedDataSourceRowIndex() >0
@@ -226,7 +228,7 @@ namespace Demo1._1._3
                 }
                 if (array[0].Length > 0)
                 {
-                    isExist = true;
+                  
                     //如果选择的处理
                     New_OutBound_Car nb = new New_OutBound_Car();
                     nb.textEdit2.Text = array[0];
@@ -252,18 +254,24 @@ namespace Demo1._1._3
                     nb.text_close_staff.Text = array[19];
                     // bs.close_time = Convert.ToDateTime(date_close_time.SelectedText.ToString());
                     nb.text_explain.Text = array[21];
+
+                    //明细表显示
+                    str = array[0];
+                    sd = JsonConvert.DeserializeObject<List<domain.Outbound_Car_Detail>>(fc.FindDeteils(str, "Outbound_Car_Detail"));
                     carDetails = new BindingList<domain.Outbound_Car_Detail>(sd);
-                    nb.dataGridView1.DataSource = carDetails;
+                    nb.gridControl1.DataSource = carDetails;
                     nb.ShowDialog();
-                   
+                    isExist = true;
+
                 }
                 else
                 {
                     MessageBox.Show("请选中数据源再操作！");
                 }
+
             }
-            
         }
+        
 
 
         public List<T> showDataDetail<T>(T t, string nowpage, string id)
@@ -340,49 +348,18 @@ namespace Demo1._1._3
         //模糊查询 fairy 2017-07-17
         private void label_like_search(object sender, EventArgs e)
         {
+            //清空明细表数据
+            gridControl2.DataSource = "";
             String input_val =  textBox1.Text;
             if (input_val.Equals(""))
             {
                 MessageBox.Show("请输入查询关键字！");
             }
             else {
-                gridControl1.DataSource = showDataLike<domain.Outbound_Car>(bs, now_Page.ToString(),input_val);
+                gridControl1.DataSource = fc.showDataLike<domain.Outbound_Car>(bs, now_Page.ToString(),input_val);
             }
            
 
-        }
-
-        private object showDataLike<T>(T t, string nowpage, string input_val)
-        {
-            List<T> bs = null;
-            string msg = null;
-            string sendMsg = t.GetType().Name.ToString();
-            using (var ws = new WebSocket("ws://localhost:9000/ShowDataLike"))
-            {
-                ws.Connect();
-                ws.Send(sendMsg);
-                using (var wsp = new WebSocket("ws://localhost:9000/GetValLike"))
-                {
-                    wsp.Connect();
-                    wsp.Send(input_val);
-                    wsp.Close();
-                }
-                using (var wb = new WebSocket("ws://localhost:9000/NowPage"))
-                {
-                    wb.Connect();
-                    wb.Send(nowpage);
-                    wb.Close();
-                }
-                while (msg == null)
-                {
-                    ws.OnMessage += (sender, e) =>
-                    msg = e.Data;
-
-                }
-                ws.Close();
-                bs = JsonConvert.DeserializeObject<List<T>>(msg);
-            }
-            return bs;
         }
     }
 }

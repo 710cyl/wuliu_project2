@@ -12,7 +12,8 @@ namespace wuliuDAO
 
         void Update(Outbound_Car entity);
 
-        void Delete(Outbound_Car entity);
+        
+        void Delete<Outbound_Car>(Outbound_Car entity);
 
         Outbound_Car Get(object order_num);
 

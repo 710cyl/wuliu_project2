@@ -87,6 +87,12 @@ namespace wuliu_server
                 IGoDownEntry gde = new IGoDownEntry();
                 gde.Update(sfm);
             }
+            else if (name == "Outbound_Car") {
+                Outbound_Car sfm = JsonConvert.DeserializeObject<Outbound_Car>(data);
+                Outbound_CarDAO gde = new Outbound_CarDAO();
+                gde.Update(sfm);
+                Console.WriteLine("出库派车主表修改成功！");
+            }
         }
     }
 
@@ -109,17 +115,30 @@ namespace wuliu_server
 
         private void GetClass(string name, string data)
         {
-            List<domain.StorageDetails> sd = null;
+            
             string json = null;
-            IStorageDetail isd = new IStorageDetail();
+            
             if (name == "StorageDetails")
             {
+                List<domain.StorageDetails> sd = null;
+                IStorageDetail isd = new IStorageDetail();
                 json = data;
                 sd = JsonConvert.DeserializeObject<List<domain.StorageDetails>>(json);
                 foreach (StorageDetails item in sd)
                 {
                     isd.Update(item);
                     Console.WriteLine("1111111111111111111");
+                }
+            }else if (name == "Outbound_Car_Detail")
+            {
+                List<domain.Outbound_Car_Detail> sd = null;
+                Outbound_Car_DetailDAO isd = new Outbound_Car_DetailDAO();
+                json = data;
+                sd = JsonConvert.DeserializeObject<List<domain.Outbound_Car_Detail>>(json);
+                foreach (Outbound_Car_Detail item in sd)
+                {
+                    isd.Update(item);
+                    Console.WriteLine("出库派车明细表修改成功！");
                 }
             }
         }
@@ -147,6 +166,13 @@ namespace wuliu_server
                 IGoDownEntry gde = new IGoDownEntry();
                 gde.Save(sfm);
             }
+            else if (name == "Outbound_Car")
+            {
+                Outbound_Car sfm = JsonConvert.DeserializeObject<Outbound_Car>(data);
+                Outbound_CarDAO gde = new Outbound_CarDAO();
+                gde.Save(sfm);
+                Console.WriteLine("出库派车主表保存成功！");
+            }
         }
     }
     public class MutiSave : WebSocketBehavior  //明细表保存
@@ -165,17 +191,29 @@ namespace wuliu_server
          }
         private void GetClass(string name, string data)
         {
-            List<domain.StorageDetails> sd = null;
             string json = null;
-            IStorageDetail isd = new IStorageDetail();
             if (name == "StorageDetails")
             {
+                List<domain.StorageDetails> sd = null;
+                IStorageDetail isd = new IStorageDetail();
                 json = data;
                 sd = JsonConvert.DeserializeObject<List<domain.StorageDetails>>(json);
                 foreach (StorageDetails item in sd)
                 {
                     isd.Save(item);
                     Console.WriteLine("1111111111111111111");
+                }
+            }
+            else if (name == "Outbound_Car_Detail")
+            {
+                List<domain.Outbound_Car_Detail> sd = null;
+                Outbound_Car_DetailDAO isd = new Outbound_Car_DetailDAO();
+                json = data;
+                sd = JsonConvert.DeserializeObject<List<domain.Outbound_Car_Detail>>(json);
+                foreach (Outbound_Car_Detail item in sd)
+                {
+                    isd.Save(item);
+                    Console.WriteLine("出库派车明细表保存成功！");
                 }
             }
         }
@@ -202,20 +240,23 @@ namespace wuliu_server
                 }
                 catch (Exception ex)
                 {
-                    session.Close();
                     Send(ex.Message);
                 }
+                session.Close();
             }
         }
 
         private string GetClass(string name, ISession session)
         {
-            List<domain.StorageDetails> sd = null;
             string json = null;
-            IStorageDetail isd = new IStorageDetail();
             if (name == "StorageDetails")
             {
                 IList<domain.StorageDetails> basic_set = session.QueryOver<domain.StorageDetails>().Skip(0).Take(0).List();
+                json = JsonConvert.SerializeObject(basic_set);
+            }
+            if (name == "Outbound_Car_Detail")
+            {
+                IList<domain.Outbound_Car_Detail> basic_set = session.QueryOver<domain.Outbound_Car_Detail>().Skip(0).Take(0).List();
                 json = JsonConvert.SerializeObject(basic_set);
             }
             return json;
@@ -529,6 +570,12 @@ namespace wuliu_server
                     var godownentry = gde.Get<StorageFormMain>(id);
                     gde.Delete<StorageFormMain>((StorageFormMain)godownentry);
                 }
+                else if (classname == "OutBound_Car")
+                {
+                    Outbound_CarDAO gde = new Outbound_CarDAO();
+                    var Outbound_Car = gde.Get<Outbound_Car>(id);
+                    gde.Delete<Outbound_Car>((Outbound_Car)Outbound_Car);
+                }
             }
             catch (Exception)
             {
@@ -728,7 +775,36 @@ namespace wuliu_server
                 });
                 return json;
             }
-
+            // 出库派车 主表模糊查询 strat 2017-07-27 fairy
+            else if (s == "Outbound_Car")
+            {
+                int page = Convert.ToInt32(NowPage.nowpage);
+                string input_val = GetValLike.input_val;
+                String sql = "select c.* from WL_sendcar c where c.order_num  like '%" + input_val + "%' or c.sendcar_num  like '%" + input_val + "%'" +
+                      "or c.owner_unit  like '%" + input_val + "%'or c.warehouse_send  like '%" + input_val + "%' or c.deliver_quantity  like '%" + input_val + "%' or c.out_way  like '%" + input_val + "%' " +
+                      "or c.oper_apart  like '%" + input_val + "%'" +
+                       "or c.pay_unit  like '%" + input_val + "%'" +
+                       "or c.cars  like '%" + input_val + "%'" +
+                       "or c.carnum  like '%" + input_val + "%'" +
+                       "or c.driver  like '%" + input_val + "%'" +
+                       "or c.sendcar_staff  like '%" + input_val + "%'" +
+                       "or c.sendcar_time  like '%" + input_val + "%'" +
+                       "or c.unload_city  like '%" + input_val + "%'" +
+                       "or c.unload_area  like '%" + input_val + "%'" +
+                       "or c.unload_point  like '%" + input_val + "%'" +
+                       "or c.packge  like '%" + input_val + "%'" +
+                       "or c.is_close  like '%" + input_val + "%'" +
+                       "or c.close_staff  like '%" + input_val + "%'" +
+                       "or c.close_time  like '%" + input_val + "%'";
+                ISQLQuery query = session.CreateSQLQuery(sql)
+               .AddEntity("Outbound_Car", typeof(Outbound_Car));
+                IList<Outbound_Car> Outbound_Car = query.List<Outbound_Car>();
+                string json = JsonConvert.SerializeObject(Outbound_Car, Formatting.None, new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+                return json;
+            }
             else if (s == "Fund_Accounts")
             {
                 IList<Fund_Accounts> fund_account = session.QueryOver<Fund_Accounts>().List();

@@ -71,7 +71,7 @@ namespace wuliu_server
         {
             try
             {
-                GetClass(GetClassName.classname,e.Data);
+                GetClass(GetClassName.classname, e.Data);
             }
             catch (Exception ex)
             {
@@ -79,7 +79,7 @@ namespace wuliu_server
             }
         }
 
-        private void GetClass(string name,string data)
+        private void GetClass(string name, string data)
         {
             if (name == "StorageFormMain")
             {
@@ -87,6 +87,7 @@ namespace wuliu_server
                 IGoDownEntry gde = new IGoDownEntry();
                 gde.Update(sfm);
             }
+
             else if (name == "Outbound_Car") {
                 Outbound_Car sfm = JsonConvert.DeserializeObject<Outbound_Car>(data);
                 Outbound_CarDAO gde = new Outbound_CarDAO();
@@ -95,7 +96,6 @@ namespace wuliu_server
             }
         }
     }
-
 
     public class DetailsChange : WebSocketBehavior //修改明细服务器
     {
@@ -114,13 +114,14 @@ namespace wuliu_server
         }
 
         private void GetClass(string name, string data)
+
         {
             
             string json = null;
-            
             if (name == "StorageDetails")
             {
                 List<domain.StorageDetails> sd = null;
+                json = null;
                 IStorageDetail isd = new IStorageDetail();
                 json = data;
                 sd = JsonConvert.DeserializeObject<List<domain.StorageDetails>>(json);
@@ -141,6 +142,8 @@ namespace wuliu_server
                     Console.WriteLine("出库派车明细表修改成功！");
                 }
             }
+
+          
         }
     }
 
@@ -192,30 +195,31 @@ namespace wuliu_server
         private void GetClass(string name, string data)
         {
             string json = null;
-            if (name == "StorageDetails")
-            {
-                List<domain.StorageDetails> sd = null;
-                IStorageDetail isd = new IStorageDetail();
-                json = data;
-                sd = JsonConvert.DeserializeObject<List<domain.StorageDetails>>(json);
-                foreach (StorageDetails item in sd)
+                if (name == "StorageDetails")
                 {
-                    isd.Save(item);
-                    Console.WriteLine("1111111111111111111");
+                    List<domain.StorageDetails> sd = null;
+                    IStorageDetail isd = new IStorageDetail();
+                    json = data;
+                    sd = JsonConvert.DeserializeObject<List<domain.StorageDetails>>(json);
+                    foreach (StorageDetails item in sd)
+                    {
+                        isd.Save(item);
+                        Console.WriteLine("1111111111111111111");
+                    }
                 }
-            }
-            else if (name == "Outbound_Car_Detail")
-            {
-                List<domain.Outbound_Car_Detail> sd = null;
-                Outbound_Car_DetailDAO isd = new Outbound_Car_DetailDAO();
-                json = data;
-                sd = JsonConvert.DeserializeObject<List<domain.Outbound_Car_Detail>>(json);
-                foreach (Outbound_Car_Detail item in sd)
+                else if (name == "Outbound_Car_Detail")
                 {
-                    isd.Save(item);
-                    Console.WriteLine("出库派车明细表保存成功！");
+                    List<domain.Outbound_Car_Detail> sd = null;
+                    Outbound_Car_DetailDAO isd = new Outbound_Car_DetailDAO();
+                    json = data;
+                    sd = JsonConvert.DeserializeObject<List<domain.Outbound_Car_Detail>>(json);
+                    foreach (Outbound_Car_Detail item in sd)
+                    {
+                        isd.Save(item);
+                        Console.WriteLine("出库派车明细表保存成功！");
+                    }
                 }
-            }
+
         }
     }
 
@@ -251,9 +255,12 @@ namespace wuliu_server
             string json = null;
             if (name == "StorageDetails")
             {
+                List<domain.StorageDetails> sd = null;
+                IStorageDetail isd = new IStorageDetail();
                 IList<domain.StorageDetails> basic_set = session.QueryOver<domain.StorageDetails>().Skip(0).Take(0).List();
                 json = JsonConvert.SerializeObject(basic_set);
             }
+
             if (name == "Outbound_Car_Detail")
             {
                 IList<domain.Outbound_Car_Detail> basic_set = session.QueryOver<domain.Outbound_Car_Detail>().Skip(0).Take(0).List();
@@ -303,110 +310,129 @@ namespace wuliu_server
  
        public string SwitchData(ISession session,string s)
         {
-            if (s == "Basic_Set")
-            {
-               // NowPage np = new NowPage();
-                int page = Convert.ToInt32(NowPage.nowpage);
-               IList<Basic_Set> basic_set = session.QueryOver<Basic_Set>().Skip((page-1)*50).Take(50).List();
-                string json = JsonConvert.SerializeObject(basic_set);
-                return json;
-            }
-
-            else if (s == "Fund_Accounts")
-            {
-                IList<Fund_Accounts> fund_account = session.QueryOver<Fund_Accounts>().List();
-                string json = JsonConvert.SerializeObject(fund_account);
-                return json;
-            }
-            else if (s == "Internal_Vehicle")
-            {
-                IList<Internal_Vehicle> fund_account = session.QueryOver<Internal_Vehicle>().List();
-                string json = JsonConvert.SerializeObject(fund_account);
-                return json;
-            }
-
-            else if (s == "Office_Supply")
-            {
-                IList<Office_Supply> fund_account = session.QueryOver<Office_Supply>().List();
-                string json = JsonConvert.SerializeObject(fund_account);
-                return json;
-            }
-            else if (s == "Order_File")
-            {
-                IList<Order_File> fund_account = session.QueryOver<Order_File>().List();
-                string json = JsonConvert.SerializeObject(fund_account);
-                return json;
-            }
-            else if (s == "Repair_Material")
-            {
-                IList<Repair_Material> fund_account = session.QueryOver<Repair_Material>().List();
-                string json = JsonConvert.SerializeObject(fund_account);
-                return json;
-            }
-            else if (s == "Transportations")
-            {
-                IList<Transportations> fund_account = session.QueryOver<Transportations>().List();
-                string json = JsonConvert.SerializeObject(fund_account);
-                return json;
-            }
-            else if (s == "Variety_Texture")
-            {
-                IList<Variety_Texture> fund_account = session.QueryOver<Variety_Texture>().List();
-                string json = JsonConvert.SerializeObject(fund_account);
-                return json;
-            }
-            else if (s == "Warehouse_Space")
-            {
-                IList<Warehouse_Space> fund_account = session.QueryOver<Warehouse_Space>().List();
-                string json = JsonConvert.SerializeObject(fund_account);
-                return json;
-            }
-            else if (s == "Decorate")
-            {
-                IList<Decorate> fund_account = session.QueryOver<Decorate>().List();
-                string json = JsonConvert.SerializeObject(fund_account);
-                return json;
-            }
-            else if (s == "Discharge")
-            {
-                IList<Discharge> fund_account = session.QueryOver<Discharge>().List();
-                string json = JsonConvert.SerializeObject(fund_account);
-                return json;
-            }
-            else if (s == "Transportations")
-            {
-                IList<Transportations> fund_account = session.QueryOver<Transportations>().List();
-                string json = JsonConvert.SerializeObject(fund_account);
-                return json;
-            }
-            else if (s == "Warehouse_Staff")
-            {
-                IList<Warehouse_Staff> fund_account = session.QueryOver<Warehouse_Staff>().List();
-                string json = JsonConvert.SerializeObject(fund_account);
-                return json;
-            }
-            else if (s == "StorageFormMain")
-            {
-                int page = Convert.ToInt32(NowPage.nowpage);
-                IList<StorageFormMain> fund_account = session.QueryOver<StorageFormMain>().Skip((page-1)*5).Take(5).List();
-                string json = JsonConvert.SerializeObject(fund_account,Formatting.None,new JsonSerializerSettings()
+                if (s == "Basic_Set")
                 {
-                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                });
-                return json;
-            }
-            else if (s == "Outbound_Car")
-            {
+                    // NowPage np = new NowPage();
+                    int page = Convert.ToInt32(NowPage.nowpage);
+                    IList<Basic_Set> basic_set = session.QueryOver<Basic_Set>().Skip((page - 1) * 50).Take(50).List();
+                    string json = JsonConvert.SerializeObject(basic_set);
+                    return json;
+                }
 
-                int page = Convert.ToInt32(NowPage.nowpage);
-                IList<Outbound_Car> Outbound_Car = session.QueryOver<Outbound_Car>().Skip((page - 1) * 5).Take(5).List();
-                string json = JsonConvert.SerializeObject(Outbound_Car, Formatting.None, new JsonSerializerSettings()
+                else if (s == "Fund_Accounts")
                 {
-                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                });
-                return json;
+                    IList<Fund_Accounts> fund_account = session.QueryOver<Fund_Accounts>().List();
+                    string json = JsonConvert.SerializeObject(fund_account);
+                    return json;
+                }
+                else if (s == "Internal_Vehicle")
+                {
+                    IList<Internal_Vehicle> fund_account = session.QueryOver<Internal_Vehicle>().List();
+                    string json = JsonConvert.SerializeObject(fund_account);
+                    return json;
+                }
+
+                else if (s == "Office_Supply")
+                {
+                    IList<Office_Supply> fund_account = session.QueryOver<Office_Supply>().List();
+                    string json = JsonConvert.SerializeObject(fund_account);
+                    return json;
+                }
+                else if (s == "Order_File")
+                {
+                    IList<Order_File> fund_account = session.QueryOver<Order_File>().List();
+                    string json = JsonConvert.SerializeObject(fund_account);
+                    return json;
+                }
+                else if (s == "Repair_Material")
+                {
+                    IList<Repair_Material> fund_account = session.QueryOver<Repair_Material>().List();
+                    string json = JsonConvert.SerializeObject(fund_account);
+                    return json;
+                }
+                else if (s == "Transportations")
+                {
+                    IList<Transportations> fund_account = session.QueryOver<Transportations>().List();
+                    string json = JsonConvert.SerializeObject(fund_account);
+                    return json;
+                }
+                else if (s == "Variety_Texture")
+                {
+                    IList<Variety_Texture> fund_account = session.QueryOver<Variety_Texture>().List();
+                    string json = JsonConvert.SerializeObject(fund_account);
+                    return json;
+                }
+                else if (s == "Warehouse_Space")
+                {
+                    IList<Warehouse_Space> fund_account = session.QueryOver<Warehouse_Space>().List();
+                    string json = JsonConvert.SerializeObject(fund_account);
+                    return json;
+                }
+                else if (s == "Decorate")
+                {
+                    IList<Decorate> fund_account = session.QueryOver<Decorate>().List();
+                    string json = JsonConvert.SerializeObject(fund_account);
+                    return json;
+                }
+                else if (s == "Discharge")
+                {
+                    IList<Discharge> fund_account = session.QueryOver<Discharge>().List();
+                    string json = JsonConvert.SerializeObject(fund_account);
+                    return json;
+                }
+                else if (s == "Transportations")
+                {
+                    IList<Transportations> fund_account = session.QueryOver<Transportations>().List();
+                    string json = JsonConvert.SerializeObject(fund_account);
+                    return json;
+                }
+                else if (s == "Warehouse_Staff")
+                {
+                    IList<Warehouse_Staff> fund_account = session.QueryOver<Warehouse_Staff>().List();
+                    string json = JsonConvert.SerializeObject(fund_account);
+                    return json;
+                }
+                else if (s == "StorageFormMain")
+                {
+                    int page = Convert.ToInt32(NowPage.nowpage);
+                    IList<StorageFormMain> fund_account = session.QueryOver<StorageFormMain>().Skip((page - 1) * 5).Take(5).List();
+                    string json = JsonConvert.SerializeObject(fund_account, Formatting.None, new JsonSerializerSettings()
+                    {
+                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                    });
+                    return json;
+                }
+
+                else if (s == "Outbound_Car")
+                {
+
+                    int page = Convert.ToInt32(NowPage.nowpage);
+                    IList<Outbound_Car> Outbound_Car = session.QueryOver<Outbound_Car>().Skip((page - 1) * 5).Take(5).List();
+                    string json = JsonConvert.SerializeObject(Outbound_Car, Formatting.None, new JsonSerializerSettings());
+                    return json;
             }
-            else
+                else if (s == "StorageFormMainOut")
+                {
+                    int page = Convert.ToInt32(NowPage.nowpage);
+                    IList<StorageFormMainOut> fund_account = session.QueryOver<StorageFormMainOut>().Skip((page - 1) * 5).Take(5).List();
+                    string json = JsonConvert.SerializeObject(fund_account, Formatting.None, new JsonSerializerSettings()
+                    {
+                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                    });
+                    return json;
+                }
+
+                else if (s == "StorageFormMainTrans")
+                {
+                    int page = Convert.ToInt32(NowPage.nowpage);
+                    IList<StorageFormMainTrans> fund_account = session.QueryOver<StorageFormMainTrans>().Skip((page - 1) * 5).Take(5).List();
+                    string json = JsonConvert.SerializeObject(fund_account, Formatting.None, new JsonSerializerSettings()
+                    {
+                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                    });
+                    return json;
+                }
+
             return null;
         }
     }
@@ -505,6 +531,18 @@ namespace wuliu_server
                 total = session.QueryOver<StorageFormMain>().RowCountInt64();
                 return total;
             }
+
+            else if (className == "StorageFormMainOut")
+            {
+                total = session.QueryOver<StorageFormMainOut>().RowCountInt64();
+                return total;
+            }
+            else if (className == "StorageFormMainTrans")
+            {
+                total = session.QueryOver<StorageFormMainTrans>().RowCountInt64();
+                return total;
+            }
+            
             return total;
         }
     }
@@ -564,18 +602,18 @@ namespace wuliu_server
         {
             try
             {
-                if (classname == "StorageFormMain")
-                {
-                    IGoDownEntry gde = new IGoDownEntry();
-                    var godownentry = gde.Get<StorageFormMain>(id);
-                    gde.Delete<StorageFormMain>((StorageFormMain)godownentry);
-                }
-                else if (classname == "OutBound_Car")
-                {
-                    Outbound_CarDAO gde = new Outbound_CarDAO();
-                    var Outbound_Car = gde.Get<Outbound_Car>(id);
-                    gde.Delete<Outbound_Car>((Outbound_Car)Outbound_Car);
-                }
+                    if (classname == "StorageFormMain")
+                    {
+                        IGoDownEntry gde = new IGoDownEntry();
+                        var godownentry = gde.Get<StorageFormMain>(id);
+                        gde.Delete<StorageFormMain>((StorageFormMain)godownentry);
+                    }
+                    else if (classname == "OutBound_Car")
+                    {
+                        Outbound_CarDAO gde = new Outbound_CarDAO();
+                        var Outbound_Car = gde.Get<Outbound_Car>(id);
+                        gde.Delete<Outbound_Car>((Outbound_Car)Outbound_Car);
+                    }
             }
             catch (Exception)
             {
@@ -597,11 +635,20 @@ namespace wuliu_server
             {
                 AddDataTableToDB(dt, "dbo.T_transportationRegister");
             }
+
             else if (GetClassName.classname == "StorageFormMain")
             {
                 AddDataTableToDB(dt, "dbo.T_StorageFormMain");
             }
 
+            else if (GetClassName.classname == "StorageFormMainOut")
+            {
+                AddDataTableToDB(dt, "dbo.T_StorageFormMainOut");
+            }
+            else if (GetClassName.classname == "StorageFormMainTrans")
+            {
+                AddDataTableToDB(dt, "dbo.T_StorageFormMainTrans");
+            }
         }
 
         public void AddDataTableToDB(DataTable dt,string dbName) //批量导入excel
@@ -654,39 +701,38 @@ namespace wuliu_server
             }
         }
 
-        public string SwitchDetail(ISession session,string classname,string primarykey)
-        {
-            IList<domain.StorageDetails> sd = null;
-            string json = null; 
-            if (classname == "StorageDetails")
+            public string SwitchDetail(ISession session, string classname, string primarykey)
             {
 
-                string sql = "select a.* from T_StorageFormMain b,T_StorageDetails a where a.StorageNumber =b.StorageNumber and a.StorageNumber= ? ";
-                ISQLQuery query = session.CreateSQLQuery(sql)
-                .AddEntity("StorageDetails", typeof(domain.StorageDetails));
-                query.SetString(0, primarykey);
-                sd = query.List<StorageDetails>();
-               
-                json = JsonConvert.SerializeObject(sd, Formatting.None, new JsonSerializerSettings()
+                string json = null;
+                if (classname == "StorageDetails")
                 {
-                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                });
-            }
-            else if (classname == "Outbound_Car_Detail")
-            {
-                
-                int page = Convert.ToInt32(NowPage.nowpage);
-                String sql = "select a.* from WL_sendcar b,WL_sendcar_detail a where a.order_num =b.order_num and a.order_num= ? ";
-                ISQLQuery query = session.CreateSQLQuery(sql)
-                .AddEntity("Outbound_Car_Detail", typeof(Outbound_Car_Detail));
-                query.SetString(0, primarykey);
-                IList<Outbound_Car_Detail> Outbound_Car_detail = query.List<Outbound_Car_Detail>();
-                json = JsonConvert.SerializeObject(Outbound_Car_detail, Formatting.None, new JsonSerializerSettings()
+                    IList<domain.StorageDetails> sd = null;
+                    string sql = "select a.* from T_StorageFormMain b,T_StorageDetails a where a.StorageNumber =b.StorageNumber and a.StorageNumber= ? ";
+                    ISQLQuery query = session.CreateSQLQuery(sql)
+                    .AddEntity("StorageDetails", typeof(domain.StorageDetails));
+                    query.SetString(0, primarykey);
+                    sd = query.List<StorageDetails>();
+
+                    json = JsonConvert.SerializeObject(sd, Formatting.None, new JsonSerializerSettings()
+                    {
+                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                    });
+                }
+                else if (classname == "Outbound_Car_Detail")
                 {
-                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                });
-                
-            }
+
+                    int page = Convert.ToInt32(NowPage.nowpage);
+                    String sql = "select a.* from WL_sendcar b,WL_sendcar_detail a where a.order_num =b.order_num and a.order_num= ? ";
+                    ISQLQuery query = session.CreateSQLQuery(sql)
+                    .AddEntity("Outbound_Car_Detail", typeof(Outbound_Car_Detail));
+                    query.SetString(0, primarykey);
+                    IList<Outbound_Car_Detail> Outbound_Car_detail = query.List<Outbound_Car_Detail>();
+                    json = JsonConvert.SerializeObject(Outbound_Car_detail, Formatting.None, new JsonSerializerSettings()
+                    {
+                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                    });
+                }
             return json;
         }
     }
@@ -734,7 +780,7 @@ namespace wuliu_server
         }
 
         public string SwitchDataLike(ISession session, string s)
-        {
+        {   
             if (s == "Basic_Set")
             {
                 // NowPage np = new NowPage();
@@ -799,7 +845,75 @@ namespace wuliu_server
                 ISQLQuery query = session.CreateSQLQuery(sql)
                .AddEntity("Outbound_Car", typeof(Outbound_Car));
                 IList<Outbound_Car> Outbound_Car = query.List<Outbound_Car>();
-                string json = JsonConvert.SerializeObject(Outbound_Car, Formatting.None, new JsonSerializerSettings()
+                string json = JsonConvert.SerializeObject(Outbound_Car, Formatting.None, new JsonSerializerSettings());
+                return json;
+            }
+            else if (s == "StorageFormMainOut")
+            {
+                int page = Convert.ToInt32(NowPage.nowpage);
+                string input_val = GetValLike.input_val;
+                String sql = "select c.* from T_StorageFormMainOut c where c.出库单号  like '%" + input_val + "%' or c.发货仓库  like '%" + input_val + "%'" +
+                      "or c.出库日期  like '%" + input_val + "%'or c.货主  like '%" + input_val + "%' or c.付费单位  like '%" + input_val + "%' or c.出库总量  like '%" + input_val + "%' " +
+                      "or c.仓储费  like '%" + input_val + "%'" +
+                       "or c.实收金额  like '%" + input_val + "%'" +
+                       "or c.未收仓储费  like '%" + input_val + "%'" +
+                       "or c.收款完成  like '%" + input_val + "%'" +
+                       "or c.出库方式  like '%" + input_val + "%'" +
+                       "or c.车队  like '%" + input_val + "%'" +
+                       "or c.车号  like '%" + input_val + "%'" +
+                       "or c.司机 like '%" + input_val + "%'" +
+                       "or c.库管  like '%" + input_val + "%'" +
+                       "or c.吊车  like '%" + input_val + "%'" +
+                       "or c.装卸工  like '%" + input_val + "%'" +
+                       "or c.装卸工1  like '%" + input_val + "%'" +
+                       "or c.发货人员  like '%" + input_val + "%'" +
+                       "or c.登记时间  like '%" + input_val + "%'" +
+                       "or c.修改人  like '%" + input_val + "%'" +
+                       "or c.修改时间  like '%" + input_val + "%'" +
+                       "or c.备注  like '%" + input_val + "%'" +
+                       "or c.发装城市  like '%" + input_val + "%'" +
+                       "or c.发装地点  like '%" + input_val + "%'" +
+                       "or c.发装区域  like '%" + input_val + "%'" +
+                       "or c.实际卸点  like '%" + input_val + "%'" +
+                       "or c.卸货城市  like '%" + input_val + "%'" +
+                       "or c.卸货区域  like '%" + input_val + "%'" +
+                       "or c.收款人  like '%" + input_val + "%'" +
+                       "or c.收款时间  like '%" + input_val + "%'";
+                ISQLQuery query = session.CreateSQLQuery(sql)
+               .AddEntity("StorageFormMainOut", typeof(domain.StorageFormMainOut));
+                IList<StorageFormMainOut> StorageFormMain = query.List<StorageFormMainOut>();
+                string json = JsonConvert.SerializeObject(StorageFormMain, Formatting.None, new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+                return json;
+            }
+
+            else if (s == "StorageFormMainTrans")
+            {
+                int page = Convert.ToInt32(NowPage.nowpage);
+                string input_val = GetValLike.input_val;
+                String sql = "select c.* from T_StorageFormMainTrans c where c.移库单号  like '%" + input_val + "%' or c.仓库名称  like '%" + input_val + "%'" +
+                      "or c.移库方式  like '%" + input_val + "%'or c.移出客户  like '%" + input_val + "%' or c.移入客户  like '%" + input_val + "%' or c.仓储费单位  like '%" + input_val + "%' " +
+                      "or c.移库费单位  like '%" + input_val + "%'" +
+                       "or c.记账日期  like '%" + input_val + "%'" +
+                       "or c.移库总量  like '%" + input_val + "%'" +
+                       "or c.移库单价  like '%" + input_val + "%'" +
+                       "or c.移库金额  like '%" + input_val + "%'" +
+                       "or c.录入员  like '%" + input_val + "%'" +
+                       "or c.录入时间  like '%" + input_val + "%'" +
+                       "or c.修改人 like '%" + input_val + "%'" +
+                       "or c.修改时间  like '%" + input_val + "%'" +
+                       "or c.库管  like '%" + input_val + "%'" +
+                       "or c.吊车工  like '%" + input_val + "%'" +
+                       "or c.装卸工1  like '%" + input_val + "%'" +
+                       "or c.装卸工  like '%" + input_val + "%'" +
+                       "or c.备注  like '%" + input_val + "%'";
+
+                ISQLQuery query = session.CreateSQLQuery(sql)
+               .AddEntity("StorageFormMainOut", typeof(domain.StorageFormMainTrans));
+                IList<StorageFormMainTrans> StorageFormMain = query.List<StorageFormMainTrans>();
+                string json = JsonConvert.SerializeObject(StorageFormMain, Formatting.None, new JsonSerializerSettings()
                 {
                     ReferenceLoopHandling = ReferenceLoopHandling.Ignore
                 });
@@ -879,9 +993,11 @@ namespace wuliu_server
                 return json;
             }
 
-            else
-                return null;
+            return null;
         }
     }
     #endregion
-}
+
+
+
+    }

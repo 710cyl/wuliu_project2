@@ -72,10 +72,6 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
 
 
                 gridControl1.DataSource = StorageDetails;
-                //gridView1.Columns[2].DisplayFormat.FormatType =DevExpress.Utils.FormatType.DateTime;
-                //gridView1.Columns[23].DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-                //gridView1.Columns[25].DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-                //gridView1.Columns[26].DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
 
             }
             else
@@ -208,10 +204,8 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
                 }
                 catch (Exception)
                 {
-                    // MessageBox.Show("时间值允许大于1753/1/1的时间段");
                     throw;
                 }
-
             }
         }
     }

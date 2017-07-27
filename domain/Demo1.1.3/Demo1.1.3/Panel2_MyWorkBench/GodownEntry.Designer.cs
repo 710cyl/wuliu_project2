@@ -56,7 +56,6 @@
             this.自定义数据显示ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.刷新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -99,7 +98,6 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripDropDownButton1,
             this.toolStripSeparator1,
-            this.toolStripButton5,
             this.toolStripSeparator4,
             this.toolStripButton1,
             this.toolStripButton2,
@@ -305,14 +303,16 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
+
             // toolStripButton5
             // 
-            this.toolStripButton5.Image = global::Demo1._1._3.Properties.Resources.open_16x16;
+          /*  this.toolStripButton5.Image = global::Demo1._1._3.Properties.Resources.open_16x16;
             this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton5.Name = "toolStripButton5";
             this.toolStripButton5.Size = new System.Drawing.Size(56, 24);
-            this.toolStripButton5.Text = "查看";
+            this.toolStripButton5.Text = "查看";*/
             // 
+
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
@@ -477,6 +477,7 @@
             this.tabNavigationPage1.Caption = "入库单_明细";
             this.tabNavigationPage1.Controls.Add(this.gridControl2);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
+
             this.tabNavigationPage1.Size = new System.Drawing.Size(1019, 413);
             // 
             // gridControl2
@@ -485,7 +486,9 @@
             this.gridControl2.Location = new System.Drawing.Point(0, 0);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1019, 413);
+
+            this.gridControl2.Size = new System.Drawing.Size(1361, 516);
+
             this.gridControl2.TabIndex = 22;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -544,11 +547,14 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.toolStrip1);
             this.panel1.Controls.Add(this.dataNavigator_Basic_Set);
             this.panel1.Controls.Add(this.gridControl1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+
             this.panel1.Location = new System.Drawing.Point(0, 27);
             this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1037, 203);
             this.panel1.TabIndex = 23;
@@ -560,6 +566,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabPane1);
             this.Controls.Add(this.toolStrip1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GodownEntry";
             this.Size = new System.Drawing.Size(1037, 690);
             this.toolStrip1.ResumeLayout(false);
@@ -571,8 +578,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -606,7 +613,6 @@
         private System.Windows.Forms.ToolStripMenuItem 自定义数据显示ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 刷新ToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;

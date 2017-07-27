@@ -60,7 +60,7 @@ namespace Demo1._1._3.Panel2_MyWorkBench
 
         private void DeleteButtom_Click(object sender, EventArgs e) //删除按钮
         {
-            fc.DeleteMain(this.gridView1, "StorageFormMain");
+            fc.DeleteMain(this.gridView1, "StorageFormMain","StorageNumber");
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e) //保存

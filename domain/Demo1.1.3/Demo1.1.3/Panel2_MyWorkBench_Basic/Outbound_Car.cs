@@ -62,7 +62,7 @@ namespace Demo1._1._3
 
         private void toolStripButtonDelete_Click(object sender, EventArgs e) //删除出库派车主表
         {
-            fc.DeleteMain(this.gridView1, "Outbound_Car");
+            fc.DeleteMain(this.gridView1, "Outbound_Car","order_num");
             
         }
 
@@ -176,7 +176,7 @@ namespace Demo1._1._3
         {
 
         }
-      
+       
 
         //主表触发明细 fairy
         private void gridControl1_MouseClick(object sender, MouseEventArgs e)

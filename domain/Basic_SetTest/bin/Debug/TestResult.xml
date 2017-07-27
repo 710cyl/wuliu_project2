@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="F:\WULIU\wuliu_project2\domain\Basic_SetTest\bin\Debug\Basic_SetTest.dll" total="1" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2017-07-25" time="19:07:23">
-  <environment nunit-version="2.6.3.13283" clr-version="2.0.50727.8669" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="F:\WULIU\wuliu_project2\domain\Basic_SetTest\bin\Debug" machine-name="FAIRY-PC" user="fairy" user-domain="fairy-PC" />
+<test-results name="D:\wuliu\domain\Basic_SetTest\bin\Debug\Basic_SetTest.dll" total="1" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2017-07-27" time="17:58:42">
+  <environment nunit-version="2.6.3.13283" clr-version="2.0.50727.8745" os-version="Microsoft Windows NT 6.2.9200.0" platform="Win32NT" cwd="D:\wuliu\domain\Basic_SetTest\bin\Debug" machine-name="DESKTOP-1V614A2" user="hasee" user-domain="DESKTOP-1V614A2" />
   <culture-info current-culture="zh-CN" current-uiculture="zh-CN" />
-  <test-suite type="Assembly" name="F:\WULIU\wuliu_project2\domain\Basic_SetTest\bin\Debug\Basic_SetTest.dll" executed="True" result="Success" success="True" time="3.294" asserts="0">
+  <test-suite type="Assembly" name="D:\wuliu\domain\Basic_SetTest\bin\Debug\Basic_SetTest.dll" executed="True" result="Success" success="True" time="4.559" asserts="0">
     <results>
-      <test-suite type="Namespace" name="Basic_SetTest" executed="True" result="Success" success="True" time="3.286" asserts="0">
+      <test-suite type="Namespace" name="Basic_SetTest" executed="True" result="Success" success="True" time="4.551" asserts="0">
         <results>
-          <test-suite type="TestFixture" name="NHibernateInit" executed="True" result="Success" success="True" time="3.285" asserts="0">
+          <test-suite type="TestFixture" name="NHibernateInit" executed="True" result="Success" success="True" time="4.550" asserts="0">
             <results>
-              <test-case name="Basic_SetTest.NHibernateInit.InitTest" executed="True" result="Success" success="True" time="3.277" asserts="0" />
+              <test-case name="Basic_SetTest.NHibernateInit.InitTest" executed="True" result="Success" success="True" time="4.538" asserts="0" />
             </results>
           </test-suite>
         </results>

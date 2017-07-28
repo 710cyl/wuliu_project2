@@ -158,7 +158,7 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
         private void button_Add_Click(object sender, EventArgs e)
         {
            domain.Outbound_Car_Detail sd = new domain.Outbound_Car_Detail() { };
-           carDetailList.Add(sd);
+            Outbound_Car.carDetails.Add(sd);
 
         }
 

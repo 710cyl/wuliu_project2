@@ -35,7 +35,7 @@ namespace Demo1._1._3
         public static int count = 0;//明细表所有列数
         public static string[] array = null;//
 
-        private BindingList<domain.Outbound_Car_Detail> carDetails;
+        public static BindingList<domain.Outbound_Car_Detail> carDetails;
 
         public  long total_Page = 0; //页码总条目
         public  long now_Page = 1; //当前页码

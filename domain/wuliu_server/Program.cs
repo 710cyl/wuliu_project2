@@ -396,9 +396,10 @@ namespace wuliu_server
                 }
                 catch (Exception ex)
                 {
-                    session.Close();
+                    
                     Send(ex.Message);
                 }
+                session.Close();
             }
         }
 
@@ -910,9 +911,11 @@ namespace wuliu_server
                 }
                 catch (Exception ex)
                 {
-                    session.Close();
+                    
                     Send(ex.Message);
                 }
+
+                session.Close();
             }
         }
 

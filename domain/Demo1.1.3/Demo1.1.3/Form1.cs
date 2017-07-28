@@ -387,8 +387,8 @@ namespace Demo1._1._3
             panel2.Controls.Clear();
             panel2.Controls.Add(ge);
             domain.StorageFormMain sf = new domain.StorageFormMain();
-            ge.gridControl1.DataSource = showData<domain.StorageFormMain>(sf, ge.now_Page.ToString());
-            ge.gridView1.Columns[23].Visible = false;
+            ge.gridControl3.DataSource = showData<domain.StorageFormMain>(sf, ge.now_Page.ToString());
+            ge.gridView3.Columns[23].Visible = false;
         }
 
         private void accordionControlElement63_Click(object sender, EventArgs e)
@@ -399,8 +399,8 @@ namespace Demo1._1._3
             panel2.Controls.Clear();
             panel2.Controls.Add(obo);
             domain.StorageFormMainOut sf = new domain.StorageFormMainOut();
-            obo.gridControl1.DataSource = showData<domain.StorageFormMainOut>(sf, obo.now_Page.ToString());
-            //obo.gridView1.Columns[23].Visible = false;
+            obo.gridControl3.DataSource = showData<domain.StorageFormMainOut>(sf, obo.now_Page.ToString());
+            //obo.gridView3.Columns[23].Visible = false;
         }
 
         private void accordionControlElement64_Click(object sender, EventArgs e)

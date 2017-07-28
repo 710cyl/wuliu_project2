@@ -61,3 +61,5 @@ D:\wuliu\domain\wuliu_server\obj\Debug\wuliu_server.csprojResolveAssemblyReferen
 D:\wuliu\domain\wuliu_server\obj\Debug\wuliu_server.exe
 D:\wuliu\domain\wuliu_server\obj\Debug\wuliu_server.pdb
 >>>>>>> 1ffbe3147d4cf4eb0d91b0f18a4a2cf81319c50e
+F:\WULIU\wuliu_project2\domain\wuliu_server\obj\Debug\wuliu_server.exe
+F:\WULIU\wuliu_project2\domain\wuliu_server\obj\Debug\wuliu_server.pdb

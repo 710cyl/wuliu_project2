@@ -25,3 +25,17 @@ D:\wuliu\domain\domain\bin\Debug\NHibernate.xml
 D:\wuliu\domain\domain\bin\Debug\NHibernate.ByteCode.Castle.xml
 D:\wuliu\domain\domain\obj\Debug\domain.dll
 D:\wuliu\domain\domain\obj\Debug\domain.pdb
+D:\2-项目-物流\wuliu_project2\domain\domain\bin\Debug\domain.dll.config
+D:\2-项目-物流\wuliu_project2\domain\domain\bin\Debug\domain.dll
+D:\2-项目-物流\wuliu_project2\domain\domain\bin\Debug\domain.pdb
+D:\2-项目-物流\wuliu_project2\domain\domain\bin\Debug\Antlr3.Runtime.dll
+D:\2-项目-物流\wuliu_project2\domain\domain\bin\Debug\Castle.Core.dll
+D:\2-项目-物流\wuliu_project2\domain\domain\bin\Debug\Iesi.Collections.dll
+D:\2-项目-物流\wuliu_project2\domain\domain\bin\Debug\NHibernate.ByteCode.Castle.dll
+D:\2-项目-物流\wuliu_project2\domain\domain\bin\Debug\NHibernate.dll
+D:\2-项目-物流\wuliu_project2\domain\domain\bin\Debug\Remotion.Data.Linq.dll
+D:\2-项目-物流\wuliu_project2\domain\domain\bin\Debug\NHibernate.xml
+D:\2-项目-物流\wuliu_project2\domain\domain\bin\Debug\NHibernate.ByteCode.Castle.xml
+D:\2-项目-物流\wuliu_project2\domain\domain\obj\Debug\domain.csprojResolveAssemblyReference.cache
+D:\2-项目-物流\wuliu_project2\domain\domain\obj\Debug\domain.dll
+D:\2-项目-物流\wuliu_project2\domain\domain\obj\Debug\domain.pdb

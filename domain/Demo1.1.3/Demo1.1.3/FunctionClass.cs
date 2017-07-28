@@ -257,9 +257,10 @@ namespace Demo1._1._3
                 using (var ws = new WebSocket("ws://localhost:9000/GetField"))
                 {
                     ws.Connect();
+                     ws.Send("GetFieldDetail!!");
                     while (json == null)
                     {
-                        ws.Send("GetFieldDetail!!");
+                       
                         ws.OnMessage += (sender, e) =>
                         json = e.Data;
                     }

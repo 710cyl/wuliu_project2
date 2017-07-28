@@ -29,7 +29,7 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
         DateTimePicker dtp = new DateTimePicker();
         FunctionClass fc = new FunctionClass();
         domain.Outbound_Car bs = new domain.Outbound_Car();
-        private BindingList<Outbound_Car_Detail> carDetailList;
+        private  BindingList<Outbound_Car_Detail> carDetailList;
         List<domain.Outbound_Car_Detail> sd = new List<Outbound_Car_Detail>();
         public static bool isExist = false;//执行修改操作时判断是否存在数据
 
@@ -157,8 +157,8 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
 
         private void button_Add_Click(object sender, EventArgs e)
         {
-           domain.Outbound_Car_Detail sd = new domain.Outbound_Car_Detail() { };
-           carDetailList.Add(sd);
+            domain.Outbound_Car_Detail sd = new domain.Outbound_Car_Detail() { };
+            Outbound_Car.carDetails.Add(sd);
 
         }
 

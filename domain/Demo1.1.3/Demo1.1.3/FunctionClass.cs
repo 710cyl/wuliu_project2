@@ -49,8 +49,8 @@ namespace Demo1._1._3
                          ws.OnMessage += (sender, e) =>
                                     total_Page = (Convert.ToInt64(e.Data) / 5) + 1;
                     }
-                ws.Close();
-                 }
+                   ws.Close();
+                }
                     return total_Page;
              }
         /// <summary>
@@ -257,9 +257,10 @@ namespace Demo1._1._3
                 using (var ws = new WebSocket("ws://localhost:9000/GetField"))
                 {
                     ws.Connect();
+                    ws.Send("GetFieldDetail!!");
                     while (json == null)
                     {
-                        ws.Send("GetFieldDetail!!");
+                        
                         ws.OnMessage += (sender, e) =>
                         json = e.Data;
                     }
@@ -331,8 +332,7 @@ namespace Demo1._1._3
                     {
                         wsm.Connect();
                         wsm.Send(jsonMain);
-                        wsm.Close();
-                       
+                        
                     }
                     catch (Exception)
                     {
@@ -343,8 +343,8 @@ namespace Demo1._1._3
                                         error = e.Data;
                         }
                         MessageBox.Show(error);
-                        wsm.Close();
                     }
+                    wsm.Close();
                 }
                 wsn.Close();
             }
@@ -359,7 +359,6 @@ namespace Demo1._1._3
                     {
                         ws.Connect();
                         ws.Send(Json);
-                        ws.Close();
                     }
                     catch (Exception)
                     {
@@ -370,8 +369,8 @@ namespace Demo1._1._3
                                         error = e.Data;
                         }
                         MessageBox.Show(error);
-                        ws.Close();
-                    }        
+                    }
+                    ws.Close();
                 }
                 wsn.Close();
             }

@@ -321,13 +321,15 @@ namespace wuliu_server
                     Console.WriteLine(e.Data);
                     Console.WriteLine(json);
                     Send(json);
-
                 }
                 catch (Exception ex)
                 {
                     Send(ex.Message);
+                    
                 }
                 session.Close();
+
+
             }
         }
 
@@ -388,17 +390,16 @@ namespace wuliu_server
                 {
                     session = sessionFactory.OpenSession();
                     string json = SwitchData(session,e.Data);
-
                     Console.WriteLine(e.Data);
                     Console.WriteLine(json);
                     Send(json);
-
+                    
                 }
                 catch (Exception ex)
                 {
-                    session.Close();
                     Send(ex.Message);
                 }
+                session.Close();
             }
         }
 
@@ -910,9 +911,10 @@ namespace wuliu_server
                 }
                 catch (Exception ex)
                 {
-                    session.Close();
+                    
                     Send(ex.Message);
                 }
+                session.Close();
             }
         }
 

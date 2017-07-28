@@ -35,7 +35,7 @@ namespace Demo1._1._3
         public static int count = 0;//明细表所有列数
         public static string[] array = null;//
 
-        private BindingList<domain.Outbound_Car_Detail> carDetails;
+        public static BindingList<domain.Outbound_Car_Detail> carDetails;
 
         public  long total_Page = 0; //页码总条目
         public  long now_Page = 1; //当前页码
@@ -45,7 +45,7 @@ namespace Demo1._1._3
         private Outbound_Car main_outCar;
         private object JavaScriptConvert;
         public static List<domain.Outbound_Car_Detail> sd = new List<Outbound_Car_Detail>(); //得到明细表的list
-        private BindingList<Outbound_Car_Detail> carDetailList;
+        private  BindingList<Outbound_Car_Detail> carDetailList;
         public static string str = null;
 
         public Outbound_Car()
@@ -218,6 +218,7 @@ namespace Demo1._1._3
         //修改数据 fairy 2017-07-12
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
+            
             if (gridView1.SelectedRowsCount > 0)// && gridView1.GetFocusedDataSourceRowIndex() >0
             {
                 colCount = gridView1.Columns.Count();

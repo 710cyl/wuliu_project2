@@ -47,13 +47,6 @@ namespace Demo1._1._3.Panel2_MyWorkBench
             fc.InitPage(dataNavigator_Basic_Set, total_Page, now_Page);
         }
 
-        private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e) //点击行 得到主表中明细的内容
-        {
-            str = gridView1.GetFocusedRowCellDisplayText(gridView1.Columns["StorageNumber"]); //获取主键内容
-            MessageBox.Show(str);
-            sd = JsonConvert.DeserializeObject<List<domain.StorageDetails>>(fc.FindDeteils(str, "StorageDetails"));
-            gridControl2.DataSource = sd;
-        }
 
       
 
@@ -82,11 +75,11 @@ namespace Demo1._1._3.Panel2_MyWorkBench
 
         private void toolStripButton2_Click(object sender, EventArgs e) //修改
         {
-            colCount = gridView1.Columns.Count()-1;
+            colCount = gridView3.Columns.Count()-1;
             array = new string[colCount];
             for (int i = 0; i < colCount; i++)
             {
-                array[i] = gridView1.GetFocusedRowCellDisplayText(gridView1.Columns[i]);
+                array[i] = gridView3.GetFocusedRowCellDisplayText(gridView3.Columns[i]);
             }
             if (array[0].Length > 0)
             {
@@ -139,7 +132,7 @@ namespace Demo1._1._3.Panel2_MyWorkBench
             }
             else
             {
-                gridControl1.DataSource = fc.showDataLike<domain.StorageFormMain>(bs, now_Page.ToString(), input_val);
+                gridControl3.DataSource = fc.showDataLike<domain.StorageFormMain>(bs, now_Page.ToString(), input_val);
             }
         }
 
@@ -154,30 +147,38 @@ namespace Demo1._1._3.Panel2_MyWorkBench
                     now_Page++;
                     dataNavigator_Basic_Set.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
                     domain.StorageFormMain bs = new domain.StorageFormMain();
-                    gridControl1.DataSource = fc.showData<domain.StorageFormMain>(bs, now_Page.ToString());
+                    gridControl3.DataSource = fc.showData<domain.StorageFormMain>(bs, now_Page.ToString());
                 }
                 else if (btn.Tag.ToString() == "上一页" && now_Page > 1)
                 {
                     now_Page--;
                     dataNavigator_Basic_Set.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
                     domain.StorageFormMain bs = new domain.StorageFormMain();
-                    gridControl1.DataSource = fc.showData<domain.StorageFormMain>(bs, now_Page.ToString());
+                    gridControl3.DataSource = fc.showData<domain.StorageFormMain>(bs, now_Page.ToString());
                 }
                 else if (btn.Tag.ToString() == "首页")
                 {
                     now_Page = 1;
                     dataNavigator_Basic_Set.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
                     domain.StorageFormMain bs = new domain.StorageFormMain();
-                    gridControl1.DataSource = fc.showData<domain.StorageFormMain>(bs, now_Page.ToString());
+                    gridControl3.DataSource = fc.showData<domain.StorageFormMain>(bs, now_Page.ToString());
                 }
                 else if (btn.Tag.ToString() == "尾页")
                 {
                     now_Page = total_Page;
                     dataNavigator_Basic_Set.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
                     domain.StorageFormMain bs = new domain.StorageFormMain();
-                    gridControl1.DataSource = fc.showData<domain.StorageFormMain>(bs, now_Page.ToString());
+                    gridControl3.DataSource = fc.showData<domain.StorageFormMain>(bs, now_Page.ToString());
                 }
             }
+        }
+
+        private void gridView3_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            str = gridView3.GetFocusedRowCellDisplayText(gridView3.Columns["StorageNumber"]); //获取主键内容
+            MessageBox.Show(str);
+            sd = JsonConvert.DeserializeObject<List<domain.StorageDetails>>(fc.FindDeteils(str, "StorageDetails"));
+            gridControl2.DataSource = sd;
         }
     }
 }

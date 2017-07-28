@@ -1,5 +1,0 @@
-D:\2-项目-物流\wuliu_project2\domain\testBasicSet\obj\Debug\testBasicSet.csprojResolveAssemblyReference.cache
-D:\2-项目-物流\wuliu_project2\domain\testBasicSet\obj\Debug\testBasicSet.Form1.resources
-D:\2-项目-物流\wuliu_project2\domain\testBasicSet\obj\Debug\testBasicSet.Properties.Resources.resources
-D:\2-项目-物流\wuliu_project2\domain\testBasicSet\obj\Debug\testBasicSet.csproj.GenerateResource.Cache
-D:\2-项目-物流\wuliu_project2\domain\testBasicSet\obj\Debug\testBasicSet.exe.licenses

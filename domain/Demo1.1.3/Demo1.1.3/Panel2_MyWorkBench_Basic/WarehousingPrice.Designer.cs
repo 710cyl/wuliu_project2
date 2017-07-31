@@ -39,16 +39,9 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.FindToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -91,18 +84,29 @@
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dataNavigator2 = new DevExpress.XtraEditors.DataNavigator();
+            this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            this.toolStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPane1
@@ -110,14 +114,14 @@
             this.tabPane1.BackColor = System.Drawing.SystemColors.Control;
             this.tabPane1.Controls.Add(this.tabNavigationPage1);
             this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabPane1.Location = new System.Drawing.Point(0, 159);
+            this.tabPane1.Location = new System.Drawing.Point(0, 212);
             this.tabPane1.Name = "tabPane1";
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabNavigationPage1});
-            this.tabPane1.RegularSize = new System.Drawing.Size(1076, 507);
+            this.tabPane1.RegularSize = new System.Drawing.Size(1076, 454);
             this.tabPane1.SelectedPage = this.tabNavigationPage1;
             this.tabPane1.SelectedPageIndex = 0;
-            this.tabPane1.Size = new System.Drawing.Size(1076, 507);
+            this.tabPane1.Size = new System.Drawing.Size(1076, 454);
             this.tabPane1.TabIndex = 23;
             // 
             // tabNavigationPage1
@@ -127,7 +131,7 @@
             this.tabNavigationPage1.Caption = "仓储价格_明细";
             this.tabNavigationPage1.Controls.Add(this.gridControl2);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
-            this.tabNavigationPage1.Size = new System.Drawing.Size(1058, 461);
+            this.tabNavigationPage1.Size = new System.Drawing.Size(1058, 408);
             // 
             // gridControl2
             // 
@@ -135,7 +139,7 @@
             this.gridControl2.Location = new System.Drawing.Point(0, 0);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1058, 461);
+            this.gridControl2.Size = new System.Drawing.Size(1058, 408);
             this.gridControl2.TabIndex = 5;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -229,6 +233,16 @@
             this.gridColumn5.VisibleIndex = 6;
             this.gridColumn5.Width = 80;
             // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "合同止期";
+            this.gridColumn2.MaxWidth = 100;
+            this.gridColumn2.MinWidth = 80;
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 7;
+            this.gridColumn2.Width = 80;
+            // 
             // gridColumn4
             // 
             this.gridColumn4.Caption = "备注";
@@ -245,92 +259,6 @@
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 9;
             this.gridColumn7.Width = 311;
-            // 
-            // gridControl1
-            // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gridControl1.Location = new System.Drawing.Point(0, 25);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1076, 134);
-            this.gridControl1.TabIndex = 24;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn8,
-            this.gridColumn17,
-            this.gridColumn18,
-            this.gridColumn19,
-            this.gridColumn20,
-            this.gridColumn13,
-            this.gridColumn21,
-            this.gridColumn16,
-            this.gridColumn15,
-            this.gridColumn30});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.Editable = false;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridColumn8
-            // 
-            this.gridColumn8.Caption = "锁状态";
-            this.gridColumn8.MaxWidth = 100;
-            this.gridColumn8.MinWidth = 80;
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 0;
-            this.gridColumn8.Width = 83;
-            // 
-            // gridColumn17
-            // 
-            this.gridColumn17.Caption = "货主";
-            this.gridColumn17.MaxWidth = 100;
-            this.gridColumn17.MinWidth = 80;
-            this.gridColumn17.Name = "gridColumn17";
-            this.gridColumn17.Visible = true;
-            this.gridColumn17.VisibleIndex = 1;
-            this.gridColumn17.Width = 80;
-            // 
-            // gridColumn18
-            // 
-            this.gridColumn18.Caption = "合同号";
-            this.gridColumn18.MaxWidth = 100;
-            this.gridColumn18.MinWidth = 80;
-            this.gridColumn18.Name = "gridColumn18";
-            this.gridColumn18.Visible = true;
-            this.gridColumn18.VisibleIndex = 2;
-            this.gridColumn18.Width = 80;
-            // 
-            // gridColumn19
-            // 
-            this.gridColumn19.Caption = "合同日期";
-            this.gridColumn19.MaxWidth = 100;
-            this.gridColumn19.MinWidth = 80;
-            this.gridColumn19.Name = "gridColumn19";
-            this.gridColumn19.Visible = true;
-            this.gridColumn19.VisibleIndex = 3;
-            this.gridColumn19.Width = 80;
-            // 
-            // gridColumn20
-            // 
-            this.gridColumn20.Caption = "录入人";
-            this.gridColumn20.MaxWidth = 100;
-            this.gridColumn20.MinWidth = 80;
-            this.gridColumn20.Name = "gridColumn20";
-            this.gridColumn20.Visible = true;
-            this.gridColumn20.VisibleIndex = 4;
-            this.gridColumn20.Width = 80;
-            // 
-            // gridColumn30
-            // 
-            this.gridColumn30.Name = "gridColumn30";
-            this.gridColumn30.Visible = true;
-            this.gridColumn30.VisibleIndex = 9;
-            this.gridColumn30.Width = 98;
             // 
             // toolStrip1
             // 
@@ -629,13 +557,102 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem1.Text = "相关文档";
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.gridControl1);
+            this.panel1.Controls.Add(this.dataNavigator2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 25);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1076, 182);
+            this.panel1.TabIndex = 24;
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(0, 0);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(1076, 158);
+            this.gridControl1.TabIndex = 25;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn8,
+            this.gridColumn17,
+            this.gridColumn18,
+            this.gridColumn19,
+            this.gridColumn20,
+            this.gridColumn13,
+            this.gridColumn21,
+            this.gridColumn16,
+            this.gridColumn15,
+            this.gridColumn30});
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "锁状态";
+            this.gridColumn8.MaxWidth = 100;
+            this.gridColumn8.MinWidth = 80;
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 0;
+            this.gridColumn8.Width = 83;
+            // 
+            // gridColumn17
+            // 
+            this.gridColumn17.Caption = "货主";
+            this.gridColumn17.MaxWidth = 100;
+            this.gridColumn17.MinWidth = 80;
+            this.gridColumn17.Name = "gridColumn17";
+            this.gridColumn17.Visible = true;
+            this.gridColumn17.VisibleIndex = 1;
+            this.gridColumn17.Width = 80;
+            // 
+            // gridColumn18
+            // 
+            this.gridColumn18.Caption = "合同号";
+            this.gridColumn18.MaxWidth = 100;
+            this.gridColumn18.MinWidth = 80;
+            this.gridColumn18.Name = "gridColumn18";
+            this.gridColumn18.Visible = true;
+            this.gridColumn18.VisibleIndex = 2;
+            this.gridColumn18.Width = 80;
+            // 
+            // gridColumn19
+            // 
+            this.gridColumn19.Caption = "合同日期";
+            this.gridColumn19.MaxWidth = 100;
+            this.gridColumn19.MinWidth = 80;
+            this.gridColumn19.Name = "gridColumn19";
+            this.gridColumn19.Visible = true;
+            this.gridColumn19.VisibleIndex = 3;
+            this.gridColumn19.Width = 80;
+            // 
+            // gridColumn20
+            // 
+            this.gridColumn20.Caption = "录入人";
+            this.gridColumn20.MaxWidth = 100;
+            this.gridColumn20.MinWidth = 80;
+            this.gridColumn20.Name = "gridColumn20";
+            this.gridColumn20.Visible = true;
+            this.gridColumn20.VisibleIndex = 4;
+            this.gridColumn20.Width = 80;
             // 
             // gridColumn13
             // 
@@ -647,15 +664,15 @@
             this.gridColumn13.VisibleIndex = 5;
             this.gridColumn13.Width = 80;
             // 
-            // gridColumn15
+            // gridColumn21
             // 
-            this.gridColumn15.Caption = "备注";
-            this.gridColumn15.MaxWidth = 100;
-            this.gridColumn15.MinWidth = 80;
-            this.gridColumn15.Name = "gridColumn15";
-            this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 8;
-            this.gridColumn15.Width = 80;
+            this.gridColumn21.Caption = "修改人";
+            this.gridColumn21.MaxWidth = 100;
+            this.gridColumn21.MinWidth = 80;
+            this.gridColumn21.Name = "gridColumn21";
+            this.gridColumn21.Visible = true;
+            this.gridColumn21.VisibleIndex = 6;
+            this.gridColumn21.Width = 80;
             // 
             // gridColumn16
             // 
@@ -667,32 +684,48 @@
             this.gridColumn16.VisibleIndex = 7;
             this.gridColumn16.Width = 80;
             // 
-            // gridColumn21
+            // gridColumn15
             // 
-            this.gridColumn21.Caption = "修改人";
-            this.gridColumn21.MaxWidth = 100;
-            this.gridColumn21.MinWidth = 80;
-            this.gridColumn21.Name = "gridColumn21";
-            this.gridColumn21.Visible = true;
-            this.gridColumn21.VisibleIndex = 6;
-            this.gridColumn21.Width = 80;
+            this.gridColumn15.Caption = "备注";
+            this.gridColumn15.MaxWidth = 100;
+            this.gridColumn15.MinWidth = 80;
+            this.gridColumn15.Name = "gridColumn15";
+            this.gridColumn15.Visible = true;
+            this.gridColumn15.VisibleIndex = 8;
+            this.gridColumn15.Width = 80;
             // 
-            // gridColumn2
+            // gridColumn30
             // 
-            this.gridColumn2.Caption = "合同止期";
-            this.gridColumn2.MaxWidth = 100;
-            this.gridColumn2.MinWidth = 80;
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 7;
-            this.gridColumn2.Width = 80;
+            this.gridColumn30.Name = "gridColumn30";
+            this.gridColumn30.Visible = true;
+            this.gridColumn30.VisibleIndex = 9;
+            this.gridColumn30.Width = 98;
+            // 
+            // dataNavigator2
+            // 
+            this.dataNavigator2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataNavigator2.Location = new System.Drawing.Point(0, 158);
+            this.dataNavigator2.Name = "dataNavigator2";
+            this.dataNavigator2.Size = new System.Drawing.Size(1076, 24);
+            this.dataNavigator2.TabIndex = 37;
+            this.dataNavigator2.Text = "dataNavigator2";
+            // 
+            // splitterControl1
+            // 
+            this.splitterControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.splitterControl1.Location = new System.Drawing.Point(0, 207);
+            this.splitterControl1.Name = "splitterControl1";
+            this.splitterControl1.Size = new System.Drawing.Size(1076, 5);
+            this.splitterControl1.TabIndex = 32;
+            this.splitterControl1.TabStop = false;
             // 
             // WarehousingPrice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabPane1);
-            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.splitterControl1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "WarehousingPrice";
             this.Size = new System.Drawing.Size(1076, 666);
@@ -700,10 +733,11 @@
             this.tabNavigationPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -724,18 +758,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn21;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn30;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem FindToolStripMenuItem;
@@ -779,5 +801,20 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private System.Windows.Forms.Panel panel1;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn21;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn30;
+        private DevExpress.XtraEditors.DataNavigator dataNavigator2;
+        private DevExpress.XtraEditors.SplitterControl splitterControl1;
     }
 }

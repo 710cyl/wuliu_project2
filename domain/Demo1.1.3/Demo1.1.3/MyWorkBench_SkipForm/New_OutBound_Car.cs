@@ -31,7 +31,7 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
         domain.Outbound_Car bs = new domain.Outbound_Car();
         private  BindingList<Outbound_Car_Detail> carDetailList;
         List<domain.Outbound_Car_Detail> sd = new List<Outbound_Car_Detail>();
-        public static bool isExist = false;//执行修改操作时判断是否存在数据
+       // private  bool isExist = false;//执行修改操作时判断是否存在数据
 
         public New_OutBound_Car()
         {
@@ -94,7 +94,15 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
             bs.close_staff = text_close_staff.Text;
             // bs.close_time = Convert.ToDateTime(date_close_time.SelectedText.ToString());
             bs.explain = text_explain.Text;
-            List<domain.Outbound_Car_Detail> sd = carDetailList.ToList<Outbound_Car_Detail>();
+            List<domain.Outbound_Car_Detail> sd = new List<Outbound_Car_Detail>();
+            if (Outbound_Car.isExist)
+            {//修改
+                sd = Outbound_Car.carDetails.ToList<Outbound_Car_Detail>();
+            }
+            else
+            {//新建
+                sd = carDetailList.ToList<Outbound_Car_Detail>();
+            }
             string Json = JsonConvert.SerializeObject(sd);
             string jsonMain = JsonConvert.SerializeObject(bs);
             
@@ -158,7 +166,15 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
         private void button_Add_Click(object sender, EventArgs e)
         {
             domain.Outbound_Car_Detail sd = new domain.Outbound_Car_Detail() { };
-            Outbound_Car.carDetails.Add(sd);
+            if (Outbound_Car.isExist)
+            {//修改
+                Outbound_Car.carDetails.Add(sd);
+            }
+            else
+            {//新建
+                carDetailList.Add(sd);
+            }
+
 
         }
 

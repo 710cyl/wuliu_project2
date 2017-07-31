@@ -11,7 +11,7 @@ using NHibernate.Cfg;
 using NHibernate.ByteCode.Castle;
 using domain;
 using WebSocketSharp;
-using Basic_SetTest;
+//using Basic_SetTest;
 using System.Threading;
 using Newtonsoft.Json;
 namespace testBasicSet

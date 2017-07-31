@@ -72,18 +72,42 @@
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.remarks = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.reimbursementDetails = new System.Windows.Forms.ComboBox();
+            this.FeeinChinese = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.reimbursementFee = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.driver = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.carNumber = new System.Windows.Forms.TextBox();
+            this.fleet = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.registrationTime = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.reimbursementNumber = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.registrant = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gridControl2
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(0, 25);
+            this.gridControl2.Location = new System.Drawing.Point(0, 198);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(970, 573);
+            this.gridControl2.Size = new System.Drawing.Size(970, 400);
             this.gridControl2.TabIndex = 23;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -400,11 +424,261 @@
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
             // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.AutoScrollMinSize = new System.Drawing.Size(1017, 180);
+            this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.remarks);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.reimbursementDetails);
+            this.panel1.Controls.Add(this.FeeinChinese);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.reimbursementFee);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.driver);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.carNumber);
+            this.panel1.Controls.Add(this.fleet);
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.label16);
+            this.panel1.Controls.Add(this.registrationTime);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.reimbursementNumber);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.registrant);
+            this.panel1.Controls.Add(this.label22);
+            this.panel1.Controls.Add(this.simpleButton2);
+            this.panel1.Controls.Add(this.simpleButton1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 25);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(970, 173);
+            this.panel1.TabIndex = 25;
+            this.panel1.Visible = false;
+            // 
+            // remarks
+            // 
+            this.remarks.Font = new System.Drawing.Font("宋体", 9F);
+            this.remarks.Location = new System.Drawing.Point(88, 105);
+            this.remarks.Name = "remarks";
+            this.remarks.Size = new System.Drawing.Size(602, 21);
+            this.remarks.TabIndex = 418;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label5.Location = new System.Drawing.Point(39, 107);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(43, 13);
+            this.label5.TabIndex = 417;
+            this.label5.Text = "备注：";
+            // 
+            // reimbursementDetails
+            // 
+            this.reimbursementDetails.Font = new System.Drawing.Font("宋体", 9F);
+            this.reimbursementDetails.FormattingEnabled = true;
+            this.reimbursementDetails.Location = new System.Drawing.Point(315, 78);
+            this.reimbursementDetails.Name = "reimbursementDetails";
+            this.reimbursementDetails.Size = new System.Drawing.Size(149, 20);
+            this.reimbursementDetails.TabIndex = 416;
+            // 
+            // FeeinChinese
+            // 
+            this.FeeinChinese.Font = new System.Drawing.Font("宋体", 9F);
+            this.FeeinChinese.Location = new System.Drawing.Point(769, 77);
+            this.FeeinChinese.Name = "FeeinChinese";
+            this.FeeinChinese.ReadOnly = true;
+            this.FeeinChinese.Size = new System.Drawing.Size(148, 21);
+            this.FeeinChinese.TabIndex = 415;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("宋体", 9F);
+            this.label2.Location = new System.Drawing.Point(697, 81);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 12);
+            this.label2.TabIndex = 414;
+            this.label2.Text = "金额大写：";
+            // 
+            // reimbursementFee
+            // 
+            this.reimbursementFee.Font = new System.Drawing.Font("宋体", 9F);
+            this.reimbursementFee.Location = new System.Drawing.Point(542, 78);
+            this.reimbursementFee.Name = "reimbursementFee";
+            this.reimbursementFee.Size = new System.Drawing.Size(148, 21);
+            this.reimbursementFee.TabIndex = 413;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("宋体", 9F);
+            this.label10.Location = new System.Drawing.Point(470, 81);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(65, 12);
+            this.label10.TabIndex = 412;
+            this.label10.Text = "报销金额：";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("宋体", 9F);
+            this.label11.Location = new System.Drawing.Point(243, 81);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(65, 12);
+            this.label11.TabIndex = 411;
+            this.label11.Text = "报销内容：";
+            // 
+            // driver
+            // 
+            this.driver.Font = new System.Drawing.Font("宋体", 9F);
+            this.driver.Location = new System.Drawing.Point(88, 78);
+            this.driver.Name = "driver";
+            this.driver.Size = new System.Drawing.Size(148, 21);
+            this.driver.TabIndex = 410;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("宋体", 9F);
+            this.label3.Location = new System.Drawing.Point(40, 81);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 12);
+            this.label3.TabIndex = 409;
+            this.label3.Text = "司机：";
+            // 
+            // carNumber
+            // 
+            this.carNumber.Font = new System.Drawing.Font("宋体", 9F);
+            this.carNumber.Location = new System.Drawing.Point(316, 51);
+            this.carNumber.Name = "carNumber";
+            this.carNumber.Size = new System.Drawing.Size(148, 21);
+            this.carNumber.TabIndex = 408;
+            // 
+            // fleet
+            // 
+            this.fleet.Font = new System.Drawing.Font("宋体", 9F);
+            this.fleet.Location = new System.Drawing.Point(88, 51);
+            this.fleet.Name = "fleet";
+            this.fleet.Size = new System.Drawing.Size(148, 21);
+            this.fleet.TabIndex = 407;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("宋体", 9F);
+            this.label15.Location = new System.Drawing.Point(267, 55);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(41, 12);
+            this.label15.TabIndex = 406;
+            this.label15.Text = "车号：";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("宋体", 9F);
+            this.label16.Location = new System.Drawing.Point(40, 55);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(41, 12);
+            this.label16.TabIndex = 405;
+            this.label16.Text = "车队：";
+            // 
+            // registrationTime
+            // 
+            this.registrationTime.Font = new System.Drawing.Font("宋体", 9F);
+            this.registrationTime.Location = new System.Drawing.Point(542, 24);
+            this.registrationTime.Name = "registrationTime";
+            this.registrationTime.Size = new System.Drawing.Size(148, 21);
+            this.registrationTime.TabIndex = 404;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("宋体", 9F);
+            this.label4.Location = new System.Drawing.Point(470, 27);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 12);
+            this.label4.TabIndex = 403;
+            this.label4.Text = "登记时间：";
+            // 
+            // reimbursementNumber
+            // 
+            this.reimbursementNumber.Font = new System.Drawing.Font("宋体", 9F);
+            this.reimbursementNumber.Location = new System.Drawing.Point(88, 24);
+            this.reimbursementNumber.Name = "reimbursementNumber";
+            this.reimbursementNumber.Size = new System.Drawing.Size(148, 21);
+            this.reimbursementNumber.TabIndex = 402;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("宋体", 9F);
+            this.label1.Location = new System.Drawing.Point(16, 27);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 12);
+            this.label1.TabIndex = 401;
+            this.label1.Text = "报销单号：";
+            // 
+            // registrant
+            // 
+            this.registrant.Font = new System.Drawing.Font("宋体", 9F);
+            this.registrant.Location = new System.Drawing.Point(315, 24);
+            this.registrant.Name = "registrant";
+            this.registrant.Size = new System.Drawing.Size(148, 21);
+            this.registrant.TabIndex = 400;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("宋体", 9F);
+            this.label22.Location = new System.Drawing.Point(243, 27);
+            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(65, 12);
+            this.label22.TabIndex = 399;
+            this.label22.Text = "登记人员：";
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.simpleButton2.Appearance.Options.UseFont = true;
+            this.simpleButton2.Image = global::Demo1._1._3.Properties.Resources.cancel_16x16;
+            this.simpleButton2.Location = new System.Drawing.Point(856, 125);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(61, 22);
+            this.simpleButton2.TabIndex = 160;
+            this.simpleButton2.Text = "关闭";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.simpleButton1.Appearance.Options.UseFont = true;
+            this.simpleButton1.Image = global::Demo1._1._3.Properties.Resources.save_16x16;
+            this.simpleButton1.Location = new System.Drawing.Point(752, 125);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(98, 22);
+            this.simpleButton1.TabIndex = 159;
+            this.simpleButton1.Text = "保存";
+            // 
             // CarReimbursement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gridControl2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "CarReimbursement";
             this.Size = new System.Drawing.Size(970, 598);
@@ -412,6 +686,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -463,5 +739,28 @@
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox remarks;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox reimbursementDetails;
+        private System.Windows.Forms.TextBox FeeinChinese;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox reimbursementFee;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox driver;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox carNumber;
+        private System.Windows.Forms.TextBox fleet;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox registrationTime;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox reimbursementNumber;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox registrant;
+        private System.Windows.Forms.Label label22;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

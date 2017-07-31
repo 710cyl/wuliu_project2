@@ -216,7 +216,7 @@ namespace Demo1._1._3
             {
                 wsn.Connect();
                 wsn.Send(main);
-               
+
                 using (var wsm = new WebSocket("ws://localhost:9000/MainSave")) //保存主表
                 {
                     wsm.Connect();
@@ -231,7 +231,7 @@ namespace Demo1._1._3
             {
                 wsn.Connect();
                 wsn.Send(detail);
-                
+
                 using (var ws = new WebSocket("ws://localhost:9000/MutiSave")) //保存明细表
                 {
                     ws.Connect();
@@ -260,7 +260,6 @@ namespace Demo1._1._3
                     ws.Send("GetFieldDetail!!");
                     while (json == null)
                     {
-                        
                         ws.OnMessage += (sender, e) =>
                         json = e.Data;
                     }
@@ -319,20 +318,21 @@ namespace Demo1._1._3
                 {
                     wsn.Connect();
                     wsn.Send(main);
-                   
+
                 }
                 catch (Exception)
                 {
                     throw;
                 }
-                
+
                 using (var wsm = new WebSocket("ws://localhost:9000/MainChange")) //修改主表
                 {
                     try
                     {
                         wsm.Connect();
                         wsm.Send(jsonMain);
-                        
+                        wsm.Close();
+
                     }
                     catch (Exception)
                     {
@@ -343,12 +343,12 @@ namespace Demo1._1._3
                                         error = e.Data;
                         }
                         MessageBox.Show(error);
+                        wsm.Close();
                     }
-                    wsm.Close();
                 }
                 wsn.Close();
             }
-          Thread.Sleep(1500);
+            Thread.Sleep(1500);
             using (var wsn = new WebSocket("ws://localhost:9000/GetClassName/Detail"))
             {
                 wsn.Connect();
@@ -359,6 +359,7 @@ namespace Demo1._1._3
                     {
                         ws.Connect();
                         ws.Send(Json);
+                        ws.Close();
                     }
                     catch (Exception)
                     {
@@ -369,8 +370,8 @@ namespace Demo1._1._3
                                         error = e.Data;
                         }
                         MessageBox.Show(error);
+                        ws.Close();
                     }
-                    ws.Close();
                 }
                 wsn.Close();
             }

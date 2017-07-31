@@ -45,7 +45,7 @@ namespace Demo1._1._3
         private Outbound_Car main_outCar;
         private object JavaScriptConvert;
         public static List<domain.Outbound_Car_Detail> sd = new List<Outbound_Car_Detail>(); //得到明细表的list
-        private  BindingList<Outbound_Car_Detail> carDetailList;
+       // private  BindingList<Outbound_Car_Detail> carDetailList;
         public static string str = null;
 
         public Outbound_Car()
@@ -195,13 +195,16 @@ namespace Demo1._1._3
               
                 String detail = fc.FindDeteils(colValue, carDetail);
                 sd = JsonConvert.DeserializeObject<List<domain.Outbound_Car_Detail>>(detail);
-                carDetailList = new BindingList<Outbound_Car_Detail>(sd);
-                this.gridControl2.DataSource = carDetailList;
-                this.gridView2.Columns[0].Caption = "入库标识码";
-                this.gridView2.Columns[1].Caption = "订单号";
-                this.gridView2.BestFitColumns();
-
-              
+                carDetails = new BindingList<Outbound_Car_Detail>(sd);
+                if (carDetails.Count == 0)
+                {
+                    MessageBox.Show("没有明细数据，请补充！");
+                    this.gridControl2.DataSource = "";
+                }
+                else {
+                    this.gridControl2.DataSource = carDetails;
+                   // this.gridView2.BestFitColumns();
+                }
             }
         }
 
@@ -209,16 +212,16 @@ namespace Demo1._1._3
         //新建 fairy 2017-07-12
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-             
-             New_OutBound_Car nb = new New_OutBound_Car();
-             nb.ShowDialog();
+            isExist = false;
+            New_OutBound_Car nb = new New_OutBound_Car();
+            nb.ShowDialog();
         }
 
 
         //修改数据 fairy 2017-07-12
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            
+            isExist = true;
             if (gridView1.SelectedRowsCount > 0)// && gridView1.GetFocusedDataSourceRowIndex() >0
             {
                 colCount = gridView1.Columns.Count();
@@ -262,8 +265,6 @@ namespace Demo1._1._3
                     carDetails = new BindingList<domain.Outbound_Car_Detail>(sd);
                     nb.gridControl1.DataSource = carDetails;
                     nb.ShowDialog();
-                    isExist = true;
-
                 }
                 else
                 {

@@ -11,3 +11,4 @@ F:\WULIU\wuliu_project2\domain\domain\bin\Debug\NHibernate.xml
 F:\WULIU\wuliu_project2\domain\domain\bin\Debug\NHibernate.ByteCode.Castle.xml
 F:\WULIU\wuliu_project2\domain\domain\obj\Debug\domain.dll
 F:\WULIU\wuliu_project2\domain\domain\obj\Debug\domain.pdb
+F:\WULIU\wuliu_project2\domain\domain\obj\Debug\domain.csprojResolveAssemblyReference.cache

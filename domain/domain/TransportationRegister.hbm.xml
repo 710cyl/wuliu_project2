@@ -21,6 +21,7 @@
       <column name="car_number" length="20"/>
     </property>
 
+    
     <property name="driver" type="string">
       <column name="driver" length="20"/>
     </property>

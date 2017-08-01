@@ -19,6 +19,7 @@
       <column name="car_fee" precision="20"/>
     </property>
 
+    
     <property name="payment" type="string">
       <column name="payment" length="20"/>
     </property>

@@ -18,6 +18,7 @@
       <column name="enter_staff" length="20"/>
     </property>
 
+
     <property name="enter_time" type="DateTime">
       <column name="enter_time"/>
     </property>

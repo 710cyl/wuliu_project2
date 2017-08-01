@@ -13,6 +13,7 @@
       <column name="depart_point" length="20"/>
     </property>
 
+    
     <property name="ship_point" type="string">
       <column name="ship_point" length="20"/>
     </property>

@@ -21,6 +21,7 @@
       <column name="货主" length="20"/>
     </property>
 
+    
     <property name="reel_number" type="string">
       <column name="卷号" length="20"/>
     </property>

@@ -17,6 +17,7 @@
       <column name="transport_way" length="20"/>
     </property>
     
+    
     <property name="depart_point" type="string">
       <column name="depart_point" length="20"/>
     </property>

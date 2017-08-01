@@ -13,6 +13,7 @@
       <column name="fleet" length="20"/>
     </property>
 
+    
     <property name="car_number" type="string">
       <column name="car_number" length="20"/>
     </property>

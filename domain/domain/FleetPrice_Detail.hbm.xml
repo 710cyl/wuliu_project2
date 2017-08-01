@@ -21,6 +21,7 @@
       <column name="variety" length="20"/>
     </property>
 
+    
     <property name="texture" type="string">
       <column name="texture" length="20"/>
     </property>

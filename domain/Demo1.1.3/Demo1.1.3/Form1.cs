@@ -453,6 +453,7 @@ namespace Demo1._1._3
             fleetp.gridControl1.DataSource = showData<domain.FleetPrice>(fleetprice, dbs.now_Page1.ToString());
             fleetp.gridControl2.DataSource = showData<domain.FleetPrice_Detail>(fleetprice_detail, dbs.now_Page2.ToString());
             fleetp.gridView1.Columns["FleetPrice_Details"].Visible = false;
+            fleetp.gridView2.Columns["transport_ID"].Visible = false;
             fleetp.gridView1.BestFitColumns();
             fleetp.gridView2.BestFitColumns();
         }
@@ -470,6 +471,7 @@ namespace Demo1._1._3
             fleetpay.gridControl1.DataSource = showData<domain.FleetPayment>(fleetprice, dbs.now_Page1.ToString());
             fleetpay.gridControl2.DataSource = showData<domain.FleetPayment_Detail>(fleetprice_detail, dbs.now_Page2.ToString());
             fleetpay.gridView1.Columns["FleetPayment_Details"].Visible = false;
+            fleetpay.gridView2.Columns["list_ID"].Visible = false;
             fleetpay.gridView1.BestFitColumns();
             fleetpay.gridView2.BestFitColumns();
         }
@@ -487,6 +489,7 @@ namespace Demo1._1._3
             shipperp.gridControl1.DataSource = showData<domain.ShipperPrice>(fleetprice, dbs.now_Page1.ToString());
             shipperp.gridControl2.DataSource = showData<domain.ShipperPrice_Detail>(fleetprice_detail, dbs.now_Page2.ToString());
             shipperp.gridView1.Columns["ShipperPrice_Details"].Visible = false;
+            shipperp.gridView2.Columns["price_ID"].Visible = false;
             shipperp.gridView1.BestFitColumns();
             shipperp.gridView2.BestFitColumns();
         }

@@ -94,14 +94,14 @@
             this.tabPane1.BackColor = System.Drawing.SystemColors.Control;
             this.tabPane1.Controls.Add(this.tabNavigationPage1);
             this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabPane1.Location = new System.Drawing.Point(0, 225);
+            this.tabPane1.Location = new System.Drawing.Point(0, 247);
             this.tabPane1.Name = "tabPane1";
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabNavigationPage1});
-            this.tabPane1.RegularSize = new System.Drawing.Size(945, 334);
+            this.tabPane1.RegularSize = new System.Drawing.Size(945, 312);
             this.tabPane1.SelectedPage = this.tabNavigationPage1;
             this.tabPane1.SelectedPageIndex = 0;
-            this.tabPane1.Size = new System.Drawing.Size(945, 334);
+            this.tabPane1.Size = new System.Drawing.Size(945, 312);
             this.tabPane1.TabIndex = 28;
             // 
             // tabNavigationPage1
@@ -111,7 +111,7 @@
             this.tabNavigationPage1.Caption = "货主定价_明细";
             this.tabNavigationPage1.Controls.Add(this.gridControl2);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
-            this.tabNavigationPage1.Size = new System.Drawing.Size(927, 288);
+            this.tabNavigationPage1.Size = new System.Drawing.Size(927, 266);
             // 
             // gridControl2
             // 
@@ -119,7 +119,7 @@
             this.gridControl2.Location = new System.Drawing.Point(0, 0);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(927, 288);
+            this.gridControl2.Size = new System.Drawing.Size(927, 266);
             this.gridControl2.TabIndex = 22;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -129,6 +129,9 @@
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsBehavior.Editable = false;
+            this.gridView2.OptionsView.ColumnAutoWidth = false;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
             // gridControl1
             // 
@@ -145,6 +148,8 @@
             // 
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsView.ColumnAutoWidth = false;
             this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
             // 
             // toolStrip1
@@ -569,10 +574,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.tabPane1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataNavigator_ShipperPrice);
-            this.Controls.Add(this.tabPane1);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dataNavigator_ShipperPrice_Detail);

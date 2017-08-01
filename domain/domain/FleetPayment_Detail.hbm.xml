@@ -49,5 +49,9 @@
       <column name="transport_ID" length="20"/>
     </property>
 
+    <property name="list_ID" type="string">
+      <column name="list_ID" length="20"/>
+    </property>
+
   </class>
 </hibernate-mapping>

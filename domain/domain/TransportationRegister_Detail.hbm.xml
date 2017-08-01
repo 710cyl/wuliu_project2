@@ -1,178 +1,179 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="domain" namespace="domain">
   <class name="TransportationRegister_Detail" table="T_TransportationRegister_Detail" >
-    <id name="transport_identifying" column="运输单标识" type="string">
+    <id name="transport_identifying" column="transport_identifying" type="string">
       <generator class="assigned" />
     </id>
 
     <property name="tally_date" type="DateTime">
-      <column name="记账日期"/>
+      <column name="tally_date"/>
     </property>
 
     <property name="order_number" type="string">
-      <column name="订单号" length="20"/>
+      <column name="order_number" length="20"/>
     </property>
 
-    <property name="transport_ID" type="string">
-      <column name="运输单号" length="100"/>
-    </property>
 
     <property name="owner" type="string">
-      <column name="货主" length="20"/>
+      <column name="owner" length="20"/>
     </property>
 
-    
+
     <property name="reel_number" type="string">
-      <column name="卷号" length="20"/>
+      <column name="reel_number" length="20"/>
     </property>
 
     <property name="variety" type="string">
-      <column name="品种" length="20"/>
+      <column name="variety" length="20"/>
     </property>
 
     <property name="texture" type="string">
-      <column name="材质" length="20"/>
+      <column name="texture" length="20"/>
     </property>
 
     <property name="standard" type="string">
-      <column name="规格" length="20"/>
+      <column name="standard" length="20"/>
     </property>
 
     <property name="number" type="int">
-      <column name="件数"/>
+      <column name="number"/>
     </property>
 
     <property name="quantity" type="decimal">
-      <column name="数量" length="20"/>
-      <column name="数量" precision="3"/>
+      <column name="quantity" length="20"/>
+      <column name="quantity" precision="3"/>
     </property>
 
     <property name="rough_weight" type="decimal">
-      <column name="毛重" length="20"/>
-      <column name="毛重" precision="3"/>
+      <column name="rough_weight" length="20"/>
+      <column name="rough_weight" precision="3"/>
     </property>
 
     <property name="car_fare" type="decimal">
-      <column name="车队运价" length="20"/>
-      <column name="车队运价" precision="2"/>
+      <column name="car_fare" length="20"/>
+      <column name="car_fare" precision="2"/>
     </property>
 
     <property name="car_fee" type="decimal">
-      <column name="车队运费" length="20"/>
-      <column name="车队运费" precision="2"/>
+      <column name="car_fee" length="20"/>
+      <column name="car_fee" precision="2"/>
     </property>
 
     <property name="owner_fare" type="decimal">
-      <column name="货主运价" length="20"/>
-      <column name="货主运价" precision="3"/>
+      <column name="owner_fare" length="20"/>
+      <column name="owner_fare" precision="3"/>
     </property>
 
     <property name="owner_amount" type="decimal">
-      <column name="货主金额" length="20"/>
-      <column name="货主金额" precision="3"/>
+      <column name="owner_amount" length="20"/>
+      <column name="owner_amount" precision="3"/>
     </property>
 
     <property name="settlement_amount" type="decimal">
-      <column name="已结算金额" length="20"/>
-      <column name="已结算金额" precision="3"/>
+      <column name="settlement_amount" length="20"/>
+      <column name="settlement_amount" precision="3"/>
     </property>
 
     <property name="outstanding_amount" type="decimal">
-      <column name="未结算金额" length="20"/>
-      <column name="未结算金额" precision="3"/>
+      <column name="outstanding_amount" length="20"/>
+      <column name="outstanding_amount" precision="3"/>
     </property>
 
     <property name="transport_way" type="string">
-      <column name="运输方式" length="20"/>
+      <column name="transport_way" length="20"/>
     </property>
 
     <property name="fleet" type="string">
-      <column name="车队" length="20"/>
+      <column name="fleet" length="20"/>
     </property>
 
     <property name="car_number" type="string">
-      <column name="车号" length="20"/>
+      <column name="car_number" length="20"/>
     </property>
 
     <property name="driver" type="string">
-      <column name="司机" length="20"/>
+      <column name="driver" length="20"/>
     </property>
 
     <property name="operating_department" type="string">
-      <column name="业务部门" length="20"/>
+      <column name="operating_department" length="20"/>
     </property>
 
     <property name="salesman" type="string">
-      <column name="业务员" length="20"/>
+      <column name="salesman" length="20"/>
     </property>
 
     <property name="depart_point" type="string">
-      <column name="出发地点" length="20"/>
+      <column name="depart_point" length="20"/>
     </property>
 
     <property name="ship_point" type="string">
-      <column name="装货地点" length="20"/>
+      <column name="ship_point" length="20"/>
     </property>
 
     <property name="unload_point" type="string">
-      <column name="卸货地点" length="20"/>
+      <column name="unload_point" length="20"/>
     </property>
-    
+
     <property name="depart_city" type="string">
-      <column name="出发城市" length="20"/>
+      <column name="depart_city" length="20"/>
     </property>
 
     <property name="depart_area" type="string">
-      <column name="出发区域" length="20"/>
+      <column name="depart_area" length="20"/>
     </property>
 
     <property name="ship_city" type="string">
-      <column name="装货城市" length="20"/>
+      <column name="ship_city" length="20"/>
     </property>
 
     <property name="ship_area" type="string">
-      <column name="装货区域" length="20"/>
+      <column name="ship_area" length="20"/>
     </property>
 
     <property name="unload_city" type="string">
-      <column name="卸货城市" length="20"/>
+      <column name="unload_city" length="20"/>
     </property>
-    
+
     <property name="unload_area" type="string">
-      <column name="卸货区域" length="20"/>
+      <column name="unload_area" length="20"/>
     </property>
 
     <property name="depart_date" type="DateTime">
-      <column name="出发日期"/>
+      <column name="depart_date"/>
     </property>
 
     <property name="back_date" type="DateTime">
-      <column name="返回日期"/>
+      <column name="back_date"/>
     </property>
 
     <property name="enter_staff" type="string">
-      <column name="录入人员" length="20"/>
+      <column name="enter_staff" length="20"/>
     </property>
 
     <property name="enter_time" type="DateTime">
-      <column name="录入时间"/>
+      <column name="enter_time"/>
     </property>
 
     <property name="change_staff" type="string">
-      <column name="修改人员" length="20"/>
+      <column name="change_staff" length="20"/>
     </property>
 
     <property name="change_time" type="DateTime">
-      <column name="修改时间"/>
+      <column name="change_time"/>
     </property>
 
     <property name="statement" type="string">
-      <column name="说明" length="500"/>
+      <column name="statement" length="500"/>
     </property>
 
     <property name="note" type="string">
-      <column name="备注" length="20"/>
+      <column name="note" length="20"/>
     </property>
- 
+
+    <property name="transport_ID" type="string">
+      <column name="transport_ID" length="20"/>
+    </property>
+
   </class>
 </hibernate-mapping>

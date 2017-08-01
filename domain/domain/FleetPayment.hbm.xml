@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="domain" namespace="domain">
+  <class name="FleetPayment" table="T_FleetPayment" >
+    <id name="list_ID" column="list_ID" type="string">
+      <generator class="assigned" />
+    </id>
+
+    <property name="list_ID" type="string">
+      <column name="list_ID"/>
+    </property>
+
+    <property name="fleet" type="string">
+      <column name="fleet" length="20"/>
+    </property>
+
+    <property name="car_number" type="string">
+      <column name="car_number" length="20"/>
+    </property>
+
+    <property name="transport_gross" type="decimal">
+      <column name="transport_gross" length="20"/>
+      <column name="transport_gross" precision="3"/>
+    </property>
+
+    <property name="car_fee" type="decimal">
+      <column name="car_fee" length="20"/>
+      <column name="car_fee" precision="2"/>
+    </property>
+
+    <property name="make_staff" type="string">
+      <column name="make_staff" length="20"/>
+    </property>
+
+    <property name="make_time" type="DateTime">
+      <column name="make_time"/>
+    </property>
+
+    <property name="statement" type="string">
+      <column name="statement" length="20"/>
+    </property>
+
+    <bag name="FleetPayment_Details" inverse="true" cascade="all">
+      <key column="list_ID"/>
+      <one-to-many class="FleetPayment_Detail"/>
+    </bag>
+
+  </class>
+</hibernate-mapping>

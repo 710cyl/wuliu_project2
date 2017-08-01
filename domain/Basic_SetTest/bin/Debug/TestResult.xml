@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="F:\pjt5\wuliu_project2\domain\Basic_SetTest\bin\Debug\Basic_SetTest.dll" total="1" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2017-08-01" time="10:01:38">
+  <environment nunit-version="2.6.4.14350" clr-version="2.0.50727.5485" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="F:\pjt5\wuliu_project2\domain\Basic_SetTest\bin\Debug" machine-name="ZTS-PC" user="zts" user-domain="zts-PC" />
+  <culture-info current-culture="zh-CN" current-uiculture="zh-CN" />
+  <test-suite type="Assembly" name="F:\pjt5\wuliu_project2\domain\Basic_SetTest\bin\Debug\Basic_SetTest.dll" executed="True" result="Success" success="True" time="8.311" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="Basic_SetTest" executed="True" result="Success" success="True" time="8.302" asserts="0">
+        <results>
+          <test-suite type="TestFixture" name="NHibernateInit" executed="True" result="Success" success="True" time="8.301" asserts="0">
+            <results>
+              <test-case name="Basic_SetTest.NHibernateInit.InitTest" executed="True" result="Success" success="True" time="8.288" asserts="0" />
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

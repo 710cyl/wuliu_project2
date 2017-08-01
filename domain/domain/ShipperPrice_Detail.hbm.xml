@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="domain" namespace="domain">
+  <class name="ShipperPrice_Detail" table="T_ShipperPrice_Detail" >
+    <id name="transport_identifying" column="transport_identifying" type="string">
+      <generator class="assigned" />
+    </id>
+
+    <property name="owner" type="string">
+      <column name="owner" length="20"/>
+    </property>
+    
+    <property name="order_nubmer" type="string">
+      <column name="order_nubmer" length="20"/>
+    </property>
+
+    <property name="transport_way" type="string">
+      <column name="transport_way" length="20"/>
+    </property>
+    
+    <property name="depart_point" type="string">
+      <column name="depart_point" length="20"/>
+    </property>
+
+    <property name="ship_point" type="string">
+      <column name="ship_point" length="20"/>
+    </property>
+
+    <property name="unload_point" type="string">
+      <column name="unload_point" length="20"/>
+    </property>
+
+    <property name="depart_date" type="DateTime">
+      <column name="depart_date"/>
+    </property>
+
+    <property name="back_date" type="DateTime">
+      <column name="back_date"/>
+    </property>
+
+    <property name="reel_number" type="string">
+      <column name="reel_number" length="20"/>
+    </property>
+
+    <property name="variety" type="string">
+      <column name="variety" length="20"/>
+    </property>
+
+    <property name="texture" type="string">
+      <column name="texture" length="20"/>
+    </property>
+
+    <property name="standard" type="string">
+      <column name="standard" length="20"/>
+    </property>
+
+    <property name="number" type="int">
+      <column name="number"/>
+    </property>
+
+    <property name="quantity" type="decimal">
+      <column name="quantity" length="20"/>
+      <column name="quantity" precision="3"/>
+    </property>
+
+    <property name="owner_fare" type="decimal">
+      <column name="owner_fare" length="20"/>
+      <column name="owner_fare" precision="3"/>
+    </property>
+
+    <property name="owner_amount" type="decimal">
+      <column name="owner_amount" length="20"/>
+      <column name="owner_amount" precision="2"/>
+    </property>
+
+    <property name="note" type="string">
+      <column name="note" length="100"/>
+    </property>
+
+    <property name="fleet" type="string">
+      <column name="fleet" length="20"/>
+    </property>
+
+    <property name="car_number" type="string">
+      <column name="car_number" length="20"/>
+    </property>
+
+    <property name="driver" type="string">
+      <column name="driver" length="20"/>
+    </property>
+
+    <property name="depart_city" type="string">
+      <column name="depart_city" length="20"/>
+    </property>
+
+    <property name="depart_area" type="string">
+      <column name="depart_area" length="20"/>
+    </property>
+
+    <property name="ship_city" type="string">
+      <column name="ship_city" length="20"/>
+    </property>
+
+    <property name="ship_area" type="string">
+      <column name="ship_area" length="20"/>
+    </property>
+
+    <property name="unload_city" type="string">
+      <column name="unload_city" length="20"/>
+    </property>
+
+    <property name="unload_area" type="string">
+      <column name="unload_area" length="20"/>
+    </property>
+  
+  </class>
+</hibernate-mapping>

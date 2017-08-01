@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="domain" namespace="domain">
+  <class name="ShipperPrice" table="T_ShipperPrice" >
+    <id name="price_ID" column="price_ID" type="string">
+      <generator class="assigned" />
+    </id>
+
+    <property name="price_ID" type="string">
+      <column name="price_ID"/>
+    </property>
+
+    <property name="total_money" type="decimal">
+      <column name="total_money" length="20"/>
+      <column name="total_money" precision="2"/>
+    </property>
+
+    <property name="enter_staff" type="string">
+      <column name="enter_staff" length="20"/>
+    </property>
+
+    <property name="enter_time" type="DateTime">
+      <column name="enter_time"/>
+    </property>
+
+    <property name="change_staff" type="string">
+      <column name="change_staff" length="20"/>
+    </property>
+
+    <property name="change_time" type="DateTime">
+      <column name="change_time"/>
+    </property>
+
+    <bag name="ShipperPrice_Details" inverse="true" cascade="all">
+      <key column="price_ID"/>
+      <one-to-many class="ShipperPrice_Detail"/>
+    </bag>
+
+  </class>
+</hibernate-mapping>

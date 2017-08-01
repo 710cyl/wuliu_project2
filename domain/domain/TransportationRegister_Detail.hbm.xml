@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="domain" namespace="domain">
+  <class name="TransportationRegister_Detail" table="T_TransportationRegister_Detail" >
+    <id name="transport_identifying" column="运输单标识" type="string">
+      <generator class="assigned" />
+    </id>
+
+    <property name="tally_date" type="DateTime">
+      <column name="记账日期"/>
+    </property>
+
+    <property name="order_number" type="string">
+      <column name="订单号" length="20"/>
+    </property>
+
+    <property name="transport_ID" type="string">
+      <column name="运输单号" length="100"/>
+    </property>
+
+    <property name="owner" type="string">
+      <column name="货主" length="20"/>
+    </property>
+
+    <property name="reel_number" type="string">
+      <column name="卷号" length="20"/>
+    </property>
+
+    <property name="variety" type="string">
+      <column name="品种" length="20"/>
+    </property>
+
+    <property name="texture" type="string">
+      <column name="材质" length="20"/>
+    </property>
+
+    <property name="standard" type="string">
+      <column name="规格" length="20"/>
+    </property>
+
+    <property name="number" type="int">
+      <column name="件数"/>
+    </property>
+
+    <property name="quantity" type="decimal">
+      <column name="数量" length="20"/>
+      <column name="数量" precision="3"/>
+    </property>
+
+    <property name="rough_weight" type="decimal">
+      <column name="毛重" length="20"/>
+      <column name="毛重" precision="3"/>
+    </property>
+
+    <property name="car_fare" type="decimal">
+      <column name="车队运价" length="20"/>
+      <column name="车队运价" precision="2"/>
+    </property>
+
+    <property name="car_fee" type="decimal">
+      <column name="车队运费" length="20"/>
+      <column name="车队运费" precision="2"/>
+    </property>
+
+    <property name="owner_fare" type="decimal">
+      <column name="货主运价" length="20"/>
+      <column name="货主运价" precision="3"/>
+    </property>
+
+    <property name="owner_amount" type="decimal">
+      <column name="货主金额" length="20"/>
+      <column name="货主金额" precision="3"/>
+    </property>
+
+    <property name="settlement_amount" type="decimal">
+      <column name="已结算金额" length="20"/>
+      <column name="已结算金额" precision="3"/>
+    </property>
+
+    <property name="outstanding_amount" type="decimal">
+      <column name="未结算金额" length="20"/>
+      <column name="未结算金额" precision="3"/>
+    </property>
+
+    <property name="transport_way" type="string">
+      <column name="运输方式" length="20"/>
+    </property>
+
+    <property name="fleet" type="string">
+      <column name="车队" length="20"/>
+    </property>
+
+    <property name="car_number" type="string">
+      <column name="车号" length="20"/>
+    </property>
+
+    <property name="driver" type="string">
+      <column name="司机" length="20"/>
+    </property>
+
+    <property name="operating_department" type="string">
+      <column name="业务部门" length="20"/>
+    </property>
+
+    <property name="salesman" type="string">
+      <column name="业务员" length="20"/>
+    </property>
+
+    <property name="depart_point" type="string">
+      <column name="出发地点" length="20"/>
+    </property>
+
+    <property name="ship_point" type="string">
+      <column name="装货地点" length="20"/>
+    </property>
+
+    <property name="unload_point" type="string">
+      <column name="卸货地点" length="20"/>
+    </property>
+    
+    <property name="depart_city" type="string">
+      <column name="出发城市" length="20"/>
+    </property>
+
+    <property name="depart_area" type="string">
+      <column name="出发区域" length="20"/>
+    </property>
+
+    <property name="ship_city" type="string">
+      <column name="装货城市" length="20"/>
+    </property>
+
+    <property name="ship_area" type="string">
+      <column name="装货区域" length="20"/>
+    </property>
+
+    <property name="unload_city" type="string">
+      <column name="卸货城市" length="20"/>
+    </property>
+    
+    <property name="unload_area" type="string">
+      <column name="卸货区域" length="20"/>
+    </property>
+
+    <property name="depart_date" type="DateTime">
+      <column name="出发日期"/>
+    </property>
+
+    <property name="back_date" type="DateTime">
+      <column name="返回日期"/>
+    </property>
+
+    <property name="enter_staff" type="string">
+      <column name="录入人员" length="20"/>
+    </property>
+
+    <property name="enter_time" type="DateTime">
+      <column name="录入时间"/>
+    </property>
+
+    <property name="change_staff" type="string">
+      <column name="修改人员" length="20"/>
+    </property>
+
+    <property name="change_time" type="DateTime">
+      <column name="修改时间"/>
+    </property>
+
+    <property name="statement" type="string">
+      <column name="说明" length="500"/>
+    </property>
+
+    <property name="note" type="string">
+      <column name="备注" length="20"/>
+    </property>
+ 
+  </class>
+</hibernate-mapping>

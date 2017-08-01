@@ -161,14 +161,14 @@
     <EmbeddedResource Include="Outbound_Car_Detail.hbm.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="FleetPayment.hbm.xml" />
-    <Content Include="FleetPayment_Detail.hbm.xml" />
-    <Content Include="FleetPrice.hbm.xml" />
-    <Content Include="FleetPrice_Detail.hbm.xml" />
-    <Content Include="ShipperPrice.hbm.xml" />
-    <Content Include="ShipperPrice_Detail.hbm.xml" />
-    <Content Include="TransportationRegister.hbm.xml" />
-    <Content Include="TransportationRegister_Detail.hbm.xml" />
+    <EmbeddedResource Include="FleetPayment.hbm.xml" />
+    <EmbeddedResource Include="FleetPayment_Detail.hbm.xml" />
+    <EmbeddedResource Include="FleetPrice.hbm.xml" />
+    <EmbeddedResource Include="FleetPrice_Detail.hbm.xml" />
+    <EmbeddedResource Include="ShipperPrice.hbm.xml" />
+    <EmbeddedResource Include="ShipperPrice_Detail.hbm.xml" />
+    <EmbeddedResource Include="TransportationRegister.hbm.xml" />
+    <EmbeddedResource Include="TransportationRegister_Detail.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

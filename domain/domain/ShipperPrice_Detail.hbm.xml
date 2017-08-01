@@ -112,6 +112,10 @@
     <property name="unload_area" type="string">
       <column name="unload_area" length="20"/>
     </property>
+
+    <property name="price_ID" type="string">
+      <column name="price_ID" length="20"/>
+    </property>
   
   </class>
 </hibernate-mapping>

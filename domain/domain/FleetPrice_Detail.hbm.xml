@@ -61,6 +61,9 @@
       <column name="note" length="100"/>
     </property>
 
+    <property name="transport_ID" type="string">
+      <column name="transport_ID" length="20"/>
+    </property>
   </class>
 </hibernate-mapping>
 

@@ -1114,7 +1114,7 @@ namespace wuliu_server
             var cfg = new NHibernate.Cfg.Configuration().Configure("Config/hibernate.cfg.xml");
             using (ISessionFactory sessionFactory = cfg.BuildSessionFactory())
             {
-                IList<domain.StorageDetails> sd = null;
+               
                 ISession session ;
                 string json = null;
                 try
@@ -1162,92 +1162,92 @@ namespace wuliu_server
                         ReferenceLoopHandling = ReferenceLoopHandling.Ignore
                     });
                 }
-            else if (classname == "StorageDetailsOut")
-            {
-                IList<domain.StorageDetailsOut> sd = null;
-                string sql = "select a.* from T_StorageFormMainOut b,T_StorageDetailsOut a where a.出库单号 =b.出库单号 and a.出库单号= ? ";
-                ISQLQuery query = session.CreateSQLQuery(sql)
-                .AddEntity("StorageDetailsOut", typeof(domain.StorageDetailsOut));
-                query.SetString(0, primarykey);
-                sd = query.List<StorageDetailsOut>();
-
-                json = JsonConvert.SerializeObject(sd, Formatting.None, new JsonSerializerSettings()
+                else if (classname == "StorageDetailsOut")
                 {
-                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                });
-            }
+                    IList<domain.StorageDetailsOut> sd = null;
+                    string sql = "select a.* from T_StorageFormMainOut b,T_StorageDetailsOut a where a.出库单号 =b.出库单号 and a.出库单号= ? ";
+                    ISQLQuery query = session.CreateSQLQuery(sql)
+                    .AddEntity("StorageDetailsOut", typeof(domain.StorageDetailsOut));
+                    query.SetString(0, primarykey);
+                    sd = query.List<StorageDetailsOut>();
 
-            else if (classname == "StorageDetailsTrans")
-            {
-                IList<domain.StorageDetailsTrans> sd = null;
-                string sql = "select a.* from T_StorageFormMainTrans b,T_StorageDetailsTrans a where a.移库单号 =b.移库单号 and a.移库单号= ? ";
-                ISQLQuery query = session.CreateSQLQuery(sql)
-                .AddEntity("StorageDetailsTrans", typeof(domain.StorageDetailsTrans));
-                query.SetString(0, primarykey);
-                sd = query.List<StorageDetailsTrans>();
+                    json = JsonConvert.SerializeObject(sd, Formatting.None, new JsonSerializerSettings()
+                    {
+                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                    });
+                }
 
-                json = JsonConvert.SerializeObject(sd, Formatting.None, new JsonSerializerSettings()
+                else if (classname == "StorageDetailsTrans")
                 {
-                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                });
-            }
+                    IList<domain.StorageDetailsTrans> sd = null;
+                    string sql = "select a.* from T_StorageFormMainTrans b,T_StorageDetailsTrans a where a.移库单号 =b.移库单号 and a.移库单号= ? ";
+                    ISQLQuery query = session.CreateSQLQuery(sql)
+                    .AddEntity("StorageDetailsTrans", typeof(domain.StorageDetailsTrans));
+                    query.SetString(0, primarykey);
+                    sd = query.List<StorageDetailsTrans>();
 
-            else if (classname == "TransportationRegister_Detail")
-            {
-                IList<domain.TransportationRegister_Detail> trd = null;
-                string sql = "select a.* from T_TransportationRegister b,T_TransportationRegister_Detail a where a.transport_ID =b.transport_ID and a.transport_ID= ? ";
-                ISQLQuery query = session.CreateSQLQuery(sql)
-                .AddEntity("TransportationRegister_Detail", typeof(domain.TransportationRegister_Detail));
-                query.SetString(0, primarykey);
-                trd = query.List<TransportationRegister_Detail>();
+                    json = JsonConvert.SerializeObject(sd, Formatting.None, new JsonSerializerSettings()
+                    {
+                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                    });
+                }
 
-                json = JsonConvert.SerializeObject(trd, Formatting.None, new JsonSerializerSettings()
+                else if (classname == "TransportationRegister_Detail")
                 {
-                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                });
-            }
-            else if (classname == "FleetPrice_Detail")
-            {
-                IList<domain.FleetPrice_Detail> trd = null;
-                string sql = "select a.* from T_FleetPrice b,T_FleetPrice_Detail a where a.transport_ID =b.transport_ID and a.transport_ID= ? ";
-                ISQLQuery query = session.CreateSQLQuery(sql)
-                .AddEntity("FleetPrice_Detail", typeof(domain.FleetPrice_Detail));
-                query.SetString(0, primarykey);
-                trd = query.List<FleetPrice_Detail>();
+                    IList<domain.TransportationRegister_Detail> trd = null;
+                    string sql = "select a.* from T_TransportationRegister b,T_TransportationRegister_Detail a where a.transport_ID =b.transport_ID and a.transport_ID= ? ";
+                    ISQLQuery query = session.CreateSQLQuery(sql)
+                    .AddEntity("TransportationRegister_Detail", typeof(domain.TransportationRegister_Detail));
+                    query.SetString(0, primarykey);
+                    trd = query.List<TransportationRegister_Detail>();
 
-                json = JsonConvert.SerializeObject(trd, Formatting.None, new JsonSerializerSettings()
+                    json = JsonConvert.SerializeObject(trd, Formatting.None, new JsonSerializerSettings()
+                    {
+                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                    });
+                }
+                else if (classname == "FleetPrice_Detail")
                 {
-                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                });
-            }
-            else if (classname == "FleetPayment_Detail")
-            {
-                IList<domain.FleetPayment_Detail> trd = null;
-                string sql = "select a.* from T_FleetPayment b,T_FleetPayment_Detail a where a.list_ID =b.list_ID and a.list_ID= ? ";
-                ISQLQuery query = session.CreateSQLQuery(sql)
-                .AddEntity("FleetPayment_Detail", typeof(domain.FleetPayment_Detail));
-                query.SetString(0, primarykey);
-                trd = query.List<FleetPayment_Detail>();
+                    IList<domain.FleetPrice_Detail> trd = null;
+                    string sql = "select a.* from T_FleetPrice b,T_FleetPrice_Detail a where a.transport_ID =b.transport_ID and a.transport_ID= ? ";
+                    ISQLQuery query = session.CreateSQLQuery(sql)
+                    .AddEntity("FleetPrice_Detail", typeof(domain.FleetPrice_Detail));
+                    query.SetString(0, primarykey);
+                    trd = query.List<FleetPrice_Detail>();
 
-                json = JsonConvert.SerializeObject(trd, Formatting.None, new JsonSerializerSettings()
+                    json = JsonConvert.SerializeObject(trd, Formatting.None, new JsonSerializerSettings()
+                    {
+                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                    });
+                }
+                else if (classname == "FleetPayment_Detail")
                 {
-                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                });
-            }
-            else if (classname == "ShipperPrice_Detail")
-            {
-                IList<domain.ShipperPrice_Detail> trd = null;
-                string sql = "select a.* from T_ShipperPrice b,T_ShipperPrice_Detail a where a.price_ID =b.price_ID and a.price_ID= ? ";
-                ISQLQuery query = session.CreateSQLQuery(sql)
-                .AddEntity("ShipperPrice_Detail", typeof(domain.ShipperPrice_Detail));
-                query.SetString(0, primarykey);
-                trd = query.List<ShipperPrice_Detail>();
+                    IList<domain.FleetPayment_Detail> trd = null;
+                    string sql = "select a.* from T_FleetPayment b,T_FleetPayment_Detail a where a.list_ID =b.list_ID and a.list_ID= ? ";
+                    ISQLQuery query = session.CreateSQLQuery(sql)
+                    .AddEntity("FleetPayment_Detail", typeof(domain.FleetPayment_Detail));
+                    query.SetString(0, primarykey);
+                    trd = query.List<FleetPayment_Detail>();
 
-                json = JsonConvert.SerializeObject(trd, Formatting.None, new JsonSerializerSettings()
+                    json = JsonConvert.SerializeObject(trd, Formatting.None, new JsonSerializerSettings()
+                    {
+                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                    });
+                }
+                else if (classname == "ShipperPrice_Detail")
                 {
-                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                });
-            }
+                    IList<domain.ShipperPrice_Detail> trd = null;
+                    string sql = "select a.* from T_ShipperPrice b,T_ShipperPrice_Detail a where a.price_ID =b.price_ID and a.price_ID= ? ";
+                    ISQLQuery query = session.CreateSQLQuery(sql)
+                    .AddEntity("ShipperPrice_Detail", typeof(domain.ShipperPrice_Detail));
+                    query.SetString(0, primarykey);
+                    trd = query.List<ShipperPrice_Detail>();
+
+                    json = JsonConvert.SerializeObject(trd, Formatting.None, new JsonSerializerSettings()
+                    {
+                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                    });
+                }
             return json;
         }
     }

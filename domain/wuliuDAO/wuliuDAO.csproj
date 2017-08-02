@@ -105,6 +105,10 @@
   <ItemGroup>
     <Compile Include="Basic_SetDAO.cs" />
     <Compile Include="IBasic_SetDAO.cs" />
+    <Compile Include="IFleetPayment.cs" />
+    <Compile Include="IFleetPayment_Detail.cs" />
+    <Compile Include="IFleetPrice.cs" />
+    <Compile Include="IFleetPrice_Detail.cs" />
     <Compile Include="IGoDownEntry.cs" />
     <Compile Include="IInternal_VehicleDAO.cs" />
     <Compile Include="ILotteryDetails.cs" />
@@ -117,7 +121,11 @@
     <Compile Include="IOutBoundOrderTransDetails.cs" />
     <Compile Include="IOutbound_CarDAO.cs" />
     <Compile Include="IOutbound_Car_DetailDAO.cs" />
+    <Compile Include="IShipperPrice.cs" />
+    <Compile Include="IShipperPrice_Detail.cs" />
     <Compile Include="IStorageDetail.cs" />
+    <Compile Include="ITransportationRegister.cs" />
+    <Compile Include="ITransportationRegister_Detail.cs" />
     <Compile Include="Outbound_CarDAO.cs" />
     <Compile Include="Outbound_Car_DetailDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

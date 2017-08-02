@@ -48,10 +48,10 @@ namespace Demo1._1._3
         public OutboundOrder obo;
         public TransferList tl;
         public LotteryNumber lotn;
-        public TransportationRegister tr;
-        public FleetPrice fleetp;
-        public FleetPayment fleetpay;
-        public ShipperPrice shipperp;
+        public Demo1._1._3.Panel2_MyWorkBench.TransportationRegister tr;
+        public Demo1._1._3.Panel2_MyWorkBench.FleetPrice fleetp;
+        public Demo1._1._3.Panel2_MyWorkBench.FleetPayment fleetpay;
+        public Demo1._1._3.Panel2_MyWorkBench.ShipperPrice shipperp;
         public TransportationClearing tpc;
         public CarReimbursement carr;
         public OilGasRegister ogr;
@@ -425,38 +425,73 @@ namespace Demo1._1._3
 
         private void accordionControlElement65_Click(object sender, EventArgs e)
         {
-            tr = new TransportationRegister();
+            tr = new Demo1._1._3.Panel2_MyWorkBench.TransportationRegister();
             tr.Show();
             tr.Dock = DockStyle.Fill;
             panel2.Controls.Clear();
             panel2.Controls.Add(tr);
+            domain.TransportationRegister transportationregister = new domain.TransportationRegister();
+            Demo1._1._3.Panel2_MyWorkBench.TransportationRegister dbs = new Panel2_MyWorkBench.TransportationRegister();
+            domain.TransportationRegister_Detail transportationregister_detail = new domain.TransportationRegister_Detail();
+            tr.gridControl1.DataSource = showData<domain.TransportationRegister>(transportationregister, dbs.now_Page1.ToString());
+            tr.gridControl2.DataSource = showData<domain.TransportationRegister_Detail>(transportationregister_detail, dbs.now_Page2.ToString());
+            tr.gridView1.Columns["TransportationRegister_Details"].Visible = false;
+            tr.gridView1.BestFitColumns();
+            tr.gridView2.BestFitColumns();
         }
 
         private void accordionControlElement66_Click(object sender, EventArgs e)
         {
-            fleetp = new FleetPrice();
+            fleetp = new Demo1._1._3.Panel2_MyWorkBench.FleetPrice();
             fleetp.Show();
             fleetp.Dock = DockStyle.Fill;
             panel2.Controls.Clear();
             panel2.Controls.Add(fleetp);
+            domain.FleetPrice fleetprice = new domain.FleetPrice();
+            Demo1._1._3.Panel2_MyWorkBench.FleetPrice dbs = new Panel2_MyWorkBench.FleetPrice();
+            domain.FleetPrice_Detail fleetprice_detail = new domain.FleetPrice_Detail();
+            fleetp.gridControl1.DataSource = showData<domain.FleetPrice>(fleetprice, dbs.now_Page1.ToString());
+            fleetp.gridControl2.DataSource = showData<domain.FleetPrice_Detail>(fleetprice_detail, dbs.now_Page2.ToString());
+            fleetp.gridView1.Columns["FleetPrice_Details"].Visible = false;
+            fleetp.gridView2.Columns["transport_ID"].Visible = false;
+            fleetp.gridView1.BestFitColumns();
+            fleetp.gridView2.BestFitColumns();
         }
 
         private void accordionControlElement79_Click(object sender, EventArgs e)
         {
-            fleetpay = new FleetPayment();
+            fleetpay = new Demo1._1._3.Panel2_MyWorkBench.FleetPayment();
             fleetpay.Show();
             fleetpay.Dock = DockStyle.Fill;
             panel2.Controls.Clear();
             panel2.Controls.Add(fleetpay);
+            domain.FleetPayment fleetprice = new domain.FleetPayment();
+            Demo1._1._3.Panel2_MyWorkBench.FleetPayment dbs = new Panel2_MyWorkBench.FleetPayment();
+            domain.FleetPayment_Detail fleetprice_detail = new domain.FleetPayment_Detail();
+            fleetpay.gridControl1.DataSource = showData<domain.FleetPayment>(fleetprice, dbs.now_Page1.ToString());
+            fleetpay.gridControl2.DataSource = showData<domain.FleetPayment_Detail>(fleetprice_detail, dbs.now_Page2.ToString());
+            fleetpay.gridView1.Columns["FleetPayment_Details"].Visible = false;
+            fleetpay.gridView2.Columns["list_ID"].Visible = false;
+            fleetpay.gridView1.BestFitColumns();
+            fleetpay.gridView2.BestFitColumns();
         }
 
         private void accordionControlElement67_Click(object sender, EventArgs e)
         {
-            shipperp = new ShipperPrice();
+            shipperp = new Demo1._1._3.Panel2_MyWorkBench.ShipperPrice();
             shipperp.Show();
             shipperp.Dock = DockStyle.Fill;
             panel2.Controls.Clear();
             panel2.Controls.Add(shipperp);
+            domain.ShipperPrice fleetprice = new domain.ShipperPrice();
+            Demo1._1._3.Panel2_MyWorkBench.ShipperPrice dbs = new Panel2_MyWorkBench.ShipperPrice();
+            domain.ShipperPrice_Detail fleetprice_detail = new domain.ShipperPrice_Detail();
+            shipperp.gridControl1.DataSource = showData<domain.ShipperPrice>(fleetprice, dbs.now_Page1.ToString());
+            shipperp.gridControl2.DataSource = showData<domain.ShipperPrice_Detail>(fleetprice_detail, dbs.now_Page2.ToString());
+            shipperp.gridView1.Columns["ShipperPrice_Details"].Visible = false;
+            shipperp.gridView2.Columns["price_ID"].Visible = false;
+            shipperp.gridView1.BestFitColumns();
+            shipperp.gridView2.BestFitColumns();
         }
 
         private void accordionControlElement76_Click(object sender, EventArgs e)

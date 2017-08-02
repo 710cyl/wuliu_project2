@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="domain" namespace="domain">
+  <class name="FleetPrice" table="T_FleetPrice" >
+    <id name="transport_ID" column="transport_ID" type="string">
+      <generator class="assigned" />
+    </id>
+
+    <property name="price_ID" type="string">
+      <column name="price_ID"/>
+    </property>
+
+    <property name="transport_gross" type="decimal">
+      <column name="transport_gross" length="20"/>
+      <column name="transport_gross" precision="2"/>
+    </property>
+
+    <property name="car_fee" type="decimal">
+      <column name="car_fee" length="20"/>
+      <column name="car_fee" precision="20"/>
+    </property>
+
+    
+    <property name="payment" type="string">
+      <column name="payment" length="20"/>
+    </property>
+
+    <property name="fleet" type="string">
+      <column name="fleet" length="20"/>
+    </property>
+
+    <property name="car_number" type="string">
+      <column name="car_number" length="20"/>
+    </property>
+
+    <property name="driver" type="string">
+      <column name="driver" length="20"/>
+    </property>
+
+    <property name="transport_way" type="string">
+      <column name="transport_way" length="20"/>
+    </property>
+
+    <property name="depart_point" type="string">
+      <column name="depart_point" length="20"/>
+    </property>
+
+    <property name="ship_point" type="string">
+      <column name="ship_point" length="20"/>
+    </property>
+
+    <property name="unload_point" type="string">
+      <column name="unload_point" length="20"/>
+    </property>
+
+    <property name="depart_date" type="DateTime">
+      <column name="depart_date"/>
+    </property>
+
+    <property name="back_date" type="DateTime">
+      <column name="back_date"/>
+    </property>
+
+    <property name="enter_staff" type="string">
+      <column name="enter_staff" length="20"/>
+    </property>
+
+    <property name="change_staff" type="string">
+      <column name="change_staff" length="20"/>
+    </property>
+    
+    <property name="enter_time" type="DateTime">
+      <column name="enter_time"/>
+    </property>
+
+    <property name="change_time" type="DateTime">
+      <column name="change_time"/>
+    </property>
+
+    <property name="statement" type="string">
+      <column name="statement" length="20"/>
+    </property>
+
+    <bag name="FleetPrice_Details" inverse="true" cascade="all">
+      <key column="transport_ID"/>
+      <one-to-many class="FleetPrice_Detail"/>
+    </bag>
+
+  </class>
+</hibernate-mapping>

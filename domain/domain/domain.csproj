@@ -108,6 +108,10 @@
     <Compile Include="Basic_Set\Internal_Vehicle.cs" />
     <Compile Include="Basic_Set\Office_Supply.cs" />
     <Compile Include="Basic_Set\Order_File.cs" />
+    <Compile Include="FleetPayment.cs" />
+    <Compile Include="FleetPayment_Detail.cs" />
+    <Compile Include="FleetPrice.cs" />
+    <Compile Include="FleetPrice_Detail.cs" />
     <Compile Include="LotteryDetails.cs" />
     <Compile Include="LottreyMain.cs" />
     <Compile Include="Outbound_Car.cs" />
@@ -118,10 +122,14 @@
     <Compile Include="Basic_Set\Variety_Texture.cs" />
     <Compile Include="Basic_Set\Warehouse_Space.cs" />
     <Compile Include="Basic_Set\Warehouse_Staff.cs" />
+    <Compile Include="ShipperPrice.cs" />
+    <Compile Include="ShipperPrice_Detail.cs" />
     <Compile Include="StorageDetailsOut.cs" />
     <Compile Include="StorageDetailsTrans.cs" />
     <Compile Include="StorageFormMainOut.cs" />
     <Compile Include="StorageFormMainTrans.cs" />
+    <Compile Include="TransportationRegister.cs" />
+    <Compile Include="TransportationRegister_Detail.cs" />
     <Compile Include="仓库\StorageDetails.cs" />
     <Compile Include="仓库\StorageFormMain.cs" />
   </ItemGroup>
@@ -151,6 +159,16 @@
   <ItemGroup>
     <EmbeddedResource Include="Outbound_Car.hbm.xml" />
     <EmbeddedResource Include="Outbound_Car_Detail.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FleetPayment.hbm.xml" />
+    <EmbeddedResource Include="FleetPayment_Detail.hbm.xml" />
+    <EmbeddedResource Include="FleetPrice.hbm.xml" />
+    <EmbeddedResource Include="FleetPrice_Detail.hbm.xml" />
+    <EmbeddedResource Include="ShipperPrice.hbm.xml" />
+    <EmbeddedResource Include="ShipperPrice_Detail.hbm.xml" />
+    <EmbeddedResource Include="TransportationRegister.hbm.xml" />
+    <EmbeddedResource Include="TransportationRegister_Detail.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="domain" namespace="domain">
+  <class name="FleetPayment_Detail" table="T_FleetPayment_Detail" >
+    <id name="price_ID" column="price_ID" type="string">
+      <generator class="assigned" />
+    </id>
+
+    <property name="transport_way" type="string">
+      <column name="transport_way" length="100"/>
+    </property>
+
+    <property name="depart_point" type="string">
+      <column name="depart_point" length="20"/>
+    </property>
+
+    
+    <property name="ship_point" type="string">
+      <column name="ship_point" length="20"/>
+    </property>
+
+    <property name="unload_point" type="string">
+      <column name="unload_point" length="20"/>
+    </property>
+
+    <property name="depart_date" type="DateTime">
+      <column name="depart_date"/>
+    </property>
+
+    <property name="back_date" type="DateTime">
+      <column name="back_date"/>
+    </property>
+
+    <property name="traffic" type="decimal">
+      <column name="traffic" length="20"/>
+      <column name="traffic" precision="3"/>
+    </property>
+
+    <property name="unit_price" type="decimal">
+      <column name="unit_price" length="20"/>
+      <column name="unit_price" precision="2"/>
+    </property>
+
+    <property name="freight" type="decimal">
+      <column name="freight" length="20"/>
+      <column name="freight" precision="2"/>
+    </property>
+
+    <property name="transport_ID" type="string">
+      <column name="transport_ID" length="20"/>
+    </property>
+
+    <property name="list_ID" type="string">
+      <column name="list_ID" length="20"/>
+    </property>
+
+  </class>
+</hibernate-mapping>

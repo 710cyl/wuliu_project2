@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="domain" namespace="domain">
+  <class name="FleetPrice_Detail" table="T_FleetPrice_Detail" >
+    <id name="transport_identifying" column="transport_identifying" type="string">
+      <generator class="assigned" />
+    </id>
+
+    <property name="order_ID" type="string">
+      <column name="order_ID" length="20"/>
+    </property>
+
+    <property name="owner" type="string">
+      <column name="owner" length="20"/>
+    </property>
+
+    <property name="reel_number" type="string">
+      <column name="reel_number" length="20"/>
+    </property>
+
+    <property name="variety" type="string">
+      <column name="variety" length="20"/>
+    </property>
+
+    
+    <property name="texture" type="string">
+      <column name="texture" length="20"/>
+    </property>
+
+    <property name="standard" type="string">
+      <column name="standard" length="20"/>
+    </property>
+
+    <property name="number" type="int">
+      <column name="number" length="20"/>
+    </property>
+
+    <property name="quantity" type="decimal">
+      <column name="quantity" length="20"/>
+      <column name="quantity" precision="2"/>
+    </property>
+
+    <property name="car_fare" type="decimal">
+      <column name="car_fare" length="20"/>
+      <column name="car_fare" precision="2"/>
+    </property>
+
+    <property name="car_fee" type="decimal">
+      <column name="car_fee" length="20"/>
+      <column name="car_fee" precision="2"/>
+    </property>
+
+    <property name="operating_department" type="string">
+      <column name="operating_department" length="20"/>
+    </property>
+
+    <property name="salesman" type="string">
+      <column name="salesman" length="20"/>
+    </property>
+
+    <property name="note" type="string">
+      <column name="note" length="100"/>
+    </property>
+
+    <property name="transport_ID" type="string">
+      <column name="transport_ID" length="20"/>
+    </property>
+  </class>
+</hibernate-mapping>
+

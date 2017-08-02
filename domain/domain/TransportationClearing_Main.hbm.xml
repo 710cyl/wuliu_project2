@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="domain" namespace="domain">
+  <class name="TransportationClearing_Main" table="T_TransportationClearing_Main" >
+
+    <id name="clearing_id" column="结算单号" type="string" length ="50">
+      <generator class="assigned" />
+    </id>
+
+    <property name="register_man" type="string">
+      <column name="登记人员"  length="50" />
+    </property>
+
+    <property name="register_time" type="DateTime">
+      <column name="登记时间" />
+    </property>
+
+    <property name="modifier" type="string">
+      <column name="修改人员" length="50"/>
+    </property>
+
+    <property name="modify_time" type="DateTime">
+      <column name="修改时间" />
+    </property>
+
+    <property name="shipper" type="string">
+      <column name="货主" length="50" />
+    </property>
+
+    <property name="shipper_fullname" type="string">
+      <column name="货主全称" length="50" />
+    </property>
+
+    <property name="shipper_TFN" type="string">
+      <column name="货主税号" length="50" />
+    </property>
+
+    <property name="paycompany" type="string">
+      <column name="付款单位" length="50" />
+    </property>
+
+    <property name="paycompany_fullname" type="string">
+      <column name="付款单位全称" length="50" />
+    </property>
+
+    <property name="paycompany_TFN" type="string">
+      <column name="付款单位税号" length="50" />
+    </property>
+    
+    <property name="billcompany" type="string">
+      <column name="开票单位" length="50" />
+    </property>
+
+    <property name="billcompany_fullname" type="string">
+      <column name="开票单位全称" length="50" />
+    </property>
+
+    <property name="billcompany_TFN" type="string">
+      <column name="开票单位税号" length="50" />
+    </property>
+
+    <property name="total_money" type="decimal">
+      <column name="总金额" length="12" />
+      <column name="总金额" precision="2" />
+    </property>
+
+    <property name="explain" type="string">
+      <column name="说明" length="50" />
+    </property>
+
+    <property name="total_volume" type="decimal">
+      <column name="总运量" length="12" />
+      <column name="总运量" precision="2" />
+    </property>
+
+
+    <bag name="tcd" inverse="true" cascade="all">
+      <key column="结算单号"/>
+      <one-to-many class="TransportationClearing_Detail"/>
+    </bag>
+    
+  </class>
+</hibernate-mapping>

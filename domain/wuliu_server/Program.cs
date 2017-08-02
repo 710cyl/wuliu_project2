@@ -132,6 +132,18 @@ namespace wuliu_server
                 IShipperPrice itr = new IShipperPrice();
                 itr.Update(tr);
             }
+            else if (name == "TransportationClearing_Main")
+            {
+                TransportationClearing_Main tr = JsonConvert.DeserializeObject<TransportationClearing_Main>(data);
+                TransportationClearing_MainDAO itr = new TransportationClearing_MainDAO();
+                itr.Update(tr);
+            }
+            else if (name == "OilGasRegister_Main")
+            {
+                OilGasRegister_Main tr = JsonConvert.DeserializeObject<OilGasRegister_Main>(data);
+                OilGasRegister_MainDAO itr = new OilGasRegister_MainDAO();
+                itr.Update(tr);
+            }
         }
     }
 
@@ -256,6 +268,30 @@ namespace wuliu_server
                     Console.WriteLine("1111111111111111111");
                 }
             }
+            else if (name == "OilGasRegister_Detail")
+            {
+                List<domain.OilGasRegister_Detail> trd = null;
+                OilGasRegister_DetailDAO isd = new OilGasRegister_DetailDAO();
+                json = data;
+                trd = JsonConvert.DeserializeObject<List<domain.OilGasRegister_Detail>>(json);
+                foreach (OilGasRegister_Detail item in trd)
+                {
+                    isd.Update(item);
+                    Console.WriteLine("1111111111111111111");
+                }
+            }
+            else if (name == "TransportationClearing_Detail")
+            {
+                List<domain.TransportationClearing_Detail> trd = null;
+                TransportationClearing_DetailDAO isd = new TransportationClearing_DetailDAO();
+                json = data;
+                trd = JsonConvert.DeserializeObject<List<domain.TransportationClearing_Detail>>(json);
+                foreach (TransportationClearing_Detail item in trd)
+                {
+                    isd.Update(item);
+                    Console.WriteLine("1111111111111111111");
+                }
+            }
         }
     }
 
@@ -323,6 +359,18 @@ namespace wuliu_server
             {
                 ShipperPrice sfm = JsonConvert.DeserializeObject<ShipperPrice>(data);
                 IShipperPrice gde = new IShipperPrice();
+                gde.Save(sfm);
+            }
+            else if (name == "OilGasRegister_Main")
+            {
+                OilGasRegister_Main sfm = JsonConvert.DeserializeObject<OilGasRegister_Main>(data);
+                OilGasRegister_MainDAO gde = new OilGasRegister_MainDAO();
+                gde.Save(sfm);
+            }
+            else if (name == "TransportationClearing_Main")
+            {
+                TransportationClearing_Main sfm = JsonConvert.DeserializeObject<TransportationClearing_Main>(data);
+                TransportationClearing_MainDAO gde = new TransportationClearing_MainDAO();
                 gde.Save(sfm);
             }
         }
@@ -444,6 +492,30 @@ namespace wuliu_server
                     Console.WriteLine("1111111111111111111");
                 }
             }
+            else if (name == "TransportationClearing_Detail")
+            {
+                List<domain.TransportationClearing_Detail> sd = null;
+                TransportationClearing_DetailDAO isd = new TransportationClearing_DetailDAO();
+                json = data;
+                sd = JsonConvert.DeserializeObject<List<domain.TransportationClearing_Detail>>(json);
+                foreach (TransportationClearing_Detail item in sd)
+                {
+                    isd.Save(item);
+                    Console.WriteLine("1111111111111111111");
+                }
+            }
+            else if (name == "OilGasRegister_Detail")
+            {
+                List<domain.OilGasRegister_Detail> sd = null;
+                OilGasRegister_DetailDAO isd = new OilGasRegister_DetailDAO();
+                json = data;
+                sd = JsonConvert.DeserializeObject<List<domain.OilGasRegister_Detail>>(json);
+                foreach (OilGasRegister_Detail item in sd)
+                {
+                    isd.Save(item);
+                    Console.WriteLine("1111111111111111111");
+                }
+            }
         }
     }
 
@@ -522,6 +594,16 @@ namespace wuliu_server
             else if (name == "ShipperPrice_Detail")
             {
                 IList<domain.ShipperPrice_Detail> basic_set = session.QueryOver<domain.ShipperPrice_Detail>().Skip(0).Take(0).List();
+                json = JsonConvert.SerializeObject(basic_set);
+            }
+            else if (name == "OilGasRegister_Detail")
+            {
+                IList<domain.OilGasRegister_Detail> basic_set = session.QueryOver<domain.OilGasRegister_Detail>().Skip(0).Take(0).List();
+                json = JsonConvert.SerializeObject(basic_set);
+            }
+            else if (name == "TransportationClearing_Detail")
+            {
+                IList<domain.TransportationClearing_Detail> basic_set = session.QueryOver<domain.TransportationClearing_Detail>().Skip(0).Take(0).List();
                 json = JsonConvert.SerializeObject(basic_set);
             }
             return json;
@@ -774,7 +856,43 @@ namespace wuliu_server
                     });
                     return json;
                 }
-            return null;
+                else if (s == "TransportationClearing_Main")
+                {
+                    int page = Convert.ToInt32(NowPage.nowpage);
+                    IList<TransportationClearing_Main> fund_account = session.QueryOver<TransportationClearing_Main>().Skip((page - 1) * 5).Take(5).List();
+                    string json = JsonConvert.SerializeObject(fund_account, Formatting.None, new JsonSerializerSettings()
+                    {
+                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                    });
+                    return json;
+                }
+                else if (s == "OilGasRegister_Main")
+                {
+                    int page = Convert.ToInt32(NowPage.nowpage);
+                    IList<OilGasRegister_Main> fund_account = session.QueryOver<OilGasRegister_Main>().Skip((page - 1) * 5).Take(5).List();
+                    string json = JsonConvert.SerializeObject(fund_account, Formatting.None, new JsonSerializerSettings()
+                    {
+                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                    });
+                    return json;
+                }
+                else if (s == "Car_Reimbursement")
+                {
+                    int page = Convert.ToInt32(NowPage.nowpage);
+                    IList<Car_Reimbursement> cr = session.QueryOver<Car_Reimbursement>().Skip((page - 1) * 5).Take(5).List();
+                    string json = JsonConvert.SerializeObject(cr);
+                    return json;
+                }
+                else if (s == "Driver_Check")
+                {
+                    int page = Convert.ToInt32(NowPage.nowpage);
+                    IList<Driver_Check> cr = session.QueryOver<Driver_Check>().Skip((page - 1) * 5).Take(5).List();
+                    string json = JsonConvert.SerializeObject(cr);
+                    return json;
+                }
+
+                else
+                    return null;
         }
     }
 
@@ -923,7 +1041,36 @@ namespace wuliu_server
                 total = session.QueryOver<ShipperPrice_Detail>().RowCountInt64();
                 return total;
             }
-
+            else if (className == "TransportationClearing_Main")
+            {
+                total = session.QueryOver<TransportationClearing_Main>().RowCountInt64();
+                return total;
+            }
+            else if (className == "TransportationClearing_Detail")
+            {
+                total = session.QueryOver<TransportationClearing_Detail>().RowCountInt64();
+                return total;
+            }
+            else if (className == "OilGasRegister_Main")
+            {
+                total = session.QueryOver<OilGasRegister_Main>().RowCountInt64();
+                return total;
+            }
+            else if (className == "OilGasRegister_Detail")
+            {
+                total = session.QueryOver<OilGasRegister_Detail>().RowCountInt64();
+                return total;
+            }
+            else if (className == "Car_Reimbursement")
+            {
+                total = session.QueryOver<Car_Reimbursement>().RowCountInt64();
+                return total;
+            }
+            else if (className == "Driver_Check")
+            {
+                total = session.QueryOver<Driver_Check>().RowCountInt64();
+                return total;
+            }
             return total;
         }
     }
@@ -932,17 +1079,60 @@ namespace wuliu_server
     //*****************
     public class SaveData : WebSocketBehavior
     {
-        
+
         protected override void OnMessage(MessageEventArgs e)
         {
-            Basic_SetDAO bsd = new Basic_SetDAO();
-            Basic_Set bs = new Basic_Set();
-            bs = null;
-            string tmp = null;
-            tmp = e.Data;
-            bs = JsonConvert.DeserializeObject<Basic_Set>(tmp);
-            bsd.Save(bs);
+            if (GetClassName.classname == "Basic_Set")
+            {
+                Basic_SetDAO bsd = new Basic_SetDAO();
+                Basic_Set bs = new Basic_Set();
+                bs = null;
+                string tmp = null;
+                tmp = e.Data;
+                bs = JsonConvert.DeserializeObject<Basic_Set>(tmp);
+                bsd.Save(bs);
+            }
+            else if (GetClassName.classname == "Car_Reimbursement")
+            {
+                try
+                {
+                    Car_ReimbursementDAO crd = new Car_ReimbursementDAO();
+                    Car_Reimbursement cr = new Car_Reimbursement();
+                    cr = null;
+                    string tmp = null;
+                    tmp = e.Data;
+                    cr = JsonConvert.DeserializeObject<Car_Reimbursement>(tmp, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+                    crd.Save(cr);
+                }
+                catch (Exception)
+                {
+                    //  Console.WriteLine(w.Message);
+                    throw;
+                }
+
+            }
+            else if (GetClassName.classname == "Driver_Check")
+            {
+                try
+                {
+                    Driver_CheckDAO crd = new Driver_CheckDAO();
+                    Driver_Check cr = new Driver_Check();
+                    cr = null;
+                    string tmp = null;
+                    tmp = e.Data;
+                    cr = JsonConvert.DeserializeObject<Driver_Check>(tmp, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+                    crd.Save(cr);
+                }
+                catch (Exception)
+                {
+                    //  Console.WriteLine(w.Message);
+                    throw;
+                }
+
+            }
         }
+
+
     }
 
 
@@ -950,24 +1140,66 @@ namespace wuliu_server
     {
         protected override void OnMessage(MessageEventArgs e)
         {
-            Basic_SetDAO bsd = new Basic_SetDAO();
-            Basic_Set bs = new Basic_Set();
-            bs = null;
-            string tmp = null;
-            tmp = e.Data;
-            bs = JsonConvert.DeserializeObject<Basic_Set>(tmp);
-            bsd.Update(bs);
+            if (GetClassName.classname == "Basic_Set")
+            {
+                Basic_SetDAO bsd = new Basic_SetDAO();
+                Basic_Set bs = new Basic_Set();
+                bs = null;
+                string tmp = null;
+                tmp = e.Data;
+                bs = JsonConvert.DeserializeObject<Basic_Set>(tmp);
+                bsd.Update(bs);
+            }
+            else if (GetClassName.classname == "Car_Reimbursement")
+            {
+                Car_ReimbursementDAO bsd = new Car_ReimbursementDAO();
+                Car_Reimbursement bs = new Car_Reimbursement();
+                bs = null;
+                string tmp = null;
+                tmp = e.Data;
+                bs = JsonConvert.DeserializeObject<Car_Reimbursement>(tmp);
+                bsd.Update(bs);
+            }
+            else if (GetClassName.classname == "Driver_Check")
+            {
+                Driver_CheckDAO bsd = new Driver_CheckDAO();
+                Driver_Check bs = new Driver_Check();
+                bs = null;
+                string tmp = null;
+                tmp = e.Data;
+                bs = JsonConvert.DeserializeObject<Driver_Check>(tmp);
+                bsd.Update(bs);
+            }
+
+
         }
     }
 
-    public class DeleteData :WebSocketBehavior
+    public class DeleteData : WebSocketBehavior
     {
         protected override void OnMessage(MessageEventArgs e)
         {
-            Basic_SetDAO bs = new Basic_SetDAO();
-            Guid ID = new Guid(e.Data);
-            var basicset = bs.Get(ID);
-            bs.Delete(basicset);
+            if (GetClassName.classname == "Basic_Set")
+            {
+                Basic_SetDAO bs = new Basic_SetDAO();
+                Guid ID = new Guid(e.Data);
+                var basicset = bs.Get(ID);
+                bs.Delete(basicset);
+            }
+            else if (GetClassName.classname == "Car_Reimbursement")
+            {
+                Car_ReimbursementDAO bs = new Car_ReimbursementDAO();
+                string str = e.Data;
+                var basicset = bs.Get<Car_Reimbursement>(str);
+                bs.Delete(basicset);
+            }
+            else if (GetClassName.classname == "Driver_Check")
+            {
+                Driver_CheckDAO bs = new Driver_CheckDAO();
+                string str = e.Data;
+                var basicset = bs.Get<Driver_Check>(str);
+                bs.Delete(basicset);
+            }
         }
     }
 
@@ -1031,6 +1263,18 @@ namespace wuliu_server
                     var godownentry = tr.Get<ShipperPrice>(id);
                     tr.Delete<ShipperPrice>((ShipperPrice)godownentry);
                 }
+                else if (classname == "TransportationClearing_Main")
+                {
+                    TransportationClearing_MainDAO tcmd = new TransportationClearing_MainDAO();
+                    var tcm = tcmd.Get<domain.TransportationClearing_Main>(id);
+                    tcmd.Delete<domain.TransportationClearing_Main>((TransportationClearing_Main)tcm);
+                }
+                else if (classname == "OilGasRegister_Main")
+                {
+                    OilGasRegister_MainDAO tcmd = new OilGasRegister_MainDAO();
+                    var tcm = tcmd.Get<domain.OilGasRegister_Main>(id);
+                    tcmd.Delete<domain.OilGasRegister_Main>((OilGasRegister_Main)tcm);
+                }
             }
             catch (Exception)
             {
@@ -1077,6 +1321,22 @@ namespace wuliu_server
             else if (GetClassName.classname == "ShipperPrice")
             {
                 AddDataTableToDB(dt, "dbo.T_ShipperPrice");
+            }
+            else if (GetClassName.classname == "TransportationClearing_Main")
+            {
+                AddDataTableToDB(dt, "dbo.T_TransportationClearing_Main");
+            }
+            else if (GetClassName.classname == "OilGasRegister_Main")
+            {
+                AddDataTableToDB(dt, "dbo.T_OilGasRegister_Main");
+            }
+            else if (GetClassName.classname == "Car_Reimbursement")
+            {
+                AddDataTableToDB(dt, "dbo.T_Car_Reimbursement");
+            }
+            else if (GetClassName.classname == "Driver_Check")
+            {
+                AddDataTableToDB(dt, "dbo.T_Driver_Check");
             }
         }
 
@@ -1130,124 +1390,152 @@ namespace wuliu_server
             }
         }
 
-            public string SwitchDetail(ISession session, string classname, string primarykey)
+        public string SwitchDetail(ISession session, string classname, string primarykey)
+        {
+
+            string json = null;
+            if (classname == "StorageDetails")
+            {
+                IList<domain.StorageDetails> sd = null;
+                string sql = "select a.* from T_StorageFormMain b,T_StorageDetails a where a.StorageNumber =b.StorageNumber and a.StorageNumber= ? ";
+                ISQLQuery query = session.CreateSQLQuery(sql)
+                .AddEntity("StorageDetails", typeof(domain.StorageDetails));
+                query.SetString(0, primarykey);
+                sd = query.List<StorageDetails>();
+
+                json = JsonConvert.SerializeObject(sd, Formatting.None, new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+            }
+            else if (classname == "Outbound_Car_Detail")
             {
 
-                string json = null;
-                if (classname == "StorageDetails")
+                int page = Convert.ToInt32(NowPage.nowpage);
+                String sql = "select a.* from WL_sendcar b,WL_sendcar_detail a where a.order_num =b.order_num and a.order_num= ? ";
+                ISQLQuery query = session.CreateSQLQuery(sql)
+                .AddEntity("Outbound_Car_Detail", typeof(Outbound_Car_Detail));
+                query.SetString(0, primarykey);
+                IList<Outbound_Car_Detail> Outbound_Car_detail = query.List<Outbound_Car_Detail>();
+                json = JsonConvert.SerializeObject(Outbound_Car_detail, Formatting.None, new JsonSerializerSettings()
                 {
-                    IList<domain.StorageDetails> sd = null;
-                    string sql = "select a.* from T_StorageFormMain b,T_StorageDetails a where a.StorageNumber =b.StorageNumber and a.StorageNumber= ? ";
-                    ISQLQuery query = session.CreateSQLQuery(sql)
-                    .AddEntity("StorageDetails", typeof(domain.StorageDetails));
-                    query.SetString(0, primarykey);
-                    sd = query.List<StorageDetails>();
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+            }
+            else if (classname == "StorageDetailsOut")
+            {
+                IList<domain.StorageDetailsOut> sd = null;
+                string sql = "select a.* from T_StorageFormMainOut b,T_StorageDetailsOut a where a.出库单号 =b.出库单号 and a.出库单号= ? ";
+                ISQLQuery query = session.CreateSQLQuery(sql)
+                .AddEntity("StorageDetailsOut", typeof(domain.StorageDetailsOut));
+                query.SetString(0, primarykey);
+                sd = query.List<StorageDetailsOut>();
 
-                    json = JsonConvert.SerializeObject(sd, Formatting.None, new JsonSerializerSettings()
-                    {
-                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                    });
-                }
-                else if (classname == "Outbound_Car_Detail")
+                json = JsonConvert.SerializeObject(sd, Formatting.None, new JsonSerializerSettings()
                 {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+            }
 
-                    int page = Convert.ToInt32(NowPage.nowpage);
-                    String sql = "select a.* from WL_sendcar b,WL_sendcar_detail a where a.order_num =b.order_num and a.order_num= ? ";
-                    ISQLQuery query = session.CreateSQLQuery(sql)
-                    .AddEntity("Outbound_Car_Detail", typeof(Outbound_Car_Detail));
-                    query.SetString(0, primarykey);
-                    IList<Outbound_Car_Detail> Outbound_Car_detail = query.List<Outbound_Car_Detail>();
-                    json = JsonConvert.SerializeObject(Outbound_Car_detail, Formatting.None, new JsonSerializerSettings()
-                    {
-                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                    });
-                }
-                else if (classname == "StorageDetailsOut")
+            else if (classname == "StorageDetailsTrans")
+            {
+                IList<domain.StorageDetailsTrans> sd = null;
+                string sql = "select a.* from T_StorageFormMainTrans b,T_StorageDetailsTrans a where a.移库单号 =b.移库单号 and a.移库单号= ? ";
+                ISQLQuery query = session.CreateSQLQuery(sql)
+                .AddEntity("StorageDetailsTrans", typeof(domain.StorageDetailsTrans));
+                query.SetString(0, primarykey);
+                sd = query.List<StorageDetailsTrans>();
+
+                json = JsonConvert.SerializeObject(sd, Formatting.None, new JsonSerializerSettings()
                 {
-                    IList<domain.StorageDetailsOut> sd = null;
-                    string sql = "select a.* from T_StorageFormMainOut b,T_StorageDetailsOut a where a.出库单号 =b.出库单号 and a.出库单号= ? ";
-                    ISQLQuery query = session.CreateSQLQuery(sql)
-                    .AddEntity("StorageDetailsOut", typeof(domain.StorageDetailsOut));
-                    query.SetString(0, primarykey);
-                    sd = query.List<StorageDetailsOut>();
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+            }
 
-                    json = JsonConvert.SerializeObject(sd, Formatting.None, new JsonSerializerSettings()
-                    {
-                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                    });
-                }
+            else if (classname == "TransportationRegister_Detail")
+            {
+                IList<domain.TransportationRegister_Detail> trd = null;
+                string sql = "select a.* from T_TransportationRegister b,T_TransportationRegister_Detail a where a.transport_ID =b.transport_ID and a.transport_ID= ? ";
+                ISQLQuery query = session.CreateSQLQuery(sql)
+                .AddEntity("TransportationRegister_Detail", typeof(domain.TransportationRegister_Detail));
+                query.SetString(0, primarykey);
+                trd = query.List<TransportationRegister_Detail>();
 
-                else if (classname == "StorageDetailsTrans")
+                json = JsonConvert.SerializeObject(trd, Formatting.None, new JsonSerializerSettings()
                 {
-                    IList<domain.StorageDetailsTrans> sd = null;
-                    string sql = "select a.* from T_StorageFormMainTrans b,T_StorageDetailsTrans a where a.移库单号 =b.移库单号 and a.移库单号= ? ";
-                    ISQLQuery query = session.CreateSQLQuery(sql)
-                    .AddEntity("StorageDetailsTrans", typeof(domain.StorageDetailsTrans));
-                    query.SetString(0, primarykey);
-                    sd = query.List<StorageDetailsTrans>();
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+            }
+            else if (classname == "FleetPrice_Detail")
+            {
+                IList<domain.FleetPrice_Detail> trd = null;
+                string sql = "select a.* from T_FleetPrice b,T_FleetPrice_Detail a where a.transport_ID =b.transport_ID and a.transport_ID= ? ";
+                ISQLQuery query = session.CreateSQLQuery(sql)
+                .AddEntity("FleetPrice_Detail", typeof(domain.FleetPrice_Detail));
+                query.SetString(0, primarykey);
+                trd = query.List<FleetPrice_Detail>();
 
-                    json = JsonConvert.SerializeObject(sd, Formatting.None, new JsonSerializerSettings()
-                    {
-                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                    });
-                }
-
-                else if (classname == "TransportationRegister_Detail")
+                json = JsonConvert.SerializeObject(trd, Formatting.None, new JsonSerializerSettings()
                 {
-                    IList<domain.TransportationRegister_Detail> trd = null;
-                    string sql = "select a.* from T_TransportationRegister b,T_TransportationRegister_Detail a where a.transport_ID =b.transport_ID and a.transport_ID= ? ";
-                    ISQLQuery query = session.CreateSQLQuery(sql)
-                    .AddEntity("TransportationRegister_Detail", typeof(domain.TransportationRegister_Detail));
-                    query.SetString(0, primarykey);
-                    trd = query.List<TransportationRegister_Detail>();
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+            }
+            else if (classname == "FleetPayment_Detail")
+            {
+                IList<domain.FleetPayment_Detail> trd = null;
+                string sql = "select a.* from T_FleetPayment b,T_FleetPayment_Detail a where a.list_ID =b.list_ID and a.list_ID= ? ";
+                ISQLQuery query = session.CreateSQLQuery(sql)
+                .AddEntity("FleetPayment_Detail", typeof(domain.FleetPayment_Detail));
+                query.SetString(0, primarykey);
+                trd = query.List<FleetPayment_Detail>();
 
-                    json = JsonConvert.SerializeObject(trd, Formatting.None, new JsonSerializerSettings()
-                    {
-                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                    });
-                }
-                else if (classname == "FleetPrice_Detail")
+                json = JsonConvert.SerializeObject(trd, Formatting.None, new JsonSerializerSettings()
                 {
-                    IList<domain.FleetPrice_Detail> trd = null;
-                    string sql = "select a.* from T_FleetPrice b,T_FleetPrice_Detail a where a.transport_ID =b.transport_ID and a.transport_ID= ? ";
-                    ISQLQuery query = session.CreateSQLQuery(sql)
-                    .AddEntity("FleetPrice_Detail", typeof(domain.FleetPrice_Detail));
-                    query.SetString(0, primarykey);
-                    trd = query.List<FleetPrice_Detail>();
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+            }
+            else if (classname == "ShipperPrice_Detail")
+            {
+                IList<domain.ShipperPrice_Detail> trd = null;
+                string sql = "select a.* from T_ShipperPrice b,T_ShipperPrice_Detail a where a.price_ID =b.price_ID and a.price_ID= ? ";
+                ISQLQuery query = session.CreateSQLQuery(sql)
+                .AddEntity("ShipperPrice_Detail", typeof(domain.ShipperPrice_Detail));
+                query.SetString(0, primarykey);
+                trd = query.List<ShipperPrice_Detail>();
 
-                    json = JsonConvert.SerializeObject(trd, Formatting.None, new JsonSerializerSettings()
-                    {
-                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                    });
-                }
-                else if (classname == "FleetPayment_Detail")
+                json = JsonConvert.SerializeObject(trd, Formatting.None, new JsonSerializerSettings()
                 {
-                    IList<domain.FleetPayment_Detail> trd = null;
-                    string sql = "select a.* from T_FleetPayment b,T_FleetPayment_Detail a where a.list_ID =b.list_ID and a.list_ID= ? ";
-                    ISQLQuery query = session.CreateSQLQuery(sql)
-                    .AddEntity("FleetPayment_Detail", typeof(domain.FleetPayment_Detail));
-                    query.SetString(0, primarykey);
-                    trd = query.List<FleetPayment_Detail>();
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+            }
+            else if (classname == "TransportationClearing_Detail")
+            {
+                IList<domain.TransportationClearing_Detail> tcd = null;
+                string sql = "select a.* from T_TransportationClearing_Main b,T_TransportationClearing_Detail a where a.结算单号 =b.结算单号 and a.结算单号= ? ";
+                ISQLQuery query = session.CreateSQLQuery(sql)
+                .AddEntity("TransportationClearing_Detail", typeof(domain.TransportationClearing_Detail));
+                query.SetString(0, primarykey);
+                tcd = query.List<TransportationClearing_Detail>();
 
-                    json = JsonConvert.SerializeObject(trd, Formatting.None, new JsonSerializerSettings()
-                    {
-                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                    });
-                }
-                else if (classname == "ShipperPrice_Detail")
+                json = JsonConvert.SerializeObject(tcd, Formatting.None, new JsonSerializerSettings()
                 {
-                    IList<domain.ShipperPrice_Detail> trd = null;
-                    string sql = "select a.* from T_ShipperPrice b,T_ShipperPrice_Detail a where a.price_ID =b.price_ID and a.price_ID= ? ";
-                    ISQLQuery query = session.CreateSQLQuery(sql)
-                    .AddEntity("ShipperPrice_Detail", typeof(domain.ShipperPrice_Detail));
-                    query.SetString(0, primarykey);
-                    trd = query.List<ShipperPrice_Detail>();
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+            }
+            else if (classname == "OilGasRegister_Detail")
+            {
+                IList<domain.OilGasRegister_Detail> ogrd = null;
+                string sql = "select a.* from T_OilGasRegister_Main b,T_OilGasRegister_Detail a where a.登记单号 =b.登记单号 and a.登记单号= ? ";
+                ISQLQuery query = session.CreateSQLQuery(sql)
+                .AddEntity("OilGasRegister_Detail", typeof(domain.OilGasRegister_Detail));
+                query.SetString(0, primarykey);
+                ogrd = query.List<OilGasRegister_Detail>();
 
-                    json = JsonConvert.SerializeObject(trd, Formatting.None, new JsonSerializerSettings()
-                    {
-                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                    });
-                }
+                json = JsonConvert.SerializeObject(ogrd, Formatting.None, new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+            }
             return json;
         }
     }
@@ -1616,5 +1904,4 @@ namespace wuliu_server
     #endregion
 
 
-
-    }
+ }

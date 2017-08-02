@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="domain" namespace="domain">
+  <class name="TransportationClearing_Detail" table="T_TransportationClearing_Detail" >
+
+    <id name="order_id" column="订单号" type="string" length ="50">
+      <generator class="assigned" />
+    </id>
+
+    <property name="loading_place" type="string">
+      <column name="装货地点" length ="50" />
+    </property>
+
+    <property name="landing_place" type="string">
+      <column name="卸货地点" length="50" />
+    </property>
+
+    <property name="depart_date" type="DateTime">
+      <column name="出发日期" />
+    </property>
+
+    <property name="return_date" type="DateTime">
+      <column name="返回日期" />
+    </property>
+
+    <property name="variety" type="string">
+      <column name="品种" length="50" />
+    </property>
+
+    <property name="texture" type="string">
+      <column name="材质" length="50" />
+    </property>
+
+    <property name="standard" type="decimal">
+      <column name="规格" length="12" />
+      <column name="规格" precision="2" />
+    </property>
+
+    <property name="unit_number" type="int">
+      <column name="件数" />
+    </property>
+
+    <property name="amount" type="decimal">
+      <column name="数量" length="12" />
+      <column name="数量" precision="2" />
+    </property>
+
+    <property name="freight_rates" type="decimal">
+      <column name="运价" length="12" />
+      <column name="运价" precision="2" />
+    </property>
+
+    <property name="money" type="decimal">
+      <column name="金额" length="12" />
+      <column name="金额" precision="2" />
+    </property>
+
+    <property name="remark" type="string">
+      <column name="备注" length="50" />
+    </property>
+
+    <property name="transportation_logo" type="string">
+      <column name="运输单标识" length="50" />
+    </property>
+
+    <property name="shipper" type="string">
+      <column name="货主" length="50" />
+    </property>
+
+    <property name="clearing_id" type="string">
+      <column name="结算单号" length="50" />
+    </property>
+
+  </class>
+</hibernate-mapping>

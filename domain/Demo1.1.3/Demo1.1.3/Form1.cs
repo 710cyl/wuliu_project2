@@ -70,7 +70,7 @@ namespace Demo1._1._3
                    u1 = new UserControl1();
                     u2 = new UserControl2();
                 }*/
-        public FunctionClass fc;
+        public FunctionClass fc = new FunctionClass();
 
         public Form1()
         {
@@ -501,6 +501,21 @@ namespace Demo1._1._3
             tpc.Dock = DockStyle.Fill;
             panel2.Controls.Clear();
             panel2.Controls.Add(tpc);
+
+            domain.TransportationClearing_Main transportation_clearing_main = new domain.TransportationClearing_Main();
+            tpc.gridControl1.DataSource = showData<domain.TransportationClearing_Main>(transportation_clearing_main, tpc.now_Page.ToString());
+            //明细表显示??
+            string str;
+            str = null;
+            str = tpc.gridView1.GetFocusedRowCellDisplayText(tpc.gridView1.Columns["clearing_id"]); //获取主键内容
+            if (str != "")
+            {
+                List<domain.TransportationClearing_Detail> tcd_list = new List<TransportationClearing_Detail>(); //得到明细表的list
+                string detailString = fc.FindDeteils(str, "TransportationClearing_Detail");
+                tcd_list = JsonConvert.DeserializeObject<List<domain.TransportationClearing_Detail>>(detailString);
+                tpc.gridControl2.DataSource = tcd_list;
+            }
+     
         }
 
         private void accordionControlElement77_Click(object sender, EventArgs e)
@@ -510,6 +525,9 @@ namespace Demo1._1._3
             carr.Dock = DockStyle.Fill;
             panel2.Controls.Clear();
             panel2.Controls.Add(carr);
+
+            domain.Car_Reimbursement crb = new domain.Car_Reimbursement();
+            carr.gridControl2.DataSource = showData<domain.Car_Reimbursement>(crb, carr.now_Page.ToString());
         }
 
         private void accordionControlElement78_Click(object sender, EventArgs e)
@@ -519,41 +537,33 @@ namespace Demo1._1._3
             ogr.Dock = DockStyle.Fill;
             panel2.Controls.Clear();
             panel2.Controls.Add(ogr);
+
+            domain.OilGasRegister_Main orm = new domain.OilGasRegister_Main();
+            ogr.gridControl1.DataSource = showData<domain.OilGasRegister_Main>(orm, ogr.now_Page.ToString());
+            //明细表显示??
+            string str;
+            str = null;
+            str = ogr.gridView1.GetFocusedRowCellDisplayText(ogr.gridView1.Columns["register_id"]); //获取主键内容
+            if (str != "")
+            {
+                List<domain.OilGasRegister_Detail> ogr_list = new List<OilGasRegister_Detail>(); //得到明细表的list
+                string detailString = fc.FindDeteils(str, "OilGasRegister_Detail");
+                ogr_list = JsonConvert.DeserializeObject<List<domain.OilGasRegister_Detail>>(detailString);
+                ogr.gridControl2.DataSource = ogr_list;
+            }
+
         }
 
         private void accordionControlElement82_Click(object sender, EventArgs e)
 
         {
-            main_outCar = new Outbound_Car();//公共方法 入口
-            main_outCar.Show();
-            main_outCar.Dock = DockStyle.Fill;
+            drc = new DriverCheck();
+            drc.Show();
+            drc.Dock = DockStyle.Fill;
             panel2.Controls.Clear();
-            panel2.Controls.Add(main_outCar);
-            domain.Outbound_Car outbound_Car = new domain.Outbound_Car();
-            main_outCar.gridControl1.DataSource = showData<domain.Outbound_Car>(outbound_Car, main_outCar.now_Page.ToString());
-            main_outCar.gridView1.Columns[0].Caption = "订单号";
-            main_outCar.gridView1.Columns[1].Caption = "派车单号";
-            main_outCar.gridView1.Columns[2].Caption = "货主单位";
-            main_outCar.gridView1.Columns[3].Caption = "发货仓库";
-            main_outCar.gridView1.Columns[4].Caption = "发货量";
-            main_outCar.gridView1.Columns[5].Caption = "出库方式";
-            main_outCar.gridView1.Columns[6].Caption = "业务部门";
-            main_outCar.gridView1.Columns[7].Caption = "业务人员";
-            main_outCar.gridView1.Columns[8].Caption = "付费单位";
-            main_outCar.gridView1.Columns[9].Caption = "车队";
-            main_outCar.gridView1.Columns[10].Caption = "车号";
-            main_outCar.gridView1.Columns[11].Caption = "司机";
-            main_outCar.gridView1.Columns[12].Caption = "派车人";
-            main_outCar.gridView1.Columns[13].Caption = "派车时间";
-            main_outCar.gridView1.Columns[14].Caption = "卸货城市";
-            main_outCar.gridView1.Columns[15].Caption = "卸货区域";
-            main_outCar.gridView1.Columns[16].Caption = "实际卸点";
-            main_outCar.gridView1.Columns[17].Caption = "打包";
-            main_outCar.gridView1.Columns[18].Caption = "关闭";
-            main_outCar.gridView1.Columns[19].Caption = "关闭人";
-            main_outCar.gridView1.Columns[20].Caption = "关闭时间";
-            main_outCar.gridView1.Columns[21].Caption = "说明";
-            main_outCar.gridView1.BestFitColumns();
+            panel2.Controls.Add(drc);
+            domain.Driver_Check crb = new domain.Driver_Check();
+            drc.gridControl2.DataSource = showData<domain.Driver_Check>(crb, drc.now_Page.ToString());
 
         }
 

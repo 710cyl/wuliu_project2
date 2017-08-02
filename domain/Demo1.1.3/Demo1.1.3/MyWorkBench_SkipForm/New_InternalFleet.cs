@@ -41,7 +41,7 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
                 iv.motorcade = comboBox_motorcade.Text;
                 iv.statement = textBox_statement.Text;
 
-                fc.updateData(iv);
+                fc.updateData(iv, "Basic_Set");
             }
             else
             {
@@ -51,7 +51,7 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
                 iv.motorcade = comboBox_motorcade.Text;
                 iv.statement = textBox_statement.Text;
 
-                fc.saveData(iv);
+                fc.saveData(iv, "Basic_Set");
             }
 
             Close();

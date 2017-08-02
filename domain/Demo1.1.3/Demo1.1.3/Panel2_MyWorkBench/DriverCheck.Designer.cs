@@ -73,34 +73,35 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox_driver = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox_check_herald = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.reimbursementDetails = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comboBox_motorcade = new System.Windows.Forms.ComboBox();
+            this.textBox_bookkeeping_time = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.remarks = new System.Windows.Forms.TextBox();
+            this.textBox_check_reason = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.FeeinChinese = new System.Windows.Forms.TextBox();
+            this.textBox_salary_money = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.reimbursementFee = new System.Windows.Forms.TextBox();
+            this.textBox_check_money = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.driver = new System.Windows.Forms.TextBox();
+            this.textBox_check_month = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.carNumber = new System.Windows.Forms.TextBox();
-            this.fleet = new System.Windows.Forms.TextBox();
+            this.textBox_car_id = new System.Windows.Forms.TextBox();
+            this.textBox_check_type = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.registrationTime = new System.Windows.Forms.TextBox();
+            this.textBox_input_time = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.reimbursementNumber = new System.Windows.Forms.TextBox();
+            this.textBox_check_id = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.registrant = new System.Windows.Forms.TextBox();
+            this.textBox_input_man = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.dataNavigator1 = new DevExpress.XtraEditors.DataNavigator();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -340,6 +341,7 @@
             this.toolStripButton5.Name = "toolStripButton5";
             this.toolStripButton5.Size = new System.Drawing.Size(52, 22);
             this.toolStripButton5.Text = "查看";
+            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
             // toolStripSeparator4
             // 
@@ -353,6 +355,7 @@
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(52, 22);
             this.toolStripButton1.Text = "新建";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripButton2
             // 
@@ -361,6 +364,7 @@
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(52, 22);
             this.toolStripButton2.Text = "修改";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripButton7
             // 
@@ -369,6 +373,7 @@
             this.toolStripButton7.Name = "toolStripButton7";
             this.toolStripButton7.Size = new System.Drawing.Size(52, 22);
             this.toolStripButton7.Text = "删除";
+            this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
             // 
             // toolStripButton6
             // 
@@ -377,6 +382,7 @@
             this.toolStripButton6.Name = "toolStripButton6";
             this.toolStripButton6.Size = new System.Drawing.Size(76, 22);
             this.toolStripButton6.Text = "导入数据";
+            this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
             // 
             // toolStripSeparator13
             // 
@@ -436,31 +442,31 @@
             this.panel1.AutoScrollMinSize = new System.Drawing.Size(1017, 180);
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.textBox_driver);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.comboBox_check_herald);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.reimbursementDetails);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.comboBox_motorcade);
+            this.panel1.Controls.Add(this.textBox_bookkeeping_time);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.remarks);
+            this.panel1.Controls.Add(this.textBox_check_reason);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.FeeinChinese);
+            this.panel1.Controls.Add(this.textBox_salary_money);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.reimbursementFee);
+            this.panel1.Controls.Add(this.textBox_check_money);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.driver);
+            this.panel1.Controls.Add(this.textBox_check_month);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.carNumber);
-            this.panel1.Controls.Add(this.fleet);
+            this.panel1.Controls.Add(this.textBox_car_id);
+            this.panel1.Controls.Add(this.textBox_check_type);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.registrationTime);
+            this.panel1.Controls.Add(this.textBox_input_time);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.reimbursementNumber);
+            this.panel1.Controls.Add(this.textBox_check_id);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.registrant);
+            this.panel1.Controls.Add(this.textBox_input_man);
             this.panel1.Controls.Add(this.label22);
             this.panel1.Controls.Add(this.simpleButton2);
             this.panel1.Controls.Add(this.simpleButton1);
@@ -471,13 +477,13 @@
             this.panel1.TabIndex = 27;
             this.panel1.Visible = false;
             // 
-            // textBox2
+            // textBox_driver
             // 
-            this.textBox2.Font = new System.Drawing.Font("宋体", 9F);
-            this.textBox2.Location = new System.Drawing.Point(88, 79);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(148, 21);
-            this.textBox2.TabIndex = 425;
+            this.textBox_driver.Font = new System.Drawing.Font("宋体", 9F);
+            this.textBox_driver.Location = new System.Drawing.Point(88, 79);
+            this.textBox_driver.Name = "textBox_driver";
+            this.textBox_driver.Size = new System.Drawing.Size(148, 21);
+            this.textBox_driver.TabIndex = 425;
             // 
             // label8
             // 
@@ -490,14 +496,14 @@
             this.label8.TabIndex = 424;
             this.label8.Text = "司机：";
             // 
-            // comboBox1
+            // comboBox_check_herald
             // 
-            this.comboBox1.Font = new System.Drawing.Font("宋体", 9F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(327, 78);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(137, 20);
-            this.comboBox1.TabIndex = 423;
+            this.comboBox_check_herald.Font = new System.Drawing.Font("宋体", 9F);
+            this.comboBox_check_herald.FormattingEnabled = true;
+            this.comboBox_check_herald.Location = new System.Drawing.Point(327, 78);
+            this.comboBox_check_herald.Name = "comboBox_check_herald";
+            this.comboBox_check_herald.Size = new System.Drawing.Size(137, 20);
+            this.comboBox_check_herald.TabIndex = 423;
             // 
             // label7
             // 
@@ -510,22 +516,23 @@
             this.label7.TabIndex = 422;
             this.label7.Text = "考核下达人：";
             // 
-            // reimbursementDetails
+            // comboBox_motorcade
             // 
-            this.reimbursementDetails.Font = new System.Drawing.Font("宋体", 9F);
-            this.reimbursementDetails.FormattingEnabled = true;
-            this.reimbursementDetails.Location = new System.Drawing.Point(542, 52);
-            this.reimbursementDetails.Name = "reimbursementDetails";
-            this.reimbursementDetails.Size = new System.Drawing.Size(149, 20);
-            this.reimbursementDetails.TabIndex = 421;
+            this.comboBox_motorcade.Font = new System.Drawing.Font("宋体", 9F);
+            this.comboBox_motorcade.FormattingEnabled = true;
+            this.comboBox_motorcade.Location = new System.Drawing.Point(542, 52);
+            this.comboBox_motorcade.Name = "comboBox_motorcade";
+            this.comboBox_motorcade.Size = new System.Drawing.Size(149, 20);
+            this.comboBox_motorcade.TabIndex = 421;
             // 
-            // textBox1
+            // textBox_bookkeeping_time
             // 
-            this.textBox1.Font = new System.Drawing.Font("宋体", 9F);
-            this.textBox1.Location = new System.Drawing.Point(316, 50);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(148, 21);
-            this.textBox1.TabIndex = 420;
+            this.textBox_bookkeeping_time.Font = new System.Drawing.Font("宋体", 9F);
+            this.textBox_bookkeeping_time.Location = new System.Drawing.Point(316, 50);
+            this.textBox_bookkeeping_time.Name = "textBox_bookkeeping_time";
+            this.textBox_bookkeeping_time.ReadOnly = true;
+            this.textBox_bookkeeping_time.Size = new System.Drawing.Size(148, 21);
+            this.textBox_bookkeeping_time.TabIndex = 420;
             // 
             // label6
             // 
@@ -538,13 +545,13 @@
             this.label6.TabIndex = 419;
             this.label6.Text = "记账日期：";
             // 
-            // remarks
+            // textBox_check_reason
             // 
-            this.remarks.Font = new System.Drawing.Font("宋体", 9F);
-            this.remarks.Location = new System.Drawing.Point(88, 105);
-            this.remarks.Name = "remarks";
-            this.remarks.Size = new System.Drawing.Size(602, 21);
-            this.remarks.TabIndex = 418;
+            this.textBox_check_reason.Font = new System.Drawing.Font("宋体", 9F);
+            this.textBox_check_reason.Location = new System.Drawing.Point(88, 105);
+            this.textBox_check_reason.Name = "textBox_check_reason";
+            this.textBox_check_reason.Size = new System.Drawing.Size(602, 21);
+            this.textBox_check_reason.TabIndex = 418;
             // 
             // label5
             // 
@@ -557,13 +564,13 @@
             this.label5.TabIndex = 417;
             this.label5.Text = "考核事由：";
             // 
-            // FeeinChinese
+            // textBox_salary_money
             // 
-            this.FeeinChinese.Font = new System.Drawing.Font("宋体", 9F);
-            this.FeeinChinese.Location = new System.Drawing.Point(769, 77);
-            this.FeeinChinese.Name = "FeeinChinese";
-            this.FeeinChinese.Size = new System.Drawing.Size(148, 21);
-            this.FeeinChinese.TabIndex = 415;
+            this.textBox_salary_money.Font = new System.Drawing.Font("宋体", 9F);
+            this.textBox_salary_money.Location = new System.Drawing.Point(769, 77);
+            this.textBox_salary_money.Name = "textBox_salary_money";
+            this.textBox_salary_money.Size = new System.Drawing.Size(148, 21);
+            this.textBox_salary_money.TabIndex = 415;
             // 
             // label2
             // 
@@ -576,13 +583,13 @@
             this.label2.TabIndex = 414;
             this.label2.Text = "工资金额：";
             // 
-            // reimbursementFee
+            // textBox_check_money
             // 
-            this.reimbursementFee.Font = new System.Drawing.Font("宋体", 9F);
-            this.reimbursementFee.Location = new System.Drawing.Point(542, 78);
-            this.reimbursementFee.Name = "reimbursementFee";
-            this.reimbursementFee.Size = new System.Drawing.Size(148, 21);
-            this.reimbursementFee.TabIndex = 413;
+            this.textBox_check_money.Font = new System.Drawing.Font("宋体", 9F);
+            this.textBox_check_money.Location = new System.Drawing.Point(542, 78);
+            this.textBox_check_money.Name = "textBox_check_money";
+            this.textBox_check_money.Size = new System.Drawing.Size(148, 21);
+            this.textBox_check_money.TabIndex = 413;
             // 
             // label10
             // 
@@ -606,13 +613,13 @@
             this.label11.TabIndex = 411;
             this.label11.Text = "考核月份：";
             // 
-            // driver
+            // textBox_check_month
             // 
-            this.driver.Font = new System.Drawing.Font("宋体", 9F);
-            this.driver.Location = new System.Drawing.Point(88, 52);
-            this.driver.Name = "driver";
-            this.driver.Size = new System.Drawing.Size(148, 21);
-            this.driver.TabIndex = 410;
+            this.textBox_check_month.Font = new System.Drawing.Font("宋体", 9F);
+            this.textBox_check_month.Location = new System.Drawing.Point(88, 52);
+            this.textBox_check_month.Name = "textBox_check_month";
+            this.textBox_check_month.Size = new System.Drawing.Size(148, 21);
+            this.textBox_check_month.TabIndex = 410;
             // 
             // label3
             // 
@@ -625,21 +632,21 @@
             this.label3.TabIndex = 409;
             this.label3.Text = "车队：";
             // 
-            // carNumber
+            // textBox_car_id
             // 
-            this.carNumber.Font = new System.Drawing.Font("宋体", 9F);
-            this.carNumber.Location = new System.Drawing.Point(770, 51);
-            this.carNumber.Name = "carNumber";
-            this.carNumber.Size = new System.Drawing.Size(148, 21);
-            this.carNumber.TabIndex = 408;
+            this.textBox_car_id.Font = new System.Drawing.Font("宋体", 9F);
+            this.textBox_car_id.Location = new System.Drawing.Point(770, 51);
+            this.textBox_car_id.Name = "textBox_car_id";
+            this.textBox_car_id.Size = new System.Drawing.Size(148, 21);
+            this.textBox_car_id.TabIndex = 408;
             // 
-            // fleet
+            // textBox_check_type
             // 
-            this.fleet.Font = new System.Drawing.Font("宋体", 9F);
-            this.fleet.Location = new System.Drawing.Point(769, 23);
-            this.fleet.Name = "fleet";
-            this.fleet.Size = new System.Drawing.Size(148, 21);
-            this.fleet.TabIndex = 407;
+            this.textBox_check_type.Font = new System.Drawing.Font("宋体", 9F);
+            this.textBox_check_type.Location = new System.Drawing.Point(769, 23);
+            this.textBox_check_type.Name = "textBox_check_type";
+            this.textBox_check_type.Size = new System.Drawing.Size(148, 21);
+            this.textBox_check_type.TabIndex = 407;
             // 
             // label15
             // 
@@ -663,13 +670,14 @@
             this.label16.TabIndex = 405;
             this.label16.Text = "考核类别：";
             // 
-            // registrationTime
+            // textBox_input_time
             // 
-            this.registrationTime.Font = new System.Drawing.Font("宋体", 9F);
-            this.registrationTime.Location = new System.Drawing.Point(542, 24);
-            this.registrationTime.Name = "registrationTime";
-            this.registrationTime.Size = new System.Drawing.Size(148, 21);
-            this.registrationTime.TabIndex = 404;
+            this.textBox_input_time.Font = new System.Drawing.Font("宋体", 9F);
+            this.textBox_input_time.Location = new System.Drawing.Point(542, 24);
+            this.textBox_input_time.Name = "textBox_input_time";
+            this.textBox_input_time.ReadOnly = true;
+            this.textBox_input_time.Size = new System.Drawing.Size(148, 21);
+            this.textBox_input_time.TabIndex = 404;
             // 
             // label4
             // 
@@ -682,13 +690,13 @@
             this.label4.TabIndex = 403;
             this.label4.Text = "录入时间：";
             // 
-            // reimbursementNumber
+            // textBox_check_id
             // 
-            this.reimbursementNumber.Font = new System.Drawing.Font("宋体", 9F);
-            this.reimbursementNumber.Location = new System.Drawing.Point(88, 24);
-            this.reimbursementNumber.Name = "reimbursementNumber";
-            this.reimbursementNumber.Size = new System.Drawing.Size(148, 21);
-            this.reimbursementNumber.TabIndex = 402;
+            this.textBox_check_id.Font = new System.Drawing.Font("宋体", 9F);
+            this.textBox_check_id.Location = new System.Drawing.Point(88, 24);
+            this.textBox_check_id.Name = "textBox_check_id";
+            this.textBox_check_id.Size = new System.Drawing.Size(148, 21);
+            this.textBox_check_id.TabIndex = 402;
             // 
             // label1
             // 
@@ -701,13 +709,13 @@
             this.label1.TabIndex = 401;
             this.label1.Text = "考评单号：";
             // 
-            // registrant
+            // textBox_input_man
             // 
-            this.registrant.Font = new System.Drawing.Font("宋体", 9F);
-            this.registrant.Location = new System.Drawing.Point(315, 24);
-            this.registrant.Name = "registrant";
-            this.registrant.Size = new System.Drawing.Size(148, 21);
-            this.registrant.TabIndex = 400;
+            this.textBox_input_man.Font = new System.Drawing.Font("宋体", 9F);
+            this.textBox_input_man.Location = new System.Drawing.Point(315, 24);
+            this.textBox_input_man.Name = "textBox_input_man";
+            this.textBox_input_man.Size = new System.Drawing.Size(148, 21);
+            this.textBox_input_man.TabIndex = 400;
             // 
             // label22
             // 
@@ -730,6 +738,7 @@
             this.simpleButton2.Size = new System.Drawing.Size(61, 22);
             this.simpleButton2.TabIndex = 160;
             this.simpleButton2.Text = "关闭";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // simpleButton1
             // 
@@ -741,11 +750,57 @@
             this.simpleButton1.Size = new System.Drawing.Size(98, 22);
             this.simpleButton1.TabIndex = 159;
             this.simpleButton1.Text = "保存";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // dataNavigator1
+            // 
+            this.dataNavigator1.Appearance.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataNavigator1.Appearance.Options.UseBackColor = true;
+            this.dataNavigator1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.dataNavigator1.Buttons.Append.Enabled = false;
+            this.dataNavigator1.Buttons.Append.Visible = false;
+            this.dataNavigator1.Buttons.CancelEdit.Enabled = false;
+            this.dataNavigator1.Buttons.CancelEdit.Visible = false;
+            this.dataNavigator1.Buttons.EnabledAutoRepeat = false;
+            this.dataNavigator1.Buttons.EndEdit.Enabled = false;
+            this.dataNavigator1.Buttons.EndEdit.Visible = false;
+            this.dataNavigator1.Buttons.First.Enabled = false;
+            this.dataNavigator1.Buttons.First.Visible = false;
+            this.dataNavigator1.Buttons.Last.Enabled = false;
+            this.dataNavigator1.Buttons.Last.Visible = false;
+            this.dataNavigator1.Buttons.Next.Enabled = false;
+            this.dataNavigator1.Buttons.Next.Visible = false;
+            this.dataNavigator1.Buttons.NextPage.Enabled = false;
+            this.dataNavigator1.Buttons.NextPage.Visible = false;
+            this.dataNavigator1.Buttons.Prev.Enabled = false;
+            this.dataNavigator1.Buttons.Prev.Visible = false;
+            this.dataNavigator1.Buttons.PrevPage.Enabled = false;
+            this.dataNavigator1.Buttons.PrevPage.Visible = false;
+            this.dataNavigator1.Buttons.Remove.Enabled = false;
+            this.dataNavigator1.Buttons.Remove.Visible = false;
+            this.dataNavigator1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.dataNavigator1.CustomButtons.AddRange(new DevExpress.XtraEditors.NavigatorCustomButton[] {
+            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 0, true, true, "首页", "首页"),
+            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 1, true, true, "上一页", "上一页"),
+            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 4, true, true, "下一页", "下一页"),
+            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 5, true, true, "尾页", "尾页")});
+            this.dataNavigator1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataNavigator1.Location = new System.Drawing.Point(0, 650);
+            this.dataNavigator1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataNavigator1.Name = "dataNavigator1";
+            this.dataNavigator1.ShowToolTips = true;
+            this.dataNavigator1.Size = new System.Drawing.Size(1069, 22);
+            this.dataNavigator1.TabIndex = 28;
+            this.dataNavigator1.Text = "dataNavigator1";
+            this.dataNavigator1.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Begin;
+            this.dataNavigator1.TextStringFormat = "第 {0}页，共 {1}页";
+            this.dataNavigator1.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.dataNavigator1_ButtonClick);
             // 
             // DriverCheck
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dataNavigator1);
             this.Controls.Add(this.gridControl2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
@@ -764,8 +819,8 @@
 
         #endregion
 
-        private DevExpress.XtraGrid.GridControl gridControl2;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        public DevExpress.XtraGrid.GridControl gridControl2;
+        public DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem FindToolStripMenuItem;
@@ -809,33 +864,34 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox_driver;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox_check_herald;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox reimbursementDetails;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox comboBox_motorcade;
+        private System.Windows.Forms.TextBox textBox_bookkeeping_time;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox remarks;
+        private System.Windows.Forms.TextBox textBox_check_reason;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox FeeinChinese;
+        private System.Windows.Forms.TextBox textBox_salary_money;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox reimbursementFee;
+        private System.Windows.Forms.TextBox textBox_check_money;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox driver;
+        private System.Windows.Forms.TextBox textBox_check_month;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox carNumber;
-        private System.Windows.Forms.TextBox fleet;
+        private System.Windows.Forms.TextBox textBox_car_id;
+        private System.Windows.Forms.TextBox textBox_check_type;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox registrationTime;
+        private System.Windows.Forms.TextBox textBox_input_time;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox reimbursementNumber;
+        private System.Windows.Forms.TextBox textBox_check_id;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox registrant;
+        private System.Windows.Forms.TextBox textBox_input_man;
         private System.Windows.Forms.Label label22;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        public DevExpress.XtraEditors.DataNavigator dataNavigator1;
     }
 }

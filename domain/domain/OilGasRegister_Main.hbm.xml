@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="domain" namespace="domain">
+  <class name="OilGasRegister_Main" table="T_OilGasRegister_Main" >
+
+    <id name="register_id" column="登记单号" type="string" length ="50">
+      <generator class="assigned" />
+    </id>
+
+    <property name="fueling_date" type="DateTime">
+      <column name="加注日期" />
+    </property>
+
+    <property name="oilgas_type" type="string">
+      <column name="油气种类" length="50"/>
+    </property>
+
+    <property name="oilgas_unitprice" type="Decimal">
+      <column name="油气单价" length="20"/>
+      <column name="油气单价" precision="2"/>
+    </property>
+
+    <property name="register_man" type="string">
+      <column name="登记人" length="50"/>
+    </property>
+
+    <property name="register_time" type="DateTime">
+      <column name="登记时间" />
+    </property>
+
+    <property name="modifier" type="string">
+      <column name="修改人" length="50" />
+    </property>
+
+    <property name="modify_time" type="DateTime">
+      <column name="修改时间" />
+    </property>
+
+    <bag name="ogrd" inverse="true"  cascade="all">
+      <key column="登记单号" />
+      <one-to-many class="OilGasRegister_Detail"/>
+    </bag>
+    
+  </class>
+</hibernate-mapping>

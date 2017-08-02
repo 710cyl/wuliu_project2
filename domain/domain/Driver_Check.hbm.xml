@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="domain" namespace="domain">
+  <class name="Driver_Check" table="T_Driver_Check" >
+
+    <id name="check_id" column="考核单号" type="string" length ="50">
+      <generator class="assigned" />
+    </id>
+
+    <property name="check_type" type="string">
+      <column name="考核类别" length="50"/>
+    </property>
+
+    <property name="check_month" type="string">
+      <column name="考核月份" length="50"/>
+    </property>
+
+    <property name="motorcade" type="string">
+      <column name="车队" length="50"/>
+    </property>
+
+    <property name="car_id" type="string">
+      <column name="车号" length="50" />
+    </property>
+
+    <property name="driver" type="string">
+      <column name="司机" length="50" />
+    </property>
+
+    <property name="check_money" type="decimal">
+      <column name="考核金额" length="12"/>
+      <column name="考核金额" precision="2"/>
+    </property>
+
+    <property name="salary_money" type="decimal">
+      <column name="工资金额" length="12"/>
+      <column name="工资金额" precision="2"/>
+    </property>
+
+    <property name="check_herald" type="string">
+      <column name="考核下达人" length="50"/>
+    </property>
+
+    <property name="input_man" type="string">
+      <column name="录入人员" length="50" />
+    </property>
+
+    <property name ="input_time" type="DateTime">
+      <column name="录入时间"/>
+    </property>
+
+    <property name="check_reason" type="string">
+      <column name="考核事由" length="50" />
+    </property>
+
+    <property name="bookkeeping_time" type="DateTime">
+      <column name="记账日期"/>
+    </property>
+
+
+  </class>
+</hibernate-mapping>

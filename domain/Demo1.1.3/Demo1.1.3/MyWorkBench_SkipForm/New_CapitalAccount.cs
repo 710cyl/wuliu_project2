@@ -63,7 +63,7 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
                 bs.remaining_sum = Convert.ToDecimal(remaining_sum.Text);
                 bs.statement = statement.Text;
 
-                fc.updateData(bs);
+                fc.updateData(bs, "Basic_Set");
             }
 
             else
@@ -78,7 +78,7 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
                 bs.remaining_sum = Convert.ToDecimal(remaining_sum.Text);
                 bs.statement = statement.Text;
 
-                fc.saveData(bs);
+                fc.saveData(bs, "Basic_Set");
             }
 
             Close();

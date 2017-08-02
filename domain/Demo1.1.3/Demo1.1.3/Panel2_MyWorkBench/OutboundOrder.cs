@@ -84,7 +84,7 @@ namespace Demo1._1._3.Panel2_MyWorkBench
 
         private void toolStripButton7_Click(object sender, EventArgs e) //删除
         {
-            fc.DeleteMain(this.gridView3, "StorageFormMainOut","outStorageNumber");
+            fc.DeleteMain(this.gridView3, "StorageFormMainOut", "outStorageNumber");
         }
 
         private void toolStripButton6_Click(object sender, EventArgs e) //导入数据

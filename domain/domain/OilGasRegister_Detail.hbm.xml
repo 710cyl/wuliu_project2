@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="domain" namespace="domain">
+  <class name="OilGasRegister_Detail" table="T_OilGasRegister_Detail" >
+
+    <id name="OilGasRegister_Detail_Id" column="油气登记详细单号" type="string" length ="50">
+      <generator class="assigned" />
+    </id>
+
+    <property name="motorcade" type="string">
+      <column name="车队" length="50"/>
+    </property>
+
+    <property name="car_id" type="string">
+      <column name="车号" length="50" />
+    </property>
+
+    <property name="driver" type="string">
+      <column name="司机" length="50" />
+    </property>
+
+    <property name="oilgas_amount" type="decimal">
+      <column name="油气量" length="12"/>
+      <column name="油气量" precision="2"/>
+    </property>
+
+    <property name="money" type="decimal">
+      <column name="金额" length="12"/>
+      <column name="金额" precision="2"/>
+    </property>
+
+    <property name="remark" type="string">
+      <column name="备注" length="50"/>
+    </property>
+
+    <property name="fueling_date" type="DateTime">
+      <column name="加注日期" length="50" />
+    </property>
+
+    <property name ="oilgas_type" type="string">
+      <column name="油气种类"/>
+    </property>
+
+    <property name="oilgas_unitprice" type="string">
+      <column name="油气单价" length="50" />
+    </property>
+
+    <property name="register_id" type="string">
+      <column name="登记单号" length="50" />
+    </property>
+
+  </class>
+</hibernate-mapping>

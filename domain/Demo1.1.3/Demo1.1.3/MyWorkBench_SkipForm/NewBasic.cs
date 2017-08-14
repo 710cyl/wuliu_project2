@@ -77,7 +77,7 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
                 bs.refund_Mode = textBox_refund_Mode.Text;
                 bs.oil_Varirety = textBox_oil_Varirety.Text;
 
-                fc.updateData(bs);
+                fc.updateData(bs, "Basic_Set");
             }
             else
             {
@@ -97,7 +97,7 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
                 bs.refund_Mode = textBox_refund_Mode.Text;
                 bs.oil_Varirety = textBox_oil_Varirety.Text;
 
-                fc.saveData(bs);
+                fc.saveData(bs, "Basic_Set");
             }
             Close();
         }

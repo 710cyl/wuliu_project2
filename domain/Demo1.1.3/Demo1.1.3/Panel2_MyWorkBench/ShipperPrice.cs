@@ -91,7 +91,7 @@ namespace Demo1._1._3.Panel2_MyWorkBench
 
         private void toolStripButton7_Click(object sender, EventArgs e)//删除
         {
-            fc.DeleteMain(this.gridView1, "ShipperPrice","price_ID");
+            fc.DeleteMain(this.gridView1, "ShipperPrice", "price_ID");
         }
 
         private void toolStripButton6_Click(object sender, EventArgs e)//导入数据

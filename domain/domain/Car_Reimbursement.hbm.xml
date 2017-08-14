@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="domain" namespace="domain">
+  <class name="Car_Reimbursement" table="T_Car_Reimbursement" >
+    <id name="reimbursement_id" column="报销单号" type="string" length="50">
+      <generator class="assigned" />
+    </id>
+
+    <property name="motorcade" type="string">
+      <column name="车队" length="50"/>
+    </property>
+
+    <property name="car_id" type="string">
+      <column name="车号" length="50"/>
+    </property>
+
+    <property name="driver" type="string">
+      <column name="司机" length="50"/>
+    </property>
+
+    <property name="regist_man" type="string">
+      <column name="登记人员" length="50"/>
+    </property>
+
+    <property name="pay_man" type="string">
+      <column name="付款人员" length="50"/>
+    </property>
+
+    <property name="input_time" type="DateTime">
+      <column name="录入时间" />
+    </property>
+
+    <property name="pay_time" type="DateTime">
+      <column name="付款时间" />
+    </property>
+
+    <property name="reimbursement_money" type="decimal">
+      <column name="报销金额" length="20"/>
+      <column name="报销金额" precision="2"/>
+    </property>
+
+    <property name="is_payment" type="string">
+      <column name="是否付款" length="50"/>
+    </property>
+
+    <property name="pay_account_id" type="string">
+      <column name="付款账户编号" length="50"/>
+    </property>
+
+    <property name="pay_account" type="string">
+      <column name="付款账户" length="50"/>
+    </property>
+
+    <property name="reimbursement_content" type="string">
+      <column name="报销内容" length="50" />
+    </property>
+
+    <property name="remark" type="string">
+      <column name="备注" length="50"/>
+    </property>
+
+  </class>
+</hibernate-mapping>

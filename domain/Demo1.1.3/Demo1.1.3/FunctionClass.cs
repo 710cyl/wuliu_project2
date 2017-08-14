@@ -57,12 +57,12 @@ namespace Demo1._1._3
         /// 单表删除
         /// </summary>
         /// <param name="gv">锁定gridview</param>
-        public void DeleteData(DevExpress.XtraGrid.Views.Grid.GridView gv)  //删除单一表一行内容
+        public void DeleteData(DevExpress.XtraGrid.Views.Grid.GridView gv, string myclassname)  //删除单一表一行内容
         {
-            string deleteIndex = gv.GetFocusedRowCellDisplayText(gv.Columns["ID"]);
+            string deleteIndex = gv.GetFocusedRowCellDisplayText(gv.Columns[0]);
             if (MessageBox.Show("是否删除此消息？", "删除", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.OK)
             {
-                deleteData(deleteIndex);
+                deleteData(deleteIndex, myclassname);
                 gv.DeleteRow(gv.FocusedRowHandle);
             }
             else
@@ -75,8 +75,14 @@ namespace Demo1._1._3
         /// 单表删除
         /// </summary>
         /// <param name="deleteIndex"></param>
-        public void deleteData(string deleteIndex)
+        public void deleteData(string deleteIndex, string myclassname)
         {
+            using (var wsa = new WebSocket("ws://localhost:9000/GetClassName/Main"))
+            {
+                wsa.Connect();
+                wsa.Send(myclassname);
+                wsa.Close();
+            }
             using (var ws = new WebSocket("ws://localhost:9000/DeleteData"))
             {
                 ws.Connect();
@@ -88,15 +94,15 @@ namespace Demo1._1._3
 
         public void DeleteMain(DevExpress.XtraGrid.Views.Grid.GridView gv, string classname, string name)  //删除主表信息
         {
-            string deleteIndex = gv.GetFocusedRowCellDisplayText(gv.Columns[name]);
-            if (MessageBox.Show("是否删除此消息？", "删除", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.OK)
-            {
-                deleteMain(deleteIndex, classname);
-                gv.DeleteRow(gv.FocusedRowHandle);
-            }
+                string deleteIndex = gv.GetFocusedRowCellDisplayText(gv.Columns[name]);
+                if (MessageBox.Show("是否删除此消息？", "删除", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.OK)
+                {
+                    deleteMain(deleteIndex, classname);
+                    gv.DeleteRow(gv.FocusedRowHandle);
+                }
             else
             {
-
+                    
             }
         }
 
@@ -226,7 +232,7 @@ namespace Demo1._1._3
 
                 wsn.Close();
             }
-
+            Thread.Sleep(1500);
             using (var wsn = new WebSocket("ws://localhost:9000/GetClassName/Detail"))
             {
                 wsn.Connect();
@@ -418,26 +424,38 @@ namespace Demo1._1._3
         //********************
         //客户端发送数据（新建）
         //********************
-        public void saveData<T>(T t)
+        public void saveData<T>(T t, string myclassname)
         {
-            string json;
+            string json = null;
             json = JsonConvert.SerializeObject(t);
-            using (var ws = new WebSocket("ws://localhost:9000/SaveData"))
+            using (var wsa = new WebSocket("ws://localhost:9000/GetClassName/Main"))
             {
-                ws.Connect();
-                ws.Send(json);
-                ws.Close();
+                wsa.Connect();
+                wsa.Send(myclassname);
+                using (var ws = new WebSocket("ws://localhost:9000/SaveData"))
+                {
+                    ws.Connect();
+                    ws.Send(json);
+                    ws.Close();
+                }
+                wsa.Close();
             }
         }
 
         //********************
         //客户端发送数据（更新）
         //********************
-        public void updateData<T>(T t)
+        public void updateData<T>(T t, string myclassname)
         {
             string json;
             json = JsonConvert.SerializeObject(t);
 
+            using (var wsa = new WebSocket("ws://localhost:9000/GetClassName/Main"))
+            {
+                wsa.Connect();
+                wsa.Send(myclassname);
+                wsa.Close();
+            }
             using (var ws = new WebSocket("ws://localhost:9000/UpdateData"))
             {
                 ws.Connect();

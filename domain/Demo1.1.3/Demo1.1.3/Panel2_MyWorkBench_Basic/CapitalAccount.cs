@@ -112,7 +112,7 @@ namespace Demo1._1._3.Panel2_Basic_UserControl
 
         private void toolStripButton7_Click(object sender, EventArgs e) //删除
         {
-            fc.DeleteData(this.gridView2);
+            fc.DeleteData(this.gridView2, "Basic_Set");
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e) //修改

@@ -54,7 +54,7 @@ namespace Demo1._1._3
        
         private void toolStripButtonDelete_Click(object sender, EventArgs e) //Delete
         {
-            fc.DeleteData(gridView2);
+            fc.DeleteData(gridView2, "Basic_Set");
         }
 
 

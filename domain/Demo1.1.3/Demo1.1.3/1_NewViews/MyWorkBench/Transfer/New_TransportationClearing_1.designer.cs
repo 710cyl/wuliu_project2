@@ -39,7 +39,9 @@
             this.panel_Main = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+
+            this.textBox_total_money = new System.Windows.Forms.TextBox();
+
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -47,35 +49,41 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
+
+            this.textBox_total_volume = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.textBox_billcompany_TFN = new System.Windows.Forms.TextBox();
+            this.textBox_billcompany_fullname = new System.Windows.Forms.TextBox();
+            this.textBox_billcompany = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_clearing_id = new System.Windows.Forms.TextBox();
+
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+
+            this.textBox_register_man = new System.Windows.Forms.TextBox();
+            this.textBox_register_time = new System.Windows.Forms.TextBox();
+            this.textBox_modify_time = new System.Windows.Forms.TextBox();
+            this.textBox_modifier = new System.Windows.Forms.TextBox();
+            this.textBox_paycompany_TFN = new System.Windows.Forms.TextBox();
+            this.textBox_shipper_TFN = new System.Windows.Forms.TextBox();
+            this.textBox_paycompany_fullname = new System.Windows.Forms.TextBox();
+            this.textBox_shipper_fullname = new System.Windows.Forms.TextBox();
+
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+
+            this.textBox_paycompany = new System.Windows.Forms.TextBox();
+            this.textBox_shipper = new System.Windows.Forms.TextBox();
+
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -137,6 +145,9 @@
             this.simpleButton2.Size = new System.Drawing.Size(75, 31);
             this.simpleButton2.TabIndex = 162;
             this.simpleButton2.Text = "取消";
+
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+
             // 
             // simpleButton5
             // 
@@ -148,6 +159,9 @@
             this.simpleButton5.Size = new System.Drawing.Size(75, 31);
             this.simpleButton5.TabIndex = 165;
             this.simpleButton5.Text = "保存";
+
+            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
+
             // 
             // simpleButton3
             // 
@@ -159,6 +173,9 @@
             this.simpleButton3.Size = new System.Drawing.Size(75, 31);
             this.simpleButton3.TabIndex = 164;
             this.simpleButton3.Text = "删除";
+
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
+
             // 
             // simpleButton4
             // 
@@ -170,6 +187,9 @@
             this.simpleButton4.Size = new System.Drawing.Size(75, 31);
             this.simpleButton4.TabIndex = 163;
             this.simpleButton4.Text = "添加";
+
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
+
             // 
             // panel_Main
             // 
@@ -179,31 +199,37 @@
             this.panel_Main.Controls.Add(this.label4);
             this.panel_Main.Controls.Add(this.label8);
             this.panel_Main.Controls.Add(this.label10);
-            this.panel_Main.Controls.Add(this.textBox2);
-            this.panel_Main.Controls.Add(this.textBox8);
-            this.panel_Main.Controls.Add(this.textBox13);
+
+            this.panel_Main.Controls.Add(this.textBox_billcompany_TFN);
+            this.panel_Main.Controls.Add(this.textBox_billcompany_fullname);
+            this.panel_Main.Controls.Add(this.textBox_billcompany);
             this.panel_Main.Controls.Add(this.label3);
             this.panel_Main.Controls.Add(this.label2);
             this.panel_Main.Controls.Add(this.label1);
-            this.panel_Main.Controls.Add(this.textBox1);
+            this.panel_Main.Controls.Add(this.textBox_clearing_id);
+
             this.panel_Main.Controls.Add(this.label9);
             this.panel_Main.Controls.Add(this.label7);
             this.panel_Main.Controls.Add(this.label6);
             this.panel_Main.Controls.Add(this.label5);
-            this.panel_Main.Controls.Add(this.textBox7);
-            this.panel_Main.Controls.Add(this.textBox6);
-            this.panel_Main.Controls.Add(this.textBox19);
-            this.panel_Main.Controls.Add(this.textBox12);
-            this.panel_Main.Controls.Add(this.textBox11);
-            this.panel_Main.Controls.Add(this.textBox9);
-            this.panel_Main.Controls.Add(this.textBox4);
-            this.panel_Main.Controls.Add(this.textBox3);
+
+            this.panel_Main.Controls.Add(this.textBox_register_man);
+            this.panel_Main.Controls.Add(this.textBox_register_time);
+            this.panel_Main.Controls.Add(this.textBox_modify_time);
+            this.panel_Main.Controls.Add(this.textBox_modifier);
+            this.panel_Main.Controls.Add(this.textBox_paycompany_TFN);
+            this.panel_Main.Controls.Add(this.textBox_shipper_TFN);
+            this.panel_Main.Controls.Add(this.textBox_paycompany_fullname);
+            this.panel_Main.Controls.Add(this.textBox_shipper_fullname);
+
             this.panel_Main.Controls.Add(this.label17);
             this.panel_Main.Controls.Add(this.label16);
             this.panel_Main.Controls.Add(this.label15);
             this.panel_Main.Controls.Add(this.label14);
-            this.panel_Main.Controls.Add(this.textBox10);
-            this.panel_Main.Controls.Add(this.textBox5);
+
+            this.panel_Main.Controls.Add(this.textBox_paycompany);
+            this.panel_Main.Controls.Add(this.textBox_shipper);
+
             this.panel_Main.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_Main.Location = new System.Drawing.Point(0, 0);
             this.panel_Main.Margin = new System.Windows.Forms.Padding(2);
@@ -214,7 +240,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label19);
-            this.groupBox1.Controls.Add(this.textBox14);
+
+            this.groupBox1.Controls.Add(this.textBox_total_money);
+
             this.groupBox1.Controls.Add(this.textBox18);
             this.groupBox1.Controls.Add(this.textBox15);
             this.groupBox1.Controls.Add(this.label11);
@@ -222,7 +250,9 @@
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label18);
-            this.groupBox1.Controls.Add(this.textBox17);
+
+            this.groupBox1.Controls.Add(this.textBox_total_volume);
+
             this.groupBox1.Location = new System.Drawing.Point(12, 129);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1226, 71);
@@ -241,15 +271,16 @@
             this.label19.TabIndex = 357;
             this.label19.Text = "金额大写：";
             // 
-            // textBox14
+
+            // textBox_total_money
             // 
-            this.textBox14.Font = new System.Drawing.Font("宋体", 9.5F);
-            this.textBox14.Location = new System.Drawing.Point(1063, 30);
-            this.textBox14.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.ReadOnly = true;
-            this.textBox14.Size = new System.Drawing.Size(138, 22);
-            this.textBox14.TabIndex = 50;
+            this.textBox_total_money.Font = new System.Drawing.Font("宋体", 9.5F);
+            this.textBox_total_money.Location = new System.Drawing.Point(1063, 30);
+            this.textBox_total_money.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_total_money.Name = "textBox_total_money";
+            this.textBox_total_money.Size = new System.Drawing.Size(138, 22);
+            this.textBox_total_money.TabIndex = 50;
+
             // 
             // textBox18
             // 
@@ -325,15 +356,16 @@
             this.label18.TabIndex = 11;
             this.label18.Text = "总金额：";
             // 
-            // textBox17
+
+            // textBox_total_volume
             // 
-            this.textBox17.Font = new System.Drawing.Font("宋体", 9.5F);
-            this.textBox17.Location = new System.Drawing.Point(633, 29);
-            this.textBox17.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.ReadOnly = true;
-            this.textBox17.Size = new System.Drawing.Size(138, 22);
-            this.textBox17.TabIndex = 48;
+            this.textBox_total_volume.Font = new System.Drawing.Font("宋体", 9.5F);
+            this.textBox_total_volume.Location = new System.Drawing.Point(633, 29);
+            this.textBox_total_volume.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_total_volume.Name = "textBox_total_volume";
+            this.textBox_total_volume.Size = new System.Drawing.Size(138, 22);
+            this.textBox_total_volume.TabIndex = 48;
+
             // 
             // label4
             // 
@@ -368,32 +400,34 @@
             this.label10.TabIndex = 352;
             this.label10.Text = "开票单位：";
             // 
-            // textBox2
+
+            // textBox_billcompany_TFN
             // 
-            this.textBox2.Font = new System.Drawing.Font("宋体", 9.5F);
-            this.textBox2.Location = new System.Drawing.Point(833, 102);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(328, 22);
-            this.textBox2.TabIndex = 351;
+            this.textBox_billcompany_TFN.Font = new System.Drawing.Font("宋体", 9.5F);
+            this.textBox_billcompany_TFN.Location = new System.Drawing.Point(833, 102);
+            this.textBox_billcompany_TFN.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_billcompany_TFN.Name = "textBox_billcompany_TFN";
+            this.textBox_billcompany_TFN.Size = new System.Drawing.Size(328, 22);
+            this.textBox_billcompany_TFN.TabIndex = 351;
             // 
-            // textBox8
+            // textBox_billcompany_fullname
             // 
-            this.textBox8.Font = new System.Drawing.Font("宋体", 9.5F);
-            this.textBox8.Location = new System.Drawing.Point(447, 102);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(282, 22);
-            this.textBox8.TabIndex = 350;
+            this.textBox_billcompany_fullname.Font = new System.Drawing.Font("宋体", 9.5F);
+            this.textBox_billcompany_fullname.Location = new System.Drawing.Point(447, 102);
+            this.textBox_billcompany_fullname.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_billcompany_fullname.Name = "textBox_billcompany_fullname";
+            this.textBox_billcompany_fullname.Size = new System.Drawing.Size(282, 22);
+            this.textBox_billcompany_fullname.TabIndex = 350;
             // 
-            // textBox13
+            // textBox_billcompany
             // 
-            this.textBox13.Font = new System.Drawing.Font("宋体", 9.5F);
-            this.textBox13.Location = new System.Drawing.Point(107, 102);
-            this.textBox13.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(236, 22);
-            this.textBox13.TabIndex = 349;
+            this.textBox_billcompany.Font = new System.Drawing.Font("宋体", 9.5F);
+            this.textBox_billcompany.Location = new System.Drawing.Point(107, 102);
+            this.textBox_billcompany.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_billcompany.Name = "textBox_billcompany";
+            this.textBox_billcompany.Size = new System.Drawing.Size(236, 22);
+            this.textBox_billcompany.TabIndex = 349;
+
             // 
             // label3
             // 
@@ -428,15 +462,16 @@
             this.label1.TabIndex = 346;
             this.label1.Text = "结算单号：";
             // 
-            // textBox1
+
+            // textBox_clearing_id
             // 
-            this.textBox1.Font = new System.Drawing.Font("宋体", 9.5F);
-            this.textBox1.Location = new System.Drawing.Point(107, 24);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(138, 22);
-            this.textBox1.TabIndex = 345;
+            this.textBox_clearing_id.Font = new System.Drawing.Font("宋体", 9.5F);
+            this.textBox_clearing_id.Location = new System.Drawing.Point(107, 24);
+            this.textBox_clearing_id.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_clearing_id.Name = "textBox_clearing_id";
+            this.textBox_clearing_id.Size = new System.Drawing.Size(138, 22);
+            this.textBox_clearing_id.TabIndex = 345;
+
             // 
             // label9
             // 
@@ -482,81 +517,81 @@
             this.label5.TabIndex = 344;
             this.label5.Text = "货主简称：";
             // 
-            // textBox7
+
+            // textBox_register_man
             // 
-            this.textBox7.Font = new System.Drawing.Font("宋体", 9.5F);
-            this.textBox7.Location = new System.Drawing.Point(349, 24);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(138, 22);
-            this.textBox7.TabIndex = 63;
+            this.textBox_register_man.Font = new System.Drawing.Font("宋体", 9.5F);
+            this.textBox_register_man.Location = new System.Drawing.Point(349, 24);
+            this.textBox_register_man.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_register_man.Name = "textBox_register_man";
+            this.textBox_register_man.Size = new System.Drawing.Size(138, 22);
+            this.textBox_register_man.TabIndex = 63;
             // 
-            // textBox6
+            // textBox_register_time
             // 
-            this.textBox6.Font = new System.Drawing.Font("宋体", 9.5F);
-            this.textBox6.Location = new System.Drawing.Point(591, 24);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(138, 22);
-            this.textBox6.TabIndex = 62;
+            this.textBox_register_time.Font = new System.Drawing.Font("宋体", 9.5F);
+            this.textBox_register_time.Location = new System.Drawing.Point(591, 24);
+            this.textBox_register_time.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_register_time.Name = "textBox_register_time";
+            this.textBox_register_time.ReadOnly = true;
+            this.textBox_register_time.Size = new System.Drawing.Size(138, 22);
+            this.textBox_register_time.TabIndex = 62;
             // 
-            // textBox19
+            // textBox_modify_time
             // 
-            this.textBox19.Font = new System.Drawing.Font("宋体", 9.5F);
-            this.textBox19.Location = new System.Drawing.Point(1075, 24);
-            this.textBox19.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.ReadOnly = true;
-            this.textBox19.Size = new System.Drawing.Size(138, 22);
-            this.textBox19.TabIndex = 61;
+            this.textBox_modify_time.Font = new System.Drawing.Font("宋体", 9.5F);
+            this.textBox_modify_time.Location = new System.Drawing.Point(1075, 24);
+            this.textBox_modify_time.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_modify_time.Name = "textBox_modify_time";
+            this.textBox_modify_time.ReadOnly = true;
+            this.textBox_modify_time.Size = new System.Drawing.Size(138, 22);
+            this.textBox_modify_time.TabIndex = 61;
             // 
-            // textBox12
+            // textBox_modifier
             // 
-            this.textBox12.Font = new System.Drawing.Font("宋体", 9.5F);
-            this.textBox12.Location = new System.Drawing.Point(833, 24);
-            this.textBox12.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.ReadOnly = true;
-            this.textBox12.Size = new System.Drawing.Size(138, 22);
-            this.textBox12.TabIndex = 57;
+            this.textBox_modifier.Font = new System.Drawing.Font("宋体", 9.5F);
+            this.textBox_modifier.Location = new System.Drawing.Point(833, 24);
+            this.textBox_modifier.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_modifier.Name = "textBox_modifier";
+            this.textBox_modifier.Size = new System.Drawing.Size(138, 22);
+            this.textBox_modifier.TabIndex = 57;
             // 
-            // textBox11
+            // textBox_paycompany_TFN
             // 
-            this.textBox11.Font = new System.Drawing.Font("宋体", 9.5F);
-            this.textBox11.Location = new System.Drawing.Point(833, 76);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(328, 22);
-            this.textBox11.TabIndex = 56;
+            this.textBox_paycompany_TFN.Font = new System.Drawing.Font("宋体", 9.5F);
+            this.textBox_paycompany_TFN.Location = new System.Drawing.Point(833, 76);
+            this.textBox_paycompany_TFN.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_paycompany_TFN.Name = "textBox_paycompany_TFN";
+            this.textBox_paycompany_TFN.Size = new System.Drawing.Size(328, 22);
+            this.textBox_paycompany_TFN.TabIndex = 56;
             // 
-            // textBox9
+            // textBox_shipper_TFN
             // 
-            this.textBox9.Font = new System.Drawing.Font("宋体", 9.5F);
-            this.textBox9.Location = new System.Drawing.Point(833, 50);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(328, 22);
-            this.textBox9.TabIndex = 55;
+            this.textBox_shipper_TFN.Font = new System.Drawing.Font("宋体", 9.5F);
+            this.textBox_shipper_TFN.Location = new System.Drawing.Point(833, 50);
+            this.textBox_shipper_TFN.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_shipper_TFN.Name = "textBox_shipper_TFN";
+            this.textBox_shipper_TFN.Size = new System.Drawing.Size(328, 22);
+            this.textBox_shipper_TFN.TabIndex = 55;
             // 
-            // textBox4
+            // textBox_paycompany_fullname
             // 
-            this.textBox4.Font = new System.Drawing.Font("宋体", 9.5F);
-            this.textBox4.Location = new System.Drawing.Point(447, 76);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(282, 22);
-            this.textBox4.TabIndex = 50;
+            this.textBox_paycompany_fullname.Font = new System.Drawing.Font("宋体", 9.5F);
+            this.textBox_paycompany_fullname.Location = new System.Drawing.Point(447, 76);
+            this.textBox_paycompany_fullname.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_paycompany_fullname.Name = "textBox_paycompany_fullname";
+            this.textBox_paycompany_fullname.Size = new System.Drawing.Size(282, 22);
+            this.textBox_paycompany_fullname.TabIndex = 50;
             // 
-            // textBox3
+            // textBox_shipper_fullname
             // 
-            this.textBox3.Font = new System.Drawing.Font("宋体", 9.5F);
-            this.textBox3.Location = new System.Drawing.Point(447, 49);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(282, 22);
-            this.textBox3.TabIndex = 49;
+            this.textBox_shipper_fullname.Font = new System.Drawing.Font("宋体", 9.5F);
+            this.textBox_shipper_fullname.Location = new System.Drawing.Point(447, 49);
+            this.textBox_shipper_fullname.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_shipper_fullname.Name = "textBox_shipper_fullname";
+            this.textBox_shipper_fullname.Size = new System.Drawing.Size(282, 22);
+            this.textBox_shipper_fullname.TabIndex = 49;
+
             // 
             // label17
             // 
@@ -602,23 +637,25 @@
             this.label14.TabIndex = 25;
             this.label14.Text = "结算人员：";
             // 
-            // textBox10
+
+            // textBox_paycompany
             // 
-            this.textBox10.Font = new System.Drawing.Font("宋体", 9.5F);
-            this.textBox10.Location = new System.Drawing.Point(107, 76);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(236, 22);
-            this.textBox10.TabIndex = 20;
+            this.textBox_paycompany.Font = new System.Drawing.Font("宋体", 9.5F);
+            this.textBox_paycompany.Location = new System.Drawing.Point(107, 76);
+            this.textBox_paycompany.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_paycompany.Name = "textBox_paycompany";
+            this.textBox_paycompany.Size = new System.Drawing.Size(236, 22);
+            this.textBox_paycompany.TabIndex = 20;
             // 
-            // textBox5
+            // textBox_shipper
             // 
-            this.textBox5.Font = new System.Drawing.Font("宋体", 9.5F);
-            this.textBox5.Location = new System.Drawing.Point(107, 50);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(236, 22);
-            this.textBox5.TabIndex = 10;
+            this.textBox_shipper.Font = new System.Drawing.Font("宋体", 9.5F);
+            this.textBox_shipper.Location = new System.Drawing.Point(107, 50);
+            this.textBox_shipper.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_shipper.Name = "textBox_shipper";
+            this.textBox_shipper.Size = new System.Drawing.Size(236, 22);
+            this.textBox_shipper.TabIndex = 10;
+
             // 
             // New_TransportationClearing
             // 
@@ -657,33 +694,39 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+
+        private System.Windows.Forms.TextBox textBox_register_man;
+        private System.Windows.Forms.TextBox textBox_register_time;
+        private System.Windows.Forms.TextBox textBox_modify_time;
+        private System.Windows.Forms.TextBox textBox_modifier;
+        private System.Windows.Forms.TextBox textBox_paycompany_TFN;
+        private System.Windows.Forms.TextBox textBox_shipper_TFN;
+        private System.Windows.Forms.TextBox textBox_paycompany_fullname;
+        private System.Windows.Forms.TextBox textBox_shipper_fullname;
+
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox5;
+
+        private System.Windows.Forms.TextBox textBox_paycompany;
+        private System.Windows.Forms.TextBox textBox_shipper;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_clearing_id;
+
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox13;
+
+        private System.Windows.Forms.TextBox textBox_billcompany_TFN;
+        private System.Windows.Forms.TextBox textBox_billcompany_fullname;
+        private System.Windows.Forms.TextBox textBox_billcompany;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox textBox_total_money;
+
         private System.Windows.Forms.TextBox textBox18;
         private System.Windows.Forms.TextBox textBox15;
         private System.Windows.Forms.Label label11;
@@ -691,6 +734,8 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox17;
+
+        private System.Windows.Forms.TextBox textBox_total_volume;
+
     }
 }

@@ -76,7 +76,7 @@ namespace Demo1._1._3
 
         private void toolStripButton7_Click(object sender, EventArgs e) //删除
         {
-            fc.DeleteData(this.gridView2);
+            fc.DeleteData(this.gridView2, "Basic_Set");
         }
 
         private void toolStripButton6_Click(object sender, EventArgs e) //导入数据

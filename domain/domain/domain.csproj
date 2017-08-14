@@ -114,6 +114,8 @@
     <Compile Include="FleetPrice_Detail.cs" />
     <Compile Include="LotteryDetails.cs" />
     <Compile Include="LottreyMain.cs" />
+    <Compile Include="OilGasRegister_Detail.cs" />
+    <Compile Include="OilGasRegister_Main.cs" />
     <Compile Include="Outbound_Car.cs" />
     <Compile Include="Outbound_Car_Detail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -128,6 +130,8 @@
     <Compile Include="StorageDetailsTrans.cs" />
     <Compile Include="StorageFormMainOut.cs" />
     <Compile Include="StorageFormMainTrans.cs" />
+    <Compile Include="TransportationClearing_Detail.cs" />
+    <Compile Include="TransportationClearing_Main.cs" />
     <Compile Include="TransportationRegister.cs" />
     <Compile Include="TransportationRegister_Detail.cs" />
     <Compile Include="仓库\StorageDetails.cs" />

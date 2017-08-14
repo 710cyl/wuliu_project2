@@ -148,15 +148,15 @@ namespace Demo1._1._3
         {
             if (tabPane1.SelectedPage == tabNavigationPage1)
             {
-                fc.DeleteData(this.gridView2);
+                fc.DeleteData(this.gridView2, "Basic_Set");
             }
             else if (tabPane1.SelectedPage == tabNavigationPage2)
             {
-                fc.DeleteData(this.gridView3);
+                fc.DeleteData(this.gridView3, "Basic_Set");
             }
             else if (tabPane1.SelectedPage == tabNavigationPage3)
             {
-                fc.DeleteData(this.gridView4);
+                fc.DeleteData(this.gridView4, "Basic_Set");
             }
         }
 

@@ -37,16 +37,18 @@
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.panel_Main = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+
+            this.dateTimePicker_fueling_date = new System.Windows.Forms.DateTimePicker();
+            this.comboBox_oilgas_type = new System.Windows.Forms.ComboBox();
+            this.textBox_register_time = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox_register_man = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox_register_id = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox_oilgas_unitprice = new System.Windows.Forms.TextBox();
+
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
@@ -109,6 +111,9 @@
             this.simpleButton2.Size = new System.Drawing.Size(75, 31);
             this.simpleButton2.TabIndex = 162;
             this.simpleButton2.Text = "取消";
+
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+
             // 
             // simpleButton5
             // 
@@ -120,6 +125,9 @@
             this.simpleButton5.Size = new System.Drawing.Size(75, 31);
             this.simpleButton5.TabIndex = 165;
             this.simpleButton5.Text = "保存";
+
+            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
+
             // 
             // simpleButton3
             // 
@@ -131,6 +139,9 @@
             this.simpleButton3.Size = new System.Drawing.Size(75, 31);
             this.simpleButton3.TabIndex = 164;
             this.simpleButton3.Text = "删除";
+
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
+
             // 
             // simpleButton4
             // 
@@ -142,21 +153,26 @@
             this.simpleButton4.Size = new System.Drawing.Size(75, 31);
             this.simpleButton4.TabIndex = 163;
             this.simpleButton4.Text = "添加";
+
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
+
             // 
             // panel_Main
             // 
             this.panel_Main.AutoScroll = true;
             this.panel_Main.AutoScrollMinSize = new System.Drawing.Size(1068, 118);
-            this.panel_Main.Controls.Add(this.dateTimePicker1);
-            this.panel_Main.Controls.Add(this.comboBox3);
-            this.panel_Main.Controls.Add(this.textBox2);
+
+            this.panel_Main.Controls.Add(this.dateTimePicker_fueling_date);
+            this.panel_Main.Controls.Add(this.comboBox_oilgas_type);
+            this.panel_Main.Controls.Add(this.textBox_register_time);
             this.panel_Main.Controls.Add(this.label2);
-            this.panel_Main.Controls.Add(this.textBox3);
+            this.panel_Main.Controls.Add(this.textBox_register_man);
             this.panel_Main.Controls.Add(this.label3);
-            this.panel_Main.Controls.Add(this.textBox4);
+            this.panel_Main.Controls.Add(this.textBox_register_id);
             this.panel_Main.Controls.Add(this.label4);
             this.panel_Main.Controls.Add(this.label23);
-            this.panel_Main.Controls.Add(this.textBox10);
+            this.panel_Main.Controls.Add(this.textBox_oilgas_unitprice);
+
             this.panel_Main.Controls.Add(this.label12);
             this.panel_Main.Controls.Add(this.label13);
             this.panel_Main.Dock = System.Windows.Forms.DockStyle.Top;
@@ -166,30 +182,32 @@
             this.panel_Main.Size = new System.Drawing.Size(1068, 118);
             this.panel_Main.TabIndex = 14;
             // 
-            // dateTimePicker1
+
+            // dateTimePicker_fueling_date
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(686, 61);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(148, 21);
-            this.dateTimePicker1.TabIndex = 427;
+            this.dateTimePicker_fueling_date.Location = new System.Drawing.Point(686, 61);
+            this.dateTimePicker_fueling_date.Name = "dateTimePicker_fueling_date";
+            this.dateTimePicker_fueling_date.Size = new System.Drawing.Size(148, 21);
+            this.dateTimePicker_fueling_date.TabIndex = 427;
             // 
-            // comboBox3
+            // comboBox_oilgas_type
             // 
-            this.comboBox3.Font = new System.Drawing.Font("宋体", 9.5F);
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(148, 63);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(149, 21);
-            this.comboBox3.TabIndex = 426;
+            this.comboBox_oilgas_type.Font = new System.Drawing.Font("宋体", 9.5F);
+            this.comboBox_oilgas_type.FormattingEnabled = true;
+            this.comboBox_oilgas_type.Location = new System.Drawing.Point(148, 63);
+            this.comboBox_oilgas_type.Name = "comboBox_oilgas_type";
+            this.comboBox_oilgas_type.Size = new System.Drawing.Size(149, 21);
+            this.comboBox_oilgas_type.TabIndex = 426;
             // 
-            // textBox2
+            // textBox_register_time
             // 
-            this.textBox2.Font = new System.Drawing.Font("宋体", 9.5F);
-            this.textBox2.Location = new System.Drawing.Point(686, 34);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(148, 22);
-            this.textBox2.TabIndex = 425;
+            this.textBox_register_time.Font = new System.Drawing.Font("宋体", 9.5F);
+            this.textBox_register_time.Location = new System.Drawing.Point(686, 34);
+            this.textBox_register_time.Name = "textBox_register_time";
+            this.textBox_register_time.ReadOnly = true;
+            this.textBox_register_time.Size = new System.Drawing.Size(148, 22);
+            this.textBox_register_time.TabIndex = 425;
+
             // 
             // label2
             // 
@@ -202,14 +220,15 @@
             this.label2.TabIndex = 424;
             this.label2.Text = "登记时间：";
             // 
-            // textBox3
+
+            // textBox_register_man
             // 
-            this.textBox3.Font = new System.Drawing.Font("宋体", 9.5F);
-            this.textBox3.Location = new System.Drawing.Point(415, 35);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(148, 22);
-            this.textBox3.TabIndex = 423;
+            this.textBox_register_man.Font = new System.Drawing.Font("宋体", 9.5F);
+            this.textBox_register_man.Location = new System.Drawing.Point(415, 35);
+            this.textBox_register_man.Name = "textBox_register_man";
+            this.textBox_register_man.Size = new System.Drawing.Size(148, 22);
+            this.textBox_register_man.TabIndex = 423;
+
             // 
             // label3
             // 
@@ -222,14 +241,15 @@
             this.label3.TabIndex = 422;
             this.label3.Text = "登记人：";
             // 
-            // textBox4
+
+            // textBox_register_id
             // 
-            this.textBox4.Font = new System.Drawing.Font("宋体", 9.5F);
-            this.textBox4.Location = new System.Drawing.Point(149, 35);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(148, 22);
-            this.textBox4.TabIndex = 421;
+            this.textBox_register_id.Font = new System.Drawing.Font("宋体", 9.5F);
+            this.textBox_register_id.Location = new System.Drawing.Point(149, 35);
+            this.textBox_register_id.Name = "textBox_register_id";
+            this.textBox_register_id.Size = new System.Drawing.Size(148, 22);
+            this.textBox_register_id.TabIndex = 421;
+
             // 
             // label4
             // 
@@ -253,13 +273,15 @@
             this.label23.TabIndex = 418;
             this.label23.Text = "加注日期：";
             // 
-            // textBox10
+
+            // textBox_oilgas_unitprice
             // 
-            this.textBox10.Font = new System.Drawing.Font("宋体", 9.5F);
-            this.textBox10.Location = new System.Drawing.Point(415, 64);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(148, 22);
-            this.textBox10.TabIndex = 417;
+            this.textBox_oilgas_unitprice.Font = new System.Drawing.Font("宋体", 9.5F);
+            this.textBox_oilgas_unitprice.Location = new System.Drawing.Point(415, 64);
+            this.textBox_oilgas_unitprice.Name = "textBox_oilgas_unitprice";
+            this.textBox_oilgas_unitprice.Size = new System.Drawing.Size(148, 22);
+            this.textBox_oilgas_unitprice.TabIndex = 417;
+
             // 
             // label12
             // 
@@ -314,17 +336,19 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private System.Windows.Forms.Panel panel_Main;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.TextBox textBox2;
+
+        private System.Windows.Forms.ComboBox comboBox_oilgas_type;
+        private System.Windows.Forms.TextBox textBox_register_time;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox_register_man;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox_register_id;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBox_oilgas_unitprice;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_fueling_date;
+
     }
 }

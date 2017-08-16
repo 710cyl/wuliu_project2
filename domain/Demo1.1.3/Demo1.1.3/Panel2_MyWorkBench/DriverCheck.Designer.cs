@@ -73,11 +73,11 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox_motorcade = new System.Windows.Forms.TextBox();
             this.textBox_driver = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox_check_herald = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox_motorcade = new System.Windows.Forms.ComboBox();
             this.textBox_bookkeeping_time = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox_check_reason = new System.Windows.Forms.TextBox();
@@ -442,11 +442,11 @@
             this.panel1.AutoScrollMinSize = new System.Drawing.Size(1017, 180);
             this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.textBox_motorcade);
             this.panel1.Controls.Add(this.textBox_driver);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.comboBox_check_herald);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.comboBox_motorcade);
             this.panel1.Controls.Add(this.textBox_bookkeeping_time);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.textBox_check_reason);
@@ -477,13 +477,27 @@
             this.panel1.TabIndex = 27;
             this.panel1.Visible = false;
             // 
+            // textBox_motorcade
+            // 
+            this.textBox_motorcade.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBox_motorcade.Font = new System.Drawing.Font("宋体", 9F);
+            this.textBox_motorcade.Location = new System.Drawing.Point(542, 52);
+            this.textBox_motorcade.Name = "textBox_motorcade";
+            this.textBox_motorcade.ReadOnly = true;
+            this.textBox_motorcade.Size = new System.Drawing.Size(148, 21);
+            this.textBox_motorcade.TabIndex = 426;
+            this.textBox_motorcade.TabStop = false;
+            this.textBox_motorcade.Click += new System.EventHandler(this.textBox_motorcade_Click);
+            // 
             // textBox_driver
             // 
             this.textBox_driver.Font = new System.Drawing.Font("宋体", 9F);
             this.textBox_driver.Location = new System.Drawing.Point(88, 79);
             this.textBox_driver.Name = "textBox_driver";
+            this.textBox_driver.ReadOnly = true;
             this.textBox_driver.Size = new System.Drawing.Size(148, 21);
             this.textBox_driver.TabIndex = 425;
+            this.textBox_driver.Click += new System.EventHandler(this.textBox_driver_Click);
             // 
             // label8
             // 
@@ -515,15 +529,6 @@
             this.label7.Size = new System.Drawing.Size(77, 12);
             this.label7.TabIndex = 422;
             this.label7.Text = "考核下达人：";
-            // 
-            // comboBox_motorcade
-            // 
-            this.comboBox_motorcade.Font = new System.Drawing.Font("宋体", 9F);
-            this.comboBox_motorcade.FormattingEnabled = true;
-            this.comboBox_motorcade.Location = new System.Drawing.Point(542, 52);
-            this.comboBox_motorcade.Name = "comboBox_motorcade";
-            this.comboBox_motorcade.Size = new System.Drawing.Size(149, 20);
-            this.comboBox_motorcade.TabIndex = 421;
             // 
             // textBox_bookkeeping_time
             // 
@@ -637,8 +642,10 @@
             this.textBox_car_id.Font = new System.Drawing.Font("宋体", 9F);
             this.textBox_car_id.Location = new System.Drawing.Point(770, 51);
             this.textBox_car_id.Name = "textBox_car_id";
+            this.textBox_car_id.ReadOnly = true;
             this.textBox_car_id.Size = new System.Drawing.Size(148, 21);
             this.textBox_car_id.TabIndex = 408;
+            this.textBox_car_id.Click += new System.EventHandler(this.textBox_car_id_Click);
             // 
             // textBox_check_type
             // 
@@ -868,7 +875,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboBox_check_herald;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox_motorcade;
         private System.Windows.Forms.TextBox textBox_bookkeeping_time;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox_check_reason;
@@ -893,5 +899,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         public DevExpress.XtraEditors.DataNavigator dataNavigator1;
+        private System.Windows.Forms.TextBox textBox_motorcade;
     }
 }

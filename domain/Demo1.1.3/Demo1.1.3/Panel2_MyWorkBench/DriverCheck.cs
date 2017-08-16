@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using WebSocketSharp;
 using DevExpress.XtraEditors;
+using Demo1._1._3.MyWorkBench_SkipForm;
+using domain;
 
 namespace Demo1._1._3.Panel2_MyWorkBench
 {
@@ -20,13 +22,23 @@ namespace Demo1._1._3.Panel2_MyWorkBench
         public static string str = null;
         public long total_Page = 0; //页码总条目
         public long now_Page = 1; //当前页码
+        private TabbedSections child_form = new TabbedSections();
 
         domain.Driver_Check tcm = new domain.Driver_Check();
         FunctionClass fc = new FunctionClass();
-
+        
         public DriverCheck()
         {
             InitializeComponent();
+            
+            child_form.ReturnEvent += new TabbedSections.ClickCar(getCarValue); 
+
+        }
+        void getCarValue(string a,string b,string c)
+        {
+            textBox_motorcade.Text = a;
+            textBox_car_id.Text = b;
+            textBox_driver.Text = c;
         }
         //查看
         private void toolStripButton5_Click(object sender, EventArgs e)
@@ -37,7 +49,7 @@ namespace Demo1._1._3.Panel2_MyWorkBench
                 textBox_check_id.Text = array[0];
                 textBox_check_type.Text = array[1];
                 textBox_check_month.Text = array[2];
-                comboBox_motorcade.Text = array[3];
+                textBox_motorcade.Text = array[3];
                 textBox_car_id.Text = array[4];
                 textBox_driver.Text = array[5];
                 textBox_check_money.Text = array[6];
@@ -73,7 +85,7 @@ namespace Demo1._1._3.Panel2_MyWorkBench
                     textBox_check_id.Text = array[0];
                     textBox_check_type.Text = array[1];
                     textBox_check_month.Text = array[2];
-                    comboBox_motorcade.Text = array[3];
+                    textBox_motorcade.Text = array[3];
                     textBox_car_id.Text = array[4];
                     textBox_driver.Text = array[5];
                     textBox_check_money.Text = array[6];
@@ -129,7 +141,7 @@ namespace Demo1._1._3.Panel2_MyWorkBench
                 tcm.check_id = textBox_check_id.Text;
                 tcm.check_type = textBox_check_type.Text;
                 tcm.check_month = textBox_check_month.Text;
-                tcm.motorcade = comboBox_motorcade.Text;
+                tcm.motorcade = textBox_motorcade.Text;
                 tcm.car_id = textBox_car_id.Text;
                 tcm.driver = textBox_driver.Text;
                 tcm.check_money = Convert.ToDecimal(textBox_check_money.Text);
@@ -141,6 +153,9 @@ namespace Demo1._1._3.Panel2_MyWorkBench
                 tcm.bookkeeping_time = Convert.ToDateTime(DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss"));
 
                 fc.updateData(tcm, "Driver_Check");
+
+                this.gridControl2.DataSource = fc.showData<Driver_Check>(tcm, now_Page.ToString());
+
             }
 
             else   //保存
@@ -148,7 +163,7 @@ namespace Demo1._1._3.Panel2_MyWorkBench
                 tcm.check_id = textBox_check_id.Text;
                 tcm.check_type = textBox_check_type.Text;
                 tcm.check_month = textBox_check_month.Text;
-                tcm.motorcade = comboBox_motorcade.Text;
+                tcm.motorcade = textBox_motorcade.Text;
                 tcm.car_id = textBox_car_id.Text;
                 tcm.driver = textBox_driver.Text;
                 tcm.check_money = Convert.ToDecimal(textBox_check_money.Text);
@@ -160,10 +175,12 @@ namespace Demo1._1._3.Panel2_MyWorkBench
                 tcm.bookkeeping_time = Convert.ToDateTime(DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss"));
                 isExist = true;
                 fc.saveData(tcm, "Driver_Check");
+
+                this.gridControl2.DataSource = fc.showData<Driver_Check>(tcm,now_Page.ToString());
             }
 
             panel1.Visible = false;
-            Refresh();
+
         }
         //关闭
         private void simpleButton2_Click(object sender, EventArgs e)
@@ -206,6 +223,21 @@ namespace Demo1._1._3.Panel2_MyWorkBench
                     gridControl2.DataSource = fc.showData<domain.Driver_Check>(tcm, now_Page.ToString());
                 }
             }
+        }
+        //车队单击事件
+        private void textBox_motorcade_Click(object sender, EventArgs e)
+        {
+            child_form.ShowDialog();
+        }
+        //车号单击事件
+        private void textBox_car_id_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("123");
+        }
+        //司机单击事件
+        private void textBox_driver_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("123");
         }
     }
 }

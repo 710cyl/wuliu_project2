@@ -672,6 +672,12 @@ namespace wuliu_server
                     string json = JsonConvert.SerializeObject(fund_account);
                     return json;
                 }
+                else if (s == "External_Vehicle")
+                {
+                    IList<External_Vehicle> fund_account = session.QueryOver<External_Vehicle>().List();
+                    string json = JsonConvert.SerializeObject(fund_account);
+                    return json;
+                }
 
                 else if (s == "Office_Supply")
                 {
@@ -1732,7 +1738,28 @@ namespace wuliu_server
             }
             else if (s == "Internal_Vehicle")
             {
-                IList<Internal_Vehicle> fund_account = session.QueryOver<Internal_Vehicle>().List();
+                int page = Convert.ToInt32(NowPage.nowpage);
+                string input_val = GetValLike.input_val;
+                String sql = "select c.* from T_Internal_Vehicle c where c.车队  like '%" + input_val + "%' or c.车号  like '%" + input_val + "%'" +
+                      "or c.司机  like '%" + input_val + "%'";
+
+                ISQLQuery query = session.CreateSQLQuery(sql)
+               .AddEntity("Internal_Vehicle", typeof(domain.Internal_Vehicle));
+                IList<Internal_Vehicle> fund_account = query.List <Internal_Vehicle>();
+                string json = JsonConvert.SerializeObject(fund_account);
+                return json;
+            }
+
+            else if (s == "External_Vehicle")
+            {
+                int page = Convert.ToInt32(NowPage.nowpage);
+                string input_val = GetValLike.input_val;
+                String sql = "select c.* from T_External_Vehicle c where c.车队  like '%" + input_val + "%' or c.车号  like '%" + input_val + "%'" +
+                      "or c.司机  like '%" + input_val + "%'";
+
+                ISQLQuery query = session.CreateSQLQuery(sql)
+               .AddEntity("External_Exhicle", typeof(domain.External_Vehicle));
+                IList<External_Vehicle> fund_account = query.List<External_Vehicle>();
                 string json = JsonConvert.SerializeObject(fund_account);
                 return json;
             }

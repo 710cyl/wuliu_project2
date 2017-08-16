@@ -145,6 +145,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\..\..\..\Users\ZTJ\Desktop\TabbedSections.cs">
+      <Link>1_NewViews\TabbedSections.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\..\..\..\Users\ZTJ\Desktop\TabbedSections.designer.cs">
+      <Link>1_NewViews\TabbedSections.designer.cs</Link>
+      <DependentUpon>TabbedSections.cs</DependentUpon>
+    </Compile>
     <Compile Include="1_NewViews\MyWorkBench\Basic\New_WarehousingPrice_1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -496,6 +504,10 @@
     <Compile Include="Panel2_MyWorkBench_Basic\WarehouseFile.Designer.cs">
       <DependentUpon>WarehouseFile.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="..\..\..\..\Users\ZTJ\Desktop\TabbedSections.resx">
+      <Link>1_NewViews\TabbedSections.resx</Link>
+      <DependentUpon>TabbedSections.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="1_NewViews\MyWorkBench\Basic\New_WarehousingPrice_1.resx">
       <DependentUpon>New_WarehousingPrice_1.cs</DependentUpon>
     </EmbeddedResource>
@@ -770,6 +782,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\add_16x16.png" />
+    <None Include="Resources\lookup&amp;reference_16x16.png" />
     <None Include="Resources\delete_16x162.png" />
     <None Include="Resources\close_16x16.png" />
     <None Include="Resources\save_16x163.png" />

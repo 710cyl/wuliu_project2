@@ -22,6 +22,7 @@ using System.IO;
 using DevExpress.XtraEditors;
 using System.Drawing.Printing;
 
+
 namespace Demo1._1._3
 {
         public class FunctionClass //存有各个表功能的相关接口的接口定义
@@ -505,5 +506,6 @@ namespace Demo1._1._3
             }
             return bs;
         }
+
     }
 }

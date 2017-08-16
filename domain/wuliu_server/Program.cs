@@ -1853,7 +1853,7 @@ namespace wuliu_server
                        "or c.statement  like '%" + input_val + "%'";
                 ISQLQuery query = session.CreateSQLQuery(sql)
                .AddEntity("TransportationRegister", typeof(domain.TransportationRegister));
-                IList<TransportationRegister> TransportationRegister = session.QueryOver<TransportationRegister>().List();
+                IList<TransportationRegister> TransportationRegister = query.List<TransportationRegister>();
                 string json = JsonConvert.SerializeObject(TransportationRegister, Formatting.None, new JsonSerializerSettings()
                 {
                     ReferenceLoopHandling = ReferenceLoopHandling.Ignore
@@ -1879,7 +1879,9 @@ namespace wuliu_server
                        "or c.change_staff  like '%" + input_val + "%'" +
                        "or c.change_time  like '%" + input_val + "%'" +
                        "or c.statement  like '%" + input_val + "%'";
-                IList<FleetPrice> fund_account = session.QueryOver<FleetPrice>().List();
+                ISQLQuery query = session.CreateSQLQuery(sql)
+               .AddEntity("FleetPrice", typeof(domain.FleetPrice));
+                IList<FleetPrice> fund_account = query.List<FleetPrice>();
                 string json = JsonConvert.SerializeObject(fund_account);
                 return json;
             }
@@ -1891,7 +1893,9 @@ namespace wuliu_server
                       "or c.car_number  like '%" + input_val + "%'or c.transport_gross  like '%" + input_val + "%' or c.car_fee  like '%" + input_val + "%' or c.make_staff like '%" + input_val + "%' " +
                       "or c.make_time  like '%" + input_val + "%'" +
                        "or c.statement  like '%" + input_val + "%'";
-                IList<FleetPayment> fund_account = session.QueryOver<FleetPayment>().List();
+                ISQLQuery query = session.CreateSQLQuery(sql)
+               .AddEntity("FleetPayment", typeof(domain.FleetPayment));
+                IList<FleetPayment> fund_account = query.List<FleetPayment>();
                 string json = JsonConvert.SerializeObject(fund_account);
                 return json;
             }
@@ -1921,7 +1925,9 @@ namespace wuliu_server
                        "or c.unload_city  like '%" + input_val + "%'" +
                        "or c.unload_area  like '%" + input_val + "%'" +
                        "or c.car_number  like '%" + input_val + "%'";
-                IList<ShipperPrice> fund_account = session.QueryOver<ShipperPrice>().List();
+                ISQLQuery query = session.CreateSQLQuery(sql)
+               .AddEntity("ShipperPrice", typeof(domain.ShipperPrice));
+                IList<ShipperPrice> fund_account = query.List<ShipperPrice>();
                 string json = JsonConvert.SerializeObject(fund_account);
                 return json;
             }

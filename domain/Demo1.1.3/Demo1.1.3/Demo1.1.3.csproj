@@ -141,18 +141,10 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="websocket-sharp">
-      <HintPath>..\..\..\..\物流系统项目\websocket-sharp-master\websocket-sharp-master\websocket-sharp\bin\Debug_Ubuntu\websocket-sharp.dll</HintPath>
+      <HintPath>C:\Users\zts\Desktop\websocket-sharp.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\..\..\Users\ZTJ\Desktop\TabbedSections.cs">
-      <Link>1_NewViews\TabbedSections.cs</Link>
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="..\..\..\..\Users\ZTJ\Desktop\TabbedSections.designer.cs">
-      <Link>1_NewViews\TabbedSections.designer.cs</Link>
-      <DependentUpon>TabbedSections.cs</DependentUpon>
-    </Compile>
     <Compile Include="1_NewViews\MyWorkBench\Basic\New_WarehousingPrice_1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,6 +210,12 @@
     </Compile>
     <Compile Include="1_NewViews\MyWorkBench\Warehouse\New_TransferList_1.designer.cs">
       <DependentUpon>New_TransferList_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="1_NewViews\TabbedSections.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1_NewViews\TabbedSections.designer.cs">
+      <DependentUpon>TabbedSections.cs</DependentUpon>
     </Compile>
     <Compile Include="FunctionClass.cs" />
     <Compile Include="MyWorkBench_SkipForm\NewBasic.cs">
@@ -504,10 +502,6 @@
     <Compile Include="Panel2_MyWorkBench_Basic\WarehouseFile.Designer.cs">
       <DependentUpon>WarehouseFile.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="..\..\..\..\Users\ZTJ\Desktop\TabbedSections.resx">
-      <Link>1_NewViews\TabbedSections.resx</Link>
-      <DependentUpon>TabbedSections.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="1_NewViews\MyWorkBench\Basic\New_WarehousingPrice_1.resx">
       <DependentUpon>New_WarehousingPrice_1.cs</DependentUpon>
     </EmbeddedResource>
@@ -540,6 +534,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="1_NewViews\MyWorkBench\Warehouse\New_TransferList_1.resx">
       <DependentUpon>New_TransferList_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="1_NewViews\TabbedSections.resx">
+      <DependentUpon>TabbedSections.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyWorkBench_SkipForm\NewBasic.resx">
       <DependentUpon>NewBasic.cs</DependentUpon>

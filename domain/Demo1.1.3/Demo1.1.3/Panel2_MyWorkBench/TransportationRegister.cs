@@ -58,6 +58,7 @@ namespace Demo1._1._3.Panel2_MyWorkBench
             //MessageBox.Show(str);
             sd = JsonConvert.DeserializeObject<List<domain.TransportationRegister_Detail>>(fc.FindDeteils(str, "TransportationRegister_Detail"));
             gridControl2.DataSource = sd;
+            
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)//新建
@@ -227,6 +228,11 @@ namespace Demo1._1._3.Panel2_MyWorkBench
             {
                 gridControl1.DataSource = fc.showDataLike<domain.TransportationRegister>(tr, now_Page1.ToString(), input_val);
             }
+        }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
         }
 
         //private void 打印表单ToolStripMenuItem_Click(object sender, EventArgs e)

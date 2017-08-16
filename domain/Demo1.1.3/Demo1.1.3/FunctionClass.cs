@@ -507,5 +507,18 @@ namespace Demo1._1._3
             return bs;
         }
 
+
+
+        /// <summary>
+        ///生成唯一订单号 
+        /// </summary>
+        /// <param name>订单号前两个英文字母</param>
+        /// <returns>订单号</returns>
+        public string DateTimeToUnix(string name)
+        {
+            DateTime startTime = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1));
+            long timeStamp = (long)(DateTime.Now - startTime).TotalMilliseconds;
+            return (name + timeStamp.ToString());
+        }
     }
 }

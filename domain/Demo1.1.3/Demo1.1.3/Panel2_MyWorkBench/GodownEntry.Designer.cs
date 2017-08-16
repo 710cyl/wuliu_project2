@@ -79,12 +79,12 @@
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.dataNavigator2 = new DevExpress.XtraEditors.DataNavigator();
             this.dataNavigator_Basic_Set = new DevExpress.XtraEditors.DataNavigator();
             this.dataNavigator1 = new DevExpress.XtraEditors.DataNavigator();
             this.panel1 = new System.Windows.Forms.Panel();
             this.gridControl3 = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.dataNavigator2 = new DevExpress.XtraEditors.DataNavigator();
             this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -501,6 +501,49 @@
             this.gridView2.OptionsView.ColumnAutoWidth = false;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
+            // dataNavigator2
+            // 
+            this.dataNavigator2.Appearance.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataNavigator2.Appearance.Options.UseBackColor = true;
+            this.dataNavigator2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.dataNavigator2.Buttons.Append.Enabled = false;
+            this.dataNavigator2.Buttons.Append.Visible = false;
+            this.dataNavigator2.Buttons.CancelEdit.Enabled = false;
+            this.dataNavigator2.Buttons.CancelEdit.Visible = false;
+            this.dataNavigator2.Buttons.EnabledAutoRepeat = false;
+            this.dataNavigator2.Buttons.EndEdit.Enabled = false;
+            this.dataNavigator2.Buttons.EndEdit.Visible = false;
+            this.dataNavigator2.Buttons.First.Enabled = false;
+            this.dataNavigator2.Buttons.First.Visible = false;
+            this.dataNavigator2.Buttons.Last.Enabled = false;
+            this.dataNavigator2.Buttons.Last.Visible = false;
+            this.dataNavigator2.Buttons.Next.Enabled = false;
+            this.dataNavigator2.Buttons.Next.Visible = false;
+            this.dataNavigator2.Buttons.NextPage.Enabled = false;
+            this.dataNavigator2.Buttons.NextPage.Visible = false;
+            this.dataNavigator2.Buttons.Prev.Enabled = false;
+            this.dataNavigator2.Buttons.Prev.Visible = false;
+            this.dataNavigator2.Buttons.PrevPage.Enabled = false;
+            this.dataNavigator2.Buttons.PrevPage.Visible = false;
+            this.dataNavigator2.Buttons.Remove.Enabled = false;
+            this.dataNavigator2.Buttons.Remove.Visible = false;
+            this.dataNavigator2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.dataNavigator2.CustomButtons.AddRange(new DevExpress.XtraEditors.NavigatorCustomButton[] {
+            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 0, true, true, "首页", "首页"),
+            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 1, true, true, "上一页", "上一页"),
+            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 4, true, true, "下一页", "下一页"),
+            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 5, true, true, "尾页", "尾页")});
+            this.dataNavigator2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataNavigator2.Location = new System.Drawing.Point(0, 476);
+            this.dataNavigator2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataNavigator2.Name = "dataNavigator2";
+            this.dataNavigator2.ShowToolTips = true;
+            this.dataNavigator2.Size = new System.Drawing.Size(1361, 32);
+            this.dataNavigator2.TabIndex = 24;
+            this.dataNavigator2.Text = "dataNavigator1";
+            this.dataNavigator2.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Begin;
+            this.dataNavigator2.TextStringFormat = "第 {0}页，共 {1}页";
+            // 
             // dataNavigator_Basic_Set
             // 
             this.dataNavigator_Basic_Set.Appearance.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -619,49 +662,6 @@
             this.gridView3.OptionsView.ColumnAutoWidth = false;
             this.gridView3.OptionsView.ShowGroupPanel = false;
             this.gridView3.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView3_RowClick);
-            // 
-            // dataNavigator2
-            // 
-            this.dataNavigator2.Appearance.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataNavigator2.Appearance.Options.UseBackColor = true;
-            this.dataNavigator2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.dataNavigator2.Buttons.Append.Enabled = false;
-            this.dataNavigator2.Buttons.Append.Visible = false;
-            this.dataNavigator2.Buttons.CancelEdit.Enabled = false;
-            this.dataNavigator2.Buttons.CancelEdit.Visible = false;
-            this.dataNavigator2.Buttons.EnabledAutoRepeat = false;
-            this.dataNavigator2.Buttons.EndEdit.Enabled = false;
-            this.dataNavigator2.Buttons.EndEdit.Visible = false;
-            this.dataNavigator2.Buttons.First.Enabled = false;
-            this.dataNavigator2.Buttons.First.Visible = false;
-            this.dataNavigator2.Buttons.Last.Enabled = false;
-            this.dataNavigator2.Buttons.Last.Visible = false;
-            this.dataNavigator2.Buttons.Next.Enabled = false;
-            this.dataNavigator2.Buttons.Next.Visible = false;
-            this.dataNavigator2.Buttons.NextPage.Enabled = false;
-            this.dataNavigator2.Buttons.NextPage.Visible = false;
-            this.dataNavigator2.Buttons.Prev.Enabled = false;
-            this.dataNavigator2.Buttons.Prev.Visible = false;
-            this.dataNavigator2.Buttons.PrevPage.Enabled = false;
-            this.dataNavigator2.Buttons.PrevPage.Visible = false;
-            this.dataNavigator2.Buttons.Remove.Enabled = false;
-            this.dataNavigator2.Buttons.Remove.Visible = false;
-            this.dataNavigator2.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.dataNavigator2.CustomButtons.AddRange(new DevExpress.XtraEditors.NavigatorCustomButton[] {
-            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 0, true, true, "首页", "首页"),
-            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 1, true, true, "上一页", "上一页"),
-            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 4, true, true, "下一页", "下一页"),
-            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 5, true, true, "尾页", "尾页")});
-            this.dataNavigator2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataNavigator2.Location = new System.Drawing.Point(0, 476);
-            this.dataNavigator2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataNavigator2.Name = "dataNavigator2";
-            this.dataNavigator2.ShowToolTips = true;
-            this.dataNavigator2.Size = new System.Drawing.Size(1361, 32);
-            this.dataNavigator2.TabIndex = 24;
-            this.dataNavigator2.Text = "dataNavigator1";
-            this.dataNavigator2.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Begin;
-            this.dataNavigator2.TextStringFormat = "第 {0}页，共 {1}页";
             // 
             // splitterControl1
             // 

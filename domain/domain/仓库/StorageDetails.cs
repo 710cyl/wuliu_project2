@@ -16,6 +16,11 @@ namespace domain
         public virtual string StorageCode { set; get; }
 
         /// <summary>
+        /// 入库单号
+        /// </summary>
+        public virtual string StorageNumber { set; get; }
+
+        /// <summary>
         /// 仓库名称
         /// </summary>
         public virtual string StorageName { set; get; }
@@ -148,10 +153,7 @@ namespace domain
         /// </summary>
         public virtual DateTime StorageTime { set; get; }
 
-        /// <summary>
-        /// 入库单号
-        /// </summary>
-        public virtual string StorageNumber { set; get; }
+        
 
         /// <summary>
         /// 库管

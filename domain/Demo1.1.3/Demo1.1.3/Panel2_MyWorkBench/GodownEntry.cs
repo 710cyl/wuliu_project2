@@ -179,6 +179,48 @@ namespace Demo1._1._3.Panel2_MyWorkBench
             MessageBox.Show(str);
             sd = JsonConvert.DeserializeObject<List<domain.StorageDetails>>(fc.FindDeteils(str, "StorageDetails"));
             gridControl2.DataSource = sd;
+
+            this.gridView2.Columns[0].Caption = "入库单识别码";
+            this.gridView2.Columns[1].Caption = "入库单号";
+            this.gridView2.Columns[2].Caption = "仓库名称";
+            this.gridView2.Columns[3].Caption = "出厂日期";
+            this.gridView2.Columns[4].Caption = "订单号";
+            this.gridView2.Columns[5].Caption = "货主";
+            this.gridView2.Columns[6].Caption = "卸货点";
+            this.gridView2.Columns[7].Caption = "卸货城市";
+            this.gridView2.Columns[8].Caption = "卸货区域";
+            this.gridView2.Columns[9].Caption = "卷号";
+            this.gridView2.Columns[10].Caption = "品种";
+            this.gridView2.Columns[11].Caption = "材质";
+            this.gridView2.Columns[12].Caption = "规格";
+            this.gridView2.Columns[13].Caption = "件数";
+            this.gridView2.Columns[14].Caption = "数量";
+            this.gridView2.Columns[15].Caption = "垛位号";
+            this.gridView2.Columns[16].Caption = "入库方式";
+            this.gridView2.Columns[17].Caption = "车队";
+            this.gridView2.Columns[18].Caption = "车号";
+            this.gridView2.Columns[19].Caption = "司机";
+            this.gridView2.Columns[20].Caption = "装货城市";
+            this.gridView2.Columns[21].Caption = "装货地点";
+            this.gridView2.Columns[22].Caption = "装货区域";
+            this.gridView2.Columns[23].Caption = "录入员";
+            this.gridView2.Columns[24].Caption = "录入时间";
+            this.gridView2.Columns[25].Caption = "修改人";
+            this.gridView2.Columns[26].Caption = "修改时间";
+            this.gridView2.Columns[27].Caption = "入库时间";
+            this.gridView2.Columns[28].Caption = "库管";
+            this.gridView2.Columns[29].Caption = "吊车工";
+            this.gridView2.Columns[30].Caption = "装卸工";
+            this.gridView2.Columns[31].Caption = "其他人";
+            this.gridView2.Columns[32].Caption = "备注";
+            this.gridView2.Columns[33].Caption = "库存件数";
+            this.gridView2.Columns[34].Caption = "库存数量";
+            this.gridView2.Columns[35].Caption = "票数";
+            this.gridView2.Columns[36].Caption = "车队标识";
+            this.gridView2.Columns[37].Caption = "项目号";
+            this.gridView2.Columns[38].Caption = "可派件数";
+            this.gridView2.Columns[39].Caption = "可派数量";
+            this.gridView2.BestFitColumns();
         }
     }
 }

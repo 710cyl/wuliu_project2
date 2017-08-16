@@ -292,6 +292,7 @@ namespace Demo1._1._3
             main_outCar.gridView1.Columns[21].Caption = "说明";
             main_outCar.gridView1.BestFitColumns();
 
+            
         }
 
         private void accordionControlElementPackage_Click(object sender, EventArgs e)
@@ -389,6 +390,30 @@ namespace Demo1._1._3
             domain.StorageFormMain sf = new domain.StorageFormMain();
             ge.gridControl3.DataSource = showData<domain.StorageFormMain>(sf, ge.now_Page.ToString());
             ge.gridView3.Columns[23].Visible = false;
+            ge.gridView3.Columns[0].Caption = "入库单号";
+            ge.gridView3.Columns[1].Caption = "仓库";
+            ge.gridView3.Columns[2].Caption = "入库时间";
+            ge.gridView3.Columns[3].Caption = "入库方式";
+            ge.gridView3.Columns[4].Caption = "车队";
+            ge.gridView3.Columns[5].Caption = "车号";
+            ge.gridView3.Columns[6].Caption = "司机";
+            ge.gridView3.Columns[7].Caption = "入库总量";
+            ge.gridView3.Columns[8].Caption = "装货城市";
+            ge.gridView3.Columns[9].Caption = "装货地点";
+            ge.gridView3.Columns[10].Caption = "装货区域";
+            ge.gridView3.Columns[11].Caption = "录入员";
+            ge.gridView3.Columns[12].Caption = "录入时间";
+            ge.gridView3.Columns[13].Caption = "修改人";
+            ge.gridView3.Columns[14].Caption = "修改时间";
+            ge.gridView3.Columns[15].Caption = "库管";
+            ge.gridView3.Columns[16].Caption = "吊车工";
+            ge.gridView3.Columns[17].Caption = "装卸工";
+            ge.gridView3.Columns[18].Caption = "其他人";
+            ge.gridView3.Columns[19].Caption = "备注";
+            ge.gridView3.Columns[20].Caption = "发卸点";
+            ge.gridView3.Columns[21].Caption = "发卸城市";
+            ge.gridView3.Columns[22].Caption = "发卸区域";
+            ge.gridView3.BestFitColumns();
         }
 
         private void accordionControlElement63_Click(object sender, EventArgs e)

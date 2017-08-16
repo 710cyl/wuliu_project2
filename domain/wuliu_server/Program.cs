@@ -1213,11 +1213,11 @@ namespace wuliu_server
     {
         protected override void OnMessage(MessageEventArgs e)
         {
-            string id = e.Data.ToString();
+            string id = e.Data;
             switchDelete(GetClassName.classname,id);
         }
 
-        public void switchDelete(string classname,string id )
+        public void switchDelete<T>(string classname,T id )
         {
             try
             {

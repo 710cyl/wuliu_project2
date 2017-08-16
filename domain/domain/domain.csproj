@@ -108,6 +108,8 @@
     <Compile Include="Basic_Set\Internal_Vehicle.cs" />
     <Compile Include="Basic_Set\Office_Supply.cs" />
     <Compile Include="Basic_Set\Order_File.cs" />
+    <Compile Include="Car_Reimbursement.cs" />
+    <Compile Include="Driver_Check.cs" />
     <Compile Include="FleetPayment.cs" />
     <Compile Include="FleetPayment_Detail.cs" />
     <Compile Include="FleetPrice.cs" />
@@ -173,6 +175,10 @@
     <EmbeddedResource Include="ShipperPrice_Detail.hbm.xml" />
     <EmbeddedResource Include="TransportationRegister.hbm.xml" />
     <EmbeddedResource Include="TransportationRegister_Detail.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Car_Reimbursement.hbm.xml" />
+    <Content Include="Driver_Check.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

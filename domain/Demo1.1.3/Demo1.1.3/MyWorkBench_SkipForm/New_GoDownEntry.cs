@@ -33,6 +33,7 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
         domain.StorageFormMain sfm = new StorageFormMain();
         List<domain.StorageDetails> sd = new List<StorageDetails>();
         FunctionClass fc = new FunctionClass();
+
         public New_GoDownEntry()
         {
             InitializeComponent();
@@ -77,9 +78,59 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
             else
             {
                 DataGridViewInit();
-
+                textBox2.Text = fc.DateTimeToUnix("CK");
             }
-           
+
+            this.gridView1.Columns[0].Caption = "入库单识别码";
+            this.gridView1.Columns[0].OptionsColumn.AllowEdit = false; //设置不可编辑的列
+            this.gridView1.Columns[1].Caption = "入库单号";
+            this.gridView1.Columns[1].OptionsColumn.AllowEdit = false;
+            this.gridView1.Columns[2].Caption = "仓库名称";
+            this.gridView1.Columns[3].Caption = "出厂日期";
+            this.gridView1.Columns[4].Caption = "订单号";
+            this.gridView1.Columns[5].Caption = "货主";
+            this.gridView1.Columns[6].Caption = "卸货点";
+            this.gridView1.Columns[7].Caption = "卸货城市";
+            this.gridView1.Columns[8].Caption = "卸货区域";
+            this.gridView1.Columns[9].Caption = "卷号";
+            this.gridView1.Columns[10].Caption = "品种";
+            this.gridView1.Columns[11].Caption = "材质";
+            this.gridView1.Columns[12].Caption = "规格";
+            this.gridView1.Columns[13].Caption = "件数";
+            this.gridView1.Columns[14].Caption = "数量";
+            this.gridView1.Columns[15].Caption = "垛位号";
+            this.gridView1.Columns[16].Caption = "入库方式";
+            this.gridView1.Columns[17].Caption = "车队";
+            this.gridView1.Columns[18].Caption = "车号";
+            this.gridView1.Columns[19].Caption = "司机";
+            this.gridView1.Columns[20].Caption = "装货城市";
+            this.gridView1.Columns[21].Caption = "装货地点";
+            this.gridView1.Columns[22].Caption = "装货区域";
+            this.gridView1.Columns[23].Caption = "录入员";
+            this.gridView1.Columns[24].Caption = "录入时间";
+            this.gridView1.Columns[25].Caption = "修改人";
+            this.gridView1.Columns[26].Caption = "修改时间";
+            this.gridView1.Columns[27].Caption = "入库时间";
+            this.gridView1.Columns[28].Caption = "库管";
+            this.gridView1.Columns[29].Caption = "吊车工";
+            this.gridView1.Columns[30].Caption = "装卸工";
+            this.gridView1.Columns[31].Caption = "其他人";
+            this.gridView1.Columns[32].Caption = "备注";
+            this.gridView1.Columns[33].Caption = "库存件数";
+            this.gridView1.Columns[34].Caption = "库存数量";
+            this.gridView1.Columns[35].Caption = "票数";
+            this.gridView1.Columns[36].Caption = "车队标识";
+            this.gridView1.Columns[37].Caption = "项目号";
+            this.gridView1.Columns[38].Caption = "可派件数";
+            this.gridView1.Columns[39].Caption = "可派数量";
+            
+            /*
+            this.gridView1.OptionsView.ShowFooter = true;
+            this.gridView1.GroupSummary.Clear();
+            this.gridView1.GroupSummary.Add(DevExpress.Data.SummaryItemType.Sum, gridView1.Columns[33].Caption, gridView1.Columns[33], "合计:{0}");
+            */
+
+            this.gridView1.BestFitColumns();
         }
 
         public void DataGridViewInit()
@@ -94,7 +145,7 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
 
         private void button1_Click(object sender, EventArgs e) //添加数据
         {
-            domain.StorageDetails  sd= new domain.StorageDetails() {/* StorageFormMain = sfm*/ };
+            domain.StorageDetails sd = new domain.StorageDetails() { StorageCode = string.Format("{0}-{1}", textBox2.Text, StorageDetails.Count + 1), StorageNumber = textBox2.Text };
             StorageDetails.Add(sd);
         }
 
@@ -102,7 +153,7 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
         {
             try
             {
-                int index = gridView1.SelectedRowsCount+1;//dataGridView1.CurrentRow.Index;
+                int index = gridView1.SelectedRowsCount;//dataGridView1.CurrentRow.Index;
                 StorageDetails.RemoveAt(index);
             }
             catch (Exception ex)

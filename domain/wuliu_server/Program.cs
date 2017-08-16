@@ -1207,11 +1207,11 @@ namespace wuliu_server
     {
         protected override void OnMessage(MessageEventArgs e)
         {
-            string id = e.Data.ToString();
+            string id = e.Data;
             switchDelete(GetClassName.classname,id);
         }
 
-        public void switchDelete(string classname,string id )
+        public void switchDelete<T>(string classname,T id )
         {
             try
             {
@@ -1826,7 +1826,7 @@ namespace wuliu_server
                        "or c.statement  like '%" + input_val + "%'";
                 ISQLQuery query = session.CreateSQLQuery(sql)
                .AddEntity("TransportationRegister", typeof(domain.TransportationRegister));
-                IList<TransportationRegister> TransportationRegister = session.QueryOver<TransportationRegister>().List();
+                IList<TransportationRegister> TransportationRegister = query.List<TransportationRegister>();
                 string json = JsonConvert.SerializeObject(TransportationRegister, Formatting.None, new JsonSerializerSettings()
                 {
                     ReferenceLoopHandling = ReferenceLoopHandling.Ignore

@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using WebSocketSharp;
+using Demo1._1._3.MyWorkBench_SkipForm;
 
 namespace Demo1._1._3.Panel2_MyWorkBench
 {
@@ -19,12 +20,23 @@ namespace Demo1._1._3.Panel2_MyWorkBench
         public static string str = null;
         public long total_Page = 0; //页码总条目
         public long now_Page = 1; //当前页码
+        private TabbedSections child_form = new TabbedSections();//车队界面
 
         domain.Car_Reimbursement tcm = new domain.Car_Reimbursement();
         FunctionClass fc = new FunctionClass();
         public CarReimbursement()
         {
             InitializeComponent();
+            total_Page = fc.getTotal<domain.Car_Reimbursement>(tcm, total_Page);
+            fc.InitPage(dataNavigator1, total_Page, now_Page);
+            child_form.ReturnEvent += new TabbedSections.ClickCar(getCarValue);
+        }
+        //实现委托方法
+        void getCarValue(string a, string b, string c)
+        {
+            textBox_motorcade.Text = a;
+            textBox_car_id.Text = b;
+            textBox_driver.Text = c;
         }
         //查看
         private void toolStripButton5_Click(object sender, EventArgs e)
@@ -228,6 +240,21 @@ namespace Demo1._1._3.Panel2_MyWorkBench
                     gridControl2.DataSource = fc.showData<domain.Car_Reimbursement>(tcm, now_Page.ToString());
                 }
             }
+        }
+        //单击车队事件
+        private void textBox_motorcade_Click(object sender, EventArgs e)
+        {
+            child_form.ShowDialog();
+        }
+        //单击车号事件
+        private void textBox_car_id_Click(object sender, EventArgs e)
+        {
+            child_form.ShowDialog();
+        }
+        //单击司机事件
+        private void textBox_driver_Click(object sender, EventArgs e)
+        {
+            child_form.ShowDialog();
         }
     }
 }

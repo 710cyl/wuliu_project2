@@ -31,6 +31,7 @@ namespace Demo1._1._3.Panel2_MyWorkBench
         public OilGasRegister()
         {
             InitializeComponent();
+
         }
         //查看
         private void toolStripButton5_Click(object sender, EventArgs e)
@@ -182,6 +183,7 @@ namespace Demo1._1._3.Panel2_MyWorkBench
             MessageBox.Show(str);
             ogr_list = JsonConvert.DeserializeObject<List<domain.OilGasRegister_Detail>>(fc.FindDeteils(str, "OilGasRegister_Detail"));
             gridControl2.DataSource = ogr_list;
+
         }
     }
 }

@@ -29,7 +29,7 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
         public TabbedSections()
         {
             InitializeComponent();
-            domain.Internal_Vehicle iv = new domain.Internal_Vehicle();
+            //domain.Internal_Vehicle iv = new domain.Internal_Vehicle();
             //gridControl1.DataSource = fc.showData<domain.Internal_Vehicle>(iv, now_Page.ToString());
             domain.External_Vehicle ev = new domain.External_Vehicle();
             gridControl1.DataSource = fc.showData<domain.External_Vehicle>(ev, now_Page.ToString());

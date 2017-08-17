@@ -233,7 +233,7 @@ namespace Demo1._1._3
 
                 wsn.Close();
             }
-            Thread.Sleep(1500);
+            Thread.Sleep(5000);
             using (var wsn = new WebSocket("ws://localhost:9000/GetClassName/Detail"))
             {
                 wsn.Connect();

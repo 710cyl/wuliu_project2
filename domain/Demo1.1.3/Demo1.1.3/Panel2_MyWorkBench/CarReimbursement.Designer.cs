@@ -548,8 +548,10 @@
             this.textBox_driver.Font = new System.Drawing.Font("宋体", 9F);
             this.textBox_driver.Location = new System.Drawing.Point(88, 78);
             this.textBox_driver.Name = "textBox_driver";
+            this.textBox_driver.ReadOnly = true;
             this.textBox_driver.Size = new System.Drawing.Size(148, 21);
             this.textBox_driver.TabIndex = 410;
+            this.textBox_driver.Click += new System.EventHandler(this.textBox_driver_Click);
             // 
             // label3
             // 
@@ -567,16 +569,20 @@
             this.textBox_car_id.Font = new System.Drawing.Font("宋体", 9F);
             this.textBox_car_id.Location = new System.Drawing.Point(316, 51);
             this.textBox_car_id.Name = "textBox_car_id";
+            this.textBox_car_id.ReadOnly = true;
             this.textBox_car_id.Size = new System.Drawing.Size(148, 21);
             this.textBox_car_id.TabIndex = 408;
+            this.textBox_car_id.Click += new System.EventHandler(this.textBox_car_id_Click);
             // 
             // textBox_motorcade
             // 
             this.textBox_motorcade.Font = new System.Drawing.Font("宋体", 9F);
             this.textBox_motorcade.Location = new System.Drawing.Point(88, 51);
             this.textBox_motorcade.Name = "textBox_motorcade";
+            this.textBox_motorcade.ReadOnly = true;
             this.textBox_motorcade.Size = new System.Drawing.Size(148, 21);
             this.textBox_motorcade.TabIndex = 407;
+            this.textBox_motorcade.Click += new System.EventHandler(this.textBox_motorcade_Click);
             // 
             // label15
             // 

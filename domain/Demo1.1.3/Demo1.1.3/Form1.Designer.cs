@@ -30,12 +30,13 @@ namespace Demo1._1._3
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.navigationFrame1 = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.tabNavigationPage16 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.tabNavigationPage15 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.tabNavigationPage14 = new DevExpress.XtraBars.Navigation.TabNavigationPage();

@@ -693,7 +693,44 @@ namespace Demo1._1._3
                 tcd_list = JsonConvert.DeserializeObject<List<domain.TransportationClearing_Detail>>(detailString);
                 tpc.gridControl2.DataSource = tcd_list;
             }
-     
+
+            tpc.gridView1.Columns[0].Caption = "结算单号";
+            tpc.gridView1.Columns[1].Caption = "登记人员";
+            tpc.gridView1.Columns[2].Caption = "登记时间";
+            tpc.gridView1.Columns[3].Caption = "修改人员";
+            tpc.gridView1.Columns[4].Caption = "修改时间";
+            tpc.gridView1.Columns[5].Caption = "货主";
+            tpc.gridView1.Columns[6].Caption = "货主全称";
+            tpc.gridView1.Columns[7].Caption = "货主税号";
+            tpc.gridView1.Columns[8].Caption = "付款单位";
+            tpc.gridView1.Columns[9].Caption = "付款单位全称";
+            tpc.gridView1.Columns[10].Caption = "付款单位税号";
+            tpc.gridView1.Columns[11].Caption = "开票单位";
+            tpc.gridView1.Columns[12].Caption = "开票单位全称";
+            tpc.gridView1.Columns[13].Caption = "开票单位税号";
+            tpc.gridView1.Columns[14].Caption = "总金额";
+            tpc.gridView1.Columns[15].Caption = "说明";
+            tpc.gridView1.Columns[16].Caption = "总运量";
+            tpc.gridView1.Columns[17].Visible = false;
+
+            tpc.gridView2.Columns[0].Caption = "订单号";
+            tpc.gridView2.Columns[1].Caption = "装货地点";
+            tpc.gridView2.Columns[2].Caption = "卸货地点";
+            tpc.gridView2.Columns[3].Caption = "出发日期";
+            tpc.gridView2.Columns[4].Caption = "返回日期";
+            tpc.gridView2.Columns[5].Caption = "品种";
+            tpc.gridView2.Columns[6].Caption = "材质";
+            tpc.gridView2.Columns[7].Caption = "规格";
+            tpc.gridView2.Columns[8].Caption = "件数";
+            tpc.gridView2.Columns[9].Caption = "数量";
+            tpc.gridView2.Columns[10].Caption = "运价";
+            tpc.gridView2.Columns[11].Caption = "金额";
+            tpc.gridView2.Columns[12].Caption = "备注";
+            tpc.gridView2.Columns[13].Caption = "运输单标识";
+            tpc.gridView2.Columns[14].Caption = "货主";
+            tpc.gridView2.Columns[15].Visible = false;
+
+
         }
 
         private void accordionControlElement77_Click(object sender, EventArgs e)
@@ -706,6 +743,21 @@ namespace Demo1._1._3
 
             domain.Car_Reimbursement crb = new domain.Car_Reimbursement();
             carr.gridControl2.DataSource = showData<domain.Car_Reimbursement>(crb, carr.now_Page.ToString());
+
+            carr.gridView2.Columns[0].Caption = "报销单号";
+            carr.gridView2.Columns[1].Caption = "车队";
+            carr.gridView2.Columns[2].Caption = "车号";
+            carr.gridView2.Columns[3].Caption = "司机";
+            carr.gridView2.Columns[4].Caption = "登记人员";
+            carr.gridView2.Columns[5].Caption = "付款人员";
+            carr.gridView2.Columns[6].Caption = "录入时间";
+            carr.gridView2.Columns[7].Caption = "付款时间";
+            carr.gridView2.Columns[8].Caption = "报销金额";
+            carr.gridView2.Columns[9].Caption = "是否付款";
+            carr.gridView2.Columns[10].Caption = "付款账户编号";
+            carr.gridView2.Columns[11].Caption = "付款账户";
+            carr.gridView2.Columns[12].Caption = "报销内容";
+            carr.gridView2.Columns[13].Caption = "备注";
         }
 
         private void accordionControlElement78_Click(object sender, EventArgs e)
@@ -730,6 +782,28 @@ namespace Demo1._1._3
                 ogr.gridControl2.DataSource = ogr_list;
             }
 
+            ogr.gridView1.Columns[0].Caption = "登记单号";
+            ogr.gridView1.Columns[1].Caption = "加注日期";
+            ogr.gridView1.Columns[2].Caption = "油气种类";
+            ogr.gridView1.Columns[3].Caption = "油气单价";
+            ogr.gridView1.Columns[4].Caption = "登记人";
+            ogr.gridView1.Columns[5].Caption = "登记时间";
+            ogr.gridView1.Columns[6].Caption = "修改人";
+            ogr.gridView1.Columns[7].Caption = "修改时间";
+            ogr.gridView1.Columns[8].Visible = false;
+
+            ogr.gridView2.Columns[0].Caption = "油气登记详细单号";
+            ogr.gridView2.Columns[1].Caption = "车队";
+            ogr.gridView2.Columns[2].Caption = "车号";
+            ogr.gridView2.Columns[3].Caption = "司机";
+            ogr.gridView2.Columns[4].Caption = "油气量";
+            ogr.gridView2.Columns[5].Caption = "金额";
+            ogr.gridView2.Columns[6].Caption = "备注";
+            ogr.gridView2.Columns[7].Caption = "加注日期";
+            ogr.gridView2.Columns[8].Caption = "油气种类";
+            ogr.gridView2.Columns[9].Caption = "油气单价";
+            ogr.gridView2.Columns[10].Visible = false;
+
         }
 
         private void accordionControlElement82_Click(object sender, EventArgs e)
@@ -742,6 +816,22 @@ namespace Demo1._1._3
             panel2.Controls.Add(drc);
             domain.Driver_Check crb = new domain.Driver_Check();
             drc.gridControl2.DataSource = showData<domain.Driver_Check>(crb, drc.now_Page.ToString());
+
+            drc.gridView2.Columns[0].Caption = "考核单号";
+            drc.gridView2.Columns[1].Caption = "考核类别";
+            drc.gridView2.Columns[2].Caption = "考核月份";
+            drc.gridView2.Columns[3].Caption = "车队";
+            drc.gridView2.Columns[4].Caption = "车号";
+            drc.gridView2.Columns[5].Caption = "司机";
+            drc.gridView2.Columns[6].Caption = "考核金额";
+            drc.gridView2.Columns[7].Caption = "工资金额";
+            drc.gridView2.Columns[8].Caption = "考核下达人";
+            drc.gridView2.Columns[9].Caption = "录入人员";
+            drc.gridView2.Columns[10].Caption = "录入时间";
+            drc.gridView2.Columns[11].Caption = "考核事由";
+            drc.gridView2.Columns[12].Caption = "记账日期";
+
+
 
         }
 

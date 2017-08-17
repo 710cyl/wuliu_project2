@@ -68,16 +68,6 @@
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.dataNavigator_Basic_Set = new DevExpress.XtraEditors.DataNavigator();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
-            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.printDialog1 = new System.Windows.Forms.PrintDialog();
-            this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.dataNavigator1 = new DevExpress.XtraEditors.DataNavigator();
             this.panel3 = new System.Windows.Forms.Panel();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -117,15 +107,25 @@
             this.label40 = new System.Windows.Forms.Label();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.dataNavigator_Basic_Set = new DevExpress.XtraEditors.DataNavigator();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.dataNavigator1 = new DevExpress.XtraEditors.DataNavigator();
             this.toolStrip1.SuspendLayout();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -404,14 +404,14 @@
             this.tabPane1.BackColor = System.Drawing.SystemColors.Control;
             this.tabPane1.Controls.Add(this.tabNavigationPage1);
             this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabPane1.Location = new System.Drawing.Point(0, 187);
+            this.tabPane1.Location = new System.Drawing.Point(0, 188);
             this.tabPane1.Name = "tabPane1";
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabNavigationPage1});
-            this.tabPane1.RegularSize = new System.Drawing.Size(1255, 392);
+            this.tabPane1.RegularSize = new System.Drawing.Size(1255, 391);
             this.tabPane1.SelectedPage = this.tabNavigationPage1;
             this.tabPane1.SelectedPageIndex = 0;
-            this.tabPane1.Size = new System.Drawing.Size(1255, 392);
+            this.tabPane1.Size = new System.Drawing.Size(1255, 391);
             this.tabPane1.TabIndex = 6;
             // 
             // tabNavigationPage1
@@ -423,7 +423,7 @@
             this.tabNavigationPage1.Controls.Add(this.panel3);
             this.tabNavigationPage1.Controls.Add(this.dataNavigator_Basic_Set);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
-            this.tabNavigationPage1.Size = new System.Drawing.Size(1237, 346);
+            this.tabNavigationPage1.Size = new System.Drawing.Size(1237, 345);
             // 
             // gridControl2
             // 
@@ -431,7 +431,7 @@
             this.gridControl2.Location = new System.Drawing.Point(0, 199);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1237, 125);
+            this.gridControl2.Size = new System.Drawing.Size(1237, 124);
             this.gridControl2.TabIndex = 5;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -445,153 +445,6 @@
             this.gridView2.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.Click;
             this.gridView2.OptionsView.ColumnAutoWidth = false;
             this.gridView2.OptionsView.ShowGroupPanel = false;
-            // 
-            // dataNavigator_Basic_Set
-            // 
-            this.dataNavigator_Basic_Set.Appearance.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataNavigator_Basic_Set.Appearance.Options.UseBackColor = true;
-            this.dataNavigator_Basic_Set.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.dataNavigator_Basic_Set.Buttons.Append.Enabled = false;
-            this.dataNavigator_Basic_Set.Buttons.Append.Visible = false;
-            this.dataNavigator_Basic_Set.Buttons.CancelEdit.Enabled = false;
-            this.dataNavigator_Basic_Set.Buttons.CancelEdit.Visible = false;
-            this.dataNavigator_Basic_Set.Buttons.EnabledAutoRepeat = false;
-            this.dataNavigator_Basic_Set.Buttons.EndEdit.Enabled = false;
-            this.dataNavigator_Basic_Set.Buttons.EndEdit.Visible = false;
-            this.dataNavigator_Basic_Set.Buttons.First.Enabled = false;
-            this.dataNavigator_Basic_Set.Buttons.First.Visible = false;
-            this.dataNavigator_Basic_Set.Buttons.Last.Enabled = false;
-            this.dataNavigator_Basic_Set.Buttons.Last.Visible = false;
-            this.dataNavigator_Basic_Set.Buttons.Next.Enabled = false;
-            this.dataNavigator_Basic_Set.Buttons.Next.Visible = false;
-            this.dataNavigator_Basic_Set.Buttons.NextPage.Enabled = false;
-            this.dataNavigator_Basic_Set.Buttons.NextPage.Visible = false;
-            this.dataNavigator_Basic_Set.Buttons.Prev.Enabled = false;
-            this.dataNavigator_Basic_Set.Buttons.Prev.Visible = false;
-            this.dataNavigator_Basic_Set.Buttons.PrevPage.Enabled = false;
-            this.dataNavigator_Basic_Set.Buttons.PrevPage.Visible = false;
-            this.dataNavigator_Basic_Set.Buttons.Remove.Enabled = false;
-            this.dataNavigator_Basic_Set.Buttons.Remove.Visible = false;
-            this.dataNavigator_Basic_Set.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.dataNavigator_Basic_Set.CustomButtons.AddRange(new DevExpress.XtraEditors.NavigatorCustomButton[] {
-            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 0, true, true, "首页", "首页"),
-            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 1, true, true, "上一页", "上一页"),
-            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 4, true, true, "下一页", "下一页"),
-            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 5, true, true, "尾页", "尾页")});
-            this.dataNavigator_Basic_Set.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataNavigator_Basic_Set.Location = new System.Drawing.Point(0, 324);
-            this.dataNavigator_Basic_Set.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dataNavigator_Basic_Set.Name = "dataNavigator_Basic_Set";
-            this.dataNavigator_Basic_Set.ShowToolTips = true;
-            this.dataNavigator_Basic_Set.Size = new System.Drawing.Size(1237, 22);
-            this.dataNavigator_Basic_Set.TabIndex = 6;
-            this.dataNavigator_Basic_Set.Text = "dataNavigator1";
-            this.dataNavigator_Basic_Set.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Begin;
-            this.dataNavigator_Basic_Set.TextStringFormat = "第 {0}页，共 {1}页";
-            this.dataNavigator_Basic_Set.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.dataNavigator_Basic_Set_ButtonClick);
-            // 
-            // printDocument1
-            // 
-            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
-            // 
-            // pageSetupDialog1
-            // 
-            this.pageSetupDialog1.Document = this.printDocument1;
-            // 
-            // printPreviewDialog1
-            // 
-            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
-            this.printPreviewDialog1.Document = this.printDocument1;
-            this.printPreviewDialog1.Enabled = true;
-            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
-            this.printPreviewDialog1.Name = "printPreviewDialog1";
-            this.printPreviewDialog1.Visible = false;
-            // 
-            // printDialog1
-            // 
-            this.printDialog1.Document = this.printDocument1;
-            this.printDialog1.UseEXDialog = true;
-            // 
-            // splitterControl1
-            // 
-            this.splitterControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.splitterControl1.Location = new System.Drawing.Point(0, 182);
-            this.splitterControl1.Name = "splitterControl1";
-            this.splitterControl1.Size = new System.Drawing.Size(1255, 5);
-            this.splitterControl1.TabIndex = 10;
-            this.splitterControl1.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.gridControl1);
-            this.panel1.Controls.Add(this.dataNavigator1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 27);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1255, 155);
-            this.panel1.TabIndex = 9;
-            // 
-            // gridControl1
-            // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1255, 133);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // dataNavigator1
-            // 
-            this.dataNavigator1.Appearance.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataNavigator1.Appearance.Options.UseBackColor = true;
-            this.dataNavigator1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.dataNavigator1.Buttons.Append.Enabled = false;
-            this.dataNavigator1.Buttons.Append.Visible = false;
-            this.dataNavigator1.Buttons.CancelEdit.Enabled = false;
-            this.dataNavigator1.Buttons.CancelEdit.Visible = false;
-            this.dataNavigator1.Buttons.EnabledAutoRepeat = false;
-            this.dataNavigator1.Buttons.EndEdit.Enabled = false;
-            this.dataNavigator1.Buttons.EndEdit.Visible = false;
-            this.dataNavigator1.Buttons.First.Enabled = false;
-            this.dataNavigator1.Buttons.First.Visible = false;
-            this.dataNavigator1.Buttons.Last.Enabled = false;
-            this.dataNavigator1.Buttons.Last.Visible = false;
-            this.dataNavigator1.Buttons.Next.Enabled = false;
-            this.dataNavigator1.Buttons.Next.Visible = false;
-            this.dataNavigator1.Buttons.NextPage.Enabled = false;
-            this.dataNavigator1.Buttons.NextPage.Visible = false;
-            this.dataNavigator1.Buttons.Prev.Enabled = false;
-            this.dataNavigator1.Buttons.Prev.Visible = false;
-            this.dataNavigator1.Buttons.PrevPage.Enabled = false;
-            this.dataNavigator1.Buttons.PrevPage.Visible = false;
-            this.dataNavigator1.Buttons.Remove.Enabled = false;
-            this.dataNavigator1.Buttons.Remove.Visible = false;
-            this.dataNavigator1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.dataNavigator1.CustomButtons.AddRange(new DevExpress.XtraEditors.NavigatorCustomButton[] {
-            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 0, true, true, "首页", "首页"),
-            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 1, true, true, "上一页", "上一页"),
-            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 4, true, true, "下一页", "下一页"),
-            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 5, true, true, "尾页", "尾页")});
-            this.dataNavigator1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataNavigator1.Location = new System.Drawing.Point(0, 133);
-            this.dataNavigator1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataNavigator1.Name = "dataNavigator1";
-            this.dataNavigator1.ShowToolTips = true;
-            this.dataNavigator1.Size = new System.Drawing.Size(1255, 22);
-            this.dataNavigator1.TabIndex = 7;
-            this.dataNavigator1.Text = "dataNavigator1";
-            this.dataNavigator1.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Begin;
-            this.dataNavigator1.TextStringFormat = "第 {0}页，共 {1}页";
             // 
             // panel3
             // 
@@ -1008,6 +861,153 @@
             this.simpleButton4.TabIndex = 159;
             this.simpleButton4.Text = "保存";
             // 
+            // dataNavigator_Basic_Set
+            // 
+            this.dataNavigator_Basic_Set.Appearance.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataNavigator_Basic_Set.Appearance.Options.UseBackColor = true;
+            this.dataNavigator_Basic_Set.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.dataNavigator_Basic_Set.Buttons.Append.Enabled = false;
+            this.dataNavigator_Basic_Set.Buttons.Append.Visible = false;
+            this.dataNavigator_Basic_Set.Buttons.CancelEdit.Enabled = false;
+            this.dataNavigator_Basic_Set.Buttons.CancelEdit.Visible = false;
+            this.dataNavigator_Basic_Set.Buttons.EnabledAutoRepeat = false;
+            this.dataNavigator_Basic_Set.Buttons.EndEdit.Enabled = false;
+            this.dataNavigator_Basic_Set.Buttons.EndEdit.Visible = false;
+            this.dataNavigator_Basic_Set.Buttons.First.Enabled = false;
+            this.dataNavigator_Basic_Set.Buttons.First.Visible = false;
+            this.dataNavigator_Basic_Set.Buttons.Last.Enabled = false;
+            this.dataNavigator_Basic_Set.Buttons.Last.Visible = false;
+            this.dataNavigator_Basic_Set.Buttons.Next.Enabled = false;
+            this.dataNavigator_Basic_Set.Buttons.Next.Visible = false;
+            this.dataNavigator_Basic_Set.Buttons.NextPage.Enabled = false;
+            this.dataNavigator_Basic_Set.Buttons.NextPage.Visible = false;
+            this.dataNavigator_Basic_Set.Buttons.Prev.Enabled = false;
+            this.dataNavigator_Basic_Set.Buttons.Prev.Visible = false;
+            this.dataNavigator_Basic_Set.Buttons.PrevPage.Enabled = false;
+            this.dataNavigator_Basic_Set.Buttons.PrevPage.Visible = false;
+            this.dataNavigator_Basic_Set.Buttons.Remove.Enabled = false;
+            this.dataNavigator_Basic_Set.Buttons.Remove.Visible = false;
+            this.dataNavigator_Basic_Set.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.dataNavigator_Basic_Set.CustomButtons.AddRange(new DevExpress.XtraEditors.NavigatorCustomButton[] {
+            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 0, true, true, "首页", "首页"),
+            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 1, true, true, "上一页", "上一页"),
+            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 4, true, true, "下一页", "下一页"),
+            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 5, true, true, "尾页", "尾页")});
+            this.dataNavigator_Basic_Set.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataNavigator_Basic_Set.Location = new System.Drawing.Point(0, 323);
+            this.dataNavigator_Basic_Set.Margin = new System.Windows.Forms.Padding(2);
+            this.dataNavigator_Basic_Set.Name = "dataNavigator_Basic_Set";
+            this.dataNavigator_Basic_Set.ShowToolTips = true;
+            this.dataNavigator_Basic_Set.Size = new System.Drawing.Size(1237, 22);
+            this.dataNavigator_Basic_Set.TabIndex = 6;
+            this.dataNavigator_Basic_Set.Text = "dataNavigator1";
+            this.dataNavigator_Basic_Set.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Begin;
+            this.dataNavigator_Basic_Set.TextStringFormat = "第 {0}页，共 {1}页";
+            this.dataNavigator_Basic_Set.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.dataNavigator_Basic_Set_ButtonClick);
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // pageSetupDialog1
+            // 
+            this.pageSetupDialog1.Document = this.printDocument1;
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Document = this.printDocument1;
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
+            // printDialog1
+            // 
+            this.printDialog1.Document = this.printDocument1;
+            this.printDialog1.UseEXDialog = true;
+            // 
+            // splitterControl1
+            // 
+            this.splitterControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.splitterControl1.Location = new System.Drawing.Point(0, 182);
+            this.splitterControl1.Name = "splitterControl1";
+            this.splitterControl1.Size = new System.Drawing.Size(1255, 6);
+            this.splitterControl1.TabIndex = 10;
+            this.splitterControl1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.gridControl1);
+            this.panel1.Controls.Add(this.dataNavigator1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 27);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1255, 155);
+            this.panel1.TabIndex = 9;
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(0, 0);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(1255, 133);
+            this.gridControl1.TabIndex = 0;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // dataNavigator1
+            // 
+            this.dataNavigator1.Appearance.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataNavigator1.Appearance.Options.UseBackColor = true;
+            this.dataNavigator1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.dataNavigator1.Buttons.Append.Enabled = false;
+            this.dataNavigator1.Buttons.Append.Visible = false;
+            this.dataNavigator1.Buttons.CancelEdit.Enabled = false;
+            this.dataNavigator1.Buttons.CancelEdit.Visible = false;
+            this.dataNavigator1.Buttons.EnabledAutoRepeat = false;
+            this.dataNavigator1.Buttons.EndEdit.Enabled = false;
+            this.dataNavigator1.Buttons.EndEdit.Visible = false;
+            this.dataNavigator1.Buttons.First.Enabled = false;
+            this.dataNavigator1.Buttons.First.Visible = false;
+            this.dataNavigator1.Buttons.Last.Enabled = false;
+            this.dataNavigator1.Buttons.Last.Visible = false;
+            this.dataNavigator1.Buttons.Next.Enabled = false;
+            this.dataNavigator1.Buttons.Next.Visible = false;
+            this.dataNavigator1.Buttons.NextPage.Enabled = false;
+            this.dataNavigator1.Buttons.NextPage.Visible = false;
+            this.dataNavigator1.Buttons.Prev.Enabled = false;
+            this.dataNavigator1.Buttons.Prev.Visible = false;
+            this.dataNavigator1.Buttons.PrevPage.Enabled = false;
+            this.dataNavigator1.Buttons.PrevPage.Visible = false;
+            this.dataNavigator1.Buttons.Remove.Enabled = false;
+            this.dataNavigator1.Buttons.Remove.Visible = false;
+            this.dataNavigator1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.dataNavigator1.CustomButtons.AddRange(new DevExpress.XtraEditors.NavigatorCustomButton[] {
+            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 0, true, true, "首页", "首页"),
+            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 1, true, true, "上一页", "上一页"),
+            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 4, true, true, "下一页", "下一页"),
+            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 5, true, true, "尾页", "尾页")});
+            this.dataNavigator1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataNavigator1.Location = new System.Drawing.Point(0, 133);
+            this.dataNavigator1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataNavigator1.Name = "dataNavigator1";
+            this.dataNavigator1.ShowToolTips = true;
+            this.dataNavigator1.Size = new System.Drawing.Size(1255, 22);
+            this.dataNavigator1.TabIndex = 7;
+            this.dataNavigator1.Text = "dataNavigator1";
+            this.dataNavigator1.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Begin;
+            this.dataNavigator1.TextStringFormat = "第 {0}页，共 {1}页";
+            // 
             // Basic_Set
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1024,11 +1024,11 @@
             this.tabNavigationPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

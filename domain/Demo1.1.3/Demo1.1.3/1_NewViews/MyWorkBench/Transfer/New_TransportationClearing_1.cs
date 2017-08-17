@@ -108,6 +108,7 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
                 string jsonMain = JsonConvert.SerializeObject(tcm);
 
                 fc.ChangeData(jsonMain, Json, tcm.GetType().Name.ToString(), "TransportationClearing_Detail");
+
             }
 
             else   //保存
@@ -144,6 +145,7 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
                 string jsonMain = JsonConvert.SerializeObject(tcm);
                 Panel2_MyWorkBench.GodownEntry.isExist = true;
                 fc.SaveData(jsonMain, Json, tcm.GetType().Name.ToString(), "TransportationClearing_Detail");
+
             }
         }
         //取消

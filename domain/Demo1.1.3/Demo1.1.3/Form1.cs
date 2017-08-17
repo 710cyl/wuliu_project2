@@ -60,7 +60,7 @@ namespace Demo1._1._3
         
         //出库派车
         public Outbound_Car main_outCar;
-        //public OutboundOrder obo;
+        public Outbound_Car_Close outCarClose;
         //public TransferList tl;
         //public outcar1 outcar;
 
@@ -305,11 +305,11 @@ namespace Demo1._1._3
 
         private void accordionControlElementClosecar_Click(object sender, EventArgs e)
         {
-            /*  sendCar = new OutboundCar();
-              obo.Show();
-              obo.Dock = DockStyle.Fill;
+              outCarClose = new Outbound_Car_Close();
+              outCarClose.Show();
+              outCarClose.Dock = DockStyle.Fill;
               panel2.Controls.Clear();
-              panel2.Controls.Add(obo);*/
+              panel2.Controls.Add(outCarClose);
         }
         // 派车 2017-7-4 end gxj
 
@@ -486,52 +486,7 @@ namespace Demo1._1._3
             panel2.Controls.Add(ogr);
         }
 
-        private void accordionControlElement82_Click(object sender, EventArgs e)
-
-        {
-            main_outCar = new Outbound_Car();//公共方法 入口
-            main_outCar.Show();
-            main_outCar.Dock = DockStyle.Fill;
-            panel2.Controls.Clear();
-            panel2.Controls.Add(main_outCar);
-            domain.Outbound_Car outbound_Car = new domain.Outbound_Car();
-            main_outCar.gridControl1.DataSource = showData<domain.Outbound_Car>(outbound_Car, main_outCar.now_Page.ToString());
-            main_outCar.gridView1.Columns[0].Caption = "订单号";
-            main_outCar.gridView1.Columns[1].Caption = "派车单号";
-            main_outCar.gridView1.Columns[2].Caption = "货主单位";
-            main_outCar.gridView1.Columns[3].Caption = "发货仓库";
-            main_outCar.gridView1.Columns[4].Caption = "发货量";
-            main_outCar.gridView1.Columns[5].Caption = "出库方式";
-            main_outCar.gridView1.Columns[6].Caption = "业务部门";
-            main_outCar.gridView1.Columns[7].Caption = "业务人员";
-            main_outCar.gridView1.Columns[8].Caption = "付费单位";
-            main_outCar.gridView1.Columns[9].Caption = "车队";
-            main_outCar.gridView1.Columns[10].Caption = "车号";
-            main_outCar.gridView1.Columns[11].Caption = "司机";
-            main_outCar.gridView1.Columns[12].Caption = "派车人";
-            main_outCar.gridView1.Columns[13].Caption = "派车时间";
-            main_outCar.gridView1.Columns[14].Caption = "卸货城市";
-            main_outCar.gridView1.Columns[15].Caption = "卸货区域";
-            main_outCar.gridView1.Columns[16].Caption = "实际卸点";
-            main_outCar.gridView1.Columns[17].Caption = "打包";
-            main_outCar.gridView1.Columns[18].Caption = "关闭";
-            main_outCar.gridView1.Columns[19].Caption = "关闭人";
-            main_outCar.gridView1.Columns[20].Caption = "关闭时间";
-            main_outCar.gridView1.Columns[21].Caption = "说明";
-            main_outCar.gridView1.BestFitColumns();
-
-        }
-
-        //private void accordionControlElementPackage_Click(object sender, EventArgs e)
-        //{
-         
-        //}
-
-        //private void accordionControlElementClosecar_Click(object sender, EventArgs e)
-        //{
-           
-        //}
-        // 派车 2017-7-4 end gxj
+     
         
 
 

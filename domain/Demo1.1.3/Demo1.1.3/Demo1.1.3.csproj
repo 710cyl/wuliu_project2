@@ -423,6 +423,12 @@
     <Compile Include="Panel2_MyWorkBench_Basic\OrderFile.Designer.cs">
       <DependentUpon>OrderFile.cs</DependentUpon>
     </Compile>
+    <Compile Include="Panel2_MyWorkBench_Basic\Outbound_Car_Close.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench_Basic\Outbound_Car_Close.designer.cs">
+      <DependentUpon>Outbound_Car_Close.cs</DependentUpon>
+    </Compile>
     <Compile Include="Panel2_MyWorkBench_Basic\Outbound_Car.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -634,6 +640,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Panel2_MyWorkBench_Basic\OrderFile.resx">
       <DependentUpon>OrderFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel2_MyWorkBench_Basic\Outbound_Car_Close.resx">
+      <DependentUpon>Outbound_Car_Close.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panel2_MyWorkBench_Basic\Outbound_Car.resx">
       <DependentUpon>Outbound_Car.cs</DependentUpon>

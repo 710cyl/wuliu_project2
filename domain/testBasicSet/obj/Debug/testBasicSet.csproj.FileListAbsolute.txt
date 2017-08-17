@@ -1,0 +1,5 @@
+F:\WULIU\wuliu_project2\domain\testBasicSet\obj\Debug\testBasicSet.csprojResolveAssemblyReference.cache
+F:\WULIU\wuliu_project2\domain\testBasicSet\obj\Debug\testBasicSet.Form1.resources
+F:\WULIU\wuliu_project2\domain\testBasicSet\obj\Debug\testBasicSet.Properties.Resources.resources
+F:\WULIU\wuliu_project2\domain\testBasicSet\obj\Debug\testBasicSet.csproj.GenerateResource.Cache
+F:\WULIU\wuliu_project2\domain\testBasicSet\obj\Debug\testBasicSet.exe.licenses

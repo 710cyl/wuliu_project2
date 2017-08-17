@@ -83,28 +83,29 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
             bs.carnum = text_carnum.Text;
             bs.driver = text_driver.Text;
             bs.sendcar_staff = text_sendcar_staff.Text;
-            //bs.sendcar_time = Convert.ToDateTime(date_sendcar_time.SelectedText.ToString());
+            bs.sendcar_time = Convert.ToDateTime(dateEdit1.DateTime);
             bs.packge = checkedComboBoxpackge.SelectedText.ToString();
-            // bs.packge = int.Parse(pac);
             bs.unload_city = textEdit1.Text;
             bs.unload_area = text_unload_area.Text;
             bs.unload_point = text_unload_point.Text;
             bs.is_close = checkedComboBoxclose.SelectedText.ToString();
-            //bs.is_close = int.Parse(clo);
             bs.close_staff = text_close_staff.Text;
-            // bs.close_time = Convert.ToDateTime(date_close_time.SelectedText.ToString());
+            bs.close_time = Convert.ToDateTime(date_close_time.DateTime);
             bs.explain = text_explain.Text;
-            List<domain.Outbound_Car_Detail> sd = carDetailList.ToList<Outbound_Car_Detail>();
-            string Json = JsonConvert.SerializeObject(sd);
-            string jsonMain = JsonConvert.SerializeObject(bs);
+            
             
             if (Demo1._1._3.Outbound_Car.isExist) //保存修改数据
             {
+                List<domain.Outbound_Car_Detail> sd = Outbound_Car.carDetails.ToList<Outbound_Car_Detail>();
+                string Json = JsonConvert.SerializeObject(sd);
+                string jsonMain = JsonConvert.SerializeObject(bs);
                 fc.ChangeData(jsonMain, Json, bs.GetType().Name.ToString(), "Outbound_Car_Detail");
             }
             else
             {  //保存新增数据
-
+                List<domain.Outbound_Car_Detail> sd = carDetailList.ToList<Outbound_Car_Detail>();
+                string Json = JsonConvert.SerializeObject(sd);
+                string jsonMain = JsonConvert.SerializeObject(bs);
                 fc.SaveData(jsonMain, Json, bs.GetType().Name.ToString(), "Outbound_Car_Detail");
             }
 
@@ -158,7 +159,14 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
         private void button_Add_Click(object sender, EventArgs e)
         {
            domain.Outbound_Car_Detail sd = new domain.Outbound_Car_Detail() { };
-            Outbound_Car.carDetails.Add(sd);
+            if (Demo1._1._3.Outbound_Car.isExist)
+            {//修改
+                Outbound_Car.carDetails.Add(sd);
+            }
+            else {//新增
+                carDetailList.Add(sd);
+            }
+                
 
         }
 

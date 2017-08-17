@@ -190,18 +190,23 @@ namespace Demo1._1._3
             if (hi.InRow)
             {
                 string colValue = this.gridView1.GetRowCellValue(this.gridView1.FocusedRowHandle, this.gridView1.Columns[0]).ToString();
-                MessageBox.Show(colValue);
+                
                 String carDetail = "Outbound_Car_Detail";
               
                 String detail = fc.FindDeteils(colValue, carDetail);
                 sd = JsonConvert.DeserializeObject<List<domain.Outbound_Car_Detail>>(detail);
-                carDetailList = new BindingList<Outbound_Car_Detail>(sd);
-                this.gridControl2.DataSource = carDetailList;
-                this.gridView2.Columns[0].Caption = "入库标识码";
-                this.gridView2.Columns[1].Caption = "订单号";
-                this.gridView2.BestFitColumns();
-
-              
+                if (sd.Count == 0)
+                {
+                    MessageBox.Show("没有详细数据，请输入！");
+                }
+                else {
+                    carDetailList = new BindingList<Outbound_Car_Detail>(sd);
+                    this.gridControl2.DataSource = carDetailList;
+                    //this.gridView2.Columns[0].Caption = "入库标识码";
+                    //this.gridView2.Columns[1].Caption = "订单号";
+                    this.gridView2.BestFitColumns();
+                }
+           
             }
         }
 
@@ -217,7 +222,7 @@ namespace Demo1._1._3
 
         //修改数据 fairy 2017-07-12
         private void toolStripButton2_Click(object sender, EventArgs e)
-        {
+        {   
             if (gridView1.SelectedRowsCount > 0)// && gridView1.GetFocusedDataSourceRowIndex() >0
             {
                 colCount = gridView1.Columns.Count();
@@ -228,7 +233,7 @@ namespace Demo1._1._3
                 }
                 if (array[0].Length > 0)
                 {
-                  
+                    isExist = true;
                     //如果选择的处理
                     New_OutBound_Car nb = new New_OutBound_Car();
                     nb.textEdit2.Text = array[0];
@@ -244,7 +249,7 @@ namespace Demo1._1._3
                     nb.text_carnum.Text = array[10];
                     nb.text_driver.Text = array[11];
                     nb.text_sendcar_staff.Text = array[12];
-                    //bs.sendcar_time = Convert.ToDateTime(date_sendcar_time.SelectedText.ToString());
+                    nb.dateEdit1.DateTime = Convert.ToDateTime(array[13]);
                     nb.textEdit1.Text = array[14];
                     nb.text_unload_area.Text = array[15];
                     nb.text_unload_point.Text = array[16];
@@ -252,7 +257,7 @@ namespace Demo1._1._3
                     nb.checkedComboBoxclose.SelectedText = array[18].ToString();
                     //bs.is_close = int.Parse(clo);
                     nb.text_close_staff.Text = array[19];
-                    // bs.close_time = Convert.ToDateTime(date_close_time.SelectedText.ToString());
+                    nb.date_close_time.DateTime = Convert.ToDateTime(array[20]);
                     nb.text_explain.Text = array[21];
 
                     //明细表显示
@@ -261,7 +266,7 @@ namespace Demo1._1._3
                     carDetails = new BindingList<domain.Outbound_Car_Detail>(sd);
                     nb.gridControl1.DataSource = carDetails;
                     nb.ShowDialog();
-                    isExist = true;
+                    
 
                 }
                 else

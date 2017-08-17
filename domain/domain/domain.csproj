@@ -149,7 +149,9 @@
     <EmbeddedResource Include="Lottery.hbm.xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Outbound_Car.hbm.xml" />
+    <EmbeddedResource Include="Outbound_Car.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Outbound_Car_Detail.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

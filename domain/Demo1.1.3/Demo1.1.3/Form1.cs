@@ -18,6 +18,10 @@ using WebSocketSharp;
 using Basic_SetTest;
 using System.Threading;
 using Newtonsoft.Json;
+using System.Collections;
+using System.Reflection;
+using NHibernate.Mapping;
+
 namespace Demo1._1._3
 {
     public partial class Form1 : DevExpress.XtraEditors.XtraForm
@@ -59,17 +63,13 @@ namespace Demo1._1._3
         public CarFee carf;
         
         //出库派车
-        public Outbound_Car main_outCar;
-        //public OutboundOrder obo;
+        public Outbound_Car main_outCar; //出库派车
+        public OutCar_Close outCar_close; //派车关闭
         //public TransferList tl;
         //public outcar1 outcar;
 
 
-        /*        private void Form1_Load(object sender, EventArgs e)
-                {
-                   u1 = new UserControl1();
-                    u2 = new UserControl2();
-                }*/
+
         public FunctionClass fc;
 
         public Form1()
@@ -193,6 +193,33 @@ namespace Demo1._1._3
             return bs;
         }
 
+        public List<List> ShowDataList(String className, string nowpage)
+        {
+            List<List> bs = new List<List>();
+            //List<List> bs = null;
+            string msg = null;
+            string sendMsg = className.ToString();
+            using (var ws = new WebSocket("ws://localhost:9000/ShowDataList"))
+            {
+                ws.Connect();
+                ws.Send(sendMsg);
+                using (var wsp = new WebSocket("ws://localhost:9000/NowPage"))
+                {
+                    wsp.Connect();
+                    wsp.Send(nowpage);
+                    wsp.Close();
+                }
+                while (msg == null)
+                {
+                    ws.OnMessage += (sender, e) =>
+                    msg = e.Data;
+                }
+                ws.Close();
+                bs = JsonConvert.DeserializeObject<List<List>>(msg);
+            }
+            return bs;
+        }
+
         /****************************我的工作台左测导航栏点击事件****************************************/
         private void accordionControlElement35_Click(object sender, EventArgs e)
         {
@@ -261,7 +288,7 @@ namespace Demo1._1._3
 
         private void accordionControlElementSendcar_Click(object sender, EventArgs e)
         {
-            main_outCar = new Outbound_Car();//公共方法 入口
+            main_outCar = new Outbound_Car();//出库派车
             main_outCar.Show();
             main_outCar.Dock = DockStyle.Fill;
             panel2.Controls.Clear();
@@ -291,7 +318,7 @@ namespace Demo1._1._3
             main_outCar.gridView1.Columns[20].Caption = "关闭时间";
             main_outCar.gridView1.Columns[21].Caption = "说明";
             main_outCar.gridView1.BestFitColumns();
-
+           
         }
 
         private void accordionControlElementPackage_Click(object sender, EventArgs e)
@@ -305,14 +332,92 @@ namespace Demo1._1._3
 
         private void accordionControlElementClosecar_Click(object sender, EventArgs e)
         {
-            /*  sendCar = new OutboundCar();
-              obo.Show();
-              obo.Dock = DockStyle.Fill;
-              panel2.Controls.Clear();
-              panel2.Controls.Add(obo);*/
+            outCar_close = new OutCar_Close();//派车关闭 入口
+            outCar_close.Show();
+            outCar_close.Dock = DockStyle.Fill;
+            panel2.Controls.Clear();
+            panel2.Controls.Add(outCar_close);
+            List<List> list = ShowDataList("outCar_close", outCar_close.now_Page.ToString());
+           
+            outCar_close.gridControl1.DataSource = list;
+            outCar_close.gridView1.Columns[0].Caption = "批关单号";
+            outCar_close.gridView1.Columns[1].Caption = "派车单号";
+            outCar_close.gridView1.Columns[2].Caption = "是否关闭";
+            //outCar_close.gridView1.Columns[3].Caption = "修改人";
+            //outCar_close.gridView1.Columns[4].Caption = "修改时间";
+            outCar_close.gridView1.Columns[3].Caption = "出库方式";
+            //outCar_close.gridView1.Columns[4].Caption = "业务部门";
+            //outCar_close.gridView1.Columns[5].Caption = "业务人员";
+            ////outCar_close.gridView1.Columns[8].Caption = "派车性质";
+            //outCar_close.gridView1.Columns[6].Caption = "车队";
+            //outCar_close.gridView1.Columns[7].Caption = "车号";
+            //outCar_close.gridView1.Columns[8].Caption = "司机";
+            //outCar_close.gridView1.Columns[9].Caption = "派车人";
+            /*outCar_close.gridView1.Columns[10].Caption = "派车时间";
+            //outCar_close.gridView1.Columns[14].Caption = "数量";
+            //outCar_close.gridView1.Columns[15].Caption = "关闭";
+            outCar_close.gridView1.Columns[11].Caption = "关闭人";
+            outCar_close.gridView1.Columns[12].Caption = "关闭时间";
+            outCar_close.gridView1.Columns[13].Caption = "说明";
+            outCar_close.gridView1.Columns[14].Caption = "备注";*/
+            outCar_close.gridView1.BestFitColumns();
         }
         // 派车 2017-7-4 end gxj
+        private DataTable ConvertDataTable(IList list)
+         {
+             DataSet ds = new DataSet();
+             DataTable dt = new DataTable();
+             System.Reflection.PropertyInfo[] p = list[0].GetType().GetProperties();
 
+             //foreach (System.Reflection.PropertyInfo pi in p)
+             //{
+             //    dt.Columns.Add(pi.Name, Type.GetType(pi.PropertyType.ToString()));
+             //}
+
+             for (int i = 0; i < list.Count; i++)
+             {
+                 IList temp = new ArrayList();
+                // foreach (System.Reflection.PropertyInfo pi in p)
+                // {
+                 //    object obj = pi.GetValue(list[i], null);
+                //     temp.Add(obj);
+                // }
+                 for (int a = 4; a < p.Length; a++) {
+                    object obj = p[a].GetValue(list[i], null);
+                    temp.Add(obj);
+                }
+                 object[] o = new object[p.Length];
+                 for (int j = 0; j < temp.Count; j++)
+                 {
+                     o.SetValue(temp[j], j);
+                 }
+                 dt.LoadDataRow(o, true);
+             }
+             return dt;
+         }
+        //public static DataTable ToDataTableSingle(IList entitys)
+        //{
+        //    //取出第一个实体的所有Propertie  
+        //    //Type entityType = entitys[0].GetType();
+        //    //PropertyInfo[] entityProperties = entityType.GetProperties();
+        //    //生成DataTable的structure  
+        //    //生产代码中，应将生成的DataTable结构Cache起来  
+        //    DataTable dt = new DataTable();
+        //    //将所有entity添加到DataTable中  
+        //    foreach (object entity in entitys)
+        //    {
+        //        //检查所有的的实体都为同一类型  
+        //        object[] entityValues = new object[entitys.Count];
+        //        for (int i = 0; i < entitys.Count; i++)
+        //        {
+        //            //entityValues[i] = entityProperties[i].GetValue(entity,null);
+        //            entityValues[i].add(entity);
+        //        }
+        //        dt.Rows.Add(entityValues);
+        //    }
+        //    return dt;
+
+        //}
         private void accordionControlElement41_Click(object sender, EventArgs e)
         {
             ov = new OwnVehicle();
@@ -489,37 +594,7 @@ namespace Demo1._1._3
         private void accordionControlElement82_Click(object sender, EventArgs e)
 
         {
-            main_outCar = new Outbound_Car();//公共方法 入口
-            main_outCar.Show();
-            main_outCar.Dock = DockStyle.Fill;
-            panel2.Controls.Clear();
-            panel2.Controls.Add(main_outCar);
-            domain.Outbound_Car outbound_Car = new domain.Outbound_Car();
-            main_outCar.gridControl1.DataSource = showData<domain.Outbound_Car>(outbound_Car, main_outCar.now_Page.ToString());
-            main_outCar.gridView1.Columns[0].Caption = "订单号";
-            main_outCar.gridView1.Columns[1].Caption = "派车单号";
-            main_outCar.gridView1.Columns[2].Caption = "货主单位";
-            main_outCar.gridView1.Columns[3].Caption = "发货仓库";
-            main_outCar.gridView1.Columns[4].Caption = "发货量";
-            main_outCar.gridView1.Columns[5].Caption = "出库方式";
-            main_outCar.gridView1.Columns[6].Caption = "业务部门";
-            main_outCar.gridView1.Columns[7].Caption = "业务人员";
-            main_outCar.gridView1.Columns[8].Caption = "付费单位";
-            main_outCar.gridView1.Columns[9].Caption = "车队";
-            main_outCar.gridView1.Columns[10].Caption = "车号";
-            main_outCar.gridView1.Columns[11].Caption = "司机";
-            main_outCar.gridView1.Columns[12].Caption = "派车人";
-            main_outCar.gridView1.Columns[13].Caption = "派车时间";
-            main_outCar.gridView1.Columns[14].Caption = "卸货城市";
-            main_outCar.gridView1.Columns[15].Caption = "卸货区域";
-            main_outCar.gridView1.Columns[16].Caption = "实际卸点";
-            main_outCar.gridView1.Columns[17].Caption = "打包";
-            main_outCar.gridView1.Columns[18].Caption = "关闭";
-            main_outCar.gridView1.Columns[19].Caption = "关闭人";
-            main_outCar.gridView1.Columns[20].Caption = "关闭时间";
-            main_outCar.gridView1.Columns[21].Caption = "说明";
-            main_outCar.gridView1.BestFitColumns();
-
+        
         }
 
         //private void accordionControlElementPackage_Click(object sender, EventArgs e)

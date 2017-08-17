@@ -12,6 +12,8 @@ using wuliuDAO;
 using System.Data;
 using Microsoft.SqlServer.Server;
 using System.Data.SqlClient;
+using System.Collections;
+
 namespace wuliu_server
 {
     class Program
@@ -21,6 +23,8 @@ namespace wuliu_server
             var wssv = new WebSocketServer("ws://localhost:9000");
             wssv.AddWebSocketService<GetField>("/GetField");
             wssv.AddWebSocketService<ShowData>("/ShowData");
+            wssv.AddWebSocketService<ShowDataList>("/ShowDataList");//返回map类型数据
+            
             wssv.AddWebSocketService<DeleteData>("/DeleteData");
             wssv.AddWebSocketService<BatchSave>("/BatchSave");
             wssv.AddWebSocketService<SaveData>("/SaveData");
@@ -506,7 +510,7 @@ namespace wuliu_server
                     IList<Outbound_Car> Outbound_Car = session.QueryOver<Outbound_Car>().Skip((page - 1) * 5).Take(5).List();
                     string json = JsonConvert.SerializeObject(Outbound_Car, Formatting.None, new JsonSerializerSettings());
                     return json;
-            }
+                 }
                 else if (s == "StorageFormMainOut")
                 {
                     int page = Convert.ToInt32(NowPage.nowpage);
@@ -529,6 +533,61 @@ namespace wuliu_server
                     return json;
                 }
 
+            return null;
+        }
+    }
+
+
+    /**
+     * 2017-08-01 fairy 获取map类型
+     * 
+     * 
+     * **/
+    public class ShowDataList : WebSocketBehavior
+    {
+        protected override void OnMessage(MessageEventArgs e)
+        {
+            var cfg = new NHibernate.Cfg.Configuration().Configure("Config/hibernate.cfg.xml");
+            using (ISessionFactory sessionFactory = cfg.BuildSessionFactory())
+            {
+                ISession session = null;
+                try
+                {
+                    session = sessionFactory.OpenSession();
+                    string json = SwitchDataList(session, e.Data);
+
+                    Console.WriteLine(e.Data);
+                    Console.WriteLine(json);
+                    Send(json);
+
+                }
+                catch (Exception ex)
+                {
+
+                    Send(ex.Message);
+                }
+                session.Close();
+            }
+        }
+
+
+        public string SwitchDataList(ISession session, string s)
+        {
+            if (s == "outCar_close")
+            {
+                int page = Convert.ToInt32(NowPage.nowpage);//,a.oper_apart,a.oper_staff,a.cars,a.carnum,a.driver,a.sendcar_staff 
+                String str = "select a.order_num,a.sendcar_num,a.is_close,a.out_way from WL_sendcar a,WL_sendcar_detail b where a.order_num = b.order_num";
+                ISQLQuery query = session.CreateSQLQuery(str);
+                ArrayList list = new ArrayList();
+                IList Outbound_Car = query.List();
+                string json = JsonConvert.SerializeObject(Outbound_Car, Formatting.None, new JsonSerializerSettings());
+                //string json = JsonConvert.SerializeObject(Outbound_Car, Formatting.None, new JsonSerializerSettings());
+                return json;
+            }
+            else if (s == "StorageFormMainOut")
+            {
+                
+            }
             return null;
         }
     }

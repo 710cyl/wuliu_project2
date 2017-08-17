@@ -915,13 +915,13 @@
         private DevExpress.XtraEditors.TextEdit text_order_num;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.Panel panel1;
-        private DevExpress.XtraEditors.DateEdit date_close_time;
+        public DevExpress.XtraEditors.DateEdit date_close_time;
         public DevExpress.XtraEditors.TextEdit text_explain;
         private DevExpress.XtraEditors.LabelControl labelControl43;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
-        private DevExpress.XtraEditors.DateEdit dateEdit1;
+        public DevExpress.XtraEditors.DateEdit dateEdit1;
         public DevExpress.XtraEditors.CheckedComboBoxEdit checkedComboBoxpackge;
         private DevExpress.XtraEditors.CheckedComboBoxEdit checkedComboBoxEdit1;
         private DevExpress.XtraEditors.LabelControl labelControl19;

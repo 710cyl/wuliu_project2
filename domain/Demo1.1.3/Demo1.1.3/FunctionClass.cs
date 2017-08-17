@@ -21,6 +21,7 @@ using Demo1._1._3.MyWorkBench_SkipForm;
 using System.IO;
 using DevExpress.XtraEditors;
 using System.Drawing.Printing;
+using System.Collections;
 
 namespace Demo1._1._3
 {
@@ -486,5 +487,15 @@ namespace Demo1._1._3
             }
             return bs;
         }
+
+
+
+        /**
+         * IList 转化为datatable方法
+         * 2017-08-01  fairy
+         * 
+         * **/
+
+       
     }
 }

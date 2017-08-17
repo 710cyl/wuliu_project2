@@ -45,7 +45,7 @@ namespace Demo1._1._3
         private Outbound_Car main_outCar;
         private object JavaScriptConvert;
         public static List<domain.Outbound_Car_Detail> sd = new List<Outbound_Car_Detail>(); //得到明细表的list
-       // private  BindingList<Outbound_Car_Detail> carDetailList;
+        private  BindingList<Outbound_Car_Detail> carDetailList;
         public static string str = null;
 
         public Outbound_Car()
@@ -189,22 +189,21 @@ namespace Demo1._1._3
             //单击数据行
             if (hi.InRow)
             {
-                string colValue = this.gridView1.GetRowCellValue(this.gridView1.FocusedRowHandle, this.gridView1.Columns[0]).ToString();
-                MessageBox.Show(colValue);
-                String carDetail = "Outbound_Car_Detail";
-              
+                string colValue = this.gridView1.GetRowCellValue(this.gridView1.FocusedRowHandle, this.gridView1.Columns[0]).ToString();     
+                String carDetail = "Outbound_Car_Detail";     
                 String detail = fc.FindDeteils(colValue, carDetail);
                 sd = JsonConvert.DeserializeObject<List<domain.Outbound_Car_Detail>>(detail);
-                carDetails = new BindingList<Outbound_Car_Detail>(sd);
-                if (carDetails.Count == 0)
+                BindingList<Outbound_Car_Detail> carDetailList2 = new BindingList<Outbound_Car_Detail>(sd);
+                if (carDetailList2.Count == 0)
                 {
                     MessageBox.Show("没有明细数据，请补充！");
-                    this.gridControl2.DataSource = "";
+                    this.gridControl2.DataSource = carDetailList2;
                 }
                 else {
-                    this.gridControl2.DataSource = carDetails;
-                   // this.gridView2.BestFitColumns();
+                    this.gridControl2.DataSource = carDetailList2;
+                    this.gridView2.BestFitColumns();
                 }
+
             }
         }
 
@@ -221,8 +220,7 @@ namespace Demo1._1._3
         //修改数据 fairy 2017-07-12
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            isExist = true;
-            if (gridView1.SelectedRowsCount > 0)// && gridView1.GetFocusedDataSourceRowIndex() >0
+            if (gridView1.SelectedRowsCount > 0)
             {
                 colCount = gridView1.Columns.Count();
                 array = new string[colCount];
@@ -232,7 +230,7 @@ namespace Demo1._1._3
                 }
                 if (array[0].Length > 0)
                 {
-                  
+                    isExist = true;
                     //如果选择的处理
                     New_OutBound_Car nb = new New_OutBound_Car();
                     nb.textEdit2.Text = array[0];
@@ -248,7 +246,7 @@ namespace Demo1._1._3
                     nb.text_carnum.Text = array[10];
                     nb.text_driver.Text = array[11];
                     nb.text_sendcar_staff.Text = array[12];
-                    //bs.sendcar_time = Convert.ToDateTime(date_sendcar_time.SelectedText.ToString());
+                    nb.dateEdit1.DateTime = Convert.ToDateTime(array[13]);
                     nb.textEdit1.Text = array[14];
                     nb.text_unload_area.Text = array[15];
                     nb.text_unload_point.Text = array[16];
@@ -256,7 +254,7 @@ namespace Demo1._1._3
                     nb.checkedComboBoxclose.SelectedText = array[18].ToString();
                     //bs.is_close = int.Parse(clo);
                     nb.text_close_staff.Text = array[19];
-                    // bs.close_time = Convert.ToDateTime(date_close_time.SelectedText.ToString());
+                    nb.date_close_time.DateTime = Convert.ToDateTime(array[20]);
                     nb.text_explain.Text = array[21];
 
                     //明细表显示

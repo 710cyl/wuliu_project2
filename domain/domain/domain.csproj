@@ -178,7 +178,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Car_Reimbursement.hbm.xml" />
-    <Content Include="Driver_Check.hbm.xml" />
+    <EmbeddedResource Include="Driver_Check.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

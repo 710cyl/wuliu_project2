@@ -10,10 +10,20 @@ namespace domain
     /// </summary>
     public class StorageDetailsTrans
     {
+
+        /// <summary>
+        /// 移库识别码
+        /// </summary>
+        public virtual string transStorageCode { set; get; }
         /// <summary>
         /// 入库单识别码
         /// </summary>
         public virtual string StorageCode { set; get; }
+
+        /// <summary>
+        /// 移库单号
+        /// </summary>
+        public virtual string StorageNumber { set; get; }
 
         /// <summary>
         /// 订单号
@@ -75,11 +85,6 @@ namespace domain
         public virtual decimal StockQuantityTrans { set; get; }
 
         /// <summary>
-        /// 移库识别码
-        /// </summary>
-        public virtual string transStorageCode { set; get; }
-
-        /// <summary>
         /// 票数
         /// </summary>
         public virtual int Poll { set; get; }
@@ -99,9 +104,6 @@ namespace domain
         /// </summary>
         public virtual string statement { set; get; }
 
-        /// <summary>
-        /// 移库单号
-        /// </summary>
-        public virtual string StorageNumber { set; get; }
+        
     }
 }

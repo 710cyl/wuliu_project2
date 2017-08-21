@@ -12,6 +12,7 @@ using wuliuDAO;
 using System.Data;
 using Microsoft.SqlServer.Server;
 using System.Data.SqlClient;
+
 namespace wuliu_server
 {
     class Program
@@ -40,6 +41,15 @@ namespace wuliu_server
 
             wssv.AddWebSocketService<ShowDataLike>("/ShowDataLike");
             wssv.AddWebSocketService<GetValLike>("/GetValLike");
+
+            wssv.AddWebSocketService<Combobox_StorageWay>("/Combobox/Combobox_StorageWay");
+            wssv.AddWebSocketService<Combobox_StorageName>("/Combobox/Combobox_StorageName");
+            wssv.AddWebSocketService<Combobox_Loader>("/Combobox/Combobox_Loader");
+            wssv.AddWebSocketService<Combobox_keeper>("/Combobox/Combobox_keeper");
+            wssv.AddWebSocketService<Combobox_Crane>("/Combobox/Combobox_Crane");
+            wssv.AddWebSocketService<Combobox_CraneNumber>("/Combobox/Combobox_CraneNumber");
+            wssv.AddWebSocketService<Combobox_Texture>("/Combobox/Combobox_Texture");
+            wssv.AddWebSocketService<Combobox_Variety>("/Combobox/Combobox_Variety");
             wssv.Start();
             Console.ReadKey();
             wssv.Stop();
@@ -1782,7 +1792,7 @@ namespace wuliu_server
                 string json = JsonConvert.SerializeObject(fund_account);
                 return json;
             }
-            else if (s == "Transportations")
+            else if (s == " ")
             {
                 IList<Transportations> fund_account = session.QueryOver<Transportations>().List();
                 string json = JsonConvert.SerializeObject(fund_account);
@@ -1802,19 +1812,55 @@ namespace wuliu_server
             }
             else if (s == "Decorate")
             {
-                IList<Decorate> fund_account = session.QueryOver<Decorate>().List();
+                int page = Convert.ToInt32(NowPage.nowpage);
+                string input_val = GetValLike.input_val;
+                String sql = "select c.* from T_Decorate c where c.编号  like '%" + input_val + "%' or c.装点  like '%" + input_val + "%'" +
+                      "or c.所在城市  like '%" + input_val + "%'" +
+                       "or c.所在区域  like '%" + input_val + "%'" +
+                       "or c.说明  like '%" + input_val + "%'" +
+                       "or c.联系人  like '%" + input_val + "%'" +
+                       "or c.电话  like '%" + input_val + "%'" +
+                       "or c.地址  like '%" + input_val + "%'";
+
+                ISQLQuery query = session.CreateSQLQuery(sql)
+               .AddEntity("Decorate", typeof(domain.Decorate));
+                IList<Decorate> fund_account = query.List<Decorate>();
                 string json = JsonConvert.SerializeObject(fund_account);
                 return json;
             }
             else if (s == "Discharge")
             {
-                IList<Discharge> fund_account = session.QueryOver<Discharge>().List();
+                int page = Convert.ToInt32(NowPage.nowpage);
+                string input_val = GetValLike.input_val;
+                String sql = "select c.* from T_Discharge c where c.编号  like '%" + input_val + "%' or c.卸点  like '%" + input_val + "%'" +
+                      "or c.所在城市  like '%" + input_val + "%'" +
+                       "or c.所在区域  like '%" + input_val + "%'" +
+                       "or c.说明  like '%" + input_val + "%'" +
+                       "or c.联系人  like '%" + input_val + "%'" +
+                       "or c.电话  like '%" + input_val + "%'" +
+                       "or c.地址  like '%" + input_val + "%'";
+
+                ISQLQuery query = session.CreateSQLQuery(sql)
+               .AddEntity("Discharge", typeof(domain.Discharge));
+                IList<Discharge> fund_account = query.List<Discharge>();
                 string json = JsonConvert.SerializeObject(fund_account);
                 return json;
             }
             else if (s == "Transportations")
             {
-                IList<Transportations> fund_account = session.QueryOver<Transportations>().List();
+                int page = Convert.ToInt32(NowPage.nowpage);
+                string input_val = GetValLike.input_val;
+                String sql = "select c.* from T_Transportations c where c.ID  like '%" + input_val + "%' or c.transportation_place  like '%" + input_val + "%'" +
+                      "or c.city  like '%" + input_val + "%'" +
+                       "or c.region  like '%" + input_val + "%'" +
+                       "or c.statement  like '%" + input_val + "%'" +
+                       "or c.linkman  like '%" + input_val + "%'" +
+                       "or c.phone_number  like '%" + input_val + "%'" +
+                       "or c.adress  like '%" + input_val + "%'";
+
+                ISQLQuery query = session.CreateSQLQuery(sql)
+               .AddEntity("Transportations", typeof(domain.Transportations));
+                IList<Transportations> fund_account = query.List<Transportations>();
                 string json = JsonConvert.SerializeObject(fund_account);
                 return json;
             }

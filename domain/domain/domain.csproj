@@ -184,6 +184,10 @@
     <EmbeddedResource Include="TransportationClearing_Detail.hbm.xml" />
     <EmbeddedResource Include="TransportationClearing_Main.hbm.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="OilGasRegister_Detail.hbm.xml" />
+    <EmbeddedResource Include="OilGasRegister_Main.hbm.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

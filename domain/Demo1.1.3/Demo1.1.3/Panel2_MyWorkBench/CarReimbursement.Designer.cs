@@ -76,7 +76,7 @@
             this.textBox_remark = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.comBox_reimbursement_content = new System.Windows.Forms.ComboBox();
-            this.FeeinChinese = new System.Windows.Forms.TextBox();
+            this.textBox_FeeinChinese = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox_reimbursement_money = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -439,7 +439,7 @@
             this.panel1.Controls.Add(this.textBox_remark);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.comBox_reimbursement_content);
-            this.panel1.Controls.Add(this.FeeinChinese);
+            this.panel1.Controls.Add(this.textBox_FeeinChinese);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.textBox_reimbursement_money);
             this.panel1.Controls.Add(this.label10);
@@ -493,14 +493,14 @@
             this.comBox_reimbursement_content.Size = new System.Drawing.Size(149, 20);
             this.comBox_reimbursement_content.TabIndex = 416;
             // 
-            // FeeinChinese
+            // textBox_FeeinChinese
             // 
-            this.FeeinChinese.Font = new System.Drawing.Font("宋体", 9F);
-            this.FeeinChinese.Location = new System.Drawing.Point(769, 77);
-            this.FeeinChinese.Name = "FeeinChinese";
-            this.FeeinChinese.ReadOnly = true;
-            this.FeeinChinese.Size = new System.Drawing.Size(148, 21);
-            this.FeeinChinese.TabIndex = 415;
+            this.textBox_FeeinChinese.Font = new System.Drawing.Font("宋体", 9F);
+            this.textBox_FeeinChinese.Location = new System.Drawing.Point(769, 77);
+            this.textBox_FeeinChinese.Name = "textBox_FeeinChinese";
+            this.textBox_FeeinChinese.ReadOnly = true;
+            this.textBox_FeeinChinese.Size = new System.Drawing.Size(148, 21);
+            this.textBox_FeeinChinese.TabIndex = 415;
             // 
             // label2
             // 
@@ -803,7 +803,7 @@
         private System.Windows.Forms.TextBox textBox_remark;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comBox_reimbursement_content;
-        private System.Windows.Forms.TextBox FeeinChinese;
+        private System.Windows.Forms.TextBox textBox_FeeinChinese;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox_reimbursement_money;
         private System.Windows.Forms.Label label10;

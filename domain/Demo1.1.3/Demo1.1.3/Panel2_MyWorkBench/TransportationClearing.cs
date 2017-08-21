@@ -12,6 +12,7 @@ using WebSocketSharp;
 using Newtonsoft.Json;
 using domain;
 
+
 namespace Demo1._1._3.Panel2_MyWorkBench
 {
     public partial class TransportationClearing : UserControl
@@ -198,5 +199,6 @@ namespace Demo1._1._3.Panel2_MyWorkBench
             tcd_list = JsonConvert.DeserializeObject<List<domain.TransportationClearing_Detail>>(fc.FindDeteils(str, "TransportationClearing_Detail"));
             gridControl2.DataSource = tcd_list;
         }
+
     }
 }

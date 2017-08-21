@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using WebSocketSharp;
 using Demo1._1._3.MyWorkBench_SkipForm;
+using System.Text.RegularExpressions;
 
 namespace Demo1._1._3.Panel2_MyWorkBench
 {
@@ -41,7 +42,7 @@ namespace Demo1._1._3.Panel2_MyWorkBench
         //查看
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
-            colCount = gridView2.Columns.Count() - 1;
+            colCount = gridView2.Columns.Count();
             array = new string[colCount];
             for (int i = 0; i < colCount; i++)
             {
@@ -67,6 +68,8 @@ namespace Demo1._1._3.Panel2_MyWorkBench
                     //tcm.pay_account = textBox_pay_account.Text;
                     comBox_reimbursement_content.Text = array[12];
                     textBox_remark.Text = array[13];
+                    textBox_FeeinChinese.Text = DaXie(array[8]);
+
                 }
                 catch (Exception ex)
                 {
@@ -170,8 +173,9 @@ namespace Demo1._1._3.Panel2_MyWorkBench
                 tcm.pay_account = "付款账户";
                 tcm.reimbursement_content = comBox_reimbursement_content.Text;
                 tcm.remark = textBox_remark.Text;
-
+                
                 fc.updateData(tcm, "Car_Reimbursement");
+                gridControl2.DataSource = fc.showData<domain.Car_Reimbursement>(tcm, now_Page.ToString());
             }
 
             else   //保存
@@ -193,6 +197,7 @@ namespace Demo1._1._3.Panel2_MyWorkBench
 
 
                 fc.saveData(tcm, "Car_Reimbursement");
+                gridControl2.DataSource = fc.showData<domain.Car_Reimbursement>(tcm, now_Page.ToString());
             }
 
             panel1.Visible = false;
@@ -255,6 +260,13 @@ namespace Demo1._1._3.Panel2_MyWorkBench
         private void textBox_driver_Click(object sender, EventArgs e)
         {
             child_form.ShowDialog();
+        }
+        //金额大写转换
+        private string DaXie(string money)
+        {
+            string s = double.Parse(money).ToString("#L#E#D#C#K#E#D#C#J#E#D#C#I#E#D#C#H#E#D#C#G#E#D#C#F#E#D#C#.0B0A");
+            string d = Regex.Replace(s, @"((?<=-|^)[^1-9]*)|((?'z'0)[0A-E]*((?=[1-9])|(?'-z'(?=[F-L.]|$))))|((?'b'[F-L])(?'z'0)[0A-L]*((?=[1-9])|(?'-z'(?=[.]|$))))", "${b}${z}");
+            return Regex.Replace(d, ".", delegate (Match m) { return "负圆空零壹贰叁肆伍陆柒捌玖空空空空空空空分角拾佰仟万億兆京垓秭穰"[m.Value[0] - '-'].ToString(); });
         }
     }
 }

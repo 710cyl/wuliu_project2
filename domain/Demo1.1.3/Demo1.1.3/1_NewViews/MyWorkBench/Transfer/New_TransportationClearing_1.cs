@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
@@ -38,6 +39,8 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
                 textBox_billcompany_TFN.Text = Panel2_MyWorkBench.TransportationClearing.array[13];
                 textBox_total_money.Text = Panel2_MyWorkBench.TransportationClearing.array[14];
                 textBox_total_volume.Text = Panel2_MyWorkBench.TransportationClearing.array[15];
+                textBox_Daxie.Text = DaXie(Panel2_MyWorkBench.TransportationClearing.array[14]);
+                DataGridViewInit();
             }
             else
             {
@@ -51,6 +54,22 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
             sd = JsonConvert.DeserializeObject<List<domain.TransportationClearing_Detail>>(fc.GridViewInit("TransportationClearing_Detail"));
             tcd_bindinglist = new BindingList<domain.TransportationClearing_Detail>(sd);
             gridControl1.DataSource = tcd_bindinglist;
+            this.gridView1.Columns[0].Caption = "订单号";
+            this.gridView1.Columns[1].Caption = "装货地点";
+            this.gridView1.Columns[2].Caption = "卸货地点";
+            this.gridView1.Columns[3].Caption = "出发日期";
+            this.gridView1.Columns[4].Caption = "返回日期";
+            this.gridView1.Columns[5].Caption = "品种";
+            this.gridView1.Columns[6].Caption = "材质";
+            this.gridView1.Columns[7].Caption = "规格";
+            this.gridView1.Columns[8].Caption = "件数";
+            this.gridView1.Columns[9].Caption = "数量";
+            this.gridView1.Columns[10].Caption = "运价";
+            this.gridView1.Columns[11].Caption = "金额";
+            this.gridView1.Columns[12].Caption = "备注";
+            this.gridView1.Columns[13].Caption = "运输单标识";
+            this.gridView1.Columns[14].Caption = "货主";
+            this.gridView1.Columns[15].Caption = "结算单号";
         }
         //添加
         private void simpleButton4_Click(object sender, EventArgs e)
@@ -152,6 +171,13 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             Close();
+        }
+        //金额大写
+        private string DaXie(string money)
+        {
+            string s = double.Parse(money).ToString("#L#E#D#C#K#E#D#C#J#E#D#C#I#E#D#C#H#E#D#C#G#E#D#C#F#E#D#C#.0B0A");
+            string d = Regex.Replace(s, @"((?<=-|^)[^1-9]*)|((?'z'0)[0A-E]*((?=[1-9])|(?'-z'(?=[F-L.]|$))))|((?'b'[F-L])(?'z'0)[0A-L]*((?=[1-9])|(?'-z'(?=[.]|$))))", "${b}${z}");
+            return Regex.Replace(d, ".", delegate (Match m) { return "负圆空零壹贰叁肆伍陆柒捌玖空空空空空空空分角拾佰仟万億兆京垓秭穰"[m.Value[0] - '-'].ToString(); });
         }
     }
 }

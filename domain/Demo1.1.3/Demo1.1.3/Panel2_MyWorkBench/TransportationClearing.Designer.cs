@@ -30,6 +30,7 @@
         {
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.dataNavigator_TransportationClearing_Detail = new DevExpress.XtraEditors.DataNavigator();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -77,9 +78,8 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
             this.dataNavigator_TransportationClearing_Main = new DevExpress.XtraEditors.DataNavigator();
-            this.dataNavigator_TransportationClearing_Detail = new DevExpress.XtraEditors.DataNavigator();
+            this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
@@ -114,6 +114,50 @@
             this.tabNavigationPage1.Controls.Add(this.gridControl2);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
             this.tabNavigationPage1.Size = new System.Drawing.Size(1056, 394);
+            // 
+            // dataNavigator_TransportationClearing_Detail
+            // 
+            this.dataNavigator_TransportationClearing_Detail.Appearance.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataNavigator_TransportationClearing_Detail.Appearance.Options.UseBackColor = true;
+            this.dataNavigator_TransportationClearing_Detail.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.Append.Enabled = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.Append.Visible = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.CancelEdit.Enabled = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.CancelEdit.Visible = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.EnabledAutoRepeat = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.EndEdit.Enabled = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.EndEdit.Visible = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.First.Enabled = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.First.Visible = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.Last.Enabled = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.Last.Visible = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.Next.Enabled = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.Next.Visible = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.NextPage.Enabled = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.NextPage.Visible = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.Prev.Enabled = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.Prev.Visible = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.PrevPage.Enabled = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.PrevPage.Visible = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.Remove.Enabled = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.Remove.Visible = false;
+            this.dataNavigator_TransportationClearing_Detail.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.dataNavigator_TransportationClearing_Detail.CustomButtons.AddRange(new DevExpress.XtraEditors.NavigatorCustomButton[] {
+            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 0, true, true, "首页", "首页"),
+            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 1, true, true, "上一页", "上一页"),
+            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 4, true, true, "下一页", "下一页"),
+            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 5, true, true, "尾页", "尾页")});
+            this.dataNavigator_TransportationClearing_Detail.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataNavigator_TransportationClearing_Detail.Location = new System.Drawing.Point(0, 372);
+            this.dataNavigator_TransportationClearing_Detail.Margin = new System.Windows.Forms.Padding(2);
+            this.dataNavigator_TransportationClearing_Detail.Name = "dataNavigator_TransportationClearing_Detail";
+            this.dataNavigator_TransportationClearing_Detail.ShowToolTips = true;
+            this.dataNavigator_TransportationClearing_Detail.Size = new System.Drawing.Size(1056, 22);
+            this.dataNavigator_TransportationClearing_Detail.TabIndex = 42;
+            this.dataNavigator_TransportationClearing_Detail.Text = "dataNavigator2";
+            this.dataNavigator_TransportationClearing_Detail.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Begin;
+            this.dataNavigator_TransportationClearing_Detail.TextStringFormat = "第 {0}页，共 {1}页";
+            this.dataNavigator_TransportationClearing_Detail.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.dataNavigator_TransportationClearing_Detail_ButtonClick);
             // 
             // gridControl2
             // 
@@ -471,15 +515,6 @@
             this.panel1.Size = new System.Drawing.Size(1074, 208);
             this.panel1.TabIndex = 29;
             // 
-            // splitterControl1
-            // 
-            this.splitterControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.splitterControl1.Location = new System.Drawing.Point(0, 233);
-            this.splitterControl1.Name = "splitterControl1";
-            this.splitterControl1.Size = new System.Drawing.Size(1074, 6);
-            this.splitterControl1.TabIndex = 38;
-            this.splitterControl1.TabStop = false;
-            // 
             // dataNavigator_TransportationClearing_Main
             // 
             this.dataNavigator_TransportationClearing_Main.Appearance.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -524,49 +559,14 @@
             this.dataNavigator_TransportationClearing_Main.TextStringFormat = "第 {0}页，共 {1}页";
             this.dataNavigator_TransportationClearing_Main.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.dataNavigator_TransportationClearing_Main_ButtonClick);
             // 
-            // dataNavigator_TransportationClearing_Detail
+            // splitterControl1
             // 
-            this.dataNavigator_TransportationClearing_Detail.Appearance.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataNavigator_TransportationClearing_Detail.Appearance.Options.UseBackColor = true;
-            this.dataNavigator_TransportationClearing_Detail.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.Append.Enabled = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.Append.Visible = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.CancelEdit.Enabled = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.CancelEdit.Visible = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.EnabledAutoRepeat = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.EndEdit.Enabled = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.EndEdit.Visible = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.First.Enabled = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.First.Visible = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.Last.Enabled = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.Last.Visible = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.Next.Enabled = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.Next.Visible = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.NextPage.Enabled = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.NextPage.Visible = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.Prev.Enabled = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.Prev.Visible = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.PrevPage.Enabled = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.PrevPage.Visible = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.Remove.Enabled = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.Remove.Visible = false;
-            this.dataNavigator_TransportationClearing_Detail.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.dataNavigator_TransportationClearing_Detail.CustomButtons.AddRange(new DevExpress.XtraEditors.NavigatorCustomButton[] {
-            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 0, true, true, "首页", "首页"),
-            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 1, true, true, "上一页", "上一页"),
-            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 4, true, true, "下一页", "下一页"),
-            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 5, true, true, "尾页", "尾页")});
-            this.dataNavigator_TransportationClearing_Detail.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataNavigator_TransportationClearing_Detail.Location = new System.Drawing.Point(0, 372);
-            this.dataNavigator_TransportationClearing_Detail.Margin = new System.Windows.Forms.Padding(2);
-            this.dataNavigator_TransportationClearing_Detail.Name = "dataNavigator_TransportationClearing_Detail";
-            this.dataNavigator_TransportationClearing_Detail.ShowToolTips = true;
-            this.dataNavigator_TransportationClearing_Detail.Size = new System.Drawing.Size(1056, 22);
-            this.dataNavigator_TransportationClearing_Detail.TabIndex = 42;
-            this.dataNavigator_TransportationClearing_Detail.Text = "dataNavigator2";
-            this.dataNavigator_TransportationClearing_Detail.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Begin;
-            this.dataNavigator_TransportationClearing_Detail.TextStringFormat = "第 {0}页，共 {1}页";
-            this.dataNavigator_TransportationClearing_Detail.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.dataNavigator_TransportationClearing_Detail_ButtonClick);
+            this.splitterControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.splitterControl1.Location = new System.Drawing.Point(0, 233);
+            this.splitterControl1.Name = "splitterControl1";
+            this.splitterControl1.Size = new System.Drawing.Size(1074, 6);
+            this.splitterControl1.TabIndex = 38;
+            this.splitterControl1.TabStop = false;
             // 
             // TransportationClearing
             // 

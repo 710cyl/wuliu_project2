@@ -75,7 +75,6 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
             driver_string = gridView1.GetFocusedRowCellDisplayText(gridView1.Columns[3]);
             Close();
             ReturnEvent?.Invoke(motorcade_string, carid_string, driver_string);
-            DriverCheck dc = new DriverCheck();
 
 
         }

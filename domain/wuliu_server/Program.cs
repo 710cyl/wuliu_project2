@@ -59,7 +59,7 @@ namespace wuliu_server
                 classname = e.Data;
             }
             catch (Exception)
-            {     
+            {
                 throw;
             }
         }
@@ -88,7 +88,8 @@ namespace wuliu_server
                 gde.Update(sfm);
             }
 
-            else if (name == "Outbound_Car") {
+            else if (name == "Outbound_Car")
+            {
                 Outbound_Car sfm = JsonConvert.DeserializeObject<Outbound_Car>(data);
                 Outbound_CarDAO gde = new Outbound_CarDAO();
                 gde.Update(sfm);
@@ -151,10 +152,10 @@ namespace wuliu_server
     {
         protected override void OnMessage(MessageEventArgs e)
         {
-            
+
             try
             {
-                GetClass(GetClassName.classname,e.Data);
+                GetClass(GetClassName.classname, e.Data);
             }
             catch (Exception ex)
             {
@@ -166,7 +167,7 @@ namespace wuliu_server
         private void GetClass(string name, string data)
 
         {
-            
+
             string json = null;
             if (name == "StorageDetails")
             {
@@ -196,7 +197,7 @@ namespace wuliu_server
             else if (name == "StorageDetailsOut")
             {
                 List<domain.StorageDetailsOut> sd = null;
-                
+
                 IOutBoundOrderDetails isd = new IOutBoundOrderDetails();
                 json = data;
                 sd = JsonConvert.DeserializeObject<List<domain.StorageDetailsOut>>(json);
@@ -210,7 +211,7 @@ namespace wuliu_server
             else if (name == "StorageDetailsTrans")
             {
                 List<domain.StorageDetailsTrans> sd = null;
-                
+
                 IOutBoundOrderTransDetails isd = new IOutBoundOrderTransDetails();
                 json = data;
                 sd = JsonConvert.DeserializeObject<List<domain.StorageDetailsTrans>>(json);
@@ -301,7 +302,7 @@ namespace wuliu_server
         {
             try
             {
-                GetClass(GetClassName.classname,e.Data);
+                GetClass(GetClassName.classname, e.Data);
             }
             catch (Exception ex)
             {
@@ -379,48 +380,48 @@ namespace wuliu_server
     {
         protected override void OnMessage(MessageEventArgs e)
         {
-                try
-                {
-                    GetClass(GetClassName.classname,e.Data);
-                }
-                catch (Exception ex)
-                {
-                    Send(ex.Message);
+            try
+            {
+                GetClass(GetClassName.classname, e.Data);
+            }
+            catch (Exception ex)
+            {
+                Send(ex.Message);
                 // tran.Rollback();
             }
-         }
+        }
         private void GetClass(string name, string data)
         {
             string json = null;
-                if (name == "StorageDetails")
+            if (name == "StorageDetails")
+            {
+                List<domain.StorageDetails> sd = null;
+                IStorageDetail isd = new IStorageDetail();
+                json = data;
+                sd = JsonConvert.DeserializeObject<List<domain.StorageDetails>>(json);
+                foreach (StorageDetails item in sd)
                 {
-                    List<domain.StorageDetails> sd = null;
-                    IStorageDetail isd = new IStorageDetail();
-                    json = data;
-                    sd = JsonConvert.DeserializeObject<List<domain.StorageDetails>>(json);
-                    foreach (StorageDetails item in sd)
-                    {
-                        isd.Save(item);
-                        Console.WriteLine("1111111111111111111");
-                    }
+                    isd.Save(item);
+                    Console.WriteLine("1111111111111111111");
                 }
-                else if (name == "Outbound_Car_Detail")
+            }
+            else if (name == "Outbound_Car_Detail")
+            {
+                List<domain.Outbound_Car_Detail> sd = null;
+                Outbound_Car_DetailDAO isd = new Outbound_Car_DetailDAO();
+                json = data;
+                sd = JsonConvert.DeserializeObject<List<domain.Outbound_Car_Detail>>(json);
+                foreach (Outbound_Car_Detail item in sd)
                 {
-                    List<domain.Outbound_Car_Detail> sd = null;
-                    Outbound_Car_DetailDAO isd = new Outbound_Car_DetailDAO();
-                    json = data;
-                    sd = JsonConvert.DeserializeObject<List<domain.Outbound_Car_Detail>>(json);
-                    foreach (Outbound_Car_Detail item in sd)
-                    {
-                        isd.Save(item);
-                        Console.WriteLine("出库派车明细表保存成功！");
-                    }
+                    isd.Save(item);
+                    Console.WriteLine("出库派车明细表保存成功！");
                 }
+            }
 
             else if (name == "StorageDetailsOut")
             {
                 List<domain.StorageDetailsOut> sd = null;
-                
+
                 IOutBoundOrderDetails isd = new IOutBoundOrderDetails();
                 json = data;
                 sd = JsonConvert.DeserializeObject<List<domain.StorageDetailsOut>>(json);
@@ -434,7 +435,7 @@ namespace wuliu_server
             else if (name == "StorageDetailsTrans")
             {
                 List<domain.StorageDetailsTrans> sd = null;
-                
+
                 IOutBoundOrderTransDetails isd = new IOutBoundOrderTransDetails();
                 json = data;
                 sd = JsonConvert.DeserializeObject<List<domain.StorageDetailsTrans>>(json);
@@ -618,10 +619,10 @@ namespace wuliu_server
         public static string nowpage;
         protected override void OnMessage(MessageEventArgs e)
         {
-            nowpage = e.Data;   
+            nowpage = e.Data;
         }
     }
-    public class ShowData :WebSocketBehavior
+    public class ShowData : WebSocketBehavior
     {
         protected override void OnMessage(MessageEventArgs e)
         {
@@ -632,7 +633,7 @@ namespace wuliu_server
                 try
                 {
                     session = sessionFactory.OpenSession();
-                    string json = SwitchData(session,e.Data);
+                    string json = SwitchData(session, e.Data);
 
                     Console.WriteLine(e.Data);
                     Console.WriteLine(json);
@@ -641,264 +642,264 @@ namespace wuliu_server
                 }
                 catch (Exception ex)
                 {
-                    
+
                     Send(ex.Message);
                 }
                 session.Close();
             }
         }
 
- 
-       public string SwitchData(ISession session,string s)
+
+        public string SwitchData(ISession session, string s)
         {
-                if (s == "Basic_Set")
-                {
-                    // NowPage np = new NowPage();
-                    int page = Convert.ToInt32(NowPage.nowpage);
-                    IList<Basic_Set> basic_set = session.QueryOver<Basic_Set>().Skip((page - 1) * 50).Take(50).List();
-                    string json = JsonConvert.SerializeObject(basic_set);
-                    return json;
-                }
-
-                else if (s == "Fund_Accounts")
-                {
-                    IList<Fund_Accounts> fund_account = session.QueryOver<Fund_Accounts>().List();
-                    string json = JsonConvert.SerializeObject(fund_account);
-                    return json;
-                }
-                else if (s == "Internal_Vehicle")
-                {
-                    IList<Internal_Vehicle> fund_account = session.QueryOver<Internal_Vehicle>().List();
-                    string json = JsonConvert.SerializeObject(fund_account);
-                    return json;
-                }
-                else if (s == "External_Vehicle")
-                {
-                    IList<External_Vehicle> fund_account = session.QueryOver<External_Vehicle>().List();
-                    string json = JsonConvert.SerializeObject(fund_account);
-                    return json;
-                }
-
-                else if (s == "Office_Supply")
-                {
-                    IList<Office_Supply> fund_account = session.QueryOver<Office_Supply>().List();
-                    string json = JsonConvert.SerializeObject(fund_account);
-                    return json;
-                }
-                else if (s == "Order_File")
-                {
-                    IList<Order_File> fund_account = session.QueryOver<Order_File>().List();
-                    string json = JsonConvert.SerializeObject(fund_account);
-                    return json;
-                }
-                else if (s == "Repair_Material")
-                {
-                    IList<Repair_Material> fund_account = session.QueryOver<Repair_Material>().List();
-                    string json = JsonConvert.SerializeObject(fund_account);
-                    return json;
-                }
-                else if (s == "Transportations")
-                {
-                    IList<Transportations> fund_account = session.QueryOver<Transportations>().List();
-                    string json = JsonConvert.SerializeObject(fund_account);
-                    return json;
-                }
-                else if (s == "Variety_Texture")
-                {
-                    IList<Variety_Texture> fund_account = session.QueryOver<Variety_Texture>().List();
-                    string json = JsonConvert.SerializeObject(fund_account);
-                    return json;
-                }
-                else if (s == "Warehouse_Space")
-                {
-                    IList<Warehouse_Space> fund_account = session.QueryOver<Warehouse_Space>().List();
-                    string json = JsonConvert.SerializeObject(fund_account);
-                    return json;
-                }
-                else if (s == "Decorate")
-                {
-                    IList<Decorate> fund_account = session.QueryOver<Decorate>().List();
-                    string json = JsonConvert.SerializeObject(fund_account);
-                    return json;
-                }
-                else if (s == "Discharge")
-                {
-                    IList<Discharge> fund_account = session.QueryOver<Discharge>().List();
-                    string json = JsonConvert.SerializeObject(fund_account);
-                    return json;
-                }
-                else if (s == "Transportations")
-                {
-                    IList<Transportations> fund_account = session.QueryOver<Transportations>().List();
-                    string json = JsonConvert.SerializeObject(fund_account);
-                    return json;
-                }
-                else if (s == "Warehouse_Staff")
-                {
-                    IList<Warehouse_Staff> fund_account = session.QueryOver<Warehouse_Staff>().List();
-                    string json = JsonConvert.SerializeObject(fund_account);
-                    return json;
-                }
-                else if (s == "StorageFormMain")
-                {
-                    int page = Convert.ToInt32(NowPage.nowpage);
-                    IList<StorageFormMain> fund_account = session.QueryOver<StorageFormMain>().Skip((page - 1) * 5).Take(5).List();
-                    string json = JsonConvert.SerializeObject(fund_account, Formatting.None, new JsonSerializerSettings()
-                    {
-                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                    });
-                    return json;
-                }
-
-                else if (s == "Outbound_Car")
-                {
-
-                    int page = Convert.ToInt32(NowPage.nowpage);
-                    IList<Outbound_Car> Outbound_Car = session.QueryOver<Outbound_Car>().Skip((page - 1) * 5).Take(5).List();
-                    string json = JsonConvert.SerializeObject(Outbound_Car, Formatting.None, new JsonSerializerSettings());
-                    return json;
+            if (s == "Basic_Set")
+            {
+                // NowPage np = new NowPage();
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<Basic_Set> basic_set = session.QueryOver<Basic_Set>().Skip((page - 1) * 50).Take(50).List();
+                string json = JsonConvert.SerializeObject(basic_set);
+                return json;
             }
-                else if (s == "StorageFormMainOut")
-                {
-                    int page = Convert.ToInt32(NowPage.nowpage);
-                    IList<StorageFormMainOut> fund_account = session.QueryOver<StorageFormMainOut>().Skip((page - 1) * 5).Take(5).List();
-                    string json = JsonConvert.SerializeObject(fund_account, Formatting.None, new JsonSerializerSettings()
-                    {
-                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                    });
-                    return json;
-                }
 
-                else if (s == "StorageFormMainTrans")
-                {
-                    int page = Convert.ToInt32(NowPage.nowpage);
-                    IList<StorageFormMainTrans> fund_account = session.QueryOver<StorageFormMainTrans>().Skip((page - 1) * 5).Take(5).List();
-                    string json = JsonConvert.SerializeObject(fund_account, Formatting.None, new JsonSerializerSettings()
-                    {
-                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                    });
-                    return json;
-                }
+            else if (s == "Fund_Accounts")
+            {
+                IList<Fund_Accounts> fund_account = session.QueryOver<Fund_Accounts>().List();
+                string json = JsonConvert.SerializeObject(fund_account);
+                return json;
+            }
+            else if (s == "Internal_Vehicle")
+            {
+                IList<Internal_Vehicle> fund_account = session.QueryOver<Internal_Vehicle>().List();
+                string json = JsonConvert.SerializeObject(fund_account);
+                return json;
+            }
+            else if (s == "External_Vehicle")
+            {
+                IList<External_Vehicle> fund_account = session.QueryOver<External_Vehicle>().List();
+                string json = JsonConvert.SerializeObject(fund_account);
+                return json;
+            }
 
-                else if (s == "TransportationRegister")
+            else if (s == "Office_Supply")
+            {
+                IList<Office_Supply> fund_account = session.QueryOver<Office_Supply>().List();
+                string json = JsonConvert.SerializeObject(fund_account);
+                return json;
+            }
+            else if (s == "Order_File")
+            {
+                IList<Order_File> fund_account = session.QueryOver<Order_File>().List();
+                string json = JsonConvert.SerializeObject(fund_account);
+                return json;
+            }
+            else if (s == "Repair_Material")
+            {
+                IList<Repair_Material> fund_account = session.QueryOver<Repair_Material>().List();
+                string json = JsonConvert.SerializeObject(fund_account);
+                return json;
+            }
+            else if (s == "Transportations")
+            {
+                IList<Transportations> fund_account = session.QueryOver<Transportations>().List();
+                string json = JsonConvert.SerializeObject(fund_account);
+                return json;
+            }
+            else if (s == "Variety_Texture")
+            {
+                IList<Variety_Texture> fund_account = session.QueryOver<Variety_Texture>().List();
+                string json = JsonConvert.SerializeObject(fund_account);
+                return json;
+            }
+            else if (s == "Warehouse_Space")
+            {
+                IList<Warehouse_Space> fund_account = session.QueryOver<Warehouse_Space>().List();
+                string json = JsonConvert.SerializeObject(fund_account);
+                return json;
+            }
+            else if (s == "Decorate")
+            {
+                IList<Decorate> fund_account = session.QueryOver<Decorate>().List();
+                string json = JsonConvert.SerializeObject(fund_account);
+                return json;
+            }
+            else if (s == "Discharge")
+            {
+                IList<Discharge> fund_account = session.QueryOver<Discharge>().List();
+                string json = JsonConvert.SerializeObject(fund_account);
+                return json;
+            }
+            else if (s == "Transportations")
+            {
+                IList<Transportations> fund_account = session.QueryOver<Transportations>().List();
+                string json = JsonConvert.SerializeObject(fund_account);
+                return json;
+            }
+            else if (s == "Warehouse_Staff")
+            {
+                IList<Warehouse_Staff> fund_account = session.QueryOver<Warehouse_Staff>().List();
+                string json = JsonConvert.SerializeObject(fund_account);
+                return json;
+            }
+            else if (s == "StorageFormMain")
+            {
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<StorageFormMain> fund_account = session.QueryOver<StorageFormMain>().Skip((page - 1) * 5).Take(5).List();
+                string json = JsonConvert.SerializeObject(fund_account, Formatting.None, new JsonSerializerSettings()
                 {
-                    int page = Convert.ToInt32(NowPage.nowpage);
-                    IList<TransportationRegister> fund_account = session.QueryOver<TransportationRegister>().Skip((page - 1) * 5).Take(5).List();
-                    string json = JsonConvert.SerializeObject(fund_account, Formatting.None, new JsonSerializerSettings()
-                    {
-                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                    });
-                    return json;
-                }
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+                return json;
+            }
 
-                else if (s == "TransportationRegister_Detail")
-                {
-                    int page = Convert.ToInt32(NowPage.nowpage);
-                    IList<TransportationRegister_Detail> fund_account = session.QueryOver<TransportationRegister_Detail>().Skip((page - 1) * 5).Take(5).List();
-                    string json = JsonConvert.SerializeObject(fund_account, Formatting.None, new JsonSerializerSettings()
-                    {
-                       ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                    });
-                    return json;
-                }
+            else if (s == "Outbound_Car")
+            {
 
-                else if (s == "FleetPrice")
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<Outbound_Car> Outbound_Car = session.QueryOver<Outbound_Car>().Skip((page - 1) * 5).Take(5).List();
+                string json = JsonConvert.SerializeObject(Outbound_Car, Formatting.None, new JsonSerializerSettings());
+                return json;
+            }
+            else if (s == "StorageFormMainOut")
+            {
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<StorageFormMainOut> fund_account = session.QueryOver<StorageFormMainOut>().Skip((page - 1) * 5).Take(5).List();
+                string json = JsonConvert.SerializeObject(fund_account, Formatting.None, new JsonSerializerSettings()
                 {
-                    int page = Convert.ToInt32(NowPage.nowpage);
-                    IList<FleetPrice> fund_account = session.QueryOver<FleetPrice>().Skip((page - 1) * 5).Take(5).List();
-                    string json = JsonConvert.SerializeObject(fund_account, Formatting.None, new JsonSerializerSettings()
-                    {
-                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                    });
-                    return json;
-                }
-                else if (s == "FleetPrice_Detail")
-                {
-                    int page = Convert.ToInt32(NowPage.nowpage);
-                    IList<FleetPrice_Detail> fund_account = session.QueryOver<FleetPrice_Detail>().Skip((page - 1) * 5).Take(5).List();
-                    string json = JsonConvert.SerializeObject(fund_account, Formatting.None, new JsonSerializerSettings()
-                    {
-                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                    });
-                    return json;
-                }
-                else if (s == "FleetPayment")
-                {
-                    int page = Convert.ToInt32(NowPage.nowpage);
-                    IList<FleetPayment> fund_account = session.QueryOver<FleetPayment>().Skip((page - 1) * 5).Take(5).List();
-                    string json = JsonConvert.SerializeObject(fund_account, Formatting.None, new JsonSerializerSettings()
-                    {
-                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                    });
-                    return json;
-                }
-                else if (s == "FleetPayment_Detail")
-                {
-                    int page = Convert.ToInt32(NowPage.nowpage);
-                    IList<FleetPayment_Detail> fund_account = session.QueryOver<FleetPayment_Detail>().Skip((page - 1) * 5).Take(5).List();
-                    string json = JsonConvert.SerializeObject(fund_account, Formatting.None, new JsonSerializerSettings()
-                    {
-                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                    });
-                    return json;
-                }
-                else if (s == "ShipperPrice")
-                {
-                    int page = Convert.ToInt32(NowPage.nowpage);
-                    IList<ShipperPrice> fund_account = session.QueryOver<ShipperPrice>().Skip((page - 1) * 5).Take(5).List();
-                    string json = JsonConvert.SerializeObject(fund_account, Formatting.None, new JsonSerializerSettings()
-                    {
-                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                    });
-                    return json;
-                }
-                else if (s == "ShipperPrice_Detail")
-                {
-                    int page = Convert.ToInt32(NowPage.nowpage);
-                    IList<ShipperPrice_Detail> fund_account = session.QueryOver<ShipperPrice_Detail>().Skip((page - 1) * 5).Take(5).List();
-                    string json = JsonConvert.SerializeObject(fund_account, Formatting.None, new JsonSerializerSettings()
-                    {
-                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                    });
-                    return json;
-                }
-                else if (s == "TransportationClearing_Main")
-                {
-                    int page = Convert.ToInt32(NowPage.nowpage);
-                    IList<TransportationClearing_Main> fund_account = session.QueryOver<TransportationClearing_Main>().Skip((page - 1) * 5).Take(5).List();
-                    string json = JsonConvert.SerializeObject(fund_account, Formatting.None, new JsonSerializerSettings()
-                    {
-                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                    });
-                    return json;
-                }
-                else if (s == "OilGasRegister_Main")
-                {
-                    int page = Convert.ToInt32(NowPage.nowpage);
-                    IList<OilGasRegister_Main> fund_account = session.QueryOver<OilGasRegister_Main>().Skip((page - 1) * 5).Take(5).List();
-                    string json = JsonConvert.SerializeObject(fund_account, Formatting.None, new JsonSerializerSettings()
-                    {
-                        ReferenceLoopHandling = ReferenceLoopHandling.Ignore
-                    });
-                    return json;
-                }
-                else if (s == "Car_Reimbursement")
-                {
-                    int page = Convert.ToInt32(NowPage.nowpage);
-                    IList<Car_Reimbursement> cr = session.QueryOver<Car_Reimbursement>().Skip((page - 1) * 5).Take(5).List();
-                    string json = JsonConvert.SerializeObject(cr);
-                    return json;
-                }
-                else if (s == "Driver_Check")
-                {
-                    int page = Convert.ToInt32(NowPage.nowpage);
-                    IList<Driver_Check> cr = session.QueryOver<Driver_Check>().Skip((page - 1) * 5).Take(5).List();
-                    string json = JsonConvert.SerializeObject(cr);
-                    return json;
-                }
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+                return json;
+            }
 
-                else
-                    return null;
+            else if (s == "StorageFormMainTrans")
+            {
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<StorageFormMainTrans> fund_account = session.QueryOver<StorageFormMainTrans>().Skip((page - 1) * 5).Take(5).List();
+                string json = JsonConvert.SerializeObject(fund_account, Formatting.None, new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+                return json;
+            }
+
+            else if (s == "TransportationRegister")
+            {
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<TransportationRegister> fund_account = session.QueryOver<TransportationRegister>().Skip((page - 1) * 5).Take(5).List();
+                string json = JsonConvert.SerializeObject(fund_account, Formatting.None, new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+                return json;
+            }
+
+            else if (s == "TransportationRegister_Detail")
+            {
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<TransportationRegister_Detail> fund_account = session.QueryOver<TransportationRegister_Detail>().Skip((page - 1) * 5).Take(5).List();
+                string json = JsonConvert.SerializeObject(fund_account, Formatting.None, new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+                return json;
+            }
+
+            else if (s == "FleetPrice")
+            {
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<FleetPrice> fund_account = session.QueryOver<FleetPrice>().Skip((page - 1) * 5).Take(5).List();
+                string json = JsonConvert.SerializeObject(fund_account, Formatting.None, new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+                return json;
+            }
+            else if (s == "FleetPrice_Detail")
+            {
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<FleetPrice_Detail> fund_account = session.QueryOver<FleetPrice_Detail>().Skip((page - 1) * 5).Take(5).List();
+                string json = JsonConvert.SerializeObject(fund_account, Formatting.None, new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+                return json;
+            }
+            else if (s == "FleetPayment")
+            {
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<FleetPayment> fund_account = session.QueryOver<FleetPayment>().Skip((page - 1) * 5).Take(5).List();
+                string json = JsonConvert.SerializeObject(fund_account, Formatting.None, new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+                return json;
+            }
+            else if (s == "FleetPayment_Detail")
+            {
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<FleetPayment_Detail> fund_account = session.QueryOver<FleetPayment_Detail>().Skip((page - 1) * 5).Take(5).List();
+                string json = JsonConvert.SerializeObject(fund_account, Formatting.None, new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+                return json;
+            }
+            else if (s == "ShipperPrice")
+            {
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<ShipperPrice> fund_account = session.QueryOver<ShipperPrice>().Skip((page - 1) * 5).Take(5).List();
+                string json = JsonConvert.SerializeObject(fund_account, Formatting.None, new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+                return json;
+            }
+            else if (s == "ShipperPrice_Detail")
+            {
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<ShipperPrice_Detail> fund_account = session.QueryOver<ShipperPrice_Detail>().Skip((page - 1) * 5).Take(5).List();
+                string json = JsonConvert.SerializeObject(fund_account, Formatting.None, new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+                return json;
+            }
+            else if (s == "TransportationClearing_Main")
+            {
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<TransportationClearing_Main> fund_account = session.QueryOver<TransportationClearing_Main>().Skip((page - 1) * 5).Take(5).List();
+                string json = JsonConvert.SerializeObject(fund_account, Formatting.None, new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+                return json;
+            }
+            else if (s == "OilGasRegister_Main")
+            {
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<OilGasRegister_Main> fund_account = session.QueryOver<OilGasRegister_Main>().Skip((page - 1) * 5).Take(5).List();
+                string json = JsonConvert.SerializeObject(fund_account, Formatting.None, new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+                return json;
+            }
+            else if (s == "Car_Reimbursement")
+            {
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<Car_Reimbursement> cr = session.QueryOver<Car_Reimbursement>().Skip((page - 1) * 5).Take(5).List();
+                string json = JsonConvert.SerializeObject(cr);
+                return json;
+            }
+            else if (s == "Driver_Check")
+            {
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<Driver_Check> cr = session.QueryOver<Driver_Check>().Skip((page - 1) * 5).Take(5).List();
+                string json = JsonConvert.SerializeObject(cr);
+                return json;
+            }
+
+            else
+                return null;
         }
     }
 
@@ -913,17 +914,17 @@ namespace wuliu_server
                 try
                 {
                     ISession session = sessionFactory.OpenSession();
-                    long total = CountSwitch(e.Data,session);
+                    long total = CountSwitch(e.Data, session);
                     Send(total.ToString());
                 }
                 catch (Exception)
                 {
                     throw;
-                }              
+                }
             }
         }
 
-        public long CountSwitch(string className,ISession session)
+        public long CountSwitch(string className, ISession session)
         {
             long total = 0;
             if (className == "Basic_Set")
@@ -1214,10 +1215,10 @@ namespace wuliu_server
         protected override void OnMessage(MessageEventArgs e)
         {
             string id = e.Data;
-            switchDelete(GetClassName.classname,id);
+            switchDelete(GetClassName.classname, id);
         }
 
-        public void switchDelete<T>(string classname,T id )
+        public void switchDelete<T>(string classname, T id)
         {
             try
             {
@@ -1287,7 +1288,7 @@ namespace wuliu_server
 
                 throw;
             }
-           
+
         }
     }
 
@@ -1346,7 +1347,7 @@ namespace wuliu_server
             }
         }
 
-        public void AddDataTableToDB(DataTable dt,string dbName) //批量导入excel
+        public void AddDataTableToDB(DataTable dt, string dbName) //批量导入excel
         {
             try
             {
@@ -1355,7 +1356,7 @@ namespace wuliu_server
                     conn.Open();
                     using (SqlTransaction tran = conn.BeginTransaction())
                     {
-                        using (SqlBulkCopy copy = new SqlBulkCopy(conn,SqlBulkCopyOptions.Default,tran))
+                        using (SqlBulkCopy copy = new SqlBulkCopy(conn, SqlBulkCopyOptions.Default, tran))
                         {
                             copy.DestinationTableName = dbName;
                             copy.WriteToServer(dt);
@@ -1380,13 +1381,13 @@ namespace wuliu_server
             var cfg = new NHibernate.Cfg.Configuration().Configure("Config/hibernate.cfg.xml");
             using (ISessionFactory sessionFactory = cfg.BuildSessionFactory())
             {
-               
-                ISession session ;
+
+                ISession session;
                 string json = null;
                 try
                 {
                     session = sessionFactory.OpenSession();
-                    json = SwitchDetail(session,GetClassName.classname, e.Data);//判断是那个明细表
+                    json = SwitchDetail(session, GetClassName.classname, e.Data);//判断是那个明细表
                     Send(json);
                 }
                 catch (Exception)
@@ -1582,7 +1583,7 @@ namespace wuliu_server
                 }
                 catch (Exception ex)
                 {
-                    
+
                     Send(ex.Message);
                 }
 
@@ -1591,7 +1592,7 @@ namespace wuliu_server
         }
 
         public string SwitchDataLike(ISession session, string s)
-        {   
+        {
             if (s == "Basic_Set")
             {
                 // NowPage np = new NowPage();
@@ -1745,7 +1746,7 @@ namespace wuliu_server
 
                 ISQLQuery query = session.CreateSQLQuery(sql)
                .AddEntity("Internal_Vehicle", typeof(domain.Internal_Vehicle));
-                IList<Internal_Vehicle> fund_account = query.List <Internal_Vehicle>();
+                IList<Internal_Vehicle> fund_account = query.List<Internal_Vehicle>();
                 string json = JsonConvert.SerializeObject(fund_account);
                 return json;
             }
@@ -1936,5 +1937,5 @@ namespace wuliu_server
     }
     #endregion
 
-
- }
+    
+}

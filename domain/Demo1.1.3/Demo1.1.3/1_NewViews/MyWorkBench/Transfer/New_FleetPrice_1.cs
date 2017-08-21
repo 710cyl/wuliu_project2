@@ -76,8 +76,28 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
             else
             {
                 DataGridViewInit();
+                textBox5.Text = fc.DateTimeToUnix("SJ");
 
             }
+
+            this.gridView1.Columns[0].Caption = "订单号";
+            this.gridView1.Columns[1].Caption = "货主";
+            this.gridView1.Columns[2].Caption = "卷号";
+            this.gridView1.Columns[3].Caption = "品种";
+            this.gridView1.Columns[4].Caption = "材质";
+            this.gridView1.Columns[5].Caption = "规格";
+            this.gridView1.Columns[6].Caption = "件数";
+            this.gridView1.Columns[7].Caption = "数量";
+            this.gridView1.Columns[8].Caption = "车队运价";
+            this.gridView1.Columns[9].Caption = "车队运费";
+            this.gridView1.Columns[10].Caption = "运输单标识";
+            this.gridView1.Columns[10].OptionsColumn.AllowEdit = false;
+            this.gridView1.Columns[11].Caption = "业务部门";
+            this.gridView1.Columns[12].Caption = "业务员";
+            this.gridView1.Columns[13].Caption = "备注";
+            this.gridView1.Columns[14].Caption = "运输单号";
+            this.gridView1.Columns[14].OptionsColumn.AllowEdit = false;
+            this.gridView1.BestFitColumns();
         }
         public void DataGridViewInit()
         {
@@ -89,7 +109,8 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
 
         private void simpleButton4_Click(object sender, EventArgs e)//添加
         {
-            domain.FleetPrice_Detail sd = new domain.FleetPrice_Detail() {/* StorageFormMain = fp*/ };
+            domain.FleetPrice_Detail sd = new domain.FleetPrice_Detail()
+            { transport_identifying = string.Format("{0}-{1}", textBox5.Text, FleetPrice_Detail.Count + 1), transport_ID = textBox5.Text };
             FleetPrice_Detail.Add(sd);
         }
 

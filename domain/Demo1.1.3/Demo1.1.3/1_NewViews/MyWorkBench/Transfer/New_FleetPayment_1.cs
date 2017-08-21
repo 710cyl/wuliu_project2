@@ -62,8 +62,25 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
             else
             {
                 DataGridViewInit();
-
+                textBox18.Text = fc.DateTimeToUnix("CK");
             }
+
+            this.gridView1.Columns[0].Caption = "定价单号";
+            this.gridView1.Columns[0].OptionsColumn.AllowEdit = false;
+            this.gridView1.Columns[1].Caption = "运输方式";
+            this.gridView1.Columns[2].Caption = "出发地点";
+            this.gridView1.Columns[3].Caption = "装货地点";
+            this.gridView1.Columns[4].Caption = "卸货地点";
+            this.gridView1.Columns[5].Caption = "出发日期";
+            this.gridView1.Columns[6].Caption = "返回日期";
+            this.gridView1.Columns[7].Caption = "运量";
+            this.gridView1.Columns[8].Caption = "单价";
+            this.gridView1.Columns[9].Caption = "运费";
+            this.gridView1.Columns[10].Caption = "备注";
+            this.gridView1.Columns[11].Caption = "运输单号";
+            this.gridView1.Columns[12].Caption = "清单号";
+            this.gridView1.Columns[12].OptionsColumn.AllowEdit = false;
+            this.gridView1.BestFitColumns();
         }
         public void DataGridViewInit()
         {
@@ -75,7 +92,8 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
 
         private void simpleButton4_Click(object sender, EventArgs e)//添加
         {
-            domain.FleetPayment_Detail sd = new domain.FleetPayment_Detail() {/* FleetPayment = sfm*/ };
+            domain.FleetPayment_Detail sd = new domain.FleetPayment_Detail()
+            { price_ID = string.Format("{0}-{1}", textBox18.Text, FleetPayment_Detail.Count + 1), list_ID = textBox18.Text };
             FleetPayment_Detail.Add(sd);
         }
 

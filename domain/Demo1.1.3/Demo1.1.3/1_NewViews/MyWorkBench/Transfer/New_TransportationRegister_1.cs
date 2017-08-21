@@ -76,8 +76,53 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
             else
             {
                 DataGridViewInit();
+                textBox2.Text = fc.DateTimeToUnix("YJ");
 
             }
+
+            this.gridView1.Columns[0].Caption = "运输单号";
+            this.gridView1.Columns[0].OptionsColumn.AllowEdit = false;
+            this.gridView1.Columns[1].Caption = "记账日期";
+            this.gridView1.Columns[2].Caption = "订单号";
+            this.gridView1.Columns[3].Caption = "运输单标识";
+            this.gridView1.Columns[3].OptionsColumn.AllowEdit = false;
+            this.gridView1.Columns[4].Caption = "货主";
+            this.gridView1.Columns[5].Caption = "卷号";
+            this.gridView1.Columns[6].Caption = "品种";
+            this.gridView1.Columns[7].Caption = "材质";
+            this.gridView1.Columns[8].Caption = "规格";
+            this.gridView1.Columns[9].Caption = "件数";
+            this.gridView1.Columns[10].Caption = "数量";
+            this.gridView1.Columns[11].Caption = "毛重";
+            this.gridView1.Columns[12].Caption = "车队运价";
+            this.gridView1.Columns[13].Caption = "车队运费";
+            this.gridView1.Columns[14].Caption = "货主运价";
+            this.gridView1.Columns[15].Caption = "货主金额";
+            this.gridView1.Columns[16].Caption = "已结算金额";
+            this.gridView1.Columns[17].Caption = "未结算金额";
+            this.gridView1.Columns[18].Caption = "运输方式";
+            this.gridView1.Columns[19].Caption = "车队";
+            this.gridView1.Columns[20].Caption = "车号";
+            this.gridView1.Columns[21].Caption = "司机";
+            this.gridView1.Columns[22].Caption = "业务部门";
+            this.gridView1.Columns[23].Caption = "业务员";
+            this.gridView1.Columns[24].Caption = "出发地点";
+            this.gridView1.Columns[25].Caption = "装货地点";
+            this.gridView1.Columns[26].Caption = "卸货地点";
+            this.gridView1.Columns[27].Caption = "出发城市";
+            this.gridView1.Columns[28].Caption = "出发区域";
+            this.gridView1.Columns[29].Caption = "装货城市";
+            this.gridView1.Columns[30].Caption = "装货区域";
+            this.gridView1.Columns[31].Caption = "卸货城市";
+            this.gridView1.Columns[32].Caption = "卸货区域";
+            this.gridView1.Columns[33].Caption = "出发日期";
+            this.gridView1.Columns[34].Caption = "返回日期";
+            this.gridView1.Columns[35].Caption = "录入人员";
+            this.gridView1.Columns[36].Caption = "录入时间";
+            this.gridView1.Columns[37].Caption = "修改人员";
+            this.gridView1.Columns[38].Caption = "修改时间";
+            this.gridView1.Columns[39].Caption = "说明";
+            this.gridView1.Columns[40].Caption = "备注";
         }
 
         public void DataGridViewInit()
@@ -96,7 +141,8 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
 
         private void simpleButton4_Click(object sender, EventArgs e)//添加
         {
-            domain.TransportationRegister_Detail trd = new domain.TransportationRegister_Detail();
+            domain.TransportationRegister_Detail trd = new domain.TransportationRegister_Detail()
+            { transport_identifying = string.Format("{0}-{1}", textBox2.Text, TransportationRegister_Detail.Count + 1), transport_ID = textBox2.Text };
             TransportationRegister_Detail.Add(trd);
         }
 

@@ -414,6 +414,8 @@ namespace Demo1._1._3
             ge.gridView3.Columns[21].Caption = "发卸城市";
             ge.gridView3.Columns[22].Caption = "发卸区域";
             ge.gridView3.BestFitColumns();
+
+            
         }
 
         private void accordionControlElement63_Click(object sender, EventArgs e)
@@ -425,7 +427,44 @@ namespace Demo1._1._3
             panel2.Controls.Add(obo);
             domain.StorageFormMainOut sf = new domain.StorageFormMainOut();
             obo.gridControl3.DataSource = showData<domain.StorageFormMainOut>(sf, obo.now_Page.ToString());
-            //obo.gridView3.Columns[23].Visible = false;
+            obo.gridView3.Columns[33].Visible = false;
+
+            obo.gridView3.Columns[0].Caption = "出库单号";
+            obo.gridView3.Columns[1].Caption = "登记时间";
+            obo.gridView3.Columns[2].Caption = "出库方式";
+            obo.gridView3.Columns[3].Caption = "车队";
+            obo.gridView3.Columns[4].Caption = "车号";
+            obo.gridView3.Columns[5].Caption = "司机";
+            obo.gridView3.Columns[6].Caption = "出库总量";
+            obo.gridView3.Columns[7].Caption = "库管";
+            obo.gridView3.Columns[8].Caption = "吊车工";
+            obo.gridView3.Columns[9].Caption = "装卸工";
+            obo.gridView3.Columns[10].Caption = "发货人员";
+            obo.gridView3.Columns[11].Caption = "修改人";
+            obo.gridView3.Columns[12].Caption = "修改时间";
+            obo.gridView3.Columns[13].Caption = "备注";
+            obo.gridView3.Columns[14].Caption = "发装点";
+            obo.gridView3.Columns[15].Caption = "发装城市";
+            obo.gridView3.Columns[16].Caption = "发装区域";
+            obo.gridView3.Columns[17].Caption = "实际卸点";
+            obo.gridView3.Columns[18].Caption = "卸货城市";
+            obo.gridView3.Columns[19].Caption = "卸货区域";
+            obo.gridView3.Columns[20].Caption = "车队标识";
+            obo.gridView3.Columns[21].Caption = "出库时间";
+            obo.gridView3.Columns[22].Caption = "发货仓库";
+            obo.gridView3.Columns[23].Caption = "货主";
+            obo.gridView3.Columns[24].Caption = "付费单位";
+            obo.gridView3.Columns[25].Caption = "收款人";
+            obo.gridView3.Columns[26].Caption = "资金账户";
+            obo.gridView3.Columns[27].Caption = "账户名称";
+            obo.gridView3.Columns[28].Caption = "仓储费";
+            obo.gridView3.Columns[29].Caption = "收款时间";
+            obo.gridView3.Columns[30].Caption = "实收金额";
+            obo.gridView3.Columns[31].Caption = "收款完成";
+            obo.gridView3.Columns[32].Caption = "未收仓储费";
+           // obo.gridView3.Columns[33].Caption = "装卸工1";
+
+            obo.gridView3.BestFitColumns();
         }
 
         private void accordionControlElement64_Click(object sender, EventArgs e)
@@ -437,6 +476,29 @@ namespace Demo1._1._3
             panel2.Controls.Add(tl);
             domain.StorageFormMainTrans sf = new domain.StorageFormMainTrans();
             tl.gridControl1.DataSource = showData<domain.StorageFormMainTrans>(sf, tl.now_Page.ToString());
+
+            tl.gridView1.Columns[0].Caption = "仓库名称";
+            tl.gridView1.Columns[1].Caption = "移库单号";
+            tl.gridView1.Columns[2].Caption = "移库方式";
+            tl.gridView1.Columns[3].Caption = "移出客户";
+            tl.gridView1.Columns[4].Caption = "移入客户";
+            tl.gridView1.Columns[5].Caption = "记账日期";
+            tl.gridView1.Columns[6].Caption = "录入员";
+            tl.gridView1.Columns[7].Caption = "录入时间";
+            tl.gridView1.Columns[8].Caption = "修改人";
+            tl.gridView1.Columns[9].Caption = "修改时间";
+            tl.gridView1.Columns[10].Caption = "库管";
+            tl.gridView1.Columns[11].Caption = "吊车工";
+            tl.gridView1.Columns[12].Caption = "装卸工";
+            tl.gridView1.Columns[13].Caption = "备注";
+            tl.gridView1.Columns[14].Caption = "移库总量";
+            tl.gridView1.Columns[15].Caption = "仓储费单位";
+            tl.gridView1.Columns[16].Caption = "移库单价";
+            tl.gridView1.Columns[17].Caption = "移库金额";
+            tl.gridView1.Columns[18].Caption = "移库费单位";
+            tl.gridView1.Columns[19].Caption = "装卸工1";
+
+            tl.gridView1.BestFitColumns();
         }
 
         private void accordionControlElement70_Click(object sender, EventArgs e)
@@ -693,7 +755,44 @@ namespace Demo1._1._3
                 tcd_list = JsonConvert.DeserializeObject<List<domain.TransportationClearing_Detail>>(detailString);
                 tpc.gridControl2.DataSource = tcd_list;
             }
-     
+
+            tpc.gridView1.Columns[0].Caption = "结算单号";
+            tpc.gridView1.Columns[1].Caption = "登记人员";
+            tpc.gridView1.Columns[2].Caption = "登记时间";
+            tpc.gridView1.Columns[3].Caption = "修改人员";
+            tpc.gridView1.Columns[4].Caption = "修改时间";
+            tpc.gridView1.Columns[5].Caption = "货主";
+            tpc.gridView1.Columns[6].Caption = "货主全称";
+            tpc.gridView1.Columns[7].Caption = "货主税号";
+            tpc.gridView1.Columns[8].Caption = "付款单位";
+            tpc.gridView1.Columns[9].Caption = "付款单位全称";
+            tpc.gridView1.Columns[10].Caption = "付款单位税号";
+            tpc.gridView1.Columns[11].Caption = "开票单位";
+            tpc.gridView1.Columns[12].Caption = "开票单位全称";
+            tpc.gridView1.Columns[13].Caption = "开票单位税号";
+            tpc.gridView1.Columns[14].Caption = "总金额";
+            tpc.gridView1.Columns[15].Caption = "说明";
+            tpc.gridView1.Columns[16].Caption = "总运量";
+            tpc.gridView1.Columns[17].Visible = false;
+
+            tpc.gridView2.Columns[0].Caption = "订单号";
+            tpc.gridView2.Columns[1].Caption = "装货地点";
+            tpc.gridView2.Columns[2].Caption = "卸货地点";
+            tpc.gridView2.Columns[3].Caption = "出发日期";
+            tpc.gridView2.Columns[4].Caption = "返回日期";
+            tpc.gridView2.Columns[5].Caption = "品种";
+            tpc.gridView2.Columns[6].Caption = "材质";
+            tpc.gridView2.Columns[7].Caption = "规格";
+            tpc.gridView2.Columns[8].Caption = "件数";
+            tpc.gridView2.Columns[9].Caption = "数量";
+            tpc.gridView2.Columns[10].Caption = "运价";
+            tpc.gridView2.Columns[11].Caption = "金额";
+            tpc.gridView2.Columns[12].Caption = "备注";
+            tpc.gridView2.Columns[13].Caption = "运输单标识";
+            tpc.gridView2.Columns[14].Caption = "货主";
+            tpc.gridView2.Columns[15].Visible = false;
+
+
         }
 
         private void accordionControlElement77_Click(object sender, EventArgs e)
@@ -706,6 +805,21 @@ namespace Demo1._1._3
 
             domain.Car_Reimbursement crb = new domain.Car_Reimbursement();
             carr.gridControl2.DataSource = showData<domain.Car_Reimbursement>(crb, carr.now_Page.ToString());
+
+            carr.gridView2.Columns[0].Caption = "报销单号";
+            carr.gridView2.Columns[1].Caption = "车队";
+            carr.gridView2.Columns[2].Caption = "车号";
+            carr.gridView2.Columns[3].Caption = "司机";
+            carr.gridView2.Columns[4].Caption = "登记人员";
+            carr.gridView2.Columns[5].Caption = "付款人员";
+            carr.gridView2.Columns[6].Caption = "录入时间";
+            carr.gridView2.Columns[7].Caption = "付款时间";
+            carr.gridView2.Columns[8].Caption = "报销金额";
+            carr.gridView2.Columns[9].Caption = "是否付款";
+            carr.gridView2.Columns[10].Caption = "付款账户编号";
+            carr.gridView2.Columns[11].Caption = "付款账户";
+            carr.gridView2.Columns[12].Caption = "报销内容";
+            carr.gridView2.Columns[13].Caption = "备注";
         }
 
         private void accordionControlElement78_Click(object sender, EventArgs e)
@@ -730,6 +844,28 @@ namespace Demo1._1._3
                 ogr.gridControl2.DataSource = ogr_list;
             }
 
+            ogr.gridView1.Columns[0].Caption = "登记单号";
+            ogr.gridView1.Columns[1].Caption = "加注日期";
+            ogr.gridView1.Columns[2].Caption = "油气种类";
+            ogr.gridView1.Columns[3].Caption = "油气单价";
+            ogr.gridView1.Columns[4].Caption = "登记人";
+            ogr.gridView1.Columns[5].Caption = "登记时间";
+            ogr.gridView1.Columns[6].Caption = "修改人";
+            ogr.gridView1.Columns[7].Caption = "修改时间";
+            ogr.gridView1.Columns[8].Visible = false;
+
+            ogr.gridView2.Columns[0].Caption = "油气登记详细单号";
+            ogr.gridView2.Columns[1].Caption = "车队";
+            ogr.gridView2.Columns[2].Caption = "车号";
+            ogr.gridView2.Columns[3].Caption = "司机";
+            ogr.gridView2.Columns[4].Caption = "油气量";
+            ogr.gridView2.Columns[5].Caption = "金额";
+            ogr.gridView2.Columns[6].Caption = "备注";
+            ogr.gridView2.Columns[7].Caption = "加注日期";
+            ogr.gridView2.Columns[8].Caption = "油气种类";
+            ogr.gridView2.Columns[9].Caption = "油气单价";
+            ogr.gridView2.Columns[10].Visible = false;
+
         }
 
         private void accordionControlElement82_Click(object sender, EventArgs e)
@@ -742,6 +878,22 @@ namespace Demo1._1._3
             panel2.Controls.Add(drc);
             domain.Driver_Check crb = new domain.Driver_Check();
             drc.gridControl2.DataSource = showData<domain.Driver_Check>(crb, drc.now_Page.ToString());
+
+            drc.gridView2.Columns[0].Caption = "考核单号";
+            drc.gridView2.Columns[1].Caption = "考核类别";
+            drc.gridView2.Columns[2].Caption = "考核月份";
+            drc.gridView2.Columns[3].Caption = "车队";
+            drc.gridView2.Columns[4].Caption = "车号";
+            drc.gridView2.Columns[5].Caption = "司机";
+            drc.gridView2.Columns[6].Caption = "考核金额";
+            drc.gridView2.Columns[7].Caption = "工资金额";
+            drc.gridView2.Columns[8].Caption = "考核下达人";
+            drc.gridView2.Columns[9].Caption = "录入人员";
+            drc.gridView2.Columns[10].Caption = "录入时间";
+            drc.gridView2.Columns[11].Caption = "考核事由";
+            drc.gridView2.Columns[12].Caption = "记账日期";
+
+
 
         }
 

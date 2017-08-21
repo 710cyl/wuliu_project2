@@ -10,6 +10,17 @@ namespace domain
     /// </summary>
     public class StorageDetailsOut
     {
+
+        /// <summary>
+        /// 出库单识别码——主键
+        /// </summary>
+        public virtual string outStorageCode { set; get; }
+
+        /// <summary>
+        /// 出库单号
+        /// </summary>
+        public virtual string outStorageNumber { set; get; }
+
         /// <summary>
         /// 入库性质
         /// </summary>
@@ -91,10 +102,7 @@ namespace domain
         /// </summary>
         public virtual string StorageCode { set; get; }
 
-        /// <summary>
-        /// 出库单识别码——主键
-        /// </summary>
-        public virtual string outStorageCode { set; get; }
+        
 
         /// <summary>
         /// 车队
@@ -192,10 +200,7 @@ namespace domain
         /// </summary>
         public virtual DateTime outStorageTime { set; get; }
 
-        /// <summary>
-        /// 出库单号
-        /// </summary>
-        public virtual string outStorageNumber { set; get; }
+        
         /// <summary>
         /// 垛位号
         /// </summary>

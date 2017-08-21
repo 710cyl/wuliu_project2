@@ -47,6 +47,7 @@ namespace Demo1._1._3
                     ws.Send(sendMsg); //传类名
                     while (total_Page == 0)
                     {
+                    
                          ws.OnMessage += (sender, e) =>
                                     total_Page = (Convert.ToInt64(e.Data) / 5) + 1;
                     }
@@ -233,7 +234,7 @@ namespace Demo1._1._3
 
                 wsn.Close();
             }
-            Thread.Sleep(1500);
+            Thread.Sleep(5000);
             using (var wsn = new WebSocket("ws://localhost:9000/GetClassName/Detail"))
             {
                 wsn.Connect();
@@ -521,5 +522,198 @@ namespace Demo1._1._3
             return (name + timeStamp.ToString());
         }
 
+        /// <summary>
+        /// combobox 获得入库方式
+        /// </summary>
+        /// <returns></returns>
+        public List<string> getStorageway() 
+        {
+            string msg = null;
+           
+            using (var ws = new WebSocket("ws://localhost:9000/Combobox/Combobox_StorageWay"))
+            {
+                ws.Connect();
+                ws.Send("combobox");
+                while (msg == null)
+                {       
+                    ws.OnMessage += (sender, e) =>
+                    msg = e.Data;
+
+                }
+                ws.Close();
+            }
+            List<string> storageway = JsonConvert.DeserializeObject<List<string>>(msg);
+            return storageway;
+        }
+
+
+        /// <summary>
+        /// combobox 获得仓库
+        /// </summary>
+        /// <returns></returns>
+        public List<string> getStoragename()
+        {
+            string msg = null;
+
+            using (var ws = new WebSocket("ws://localhost:9000/Combobox/Combobox_StorageName"))
+            {
+                ws.Connect();
+                ws.Send("Combobox_StorageName");
+                while (msg == null)
+                {
+                    ws.OnMessage += (sender, e) =>
+                    msg = e.Data;
+
+                }
+                ws.Close();
+            }
+            List<string> storage = JsonConvert.DeserializeObject<List<string>>(msg);
+            return storage;
+        }
+
+        /// <summary>
+        /// combobox 获得库管
+        /// </summary>
+        /// <returns></returns>
+        public List<string> getKeeper()
+        {
+            string msg = null;
+
+            using (var ws = new WebSocket("ws://localhost:9000/Combobox/Combobox_keeper"))
+            {
+                ws.Connect();
+                ws.Send("Combobox_keeper");
+                while (msg == null)
+                {
+                    ws.OnMessage += (sender, e) =>
+                    msg = e.Data;
+
+                }
+                ws.Close();
+            }
+            List<string> storage = JsonConvert.DeserializeObject<List<string>>(msg);
+            return storage;
+        }
+
+        /// <summary>
+        /// combobox 获得吊工
+        /// </summary>
+        /// <returns></returns>
+        public List<string> getCrane()
+        {
+            string msg = null;
+
+            using (var ws = new WebSocket("ws://localhost:9000/Combobox/Combobox_Crane"))
+            {
+                ws.Connect();
+                ws.Send("Combobox_Crane");
+                while (msg == null)
+                {
+                    ws.OnMessage += (sender, e) =>
+                    msg = e.Data;
+
+                }
+                ws.Close();
+            }
+            List<string> storage = JsonConvert.DeserializeObject<List<string>>(msg);
+            return storage;
+        }
+
+        /// <summary>
+        /// combobox 获得垛位号
+        /// </summary>
+        /// <returns></returns>
+        public List<string> getCraneNumber()
+        {
+            string msg = null;
+
+            using (var ws = new WebSocket("ws://localhost:9000/Combobox/Combobox_CraneNumber"))
+            {
+                ws.Connect();
+                ws.Send("Combobox_CraneNumber");
+                while (msg == null)
+                {
+                    ws.OnMessage += (sender, e) =>
+                    msg = e.Data;
+
+                }
+                ws.Close();
+            }
+            List<string> storage = JsonConvert.DeserializeObject<List<string>>(msg);
+            return storage;
+        }
+
+
+        /// <summary>
+        /// combobox 获得装卸工
+        /// </summary>
+        /// <returns></returns>
+        public List<string> getLoader()
+        {
+            string msg = null;
+
+            using (var ws = new WebSocket("ws://localhost:9000/Combobox/Combobox_Loader"))
+            {
+                ws.Connect();
+                ws.Send("Combobox_Loader");
+                while (msg == null)
+                {
+                    ws.OnMessage += (sender, e) =>
+                    msg = e.Data;
+
+                }
+                ws.Close();
+            }
+            List<string> storage = JsonConvert.DeserializeObject<List<string>>(msg);
+            return storage;
+        }
+
+        /// <summary>
+        /// combobox 获得品种
+        /// </summary>
+        /// <returns></returns>
+        public List<string> getVariety()
+        {
+            string msg = null;
+
+            using (var ws = new WebSocket("ws://localhost:9000/Combobox/Combobox_Variety"))
+            {
+                ws.Connect();
+                ws.Send("Combobox_Variety");
+                while (msg == null)
+                {
+                    ws.OnMessage += (sender, e) =>
+                    msg = e.Data;
+
+                }
+                ws.Close();
+            }
+            List<string> storage = JsonConvert.DeserializeObject<List<string>>(msg);
+            return storage;
+        }
+
+        /// <summary>
+        /// 获得材质
+        /// </summary>
+        /// <returns></returns>
+        public List<string> getTexture()
+        {
+            string msg = null;
+
+            using (var ws = new WebSocket("ws://localhost:9000/Combobox/Combobox_Texture"))
+            {
+                ws.Connect();
+                ws.Send("Combobox_Texture");
+                while (msg == null)
+                {
+                    ws.OnMessage += (sender, e) =>
+                    msg = e.Data;
+                    
+                }
+                ws.Close();
+            }
+            List<string> storage = JsonConvert.DeserializeObject<List<string>>(msg);
+            return storage;
+        }
     }
 }

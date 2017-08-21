@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using WebSocketSharp;
 using DevExpress.XtraEditors;
@@ -22,7 +23,7 @@ namespace Demo1._1._3.Panel2_MyWorkBench
         public static string str = null;
         public long total_Page = 0; //页码总条目
         public long now_Page = 1; //当前页码
-        private TabbedSections child_form = new TabbedSections();
+        private TabbedSections child_form = new TabbedSections();//车队界面
 
         domain.Driver_Check tcm = new domain.Driver_Check();
         FunctionClass fc = new FunctionClass();
@@ -30,10 +31,12 @@ namespace Demo1._1._3.Panel2_MyWorkBench
         public DriverCheck()
         {
             InitializeComponent();
-            
+            total_Page = fc.getTotal<domain.Driver_Check>(tcm, total_Page);
+            fc.InitPage(dataNavigator1, total_Page, now_Page);
             child_form.ReturnEvent += new TabbedSections.ClickCar(getCarValue); 
 
         }
+        //实现委托方法
         void getCarValue(string a,string b,string c)
         {
             textBox_motorcade.Text = a;
@@ -154,6 +157,8 @@ namespace Demo1._1._3.Panel2_MyWorkBench
 
                 fc.updateData(tcm, "Driver_Check");
 
+
+                this.gridView2.ClearGrouping();
                 this.gridControl2.DataSource = fc.showData<Driver_Check>(tcm, now_Page.ToString());
 
             }
@@ -176,6 +181,8 @@ namespace Demo1._1._3.Panel2_MyWorkBench
                 isExist = true;
                 fc.saveData(tcm, "Driver_Check");
 
+                Thread.Sleep(500);
+                this.gridView2.ClearGrouping();
                 this.gridControl2.DataSource = fc.showData<Driver_Check>(tcm,now_Page.ToString());
             }
 
@@ -232,12 +239,12 @@ namespace Demo1._1._3.Panel2_MyWorkBench
         //车号单击事件
         private void textBox_car_id_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("123");
+            child_form.ShowDialog();
         }
         //司机单击事件
         private void textBox_driver_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("123");
+            child_form.ShowDialog();
         }
     }
 }

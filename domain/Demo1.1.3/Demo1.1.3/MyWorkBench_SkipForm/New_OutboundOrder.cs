@@ -76,6 +76,60 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm
             else
             {
                 DataGridViewInit();
+
+                textBox11.Text = fc.DateTimeToUnix("PC");
+
+                this.gridView1.Columns[0].Caption = "出库单识别码";
+                this.gridView1.Columns[1].Caption = "出库单号";
+                this.gridView1.Columns[2].Caption = "入库性质";
+                this.gridView1.Columns[3].Caption = "入库时间";
+                this.gridView1.Columns[4].Caption = "订单号";
+                this.gridView1.Columns[5].Caption = "货主";
+                this.gridView1.Columns[6].Caption = "卸货点";
+                this.gridView1.Columns[7].Caption = "卸货城市";
+                this.gridView1.Columns[8].Caption = "卸货区域";
+                this.gridView1.Columns[9].Caption = "卷号";
+                this.gridView1.Columns[10].Caption = "品种";
+                this.gridView1.Columns[11].Caption = "材质";
+                this.gridView1.Columns[12].Caption = "规格";
+                this.gridView1.Columns[13].Caption = "库存件数";
+                this.gridView1.Columns[14].Caption = "库存数量";
+                this.gridView1.Columns[15].Caption = "实发件数";
+                this.gridView1.Columns[16].Caption = "实发数量";
+                this.gridView1.Columns[17].Caption = "入库单识别码";
+                this.gridView1.Columns[18].Caption = "车队";
+                this.gridView1.Columns[19].Caption = "车号";
+                this.gridView1.Columns[20].Caption = "司机";
+                this.gridView1.Columns[21].Caption = "发货员";
+                this.gridView1.Columns[22].Caption = "发货时间";
+                this.gridView1.Columns[23].Caption = "库管";
+                this.gridView1.Columns[24].Caption = "吊车工";
+                this.gridView1.Columns[25].Caption = "装卸工";
+                this.gridView1.Columns[26].Caption = "装卸工1";
+                this.gridView1.Columns[27].Caption = "备注";
+                this.gridView1.Columns[28].Caption = "实际卸货点";
+                this.gridView1.Columns[29].Caption = "实际卸货城市";
+                this.gridView1.Columns[30].Caption = "实际卸货区域";
+                this.gridView1.Columns[31].Caption = "发装城市";
+                this.gridView1.Columns[32].Caption = "发装区域";
+                this.gridView1.Columns[33].Caption = "发装点";
+                this.gridView1.Columns[34].Caption = "车队标识";
+                this.gridView1.Columns[35].Caption = "出库时间";
+                this.gridView1.Columns[36].Caption = "垛位号";
+                this.gridView1.Columns[37].Caption = "修改人";
+                this.gridView1.Columns[38].Caption = "修改时间";
+                this.gridView1.Columns[39].Caption = "仓库名称";
+                this.gridView1.Columns[40].Caption = "项目号";
+                this.gridView1.Columns[41].Caption = "仓费单价";
+                this.gridView1.Columns[42].Caption = "仓储费";
+                this.gridView1.Columns[43].Caption = "付费单位";
+                this.gridView1.Columns[44].Caption = "基础存储期";
+                this.gridView1.Columns[45].Caption = "实际存储期";
+                this.gridView1.Columns[46].Caption = "超期";
+                this.gridView1.Columns[47].Caption = "基本仓储单价";
+                this.gridView1.Columns[48].Caption = "超期单价";
+
+                this.gridView1.BestFitColumns();
             }
         }
 
@@ -89,7 +143,7 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm
 
         private void simpleButton4_Click(object sender, EventArgs e) //添加
         {
-            domain.StorageDetailsOut sd = new domain.StorageDetailsOut() {/* StorageFormMain = sfm*/ };
+            domain.StorageDetailsOut sd = new domain.StorageDetailsOut() {outStorageNumber = textBox11.Text, outStorageCode = string.Format("{0}-{1}", textBox11.Text, StorageDetailsOut.Count + 1) };
             StorageDetailsOut.Add(sd);
         }
 
@@ -145,6 +199,7 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm
 
             else
             {
+                
                 sfm.CargoOwner = textBox1.Text;
                 sfm.Storage = textBox2.Text;
                 sfm.StorageFleet = textBox20.Text;

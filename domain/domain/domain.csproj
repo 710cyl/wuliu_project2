@@ -181,8 +181,6 @@
     <EmbeddedResource Include="Driver_Check.hbm.xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="OilGasRegister_Detail.hbm.xml" />
-    <EmbeddedResource Include="OilGasRegister_Main.hbm.xml" />
     <EmbeddedResource Include="TransportationClearing_Detail.hbm.xml" />
     <EmbeddedResource Include="TransportationClearing_Main.hbm.xml" />
   </ItemGroup>

@@ -2,7 +2,7 @@
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <StartAction>Program</StartAction>
-    <StartProgram>D:\物流系统项目\NUnit-2.6.3\NUnit-2.6.3\bin\nunit.exe</StartProgram>
+    <StartProgram>D:\NUnit-2.6.4\bin\nunit.exe</StartProgram>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <StartProgram>D:\物流系统项目\NUnit-2.6.3\NUnit-2.6.3\bin\nunit.exe</StartProgram>
@@ -11,5 +11,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <StartProgram>D:\物流系统项目\NUnit-2.6.3\NUnit-2.6.3\bin\nunit.exe</StartProgram>
     <StartAction>Program</StartAction>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ProjectView>ProjectFiles</ProjectView>
   </PropertyGroup>
 </Project>

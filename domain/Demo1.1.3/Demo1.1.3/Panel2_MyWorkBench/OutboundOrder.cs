@@ -180,6 +180,58 @@ namespace Demo1._1._3.Panel2_MyWorkBench
             MessageBox.Show(str);
             sd = JsonConvert.DeserializeObject<List<domain.StorageDetailsOut>>(fc.FindDeteils(str, "StorageDetailsOut"));
             gridControl2.DataSource = sd;
+
+            this.gridView2.Columns[0].Caption = "出库单识别码";
+            this.gridView2.Columns[1].Caption = "出库单号";
+            this.gridView2.Columns[2].Caption = "入库性质";
+            this.gridView2.Columns[3].Caption = "入库时间";
+            this.gridView2.Columns[4].Caption = "订单号";
+            this.gridView2.Columns[5].Caption = "货主";
+            this.gridView2.Columns[6].Caption = "卸货点";
+            this.gridView2.Columns[7].Caption = "卸货城市";
+            this.gridView2.Columns[8].Caption = "卸货区域";
+            this.gridView2.Columns[9].Caption = "卷号";
+            this.gridView2.Columns[10].Caption = "品种";
+            this.gridView2.Columns[11].Caption = "材质";
+            this.gridView2.Columns[12].Caption = "规格";
+            this.gridView2.Columns[13].Caption = "库存件数";
+            this.gridView2.Columns[14].Caption = "库存数量";
+            this.gridView2.Columns[15].Caption = "实发件数";
+            this.gridView2.Columns[16].Caption = "实发数量";
+            this.gridView2.Columns[17].Caption = "入库单识别码";
+            this.gridView2.Columns[18].Caption = "车队";
+            this.gridView2.Columns[19].Caption = "车号";
+            this.gridView2.Columns[20].Caption = "司机";
+            this.gridView2.Columns[21].Caption = "发货员";
+            this.gridView2.Columns[22].Caption = "发货时间";
+            this.gridView2.Columns[23].Caption = "库管";
+            this.gridView2.Columns[24].Caption = "吊车工";
+            this.gridView2.Columns[25].Caption = "装卸工";
+            this.gridView2.Columns[26].Caption = "装卸工1";
+            this.gridView2.Columns[27].Caption = "备注";
+            this.gridView2.Columns[28].Caption = "实际卸货点";
+            this.gridView2.Columns[29].Caption = "实际卸货城市";
+            this.gridView2.Columns[30].Caption = "实际卸货区域";
+            this.gridView2.Columns[31].Caption = "发装城市";
+            this.gridView2.Columns[32].Caption = "发装区域";
+            this.gridView2.Columns[33].Caption = "发装点";
+            this.gridView2.Columns[34].Caption = "车队标识";
+            this.gridView2.Columns[35].Caption = "出库时间";
+            this.gridView2.Columns[36].Caption = "垛位号";
+            this.gridView2.Columns[37].Caption = "修改人";
+            this.gridView2.Columns[38].Caption = "修改时间";
+            this.gridView2.Columns[39].Caption = "仓库名称";
+            this.gridView2.Columns[40].Caption = "项目号";
+            this.gridView2.Columns[41].Caption = "仓费单价";
+            this.gridView2.Columns[42].Caption = "仓储费";
+            this.gridView2.Columns[43].Caption = "付费单位";
+            this.gridView2.Columns[44].Caption = "基础存储期";
+            this.gridView2.Columns[45].Caption = "实际存储期";
+            this.gridView2.Columns[46].Caption = "超期";
+            this.gridView2.Columns[47].Caption = "基本仓储单价";
+            this.gridView2.Columns[48].Caption = "超期单价";
+
+            this.gridView2.BestFitColumns();
         }
     }
 }

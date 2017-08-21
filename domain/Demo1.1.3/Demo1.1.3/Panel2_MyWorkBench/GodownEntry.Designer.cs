@@ -493,6 +493,7 @@
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsBehavior.Editable = false;
             this.gridView2.OptionsView.ColumnAutoWidth = false;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
@@ -639,6 +640,7 @@
             // gridControl3
             // 
             this.gridControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+
             this.gridControl3.Location = new System.Drawing.Point(0, 0);
             this.gridControl3.MainView = this.gridView3;
             this.gridControl3.Name = "gridControl3";
@@ -649,6 +651,8 @@
             // 
             // gridView3
             // 
+            this.gridView3.Appearance.ViewCaption.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.gridView3.Appearance.ViewCaption.Options.UseFont = true;
             this.gridView3.GridControl = this.gridControl3;
             this.gridView3.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.gridView3.Name = "gridView3";

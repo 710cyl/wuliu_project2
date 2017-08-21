@@ -12,7 +12,4 @@
     <StartProgram>D:\物流系统项目\NUnit-2.6.3\NUnit-2.6.3\bin\nunit.exe</StartProgram>
     <StartAction>Program</StartAction>
   </PropertyGroup>
-  <PropertyGroup>
-    <ProjectView>ProjectFiles</ProjectView>
-  </PropertyGroup>
 </Project>

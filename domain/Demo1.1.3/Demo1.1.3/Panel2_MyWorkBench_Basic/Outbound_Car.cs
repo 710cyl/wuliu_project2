@@ -361,5 +361,10 @@ namespace Demo1._1._3
            
 
         }
+
+        private void gridControl2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

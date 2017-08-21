@@ -171,5 +171,15 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
         {
             Close();
         }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

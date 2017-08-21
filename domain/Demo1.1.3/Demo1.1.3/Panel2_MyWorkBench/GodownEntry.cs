@@ -209,28 +209,23 @@ namespace Demo1._1._3.Panel2_MyWorkBench
             this.gridView2.Columns[26].Caption = "修改时间";
             this.gridView2.Columns[27].Caption = "入库时间";
             this.gridView2.Columns[28].Caption = "库管";
-            this.gridView2.Columns[28].Visible = false;
             this.gridView2.Columns[29].Caption = "吊车工";
-            this.gridView2.Columns[29].Visible = false;
             this.gridView2.Columns[30].Caption = "装卸工";
-            this.gridView2.Columns[30].Visible = false;
             this.gridView2.Columns[31].Caption = "其他人";
-            this.gridView2.Columns[31].Visible = false;
-
             this.gridView2.Columns[32].Caption = "备注";
             this.gridView2.Columns[33].Caption = "库存件数";
-            this.gridView2.Columns[33].Visible = false;
             this.gridView2.Columns[34].Caption = "库存数量";
-            this.gridView2.Columns[34].Visible = false;
             this.gridView2.Columns[35].Caption = "票数";
             this.gridView2.Columns[36].Caption = "车队标识";
-            this.gridView2.Columns[36].Visible = false;
             this.gridView2.Columns[37].Caption = "项目号";
             this.gridView2.Columns[38].Caption = "可派件数";
-            this.gridView2.Columns[38].Visible = false;
             this.gridView2.Columns[39].Caption = "可派数量";
-            this.gridView2.Columns[39].Visible = false;
             this.gridView2.BestFitColumns();
+        }
+
+        private void gridControl3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

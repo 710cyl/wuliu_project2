@@ -38,6 +38,7 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
                 textBox_billcompany_TFN.Text = Panel2_MyWorkBench.TransportationClearing.array[13];
                 textBox_total_money.Text = Panel2_MyWorkBench.TransportationClearing.array[14];
                 textBox_total_volume.Text = Panel2_MyWorkBench.TransportationClearing.array[15];
+                DataGridViewInit();
             }
             else
             {
@@ -51,6 +52,22 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
             sd = JsonConvert.DeserializeObject<List<domain.TransportationClearing_Detail>>(fc.GridViewInit("TransportationClearing_Detail"));
             tcd_bindinglist = new BindingList<domain.TransportationClearing_Detail>(sd);
             gridControl1.DataSource = tcd_bindinglist;
+            this.gridView1.Columns[0].Caption = "订单号";
+            this.gridView1.Columns[1].Caption = "装货地点";
+            this.gridView1.Columns[2].Caption = "卸货地点";
+            this.gridView1.Columns[3].Caption = "出发日期";
+            this.gridView1.Columns[4].Caption = "返回日期";
+            this.gridView1.Columns[5].Caption = "品种";
+            this.gridView1.Columns[6].Caption = "材质";
+            this.gridView1.Columns[7].Caption = "规格";
+            this.gridView1.Columns[8].Caption = "件数";
+            this.gridView1.Columns[9].Caption = "数量";
+            this.gridView1.Columns[10].Caption = "运价";
+            this.gridView1.Columns[11].Caption = "金额";
+            this.gridView1.Columns[12].Caption = "备注";
+            this.gridView1.Columns[13].Caption = "运输单标识";
+            this.gridView1.Columns[14].Caption = "货主";
+            this.gridView1.Columns[15].Caption = "结算单号";
         }
         //添加
         private void simpleButton4_Click(object sender, EventArgs e)
@@ -152,6 +169,16 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void textBox_billcompany_TFN_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel_Main_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -152,5 +152,10 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
 
             }
         }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

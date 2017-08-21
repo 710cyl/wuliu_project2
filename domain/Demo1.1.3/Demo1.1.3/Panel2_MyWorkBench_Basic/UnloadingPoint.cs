@@ -190,5 +190,10 @@ namespace Demo1._1._3
                 }
             }
         }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

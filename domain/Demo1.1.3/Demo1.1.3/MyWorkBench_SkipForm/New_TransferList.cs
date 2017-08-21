@@ -69,28 +69,6 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm
             else
             {
                 DataGridViewInit();
-
-                this.gridView1.Columns[0].Caption = "移库识别码";
-                this.gridView1.Columns[1].Caption = "入库单识别码";
-                this.gridView1.Columns[2].Caption = "移库单号";
-                this.gridView1.Columns[3].Caption = "订单号";
-                this.gridView1.Columns[4].Caption = "项目号";
-                this.gridView1.Columns[5].Caption = "卷号";
-                this.gridView1.Columns[6].Caption = "品种";
-                this.gridView1.Columns[7].Caption = "材质";
-                this.gridView1.Columns[8].Caption = "规格";
-                this.gridView1.Columns[9].Caption = "库存件数";
-                this.gridView1.Columns[10].Caption = "库存数量";
-                this.gridView1.Columns[11].Caption = "原垛位号";
-                this.gridView1.Columns[12].Caption = "新垛位号";
-                this.gridView1.Columns[13].Caption = "移库件数";
-                this.gridView1.Columns[14].Caption = "移库数量";
-                this.gridView1.Columns[15].Caption = "票数";
-                this.gridView1.Columns[16].Caption = "入库日期";
-                this.gridView1.Columns[17].Caption = "出厂日期";
-                this.gridView1.Columns[18].Caption = "备注";
-
-                this.gridView1.BestFitColumns();
             }
         }
 
@@ -206,6 +184,16 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm
                     throw;
                 }
             }
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox18_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

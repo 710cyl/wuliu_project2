@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TransportationRegister));
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
@@ -80,6 +81,8 @@
             this.dataNavigator_TransportationRegister = new DevExpress.XtraEditors.DataNavigator();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
@@ -94,14 +97,14 @@
             this.tabPane1.BackColor = System.Drawing.SystemColors.Control;
             this.tabPane1.Controls.Add(this.tabNavigationPage1);
             this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabPane1.Location = new System.Drawing.Point(0, 247);
+            this.tabPane1.Location = new System.Drawing.Point(0, 262);
             this.tabPane1.Name = "tabPane1";
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabNavigationPage1});
-            this.tabPane1.RegularSize = new System.Drawing.Size(1025, 384);
+            this.tabPane1.RegularSize = new System.Drawing.Size(1025, 369);
             this.tabPane1.SelectedPage = this.tabNavigationPage1;
             this.tabPane1.SelectedPageIndex = 0;
-            this.tabPane1.Size = new System.Drawing.Size(1025, 384);
+            this.tabPane1.Size = new System.Drawing.Size(1025, 369);
             this.tabPane1.TabIndex = 25;
             // 
             // tabNavigationPage1
@@ -111,7 +114,7 @@
             this.tabNavigationPage1.Caption = "运输登记_明细";
             this.tabNavigationPage1.Controls.Add(this.gridControl2);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
-            this.tabNavigationPage1.Size = new System.Drawing.Size(1007, 338);
+            this.tabNavigationPage1.Size = new System.Drawing.Size(1007, 323);
             // 
             // gridControl2
             // 
@@ -119,7 +122,7 @@
             this.gridControl2.Location = new System.Drawing.Point(0, 0);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1007, 338);
+            this.gridControl2.Size = new System.Drawing.Size(1007, 323);
             this.gridControl2.TabIndex = 22;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -135,7 +138,7 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gridControl1.Location = new System.Drawing.Point(0, 25);
+            this.gridControl1.Location = new System.Drawing.Point(0, 40);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(1025, 200);
@@ -157,6 +160,8 @@
             // toolStrip1
             // 
             this.toolStrip1.BackColor = System.Drawing.SystemColors.Control;
+            this.toolStrip1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("toolStrip1.BackgroundImage")));
+            this.toolStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripDropDownButton1,
             this.toolStripSeparator1,
@@ -172,10 +177,12 @@
             this.toolStripButton3,
             this.toolStripSeparator3,
             this.toolStripDropDownButton2,
-            this.toolStripSeparator5});
+            this.toolStripSeparator5,
+            this.toolStripTextBox1,
+            this.toolStripButton8});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1025, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1025, 40);
             this.toolStrip1.TabIndex = 23;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -207,8 +214,9 @@
             this.toolStripDropDownButton1.Image = global::Demo1._1._3.Properties.Resources.suggestion_16x16;
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(61, 22);
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(45, 37);
             this.toolStripDropDownButton1.Text = "操作";
+            this.toolStripDropDownButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // FindToolStripMenuItem
             // 
@@ -361,28 +369,30 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 40);
             // 
             // toolStripButton5
             // 
             this.toolStripButton5.Image = global::Demo1._1._3.Properties.Resources.open_16x16;
             this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(52, 22);
+            this.toolStripButton5.Size = new System.Drawing.Size(36, 37);
             this.toolStripButton5.Text = "查看";
+            this.toolStripButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 40);
             // 
             // toolStripButton1
             // 
             this.toolStripButton1.Image = global::Demo1._1._3.Properties.Resources.new_16x16;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(52, 22);
+            this.toolStripButton1.Size = new System.Drawing.Size(36, 37);
             this.toolStripButton1.Text = "新建";
+            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripButton2
@@ -390,8 +400,9 @@
             this.toolStripButton2.Image = global::Demo1._1._3.Properties.Resources.edit_16x16;
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(52, 22);
+            this.toolStripButton2.Size = new System.Drawing.Size(36, 37);
             this.toolStripButton2.Text = "修改";
+            this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripButton7
@@ -399,8 +410,9 @@
             this.toolStripButton7.Image = global::Demo1._1._3.Properties.Resources.cancel_16x16;
             this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(52, 22);
+            this.toolStripButton7.Size = new System.Drawing.Size(36, 37);
             this.toolStripButton7.Text = "删除";
+            this.toolStripButton7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
             // 
             // toolStripButton6
@@ -408,40 +420,43 @@
             this.toolStripButton6.Image = global::Demo1._1._3.Properties.Resources.database_16x16;
             this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(76, 22);
+            this.toolStripButton6.Size = new System.Drawing.Size(60, 37);
             this.toolStripButton6.Text = "导入数据";
+            this.toolStripButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
             // 
             // toolStripSeparator13
             // 
             this.toolStripSeparator13.Name = "toolStripSeparator13";
-            this.toolStripSeparator13.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator13.Size = new System.Drawing.Size(6, 40);
             // 
             // toolStripButton4
             // 
             this.toolStripButton4.Image = global::Demo1._1._3.Properties.Resources.protectsheet_16x16;
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(52, 22);
+            this.toolStripButton4.Size = new System.Drawing.Size(36, 37);
             this.toolStripButton4.Text = "加锁";
+            this.toolStripButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 40);
             // 
             // toolStripButton3
             // 
             this.toolStripButton3.Image = global::Demo1._1._3.Properties.Resources.issue_16x16;
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(52, 22);
+            this.toolStripButton3.Size = new System.Drawing.Size(36, 37);
             this.toolStripButton3.Text = "发布";
+            this.toolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 40);
             // 
             // toolStripDropDownButton2
             // 
@@ -450,8 +465,9 @@
             this.toolStripDropDownButton2.Image = global::Demo1._1._3.Properties.Resources.documentmap_16x16;
             this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
-            this.toolStripDropDownButton2.Size = new System.Drawing.Size(61, 22);
+            this.toolStripDropDownButton2.Size = new System.Drawing.Size(45, 37);
             this.toolStripDropDownButton2.Text = "相关";
+            this.toolStripDropDownButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // toolStripMenuItem1
             // 
@@ -462,7 +478,7 @@
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 40);
             // 
             // dataNavigator_TransportationRegister_Detail
             // 
@@ -541,7 +557,7 @@
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 4, true, true, "下一页", "下一页"),
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 5, true, true, "尾页", "尾页")});
             this.dataNavigator_TransportationRegister.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataNavigator_TransportationRegister.Location = new System.Drawing.Point(0, 225);
+            this.dataNavigator_TransportationRegister.Location = new System.Drawing.Point(0, 240);
             this.dataNavigator_TransportationRegister.Margin = new System.Windows.Forms.Padding(2);
             this.dataNavigator_TransportationRegister.Name = "dataNavigator_TransportationRegister";
             this.dataNavigator_TransportationRegister.ShowToolTips = true;
@@ -555,7 +571,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(573, 4);
+            this.textBox1.Location = new System.Drawing.Point(841, 4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 21);
             this.textBox1.TabIndex = 28;
@@ -564,7 +580,7 @@
             // 
             this.button1.Image = global::Demo1._1._3.Properties.Resources.edit_16x16;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(701, 1);
+            this.button1.Location = new System.Drawing.Point(947, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 29;
@@ -572,6 +588,20 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 40);
+            // 
+            // toolStripButton8
+            // 
+            this.toolStripButton8.Image = global::Demo1._1._3.Properties.Resources.zoom_16x16;
+            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton8.Name = "toolStripButton8";
+            this.toolStripButton8.Size = new System.Drawing.Size(60, 37);
+            this.toolStripButton8.Text = "模糊查询";
+            this.toolStripButton8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // TransportationRegister
             // 
@@ -653,5 +683,7 @@
         public DevExpress.XtraEditors.DataNavigator dataNavigator_TransportationRegister;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.ToolStripButton toolStripButton8;
     }
 }

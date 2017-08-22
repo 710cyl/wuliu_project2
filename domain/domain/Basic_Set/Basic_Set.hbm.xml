@@ -307,7 +307,7 @@
     </property>
 
     <property name="customer_fullname" type="string">
-      <column name="客户全程" precision="2"/>
+      <column name="客户全程" length="50"/>
     </property>
 
     <property name="quick_code" type="string">

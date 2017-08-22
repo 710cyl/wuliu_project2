@@ -217,6 +217,12 @@
     <Compile Include="1_NewViews\TabbedSections.designer.cs">
       <DependentUpon>TabbedSections.cs</DependentUpon>
     </Compile>
+    <Compile Include="1_NewViews\TabbedSection_Customers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1_NewViews\TabbedSection_Customers.Designer.cs">
+      <DependentUpon>TabbedSection_Customers.cs</DependentUpon>
+    </Compile>
     <Compile Include="1_NewViews\TabbedSection_Discharge.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -555,6 +561,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="1_NewViews\TabbedSections.resx">
       <DependentUpon>TabbedSections.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="1_NewViews\TabbedSection_Customers.resx">
+      <DependentUpon>TabbedSection_Customers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="1_NewViews\TabbedSection_Discharge.resx">
       <DependentUpon>TabbedSection_Discharge.cs</DependentUpon>

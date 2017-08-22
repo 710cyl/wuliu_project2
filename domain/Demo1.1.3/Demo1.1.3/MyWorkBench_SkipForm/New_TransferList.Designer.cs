@@ -37,6 +37,8 @@
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label31 = new System.Windows.Forms.Label();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
@@ -73,8 +75,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -231,6 +231,22 @@
             this.panel1.Size = new System.Drawing.Size(1503, 230);
             this.panel1.TabIndex = 17;
             // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Location = new System.Drawing.Point(1136, 158);
+            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(183, 25);
+            this.dateTimePicker3.TabIndex = 306;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(497, 161);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(183, 25);
+            this.dateTimePicker2.TabIndex = 305;
+            // 
             // label31
             // 
             this.label31.AutoSize = true;
@@ -322,7 +338,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("宋体", 9.5F);
-            this.label7.Location = new System.Drawing.Point(1039, 65);
+            this.label7.Location = new System.Drawing.Point(1011, 66);
             this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(136, 16);
@@ -480,17 +496,21 @@
             this.textBox20.Location = new System.Drawing.Point(820, 30);
             this.textBox20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox20.Name = "textBox20";
+            this.textBox20.ReadOnly = true;
             this.textBox20.Size = new System.Drawing.Size(183, 26);
             this.textBox20.TabIndex = 267;
+            this.textBox20.Click += new System.EventHandler(this.textBox20_Click);
             // 
             // textBox18
             // 
             this.textBox18.Font = new System.Drawing.Font("宋体", 9.5F);
-            this.textBox18.Location = new System.Drawing.Point(1195, 61);
+            this.textBox18.Location = new System.Drawing.Point(1168, 61);
             this.textBox18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox18.Name = "textBox18";
+            this.textBox18.ReadOnly = true;
             this.textBox18.Size = new System.Drawing.Size(192, 26);
             this.textBox18.TabIndex = 261;
+            this.textBox18.Click += new System.EventHandler(this.textBox18_Click);
             // 
             // textBox14
             // 
@@ -526,8 +546,10 @@
             this.textBox8.Location = new System.Drawing.Point(1143, 30);
             this.textBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox8.Name = "textBox8";
+            this.textBox8.ReadOnly = true;
             this.textBox8.Size = new System.Drawing.Size(183, 26);
             this.textBox8.TabIndex = 254;
+            this.textBox8.Click += new System.EventHandler(this.textBox8_Click);
             // 
             // textBox3
             // 
@@ -584,6 +606,7 @@
             this.textBox10.Location = new System.Drawing.Point(175, 95);
             this.textBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox10.Name = "textBox10";
+            this.textBox10.ReadOnly = true;
             this.textBox10.Size = new System.Drawing.Size(183, 26);
             this.textBox10.TabIndex = 245;
             // 
@@ -593,24 +616,10 @@
             this.textBox5.Location = new System.Drawing.Point(175, 62);
             this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(183, 26);
             this.textBox5.TabIndex = 244;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(497, 161);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(183, 25);
-            this.dateTimePicker2.TabIndex = 305;
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(1136, 158);
-            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(183, 25);
-            this.dateTimePicker3.TabIndex = 306;
+            this.textBox5.Click += new System.EventHandler(this.textBox5_Click);
             // 
             // New_TransferList
             // 

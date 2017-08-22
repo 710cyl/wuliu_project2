@@ -1,0 +1,13 @@
+D:\2-项目-物流\版本管理\版本2\wuliu_project2\domain\domain\bin\Debug\domain.dll.config
+D:\2-项目-物流\版本管理\版本2\wuliu_project2\domain\domain\bin\Debug\domain.dll
+D:\2-项目-物流\版本管理\版本2\wuliu_project2\domain\domain\bin\Debug\domain.pdb
+D:\2-项目-物流\版本管理\版本2\wuliu_project2\domain\domain\bin\Debug\Antlr3.Runtime.dll
+D:\2-项目-物流\版本管理\版本2\wuliu_project2\domain\domain\bin\Debug\Castle.Core.dll
+D:\2-项目-物流\版本管理\版本2\wuliu_project2\domain\domain\bin\Debug\Iesi.Collections.dll
+D:\2-项目-物流\版本管理\版本2\wuliu_project2\domain\domain\bin\Debug\NHibernate.ByteCode.Castle.dll
+D:\2-项目-物流\版本管理\版本2\wuliu_project2\domain\domain\bin\Debug\NHibernate.dll
+D:\2-项目-物流\版本管理\版本2\wuliu_project2\domain\domain\bin\Debug\Remotion.Data.Linq.dll
+D:\2-项目-物流\版本管理\版本2\wuliu_project2\domain\domain\bin\Debug\NHibernate.xml
+D:\2-项目-物流\版本管理\版本2\wuliu_project2\domain\domain\bin\Debug\NHibernate.ByteCode.Castle.xml
+D:\2-项目-物流\版本管理\版本2\wuliu_project2\domain\domain\obj\Debug\domain.dll
+D:\2-项目-物流\版本管理\版本2\wuliu_project2\domain\domain\obj\Debug\domain.pdb

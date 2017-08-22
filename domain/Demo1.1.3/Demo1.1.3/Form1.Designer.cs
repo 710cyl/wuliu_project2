@@ -32,28 +32,9 @@ namespace Demo1._1._3
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.navigationFrame1 = new DevExpress.XtraBars.Navigation.NavigationFrame();
-            this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.tabNavigationPage16 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.tabNavigationPage15 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.tabNavigationPage14 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.tabNavigationPage13 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.tabNavigationPage12 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.tabNavigationPage11 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.tabNavigationPage10 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.tabNavigationPage9 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.tabNavigationPage8 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.toolStrip7 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton25 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator13 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton26 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton27 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton28 = new System.Windows.Forms.ToolStripButton();
-            this.tabNavigationPage7 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.accordionControl4 = new DevExpress.XtraBars.Navigation.AccordionControl();
             this.accordionControlElement53 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement54 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -73,33 +54,9 @@ namespace Demo1._1._3
             this.accordionControlElement75 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement80 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement81 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.toolStrip6 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton21 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton22 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton23 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton24 = new System.Windows.Forms.ToolStripButton();
             this.accordionControlElementSendcar = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementPackage = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElementClosecar = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.tabNavigationPage6 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.toolStrip5 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton17 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton18 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton19 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton20 = new System.Windows.Forms.ToolStripButton();
-            this.tabNavigationPage5 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.toolStrip4 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton14 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton16 = new System.Windows.Forms.ToolStripButton();
-            this.tabNavigationPage4 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.accordionControl3 = new DevExpress.XtraBars.Navigation.AccordionControl();
             this.accordionControlElement14 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -148,14 +105,6 @@ namespace Demo1._1._3
             this.accordionControlElement31 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement32 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement33 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
-            this.tabNavigationPage3 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.panel3 = new System.Windows.Forms.Panel();
             this.accordionControl2 = new DevExpress.XtraBars.Navigation.AccordionControl();
             this.accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -166,14 +115,6 @@ namespace Demo1._1._3
             this.accordionControlElement11 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement12 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement13 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.toolStrip3 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
-            this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.accordionControl1 = new DevExpress.XtraBars.Navigation.AccordionControl();
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -187,72 +128,67 @@ namespace Demo1._1._3
             this.accordionControlElement51 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement52 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement34 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
-            this.navigationFrame1.SuspendLayout();
-            this.navigationPage1.SuspendLayout();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
+            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabPage5 = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabPage6 = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabPage7 = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabPage8 = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabPage9 = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabPage10 = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabPage11 = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabPage12 = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabPage13 = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabPage14 = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabPage15 = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabPage16 = new DevExpress.XtraTab.XtraTabPage();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.bar2 = new DevExpress.XtraBars.Bar();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.tabNavigationPage8.SuspendLayout();
-            this.toolStrip7.SuspendLayout();
-            this.tabNavigationPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl4)).BeginInit();
-            this.toolStrip6.SuspendLayout();
-            this.tabNavigationPage6.SuspendLayout();
-            this.toolStrip5.SuspendLayout();
-            this.tabNavigationPage5.SuspendLayout();
-            this.toolStrip4.SuspendLayout();
-            this.tabNavigationPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl3)).BeginInit();
-            this.toolStrip2.SuspendLayout();
-            this.tabNavigationPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl2)).BeginInit();
-            this.toolStrip3.SuspendLayout();
-            this.tabNavigationPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).BeginInit();
-            this.toolStrip1.SuspendLayout();
-            this.tabPane1.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
+            this.xtraTabControl1.SuspendLayout();
+            this.xtraTabPage2.SuspendLayout();
+            this.xtraTabPage3.SuspendLayout();
+            this.xtraTabPage4.SuspendLayout();
+            this.xtraTabPage7.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // navigationFrame1
-            // 
-            this.navigationFrame1.Controls.Add(this.navigationPage1);
-            this.navigationFrame1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.navigationFrame1.Location = new System.Drawing.Point(0, 0);
-            this.navigationFrame1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.navigationFrame1.Name = "navigationFrame1";
-            this.navigationFrame1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
-            this.navigationPage1});
-            this.navigationFrame1.SelectedPage = this.navigationPage1;
-            this.navigationFrame1.SelectedPageIndex = 0;
-            this.navigationFrame1.Size = new System.Drawing.Size(1362, 107);
-            this.navigationFrame1.TabIndex = 0;
-            this.navigationFrame1.Text = "navigationFrame1";
-            // 
-            // navigationPage1
-            // 
-            this.navigationPage1.Caption = "navigationPage1";
-            this.navigationPage1.Controls.Add(this.pictureBox2);
-            this.navigationPage1.Controls.Add(this.pictureBox1);
-            this.navigationPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.navigationPage1.Name = "navigationPage1";
-            this.navigationPage1.Size = new System.Drawing.Size(1557, 138);
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Location = new System.Drawing.Point(517, 0);
+            this.pictureBox2.Location = new System.Drawing.Point(420, 0);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1040, 138);
+            this.pictureBox2.Size = new System.Drawing.Size(984, 81);
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
@@ -262,146 +198,15 @@ namespace Demo1._1._3
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(517, 138);
+            this.pictureBox1.Size = new System.Drawing.Size(420, 81);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // defaultLookAndFeel1
             // 
-            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2010 Silver";
-            // 
-            // tabNavigationPage16
-            // 
-            this.tabNavigationPage16.Caption = "基础设置";
-            this.tabNavigationPage16.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabNavigationPage16.Name = "tabNavigationPage16";
-            this.tabNavigationPage16.Size = new System.Drawing.Size(1340, 584);
-            // 
-            // tabNavigationPage15
-            // 
-            this.tabNavigationPage15.Caption = "统计查询";
-            this.tabNavigationPage15.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabNavigationPage15.Name = "tabNavigationPage15";
-            this.tabNavigationPage15.Size = new System.Drawing.Size(1340, 584);
-            // 
-            // tabNavigationPage14
-            // 
-            this.tabNavigationPage14.Caption = "办公用品";
-            this.tabNavigationPage14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabNavigationPage14.Name = "tabNavigationPage14";
-            this.tabNavigationPage14.Size = new System.Drawing.Size(1340, 584);
-            // 
-            // tabNavigationPage13
-            // 
-            this.tabNavigationPage13.Caption = "安全管理";
-            this.tabNavigationPage13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabNavigationPage13.Name = "tabNavigationPage13";
-            this.tabNavigationPage13.Size = new System.Drawing.Size(1340, 584);
-            // 
-            // tabNavigationPage12
-            // 
-            this.tabNavigationPage12.Caption = "维修管理";
-            this.tabNavigationPage12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabNavigationPage12.Name = "tabNavigationPage12";
-            this.tabNavigationPage12.Size = new System.Drawing.Size(1340, 584);
-            // 
-            // tabNavigationPage11
-            // 
-            this.tabNavigationPage11.Caption = "人事管理";
-            this.tabNavigationPage11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabNavigationPage11.Name = "tabNavigationPage11";
-            this.tabNavigationPage11.Size = new System.Drawing.Size(1340, 584);
-            // 
-            // tabNavigationPage10
-            // 
-            this.tabNavigationPage10.Caption = "财务管理";
-            this.tabNavigationPage10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabNavigationPage10.Name = "tabNavigationPage10";
-            this.tabNavigationPage10.Size = new System.Drawing.Size(1340, 584);
-            // 
-            // tabNavigationPage9
-            // 
-            this.tabNavigationPage9.Caption = "集港管理";
-            this.tabNavigationPage9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabNavigationPage9.Name = "tabNavigationPage9";
-            this.tabNavigationPage9.Size = new System.Drawing.Size(1340, 584);
-            // 
-            // tabNavigationPage8
-            // 
-            this.tabNavigationPage8.Caption = "运输管理";
-            this.tabNavigationPage8.Controls.Add(this.toolStrip7);
-            this.tabNavigationPage8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabNavigationPage8.Name = "tabNavigationPage8";
-            this.tabNavigationPage8.Size = new System.Drawing.Size(1340, 584);
-            // 
-            // toolStrip7
-            // 
-            this.toolStrip7.BackColor = System.Drawing.Color.White;
-            this.toolStrip7.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip7.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton25,
-            this.toolStripSeparator13,
-            this.toolStripButton26,
-            this.toolStripButton27,
-            this.toolStripSeparator14,
-            this.toolStripButton28});
-            this.toolStrip7.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip7.Name = "toolStrip7";
-            this.toolStrip7.Size = new System.Drawing.Size(1340, 27);
-            this.toolStrip7.TabIndex = 5;
-            this.toolStrip7.Text = "toolStrip7";
-            // 
-            // toolStripButton25
-            // 
-            this.toolStripButton25.Image = global::Demo1._1._3.Properties.Resources.chartsshowlegend_16x16;
-            this.toolStripButton25.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton25.Name = "toolStripButton25";
-            this.toolStripButton25.Size = new System.Drawing.Size(63, 24);
-            this.toolStripButton25.Text = "选项";
-            // 
-            // toolStripSeparator13
-            // 
-            this.toolStripSeparator13.Name = "toolStripSeparator13";
-            this.toolStripSeparator13.Size = new System.Drawing.Size(6, 27);
-            // 
-            // toolStripButton26
-            // 
-            this.toolStripButton26.Image = global::Demo1._1._3.Properties.Resources.zoom_16x16;
-            this.toolStripButton26.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton26.Name = "toolStripButton26";
-            this.toolStripButton26.Size = new System.Drawing.Size(63, 24);
-            this.toolStripButton26.Text = "查找";
-            // 
-            // toolStripButton27
-            // 
-            this.toolStripButton27.Image = global::Demo1._1._3.Properties.Resources.reset2_16x16;
-            this.toolStripButton27.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton27.Name = "toolStripButton27";
-            this.toolStripButton27.Size = new System.Drawing.Size(63, 24);
-            this.toolStripButton27.Text = "刷新";
-            // 
-            // toolStripSeparator14
-            // 
-            this.toolStripSeparator14.Name = "toolStripSeparator14";
-            this.toolStripSeparator14.Size = new System.Drawing.Size(6, 27);
-            // 
-            // toolStripButton28
-            // 
-            this.toolStripButton28.Image = global::Demo1._1._3.Properties.Resources.index_16x16;
-            this.toolStripButton28.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton28.Name = "toolStripButton28";
-            this.toolStripButton28.Size = new System.Drawing.Size(63, 24);
-            this.toolStripButton28.Text = "帮助";
-            // 
-            // tabNavigationPage7
-            // 
-            this.tabNavigationPage7.Caption = "仓库管理";
-            this.tabNavigationPage7.Controls.Add(this.accordionControl4);
-            this.tabNavigationPage7.Controls.Add(this.toolStrip6);
-            this.tabNavigationPage7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabNavigationPage7.Name = "tabNavigationPage7";
-            this.tabNavigationPage7.Size = new System.Drawing.Size(1340, 584);
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "VS2010";
             // 
             // accordionControl4
             // 
@@ -415,12 +220,12 @@ namespace Demo1._1._3
             this.accordionControlElement60,
             this.accordionControlElement68,
             this.accordionControlElement69});
-            this.accordionControl4.Location = new System.Drawing.Point(0, 27);
-            this.accordionControl4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.accordionControl4.Location = new System.Drawing.Point(0, 0);
             this.accordionControl4.Name = "accordionControl4";
-            this.accordionControl4.Size = new System.Drawing.Size(297, 557);
+            this.accordionControl4.Size = new System.Drawing.Size(220, 674);
             this.accordionControl4.TabIndex = 6;
             this.accordionControl4.Text = "accordionControl4";
+            this.accordionControl4.Click += new System.EventHandler(this.accordionControl4_Click);
             // 
             // accordionControlElement53
             // 
@@ -453,7 +258,6 @@ namespace Demo1._1._3
             this.accordionControlElement57,
             this.accordionControlElement59,
             this.accordionControlElement61});
-            this.accordionControlElement60.Expanded = true;
             this.accordionControlElement60.Name = "accordionControlElement60";
             this.accordionControlElement60.Text = "仓库";
             // 
@@ -490,7 +294,6 @@ namespace Demo1._1._3
             this.accordionControlElement75,
             this.accordionControlElement80,
             this.accordionControlElement81});
-            this.accordionControlElement69.Expanded = true;
             this.accordionControlElement69.Name = "accordionControlElement69";
             this.accordionControlElement69.Text = "基础";
             // 
@@ -536,65 +339,6 @@ namespace Demo1._1._3
             this.accordionControlElement81.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement81.Text = "仓储价格";
             // 
-            // toolStrip6
-            // 
-            this.toolStrip6.BackColor = System.Drawing.Color.White;
-            this.toolStrip6.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip6.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton21,
-            this.toolStripSeparator11,
-            this.toolStripButton22,
-            this.toolStripButton23,
-            this.toolStripSeparator12,
-            this.toolStripButton24});
-            this.toolStrip6.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip6.Name = "toolStrip6";
-            this.toolStrip6.Size = new System.Drawing.Size(1340, 27);
-            this.toolStrip6.TabIndex = 5;
-            this.toolStrip6.Text = "toolStrip6";
-            // 
-            // toolStripButton21
-            // 
-            this.toolStripButton21.Image = global::Demo1._1._3.Properties.Resources.chartsshowlegend_16x16;
-            this.toolStripButton21.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton21.Name = "toolStripButton21";
-            this.toolStripButton21.Size = new System.Drawing.Size(63, 24);
-            this.toolStripButton21.Text = "选项";
-            // 
-            // toolStripSeparator11
-            // 
-            this.toolStripSeparator11.Name = "toolStripSeparator11";
-            this.toolStripSeparator11.Size = new System.Drawing.Size(6, 27);
-            // 
-            // toolStripButton22
-            // 
-            this.toolStripButton22.Image = global::Demo1._1._3.Properties.Resources.zoom_16x16;
-            this.toolStripButton22.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton22.Name = "toolStripButton22";
-            this.toolStripButton22.Size = new System.Drawing.Size(63, 24);
-            this.toolStripButton22.Text = "查找";
-            // 
-            // toolStripButton23
-            // 
-            this.toolStripButton23.Image = global::Demo1._1._3.Properties.Resources.reset2_16x16;
-            this.toolStripButton23.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton23.Name = "toolStripButton23";
-            this.toolStripButton23.Size = new System.Drawing.Size(63, 24);
-            this.toolStripButton23.Text = "刷新";
-            // 
-            // toolStripSeparator12
-            // 
-            this.toolStripSeparator12.Name = "toolStripSeparator12";
-            this.toolStripSeparator12.Size = new System.Drawing.Size(6, 27);
-            // 
-            // toolStripButton24
-            // 
-            this.toolStripButton24.Image = global::Demo1._1._3.Properties.Resources.index_16x16;
-            this.toolStripButton24.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton24.Name = "toolStripButton24";
-            this.toolStripButton24.Size = new System.Drawing.Size(63, 24);
-            this.toolStripButton24.Text = "帮助";
-            // 
             // accordionControlElementSendcar
             // 
             this.accordionControlElementSendcar.Name = "accordionControlElementSendcar";
@@ -616,157 +360,12 @@ namespace Demo1._1._3
             this.accordionControlElementClosecar.Text = "派车关闭";
             this.accordionControlElementClosecar.Click += new System.EventHandler(this.accordionControlElementClosecar_Click);
             // 
-            // tabNavigationPage6
-            // 
-            this.tabNavigationPage6.Caption = "派车管理";
-            this.tabNavigationPage6.Controls.Add(this.toolStrip5);
-            this.tabNavigationPage6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabNavigationPage6.Name = "tabNavigationPage6";
-            this.tabNavigationPage6.Size = new System.Drawing.Size(1340, 584);
-            // 
-            // toolStrip5
-            // 
-            this.toolStrip5.BackColor = System.Drawing.Color.White;
-            this.toolStrip5.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip5.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton17,
-            this.toolStripSeparator9,
-            this.toolStripButton18,
-            this.toolStripButton19,
-            this.toolStripSeparator10,
-            this.toolStripButton20});
-            this.toolStrip5.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip5.Name = "toolStrip5";
-            this.toolStrip5.Size = new System.Drawing.Size(1340, 27);
-            this.toolStrip5.TabIndex = 5;
-            this.toolStrip5.Text = "toolStrip5";
-            // 
-            // toolStripButton17
-            // 
-            this.toolStripButton17.Image = global::Demo1._1._3.Properties.Resources.chartsshowlegend_16x16;
-            this.toolStripButton17.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton17.Name = "toolStripButton17";
-            this.toolStripButton17.Size = new System.Drawing.Size(63, 24);
-            this.toolStripButton17.Text = "选项";
-            // 
-            // toolStripSeparator9
-            // 
-            this.toolStripSeparator9.Name = "toolStripSeparator9";
-            this.toolStripSeparator9.Size = new System.Drawing.Size(6, 27);
-            // 
-            // toolStripButton18
-            // 
-            this.toolStripButton18.Image = global::Demo1._1._3.Properties.Resources.zoom_16x16;
-            this.toolStripButton18.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton18.Name = "toolStripButton18";
-            this.toolStripButton18.Size = new System.Drawing.Size(63, 24);
-            this.toolStripButton18.Text = "查找";
-            // 
-            // toolStripButton19
-            // 
-            this.toolStripButton19.Image = global::Demo1._1._3.Properties.Resources.reset2_16x16;
-            this.toolStripButton19.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton19.Name = "toolStripButton19";
-            this.toolStripButton19.Size = new System.Drawing.Size(63, 24);
-            this.toolStripButton19.Text = "刷新";
-            // 
-            // toolStripSeparator10
-            // 
-            this.toolStripSeparator10.Name = "toolStripSeparator10";
-            this.toolStripSeparator10.Size = new System.Drawing.Size(6, 27);
-            // 
-            // toolStripButton20
-            // 
-            this.toolStripButton20.Image = global::Demo1._1._3.Properties.Resources.index_16x16;
-            this.toolStripButton20.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton20.Name = "toolStripButton20";
-            this.toolStripButton20.Size = new System.Drawing.Size(63, 24);
-            this.toolStripButton20.Text = "帮助";
-            // 
-            // tabNavigationPage5
-            // 
-            this.tabNavigationPage5.Caption = "文档管理";
-            this.tabNavigationPage5.Controls.Add(this.toolStrip4);
-            this.tabNavigationPage5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabNavigationPage5.Name = "tabNavigationPage5";
-            this.tabNavigationPage5.Size = new System.Drawing.Size(1340, 584);
-            // 
-            // toolStrip4
-            // 
-            this.toolStrip4.BackColor = System.Drawing.Color.White;
-            this.toolStrip4.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton13,
-            this.toolStripSeparator7,
-            this.toolStripButton14,
-            this.toolStripButton15,
-            this.toolStripSeparator8,
-            this.toolStripButton16});
-            this.toolStrip4.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip4.Name = "toolStrip4";
-            this.toolStrip4.Size = new System.Drawing.Size(1340, 27);
-            this.toolStrip4.TabIndex = 5;
-            this.toolStrip4.Text = "toolStrip4";
-            // 
-            // toolStripButton13
-            // 
-            this.toolStripButton13.Image = global::Demo1._1._3.Properties.Resources.chartsshowlegend_16x16;
-            this.toolStripButton13.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton13.Name = "toolStripButton13";
-            this.toolStripButton13.Size = new System.Drawing.Size(63, 24);
-            this.toolStripButton13.Text = "选项";
-            // 
-            // toolStripSeparator7
-            // 
-            this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 27);
-            // 
-            // toolStripButton14
-            // 
-            this.toolStripButton14.Image = global::Demo1._1._3.Properties.Resources.zoom_16x16;
-            this.toolStripButton14.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton14.Name = "toolStripButton14";
-            this.toolStripButton14.Size = new System.Drawing.Size(63, 24);
-            this.toolStripButton14.Text = "查找";
-            // 
-            // toolStripButton15
-            // 
-            this.toolStripButton15.Image = global::Demo1._1._3.Properties.Resources.reset2_16x16;
-            this.toolStripButton15.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton15.Name = "toolStripButton15";
-            this.toolStripButton15.Size = new System.Drawing.Size(63, 24);
-            this.toolStripButton15.Text = "刷新";
-            // 
-            // toolStripSeparator8
-            // 
-            this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 27);
-            // 
-            // toolStripButton16
-            // 
-            this.toolStripButton16.Image = global::Demo1._1._3.Properties.Resources.index_16x16;
-            this.toolStripButton16.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton16.Name = "toolStripButton16";
-            this.toolStripButton16.Size = new System.Drawing.Size(63, 24);
-            this.toolStripButton16.Text = "帮助";
-            // 
-            // tabNavigationPage4
-            // 
-            this.tabNavigationPage4.Caption = "我的工作台";
-            this.tabNavigationPage4.Controls.Add(this.panel2);
-            this.tabNavigationPage4.Controls.Add(this.accordionControl3);
-            this.tabNavigationPage4.Controls.Add(this.toolStrip2);
-            this.tabNavigationPage4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabNavigationPage4.Name = "tabNavigationPage4";
-            this.tabNavigationPage4.Size = new System.Drawing.Size(1340, 584);
-            // 
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(297, 27);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel2.Location = new System.Drawing.Point(220, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1043, 557);
+            this.panel2.Size = new System.Drawing.Size(1178, 653);
             this.panel2.TabIndex = 6;
             // 
             // accordionControl3
@@ -793,10 +392,9 @@ namespace Demo1._1._3
             this.accordionControlElement31,
             this.accordionControlElement32,
             this.accordionControlElement33});
-            this.accordionControl3.Location = new System.Drawing.Point(0, 27);
-            this.accordionControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.accordionControl3.Location = new System.Drawing.Point(0, 0);
             this.accordionControl3.Name = "accordionControl3";
-            this.accordionControl3.Size = new System.Drawing.Size(297, 557);
+            this.accordionControl3.Size = new System.Drawing.Size(220, 653);
             this.accordionControl3.TabIndex = 0;
             this.accordionControl3.Text = "accordionControl3";
             this.accordionControl3.Click += new System.EventHandler(this.accordionControl3_Click);
@@ -837,7 +435,6 @@ namespace Demo1._1._3
             this.accordionControlElementSendcar,
             this.accordionControlElementPackage,
             this.accordionControlElementClosecar});
-            this.accordionControlElement20.Expanded = true;
             this.accordionControlElement20.Name = "accordionControlElement20";
             this.accordionControlElement20.Text = "派车";
             // 
@@ -848,7 +445,6 @@ namespace Demo1._1._3
             this.accordionControlElement63,
             this.accordionControlElement64,
             this.accordionControlElement70});
-            this.accordionControlElement21.Expanded = true;
             this.accordionControlElement21.Name = "accordionControlElement21";
             this.accordionControlElement21.Text = "仓库";
             // 
@@ -892,7 +488,6 @@ namespace Demo1._1._3
             this.accordionControlElement78,
             this.accordionControlElement82,
             this.accordionControlElement83});
-            this.accordionControlElement22.Expanded = true;
             this.accordionControlElement22.Name = "accordionControlElement22";
             this.accordionControlElement22.Text = "运输";
             // 
@@ -1010,7 +605,6 @@ namespace Demo1._1._3
             this.accordionControlElement45,
             this.accordionControlElement46,
             this.accordionControlElement47});
-            this.accordionControlElement30.Expanded = true;
             this.accordionControlElement30.Name = "accordionControlElement30";
             this.accordionControlElement30.Text = "基础";
             this.accordionControlElement30.Click += new System.EventHandler(this.accordionControlElement30_Click);
@@ -1123,82 +717,12 @@ namespace Demo1._1._3
             this.accordionControlElement33.Name = "accordionControlElement33";
             this.accordionControlElement33.Text = "公告管理";
             // 
-            // toolStrip2
-            // 
-            this.toolStrip2.BackColor = System.Drawing.Color.White;
-            this.toolStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton9,
-            this.toolStripSeparator5,
-            this.toolStripButton10,
-            this.toolStripButton11,
-            this.toolStripSeparator6,
-            this.toolStripButton12});
-            this.toolStrip2.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(1340, 27);
-            this.toolStrip2.TabIndex = 5;
-            this.toolStrip2.Text = "toolStrip2";
-            // 
-            // toolStripButton9
-            // 
-            this.toolStripButton9.Image = global::Demo1._1._3.Properties.Resources.chartsshowlegend_16x16;
-            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton9.Name = "toolStripButton9";
-            this.toolStripButton9.Size = new System.Drawing.Size(63, 24);
-            this.toolStripButton9.Text = "选项";
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 27);
-            // 
-            // toolStripButton10
-            // 
-            this.toolStripButton10.Image = global::Demo1._1._3.Properties.Resources.zoom_16x16;
-            this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton10.Name = "toolStripButton10";
-            this.toolStripButton10.Size = new System.Drawing.Size(63, 24);
-            this.toolStripButton10.Text = "查找";
-            // 
-            // toolStripButton11
-            // 
-            this.toolStripButton11.Image = global::Demo1._1._3.Properties.Resources.reset2_16x16;
-            this.toolStripButton11.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton11.Name = "toolStripButton11";
-            this.toolStripButton11.Size = new System.Drawing.Size(63, 24);
-            this.toolStripButton11.Text = "刷新";
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 27);
-            // 
-            // toolStripButton12
-            // 
-            this.toolStripButton12.Image = global::Demo1._1._3.Properties.Resources.index_16x16;
-            this.toolStripButton12.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton12.Name = "toolStripButton12";
-            this.toolStripButton12.Size = new System.Drawing.Size(63, 24);
-            this.toolStripButton12.Text = "帮助";
-            // 
-            // tabNavigationPage3
-            // 
-            this.tabNavigationPage3.Caption = "设计";
-            this.tabNavigationPage3.Controls.Add(this.panel3);
-            this.tabNavigationPage3.Controls.Add(this.accordionControl2);
-            this.tabNavigationPage3.Controls.Add(this.toolStrip3);
-            this.tabNavigationPage3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabNavigationPage3.Name = "tabNavigationPage3";
-            this.tabNavigationPage3.Size = new System.Drawing.Size(1340, 584);
-            // 
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(297, 27);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel3.Location = new System.Drawing.Point(220, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1043, 557);
+            this.panel3.Size = new System.Drawing.Size(1182, 648);
             this.panel3.TabIndex = 5;
             // 
             // accordionControl2
@@ -1213,10 +737,9 @@ namespace Demo1._1._3
             this.accordionControlElement11,
             this.accordionControlElement12,
             this.accordionControlElement13});
-            this.accordionControl2.Location = new System.Drawing.Point(0, 27);
-            this.accordionControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.accordionControl2.Location = new System.Drawing.Point(0, 0);
             this.accordionControl2.Name = "accordionControl2";
-            this.accordionControl2.Size = new System.Drawing.Size(297, 557);
+            this.accordionControl2.Size = new System.Drawing.Size(220, 648);
             this.accordionControl2.TabIndex = 0;
             this.accordionControl2.Text = "accordionControl2";
             // 
@@ -1260,82 +783,12 @@ namespace Demo1._1._3
             this.accordionControlElement13.Name = "accordionControlElement13";
             this.accordionControlElement13.Text = "移动应用";
             // 
-            // toolStrip3
-            // 
-            this.toolStrip3.BackColor = System.Drawing.Color.White;
-            this.toolStrip3.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton5,
-            this.toolStripSeparator3,
-            this.toolStripButton6,
-            this.toolStripButton7,
-            this.toolStripSeparator4,
-            this.toolStripButton8});
-            this.toolStrip3.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip3.Name = "toolStrip3";
-            this.toolStrip3.Size = new System.Drawing.Size(1340, 27);
-            this.toolStrip3.TabIndex = 4;
-            this.toolStrip3.Text = "toolStrip3";
-            // 
-            // toolStripButton5
-            // 
-            this.toolStripButton5.Image = global::Demo1._1._3.Properties.Resources.chartsshowlegend_16x16;
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(63, 24);
-            this.toolStripButton5.Text = "选项";
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 27);
-            // 
-            // toolStripButton6
-            // 
-            this.toolStripButton6.Image = global::Demo1._1._3.Properties.Resources.zoom_16x16;
-            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(63, 24);
-            this.toolStripButton6.Text = "查找";
-            // 
-            // toolStripButton7
-            // 
-            this.toolStripButton7.Image = global::Demo1._1._3.Properties.Resources.reset2_16x16;
-            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(63, 24);
-            this.toolStripButton7.Text = "刷新";
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 27);
-            // 
-            // toolStripButton8
-            // 
-            this.toolStripButton8.Image = global::Demo1._1._3.Properties.Resources.index_16x16;
-            this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton8.Name = "toolStripButton8";
-            this.toolStripButton8.Size = new System.Drawing.Size(63, 24);
-            this.toolStripButton8.Text = "帮助";
-            // 
-            // tabNavigationPage2
-            // 
-            this.tabNavigationPage2.Caption = "系统管理";
-            this.tabNavigationPage2.Controls.Add(this.panel1);
-            this.tabNavigationPage2.Controls.Add(this.accordionControl1);
-            this.tabNavigationPage2.Controls.Add(this.toolStrip1);
-            this.tabNavigationPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabNavigationPage2.Name = "tabNavigationPage2";
-            this.tabNavigationPage2.Size = new System.Drawing.Size(1340, 584);
-            // 
             // panel1
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(297, 27);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Location = new System.Drawing.Point(220, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1043, 557);
+            this.panel1.Size = new System.Drawing.Size(1182, 648);
             this.panel1.TabIndex = 1;
             // 
             // accordionControl1
@@ -1348,11 +801,9 @@ namespace Demo1._1._3
             this.accordionControlElement4,
             this.accordionControlElement5,
             this.accordionControlElement34});
-            this.accordionControl1.Location = new System.Drawing.Point(0, 27);
-            this.accordionControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.accordionControl1.Location = new System.Drawing.Point(0, 0);
             this.accordionControl1.Name = "accordionControl1";
-            this.accordionControl1.ScrollBarMode = DevExpress.XtraBars.Navigation.ScrollBarMode.Touch;
-            this.accordionControl1.Size = new System.Drawing.Size(297, 557);
+            this.accordionControl1.Size = new System.Drawing.Size(220, 648);
             this.accordionControl1.TabIndex = 0;
             this.accordionControl1.Text = "accordionControl1";
             // 
@@ -1432,193 +883,337 @@ namespace Demo1._1._3
             this.accordionControlElement34.Text = "连接";
             this.accordionControlElement34.Click += new System.EventHandler(this.accordionControlElement34_Click);
             // 
-            // toolStrip1
+            // panel4
             // 
-            this.toolStrip1.BackColor = System.Drawing.Color.White;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripSeparator1,
-            this.toolStripButton2,
-            this.toolStripButton3,
-            this.toolStripSeparator2,
-            this.toolStripButton4});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1340, 27);
-            this.toolStrip1.TabIndex = 2;
-            this.toolStrip1.Text = "toolStrip1";
+            this.panel4.Controls.Add(this.pictureBox2);
+            this.panel4.Controls.Add(this.pictureBox1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1404, 81);
+            this.panel4.TabIndex = 2;
             // 
-            // toolStripButton1
+            // xtraTabControl1
             // 
-            this.toolStripButton1.Image = global::Demo1._1._3.Properties.Resources.chartsshowlegend_16x16;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(63, 24);
-            this.toolStripButton1.Text = "选项";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraTabControl1.Location = new System.Drawing.Point(0, 26);
+            this.xtraTabControl1.Name = "xtraTabControl1";
+            this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
+            this.xtraTabControl1.Size = new System.Drawing.Size(1404, 700);
+            this.xtraTabControl1.TabIndex = 3;
+            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.xtraTabPage1,
+            this.xtraTabPage2,
+            this.xtraTabPage3,
+            this.xtraTabPage4,
+            this.xtraTabPage5,
+            this.xtraTabPage6,
+            this.xtraTabPage7,
+            this.xtraTabPage8,
+            this.xtraTabPage9,
+            this.xtraTabPage10,
+            this.xtraTabPage11,
+            this.xtraTabPage12,
+            this.xtraTabPage13,
+            this.xtraTabPage14,
+            this.xtraTabPage15,
+            this.xtraTabPage16});
             // 
-            // toolStripSeparator1
+            // xtraTabPage1
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
+            this.xtraTabPage1.Image = global::Demo1._1._3.Properties.Resources.home_32x32;
+            this.xtraTabPage1.Name = "xtraTabPage1";
+            this.xtraTabPage1.Size = new System.Drawing.Size(1402, 648);
+            this.xtraTabPage1.Text = "首页";
             // 
-            // toolStripButton2
+            // xtraTabPage2
             // 
-            this.toolStripButton2.Image = global::Demo1._1._3.Properties.Resources.zoom_16x16;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(63, 24);
-            this.toolStripButton2.Text = "查找";
+            this.xtraTabPage2.Controls.Add(this.panel1);
+            this.xtraTabPage2.Controls.Add(this.accordionControl1);
+            this.xtraTabPage2.Image = global::Demo1._1._3.Properties.Resources.publicfix_32x32;
+            this.xtraTabPage2.Name = "xtraTabPage2";
+            this.xtraTabPage2.Size = new System.Drawing.Size(1402, 648);
+            this.xtraTabPage2.Text = "系统管理";
             // 
-            // toolStripButton3
+            // xtraTabPage3
             // 
-            this.toolStripButton3.Image = global::Demo1._1._3.Properties.Resources.reset2_16x16;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(63, 24);
-            this.toolStripButton3.Text = "刷新";
+            this.xtraTabPage3.Controls.Add(this.panel3);
+            this.xtraTabPage3.Controls.Add(this.accordionControl2);
+            this.xtraTabPage3.Image = global::Demo1._1._3.Properties.Resources.design_32x32;
+            this.xtraTabPage3.Name = "xtraTabPage3";
+            this.xtraTabPage3.Size = new System.Drawing.Size(1402, 648);
+            this.xtraTabPage3.Text = "设计";
             // 
-            // toolStripSeparator2
+            // xtraTabPage4
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
+            this.xtraTabPage4.Controls.Add(this.panel2);
+            this.xtraTabPage4.Controls.Add(this.accordionControl3);
+            this.xtraTabPage4.Image = global::Demo1._1._3.Properties.Resources.ide_32x32;
+            this.xtraTabPage4.Name = "xtraTabPage4";
+            this.xtraTabPage4.Size = new System.Drawing.Size(1398, 653);
+            this.xtraTabPage4.Text = "我的工作台";
             // 
-            // toolStripButton4
+            // xtraTabPage5
             // 
-            this.toolStripButton4.Image = global::Demo1._1._3.Properties.Resources.index_16x16;
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(63, 24);
-            this.toolStripButton4.Text = "帮助";
-            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
+            this.xtraTabPage5.Image = global::Demo1._1._3.Properties.Resources.loadpagesetup_32x32;
+            this.xtraTabPage5.Name = "xtraTabPage5";
+            this.xtraTabPage5.Size = new System.Drawing.Size(1402, 648);
+            this.xtraTabPage5.Text = "文档管理";
             // 
-            // tabNavigationPage1
+            // xtraTabPage6
             // 
-            this.tabNavigationPage1.Caption = "首页";
-            this.tabNavigationPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabNavigationPage1.Name = "tabNavigationPage1";
-            this.tabNavigationPage1.Size = new System.Drawing.Size(1340, 584);
+            this.xtraTabPage6.Image = global::Demo1._1._3.Properties.Resources.transit_32x32;
+            this.xtraTabPage6.Name = "xtraTabPage6";
+            this.xtraTabPage6.Size = new System.Drawing.Size(1402, 674);
+            this.xtraTabPage6.Text = "派车管理";
             // 
-            // tabPane1
+            // xtraTabPage7
             // 
-            this.tabPane1.Controls.Add(this.tabNavigationPage3);
-            this.tabPane1.Controls.Add(this.tabNavigationPage4);
-            this.tabPane1.Controls.Add(this.tabNavigationPage7);
-            this.tabPane1.Controls.Add(this.tabNavigationPage8);
-            this.tabPane1.Controls.Add(this.tabNavigationPage5);
-            this.tabPane1.Controls.Add(this.tabNavigationPage6);
-            this.tabPane1.Controls.Add(this.tabNavigationPage1);
-            this.tabPane1.Controls.Add(this.tabNavigationPage9);
-            this.tabPane1.Controls.Add(this.tabNavigationPage10);
-            this.tabPane1.Controls.Add(this.tabNavigationPage11);
-            this.tabPane1.Controls.Add(this.tabNavigationPage12);
-            this.tabPane1.Controls.Add(this.tabNavigationPage13);
-            this.tabPane1.Controls.Add(this.tabNavigationPage14);
-            this.tabPane1.Controls.Add(this.tabNavigationPage15);
-            this.tabPane1.Controls.Add(this.tabNavigationPage16);
-            this.tabPane1.Controls.Add(this.tabNavigationPage2);
-            this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabPane1.Location = new System.Drawing.Point(0, 107);
-            this.tabPane1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPane1.Name = "tabPane1";
-            this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
-            this.tabNavigationPage1,
-            this.tabNavigationPage2,
-            this.tabNavigationPage3,
-            this.tabNavigationPage4,
-            this.tabNavigationPage5,
-            this.tabNavigationPage6,
-            this.tabNavigationPage7,
-            this.tabNavigationPage8,
-            this.tabNavigationPage9,
-            this.tabNavigationPage10,
-            this.tabNavigationPage11,
-            this.tabNavigationPage12,
-            this.tabNavigationPage13,
-            this.tabNavigationPage14,
-            this.tabNavigationPage15,
-            this.tabNavigationPage16});
-            this.tabPane1.RegularSize = new System.Drawing.Size(1362, 643);
-            this.tabPane1.SelectedPage = this.tabNavigationPage3;
-            this.tabPane1.SelectedPageIndex = 3;
-            this.tabPane1.Size = new System.Drawing.Size(1362, 643);
-            this.tabPane1.TabIndex = 1;
-            this.tabPane1.Text = "tabPane1";
+            this.xtraTabPage7.Controls.Add(this.accordionControl4);
+            this.xtraTabPage7.Image = global::Demo1._1._3.Properties.Resources.boproductgroup_32x32;
+            this.xtraTabPage7.Name = "xtraTabPage7";
+            this.xtraTabPage7.Size = new System.Drawing.Size(1402, 674);
+            this.xtraTabPage7.Text = "仓库管理";
+            // 
+            // xtraTabPage8
+            // 
+            this.xtraTabPage8.Image = global::Demo1._1._3.Properties.Resources.geopointmap_32x32;
+            this.xtraTabPage8.Name = "xtraTabPage8";
+            this.xtraTabPage8.Size = new System.Drawing.Size(1402, 674);
+            this.xtraTabPage8.Text = "运输管理";
+            // 
+            // xtraTabPage9
+            // 
+            this.xtraTabPage9.Image = global::Demo1._1._3.Properties.Resources.bodepartment_32x32;
+            this.xtraTabPage9.Name = "xtraTabPage9";
+            this.xtraTabPage9.Size = new System.Drawing.Size(1402, 674);
+            this.xtraTabPage9.Text = "集港管理";
+            // 
+            // xtraTabPage10
+            // 
+            this.xtraTabPage10.Image = global::Demo1._1._3.Properties.Resources.morefunctions_32x32;
+            this.xtraTabPage10.Name = "xtraTabPage10";
+            this.xtraTabPage10.Size = new System.Drawing.Size(1402, 674);
+            this.xtraTabPage10.Text = "财务管理";
+            // 
+            // xtraTabPage11
+            // 
+            this.xtraTabPage11.Image = global::Demo1._1._3.Properties.Resources.team_32x32;
+            this.xtraTabPage11.Name = "xtraTabPage11";
+            this.xtraTabPage11.Size = new System.Drawing.Size(1402, 674);
+            this.xtraTabPage11.Text = "人事管理";
+            // 
+            // xtraTabPage12
+            // 
+            this.xtraTabPage12.Image = global::Demo1._1._3.Properties.Resources.bodetails_32x32;
+            this.xtraTabPage12.Name = "xtraTabPage12";
+            this.xtraTabPage12.Size = new System.Drawing.Size(1402, 674);
+            this.xtraTabPage12.Text = "维修管理";
+            // 
+            // xtraTabPage13
+            // 
+            this.xtraTabPage13.Image = global::Demo1._1._3.Properties.Resources.info_32x32;
+            this.xtraTabPage13.Name = "xtraTabPage13";
+            this.xtraTabPage13.Size = new System.Drawing.Size(1402, 674);
+            this.xtraTabPage13.Text = "安全管理";
+            // 
+            // xtraTabPage14
+            // 
+            this.xtraTabPage14.Image = global::Demo1._1._3.Properties.Resources.tag_32x32;
+            this.xtraTabPage14.Name = "xtraTabPage14";
+            this.xtraTabPage14.Size = new System.Drawing.Size(1402, 674);
+            this.xtraTabPage14.Text = "办公用品";
+            // 
+            // xtraTabPage15
+            // 
+            this.xtraTabPage15.Image = global::Demo1._1._3.Properties.Resources.pivot_32x32;
+            this.xtraTabPage15.Name = "xtraTabPage15";
+            this.xtraTabPage15.Size = new System.Drawing.Size(1402, 674);
+            this.xtraTabPage15.Text = "统计查询";
+            // 
+            // xtraTabPage16
+            // 
+            this.xtraTabPage16.Image = global::Demo1._1._3.Properties.Resources.technology_32x32;
+            this.xtraTabPage16.Name = "xtraTabPage16";
+            this.xtraTabPage16.Size = new System.Drawing.Size(1402, 674);
+            this.xtraTabPage16.Text = "基础设置";
+            // 
+            // panel5
+            // 
+            this.panel5.AutoScroll = true;
+            this.panel5.Controls.Add(this.panel6);
+            this.panel5.Controls.Add(this.panel4);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1404, 807);
+            this.panel5.TabIndex = 4;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.xtraTabControl1);
+            this.panel6.Controls.Add(this.barDockControlLeft);
+            this.panel6.Controls.Add(this.barDockControlRight);
+            this.panel6.Controls.Add(this.barDockControlBottom);
+            this.panel6.Controls.Add(this.barDockControlTop);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(0, 81);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1404, 726);
+            this.panel6.TabIndex = 4;
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 26);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 700);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(1404, 26);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 700);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 726);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1404, 0);
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(1404, 26);
+            // 
+            // barManager1
+            // 
+            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.bar2});
+            this.barManager1.DockControls.Add(this.barDockControlTop);
+            this.barManager1.DockControls.Add(this.barDockControlBottom);
+            this.barManager1.DockControls.Add(this.barDockControlLeft);
+            this.barManager1.DockControls.Add(this.barDockControlRight);
+            this.barManager1.Form = this.panel6;
+            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.barButtonItem1,
+            this.barButtonItem2,
+            this.barButtonItem3,
+            this.barButtonItem4,
+            this.barButtonItem5,
+            this.barButtonItem6,
+            this.barButtonItem7,
+            this.barButtonItem8});
+            this.barManager1.MainMenu = this.bar2;
+            this.barManager1.MaxItemId = 8;
+            // 
+            // bar2
+            // 
+            this.bar2.BarName = "Custom 3";
+            this.bar2.DockCol = 0;
+            this.bar2.DockRow = 0;
+            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem5, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem6, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem7, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem8, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            this.bar2.OptionsBar.MultiLine = true;
+            this.bar2.OptionsBar.UseWholeRow = true;
+            this.bar2.Text = "Custom 3";
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "选项";
+            this.barButtonItem5.Glyph = global::Demo1._1._3.Properties.Resources.chartsshowlegend_16x16;
+            this.barButtonItem5.Id = 4;
+            this.barButtonItem5.Name = "barButtonItem5";
+            // 
+            // barButtonItem6
+            // 
+            this.barButtonItem6.Caption = "查找";
+            this.barButtonItem6.Glyph = global::Demo1._1._3.Properties.Resources.zoom_16x16;
+            this.barButtonItem6.Id = 5;
+            this.barButtonItem6.Name = "barButtonItem6";
+            // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.Caption = "刷新";
+            this.barButtonItem7.Glyph = global::Demo1._1._3.Properties.Resources.reset2_16x16;
+            this.barButtonItem7.Id = 6;
+            this.barButtonItem7.Name = "barButtonItem7";
+            // 
+            // barButtonItem8
+            // 
+            this.barButtonItem8.Caption = "帮助";
+            this.barButtonItem8.Glyph = global::Demo1._1._3.Properties.Resources.index_16x16;
+            this.barButtonItem8.Id = 7;
+            this.barButtonItem8.Name = "barButtonItem8";
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "选项";
+            this.barButtonItem1.Glyph = global::Demo1._1._3.Properties.Resources.chartsshowlegend_16x16;
+            this.barButtonItem1.Id = 0;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "查找";
+            this.barButtonItem2.Glyph = global::Demo1._1._3.Properties.Resources.zoom_16x16;
+            this.barButtonItem2.Id = 1;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "刷新";
+            this.barButtonItem3.Glyph = global::Demo1._1._3.Properties.Resources.reset2_16x16;
+            this.barButtonItem3.Id = 2;
+            this.barButtonItem3.Name = "barButtonItem3";
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "帮助";
+            this.barButtonItem4.Glyph = global::Demo1._1._3.Properties.Resources.index_16x16;
+            this.barButtonItem4.Id = 3;
+            this.barButtonItem4.Name = "barButtonItem4";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1362, 750);
-            this.Controls.Add(this.tabPane1);
-            this.Controls.Add(this.navigationFrame1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ClientSize = new System.Drawing.Size(1404, 807);
+            this.Controls.Add(this.panel5);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.navigationFrame1.ResumeLayout(false);
-            this.navigationPage1.ResumeLayout(false);
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.tabNavigationPage8.ResumeLayout(false);
-            this.tabNavigationPage8.PerformLayout();
-            this.toolStrip7.ResumeLayout(false);
-            this.toolStrip7.PerformLayout();
-            this.tabNavigationPage7.ResumeLayout(false);
-            this.tabNavigationPage7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl4)).EndInit();
-            this.toolStrip6.ResumeLayout(false);
-            this.toolStrip6.PerformLayout();
-            this.tabNavigationPage6.ResumeLayout(false);
-            this.tabNavigationPage6.PerformLayout();
-            this.toolStrip5.ResumeLayout(false);
-            this.toolStrip5.PerformLayout();
-            this.tabNavigationPage5.ResumeLayout(false);
-            this.tabNavigationPage5.PerformLayout();
-            this.toolStrip4.ResumeLayout(false);
-            this.toolStrip4.PerformLayout();
-            this.tabNavigationPage4.ResumeLayout(false);
-            this.tabNavigationPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl3)).EndInit();
-            this.toolStrip2.ResumeLayout(false);
-            this.toolStrip2.PerformLayout();
-            this.tabNavigationPage3.ResumeLayout(false);
-            this.tabNavigationPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl2)).EndInit();
-            this.toolStrip3.ResumeLayout(false);
-            this.toolStrip3.PerformLayout();
-            this.tabNavigationPage2.ResumeLayout(false);
-            this.tabNavigationPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.accordionControl1)).EndInit();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
-            this.tabPane1.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
+            this.xtraTabControl1.ResumeLayout(false);
+            this.xtraTabPage2.ResumeLayout(false);
+            this.xtraTabPage3.ResumeLayout(false);
+            this.xtraTabPage4.ResumeLayout(false);
+            this.xtraTabPage7.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private DevExpress.XtraBars.Navigation.NavigationFrame navigationFrame1;
-        private DevExpress.XtraBars.Navigation.NavigationPage navigationPage1;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage16;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage15;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage14;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage13;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage12;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage11;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage10;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage9;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage8;
-        private ToolStrip toolStrip7;
-        private ToolStripButton toolStripButton25;
-        private ToolStripSeparator toolStripSeparator13;
-        private ToolStripButton toolStripButton26;
-        private ToolStripButton toolStripButton27;
-        private ToolStripSeparator toolStripSeparator14;
-        private ToolStripButton toolStripButton28;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage7;
         private DevExpress.XtraBars.Navigation.AccordionControl accordionControl4;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement53;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement54;
@@ -1638,30 +1233,6 @@ namespace Demo1._1._3
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement75;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement80;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement81;
-        private ToolStrip toolStrip6;
-        private ToolStripButton toolStripButton21;
-        private ToolStripSeparator toolStripSeparator11;
-        private ToolStripButton toolStripButton22;
-        private ToolStripButton toolStripButton23;
-        private ToolStripSeparator toolStripSeparator12;
-        private ToolStripButton toolStripButton24;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage6;
-        private ToolStrip toolStrip5;
-        private ToolStripButton toolStripButton17;
-        private ToolStripSeparator toolStripSeparator9;
-        private ToolStripButton toolStripButton18;
-        private ToolStripButton toolStripButton19;
-        private ToolStripSeparator toolStripSeparator10;
-        private ToolStripButton toolStripButton20;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage5;
-        private ToolStrip toolStrip4;
-        private ToolStripButton toolStripButton13;
-        private ToolStripSeparator toolStripSeparator7;
-        private ToolStripButton toolStripButton14;
-        private ToolStripButton toolStripButton15;
-        private ToolStripSeparator toolStripSeparator8;
-        private ToolStripButton toolStripButton16;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage4;
         private Panel panel2;
         private DevExpress.XtraBars.Navigation.AccordionControl accordionControl3;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement14;
@@ -1697,14 +1268,6 @@ namespace Demo1._1._3
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement31;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement32;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement33;
-        private ToolStrip toolStrip2;
-        private ToolStripButton toolStripButton9;
-        private ToolStripSeparator toolStripSeparator5;
-        private ToolStripButton toolStripButton10;
-        private ToolStripButton toolStripButton11;
-        private ToolStripSeparator toolStripSeparator6;
-        private ToolStripButton toolStripButton12;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage3;
         private Panel panel3;
         private DevExpress.XtraBars.Navigation.AccordionControl accordionControl2;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement6;
@@ -1715,14 +1278,6 @@ namespace Demo1._1._3
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement11;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement12;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement13;
-        private ToolStrip toolStrip3;
-        private ToolStripButton toolStripButton5;
-        private ToolStripSeparator toolStripSeparator3;
-        private ToolStripButton toolStripButton6;
-        private ToolStripButton toolStripButton7;
-        private ToolStripSeparator toolStripSeparator4;
-        private ToolStripButton toolStripButton8;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage2;
         private Panel panel1;
         private DevExpress.XtraBars.Navigation.AccordionControl accordionControl1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
@@ -1736,15 +1291,6 @@ namespace Demo1._1._3
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement51;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement52;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement34;
-        private ToolStrip toolStrip1;
-        private ToolStripButton toolStripButton1;
-        private ToolStripSeparator toolStripSeparator1;
-        private ToolStripButton toolStripButton2;
-        private ToolStripButton toolStripButton3;
-        private ToolStripSeparator toolStripSeparator2;
-        private ToolStripButton toolStripButton4;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage1;
-        private DevExpress.XtraBars.Navigation.TabPane tabPane1;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement62;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement63;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement64;
@@ -1763,6 +1309,40 @@ namespace Demo1._1._3
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElementClosecar;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
+        private Panel panel4;
+        private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage3;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage4;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage5;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage6;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage7;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage8;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage9;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage10;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage11;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage12;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage13;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage14;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage15;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage16;
+        private Panel panel5;
+        private Panel panel6;
+        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
+        private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
+        private DevExpress.XtraBars.BarDockControl barDockControlTop;
+        private DevExpress.XtraBars.BarManager barManager1;
+        private DevExpress.XtraBars.Bar bar2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
     }
 }
 

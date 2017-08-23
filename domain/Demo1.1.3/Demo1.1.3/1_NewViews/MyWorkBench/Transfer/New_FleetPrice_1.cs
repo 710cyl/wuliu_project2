@@ -33,9 +33,26 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
         domain.FleetPrice fp = new FleetPrice();
         List<domain.FleetPrice_Detail> sd = new List<FleetPrice_Detail>();
         FunctionClass fc = new FunctionClass();
+        public Demo1._1._3.Panel2_MyWorkBench.FleetPrice fleetp;
+        /// <summary>
+        /// 车队、司机、车号
+        /// </summary>
+        private TabbedSections child_form = new TabbedSections();
+        /// <summary>
+        /// 装点、装货城市、装货地区
+        /// </summary>
+        private Demo1._1._3._1_NewViews.TebbedSection_LoadSpot load_form = new Demo1._1._3._1_NewViews.TebbedSection_LoadSpot();
+
+        /// <summary>
+        /// 卸点、发卸城市、发卸地区
+        /// </summary>
+        private Demo1._1._3._1_NewViews.TabbedSection_Discharge discharge_form = new Demo1._1._3._1_NewViews.TabbedSection_Discharge();
         public New_FleetPrice_1()
         {
             InitializeComponent();
+            comboBox1.DisplayMember = "运输方式";
+            comboBox1.ValueMember = "value";
+            comboBox1.DataSource = fc.getTransportation();
             if (Panel2_MyWorkBench.FleetPrice.isExist)
             {
                 //主表显示
@@ -48,7 +65,7 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
                 textBox1.Text = Panel2_MyWorkBench.FleetPrice.array[5];
                 textBox2.Text = Panel2_MyWorkBench.FleetPrice.array[6];
                 textBox13.Text = Panel2_MyWorkBench.FleetPrice.array[7];
-                textBox8.Text = Panel2_MyWorkBench.FleetPrice.array[8];
+                comboBox1.Text = Panel2_MyWorkBench.FleetPrice.array[8];
                 textBox9.Text = Panel2_MyWorkBench.FleetPrice.array[9];
                 textBox18.Text = Panel2_MyWorkBench.FleetPrice.array[10];
                 textBox10.Text = Panel2_MyWorkBench.FleetPrice.array[11];//卸货地点
@@ -110,7 +127,8 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
         private void simpleButton4_Click(object sender, EventArgs e)//添加
         {
             domain.FleetPrice_Detail sd = new domain.FleetPrice_Detail()
-            { transport_identifying = string.Format("{0}-{1}", textBox5.Text, FleetPrice_Detail.Count + 1), transport_ID = textBox5.Text };
+            { transport_identifying = string.Format("{0}-{1}", textBox5.Text, FleetPrice_Detail.Count + 1), transport_ID = textBox5.Text,
+            };
             FleetPrice_Detail.Add(sd);
         }
 
@@ -138,7 +156,7 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
                 //fp.TotalStorage = Convert.ToDecimal(textBox6.Text);
                 fp.car_number = textBox2.Text;
                 fp.driver = textBox13.Text;
-                fp.transport_way = textBox8.Text;
+                fp.transport_way = comboBox1.Text;
                 fp.depart_point = textBox9.Text;
                 fp.ship_point = textBox18.Text;
                 fp.unload_point = textBox10.Text;
@@ -165,7 +183,7 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
                 //fp.TotalStorage = Convert.ToDecimal(textBox6.Text);
                 fp.car_number = textBox2.Text;
                 fp.driver = textBox13.Text;
-                fp.transport_way = textBox8.Text;
+                fp.transport_way = comboBox1.Text;
                 fp.depart_point = textBox9.Text;
                 fp.ship_point = textBox18.Text;
                 fp.unload_point = textBox10.Text;
@@ -182,11 +200,55 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
 
                 fc.SaveData(jsonMain, Json, fp.GetType().Name.ToString(), "FleetPrice_Detail");
             }
+            fleetp = new Demo1._1._3.Panel2_MyWorkBench.FleetPrice();
+            domain.FleetPrice fleetprice = new domain.FleetPrice();
+            Demo1._1._3.Panel2_MyWorkBench.FleetPrice dbs = new Panel2_MyWorkBench.FleetPrice();
+            domain.FleetPrice_Detail fleetprice_detail = new domain.FleetPrice_Detail();
+            fleetp.gridControl1.DataSource = fc.showData<domain.FleetPrice>(fleetprice, dbs.now_Page1.ToString());
+            fleetp.gridControl2.DataSource = fc.showData<domain.FleetPrice_Detail>(fleetprice_detail, dbs.now_Page2.ToString());
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)//取消
         {
             Close();
+        }
+
+        private void textBox1_Click(object sender, EventArgs e)//车队
+        {
+            child_form.ReturnEvent += new TabbedSections.ClickCar(getCarValue);
+            child_form.ShowDialog();
+        }
+        void getCarValue(string a, string b, string c)
+        {
+            textBox1.Text = a;
+            textBox2.Text = b;
+            textBox13.Text = c;
+        }
+
+        private void textBox9_Click(object sender, EventArgs e)//出发地点
+        {
+
+        }
+
+        private void textBox18_Click(object sender, EventArgs e)//装货地点
+        {
+            load_form.ReturnEvent += new Demo1._1._3._1_NewViews.TebbedSection_LoadSpot.ClickCity(getLoadValue);
+            load_form.ShowDialog();
+        }
+        void getLoadValue(string a, string b, string c)
+        {
+            textBox18.Text = a;
+
+        }
+
+        private void textBox10_Click(object sender, EventArgs e)//卸货地点
+        {
+            discharge_form.ReturnEvent += new Demo1._1._3._1_NewViews.TabbedSection_Discharge.ClickCity(getDischargeValue);
+            discharge_form.ShowDialog();
+        }
+        void getDischargeValue(string a, string b, string c)
+        {
+            textBox10.Text = a;
         }
     }
 }

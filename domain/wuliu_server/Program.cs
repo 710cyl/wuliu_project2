@@ -50,6 +50,7 @@ namespace wuliu_server
             wssv.AddWebSocketService<Combobox_CraneNumber>("/Combobox/Combobox_CraneNumber");
             wssv.AddWebSocketService<Combobox_Texture>("/Combobox/Combobox_Texture");
             wssv.AddWebSocketService<Combobox_Variety>("/Combobox/Combobox_Variety");
+            wssv.AddWebSocketService<Combobox_Transportation>("/Combobox/Combobox_Transportation");
             wssv.Start();
             Console.ReadKey();
             wssv.Stop();

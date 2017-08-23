@@ -715,5 +715,26 @@ namespace Demo1._1._3
             List<string> storage = JsonConvert.DeserializeObject<List<string>>(msg);
             return storage;
         }
+        /// <summary>
+        /// 获得运输方式
+        /// </summary>
+        /// <returns></returns>
+        public List<string> getTransportation()
+        {
+            string msg = null;
+            using (var ws = new WebSocket("ws://localhost:9000/Combobox/Combobox_Transportation"))
+            {
+                ws.Connect();
+                ws.Send("Combobox_Transportation");
+                while (msg == null)
+                {
+                    ws.OnMessage += (sender, e) =>
+                    msg = e.Data;
+                }
+                ws.Close();
+            }
+            List<string> storage = JsonConvert.DeserializeObject<List<string>>(msg);
+            return storage;
+        }
     }
 }

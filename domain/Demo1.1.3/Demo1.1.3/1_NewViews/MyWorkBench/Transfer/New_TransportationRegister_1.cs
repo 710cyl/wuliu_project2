@@ -28,20 +28,38 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
 {
     public partial class New_TransportationRegister : Form
     {
+        public Demo1._1._3.Panel2_MyWorkBench.TransportationRegister trr;
         DateTimePicker dtp = new DateTimePicker();
         private BindingList<domain.TransportationRegister_Detail> TransportationRegister_Detail;
         domain.TransportationRegister tr = new TransportationRegister();
         List<domain.TransportationRegister_Detail> trd = new List<TransportationRegister_Detail>();
         FunctionClass fc = new FunctionClass();
+        /// <summary>
+        /// 车队、司机、车号
+        /// </summary>
+        private TabbedSections child_form = new TabbedSections();
+
+        /// <summary>
+        /// 装点、装货城市、装货地区
+        /// </summary>
+        private Demo1._1._3._1_NewViews.TebbedSection_LoadSpot load_form = new Demo1._1._3._1_NewViews.TebbedSection_LoadSpot();
+
+        /// <summary>
+        /// 卸点、发卸城市、发卸地区
+        /// </summary>
+        private Demo1._1._3._1_NewViews.TabbedSection_Discharge discharge_form = new Demo1._1._3._1_NewViews.TabbedSection_Discharge();
         public New_TransportationRegister()
         {
             InitializeComponent();
+            comboBox1.DisplayMember = "运输方式";
+            comboBox1.ValueMember = "value";
+            comboBox1.DataSource = fc.getTransportation();
             if (Panel2_MyWorkBench.TransportationRegister.isExist)
             {
                 //主表显示
                 textBox2.Text = Panel2_MyWorkBench.TransportationRegister.array[0];
                 dateTimePicker1.Value = Convert.ToDateTime(Panel2_MyWorkBench.TransportationRegister.array[1]);
-                comboBox1.ValueMember = Panel2_MyWorkBench.TransportationRegister.array[2];
+                comboBox1.Text = Panel2_MyWorkBench.TransportationRegister.array[2];
                 textBox5.Text = Panel2_MyWorkBench.TransportationRegister.array[3];
                 textBox3.Text = Panel2_MyWorkBench.TransportationRegister.array[4];
                 textBox9.Text = Panel2_MyWorkBench.TransportationRegister.array[5];
@@ -101,6 +119,9 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
             this.gridView1.Columns[16].Caption = "已结算金额";
             this.gridView1.Columns[17].Caption = "未结算金额";
             this.gridView1.Columns[18].Caption = "运输方式";
+            //DevExpress.XtraEditors.Repository.RepositoryItemComboBox combobox_transportation = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            //combobox_transportation.Items.AddRange(fc.getTransportation());
+            //this.gridView1.Columns[18].ColumnEdit = combobox_transportation;
             this.gridView1.Columns[19].Caption = "车队";
             this.gridView1.Columns[20].Caption = "车号";
             this.gridView1.Columns[21].Caption = "司机";
@@ -142,7 +163,10 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
         private void simpleButton4_Click(object sender, EventArgs e)//添加
         {
             domain.TransportationRegister_Detail trd = new domain.TransportationRegister_Detail()
-            { transport_identifying = string.Format("{0}-{1}", textBox2.Text, TransportationRegister_Detail.Count + 1), transport_ID = textBox2.Text };
+            { transport_identifying = string.Format("{0}-{1}", textBox2.Text, TransportationRegister_Detail.Count + 1),
+                transport_ID = textBox2.Text , fleet = textBox5.Text, transport_way = comboBox1.Text, car_number = textBox3.Text,
+                driver = textBox9.Text, ship_city = textBox4.Text, ship_area = textBox11.Text, ship_point = textBox14.Text,
+                unload_city = textBox16.Text, unload_area = textBox24.Text, unload_point = textBox23.Text};
             TransportationRegister_Detail.Add(trd);
         }
 
@@ -165,7 +189,7 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
             {
                 tr.transport_ID = textBox2.Text;
                 tr.tally_date = dateTimePicker1.Value;
-                tr.transport_way = comboBox1.ValueMember;
+                tr.transport_way = comboBox1.Text;
                 tr.fleet = textBox5.Text;
                 tr.car_number = textBox3.Text;
                 tr.driver = textBox9.Text;
@@ -195,7 +219,7 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
             {
                 tr.transport_ID = textBox2.Text;
                 tr.tally_date = dateTimePicker1.Value;
-                tr.transport_way = comboBox1.ValueMember;
+                tr.transport_way = comboBox1.Text;
                 tr.fleet = textBox5.Text;
                 tr.car_number = textBox3.Text;
                 tr.driver = textBox9.Text;
@@ -220,6 +244,12 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
 
                 fc.SaveData(jsonMain, Json, tr.GetType().Name.ToString(), "TransportationRegister_Detail");
             }
+            trr = new Demo1._1._3.Panel2_MyWorkBench.TransportationRegister();
+            domain.TransportationRegister transportationregister = new domain.TransportationRegister();
+            Demo1._1._3.Panel2_MyWorkBench.TransportationRegister dbs = new Panel2_MyWorkBench.TransportationRegister();
+            domain.TransportationRegister_Detail transportationregister_detail = new domain.TransportationRegister_Detail();
+            trr.gridControl1.DataSource = fc.showData<domain.TransportationRegister>(transportationregister, dbs.now_Page1.ToString());
+            trr.gridControl2.DataSource = fc.showData<domain.TransportationRegister_Detail>(transportationregister_detail, dbs.now_Page2.ToString());
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)//取消
@@ -250,7 +280,47 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
             }
         }
 
+        private void textBox5_Click(object sender, EventArgs e)//车队
+        {
+            child_form.ReturnEvent += new TabbedSections.ClickCar(getCarValue);
+            child_form.ShowDialog();
+        }
 
+        void getCarValue(string a, string b, string c)
+        {
+            textBox5.Text = a;
+            textBox3.Text = b;
+            textBox9.Text = c;
+        }
+
+        private void textBox18_Click(object sender, EventArgs e)//出发城市
+        {
+
+        }
+
+        private void textBox4_Click(object sender, EventArgs e)//装货城市
+        {
+            load_form.ReturnEvent += new Demo1._1._3._1_NewViews.TebbedSection_LoadSpot.ClickCity(getLoadValue);
+            load_form.ShowDialog();
+        }
+        void getLoadValue(string a, string b, string c)
+        {
+            textBox4.Text = a;
+            textBox11.Text = b; 
+            textBox14.Text = c;
+        }
+
+        private void textBox16_Click(object sender, EventArgs e)//卸货城市
+        {
+            discharge_form.ReturnEvent += new Demo1._1._3._1_NewViews.TabbedSection_Discharge.ClickCity(getDischargeValue);
+            discharge_form.ShowDialog();
+        }
+        void getDischargeValue(string a, string b, string c)
+        {
+            textBox16.Text = a;
+            textBox24.Text = b;
+            textBox23.Text = c;
+        }
 
         //private void panel_Main_Paint(object sender, PaintEventArgs e)
         //{

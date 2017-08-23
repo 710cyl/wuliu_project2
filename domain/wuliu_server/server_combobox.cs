@@ -238,4 +238,30 @@ namespace wuliu_server
             }
         }
     }
+    /// <summary>
+    /// 运输方式
+    /// </summary>
+    public class Combobox_Transportation : WebSocketBehavior
+    {
+        protected override void OnMessage(MessageEventArgs e)
+        {
+            var cfg = new NHibernate.Cfg.Configuration().Configure("Config/hibernate.cfg.xml");
+            using (ISessionFactory sessionFactory = cfg.BuildSessionFactory())
+            {
+                ISession session = null;
+                try
+                {
+                    session = sessionFactory.OpenSession();
+                    IList<string> storage = session.QueryOver<Basic_Set>().List<Basic_Set>().Select(c => c.transportation_Mode).Distinct().ToList<string>();
+                    string storages = JsonConvert.SerializeObject(storage);
+
+                    Send(storages);
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+        }
+    }
 }

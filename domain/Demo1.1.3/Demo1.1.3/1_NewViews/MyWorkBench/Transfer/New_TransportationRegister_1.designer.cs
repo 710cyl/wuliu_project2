@@ -254,6 +254,7 @@
             this.textBox16.Name = "textBox16";
             this.textBox16.Size = new System.Drawing.Size(138, 22);
             this.textBox16.TabIndex = 350;
+            this.textBox16.Click += new System.EventHandler(this.textBox16_Click);
             // 
             // textBox17
             // 
@@ -376,6 +377,7 @@
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(138, 22);
             this.textBox18.TabIndex = 60;
+            this.textBox18.Click += new System.EventHandler(this.textBox18_Click);
             // 
             // label3
             // 
@@ -489,6 +491,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(138, 22);
             this.textBox4.TabIndex = 50;
+            this.textBox4.Click += new System.EventHandler(this.textBox4_Click);
             // 
             // textBox3
             // 
@@ -580,6 +583,7 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(138, 22);
             this.textBox5.TabIndex = 10;
+            this.textBox5.Click += new System.EventHandler(this.textBox5_Click);
             // 
             // panel_button
             // 

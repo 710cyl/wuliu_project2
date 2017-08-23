@@ -38,6 +38,8 @@ namespace Demo1._1._3.Panel2_MyWorkBench
         domain.ShipperPrice tr = new domain.ShipperPrice();
         domain.ShipperPrice_Detail trd = new domain.ShipperPrice_Detail();
         FunctionClass fc = new FunctionClass();
+        public static BindingList<domain.ShipperPrice_Detail> ShipperPrice_Detail;
+        
         public ShipperPrice()
         {
             InitializeComponent();
@@ -45,6 +47,7 @@ namespace Demo1._1._3.Panel2_MyWorkBench
             fc.InitPage(dataNavigator_ShipperPrice, total_Page1, now_Page1);
             total_Page2 = fc.getTotal<domain.ShipperPrice_Detail>(trd, total_Page2);
             fc.InitPage(dataNavigator_ShipperPrice_Detail, total_Page2, now_Page2);
+            
         }
 
         private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)

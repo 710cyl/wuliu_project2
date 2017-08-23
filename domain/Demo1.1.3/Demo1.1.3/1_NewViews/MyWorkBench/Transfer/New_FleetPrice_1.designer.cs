@@ -59,7 +59,6 @@
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -69,6 +68,7 @@
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -173,6 +173,7 @@
             // 
             this.panel_Main.AutoScroll = true;
             this.panel_Main.AutoScrollMinSize = new System.Drawing.Size(1090, 161);
+            this.panel_Main.Controls.Add(this.comboBox1);
             this.panel_Main.Controls.Add(this.dateTimePicker4);
             this.panel_Main.Controls.Add(this.dateTimePicker3);
             this.panel_Main.Controls.Add(this.dateTimePicker2);
@@ -195,7 +196,6 @@
             this.panel_Main.Controls.Add(this.textBox18);
             this.panel_Main.Controls.Add(this.textBox12);
             this.panel_Main.Controls.Add(this.textBox9);
-            this.panel_Main.Controls.Add(this.textBox8);
             this.panel_Main.Controls.Add(this.textBox3);
             this.panel_Main.Controls.Add(this.textBox2);
             this.panel_Main.Controls.Add(this.label17);
@@ -408,6 +408,7 @@
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(138, 22);
             this.textBox18.TabIndex = 60;
+            this.textBox18.Click += new System.EventHandler(this.textBox18_Click);
             // 
             // textBox12
             // 
@@ -426,15 +427,7 @@
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(138, 22);
             this.textBox9.TabIndex = 55;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Font = new System.Drawing.Font("宋体", 9.5F);
-            this.textBox8.Location = new System.Drawing.Point(820, 31);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(138, 22);
-            this.textBox8.TabIndex = 54;
+            this.textBox9.Click += new System.EventHandler(this.textBox9_Click);
             // 
             // textBox3
             // 
@@ -506,6 +499,7 @@
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(138, 22);
             this.textBox10.TabIndex = 20;
+            this.textBox10.Click += new System.EventHandler(this.textBox10_Click);
             // 
             // textBox5
             // 
@@ -524,6 +518,15 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(138, 22);
             this.textBox1.TabIndex = 2;
+            this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(821, 30);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(137, 20);
+            this.comboBox1.TabIndex = 349;
             // 
             // New_FleetPrice_1
             // 
@@ -559,7 +562,6 @@
         private System.Windows.Forms.TextBox textBox18;
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label17;
@@ -588,5 +590,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker4;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

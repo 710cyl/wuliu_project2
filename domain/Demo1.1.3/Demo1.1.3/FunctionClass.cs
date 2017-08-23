@@ -727,10 +727,15 @@ namespace Demo1._1._3
             {
                 ws.Connect();
                 ws.Send("Combobox_Transportation");
-                List<string> storage = JsonConvert.DeserializeObject<List<string>>(msg);
+                while (msg == null)
+                {
+                    ws.OnMessage += (sender, e) =>
+                    msg = e.Data; 
+                }
+                 ws.Close();
             }
-            ws.Close();
-
+            
+            List<string> storage = JsonConvert.DeserializeObject<List<string>>(msg);
             return storage;
         }
 

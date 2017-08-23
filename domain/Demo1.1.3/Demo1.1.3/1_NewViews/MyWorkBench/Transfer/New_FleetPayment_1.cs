@@ -152,5 +152,10 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
 
             }
         }
+
+        private void panel_Main_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

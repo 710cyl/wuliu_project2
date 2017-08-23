@@ -235,6 +235,12 @@
     <Compile Include="1_NewViews\TabbedSection_OutBounceCar.Designer.cs">
       <DependentUpon>TabbedSection_OutBounceCar.cs</DependentUpon>
     </Compile>
+    <Compile Include="1_NewViews\TabbedSection_OutBounceCarDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="1_NewViews\TabbedSection_OutBounceCarDetails.Designer.cs">
+      <DependentUpon>TabbedSection_OutBounceCarDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="1_NewViews\TabbedSection_StorageDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -582,6 +588,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="1_NewViews\TabbedSection_OutBounceCar.resx">
       <DependentUpon>TabbedSection_OutBounceCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="1_NewViews\TabbedSection_OutBounceCarDetails.resx">
+      <DependentUpon>TabbedSection_OutBounceCarDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="1_NewViews\TabbedSection_StorageDetails.resx">
       <DependentUpon>TabbedSection_StorageDetails.cs</DependentUpon>

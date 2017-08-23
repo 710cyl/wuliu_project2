@@ -52,7 +52,7 @@ namespace wuliu_server
             wssv.AddWebSocketService<Combobox_Variety>("/Combobox/Combobox_Variety");
 
             wssv.AddWebSocketService<ServerStorageDetails>("/ServerStorageDetails");
-            //wssv.AddWebSocketService<ServerOutBounceCar>("/ServerOutBounceCar");
+            wssv.AddWebSocketService<ServerOuBounceCarDetails>("/ServerOuBounceCarDetails");
             wssv.Start();
             Console.ReadKey();
             wssv.Stop();

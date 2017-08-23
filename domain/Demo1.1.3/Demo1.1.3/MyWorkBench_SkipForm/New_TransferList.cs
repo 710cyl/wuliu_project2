@@ -321,36 +321,61 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm
                 }
             }
         }
-
+        #region
         private void textBox20_Click(object sender, EventArgs e) //移出客户
+        {
+            
+        }
+
+        private void textBox8_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void textBox5_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void textBox18_Click(object sender, EventArgs e)
+        {
+            
+        }
+        #endregion
+        private void gridView1_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+        {
+           
+        }
+
+        private void textBox20_Click_1(object sender, EventArgs e)
         {
             Demo1._1._3._1_NewViews.TabbedSection_Customers tc = new _1_NewViews.TabbedSection_Customers();
             tc.ReturnEvent += new Demo1._1._3._1_NewViews.TabbedSection_Customers.Customers(getCustomerOut);
             tc.ShowDialog();
         }
 
-        private void textBox8_Click(object sender, EventArgs e)
+        private void textBox8_Click_1(object sender, EventArgs e)
         {
             Demo1._1._3._1_NewViews.TabbedSection_Customers tc = new _1_NewViews.TabbedSection_Customers();
             tc.ReturnEvent += new Demo1._1._3._1_NewViews.TabbedSection_Customers.Customers(getCustomerIn);
             tc.ShowDialog();
         }
 
-        private void textBox5_Click(object sender, EventArgs e)
+        private void textBox5_Click_1(object sender, EventArgs e)
         {
             Demo1._1._3._1_NewViews.TabbedSection_Customers tc = new _1_NewViews.TabbedSection_Customers();
             tc.ReturnEvent += new Demo1._1._3._1_NewViews.TabbedSection_Customers.Customers(getStorageUint);
             tc.ShowDialog();
         }
 
-        private void textBox18_Click(object sender, EventArgs e)
+        private void textBox18_Click_1(object sender, EventArgs e)
         {
             Demo1._1._3._1_NewViews.TabbedSection_Customers tc = new _1_NewViews.TabbedSection_Customers();
             tc.ReturnEvent += new Demo1._1._3._1_NewViews.TabbedSection_Customers.Customers(getTransUnit);
             tc.ShowDialog();
         }
 
-        private void gridView1_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+        private void gridView1_RowCellClick_1(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
             storagename = comboBox3.Text;
             Demo1._1._3._1_NewViews.MyWorkBench.TabbedSection_StorageDetails sd = new _1_NewViews.MyWorkBench.TabbedSection_StorageDetails();

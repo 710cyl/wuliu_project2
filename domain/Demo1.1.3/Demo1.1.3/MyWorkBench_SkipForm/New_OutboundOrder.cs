@@ -39,8 +39,6 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm
 
             if (Panel2_MyWorkBench.OutboundOrder.isExist)
             {
-
-
                 textBox1.Text = Panel2_MyWorkBench.OutboundOrder.array[22];
                 textBox2.Text = Panel2_MyWorkBench.OutboundOrder.array[21];
                 textBox20.Text = Panel2_MyWorkBench.OutboundOrder.array[3];
@@ -77,7 +75,7 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm
             {
                 DataGridViewInit();
 
-                textBox11.Text = fc.DateTimeToUnix("PC");
+               // textBox11.Text = fc.DateTimeToUnix("PC");
 
                 this.gridView1.Columns[0].Caption = "出库单识别码";
                 this.gridView1.Columns[1].Caption = "出库单号";
@@ -258,6 +256,12 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm
                     throw;
                 }
             }
+        }
+
+        private void textBox1_Click(object sender, EventArgs e) //主表点击事件
+        {
+            Demo1._1._3._1_NewViews.TabbedSection_OutBounceCar oc = new _1_NewViews.TabbedSection_OutBounceCar();
+            oc.ShowDialog();
         }
     }
 }

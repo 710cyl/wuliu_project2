@@ -50,7 +50,13 @@ namespace wuliu_server
             wssv.AddWebSocketService<Combobox_CraneNumber>("/Combobox/Combobox_CraneNumber");
             wssv.AddWebSocketService<Combobox_Texture>("/Combobox/Combobox_Texture");
             wssv.AddWebSocketService<Combobox_Variety>("/Combobox/Combobox_Variety");
+
             wssv.AddWebSocketService<Combobox_Transportation>("/Combobox/Combobox_Transportation");
+
+
+            wssv.AddWebSocketService<ServerStorageDetails>("/ServerStorageDetails");
+            wssv.AddWebSocketService<ServerOuBounceCarDetails>("/ServerOuBounceCarDetails");
+
             wssv.Start();
             Console.ReadKey();
             wssv.Stop();
@@ -690,6 +696,14 @@ namespace wuliu_server
                 string json = JsonConvert.SerializeObject(fund_account);
                 return json;
             }
+               
+            else if (s == "Customer_File")
+            {
+                IList<Customer_File> fund_account = session.QueryOver<Customer_File>().List();
+                string json = JsonConvert.SerializeObject(fund_account);
+                return json;
+            }
+
 
             else if (s == "Office_Supply")
             {
@@ -1772,6 +1786,27 @@ namespace wuliu_server
                 ISQLQuery query = session.CreateSQLQuery(sql)
                .AddEntity("External_Exhicle", typeof(domain.External_Vehicle));
                 IList<External_Vehicle> fund_account = query.List<External_Vehicle>();
+                string json = JsonConvert.SerializeObject(fund_account);
+                return json;
+            }
+
+            else if (s == "Customer_File")
+            {
+                int page = Convert.ToInt32(NowPage.nowpage);
+                string input_val = GetValLike.input_val;
+                String sql = "select c.* from T_Customer_File c where c.编号  like '%" + input_val + "%' or c.客户编号  like '%" + input_val + "%'" +
+                      "or c.客户全程  like '%" + input_val + "%'" +
+                      "or c.速查码  like '%" + input_val + "%'" +
+                      "or c.地址  like '%" + input_val + "%'" +
+                      "or c.开户行  like '%" + input_val + "%'" +
+                      "or c.税号  like '%" + input_val + "%'" +
+                      "or c.联系人  like '%" + input_val + "%'" +
+                      "or c.电话  like '%" + input_val + "%'" +
+                      "or c.客户类型1  like '%" + input_val + "%'";
+
+                ISQLQuery query = session.CreateSQLQuery(sql)
+               .AddEntity("Customer_File", typeof(domain.Customer_File));
+                IList<Customer_File> fund_account = query.List<Customer_File>();
                 string json = JsonConvert.SerializeObject(fund_account);
                 return json;
             }

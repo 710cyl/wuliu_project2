@@ -32,9 +32,92 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm
         domain.StorageFormMainTrans sfm = new StorageFormMainTrans();
         List<domain.StorageDetailsTrans> sd = new List<StorageDetailsTrans>();
         FunctionClass fc = new FunctionClass();
+
+        public static string storagename;
+
+        #region 明细表传参
+        public string storagenames;//仓库
+        public string cargoowner;//货主
+        public string variety;//品种
+        public string storagecode;//入库单识别码
+        public string ordernumber;//订单号
+        public string itemnumber;//项目号
+        public int InventoryNumber;//库存件数
+        public decimal StockQuantity;// 库存数量
+        public string ReelNumber;//卷号
+        public string Material;// 材质
+        public string Specification;// 规格
+        public string CribNumber;// 垛位号
+
+        public string Statement;// 备注
+        #endregion
+
+        #region
+        private void getCustomerOut(string customer) //移出客户
+        {
+            textBox20.Text = customer;
+        }
+
+        private void getCustomerIn(string customer) //移入客户
+        {
+            textBox8.Text = customer;
+        }
+        private void getStorageUint(string customer) //仓库付费单位
+        {
+            textBox5.Text = customer;
+        }
+        private void getTransUnit(string customer) //移库付费单位
+        {
+            textBox18.Text = customer;
+        }
+
+        void ClickStorageDetails(/*string storagename, string cargoowner,*/ string variety, string storagecode
+                                                , string ordernumber, string itemnumber, int InventoryNumber, decimal StockQuantity
+                                                , string ReelNumber, string Material, string Specification, string CribNumber, string Statement)
+        {
+            //this.gridView1.SetRowCellValue((StorageDetails.Count - 1), gridView1.Columns[12], storagename);
+            //this.gridView1.SetRowCellValue((StorageDetails.Count - 1), gridView1.Columns[5], cargoowner);
+            this.gridView1.SetRowCellValue((StorageDetails.Count - 1), gridView1.Columns[6], variety);
+
+            this.gridView1.SetRowCellValue((StorageDetails.Count - 1), gridView1.Columns[1], storagecode);
+            this.gridView1.SetRowCellValue((StorageDetails.Count - 1), gridView1.Columns[3], ordernumber);
+            this.gridView1.SetRowCellValue((StorageDetails.Count - 1), gridView1.Columns[4], itemnumber);
+
+            this.gridView1.SetRowCellValue((StorageDetails.Count - 1), gridView1.Columns[9], InventoryNumber);
+            this.gridView1.SetRowCellValue((StorageDetails.Count - 1), gridView1.Columns[10], StockQuantity);
+            this.gridView1.SetRowCellValue((StorageDetails.Count - 1), gridView1.Columns[5], ReelNumber);
+
+            this.gridView1.SetRowCellValue((StorageDetails.Count - 1), gridView1.Columns[7], Material);
+            this.gridView1.SetRowCellValue((StorageDetails.Count - 1), gridView1.Columns[8], Specification);
+            this.gridView1.SetRowCellValue((StorageDetails.Count - 1), gridView1.Columns[11], CribNumber);
+
+            this.gridView1.SetRowCellValue((StorageDetails.Count - 1), gridView1.Columns[18], Statement);
+        }
+        #endregion
+
         public New_TransferList()
         {
             InitializeComponent();
+
+            comboBox3.DisplayMember = "仓库名称";
+            comboBox3.ValueMember = "value";
+            comboBox3.DataSource = fc.getStoragename();
+
+            comboBox2.DisplayMember = "装卸工";
+            comboBox2.ValueMember = "value";
+            comboBox2.DataSource = fc.getLoader();
+
+            comboBox6.DisplayMember = "装卸工";
+            comboBox6.ValueMember = "value";
+            comboBox6.DataSource = fc.getLoader();
+
+            comboBox1.DisplayMember = "库管";
+            comboBox1.ValueMember = "value";
+            comboBox1.DataSource = fc.getKeeper();
+
+            comboBox5.DisplayMember = "吊车工";
+            comboBox5.ValueMember = "value";
+            comboBox5.DataSource = fc.getCrane();
 
             if (Panel2_MyWorkBench.TransferList.isExist)
             {
@@ -69,29 +152,51 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm
             else
             {
                 DataGridViewInit();
-
-                this.gridView1.Columns[0].Caption = "移库识别码";
-                this.gridView1.Columns[1].Caption = "入库单识别码";
-                this.gridView1.Columns[2].Caption = "移库单号";
-                this.gridView1.Columns[3].Caption = "订单号";
-                this.gridView1.Columns[4].Caption = "项目号";
-                this.gridView1.Columns[5].Caption = "卷号";
-                this.gridView1.Columns[6].Caption = "品种";
-                this.gridView1.Columns[7].Caption = "材质";
-                this.gridView1.Columns[8].Caption = "规格";
-                this.gridView1.Columns[9].Caption = "库存件数";
-                this.gridView1.Columns[10].Caption = "库存数量";
-                this.gridView1.Columns[11].Caption = "原垛位号";
-                this.gridView1.Columns[12].Caption = "新垛位号";
-                this.gridView1.Columns[13].Caption = "移库件数";
-                this.gridView1.Columns[14].Caption = "移库数量";
-                this.gridView1.Columns[15].Caption = "票数";
-                this.gridView1.Columns[16].Caption = "入库日期";
-                this.gridView1.Columns[17].Caption = "出厂日期";
-                this.gridView1.Columns[18].Caption = "备注";
-
-                this.gridView1.BestFitColumns();
+                textBox10.Text = fc.DateTimeToUnix("YK");
             }
+
+            this.gridView1.Columns[0].Caption = "移库识别码";
+            this.gridView1.Columns[0].OptionsColumn.AllowEdit = false;
+            this.gridView1.Columns[1].Caption = "入库单识别码";
+            this.gridView1.Columns[1].OptionsColumn.AllowEdit = false;
+            this.gridView1.Columns[2].Caption = "移库单号";
+            this.gridView1.Columns[2].OptionsColumn.AllowEdit = false;
+            this.gridView1.Columns[3].Caption = "订单号";
+            this.gridView1.Columns[3].OptionsColumn.AllowEdit = false;
+            this.gridView1.Columns[4].Caption = "项目号";
+            this.gridView1.Columns[4].OptionsColumn.AllowEdit = false;
+            this.gridView1.Columns[5].Caption = "卷号";
+            this.gridView1.Columns[5].OptionsColumn.AllowEdit = false;
+            this.gridView1.Columns[6].Caption = "品种";
+            this.gridView1.Columns[6].OptionsColumn.AllowEdit = false;
+            this.gridView1.Columns[7].Caption = "材质";
+            this.gridView1.Columns[7].OptionsColumn.AllowEdit = false;
+            this.gridView1.Columns[8].Caption = "规格";
+            this.gridView1.Columns[8].OptionsColumn.AllowEdit = false;
+            this.gridView1.Columns[9].Caption = "库存件数";
+            this.gridView1.Columns[9].OptionsColumn.AllowEdit = false;
+            this.gridView1.Columns[10].Caption = "库存数量";
+            this.gridView1.Columns[10].OptionsColumn.AllowEdit = false;
+            this.gridView1.Columns[11].Caption = "原垛位号";
+            this.gridView1.Columns[11].OptionsColumn.AllowEdit = false;
+
+            this.gridView1.Columns[12].Caption = "新垛位号";
+            DevExpress.XtraEditors.Repository.RepositoryItemComboBox combobox_cranenumbernew = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            combobox_cranenumbernew.Items.AddRange(fc.getCraneNumber());
+            this.gridView1.Columns[12].ColumnEdit = combobox_cranenumbernew;
+
+            this.gridView1.Columns[13].Caption = "移库件数";
+            this.gridView1.Columns[13].OptionsColumn.AllowEdit = false;
+            this.gridView1.Columns[14].Caption = "移库数量";
+            this.gridView1.Columns[14].OptionsColumn.AllowEdit = false;
+            this.gridView1.Columns[15].Caption = "票数";
+            this.gridView1.Columns[15].OptionsColumn.AllowEdit = false;
+            this.gridView1.Columns[16].Caption = "入库日期";
+            this.gridView1.Columns[17].Caption = "出厂日期";
+            this.gridView1.Columns[18].Caption = "备注";
+            this.gridView1.Columns[18].OptionsColumn.AllowEdit = false;
+
+            this.gridView1.BestFitColumns();
         }
 
         public void DataGridViewInit()
@@ -104,8 +209,17 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm
 
         private void simpleButton4_Click(object sender, EventArgs e) //添加
         {
-            domain.StorageDetailsTrans sd = new domain.StorageDetailsTrans() {/* StorageFormMain = sfm*/ };
-            StorageDetails.Add(sd);
+            domain.StorageDetailsTrans sd = new domain.StorageDetailsTrans()
+            {
+                transStorageCode = string.Format("{0}-{1}", textBox10.Text, StorageDetails.Count + 1)
+                ,
+                StorageNumber = textBox10.Text
+                ,
+                StorageTime = DateTime.Now
+                ,
+                ProductionDate = DateTime.Now
+            };
+            StorageDetails.Add(sd);    
         }
 
         private void simpleButton3_Click(object sender, EventArgs e) //删除
@@ -206,6 +320,67 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm
                     throw;
                 }
             }
+        }
+        #region
+        private void textBox20_Click(object sender, EventArgs e) //移出客户
+        {
+            
+        }
+
+        private void textBox8_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void textBox5_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void textBox18_Click(object sender, EventArgs e)
+        {
+            
+        }
+        #endregion
+        private void gridView1_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+        {
+           
+        }
+
+        private void textBox20_Click_1(object sender, EventArgs e)
+        {
+            Demo1._1._3._1_NewViews.TabbedSection_Customers tc = new _1_NewViews.TabbedSection_Customers();
+            tc.ReturnEvent += new Demo1._1._3._1_NewViews.TabbedSection_Customers.Customers(getCustomerOut);
+            tc.ShowDialog();
+        }
+
+        private void textBox8_Click_1(object sender, EventArgs e)
+        {
+            Demo1._1._3._1_NewViews.TabbedSection_Customers tc = new _1_NewViews.TabbedSection_Customers();
+            tc.ReturnEvent += new Demo1._1._3._1_NewViews.TabbedSection_Customers.Customers(getCustomerIn);
+            tc.ShowDialog();
+        }
+
+        private void textBox5_Click_1(object sender, EventArgs e)
+        {
+            Demo1._1._3._1_NewViews.TabbedSection_Customers tc = new _1_NewViews.TabbedSection_Customers();
+            tc.ReturnEvent += new Demo1._1._3._1_NewViews.TabbedSection_Customers.Customers(getStorageUint);
+            tc.ShowDialog();
+        }
+
+        private void textBox18_Click_1(object sender, EventArgs e)
+        {
+            Demo1._1._3._1_NewViews.TabbedSection_Customers tc = new _1_NewViews.TabbedSection_Customers();
+            tc.ReturnEvent += new Demo1._1._3._1_NewViews.TabbedSection_Customers.Customers(getTransUnit);
+            tc.ShowDialog();
+        }
+
+        private void gridView1_RowCellClick_1(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+        {
+            storagename = comboBox3.Text;
+            Demo1._1._3._1_NewViews.MyWorkBench.TabbedSection_StorageDetails sd = new _1_NewViews.MyWorkBench.TabbedSection_StorageDetails();
+            sd.ReturnEvent += new _1_NewViews.MyWorkBench.TabbedSection_StorageDetails.ClickStorageDetails(ClickStorageDetails);
+            sd.ShowDialog();
         }
     }
 }

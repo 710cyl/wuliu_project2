@@ -715,6 +715,7 @@ namespace Demo1._1._3
             List<string> storage = JsonConvert.DeserializeObject<List<string>>(msg);
             return storage;
         }
+
         /// <summary>
         /// 获得运输方式
         /// </summary>
@@ -726,14 +727,86 @@ namespace Demo1._1._3
             {
                 ws.Connect();
                 ws.Send("Combobox_Transportation");
+                List<string> storage = JsonConvert.DeserializeObject<List<string>>(msg);
+            }
+            ws.Close();
+
+            return storage;
+        }
+
+
+        /// <summary>
+        /// 获得入库单明细
+        /// </summary>
+        /// <returns></returns>
+        public List<StorageDetails> getStorageDetails(string storagename)
+        {
+            string msg = null;
+
+            using (var ws = new WebSocket("ws://localhost:9000/ServerStorageDetails"))
+            {
+                ws.Connect();
+                ws.Send(storagename);
+
                 while (msg == null)
                 {
                     ws.OnMessage += (sender, e) =>
                     msg = e.Data;
+
                 }
                 ws.Close();
             }
-            List<string> storage = JsonConvert.DeserializeObject<List<string>>(msg);
+            
+            List<StorageDetails> storage = JsonConvert.DeserializeObject<List<StorageDetails>>(msg);
+            return storage;
+        }
+
+        /// <summary>
+        /// 获得出车派车主表
+        /// </summary>
+        /// <returns></returns>
+        public List<Outbound_Car> getOutBounceCar()
+        {
+            string msg = null;
+
+            using (var ws = new WebSocket("ws://localhost:9000/ServerOutBounceCar"))
+            {
+                ws.Connect();
+                ws.Send("ServerOutBounceCar");
+                while (msg == null)
+                {
+                    ws.OnMessage += (sender, e) =>
+                    msg = e.Data;
+
+                }
+                ws.Close();
+            }
+            List<Outbound_Car> storage = JsonConvert.DeserializeObject<List<Outbound_Car>>(msg);
+            return storage;
+        }
+
+        /// <summary>
+        /// 获得出车派车明细表
+        /// </summary>
+        /// <returns></returns>
+        public List<Outbound_Car_Detail> getOutBounceCarDetails(string storagename)
+        {
+            string msg = null;
+
+            using (var ws = new WebSocket("ws://localhost:9000/ServerOuBounceCarDetails"))
+            {
+                ws.Connect();
+                ws.Send(storagename);
+                while (msg == null)
+                {
+                    ws.OnMessage += (sender, e) =>
+                    msg = e.Data;
+
+                }
+                ws.Close();
+            }
+            List<Outbound_Car_Detail> storage = JsonConvert.DeserializeObject<List<Outbound_Car_Detail>>(msg);
+
             return storage;
         }
     }

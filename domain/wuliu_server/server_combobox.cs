@@ -254,6 +254,7 @@ namespace wuliu_server
                 ISession session = null;
                 try
                 {
+                    session = sessionFactory.OpenSession();
                     IList<string> rm_IList = session.QueryOver<Basic_Set>().List<Basic_Set>().Select(c => c.refund_Mode).Distinct().ToList<string>();
                     string refund_Mode_string = JsonConvert.SerializeObject(rm_IList);
                     Send(refund_Mode_string);

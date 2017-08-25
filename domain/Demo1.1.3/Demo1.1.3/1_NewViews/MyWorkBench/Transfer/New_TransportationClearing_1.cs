@@ -69,12 +69,21 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
             this.gridView1.Columns[12].Caption = "备注";
             this.gridView1.Columns[13].Caption = "运输单标识";
             this.gridView1.Columns[14].Caption = "货主";
-            this.gridView1.Columns[15].Caption = "结算单号";
+            this.gridView1.Columns[15].Visible = false;
+            textBox_clearing_id.Text = fc.DateTimeToUnix("TCM");
+            textBox_register_man.Text = "裴哥";
+            textBox_register_time.Text = DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss");
+            textBox_modifier.Text = "裴哥";
+            textBox_modify_time.Text = DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss");
         }
         //添加
         private void simpleButton4_Click(object sender, EventArgs e)
         {
-            domain.TransportationClearing_Detail sd = new domain.TransportationClearing_Detail() {/* StorageFormMain = tcm*/ };
+            domain.TransportationClearing_Detail sd = new domain.TransportationClearing_Detail()
+            {
+                order_id = string.Format("{0}-{1}", textBox_clearing_id.Text, tcd_bindinglist.Count + 1),
+                clearing_id = textBox_clearing_id.Text
+            };
             tcd_bindinglist.Add(sd);
         }
         //删除
@@ -97,9 +106,9 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
             {
                 tcm.clearing_id = textBox_clearing_id.Text;
                 tcm.register_man = textBox_register_man.Text;
-                tcm.register_time = Convert.ToDateTime(DateTime.Now.ToString("yyyy / MM / dd hh: mm:ss"));
+                tcm.register_time = Convert.ToDateTime(textBox_register_time.Text.ToString());
                 tcm.modifier = textBox_modifier.Text;
-                tcm.modify_time = Convert.ToDateTime(DateTime.Now.ToString("yyyy / MM / dd hh: mm:ss"));
+                tcm.modify_time = Convert.ToDateTime(textBox_modify_time.Text.ToString());
                 tcm.shipper = textBox_shipper.Text;
                 tcm.shipper_fullname = textBox_shipper_fullname.Text;
                 tcm.shipper_TFN = textBox_shipper_TFN.Text;
@@ -134,9 +143,9 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
             {
                 tcm.clearing_id = textBox_clearing_id.Text;
                 tcm.register_man = textBox_register_man.Text;
-                tcm.register_time = Convert.ToDateTime(DateTime.Now.ToString("yyyy / MM / dd hh: mm:ss"));
+                tcm.register_time = Convert.ToDateTime(textBox_register_time.Text.ToString());
                 tcm.modifier = textBox_modifier.Text;
-                tcm.modify_time = Convert.ToDateTime(DateTime.Now.ToString("yyyy / MM / dd hh: mm:ss"));
+                tcm.modify_time = Convert.ToDateTime(textBox_modify_time.Text.ToString());
                 tcm.shipper = textBox_shipper.Text;
                 tcm.shipper_fullname = textBox_shipper_fullname.Text;
                 tcm.shipper_TFN = textBox_shipper_TFN.Text;

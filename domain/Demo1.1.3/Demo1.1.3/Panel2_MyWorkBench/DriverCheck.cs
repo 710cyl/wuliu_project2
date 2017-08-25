@@ -50,7 +50,7 @@ namespace Demo1._1._3.Panel2_MyWorkBench
             {
                 panel1.Visible = true;
                 textBox_check_id.Text = array[0];
-                textBox_check_type.Text = array[1];
+                comboBox_check_type.Text = array[1];
                 textBox_check_month.Text = array[2];
                 textBox_motorcade.Text = array[3];
                 textBox_car_id.Text = array[4];
@@ -69,6 +69,11 @@ namespace Demo1._1._3.Panel2_MyWorkBench
         {
             isExist = false;
             panel1.Visible = true;
+            textBox_check_id.Text = fc.DateTimeToUnix("dc");
+            textBox_check_month.Text = DateTime.Now.ToString("yyyy/MM");
+            textBox_input_man.Text = "裴哥";
+            textBox_input_time.Text = DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss");
+            textBox_bookkeeping_time.Text = DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss");
         }
         //修改
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -86,7 +91,7 @@ namespace Demo1._1._3.Panel2_MyWorkBench
                     isExist = true;
                     panel1.Visible = true;
                     textBox_check_id.Text = array[0];
-                    textBox_check_type.Text = array[1];
+                    comboBox_check_type.Text = array[1];
                     textBox_check_month.Text = array[2];
                     textBox_motorcade.Text = array[3];
                     textBox_car_id.Text = array[4];
@@ -142,7 +147,7 @@ namespace Demo1._1._3.Panel2_MyWorkBench
             if (isExist) //保存修改
             {
                 tcm.check_id = textBox_check_id.Text;
-                tcm.check_type = textBox_check_type.Text;
+                tcm.check_type = comboBox_check_type.Text;
                 tcm.check_month = textBox_check_month.Text;
                 tcm.motorcade = textBox_motorcade.Text;
                 tcm.car_id = textBox_car_id.Text;
@@ -151,9 +156,9 @@ namespace Demo1._1._3.Panel2_MyWorkBench
                 tcm.salary_money = Convert.ToDecimal(textBox_salary_money.Text);
                 tcm.check_herald = comboBox_check_herald.Text;
                 tcm.input_man = textBox_input_man.Text;
-                tcm.input_time = Convert.ToDateTime(DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss"));
+                tcm.input_time = Convert.ToDateTime(textBox_input_time.Text);
                 tcm.check_reason = textBox_check_reason.Text;
-                tcm.bookkeeping_time = Convert.ToDateTime(DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss"));
+                tcm.bookkeeping_time = Convert.ToDateTime(textBox_bookkeeping_time.Text);
 
                 fc.updateData(tcm, "Driver_Check");
 
@@ -166,7 +171,7 @@ namespace Demo1._1._3.Panel2_MyWorkBench
             else   //保存
             {
                 tcm.check_id = textBox_check_id.Text;
-                tcm.check_type = textBox_check_type.Text;
+                tcm.check_type = comboBox_check_type.Text;
                 tcm.check_month = textBox_check_month.Text;
                 tcm.motorcade = textBox_motorcade.Text;
                 tcm.car_id = textBox_car_id.Text;
@@ -175,9 +180,9 @@ namespace Demo1._1._3.Panel2_MyWorkBench
                 tcm.salary_money = Convert.ToDecimal(textBox_salary_money.Text);
                 tcm.check_herald = comboBox_check_herald.Text;
                 tcm.input_man = textBox_input_man.Text;
-                tcm.input_time = Convert.ToDateTime(DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss"));
+                tcm.input_time = Convert.ToDateTime(textBox_input_time.Text);
                 tcm.check_reason = textBox_check_reason.Text;
-                tcm.bookkeeping_time = Convert.ToDateTime(DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss"));
+                tcm.bookkeeping_time = Convert.ToDateTime(textBox_bookkeeping_time.Text);
                 isExist = true;
                 fc.saveData(tcm, "Driver_Check");
 

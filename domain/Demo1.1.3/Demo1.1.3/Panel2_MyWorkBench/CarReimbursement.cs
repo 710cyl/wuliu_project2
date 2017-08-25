@@ -10,6 +10,7 @@ using DevExpress.XtraEditors;
 using WebSocketSharp;
 using Demo1._1._3.MyWorkBench_SkipForm;
 using System.Text.RegularExpressions;
+using System.Threading;
 
 namespace Demo1._1._3.Panel2_MyWorkBench
 {
@@ -31,6 +32,10 @@ namespace Demo1._1._3.Panel2_MyWorkBench
             total_Page = fc.getTotal<domain.Car_Reimbursement>(tcm, total_Page);
             fc.InitPage(dataNavigator1, total_Page, now_Page);
             child_form.ReturnEvent += new TabbedSections.ClickCar(getCarValue);
+            //设置下拉菜单
+            comboBox_reimbursement_content.DisplayMember = "报销内容";
+            comboBox_reimbursement_content.ValueMember = "value";
+            comboBox_reimbursement_content.DataSource = fc.getRefundMode();
         }
         //实现委托方法
         void getCarValue(string a, string b, string c)
@@ -66,7 +71,7 @@ namespace Demo1._1._3.Panel2_MyWorkBench
                     //tcm.is_payment = textBox_is_payment.Text;
                     //tcm.pay_account_id = textBox_pay_account_id.Text;
                     //tcm.pay_account = textBox_pay_account.Text;
-                    comBox_reimbursement_content.Text = array[12];
+                    comboBox_reimbursement_content.Text = array[12];
                     textBox_remark.Text = array[13];
                     textBox_FeeinChinese.Text = DaXie(array[8]);
 
@@ -86,12 +91,15 @@ namespace Demo1._1._3.Panel2_MyWorkBench
         {
             isExist = false;
             panel1.Visible = true;
+            textBox_reimbursement_id.Text = fc.DateTimeToUnix("CR");
+            textBox_regist_man.Text = "裴哥";
+            textBox_input_time.Text = DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss");
         }
         //修改
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            colCount = gridView2.Columns.Count() - 1;
-            array = new string[colCount + 1];
+            colCount = gridView2.Columns.Count();
+            array = new string[colCount];
             for (int i = 0; i < colCount; i++)
             {
                 array[i] = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[i]);
@@ -114,7 +122,7 @@ namespace Demo1._1._3.Panel2_MyWorkBench
                     //tcm.is_payment = textBox_is_payment.Text;
                     //tcm.pay_account_id = textBox_pay_account_id.Text;
                     //tcm.pay_account = textBox_pay_account.Text;
-                    comBox_reimbursement_content.Text = array[12];
+                    comboBox_reimbursement_content.Text = array[12];
                     textBox_remark.Text = array[13];
                 }
                 catch (Exception ex)
@@ -171,11 +179,12 @@ namespace Demo1._1._3.Panel2_MyWorkBench
                 tcm.is_payment = "是";
                 tcm.pay_account_id = "付款账户编号";
                 tcm.pay_account = "付款账户";
-                tcm.reimbursement_content = comBox_reimbursement_content.Text;
+                tcm.reimbursement_content = comboBox_reimbursement_content.Text;
                 tcm.remark = textBox_remark.Text;
-                
+
+
                 fc.updateData(tcm, "Car_Reimbursement");
-                gridControl2.DataSource = fc.showData<domain.Car_Reimbursement>(tcm, now_Page.ToString());
+
             }
 
             else   //保存
@@ -192,16 +201,16 @@ namespace Demo1._1._3.Panel2_MyWorkBench
                 tcm.is_payment = "是";
                 tcm.pay_account_id = "付款账户编号";
                 tcm.pay_account = "付款账户";
-                tcm.reimbursement_content = comBox_reimbursement_content.Text;
+                tcm.reimbursement_content = comboBox_reimbursement_content.Text;
                 tcm.remark = textBox_remark.Text;
 
 
                 fc.saveData(tcm, "Car_Reimbursement");
-                gridControl2.DataSource = fc.showData<domain.Car_Reimbursement>(tcm, now_Page.ToString());
             }
-
+            Thread.Sleep(500);
+            gridView2.ClearGrouping();
+            gridControl2.DataSource = fc.showData<domain.Car_Reimbursement>(tcm, now_Page.ToString());
             panel1.Visible = false;
-            Refresh();
 
         }
         //关闭

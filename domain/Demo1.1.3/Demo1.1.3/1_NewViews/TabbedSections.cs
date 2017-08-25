@@ -15,9 +15,9 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
         FunctionClass fc = new FunctionClass();
         public long total_Page = 0; //页码总条目
         public long now_Page = 1; //当前页码
-        static public string motorcade_string;//车队
-        static public string carid_string;//车号
-        static public string driver_string;//司机
+        public string motorcade_string;//车队
+        public string carid_string;//车号
+        public string driver_string;//司机
         bool IsInternal = true;
         domain.External_Vehicle ev = new domain.External_Vehicle();
         domain.Internal_Vehicle iv = new domain.Internal_Vehicle();
@@ -75,8 +75,6 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
             driver_string = gridView1.GetFocusedRowCellDisplayText(gridView1.Columns[3]);
             Close();
             ReturnEvent?.Invoke(motorcade_string, carid_string, driver_string);
-
-
         }
         //内部车队事件
         private void accordionControlElement2_Click_1(object sender, EventArgs e)

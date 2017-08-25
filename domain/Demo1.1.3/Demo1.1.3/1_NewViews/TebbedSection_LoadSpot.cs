@@ -56,7 +56,21 @@ namespace Demo1._1._3._1_NewViews
 
         private void accordionControlElement3_Click(object sender, EventArgs e) //卸货点
         {
-           
+            domain.Discharge de = new domain.Discharge();
+            gridView1.ClearGrouping();
+            gridControl1.DataSource = fc.showData(de, now_Page.ToString());
+            Mark = 2;
+
+            this.gridView1.Columns[0].Caption = "编号";
+            this.gridView1.Columns[1].Caption = "卸点";
+            this.gridView1.Columns[2].Caption = "所在城市";
+            this.gridView1.Columns[3].Caption = "所在区域";
+            this.gridView1.Columns[4].Caption = "说明";
+            this.gridView1.Columns[5].Caption = "联系人";
+            this.gridView1.Columns[6].Caption = "电话";
+            this.gridView1.Columns[7].Caption = "地址";
+
+            this.gridView1.BestFitColumns();
         }
 
         private void accordionControlElement4_Click(object sender, EventArgs e) //装货点

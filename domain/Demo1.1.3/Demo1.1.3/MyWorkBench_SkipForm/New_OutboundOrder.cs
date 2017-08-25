@@ -33,14 +33,85 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm
         domain.StorageFormMainOut sfm = new StorageFormMainOut();
         List<domain.StorageDetailsOut> sd = new List<StorageDetailsOut>();
         FunctionClass fc = new FunctionClass();
+
+        public static string ordernum;
+        #region
+
+        /// <summary>
+        /// 派车单号
+        /// </summary>
+        public string sendcar_num { get; set; }
+        /// <summary>
+        /// 货主单位
+        /// </summary>
+        public string owner_unit { get; set; }
+
+        /// <summary>
+        /// 发货仓库
+        /// </summary>
+        public string warehouse_send { get; set; }
+
+        /// <summary>
+        /// 付费单位
+        /// </summary>
+        public string pay_unit { get; set; }
+
+        /// <summary>
+        /// 车队
+        /// </summary>
+        public string cars { get; set; }
+        /// <summary>
+        /// 车号
+        /// </summary>
+        public string carnum { get; set; }
+
+        /// <summary>
+        /// 司机
+        /// </summary>
+        public string driver { get; set; }
+
+        /// <summary>
+        /// 卸货城市
+        /// </summary>
+        public string unload_city { get; set; }
+        /// <summary>
+        /// 卸货区域
+        /// </summary>
+        public string unload_area { get; set; }
+        /// <summary>
+        /// 实际卸点
+        /// </summary>
+        public string unload_point { get; set; }
+
+        /// <summary>
+        /// 说明
+        /// </summary>
+        public string explain { get; set; }
+        #endregion
+
+         void ClickOutBounceCar(string sendcar_num, string owner_unit, string warehouse_send, string pay_unit
+                                               , string cars, string carnum, string driver, string unload_city
+                                               , string unload_area, string unload_point, string explain)
+        {
+            textBox11.Text = sendcar_num;
+            textBox1.Text = owner_unit;
+            textBox2.Text = warehouse_send;
+            textBox3.Text = pay_unit;
+            textBox20.Text = cars;
+            textBox8.Text = carnum;
+            textBox5.Text = driver;
+            textBox9.Text = unload_city;
+            textBox18.Text = unload_area;
+            textBox10.Text = unload_point;
+
+        }
+
         public New_OutboundOrder()
         {
             InitializeComponent();
 
             if (Panel2_MyWorkBench.OutboundOrder.isExist)
             {
-
-
                 textBox1.Text = Panel2_MyWorkBench.OutboundOrder.array[22];
                 textBox2.Text = Panel2_MyWorkBench.OutboundOrder.array[21];
                 textBox20.Text = Panel2_MyWorkBench.OutboundOrder.array[3];
@@ -77,17 +148,23 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm
             {
                 DataGridViewInit();
 
-                textBox11.Text = fc.DateTimeToUnix("PC");
+                // textBox11.Text = fc.DateTimeToUnix("PC");
 
                 this.gridView1.Columns[0].Caption = "出库单识别码";
+                this.gridView1.Columns[0].Visible = false;
                 this.gridView1.Columns[1].Caption = "出库单号";
+                this.gridView1.Columns[1].Visible = false;
                 this.gridView1.Columns[2].Caption = "入库性质";
                 this.gridView1.Columns[3].Caption = "入库时间";
                 this.gridView1.Columns[4].Caption = "订单号";
                 this.gridView1.Columns[5].Caption = "货主";
+                this.gridView1.Columns[5].Visible = false;
                 this.gridView1.Columns[6].Caption = "卸货点";
+                this.gridView1.Columns[6].Visible = false;
                 this.gridView1.Columns[7].Caption = "卸货城市";
+                this.gridView1.Columns[7].Visible = false;
                 this.gridView1.Columns[8].Caption = "卸货区域";
+                this.gridView1.Columns[8].Visible = false;
                 this.gridView1.Columns[9].Caption = "卷号";
                 this.gridView1.Columns[10].Caption = "品种";
                 this.gridView1.Columns[11].Caption = "材质";
@@ -97,37 +174,65 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm
                 this.gridView1.Columns[15].Caption = "实发件数";
                 this.gridView1.Columns[16].Caption = "实发数量";
                 this.gridView1.Columns[17].Caption = "入库单识别码";
+                this.gridView1.Columns[17].Visible = false;
                 this.gridView1.Columns[18].Caption = "车队";
+                this.gridView1.Columns[18].Visible = false;
                 this.gridView1.Columns[19].Caption = "车号";
+                this.gridView1.Columns[19].Visible = false;
                 this.gridView1.Columns[20].Caption = "司机";
+                this.gridView1.Columns[20].Visible = false;
                 this.gridView1.Columns[21].Caption = "发货员";
+                this.gridView1.Columns[21].Visible = false;
                 this.gridView1.Columns[22].Caption = "发货时间";
+                this.gridView1.Columns[22].Visible = false;
                 this.gridView1.Columns[23].Caption = "库管";
+                this.gridView1.Columns[23].Visible = false;
                 this.gridView1.Columns[24].Caption = "吊车工";
+                this.gridView1.Columns[24].Visible = false;
                 this.gridView1.Columns[25].Caption = "装卸工";
+                this.gridView1.Columns[25].Visible = false;
                 this.gridView1.Columns[26].Caption = "装卸工1";
+                this.gridView1.Columns[26].Visible = false;
                 this.gridView1.Columns[27].Caption = "备注";
                 this.gridView1.Columns[28].Caption = "实际卸货点";
+                this.gridView1.Columns[28].Visible = false;
                 this.gridView1.Columns[29].Caption = "实际卸货城市";
+                this.gridView1.Columns[29].Visible = false;
                 this.gridView1.Columns[30].Caption = "实际卸货区域";
+                this.gridView1.Columns[30].Visible = false;
                 this.gridView1.Columns[31].Caption = "发装城市";
+                this.gridView1.Columns[31].Visible = false;
                 this.gridView1.Columns[32].Caption = "发装区域";
+                this.gridView1.Columns[32].Visible = false;
                 this.gridView1.Columns[33].Caption = "发装点";
+                this.gridView1.Columns[33].Visible = false;
                 this.gridView1.Columns[34].Caption = "车队标识";
+                this.gridView1.Columns[34].Visible = false;
                 this.gridView1.Columns[35].Caption = "出库时间";
+                this.gridView1.Columns[35].Visible = false;
                 this.gridView1.Columns[36].Caption = "垛位号";
+                this.gridView1.Columns[36].Visible = false;
                 this.gridView1.Columns[37].Caption = "修改人";
+                this.gridView1.Columns[37].Visible = false;
                 this.gridView1.Columns[38].Caption = "修改时间";
+                this.gridView1.Columns[38].Visible = false;
                 this.gridView1.Columns[39].Caption = "仓库名称";
+                this.gridView1.Columns[39].Visible = false;
                 this.gridView1.Columns[40].Caption = "项目号";
                 this.gridView1.Columns[41].Caption = "仓费单价";
                 this.gridView1.Columns[42].Caption = "仓储费";
                 this.gridView1.Columns[43].Caption = "付费单位";
+                this.gridView1.Columns[43].Visible = false;
                 this.gridView1.Columns[44].Caption = "基础存储期";
+                this.gridView1.Columns[44].Visible = false;
                 this.gridView1.Columns[45].Caption = "实际存储期";
+                this.gridView1.Columns[45].Visible = false;
                 this.gridView1.Columns[46].Caption = "超期";
+                this.gridView1.Columns[46].Visible = false;
                 this.gridView1.Columns[47].Caption = "基本仓储单价";
+                this.gridView1.Columns[47].Visible = false;
                 this.gridView1.Columns[48].Caption = "超期单价";
+                this.gridView1.Columns[48].Visible = false;
 
                 this.gridView1.BestFitColumns();
             }
@@ -258,6 +363,20 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm
                     throw;
                 }
             }
+        }
+
+        private void textBox1_Click(object sender, EventArgs e) //主表点击事件
+        {
+            Demo1._1._3._1_NewViews.TabbedSection_OutBounceCar oc = new _1_NewViews.TabbedSection_OutBounceCar();
+            oc.ReturnEvent += new _1_NewViews.TabbedSection_OutBounceCar.ClickOutBounceCar(ClickOutBounceCar);
+            oc.ShowDialog();
+        }
+
+        private void gridView1_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e) //明细表点击事件
+        {
+            ordernum = textBox11.Text;
+            Demo1._1._3._1_NewViews.TabbedSection_OutBounceCarDetails obd = new _1_NewViews.TabbedSection_OutBounceCarDetails();
+            obd.ShowDialog();
         }
     }
 }

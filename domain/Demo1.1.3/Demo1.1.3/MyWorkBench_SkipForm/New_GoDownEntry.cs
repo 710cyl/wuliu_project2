@@ -112,9 +112,9 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
             {
                 //主表显示
                 textBox2.Text = Panel2_MyWorkBench.GodownEntry.array[0];
-                comboBox2.Text = Panel2_MyWorkBench.GodownEntry.array[1];
+                comboBox1.Text = Panel2_MyWorkBench.GodownEntry.array[1];
                 dateTimePicker2.Value = Convert.ToDateTime(Panel2_MyWorkBench.GodownEntry.array[2]);
-                comboBox1.Text = Panel2_MyWorkBench.GodownEntry.array[3];
+                comboBox2.Text = Panel2_MyWorkBench.GodownEntry.array[3];
                 textBox5.Text = Panel2_MyWorkBench.GodownEntry.array[4];
                 textBox8.Text = Panel2_MyWorkBench.GodownEntry.array[5];
                 textBox9.Text = Panel2_MyWorkBench.GodownEntry.array[6];
@@ -274,7 +274,9 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
                 , KeyTime = DateTime.Now
                 ,StorageTime = DateTime.Now
                 ,ModifyTime  = DateTime.Now
-                , ProductionDate=DateTime.Now};
+                , ProductionDate=DateTime.Now
+                ,StorageWay = comboBox2.Text
+                };
             StorageDetails.Add(sd);
         }
 
@@ -296,9 +298,9 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
             if (Panel2_MyWorkBench.GodownEntry.isExist) //保存修改
             {
                 sfm.StorageNumber = textBox2.Text;
-                sfm.Storage = comboBox2.Text;
+                sfm.Storage = comboBox1.Text;
                 sfm.Modifier = textBox14.Text;
-                sfm.StorageWay = comboBox1.Text;
+                sfm.StorageWay = comboBox2.Text;
                 sfm.TotalStorage = Convert.ToDecimal(textBox6.Text);
                 sfm.StorageFleet = textBox5.Text;
                 sfm.CarNumber = textBox8.Text;
@@ -336,9 +338,9 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
                 try
                 {
                     sfm.StorageNumber = textBox2.Text;
-                    sfm.Storage = comboBox2.Text;
+                    sfm.Storage = comboBox1.Text;
                     sfm.Modifier = textBox14.Text;
-                    sfm.StorageWay = comboBox1.Text;
+                    sfm.StorageWay = comboBox2.Text;
                     sfm.TotalStorage = Convert.ToDecimal(textBox6.Text);
                     sfm.StorageFleet = textBox5.Text;
                     sfm.CarNumber = textBox8.Text;
@@ -413,30 +415,32 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
             }
         }
 
-        private void textBox9_Click(object sender, EventArgs e) //点击出现窗体 车队
+        
+
+        private void textBox15_Click(object sender, EventArgs e) //发货地点
+        {
+
+        }
+
+        private void textBox5_Click(object sender, EventArgs e)
         {
             child_form.ReturnEvent += new TabbedSections.ClickCar(getCarValue);
             child_form.ShowDialog();
         }
 
-        private void textBox10_Click(object sender, EventArgs e)//点击出现窗体 装货
+        private void textBox10_Click_1(object sender, EventArgs e)
         {
             load_form.ReturnEvent += new TebbedSection_LoadSpot.ClickCity(getLoadValue);
-            load_form.ShowDialog(); 
+            load_form.ShowDialog();
         }
 
-        private void gridView1_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e) //点击单元格处罚事件
+        private void gridView1_RowCellClick_1(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
             if (e.Column.Caption == "卸货点" || e.Column.Caption == "卸货地点" || e.Column.Caption == "卸货区域")
             {
                 discharge_form.ReturnEvent += new TabbedSection_Discharge.ClickCity(getDischargeValue);
                 discharge_form.ShowDialog();
             }
-        }
-
-        private void textBox15_Click(object sender, EventArgs e) //发货地点
-        {
-
         }
     }
 }

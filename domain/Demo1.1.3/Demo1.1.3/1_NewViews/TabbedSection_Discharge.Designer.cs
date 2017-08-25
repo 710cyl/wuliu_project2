@@ -43,12 +43,10 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
-            this.gridControl1.Location = new System.Drawing.Point(0, 59);
+            this.gridControl1.Location = new System.Drawing.Point(0, 47);
             this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1146, 418);
+            this.gridControl1.Size = new System.Drawing.Size(860, 335);
             this.gridControl1.TabIndex = 6;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -67,26 +65,23 @@
             this.panel1.Controls.Add(this.simpleButton2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1146, 59);
+            this.panel1.Size = new System.Drawing.Size(860, 47);
             this.panel1.TabIndex = 7;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(16, 15);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Location = new System.Drawing.Point(12, 12);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(236, 25);
+            this.textBox1.Size = new System.Drawing.Size(178, 21);
             this.textBox1.TabIndex = 4;
             // 
             // simpleButton3
             // 
             this.simpleButton3.Image = global::Demo1._1._3.Properties.Resources.lookup_reference_16x16;
-            this.simpleButton3.Location = new System.Drawing.Point(261, 15);
-            this.simpleButton3.Margin = new System.Windows.Forms.Padding(4);
+            this.simpleButton3.Location = new System.Drawing.Point(196, 12);
             this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(100, 29);
+            this.simpleButton3.Size = new System.Drawing.Size(75, 23);
             this.simpleButton3.TabIndex = 3;
             this.simpleButton3.Text = "查询";
             this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
@@ -95,10 +90,9 @@
             // 
             this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton1.Image = global::Demo1._1._3.Properties.Resources.add_16x16;
-            this.simpleButton1.Location = new System.Drawing.Point(907, 15);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.simpleButton1.Location = new System.Drawing.Point(680, 12);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(106, 29);
+            this.simpleButton1.Size = new System.Drawing.Size(80, 23);
             this.simpleButton1.TabIndex = 0;
             this.simpleButton1.Text = "确定";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -107,21 +101,21 @@
             // 
             this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButton2.Image = global::Demo1._1._3.Properties.Resources.cancel_16x16;
-            this.simpleButton2.Location = new System.Drawing.Point(1015, 15);
-            this.simpleButton2.Margin = new System.Windows.Forms.Padding(4);
+            this.simpleButton2.Location = new System.Drawing.Point(761, 12);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(106, 29);
+            this.simpleButton2.Size = new System.Drawing.Size(80, 23);
             this.simpleButton2.TabIndex = 1;
             this.simpleButton2.Text = "取消";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // TabbedSection_Discharge
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1146, 477);
+            this.ClientSize = new System.Drawing.Size(860, 382);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TabbedSection_Discharge";
             this.Text = "TabbedSection_Discharge";
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();

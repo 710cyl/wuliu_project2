@@ -927,7 +927,12 @@ namespace Demo1._1._3
            panel2.Controls.Add(carf);
        }
 
-    
+        private void accordionControl4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
 
         /*********************************************************************************************************/
     }

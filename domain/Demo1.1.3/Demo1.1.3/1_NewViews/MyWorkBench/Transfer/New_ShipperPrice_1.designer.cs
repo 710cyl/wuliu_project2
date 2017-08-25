@@ -92,7 +92,9 @@
             this.gridView1.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ColumnAutoWidth = false;
+            this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridView1_RowCellClick);
             this.gridView1.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanging);
             // 
             // panel_button
@@ -213,6 +215,7 @@
             // 
             // textBox7
             // 
+            this.textBox7.Enabled = false;
             this.textBox7.Font = new System.Drawing.Font("宋体", 9.5F);
             this.textBox7.Location = new System.Drawing.Point(827, 30);
             this.textBox7.Margin = new System.Windows.Forms.Padding(2);
@@ -222,11 +225,11 @@
             // 
             // textBox6
             // 
+            this.textBox6.Enabled = false;
             this.textBox6.Font = new System.Drawing.Font("宋体", 9.5F);
             this.textBox6.Location = new System.Drawing.Point(585, 29);
             this.textBox6.Margin = new System.Windows.Forms.Padding(2);
             this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(138, 22);
             this.textBox6.TabIndex = 49;
             // 
@@ -243,11 +246,11 @@
             // 
             // textBox1
             // 
+            this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("宋体", 9.5F);
             this.textBox1.Location = new System.Drawing.Point(102, 29);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(138, 22);
             this.textBox1.TabIndex = 2;
             // 
@@ -286,11 +289,11 @@
             // 
             // textBox2
             // 
+            this.textBox2.Enabled = false;
             this.textBox2.Font = new System.Drawing.Font("宋体", 9.5F);
             this.textBox2.Location = new System.Drawing.Point(344, 29);
             this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(138, 22);
             this.textBox2.TabIndex = 48;
             // 

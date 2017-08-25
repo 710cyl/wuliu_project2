@@ -240,6 +240,7 @@ namespace wuliu_server
         }
     }
 
+
     /// <summary>
     /// 基础——报销类型（报销内容）
     /// </summary>
@@ -253,11 +254,35 @@ namespace wuliu_server
                 ISession session = null;
                 try
                 {
-                    session = sessionFactory.OpenSession();
                     IList<string> rm_IList = session.QueryOver<Basic_Set>().List<Basic_Set>().Select(c => c.refund_Mode).Distinct().ToList<string>();
                     string refund_Mode_string = JsonConvert.SerializeObject(rm_IList);
-
                     Send(refund_Mode_string);
+                }
+                catch (Exception)
+                {
+                    throw;
+                }        
+            }
+        }
+
+    }
+    /// <summary>
+    /// 运输方式
+    /// </summary>
+    public class Combobox_Transportation : WebSocketBehavior
+    {
+        protected override void OnMessage(MessageEventArgs e)
+        {
+            var cfg = new NHibernate.Cfg.Configuration().Configure("Config/hibernate.cfg.xml");
+            using (ISessionFactory sessionFactory = cfg.BuildSessionFactory())
+            {
+                ISession session = null;
+                try
+                {
+                    session = sessionFactory.OpenSession();
+                    IList<string> storage = session.QueryOver<Basic_Set>().List<Basic_Set>().Select(c => c.transportation_Mode).Distinct().ToList<string>();
+                    string storages = JsonConvert.SerializeObject(storage);
+                    Send(storages);
                 }
                 catch (Exception)
                 {
@@ -266,6 +291,7 @@ namespace wuliu_server
             }
         }
     }
+
     /// <summary>
     /// 基础——油气类型（油气种类）
     /// </summary>
@@ -292,5 +318,4 @@ namespace wuliu_server
             }
         }
     }
-
 }

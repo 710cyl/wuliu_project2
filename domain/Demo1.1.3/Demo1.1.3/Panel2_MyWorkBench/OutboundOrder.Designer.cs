@@ -104,7 +104,7 @@
             this.tabPane1.Controls.Add(this.tabNavigationPage1);
             this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabPane1.Location = new System.Drawing.Point(0, 270);
-            this.tabPane1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPane1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPane1.Name = "tabPane1";
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabNavigationPage1});
@@ -121,17 +121,17 @@
             this.tabNavigationPage1.Caption = "出库单_明细";
             this.tabNavigationPage1.Controls.Add(this.gridControl2);
             this.tabNavigationPage1.Controls.Add(this.dataNavigator1);
-            this.tabNavigationPage1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tabNavigationPage1.Margin = new System.Windows.Forms.Padding(5);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
             this.tabNavigationPage1.Size = new System.Drawing.Size(1329, 511);
             // 
             // gridControl2
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridControl2.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl2.Location = new System.Drawing.Point(0, 0);
             this.gridControl2.MainView = this.gridView2;
-            this.gridControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridControl2.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl2.Name = "gridControl2";
             this.gridControl2.Size = new System.Drawing.Size(1329, 479);
             this.gridControl2.TabIndex = 22;
@@ -143,6 +143,7 @@
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsBehavior.Editable = false;
             this.gridView2.OptionsView.ColumnAutoWidth = false;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
@@ -180,7 +181,7 @@
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 5, true, true, "尾页", "尾页")});
             this.dataNavigator1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataNavigator1.Location = new System.Drawing.Point(0, 479);
-            this.dataNavigator1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataNavigator1.Margin = new System.Windows.Forms.Padding(4);
             this.dataNavigator1.Name = "dataNavigator1";
             this.dataNavigator1.ShowToolTips = true;
             this.dataNavigator1.Size = new System.Drawing.Size(1329, 32);
@@ -192,10 +193,10 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl1.Location = new System.Drawing.Point(0, 262);
             this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(1351, 578);
             this.gridControl1.TabIndex = 24;
@@ -603,7 +604,7 @@
             this.panel1.Controls.Add(this.dataNavigator_Basic_Set);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 27);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1351, 235);
             this.panel1.TabIndex = 27;
@@ -611,10 +612,10 @@
             // gridControl3
             // 
             this.gridControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl3.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridControl3.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl3.Location = new System.Drawing.Point(0, 0);
             this.gridControl3.MainView = this.gridView3;
-            this.gridControl3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridControl3.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl3.Name = "gridControl3";
             this.gridControl3.Size = new System.Drawing.Size(1351, 203);
             this.gridControl3.TabIndex = 27;
@@ -626,6 +627,7 @@
             this.gridView3.GridControl = this.gridControl3;
             this.gridView3.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsBehavior.Editable = false;
             this.gridView3.OptionsView.ColumnAutoWidth = false;
             this.gridView3.OptionsView.ShowGroupPanel = false;
             this.gridView3.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView3_RowClick);
@@ -634,7 +636,7 @@
             // 
             this.splitterControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitterControl1.Location = new System.Drawing.Point(0, 262);
-            this.splitterControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitterControl1.Margin = new System.Windows.Forms.Padding(4);
             this.splitterControl1.Name = "splitterControl1";
             this.splitterControl1.Size = new System.Drawing.Size(1351, 8);
             this.splitterControl1.TabIndex = 38;
@@ -649,7 +651,7 @@
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "OutboundOrder";
             this.Size = new System.Drawing.Size(1351, 840);
             this.tabPane1.ResumeLayout(false);

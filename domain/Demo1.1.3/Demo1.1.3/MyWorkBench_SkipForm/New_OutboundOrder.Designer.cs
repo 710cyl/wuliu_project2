@@ -135,8 +135,10 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsView.ColumnAutoWidth = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridView1_RowCellClick);
             this.gridView1.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanging);
             // 
             // barManager1
@@ -316,6 +318,7 @@
             this.textBox4.Location = new System.Drawing.Point(820, 194);
             this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(183, 26);
             this.textBox4.TabIndex = 289;
             // 
@@ -325,6 +328,7 @@
             this.textBox16.Location = new System.Drawing.Point(175, 192);
             this.textBox16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox16.Name = "textBox16";
+            this.textBox16.ReadOnly = true;
             this.textBox16.Size = new System.Drawing.Size(183, 26);
             this.textBox16.TabIndex = 288;
             // 
@@ -367,6 +371,7 @@
             this.textBox28.Location = new System.Drawing.Point(1143, 128);
             this.textBox28.Margin = new System.Windows.Forms.Padding(4);
             this.textBox28.Name = "textBox28";
+            this.textBox28.ReadOnly = true;
             this.textBox28.Size = new System.Drawing.Size(183, 26);
             this.textBox28.TabIndex = 284;
             // 
@@ -600,6 +605,7 @@
             this.textBox18.Location = new System.Drawing.Point(1143, 62);
             this.textBox18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox18.Name = "textBox18";
+            this.textBox18.ReadOnly = true;
             this.textBox18.Size = new System.Drawing.Size(183, 26);
             this.textBox18.TabIndex = 261;
             // 
@@ -609,6 +615,7 @@
             this.textBox17.Location = new System.Drawing.Point(820, 161);
             this.textBox17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox17.Name = "textBox17";
+            this.textBox17.ReadOnly = true;
             this.textBox17.Size = new System.Drawing.Size(183, 26);
             this.textBox17.TabIndex = 260;
             // 
@@ -618,6 +625,7 @@
             this.textBox14.Location = new System.Drawing.Point(820, 128);
             this.textBox14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox14.Name = "textBox14";
+            this.textBox14.ReadOnly = true;
             this.textBox14.Size = new System.Drawing.Size(183, 26);
             this.textBox14.TabIndex = 259;
             // 
@@ -647,6 +655,7 @@
             this.textBox9.Location = new System.Drawing.Point(820, 62);
             this.textBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox9.Name = "textBox9";
+            this.textBox9.ReadOnly = true;
             this.textBox9.Size = new System.Drawing.Size(183, 26);
             this.textBox9.TabIndex = 256;
             // 
@@ -666,6 +675,7 @@
             this.textBox7.Location = new System.Drawing.Point(497, 161);
             this.textBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox7.Name = "textBox7";
+            this.textBox7.ReadOnly = true;
             this.textBox7.Size = new System.Drawing.Size(183, 26);
             this.textBox7.TabIndex = 253;
             // 
@@ -675,6 +685,7 @@
             this.textBox3.Location = new System.Drawing.Point(497, 61);
             this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(183, 26);
             this.textBox3.TabIndex = 252;
             // 
@@ -684,6 +695,7 @@
             this.textBox2.Location = new System.Drawing.Point(497, 30);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(183, 26);
             this.textBox2.TabIndex = 251;
             // 
@@ -693,6 +705,7 @@
             this.textBox15.Location = new System.Drawing.Point(175, 160);
             this.textBox15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox15.Name = "textBox15";
+            this.textBox15.ReadOnly = true;
             this.textBox15.Size = new System.Drawing.Size(183, 26);
             this.textBox15.TabIndex = 250;
             // 
@@ -742,6 +755,7 @@
             this.textBox10.Location = new System.Drawing.Point(175, 95);
             this.textBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox10.Name = "textBox10";
+            this.textBox10.ReadOnly = true;
             this.textBox10.Size = new System.Drawing.Size(183, 26);
             this.textBox10.TabIndex = 245;
             // 
@@ -761,8 +775,10 @@
             this.textBox1.Location = new System.Drawing.Point(175, 30);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(183, 26);
             this.textBox1.TabIndex = 243;
+            this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
             // 
             // panel2
             // 

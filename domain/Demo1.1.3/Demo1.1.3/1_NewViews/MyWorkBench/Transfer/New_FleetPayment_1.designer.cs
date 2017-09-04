@@ -209,6 +209,7 @@
             // 
             // textBox18
             // 
+            this.textBox18.Enabled = false;
             this.textBox18.Font = new System.Drawing.Font("宋体", 9.5F);
             this.textBox18.Location = new System.Drawing.Point(564, 50);
             this.textBox18.Name = "textBox18";

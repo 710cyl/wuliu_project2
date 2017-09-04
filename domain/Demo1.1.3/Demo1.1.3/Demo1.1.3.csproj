@@ -141,7 +141,7 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="websocket-sharp">
-      <HintPath>..\..\..\..\Users\ZTJ\Desktop\websocket-sharp\Example\bin\Debug_Ubuntu\websocket-sharp.dll</HintPath>
+      <HintPath>C:\Users\zts\Desktop\websocket-sharp.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

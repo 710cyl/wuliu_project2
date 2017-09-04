@@ -32,7 +32,13 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
         DateTimePicker dtp = new DateTimePicker();
         private BindingList<domain.TransportationRegister_Detail> TransportationRegister_Detail;
         domain.TransportationRegister tr = new TransportationRegister();
+        domain.TransportationClearing_Main tcm = new TransportationClearing_Main();
+        domain.ShipperPrice sp = new ShipperPrice();
+        Demo1._1._3.Views.MyWorkBench_SkipForm.Transport.New_TransportationClearing tc = new Demo1._1._3.Views.MyWorkBench_SkipForm.Transport.New_TransportationClearing();
         List<domain.TransportationRegister_Detail> trd = new List<TransportationRegister_Detail>();
+        List<domain.TransportationClearing_Detail> ltcd = new List<TransportationClearing_Detail>();
+        List<domain.FleetPrice_Detail> lfpd = new List<FleetPrice_Detail>();
+        List<domain.ShipperPrice_Detail> lspd = new List<ShipperPrice_Detail>();
         FunctionClass fc = new FunctionClass();
         /// <summary>
         /// 车队、司机、车号
@@ -57,6 +63,8 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
             if (Panel2_MyWorkBench.TransportationRegister.isExist)
             {
                 //主表显示
+                textBox1.Text = Panel2_MyWorkBench.TransportationRegister.array[8];
+                textBox6.Text = Panel2_MyWorkBench.TransportationRegister.array[7];
                 textBox2.Text = Panel2_MyWorkBench.TransportationRegister.array[0];
                 dateTimePicker1.Value = Convert.ToDateTime(Panel2_MyWorkBench.TransportationRegister.array[1]);
                 comboBox1.Text = Panel2_MyWorkBench.TransportationRegister.array[2];
@@ -113,6 +121,7 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
             this.gridView1.Columns[10].Caption = "数量";
             this.gridView1.Columns[11].Caption = "毛重";
             this.gridView1.Columns[12].Caption = "车队运价";
+            this.gridView1.Columns[13].OptionsColumn.AllowEdit = false;
             this.gridView1.Columns[13].Caption = "车队运费";
             this.gridView1.Columns[14].Caption = "货主运价";
             this.gridView1.Columns[15].Caption = "货主金额";
@@ -166,7 +175,7 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
             { transport_identifying = string.Format("{0}-{1}", textBox2.Text, TransportationRegister_Detail.Count + 1),
                 transport_ID = textBox2.Text , fleet = textBox5.Text, transport_way = comboBox1.Text, car_number = textBox3.Text,
                 driver = textBox9.Text, ship_city = textBox4.Text, ship_area = textBox11.Text, ship_point = textBox14.Text,
-                unload_city = textBox16.Text, unload_area = textBox24.Text, unload_point = textBox23.Text};
+                unload_city = textBox16.Text, unload_area = textBox24.Text, unload_point = textBox23.Text, car_fee = Convert.ToDecimal(textBox1.Text)};
             TransportationRegister_Detail.Add(trd);
         }
 
@@ -208,6 +217,7 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
                 tr.enter_time = dateTimePicker4.Value;
                 tr.change_staff = textBox12.Text;
                 tr.change_time = dateTimePicker5.Value;
+                tr.car_fee = Convert.ToDecimal(textBox1.Text);
                 List<domain.TransportationRegister_Detail> sd = TransportationRegister_Detail.ToList<domain.TransportationRegister_Detail>();
                 string Json = JsonConvert.SerializeObject(sd);
                 string jsonMain = JsonConvert.SerializeObject(tr);
@@ -238,12 +248,118 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
                 tr.enter_time = dateTimePicker4.Value;
                 tr.change_staff = textBox12.Text;
                 tr.change_time = dateTimePicker5.Value;
+                tr.car_fee = Convert.ToDecimal(textBox1.Text);
                 List<domain.TransportationRegister_Detail> sd = TransportationRegister_Detail.ToList<domain.TransportationRegister_Detail>();
                 string Json = JsonConvert.SerializeObject(sd);
                 string jsonMain = JsonConvert.SerializeObject(tr);
 
                 fc.SaveData(jsonMain, Json, tr.GetType().Name.ToString(), "TransportationRegister_Detail");
             }
+            //如果新建的主表里有车队运费等于零的则生成车队定价里的数据
+            if(Convert.ToInt32(textBox1.Text) == 0)
+            {
+                domain.FleetPrice fp = new FleetPrice();
+                fp.fleet = this.textBox5.Text;
+                fp.transport_ID = this.textBox2.Text;
+                fp.car_number = this.textBox3.Text;
+                fp.driver = this.textBox9.Text;
+                for(int h = 0; h < TransportationRegister_Detail.Count; h++)
+                {
+                    domain.FleetPrice_Detail fpd = new FleetPrice_Detail();
+                    fpd.transport_identifying = this.gridView1.GetRowCellDisplayText(h, gridView1.Columns[3]);
+                    fpd.transport_ID = this.textBox2.Text;
+                    lfpd.Add(fpd);
+                }
+                string ison = JsonConvert.SerializeObject(lfpd);
+                string IsonMain = JsonConvert.SerializeObject(fp);
+                fc.SaveData(IsonMain, ison, fp.GetType().Name.ToString(), "FleetPrice_Detail");
+            }
+            //如果新建的明细表里有货主运价等于零的则生成货主定价里的主表
+            for(int a = 0; a < TransportationRegister_Detail.Count; a++)
+            {
+                if(Convert.ToInt32(gridView1.GetRowCellDisplayText(a, gridView1.Columns[14])) == 0)
+                {
+
+                }
+                else
+                {
+                    sp.price_ID = this.textBox2.Text;
+                    break;
+                }
+            }
+            //如果新建的明细表里有货主运价等于零的则生成货主定价里的明细表
+            for(int b = 0; b < TransportationRegister_Detail.Count; b++)
+            {
+                domain.ShipperPrice_Detail spd = new ShipperPrice_Detail();
+                if (Convert.ToInt32(gridView1.GetRowCellDisplayText(b, gridView1.Columns[14])) == 0)
+                {
+                    spd.transport_identifying = this.gridView1.GetRowCellDisplayText(b, gridView1.Columns[3]);
+                    spd.price_ID = this.textBox2.Text;
+                    spd.order_nubmer = this.gridView1.GetRowCellDisplayText(b, gridView1.Columns[2]);
+                }
+                lspd.Add(spd);
+            }
+            string hson = JsonConvert.SerializeObject(lspd);
+            string HsonMain = JsonConvert.SerializeObject(sp);
+            fc.SaveData(HsonMain, hson, sp.GetType().Name.ToString(), "ShipperPrice_Detail");
+            //如果新建的明细表里有未结算金额不等于零的则生成运输结算里的主表
+            for (int i = 0; i < TransportationRegister_Detail.Count; i++)
+            {
+                //DataRow dr = gridView1.GetDataRow(i);
+                
+                    if (Convert.ToInt32( gridView1.GetRowCellDisplayText(i, gridView1.Columns[17])) == 0)
+                    {
+
+                    }
+                    else
+                    {
+                        tcm.clearing_id = this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[3]);
+                        tcm.register_man = tc.textBox_register_man.Text;
+                        tcm.register_time = Convert.ToDateTime(tc.textBox_register_time.Text.ToString());
+                        tcm.modifier = tc.textBox_modifier.Text;
+                        tcm.modify_time = Convert.ToDateTime(tc.textBox_modify_time.Text.ToString());
+                        tcm.shipper = tc.textBox_shipper.Text;
+                        tcm.shipper_fullname = tc.textBox_shipper_fullname.Text;
+                        tcm.shipper_TFN = tc.textBox_shipper_TFN.Text;
+                        tcm.paycompany = tc.textBox_paycompany.Text;
+                        tcm.paycompany_fullname = tc.textBox_paycompany_fullname.Text;
+                        tcm.paycompany_TFN = tc.textBox_paycompany_TFN.Text;
+                        tcm.billcompany = tc.textBox_billcompany.Text;
+                        tcm.billcompany_fullname = tc.textBox_billcompany_fullname.Text;
+                        tcm.billcompany_TFN = tc.textBox_billcompany_TFN.Text;
+                        decimal total_money = 0;
+                        decimal total_volume = 0;
+                        for (int p = 0; p < TransportationRegister_Detail.Count; p++)
+                        {
+                                total_money += Convert.ToDecimal(this.gridView1.GetRowCellDisplayText(p, gridView1.Columns[17]));
+                        }
+                        tcm.total_money = total_money;
+                    
+                        break;
+                    }
+                
+            }
+            //如果新建的明细表里有未结算金额不等于零的则生成运输结算里的明细表
+            for(int j = 0; j < gridView1.RowCount; j++)
+            {
+                domain.TransportationClearing_Detail td = new TransportationClearing_Detail();
+
+                if (Convert.ToInt32(gridView1.GetRowCellDisplayText(j, gridView1.Columns[17])) != 0)
+                    {
+
+                        td.clearing_id = tc.textBox_clearing_id.Text;
+                        td.order_id = this.gridView1.GetRowCellDisplayText(j, gridView1.Columns[3]);
+                        td.money = Convert.ToDecimal(this.gridView1.GetRowCellDisplayText(j, gridView1.Columns[17]).ToString());
+                        td.return_date = Convert.ToDateTime(this.gridView1.GetRowCellDisplayText(j, gridView1.Columns[33]));
+                        td.depart_date = Convert.ToDateTime(this.gridView1.GetRowCellDisplayText(j, gridView1.Columns[34]));
+                        
+                        ltcd.Add(td);
+                    
+                } 
+            }
+            string json = JsonConvert.SerializeObject(ltcd);
+            string JsonMain = JsonConvert.SerializeObject(tcm);
+            fc.SaveData(JsonMain, json, tcm.GetType().Name.ToString(), "TransportationClearing_Detail");
             trr = new Demo1._1._3.Panel2_MyWorkBench.TransportationRegister();
             domain.TransportationRegister transportationregister = new domain.TransportationRegister();
             Demo1._1._3.Panel2_MyWorkBench.TransportationRegister dbs = new Panel2_MyWorkBench.TransportationRegister();

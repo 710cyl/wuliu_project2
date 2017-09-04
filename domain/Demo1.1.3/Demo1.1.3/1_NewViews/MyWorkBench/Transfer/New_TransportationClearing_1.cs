@@ -13,7 +13,7 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
 {
     public partial class New_TransportationClearing : Form
     {
-        private BindingList<domain.TransportationClearing_Detail> tcd_bindinglist;
+        public BindingList<domain.TransportationClearing_Detail> tcd_bindinglist;
         domain.TransportationClearing_Main tcm = new domain.TransportationClearing_Main();
         List<domain.TransportationClearing_Detail> sd = new List<domain.TransportationClearing_Detail>();
         FunctionClass fc = new FunctionClass();

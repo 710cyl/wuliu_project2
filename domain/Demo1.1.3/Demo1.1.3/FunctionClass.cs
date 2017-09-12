@@ -50,8 +50,9 @@ namespace Demo1._1._3
                     
                          ws.OnMessage += (sender, e) =>
                                     total_Page = (Convert.ToInt64(e.Data) / 5) + 1;
+                    Thread.Sleep(500);
                     }
-                ws.Close();
+                    ws.Close();
                  }
                     return total_Page;
              }
@@ -202,6 +203,7 @@ namespace Demo1._1._3
                 {
                     ws.OnMessage += (sender, e) =>
                     msg = e.Data;
+                    Thread.Sleep(500);
                 }
                 ws.Close();
                 bs = JsonConvert.DeserializeObject<List<T>>(msg);
@@ -234,7 +236,7 @@ namespace Demo1._1._3
 
                 wsn.Close();
             }
-            Thread.Sleep(5000);
+            Thread.Sleep(2000);
             using (var wsn = new WebSocket("ws://localhost:9000/GetClassName/Detail"))
             {
                 wsn.Connect();
@@ -271,6 +273,7 @@ namespace Demo1._1._3
                        
                         ws.OnMessage += (sender, e) =>
                         json = e.Data;
+                        Thread.Sleep(500);
                     }
                     ws.Close();
                 }
@@ -297,10 +300,10 @@ namespace Demo1._1._3
                     ws.Connect();
                     ws.Send(primaryKey);
                     while (msg == null)
-                   {
-                        
+                   { 
                         ws.OnMessage += (sender, e1) =>
                         msg = e1.Data;
+                        Thread.Sleep(500);
                     }
                     //sd = JsonConvert.DeserializeObject<List<domain.StorageDetails>>(msg);
                         ws.Close();
@@ -500,6 +503,7 @@ namespace Demo1._1._3
                 {
                     ws.OnMessage += (sender, e) =>
                     msg = e.Data;
+                    Thread.Sleep(500);
 
                 }
                 ws.Close();
@@ -538,7 +542,7 @@ namespace Demo1._1._3
                 {       
                     ws.OnMessage += (sender, e) =>
                     msg = e.Data;
-
+                    
                 }
                 ws.Close();
             }
@@ -563,7 +567,7 @@ namespace Demo1._1._3
                 {
                     ws.OnMessage += (sender, e) =>
                     msg = e.Data;
-
+                    
                 }
                 ws.Close();
             }
@@ -587,7 +591,7 @@ namespace Demo1._1._3
                 {
                     ws.OnMessage += (sender, e) =>
                     msg = e.Data;
-
+                    
                 }
                 ws.Close();
             }
@@ -680,6 +684,30 @@ namespace Demo1._1._3
             {
                 ws.Connect();
                 ws.Send("Combobox_Variety");
+                while (msg == null)
+                {
+                    ws.OnMessage += (sender, e) =>
+                    msg = e.Data;
+
+                }
+                ws.Close();
+            }
+            List<string> storage = JsonConvert.DeserializeObject<List<string>>(msg);
+            return storage;
+        }
+
+        /// <summary>
+        /// combobox 获得角色名
+        /// </summary>
+        /// <returns></returns>
+        public List<string> getRoleName()
+        {
+            string msg = null;
+
+            using (var ws = new WebSocket("ws://localhost:9000/Combobox/Combobox_AddRole"))
+            {
+                ws.Connect();
+                ws.Send("Combobox_AddRole");
                 while (msg == null)
                 {
                     ws.OnMessage += (sender, e) =>

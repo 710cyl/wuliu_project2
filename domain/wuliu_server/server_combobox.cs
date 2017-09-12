@@ -264,4 +264,31 @@ namespace wuliu_server
             }
         }
     }
+
+    /// <summary>
+    /// 运输方式
+    /// </summary>
+    public class Combobox_AddRole : WebSocketBehavior
+    {
+        protected override void OnMessage(MessageEventArgs e)
+        {
+            var cfg = new NHibernate.Cfg.Configuration().Configure("Config/hibernate.cfg.xml");
+            using (ISessionFactory sessionFactory = cfg.BuildSessionFactory())
+            {
+                ISession session = null;
+                try
+                {
+                    session = sessionFactory.OpenSession();
+                    IList<string> storage = session.QueryOver<domain.权限.Role>().List<domain.权限.Role>().Select(c => c.rolename).Distinct().ToList<string>();
+                    string storages = JsonConvert.SerializeObject(storage);
+
+                    Send(storages);
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+        }
+    }
 }

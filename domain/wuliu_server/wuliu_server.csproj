@@ -114,6 +114,7 @@
     <Compile Include="ServerOutBounceCar.cs" />
     <Compile Include="ServerStorageDetails.cs" />
     <Compile Include="server_combobox.cs" />
+    <Compile Include="server_Login.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

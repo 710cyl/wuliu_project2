@@ -30,7 +30,23 @@ namespace Demo1._1._3.Panel2_MyWorkBench
             total_Page = fc.getTotal<domain.Car_Reimbursement>(tcm, total_Page);
             fc.InitPage(dataNavigator1, total_Page, now_Page);
             child_form.ReturnEvent += new TabbedSections.ClickCar(getCarValue);
+
+            isEdit();
         }
+
+        /// <summary>
+        /// 判断是否可以编辑
+        /// </summary>
+        private void isEdit()
+        {
+            if (Sign_in.transpotation.Substring(10, 2) == "01")
+            {
+                toolStripButton1.Visible = false;
+                toolStripButton2.Visible = false;
+                toolStripButton7.Visible = false;
+            }
+        }
+
         //实现委托方法
         void getCarValue(string a, string b, string c)
         {

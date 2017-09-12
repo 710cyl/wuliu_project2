@@ -14,6 +14,22 @@ namespace Demo1._1._3.Panel2_Basic_UserControl
         public OrderFile()
         {
             InitializeComponent();
+
+            isEdit();
+        }
+
+
+        /// <summary>
+        /// 判断是否可以编辑
+        /// </summary>
+        private void isEdit()
+        {
+            if (Sign_in.basic.Substring(24, 2) == "01")
+            {
+                toolStripButton1.Visible = false;
+                toolStripButton2.Visible = false;
+                toolStripButton7.Visible = false;
+            }
         }
     }
 }

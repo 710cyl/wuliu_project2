@@ -48,6 +48,21 @@ namespace Demo1._1._3.Panel2_MyWorkBench
             fc.InitPage(dataNavigator_FleetPrice, total_Page1, now_Page1);
             total_Page2 = fc.getTotal<domain.FleetPrice_Detail>(fpd, total_Page2);
             fc.InitPage(dataNavigator_FleetPrice_Detail, total_Page2, now_Page2);
+
+            isEdit();
+        }
+
+        /// <summary>
+        /// 判断可否编辑
+        /// </summary>
+        private void isEdit()
+        {
+            if (Sign_in.transpotation.Substring(2, 2) == "01")
+            {
+                toolStripButton1.Visible = false;
+                toolStripButton2.Visible = false;
+                toolStripButton4.Visible = false;
+            }
         }
 
         private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)

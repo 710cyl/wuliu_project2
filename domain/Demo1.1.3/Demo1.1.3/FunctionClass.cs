@@ -221,8 +221,6 @@ namespace Demo1._1._3
         public void SaveData(string jsonMain, string Json, string main, string detail)
         {
 
-
-
             using (var wsn = new WebSocket("ws://localhost:9000/GetClassName/Main"))
             {
                 wsn.Connect();
@@ -233,6 +231,7 @@ namespace Demo1._1._3
                     wsm.Connect();
                     wsm.Send(jsonMain);
                     wsm.Close();
+
                 }
 
                 wsn.Close();

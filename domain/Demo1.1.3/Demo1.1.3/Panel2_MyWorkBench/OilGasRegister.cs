@@ -31,15 +31,23 @@ namespace Demo1._1._3.Panel2_MyWorkBench
         public OilGasRegister()
         {
             InitializeComponent();
+            total_Page = fc.getTotal<domain.OilGasRegister_Main>(tcm, total_Page);
+            fc.InitPage(dataNavigator1, total_Page, now_Page);
 
         }
         //查看
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
+            colCount = gridView1.Columns.Count();
+            array = new string[colCount];
             str = gridView1.GetFocusedRowCellDisplayText(gridView1.Columns["register_id"]); //获取主键内容
-            MessageBox.Show(str);
-            ogr_list = JsonConvert.DeserializeObject<List<domain.OilGasRegister_Detail>>(fc.FindDeteils(str, "OilGasRegister_Detail"));
-            gridControl2.DataSource = ogr_list;
+            for (int i = 0; i < colCount; i++)
+            {
+                array[i] = gridView1.GetFocusedRowCellDisplayText(gridView1.Columns[i]);
+            }
+            isExist = true;
+            New_OilGasRegister_1 gde = new New_OilGasRegister_1();
+            gde.ShowDialog();
         }
         //新建
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -51,8 +59,9 @@ namespace Demo1._1._3.Panel2_MyWorkBench
         //修改
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            colCount = gridView1.Columns.Count() - 1;
-            array = new string[colCount + 1];
+            colCount = gridView1.Columns.Count();
+            array = new string[colCount];
+            str = gridView1.GetFocusedRowCellDisplayText(gridView1.Columns["register_id"]); //获取主键内容
             for (int i = 0; i < colCount; i++)
             {
                 array[i] = gridView1.GetFocusedRowCellDisplayText(gridView1.Columns[i]);
@@ -62,7 +71,7 @@ namespace Demo1._1._3.Panel2_MyWorkBench
                 try
                 {
                     isExist = true;
-                    New_TransportationClearing gde = new New_TransportationClearing();
+                    New_OilGasRegister_1 gde = new New_OilGasRegister_1();
                     gde.ShowDialog();
                 }
                 catch (Exception ex)

@@ -101,6 +101,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="websocket-sharp">
+      <HintPath>..\..\..\Users\ZTJ\Desktop\websocket-sharp\Example\bin\Debug_Ubuntu\websocket-sharp.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Basic_SetDAO.cs" />
@@ -109,6 +112,7 @@
     <Compile Include="IBasic_SetDAO.cs" />
     <Compile Include="IDecorateDAO.cs" />
     <Compile Include="IDischargeDAO.cs" />
+    <Compile Include="IExternalFleetDAO.cs" />
     <Compile Include="IFleetPayment.cs" />
     <Compile Include="IFleetPayment_Detail.cs" />
     <Compile Include="IFleetPrice.cs" />
@@ -130,11 +134,15 @@
     <Compile Include="IStorageDetail.cs" />
     <Compile Include="ITransportationRegister.cs" />
     <Compile Include="ITransportationRegister_Detail.cs" />
+    <Compile Include="IUserDAO.cs" />
+    <Compile Include="IWarehouse_Space.cs" />
+    <Compile Include="IWarehouse_Staff.cs" />
     <Compile Include="OilGasRegister_DetailDAO.cs" />
     <Compile Include="OilGasRegister_MainDAO.cs" />
     <Compile Include="Outbound_CarDAO.cs" />
     <Compile Include="Outbound_Car_DetailDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="IRoleDAO.cs" />
     <Compile Include="TransportationClearing_DetailDAO.cs" />
     <Compile Include="TransportationClearing_MainDAO.cs" />
   </ItemGroup>

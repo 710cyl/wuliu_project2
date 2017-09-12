@@ -45,6 +45,18 @@ namespace Demo1._1._3.Panel2_MyWorkBench
             InitializeComponent();
             total_Page = fc.getTotal<domain.StorageFormMainTrans>(bs, total_Page);
             fc.InitPage(dataNavigator_Basic_Set, total_Page, now_Page);
+
+            isEdit();
+        }
+
+        private void isEdit()
+        {
+            if (Sign_in.storage.Substring(4, 2) == "01")
+            {
+                toolStripButton1.Visible = false;
+                toolStripButton2.Visible = false;
+                toolStripButton7.Visible = false;
+            }
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e) //新建
@@ -83,7 +95,11 @@ namespace Demo1._1._3.Panel2_MyWorkBench
 
         private void toolStripButton7_Click(object sender, EventArgs e) //删除
         {
-                fc.DeleteMain(this.gridView1, "StorageFormMainTrans", "StorageNumber");
+            fc.DeleteMain(this.gridView1, "StorageFormMainTrans", "StorageNumber");
+            //Thread.Sleep(150);
+            //fc.DeleteMain(this.gridView1, "StorageFormMain", "StorageNumber");
+            //Thread.Sleep(150);
+            //fc.DeleteMain(this.gridView1, "StorageFormMainOut", "StorageNumber");
         }
 
         private void toolStripButton6_Click(object sender, EventArgs e) //导入数据

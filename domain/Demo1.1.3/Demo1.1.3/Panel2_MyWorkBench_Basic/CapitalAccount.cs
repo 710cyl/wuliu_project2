@@ -45,6 +45,21 @@ namespace Demo1._1._3.Panel2_Basic_UserControl
 
             total_Page = fc.getTotal<domain.Fund_Accounts>(fa, total_Page);
             fc.InitPage(dataNavigator_FundAccount, total_Page, now_Page);
+
+            isEdit();
+        }
+
+        /// <summary>
+        /// 判断是否可以编辑
+        /// </summary>
+        private void isEdit()
+        {
+            if (Sign_in.basic.Substring(18, 2) == "01")
+            {
+                toolStripButton1.Visible = false;
+                toolStripButton2.Visible = false;
+                toolStripButton7.Visible = false;
+            }
         }
 
         private void dataNavigator1_ButtonClick(object sender, NavigatorButtonClickEventArgs e)

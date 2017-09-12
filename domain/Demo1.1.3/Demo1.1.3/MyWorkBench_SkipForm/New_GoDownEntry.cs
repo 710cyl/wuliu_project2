@@ -220,27 +220,27 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
             this.gridView1.Columns[27].Caption = "入库时间";
 
             this.gridView1.Columns[28].Caption = "库管";
-            this.gridView1.Columns[28].Visible = false;
+            //this.gridView1.Columns[28].Visible = false;
             this.gridView1.Columns[29].Caption = "吊车工";
-            this.gridView1.Columns[29].Visible = false;
+            //this.gridView1.Columns[29].Visible = false;
             this.gridView1.Columns[30].Caption = "装卸工";
-            this.gridView1.Columns[30].Visible = false;
+           // this.gridView1.Columns[30].Visible = false;
             this.gridView1.Columns[31].Caption = "其他人";
-            this.gridView1.Columns[31].Visible = false;
+           // this.gridView1.Columns[31].Visible = false;
 
             this.gridView1.Columns[32].Caption = "备注";
             this.gridView1.Columns[33].Caption = "库存件数";
-            this.gridView1.Columns[33].Visible = false;
+           // this.gridView1.Columns[33].Visible = false;
             this.gridView1.Columns[34].Caption = "库存数量";
-            this.gridView1.Columns[34].Visible = false;
+           // this.gridView1.Columns[34].Visible = false;
             this.gridView1.Columns[35].Caption = "票数";
             this.gridView1.Columns[36].Caption = "车队标识";
-            this.gridView1.Columns[36].Visible = false;
+           // this.gridView1.Columns[36].Visible = false;
             this.gridView1.Columns[37].Caption = "项目号";
             this.gridView1.Columns[38].Caption = "可派件数";
-            this.gridView1.Columns[38].Visible = false;
+           // this.gridView1.Columns[38].Visible = false;
             this.gridView1.Columns[39].Caption = "可派数量";
-            this.gridView1.Columns[39].Visible = false;
+           // this.gridView1.Columns[39].Visible = false;
 
             /*
             this.gridView1.OptionsView.ShowFooter = true;
@@ -272,11 +272,15 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
                 , LoadingSpot = textBox12.Text
                 , LoadingArea = textBox11.Text
                 , KeyTime = DateTime.Now
-                ,StorageTime = DateTime.Now
-                ,ModifyTime  = DateTime.Now
-                , ProductionDate=DateTime.Now
-                ,StorageWay = comboBox2.Text
-                };
+                , StorageTime = DateTime.Now
+                , ModifyTime = DateTime.Now
+                , ProductionDate = DateTime.Now
+                , StorageWay = comboBox5.Text
+                , Loader = comboBox2.Text
+                , StorageKeeper = comboBox3.Text
+                , Craneman = comboBox4.Text
+                ,Others = textBox18.Text
+                ,TeamLog = string.Format("{0}#{1}%{2}",textBox5.Text,textBox8.Text,textBox9.Text) };
             StorageDetails.Add(sd);
         }
 
@@ -295,6 +299,9 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
 
         private void button3_Click(object sender, EventArgs e) //保存按钮 
         {
+            domain.TransportationRegister tr = new TransportationRegister();//运输登记主表
+            List<TransportationRegister_Detail> trd = new List<TransportationRegister_Detail>();//运输登记明细 
+
             if (Panel2_MyWorkBench.GodownEntry.isExist) //保存修改
             {
                 sfm.StorageNumber = textBox2.Text;
@@ -375,7 +382,83 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
 
                         fc.SaveData(jsonMain, Json, sfm.GetType().Name.ToString(), "StorageDetails");
 
-                        Thread.Sleep(500);
+                        Thread.Sleep(100);
+                        tr.transport_ID = textBox2.Text;
+                        tr.tally_date = dateTimePicker1.Value;
+                        tr.transport_way = comboBox2.Text;
+                        tr.fleet = textBox5.Text;
+                        tr.car_number = textBox8.Text;
+                        tr.driver = textBox9.Text;
+                        tr.transport_gross =Convert.ToDecimal(textBox6.Text);
+                        tr.car_fee = 0;
+                        tr.owner_freight = 0;
+                        tr.depart_point = textBox15.Text;
+                        tr.ship_point = textBox12.Text;
+                        tr.depart_date = dateTimePicker1.Value;
+                        tr.back_date = dateTimePicker1.Value;
+                        tr.unload_point = textBox15.Text;
+                        tr.depart_city = textBox20.Text;
+                        tr.ship_city = textBox10.Text;
+                        tr.unload_city = textBox20.Text;
+                        tr.autogeneration = "是";
+                        tr.depart_area = textBox21.Text;
+                        tr.ship_area = textBox11.Text;
+                        tr.unload_area = textBox21.Text;
+                        tr.enter_staff = textBox13.Text;
+                        tr.enter_time = dateTimePicker1.Value;
+                        tr.change_staff = textBox14.Text;
+                        tr.change_time = dateTimePicker3.Value;
+                        tr.statement = "入库单&"+ textBox2.Text+"&自动生成";
+
+                        for (int i = 0; i < StorageDetails.Count; i++)
+                        {
+                            TransportationRegister_Detail td = new TransportationRegister_Detail();
+                            td.transport_ID = textBox2.Text;
+                            td.tally_date = dateTimePicker1.Value;
+                            td.order_number = this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[4]);
+                            td.transport_identifying = this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[0]);
+                            td.owner = this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[5]);
+                            td.reel_number = this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[9]);
+                            td.variety = this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[10]);
+                            td.texture = this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[11]);
+                            td.standard = this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[12]);
+                            td.number =Convert.ToInt32(this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[13]));
+                            td.quantity =Convert.ToInt32(this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[14]));
+                            td.rough_weight = Convert.ToInt32(this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[14]));
+                            td.car_fee = 0; td.car_fare = 0;td.outstanding_amount = 0;td.owner_amount = 0;
+                            td.owner_fare = 0; td.settlement_amount = 0;
+                            td.transport_way = this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[16]);
+                            td.fleet = this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[17]);
+                            td.car_number = this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[18]);
+                            td.driver = this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[19]);
+
+                            td.depart_point = textBox15.Text;
+                            td.ship_point = textBox12.Text;
+                            td.unload_point = textBox15.Text;
+                            td.depart_city = textBox20.Text;
+                            td.ship_city = textBox10.Text;
+                            td.unload_city = textBox20.Text;
+                            td.depart_area = textBox21.Text;
+                            td.ship_area = textBox11.Text;
+                            td.unload_area = textBox21.Text;
+                            td.depart_date = dateTimePicker1.Value;
+                            td.back_date = dateTimePicker1.Value;
+
+                            td.enter_staff = textBox13.Text;
+                            td.enter_time = dateTimePicker1.Value;
+                            td.change_staff = textBox14.Text;
+                            td.change_time = dateTimePicker3.Value;
+
+                           
+                            td.statement = "入库单&" + textBox2.Text + "&自动生成";
+
+                            trd.Add(td);
+                        }
+
+                        string Json_yunshu = JsonConvert.SerializeObject(trd);
+                        string jsonMain_yunshu = JsonConvert.SerializeObject(tr);
+
+                        fc.SaveData(jsonMain_yunshu, Json_yunshu, tr.GetType().Name.ToString(), "TransportationRegister_Detail");
                         MessageBox.Show("保存完毕");
                         Close();
                     }

@@ -31,15 +31,36 @@ namespace Demo1._1._3.Panel2_MyWorkBench
         public OilGasRegister()
         {
             InitializeComponent();
+            isEdit();
+            total_Page = fc.getTotal<domain.OilGasRegister_Main>(tcm, total_Page);
+            fc.InitPage(dataNavigator1, total_Page, now_Page);
+        }
 
+        /// <summary>
+        /// 判断是否可以编辑
+        /// </summary>
+        private void isEdit()
+        {
+            if (Sign_in.transpotation.Substring(12, 2) == "01")
+            {
+                toolStripButton1.Visible = false;
+                toolStripButton2.Visible = false;
+                toolStripButton7.Visible = false;
+            }
         }
         //查看
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
+            colCount = gridView1.Columns.Count();
+            array = new string[colCount];
             str = gridView1.GetFocusedRowCellDisplayText(gridView1.Columns["register_id"]); //获取主键内容
-            MessageBox.Show(str);
-            ogr_list = JsonConvert.DeserializeObject<List<domain.OilGasRegister_Detail>>(fc.FindDeteils(str, "OilGasRegister_Detail"));
-            gridControl2.DataSource = ogr_list;
+            for (int i = 0; i < colCount; i++)
+            {
+                array[i] = gridView1.GetFocusedRowCellDisplayText(gridView1.Columns[i]);
+            }
+            isExist = true;
+            New_OilGasRegister_1 gde = new New_OilGasRegister_1();
+            gde.ShowDialog();
         }
         //新建
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -51,8 +72,9 @@ namespace Demo1._1._3.Panel2_MyWorkBench
         //修改
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            colCount = gridView1.Columns.Count() - 1;
-            array = new string[colCount + 1];
+            colCount = gridView1.Columns.Count();
+            array = new string[colCount];
+            str = gridView1.GetFocusedRowCellDisplayText(gridView1.Columns["register_id"]); //获取主键内容
             for (int i = 0; i < colCount; i++)
             {
                 array[i] = gridView1.GetFocusedRowCellDisplayText(gridView1.Columns[i]);
@@ -62,7 +84,7 @@ namespace Demo1._1._3.Panel2_MyWorkBench
                 try
                 {
                     isExist = true;
-                    New_TransportationClearing gde = new New_TransportationClearing();
+                    New_OilGasRegister_1 gde = new New_OilGasRegister_1();
                     gde.ShowDialog();
                 }
                 catch (Exception ex)
@@ -142,39 +164,39 @@ namespace Demo1._1._3.Panel2_MyWorkBench
         //明细表分页
         private void dataNavigator2_ButtonClick(object sender, DevExpress.XtraEditors.NavigatorButtonClickEventArgs e)
         {
-            NavigatorButtonType btnType = (NavigatorButtonType)e.Button.ButtonType;
-            if (e.Button is NavigatorCustomButton)
-            {
-                NavigatorCustomButton btn = (NavigatorCustomButton)e.Button;
-                if (btn.Tag.ToString() == "下一页" && now_Page < total_Page)
-                {
-                    now_Page++;
-                    dataNavigator2.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
-                    domain.OilGasRegister_Detail tcm = new domain.OilGasRegister_Detail();
-                    gridControl1.DataSource = fc.showData<domain.OilGasRegister_Detail>(tcm, now_Page.ToString());
-                }
-                else if (btn.Tag.ToString() == "上一页" && now_Page > 1)
-                {
-                    now_Page--;
-                    dataNavigator2.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
-                    domain.OilGasRegister_Detail tcm = new domain.OilGasRegister_Detail();
-                    gridControl1.DataSource = fc.showData<domain.OilGasRegister_Detail>(tcm, now_Page.ToString());
-                }
-                else if (btn.Tag.ToString() == "首页")
-                {
-                    now_Page = 1;
-                    dataNavigator2.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
-                    domain.OilGasRegister_Detail tcm = new domain.OilGasRegister_Detail();
-                    gridControl1.DataSource = fc.showData<domain.OilGasRegister_Detail>(tcm, now_Page.ToString());
-                }
-                else if (btn.Tag.ToString() == "尾页")
-                {
-                    now_Page = total_Page;
-                    dataNavigator2.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
-                    domain.OilGasRegister_Detail tcm = new domain.OilGasRegister_Detail();
-                    gridControl1.DataSource = fc.showData<domain.OilGasRegister_Detail>(tcm, now_Page.ToString());
-                }
-            }
+            //NavigatorButtonType btnType = (NavigatorButtonType)e.Button.ButtonType;
+            //if (e.Button is NavigatorCustomButton)
+            //{
+            //    NavigatorCustomButton btn = (NavigatorCustomButton)e.Button;
+            //    if (btn.Tag.ToString() == "下一页" && now_Page < total_Page)
+            //    {
+            //        now_Page++;
+            //        dataNavigator2.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
+            //        domain.OilGasRegister_Detail tcm = new domain.OilGasRegister_Detail();
+            //        gridControl1.DataSource = fc.showData<domain.OilGasRegister_Detail>(tcm, now_Page.ToString());
+            //    }
+            //    else if (btn.Tag.ToString() == "上一页" && now_Page > 1)
+            //    {
+            //        now_Page--;
+            //        dataNavigator2.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
+            //        domain.OilGasRegister_Detail tcm = new domain.OilGasRegister_Detail();
+            //        gridControl1.DataSource = fc.showData<domain.OilGasRegister_Detail>(tcm, now_Page.ToString());
+            //    }
+            //    else if (btn.Tag.ToString() == "首页")
+            //    {
+            //        now_Page = 1;
+            //        dataNavigator2.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
+            //        domain.OilGasRegister_Detail tcm = new domain.OilGasRegister_Detail();
+            //        gridControl1.DataSource = fc.showData<domain.OilGasRegister_Detail>(tcm, now_Page.ToString());
+            //    }
+            //    else if (btn.Tag.ToString() == "尾页")
+            //    {
+            //        now_Page = total_Page;
+            //        dataNavigator2.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
+            //        domain.OilGasRegister_Detail tcm = new domain.OilGasRegister_Detail();
+            //        gridControl1.DataSource = fc.showData<domain.OilGasRegister_Detail>(tcm, now_Page.ToString());
+            //    }
+            //}
         }
         //主表单击事件
         private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)

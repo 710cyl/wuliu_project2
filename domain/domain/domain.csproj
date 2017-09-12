@@ -138,6 +138,9 @@
     <Compile Include="TransportationRegister_Detail.cs" />
     <Compile Include="仓库\StorageDetails.cs" />
     <Compile Include="仓库\StorageFormMain.cs" />
+    <Compile Include="权限\Role.cs" />
+    <Compile Include="权限\User.cs" />
+    <Compile Include="权限\UserRole.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -187,6 +190,11 @@
   <ItemGroup>
     <EmbeddedResource Include="OilGasRegister_Detail.hbm.xml" />
     <EmbeddedResource Include="OilGasRegister_Main.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="权限\Role.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

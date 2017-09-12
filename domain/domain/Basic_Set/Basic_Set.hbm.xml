@@ -429,8 +429,8 @@
 
   <class name="External_Vehicle" table="T_External_Vehicle" >
 
-    <id name="ID" column="编号" type="Guid">
-      <generator class="assigned" />
+    <id name="ID" column="编号" type="int">
+      <generator class="identity" />
     </id>
 
     <property name="motorcade" type="string">

@@ -26,7 +26,8 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
         public New_OilGasRegister_1()
         {
             InitializeComponent();
-            if (Panel2_MyWorkBench.OilGasRegister.isExist)
+            DataGridViewInit();
+            if (Panel2_MyWorkBench.OilGasRegister.isExist)//修改时打开此页面
             {
                 //主表显示
                 textBox_register_id.Text = Panel2_MyWorkBench.OilGasRegister.array[0];
@@ -35,12 +36,15 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
                 textBox_oilgas_unitprice.Text = Panel2_MyWorkBench.OilGasRegister.array[3];
                 textBox_register_man.Text = Panel2_MyWorkBench.OilGasRegister.array[4];
                 textBox_register_time.Text = Panel2_MyWorkBench.OilGasRegister.array[5];
-
-
+                //明细表显示
+                List<domain.OilGasRegister_Detail> sd = null;
+                sd = JsonConvert.DeserializeObject<List<domain.OilGasRegister_Detail>>(fc.FindDeteils(Panel2_MyWorkBench.OilGasRegister.str,"OilGasRegister_Detail"));
+                tcd_bindinglist = new BindingList<domain.OilGasRegister_Detail>(sd);
+                gridControl1.DataSource = tcd_bindinglist;
             }
             else
             {
-                DataGridViewInit();
+              
 
             }
         }
@@ -105,7 +109,7 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
         //保存
         private void simpleButton5_Click(object sender, EventArgs e)
         {
-            if (Panel2_MyWorkBench.GodownEntry.isExist) //修改
+            if (Panel2_MyWorkBench.OilGasRegister.isExist) //修改
             {
                 tcm.register_id = textBox_register_id.Text;
                 tcm.fueling_date = Convert.ToDateTime(dateTimePicker_fueling_date.Text);
@@ -117,8 +121,8 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
                 tcm.modifier = "修改人";
                 tcm.modify_time = Convert.ToDateTime(DateTime.Now.ToString("yyyy / MM / dd hh: mm:ss"));
 
-                List<domain.OilGasRegister_Detail> sd = tcd_bindinglist.ToList<domain.OilGasRegister_Detail>();
-                string Json = JsonConvert.SerializeObject(sd);
+                //List<domain.OilGasRegister_Detail> sd = tcd_bindinglist.ToList<domain.OilGasRegister_Detail>();
+                string Json = JsonConvert.SerializeObject(gridControl1.DataSource);
                 string jsonMain = JsonConvert.SerializeObject(tcm);
 
                 fc.ChangeData(jsonMain, Json, tcm.GetType().Name.ToString(), "OilGasRegister_Detail");
@@ -137,10 +141,10 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
                 tcm.modify_time = Convert.ToDateTime(DateTime.Now.ToString("yyyy / MM / dd hh: mm:ss"));
 
 
-                List<domain.OilGasRegister_Detail> sd = tcd_bindinglist.ToList<domain.OilGasRegister_Detail>();
-                string Json = JsonConvert.SerializeObject(sd);
+                //List<domain.OilGasRegister_Detail> sd = tcd_bindinglist.ToList<domain.OilGasRegister_Detail>();
+                string Json = JsonConvert.SerializeObject(gridControl1.DataSource);
                 string jsonMain = JsonConvert.SerializeObject(tcm);
-                Panel2_MyWorkBench.GodownEntry.isExist = true;
+                Panel2_MyWorkBench.OilGasRegister.isExist = true;
                 fc.SaveData(jsonMain, Json, tcm.GetType().Name.ToString(), "OilGasRegister_Detail");
             }
         }

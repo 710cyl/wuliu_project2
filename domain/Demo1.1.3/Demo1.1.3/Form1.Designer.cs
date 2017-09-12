@@ -121,7 +121,6 @@ namespace Demo1._1._3
             this.accordionControlElement48 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
-            this.accordionControlElement49 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement50 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -185,10 +184,9 @@ namespace Demo1._1._3
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Location = new System.Drawing.Point(420, 0);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Location = new System.Drawing.Point(480, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(984, 81);
+            this.pictureBox2.Size = new System.Drawing.Size(1125, 104);
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
@@ -198,9 +196,8 @@ namespace Demo1._1._3
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(420, 81);
+            this.pictureBox1.Size = new System.Drawing.Size(480, 104);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -221,8 +218,9 @@ namespace Demo1._1._3
             this.accordionControlElement68,
             this.accordionControlElement69});
             this.accordionControl4.Location = new System.Drawing.Point(0, 0);
+            this.accordionControl4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.accordionControl4.Name = "accordionControl4";
-            this.accordionControl4.Size = new System.Drawing.Size(220, 674);
+            this.accordionControl4.Size = new System.Drawing.Size(251, 878);
             this.accordionControl4.TabIndex = 6;
             this.accordionControl4.Text = "accordionControl4";
             this.accordionControl4.Click += new System.EventHandler(this.accordionControl4_Click);
@@ -363,9 +361,10 @@ namespace Demo1._1._3
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(220, 0);
+            this.panel2.Location = new System.Drawing.Point(251, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1178, 653);
+            this.panel2.Size = new System.Drawing.Size(1352, 846);
             this.panel2.TabIndex = 6;
             // 
             // accordionControl3
@@ -393,8 +392,9 @@ namespace Demo1._1._3
             this.accordionControlElement32,
             this.accordionControlElement33});
             this.accordionControl3.Location = new System.Drawing.Point(0, 0);
+            this.accordionControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.accordionControl3.Name = "accordionControl3";
-            this.accordionControl3.Size = new System.Drawing.Size(220, 653);
+            this.accordionControl3.Size = new System.Drawing.Size(251, 846);
             this.accordionControl3.TabIndex = 0;
             this.accordionControl3.Text = "accordionControl3";
             this.accordionControl3.Click += new System.EventHandler(this.accordionControl3_Click);
@@ -435,6 +435,7 @@ namespace Demo1._1._3
             this.accordionControlElementSendcar,
             this.accordionControlElementPackage,
             this.accordionControlElementClosecar});
+            this.accordionControlElement20.Expanded = true;
             this.accordionControlElement20.Name = "accordionControlElement20";
             this.accordionControlElement20.Text = "派车";
             // 
@@ -445,6 +446,7 @@ namespace Demo1._1._3
             this.accordionControlElement63,
             this.accordionControlElement64,
             this.accordionControlElement70});
+            this.accordionControlElement21.Expanded = true;
             this.accordionControlElement21.Name = "accordionControlElement21";
             this.accordionControlElement21.Text = "仓库";
             // 
@@ -488,6 +490,7 @@ namespace Demo1._1._3
             this.accordionControlElement78,
             this.accordionControlElement82,
             this.accordionControlElement83});
+            this.accordionControlElement22.Expanded = true;
             this.accordionControlElement22.Name = "accordionControlElement22";
             this.accordionControlElement22.Text = "运输";
             // 
@@ -605,6 +608,7 @@ namespace Demo1._1._3
             this.accordionControlElement45,
             this.accordionControlElement46,
             this.accordionControlElement47});
+            this.accordionControlElement30.Expanded = true;
             this.accordionControlElement30.Name = "accordionControlElement30";
             this.accordionControlElement30.Text = "基础";
             this.accordionControlElement30.Click += new System.EventHandler(this.accordionControlElement30_Click);
@@ -720,9 +724,10 @@ namespace Demo1._1._3
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(220, 0);
+            this.panel3.Location = new System.Drawing.Point(251, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1182, 648);
+            this.panel3.Size = new System.Drawing.Size(1352, 846);
             this.panel3.TabIndex = 5;
             // 
             // accordionControl2
@@ -738,8 +743,9 @@ namespace Demo1._1._3
             this.accordionControlElement12,
             this.accordionControlElement13});
             this.accordionControl2.Location = new System.Drawing.Point(0, 0);
+            this.accordionControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.accordionControl2.Name = "accordionControl2";
-            this.accordionControl2.Size = new System.Drawing.Size(220, 648);
+            this.accordionControl2.Size = new System.Drawing.Size(251, 846);
             this.accordionControl2.TabIndex = 0;
             this.accordionControl2.Text = "accordionControl2";
             // 
@@ -786,9 +792,10 @@ namespace Demo1._1._3
             // panel1
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(220, 0);
+            this.panel1.Location = new System.Drawing.Point(251, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1182, 648);
+            this.panel1.Size = new System.Drawing.Size(1352, 878);
             this.panel1.TabIndex = 1;
             // 
             // accordionControl1
@@ -802,8 +809,9 @@ namespace Demo1._1._3
             this.accordionControlElement5,
             this.accordionControlElement34});
             this.accordionControl1.Location = new System.Drawing.Point(0, 0);
+            this.accordionControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.accordionControl1.Name = "accordionControl1";
-            this.accordionControl1.Size = new System.Drawing.Size(220, 648);
+            this.accordionControl1.Size = new System.Drawing.Size(251, 878);
             this.accordionControl1.TabIndex = 0;
             this.accordionControl1.Text = "accordionControl1";
             // 
@@ -824,23 +832,17 @@ namespace Demo1._1._3
             // 
             // accordionControlElement2
             // 
+            this.accordionControlElement2.Expanded = true;
             this.accordionControlElement2.Name = "accordionControlElement2";
             this.accordionControlElement2.Text = "角色";
             this.accordionControlElement2.Click += new System.EventHandler(this.accordionControlElement2_Click);
             // 
             // accordionControlElement3
             // 
-            this.accordionControlElement3.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accordionControlElement49});
             this.accordionControlElement3.Expanded = true;
             this.accordionControlElement3.Name = "accordionControlElement3";
             this.accordionControlElement3.Text = "用户";
             this.accordionControlElement3.Click += new System.EventHandler(this.accordionControlElement3_Click);
-            // 
-            // accordionControlElement49
-            // 
-            this.accordionControlElement49.Name = "accordionControlElement49";
-            this.accordionControlElement49.Text = "Default";
             // 
             // accordionControlElement4
             // 
@@ -889,17 +891,19 @@ namespace Demo1._1._3
             this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1404, 81);
+            this.panel4.Size = new System.Drawing.Size(1605, 104);
             this.panel4.TabIndex = 2;
             // 
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(0, 26);
+            this.xtraTabControl1.Location = new System.Drawing.Point(0, 32);
+            this.xtraTabControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1404, 700);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1605, 902);
             this.xtraTabControl1.TabIndex = 3;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -922,8 +926,9 @@ namespace Demo1._1._3
             // xtraTabPage1
             // 
             this.xtraTabPage1.Image = global::Demo1._1._3.Properties.Resources.home_32x32;
+            this.xtraTabPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(1402, 648);
+            this.xtraTabPage1.Size = new System.Drawing.Size(1603, 846);
             this.xtraTabPage1.Text = "首页";
             // 
             // xtraTabPage2
@@ -931,8 +936,9 @@ namespace Demo1._1._3
             this.xtraTabPage2.Controls.Add(this.panel1);
             this.xtraTabPage2.Controls.Add(this.accordionControl1);
             this.xtraTabPage2.Image = global::Demo1._1._3.Properties.Resources.publicfix_32x32;
+            this.xtraTabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(1402, 648);
+            this.xtraTabPage2.Size = new System.Drawing.Size(1603, 878);
             this.xtraTabPage2.Text = "系统管理";
             // 
             // xtraTabPage3
@@ -940,8 +946,9 @@ namespace Demo1._1._3
             this.xtraTabPage3.Controls.Add(this.panel3);
             this.xtraTabPage3.Controls.Add(this.accordionControl2);
             this.xtraTabPage3.Image = global::Demo1._1._3.Properties.Resources.design_32x32;
+            this.xtraTabPage3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(1402, 648);
+            this.xtraTabPage3.Size = new System.Drawing.Size(1603, 846);
             this.xtraTabPage3.Text = "设计";
             // 
             // xtraTabPage4
@@ -949,93 +956,106 @@ namespace Demo1._1._3
             this.xtraTabPage4.Controls.Add(this.panel2);
             this.xtraTabPage4.Controls.Add(this.accordionControl3);
             this.xtraTabPage4.Image = global::Demo1._1._3.Properties.Resources.ide_32x32;
+            this.xtraTabPage4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabPage4.Name = "xtraTabPage4";
-            this.xtraTabPage4.Size = new System.Drawing.Size(1398, 653);
+            this.xtraTabPage4.Size = new System.Drawing.Size(1603, 846);
             this.xtraTabPage4.Text = "我的工作台";
             // 
             // xtraTabPage5
             // 
             this.xtraTabPage5.Image = global::Demo1._1._3.Properties.Resources.loadpagesetup_32x32;
+            this.xtraTabPage5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabPage5.Name = "xtraTabPage5";
-            this.xtraTabPage5.Size = new System.Drawing.Size(1402, 648);
+            this.xtraTabPage5.Size = new System.Drawing.Size(1603, 878);
             this.xtraTabPage5.Text = "文档管理";
             // 
             // xtraTabPage6
             // 
             this.xtraTabPage6.Image = global::Demo1._1._3.Properties.Resources.transit_32x32;
+            this.xtraTabPage6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabPage6.Name = "xtraTabPage6";
-            this.xtraTabPage6.Size = new System.Drawing.Size(1402, 674);
+            this.xtraTabPage6.Size = new System.Drawing.Size(1603, 878);
             this.xtraTabPage6.Text = "派车管理";
             // 
             // xtraTabPage7
             // 
             this.xtraTabPage7.Controls.Add(this.accordionControl4);
             this.xtraTabPage7.Image = global::Demo1._1._3.Properties.Resources.boproductgroup_32x32;
+            this.xtraTabPage7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabPage7.Name = "xtraTabPage7";
-            this.xtraTabPage7.Size = new System.Drawing.Size(1402, 674);
+            this.xtraTabPage7.Size = new System.Drawing.Size(1603, 878);
             this.xtraTabPage7.Text = "仓库管理";
             // 
             // xtraTabPage8
             // 
             this.xtraTabPage8.Image = global::Demo1._1._3.Properties.Resources.geopointmap_32x32;
+            this.xtraTabPage8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabPage8.Name = "xtraTabPage8";
-            this.xtraTabPage8.Size = new System.Drawing.Size(1402, 674);
+            this.xtraTabPage8.Size = new System.Drawing.Size(1603, 878);
             this.xtraTabPage8.Text = "运输管理";
             // 
             // xtraTabPage9
             // 
             this.xtraTabPage9.Image = global::Demo1._1._3.Properties.Resources.bodepartment_32x32;
+            this.xtraTabPage9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabPage9.Name = "xtraTabPage9";
-            this.xtraTabPage9.Size = new System.Drawing.Size(1402, 674);
+            this.xtraTabPage9.Size = new System.Drawing.Size(1603, 878);
             this.xtraTabPage9.Text = "集港管理";
             // 
             // xtraTabPage10
             // 
             this.xtraTabPage10.Image = global::Demo1._1._3.Properties.Resources.morefunctions_32x32;
+            this.xtraTabPage10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabPage10.Name = "xtraTabPage10";
-            this.xtraTabPage10.Size = new System.Drawing.Size(1402, 674);
+            this.xtraTabPage10.Size = new System.Drawing.Size(1603, 878);
             this.xtraTabPage10.Text = "财务管理";
             // 
             // xtraTabPage11
             // 
             this.xtraTabPage11.Image = global::Demo1._1._3.Properties.Resources.team_32x32;
+            this.xtraTabPage11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabPage11.Name = "xtraTabPage11";
-            this.xtraTabPage11.Size = new System.Drawing.Size(1402, 674);
+            this.xtraTabPage11.Size = new System.Drawing.Size(1603, 878);
             this.xtraTabPage11.Text = "人事管理";
             // 
             // xtraTabPage12
             // 
             this.xtraTabPage12.Image = global::Demo1._1._3.Properties.Resources.bodetails_32x32;
+            this.xtraTabPage12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabPage12.Name = "xtraTabPage12";
-            this.xtraTabPage12.Size = new System.Drawing.Size(1402, 674);
+            this.xtraTabPage12.Size = new System.Drawing.Size(1603, 878);
             this.xtraTabPage12.Text = "维修管理";
             // 
             // xtraTabPage13
             // 
             this.xtraTabPage13.Image = global::Demo1._1._3.Properties.Resources.info_32x32;
+            this.xtraTabPage13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabPage13.Name = "xtraTabPage13";
-            this.xtraTabPage13.Size = new System.Drawing.Size(1402, 674);
+            this.xtraTabPage13.Size = new System.Drawing.Size(1603, 878);
             this.xtraTabPage13.Text = "安全管理";
             // 
             // xtraTabPage14
             // 
             this.xtraTabPage14.Image = global::Demo1._1._3.Properties.Resources.tag_32x32;
+            this.xtraTabPage14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabPage14.Name = "xtraTabPage14";
-            this.xtraTabPage14.Size = new System.Drawing.Size(1402, 674);
+            this.xtraTabPage14.Size = new System.Drawing.Size(1603, 878);
             this.xtraTabPage14.Text = "办公用品";
             // 
             // xtraTabPage15
             // 
             this.xtraTabPage15.Image = global::Demo1._1._3.Properties.Resources.pivot_32x32;
+            this.xtraTabPage15.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabPage15.Name = "xtraTabPage15";
-            this.xtraTabPage15.Size = new System.Drawing.Size(1402, 674);
+            this.xtraTabPage15.Size = new System.Drawing.Size(1603, 878);
             this.xtraTabPage15.Text = "统计查询";
             // 
             // xtraTabPage16
             // 
             this.xtraTabPage16.Image = global::Demo1._1._3.Properties.Resources.technology_32x32;
+            this.xtraTabPage16.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabPage16.Name = "xtraTabPage16";
-            this.xtraTabPage16.Size = new System.Drawing.Size(1402, 674);
+            this.xtraTabPage16.Size = new System.Drawing.Size(1603, 878);
             this.xtraTabPage16.Text = "基础设置";
             // 
             // panel5
@@ -1045,8 +1065,9 @@ namespace Demo1._1._3
             this.panel5.Controls.Add(this.panel4);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1404, 807);
+            this.panel5.Size = new System.Drawing.Size(1605, 1038);
             this.panel5.TabIndex = 4;
             // 
             // panel6
@@ -1057,38 +1078,43 @@ namespace Demo1._1._3
             this.panel6.Controls.Add(this.barDockControlBottom);
             this.panel6.Controls.Add(this.barDockControlTop);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(0, 81);
+            this.panel6.Location = new System.Drawing.Point(0, 104);
+            this.panel6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1404, 726);
+            this.panel6.Size = new System.Drawing.Size(1605, 934);
             this.panel6.TabIndex = 4;
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 26);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 700);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 32);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 902);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1404, 26);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 700);
+            this.barDockControlRight.Location = new System.Drawing.Point(1605, 32);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 902);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 726);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1404, 0);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 934);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1605, 0);
             // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(1404, 26);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlTop.Size = new System.Drawing.Size(1605, 32);
             // 
             // barManager1
             // 
@@ -1184,10 +1210,11 @@ namespace Demo1._1._3
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1404, 807);
+            this.ClientSize = new System.Drawing.Size(1605, 1038);
             this.Controls.Add(this.panel5);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -1284,7 +1311,6 @@ namespace Demo1._1._3
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement48;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement3;
-        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement49;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement5;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement50;

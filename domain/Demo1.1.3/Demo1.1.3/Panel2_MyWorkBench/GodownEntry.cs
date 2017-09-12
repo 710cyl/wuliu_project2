@@ -45,10 +45,21 @@ namespace Demo1._1._3.Panel2_MyWorkBench
             InitializeComponent();
             total_Page = fc.getTotal<domain.StorageFormMain>(bs, total_Page);
             fc.InitPage(dataNavigator_Basic_Set, total_Page, now_Page);
+            isEdit();
         }
 
-
-      
+        /// <summary>
+        /// 判断是否可以编辑
+        /// </summary>
+        private void isEdit()
+        {
+            if (Sign_in.storage.Substring(0, 2) == "01")
+            {
+                toolStripButton1.Visible = false;
+                toolStripButton2.Visible = false;
+                toolStripButton7.Visible = false;
+            }
+        }
 
 
         private void DeleteButtom_Click(object sender, EventArgs e) //删除按钮

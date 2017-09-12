@@ -92,28 +92,28 @@ namespace Demo1._1._3.Views.Permission
                     now_Page++;
                     dataNavigator_Basic_Set.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
                     domain.权限.Role bs = new domain.权限.Role();
-                    gridControl2.DataSource = fc.showData<domain.权限.Role>(bs, now_Page.ToString());
+                    gridControl1.DataSource = fc.showData<domain.权限.Role>(bs, now_Page.ToString());
                 }
                 else if (btn.Tag.ToString() == "上一页" && now_Page > 1)
                 {
                     now_Page--;
                     dataNavigator_Basic_Set.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
                     domain.权限.Role bs = new domain.权限.Role();
-                    gridControl2.DataSource = fc.showData<domain.权限.Role>(bs, now_Page.ToString());
+                    gridControl1.DataSource = fc.showData<domain.权限.Role>(bs, now_Page.ToString());
                 }
                 else if (btn.Tag.ToString() == "首页")
                 {
                     now_Page = 1;
                     dataNavigator_Basic_Set.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
                     domain.权限.Role bs = new domain.权限.Role();
-                    gridControl2.DataSource = fc.showData<domain.权限.Role>(bs, now_Page.ToString());
+                    gridControl1.DataSource = fc.showData<domain.权限.Role>(bs, now_Page.ToString());
                 }
                 else if (btn.Tag.ToString() == "尾页")
                 {
                     now_Page = total_Page;
                     dataNavigator_Basic_Set.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
                     domain.权限.Role bs = new domain.权限.Role();
-                    gridControl2.DataSource = fc.showData<domain.权限.Role>(bs, now_Page.ToString());
+                    gridControl1.DataSource = fc.showData<domain.权限.Role>(bs, now_Page.ToString());
                 }
             }
         }

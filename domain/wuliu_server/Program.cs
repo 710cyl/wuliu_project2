@@ -1143,6 +1143,18 @@ namespace wuliu_server
                 total = session.QueryOver<Driver_Check>().RowCountInt64();
                 return total;
             }
+
+            else if (className == "User")
+            {
+                total = session.QueryOver<domain.权限.User>().RowCountInt64();
+                return total;
+            }
+
+            else if (className == "Role")
+            {
+                total = session.QueryOver<domain.权限.Role>().RowCountInt64();
+                return total;
+            }
             return total;
         }
     }

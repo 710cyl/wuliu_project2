@@ -916,7 +916,7 @@ namespace Demo1._1._3
             panel2.Controls.Add(tpc);
 
             domain.TransportationClearing_Main transportation_clearing_main = new domain.TransportationClearing_Main();
-            tpc.gridControl1.DataSource = showData<domain.TransportationClearing_Main>(transportation_clearing_main, tpc.now_Page.ToString());
+            tpc.gridControl1.DataSource = showData<domain.TransportationClearing_Main>(transportation_clearing_main, tpc.now_Page1.ToString());
             //明细表显示??
             string str;
             str = null;

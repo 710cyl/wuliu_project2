@@ -22,17 +22,22 @@ namespace Demo1._1._3.Panel2_MyWorkBench
         public static string[] array;//数组中保存某行数据
         public static string str = null;
 
-        public long total_Page = 0; //页码总条目
-        public long now_Page = 1; //当前页码
+        public long total_Page1 = 0; //主表页码总条目
+        public long now_Page1 = 1; //主表当前页码
+        public long total_Page2 = 0; //明细表页码总条目
+        public long now_Page2 = 1; //明细表当前页码
         public List<domain.TransportationClearing_Detail> tcd_list = new List<TransportationClearing_Detail>(); //得到明细表的list
 
         domain.TransportationClearing_Main tcm = new domain.TransportationClearing_Main();
+        domain.TransportationClearing_Detail tcd = new domain.TransportationClearing_Detail();
         FunctionClass fc = new FunctionClass();
 
         public TransportationClearing()
         {
             InitializeComponent();
             isEdit();
+            total_Page1 = fc.getTotal<domain.TransportationClearing_Main>(tcm, total_Page1);
+            fc.InitPage(dataNavigator_TransportationClearing_Main, total_Page1, now_Page1);
         }
 
 
@@ -52,8 +57,9 @@ namespace Demo1._1._3.Panel2_MyWorkBench
         //查看
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
-            colCount = gridView1.Columns.Count() - 1;
-            array = new string[colCount + 1];
+            colCount = gridView1.Columns.Count();
+            array = new string[colCount];
+            str = gridView1.GetFocusedRowCellDisplayText(gridView1.Columns["clearing_id"]);
             for (int i = 0; i < colCount; i++)
             {
                 array[i] = gridView1.GetFocusedRowCellDisplayText(gridView1.Columns[i]);
@@ -82,8 +88,9 @@ namespace Demo1._1._3.Panel2_MyWorkBench
         //修改
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            colCount = gridView1.Columns.Count() - 1;
-            array = new string[colCount + 1];
+            str = gridView1.GetFocusedRowCellDisplayText(gridView1.Columns["clearing_id"]);
+            colCount = gridView1.Columns.Count();
+            array = new string[colCount];
             for (int i = 0; i < colCount; i++)
             {
                 array[i] = gridView1.GetFocusedRowCellDisplayText(gridView1.Columns[i]);
@@ -140,33 +147,33 @@ namespace Demo1._1._3.Panel2_MyWorkBench
             if (e.Button is NavigatorCustomButton)
             {
                 NavigatorCustomButton btn = (NavigatorCustomButton)e.Button;
-                if (btn.Tag.ToString() == "下一页" && now_Page < total_Page)
+                if (btn.Tag.ToString() == "下一页" && now_Page1 < total_Page1)
                 {
-                    now_Page++;
-                    dataNavigator_TransportationClearing_Main.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
+                    now_Page1++;
+                    dataNavigator_TransportationClearing_Main.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page1, total_Page1);
                     domain.TransportationClearing_Main tcm = new domain.TransportationClearing_Main();
-                    gridControl1.DataSource = fc.showData<domain.TransportationClearing_Main>(tcm, now_Page.ToString());
+                    gridControl1.DataSource = fc.showData<domain.TransportationClearing_Main>(tcm, now_Page1.ToString());
                 }
-                else if (btn.Tag.ToString() == "上一页" && now_Page > 1)
+                else if (btn.Tag.ToString() == "上一页" && now_Page1 > 1)
                 {
-                    now_Page--;
-                    dataNavigator_TransportationClearing_Main.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
+                    now_Page1--;
+                    dataNavigator_TransportationClearing_Main.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page1, total_Page1);
                     domain.TransportationClearing_Main tcm = new domain.TransportationClearing_Main();
-                    gridControl1.DataSource = fc.showData<domain.TransportationClearing_Main>(tcm, now_Page.ToString());
+                    gridControl1.DataSource = fc.showData<domain.TransportationClearing_Main>(tcm, now_Page1.ToString());
                 }
                 else if (btn.Tag.ToString() == "首页")
                 {
-                    now_Page = 1;
-                    dataNavigator_TransportationClearing_Main.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
+                    now_Page1 = 1;
+                    dataNavigator_TransportationClearing_Main.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page1, total_Page1);
                     domain.TransportationClearing_Main tcm = new domain.TransportationClearing_Main();
-                    gridControl1.DataSource = fc.showData<domain.TransportationClearing_Main>(tcm, now_Page.ToString());
+                    gridControl1.DataSource = fc.showData<domain.TransportationClearing_Main>(tcm, now_Page1.ToString());
                 }
                 else if (btn.Tag.ToString() == "尾页")
                 {
-                    now_Page = total_Page;
-                    dataNavigator_TransportationClearing_Main.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
+                    now_Page1 = total_Page1;
+                    dataNavigator_TransportationClearing_Main.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page1, total_Page1);
                     domain.TransportationClearing_Main tcm = new domain.TransportationClearing_Main();
-                    gridControl1.DataSource = fc.showData<domain.TransportationClearing_Main>(tcm, now_Page.ToString());
+                    gridControl1.DataSource = fc.showData<domain.TransportationClearing_Main>(tcm, now_Page1.ToString());
                 }
             }
         }
@@ -177,33 +184,33 @@ namespace Demo1._1._3.Panel2_MyWorkBench
             if (e.Button is NavigatorCustomButton)
             {
                 NavigatorCustomButton btn = (NavigatorCustomButton)e.Button;
-                if (btn.Tag.ToString() == "下一页" && now_Page < total_Page)
+                if (btn.Tag.ToString() == "下一页" && now_Page2 < total_Page2)
                 {
-                    now_Page++;
-                    dataNavigator_TransportationClearing_Main.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
+                    now_Page2++;
+                    dataNavigator_TransportationClearing_Detail.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page2, total_Page2);
                     domain.TransportationClearing_Detail tcm = new domain.TransportationClearing_Detail();
-                    gridControl1.DataSource = fc.showData<domain.TransportationClearing_Detail>(tcm, now_Page.ToString());
+                    gridControl1.DataSource = fc.showData<domain.TransportationClearing_Detail>(tcm, now_Page2.ToString());
                 }
-                else if (btn.Tag.ToString() == "上一页" && now_Page > 1)
+                else if (btn.Tag.ToString() == "上一页" && now_Page2 > 1)
                 {
-                    now_Page--;
-                    dataNavigator_TransportationClearing_Main.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
+                    now_Page2--;
+                    dataNavigator_TransportationClearing_Detail.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page2, total_Page2);
                     domain.TransportationClearing_Detail tcm = new domain.TransportationClearing_Detail();
-                    gridControl1.DataSource = fc.showData<domain.TransportationClearing_Detail>(tcm, now_Page.ToString());
+                    gridControl1.DataSource = fc.showData<domain.TransportationClearing_Detail>(tcm, now_Page2.ToString());
                 }
                 else if (btn.Tag.ToString() == "首页")
                 {
-                    now_Page = 1;
-                    dataNavigator_TransportationClearing_Main.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
+                    now_Page2 = 1;
+                    dataNavigator_TransportationClearing_Detail.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page2, total_Page2);
                     domain.TransportationClearing_Detail tcm = new domain.TransportationClearing_Detail();
-                    gridControl1.DataSource = fc.showData<domain.TransportationClearing_Detail>(tcm, now_Page.ToString());
+                    gridControl1.DataSource = fc.showData<domain.TransportationClearing_Detail>(tcm, now_Page2.ToString());
                 }
                 else if (btn.Tag.ToString() == "尾页")
                 {
-                    now_Page = total_Page;
-                    dataNavigator_TransportationClearing_Main.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
+                    now_Page2 = total_Page2;
+                    dataNavigator_TransportationClearing_Detail.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page2, total_Page2);
                     domain.TransportationClearing_Detail tcm = new domain.TransportationClearing_Detail();
-                    gridControl1.DataSource = fc.showData<domain.TransportationClearing_Detail>(tcm, now_Page.ToString());
+                    gridControl1.DataSource = fc.showData<domain.TransportationClearing_Detail>(tcm, now_Page2.ToString());
                 }
             }
         }
@@ -214,6 +221,9 @@ namespace Demo1._1._3.Panel2_MyWorkBench
             MessageBox.Show(str);
             tcd_list = JsonConvert.DeserializeObject<List<domain.TransportationClearing_Detail>>(fc.FindDeteils(str, "TransportationClearing_Detail"));
             gridControl2.DataSource = tcd_list;
+            //明细表分页 不知道怎么做？
+            //total_Page2 = fc.getTotal<domain.TransportationClearing_Detail>(tcd, total_Page2);
+            //fc.InitPage(dataNavigator_TransportationClearing_Detail, total_Page2, now_Page2);
         }
 
     }

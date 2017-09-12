@@ -340,6 +340,7 @@ namespace wuliu_server
         }
         private void GetClass(string name, string data)
         {
+         
             if (name == "StorageFormMain")
             {
                 StorageFormMain sfm = JsonConvert.DeserializeObject<StorageFormMain>(data);
@@ -391,6 +392,7 @@ namespace wuliu_server
                 ShipperPrice sfm = JsonConvert.DeserializeObject<ShipperPrice>(data);
                 IShipperPrice gde = new IShipperPrice();
                 gde.Save(sfm);
+                Console.WriteLine("货主定价主表保存成功！");
             }
             else if (name == "OilGasRegister_Main")
             {
@@ -1578,7 +1580,7 @@ namespace wuliu_server
                     json = SwitchDetail(session, GetClassName.classname, e.Data);//判断是那个明细表
                     Send(json);
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     throw;
                 }

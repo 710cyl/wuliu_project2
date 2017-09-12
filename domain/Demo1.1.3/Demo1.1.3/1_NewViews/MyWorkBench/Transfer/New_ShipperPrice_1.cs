@@ -189,8 +189,8 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
                
 
 
-                List<domain.ShipperPrice_Detail> sd = ShipperPrice_Detail.ToList<domain.ShipperPrice_Detail>();
-                string Json = JsonConvert.SerializeObject(sd);
+                //List<domain.ShipperPrice_Detail> sd = ShipperPrice_Detail.ToList<domain.ShipperPrice_Detail>();
+                string Json = JsonConvert.SerializeObject(this.gridControl1.DataSource);
                 string jsonMain = JsonConvert.SerializeObject(sfm);
 
                 fc.ChangeData(jsonMain, Json, sfm.GetType().Name.ToString(), "ShipperPrice_Detail");
@@ -206,8 +206,8 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
                 sfm.change_time = dateTimePicker2.Value;
                 
 
-                List<domain.ShipperPrice_Detail> sd = ShipperPrice_Detail.ToList<domain.ShipperPrice_Detail>();
-                string Json = JsonConvert.SerializeObject(sd);
+                //List<domain.ShipperPrice_Detail> sd = ShipperPrice_Detail.ToList<domain.ShipperPrice_Detail>();
+                string Json = JsonConvert.SerializeObject(this.gridControl1.DataSource);
                 string jsonMain = JsonConvert.SerializeObject(sfm);
 
                 fc.SaveData(jsonMain, Json, sfm.GetType().Name.ToString(), "ShipperPrice_Detail");

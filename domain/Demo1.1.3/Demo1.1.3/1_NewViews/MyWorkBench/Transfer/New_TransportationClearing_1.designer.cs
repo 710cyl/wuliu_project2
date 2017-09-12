@@ -89,9 +89,9 @@
             this.groupBox2.Controls.Add(this.gridControl1);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 258);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(1469, 432);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
@@ -100,10 +100,10 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl1.Location = new System.Drawing.Point(4, 22);
             this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(1461, 406);
             this.gridControl1.TabIndex = 1;
@@ -137,7 +137,7 @@
             this.simpleButton2.Appearance.Options.UseFont = true;
             this.simpleButton2.Image = global::Demo1._1._3.Properties.Resources.cancel_16x16;
             this.simpleButton2.Location = new System.Drawing.Point(48, 361);
-            this.simpleButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.simpleButton2.Margin = new System.Windows.Forms.Padding(4);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(100, 39);
             this.simpleButton2.TabIndex = 162;
@@ -150,7 +150,7 @@
             this.simpleButton5.Appearance.Options.UseFont = true;
             this.simpleButton5.Image = global::Demo1._1._3.Properties.Resources.save_16x16;
             this.simpleButton5.Location = new System.Drawing.Point(48, 315);
-            this.simpleButton5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.simpleButton5.Margin = new System.Windows.Forms.Padding(4);
             this.simpleButton5.Name = "simpleButton5";
             this.simpleButton5.Size = new System.Drawing.Size(100, 39);
             this.simpleButton5.TabIndex = 165;
@@ -163,7 +163,7 @@
             this.simpleButton3.Appearance.Options.UseFont = true;
             this.simpleButton3.Image = global::Demo1._1._3.Properties.Resources.delete_16x16;
             this.simpleButton3.Location = new System.Drawing.Point(48, 114);
-            this.simpleButton3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.simpleButton3.Margin = new System.Windows.Forms.Padding(4);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(100, 39);
             this.simpleButton3.TabIndex = 164;
@@ -176,7 +176,7 @@
             this.simpleButton4.Appearance.Options.UseFont = true;
             this.simpleButton4.Image = global::Demo1._1._3.Properties.Resources.add_16x16;
             this.simpleButton4.Location = new System.Drawing.Point(48, 68);
-            this.simpleButton4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.simpleButton4.Margin = new System.Windows.Forms.Padding(4);
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(100, 39);
             this.simpleButton4.TabIndex = 163;
@@ -236,9 +236,9 @@
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.textBox_total_volume);
             this.groupBox1.Location = new System.Drawing.Point(16, 161);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1635, 89);
             this.groupBox1.TabIndex = 355;
             this.groupBox1.TabStop = false;
@@ -632,7 +632,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.panel_button);
             this.Controls.Add(this.panel_Main);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "New_TransportationClearing";
             this.Text = "New_TransportationClearing_1";
             this.groupBox2.ResumeLayout(false);

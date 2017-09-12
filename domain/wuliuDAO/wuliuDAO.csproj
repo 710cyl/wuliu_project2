@@ -101,6 +101,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="websocket-sharp">
+      <HintPath>..\..\..\Users\ZTJ\Desktop\websocket-sharp\Example\bin\Debug_Ubuntu\websocket-sharp.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Basic_SetDAO.cs" />

@@ -231,9 +231,9 @@ namespace Demo1._1._3
             domain.Decorate dec = new Decorate();
             domain.Discharge dis = new Discharge();
             domain.Transportations trans = new Transportations();
-            up.gridControl2.DataSource = showData<domain.Decorate>(dec,up.now_Page_Dec.ToString());
-            up.gridControl3.DataSource = showData<domain.Discharge>(dis,up.now_Page_Dis.ToString());
-            up.gridControl4.DataSource = showData<domain.Transportations>(trans,up.now_Page_Trans.ToString());
+            up.gridControl3.DataSource = showData<domain.Decorate>(dec,up.now_Page_Dec.ToString());
+            up.gridControl2.DataSource = showData<domain.Discharge>(dis,up.now_Page_Dis.ToString());
+            up.gridControl4.DataSource = showData<domain.Transportations>(trans, up.now_Page_Trans.ToString());
         }
 
         private void accordionControlElement38_Click(object sender, EventArgs e)

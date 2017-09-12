@@ -5,38 +5,38 @@
       <generator class="assigned" />
     </id>
 
-    <property name="list_ID" type="string">
+    <property name="list_ID" type="string" insert="false" update="false">
       <column name="list_ID"/>
     </property>
 
-    <property name="fleet" type="string">
+    <property name="fleet" type="string" insert="false" update="false">
       <column name="fleet" length="20"/>
     </property>
 
     
-    <property name="car_number" type="string">
+    <property name="car_number" type="string" insert="false" update="false">
       <column name="car_number" length="20"/>
     </property>
 
-    <property name="transport_gross" type="decimal">
+    <property name="transport_gross" type="decimal" insert="false" update="false">
       <column name="transport_gross" length="20"/>
       <column name="transport_gross" precision="3"/>
     </property>
 
-    <property name="car_fee" type="decimal">
+    <property name="car_fee" type="decimal" insert="false" update="false">
       <column name="car_fee" length="20"/>
       <column name="car_fee" precision="2"/>
     </property>
 
-    <property name="make_staff" type="string">
+    <property name="make_staff" type="string" insert="false" update="false">
       <column name="make_staff" length="20"/>
     </property>
 
-    <property name="make_time" type="DateTime">
+    <property name="make_time" type="DateTime" insert="false" update="false">
       <column name="make_time"/>
     </property>
 
-    <property name="statement" type="string">
+    <property name="statement" type="string" insert="false" update="false">
       <column name="statement" length="20"/>
     </property>
 

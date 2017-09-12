@@ -21,10 +21,11 @@ using Demo1._1._3.MyWorkBench_SkipForm;
 using System.IO;
 using DevExpress.XtraEditors;
 using System.Drawing.Printing;
+using System.Windows.Forms;
 
 namespace Demo1._1._3
 {
-    public partial class UnloadingPoint : UserControl
+    public partial class UnloadingPoint : UserControl 
     {
         New_UnloadingPoint up;
         StringReader streamToPrint = null;
@@ -79,8 +80,21 @@ namespace Demo1._1._3
         private void toolStripButton1_Click(object sender, EventArgs e) //新建
         {
             isExist = false;
-            up = new New_UnloadingPoint();
-            up.ShowDialog();
+            //up = new New_UnloadingPoint();
+            //up.ShowDialog();
+            panel2.Visible = true;
+            panel3.Visible = true;
+            panel4.Visible = true;
+            textBox2.Text = DateTime.Now.ToString();
+            textBox8.Text = DateTime.Now.ToString();
+            textBox25.Text = DateTime.Now.ToString();
+            textBox6.Enabled = false;
+            textBox5.Enabled = false;
+            textBox10.Enabled = false;
+            textBox11.Enabled = false;
+            textBox28.Enabled = false;
+            textBox27.Enabled = false;
+            
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e) //修改
@@ -96,8 +110,16 @@ namespace Demo1._1._3
                 if (array[0].Length > 0)
                 {
                     isExist = true;
-                    up = new New_UnloadingPoint();
-                    up.ShowDialog();
+                    panel3.Visible = true;
+                    textBox1.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[1]);
+                    textBox3.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[2]);
+                    textBox32.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[7]);
+                    textBox34.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[5]);
+                    textBox33.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[6]);
+                    textBox22.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[3]);
+                    textBox21.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[2]);
+                    textBox28.Enabled = false;
+                    textBox27.Text = DateTime.Now.ToString();
                 }
                 else
                 {
@@ -115,8 +137,7 @@ namespace Demo1._1._3
                 if (array[0].Length > 0)
                 {
                     isExist = true;
-                    up = new New_UnloadingPoint();
-                    up.ShowDialog();
+                    panel2.Visible = true;
                 }
                 else
                 {
@@ -134,8 +155,7 @@ namespace Demo1._1._3
                 if (array[0].Length > 0)
                 {
                     isExist = true;
-                    up = new New_UnloadingPoint();
-                    up.ShowDialog();
+                    panel4.Visible = true;
                 }
                 else
                 {
@@ -148,15 +168,15 @@ namespace Demo1._1._3
         {
             if (tabPane1.SelectedPage == tabNavigationPage1)
             {
-                fc.DeleteData(this.gridView2, "Basic_Set");
+                fc.DeleteData(this.gridView2, "Discharge");
             }
             else if (tabPane1.SelectedPage == tabNavigationPage2)
             {
-                fc.DeleteData(this.gridView3, "Basic_Set");
+                fc.DeleteData(this.gridView3, "Decorate");
             }
             else if (tabPane1.SelectedPage == tabNavigationPage3)
             {
-                fc.DeleteData(this.gridView4, "Basic_Set");
+                fc.DeleteData(this.gridView4, "Transportations");
             }
         }
 
@@ -189,6 +209,85 @@ namespace Demo1._1._3
                     gridView4.Export(DevExpress.XtraPrinting.ExportTarget.Xls, localFilePath);
                 }
             }
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)//卸点保存
+        {
+            if(isExist)
+            {
+                dis.discharge_place = textBox1.Text;
+                dis.city = textBox3.Text;
+                dis.adress = textBox32.Text;
+                dis.linkman = textBox34.Text;
+                dis.phone_number = textBox33.Text;
+                dis.region = textBox22.Text;
+                dis.statement = textBox21.Text;
+                fc.updateData(dis, "Discharge");
+            }
+            else
+            {
+                dis.discharge_place = textBox1.Text;
+                dis.city = textBox3.Text;
+                dis.adress = textBox32.Text;
+                dis.linkman = textBox34.Text;
+                dis.phone_number = textBox33.Text;
+                dis.region = textBox22.Text;
+                dis.statement = textBox21.Text;
+                fc.saveData(dis, "Discharge");
+            }
+       
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            panel2.Visible = false;
+            panel3.Visible = false;
+            panel4.Visible = false;
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)//装点保存
+        {
+            if (isExist)
+            {
+
+            }
+            else
+            {
+                dec.decorate_place = textBox12.Text;
+                dec.city = textBox7.Text;
+                dec.adress = textBox14.Text;
+                dec.linkman = textBox16.Text;
+                dec.phone_number = textBox15.Text;
+                dec.region = textBox24.Text;
+                dec.statement = textBox23.Text;
+                fc.saveData(dec, "Decorate");
+            }
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            panel2.Visible = false;
+            panel3.Visible = false;
+            panel4.Visible = false;
+        }
+
+        private void simpleButton6_Click(object sender, EventArgs e)//集运保存
+        {
+            if (isExist)
+            {
+
+            }
+            else
+            {
+
+            }
+        }
+
+        private void simpleButton5_Click(object sender, EventArgs e)
+        {
+            panel2.Visible = false;
+            panel3.Visible = false;
+            panel4.Visible = false;
         }
     }
 }

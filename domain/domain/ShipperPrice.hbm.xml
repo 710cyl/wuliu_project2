@@ -5,29 +5,29 @@
       <generator class="assigned" />
     </id>
 
-    <property name="price_ID" type="string">
+    <property name="price_ID" type="string" insert="false" update="false">
       <column name="price_ID"/>
     </property>
 
-    <property name="total_money" type="decimal">
+    <property name="total_money" type="decimal" insert="false" update="false">
       <column name="total_money" length="20"/>
       <column name="total_money" precision="2"/>
     </property>
 
-    <property name="enter_staff" type="string">
+    <property name="enter_staff" type="string" insert="false" update="false">
       <column name="enter_staff" length="20"/>
     </property>
 
 
-    <property name="enter_time" type="DateTime">
+    <property name="enter_time" type="DateTime" insert="false" update="false">
       <column name="enter_time"/>
     </property>
 
-    <property name="change_staff" type="string">
+    <property name="change_staff" type="string" insert="false" update="false">
       <column name="change_staff" length="20"/>
     </property>
 
-    <property name="change_time" type="DateTime">
+    <property name="change_time" type="DateTime" insert="false" update="false">
       <column name="change_time"/>
     </property>
 

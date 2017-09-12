@@ -13,7 +13,7 @@ namespace domain
         /// <summary>
         /// 客户编号
         /// </summary>
-        public virtual Guid ID { get; set; }
+        public virtual int ID { get; set; }
 
         /// <summary>
         /// 客户简称

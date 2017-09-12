@@ -167,8 +167,8 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
                 fp.enter_time = dateTimePicker1.Value;
                 fp.change_time = dateTimePicker2.Value;
 
-                List<domain.FleetPrice_Detail> sd = FleetPrice_Detail.ToList<domain.FleetPrice_Detail>();
-                string Json = JsonConvert.SerializeObject(sd);
+                //List<domain.FleetPrice_Detail> sd = FleetPrice_Detail.ToList<domain.FleetPrice_Detail>();
+                string Json = JsonConvert.SerializeObject(this.gridControl1.DataSource);
                 string jsonMain = JsonConvert.SerializeObject(fp);
 
                 fc.ChangeData(jsonMain, Json, fp.GetType().Name.ToString(), "FleetPrice_Detail");
@@ -194,8 +194,8 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
                 fp.enter_time = dateTimePicker1.Value;
                 fp.change_time = dateTimePicker2.Value;
 
-                List<domain.FleetPrice_Detail> sd = FleetPrice_Detail.ToList<domain.FleetPrice_Detail>();
-                string Json = JsonConvert.SerializeObject(sd);
+                //List<domain.FleetPrice_Detail> sd = FleetPrice_Detail.ToList<domain.FleetPrice_Detail>();
+                string Json = JsonConvert.SerializeObject(this.gridControl1.DataSource);
                 string jsonMain = JsonConvert.SerializeObject(fp);
 
                 fc.SaveData(jsonMain, Json, fp.GetType().Name.ToString(), "FleetPrice_Detail");

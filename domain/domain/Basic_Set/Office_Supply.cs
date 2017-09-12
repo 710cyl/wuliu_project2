@@ -12,7 +12,7 @@ namespace domain
         /// <summary>
         /// 编号ID
         /// </summary>
-        public virtual Guid ID { get; set; }
+        public virtual int ID { get; set; }
 
         /// <summary>
         /// 速查码

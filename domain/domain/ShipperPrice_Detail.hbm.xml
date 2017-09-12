@@ -5,7 +5,7 @@
       <generator class="assigned" />
     </id>
 
-    <property name="owner" type="string">
+    <property name="owner" type="string" >
       <column name="owner" length="20"/>
     </property>
     

@@ -107,6 +107,8 @@
     <Compile Include="Car_ReimbursementDAO.cs" />
     <Compile Include="Driver_CheckDAOcs.cs" />
     <Compile Include="IBasic_SetDAO.cs" />
+    <Compile Include="IDecorateDAO.cs" />
+    <Compile Include="IDischargeDAO.cs" />
     <Compile Include="IFleetPayment.cs" />
     <Compile Include="IFleetPayment_Detail.cs" />
     <Compile Include="IFleetPrice.cs" />

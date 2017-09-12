@@ -107,7 +107,9 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
         private void simpleButton4_Click(object sender, EventArgs e)//添加
         {
             domain.FleetPayment_Detail sd = new domain.FleetPayment_Detail()
-            { price_ID = string.Format("{0}-{1}", textBox18.Text, FleetPayment_Detail.Count + 1), list_ID = textBox18.Text };
+            { price_ID = string.Format("{0}-{1}", textBox18.Text, FleetPayment_Detail.Count + 1), list_ID = textBox18.Text,
+              depart_date = Convert.ToDateTime(DateTime.Now.ToString()),back_date = Convert.ToDateTime(DateTime.Now.ToString())
+            };
             FleetPayment_Detail.Add(sd);
         }
 
@@ -134,8 +136,8 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
                 sfm.make_staff = textBox17.Text;
                 sfm.make_time = dateTimePicker1.Value;
 
-                List<domain.FleetPayment_Detail> sd = FleetPayment_Detail.ToList<domain.FleetPayment_Detail>();
-                string Json = JsonConvert.SerializeObject(sd);
+                //List<domain.FleetPayment_Detail> sd = FleetPayment_Detail.ToList<domain.FleetPayment_Detail>();
+                string Json = JsonConvert.SerializeObject(this.gridControl1.DataSource);
                 string jsonMain = JsonConvert.SerializeObject(sfm);
 
                 fc.ChangeData(jsonMain, Json, sfm.GetType().Name.ToString(), "FleetPayment_Detail");
@@ -149,8 +151,8 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
                 sfm.make_staff = textBox17.Text;
                 sfm.make_time = dateTimePicker1.Value;
 
-                List<domain.FleetPayment_Detail> sd = FleetPayment_Detail.ToList<domain.FleetPayment_Detail>();
-                string Json = JsonConvert.SerializeObject(sd);
+                //List<domain.FleetPayment_Detail> sd = FleetPayment_Detail.ToList<domain.FleetPayment_Detail>();
+                string Json = JsonConvert.SerializeObject(this.gridControl1.DataSource);
                 string jsonMain = JsonConvert.SerializeObject(sfm);
 
                 fc.SaveData(jsonMain, Json, sfm.GetType().Name.ToString(), "FleetPayment_Detail");

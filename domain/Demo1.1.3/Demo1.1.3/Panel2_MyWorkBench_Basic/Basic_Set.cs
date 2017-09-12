@@ -45,6 +45,22 @@ namespace Demo1._1._3
             
             total_Page = fc.getTotal<domain.Basic_Set>(bs,total_Page);
             fc.InitPage(dataNavigator_Basic_Set,total_Page,now_Page);
+
+            isEdit();
+        }
+
+
+        /// <summary>
+        /// 判断是否可以编辑
+        /// </summary>
+        private void isEdit()
+        {
+            if (Sign_in.basic.Substring(0, 2) == "01")
+            {
+                toolStripButton1.Visible = false;
+                toolStripButton2.Visible = false;
+                toolStripButton4.Visible = false;
+            }
         }
 
         private void gridControl1_Click(object sender, EventArgs e)

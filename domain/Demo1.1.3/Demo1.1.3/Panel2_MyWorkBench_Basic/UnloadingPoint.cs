@@ -58,7 +58,23 @@ namespace Demo1._1._3
 
             total_Page_Trans = fc.getTotal<domain.Transportations>(tran, total_Page_Trans);
             fc.InitPage(dataNavigator_transp, total_Page_Trans, now_Page_Trans);
+
+            isEdit();
         }
+
+        /// <summary>
+        /// 判断是否可以编辑
+        /// </summary>
+        private void isEdit()
+        {
+            if (Sign_in.basic.Substring(4, 2) == "01")
+            {
+                toolStripButton1.Visible = false;
+                toolStripButton2.Visible = false;
+                toolStripButton7.Visible = false;
+            }
+        }
+
 
         private void toolStripButton6_Click(object sender, EventArgs e) //导入数据
         {

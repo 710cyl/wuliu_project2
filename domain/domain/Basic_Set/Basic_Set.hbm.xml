@@ -250,8 +250,8 @@
 
 <class name="Warehouse_Space" table="T_Warehouse_Space" >
 
-    <id name="ID" column="ID" type="Guid">
-      <generator class="assigned" />
+    <id name="ID" column="ID" type="int">
+      <generator class="identity" />
     </id>
 
     <property name="storage" type="string">
@@ -270,8 +270,8 @@
 
 <class name="Warehouse_Staff" table="T_Warehouse_Staff" >
 
-    <id name="ID" column="ID" type="Guid">
-      <generator class="assigned" />
+    <id name="ID" column="ID" type="int">
+      <generator class="identity" />
     </id>
 
     <property name="inventory_keeper" type="string">
@@ -429,8 +429,8 @@
 
   <class name="External_Vehicle" table="T_External_Vehicle" >
 
-    <id name="ID" column="编号" type="Guid">
-      <generator class="assigned" />
+    <id name="ID" column="编号" type="int">
+      <generator class="identity" />
     </id>
 
     <property name="motorcade" type="string">

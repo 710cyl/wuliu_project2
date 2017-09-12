@@ -1033,6 +1033,8 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(183, 26);
             this.textBox3.TabIndex = 252;
+            this.textBox3.Tag = "0";
+            this.textBox3.Text = "0";
             // 
             // label11
             // 
@@ -1075,6 +1077,8 @@
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(183, 26);
             this.textBox9.TabIndex = 256;
+            this.textBox9.Tag = "0";
+            this.textBox9.Text = "0";
             // 
             // label9
             // 
@@ -1114,6 +1118,7 @@
             this.textBox14.Location = new System.Drawing.Point(127, 150);
             this.textBox14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox14.Name = "textBox14";
+            this.textBox14.ReadOnly = true;
             this.textBox14.Size = new System.Drawing.Size(183, 26);
             this.textBox14.TabIndex = 259;
             // 

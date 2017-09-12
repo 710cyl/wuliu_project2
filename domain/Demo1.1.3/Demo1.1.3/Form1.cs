@@ -75,8 +75,152 @@ namespace Demo1._1._3
         public Form1()
         {
             InitializeComponent();
+
+            isStorage();
+            isSendcar();
+            isTranpotation();
+            isBasic();
+        }
+        /// <summary>
+        /// 仓库权限
+        /// </summary>
+        private void isStorage()
+        {
+            if (Sign_in.storage.Substring(4, 2) == "00")
+            {
+                accordionControlElement64.Visible = false;
+            }
+            if (Sign_in.storage.Substring(2, 2) == "00")
+            {
+                accordionControlElement63.Visible = false;
+            }
+            if (Sign_in.storage.Substring(0, 2) == "00")
+            {
+                accordionControlElement62.Visible = false;
+            }
         }
 
+        /// <summary>
+        /// 派车权限
+        /// </summary>
+        private void isSendcar()
+        {
+            if (Sign_in.sendcar.Substring(6, 2) == "00")
+            {
+                accordionControlElement70.Visible = false;
+            }
+            if (Sign_in.sendcar.Substring(4, 2) == "00")
+            {   
+                accordionControlElementClosecar.Visible = false;  
+            }
+            if (Sign_in.sendcar.Substring(2, 2) == "00")
+            {
+                accordionControlElementPackage.Visible = false;
+            }
+            if (Sign_in.sendcar.Substring(0, 2) == "00")
+            {
+                accordionControlElementSendcar.Visible = false;
+            }
+        }
+
+        /// <summary>
+        /// 运输权限
+        /// </summary>
+        private void isTranpotation()
+        {
+            if (Sign_in.transpotation.Substring(14, 2) == "00")
+            {
+                accordionControlElement82.Visible = false;
+            }
+            if (Sign_in.transpotation.Substring(12, 2) == "00")
+            {
+                accordionControlElement78.Visible = false;
+            }
+            if (Sign_in.transpotation.Substring(10, 2) == "00")
+            {
+                accordionControlElement77.Visible = false;
+            }
+            if (Sign_in.transpotation.Substring(8, 2) == "00")
+            {
+                accordionControlElement76.Visible = false;
+            }
+            if (Sign_in.transpotation.Substring(6, 2) == "00")
+            {
+                accordionControlElement67.Visible = false;
+            }
+            if (Sign_in.transpotation.Substring(4, 2) == "00")
+            {
+                accordionControlElement79.Visible = false;
+            }
+            if (Sign_in.transpotation.Substring(2, 2) == "00")
+            {
+                accordionControlElement66.Visible = false;
+            }
+            if (Sign_in.transpotation.Substring(0, 2) == "00")
+            {
+                accordionControlElement65.Visible = false;
+            }
+        }
+
+        /// <summary>
+        /// 基础权限
+        /// </summary>
+        private void isBasic()
+        {
+            if (Sign_in.basic.Substring(24, 2) == "00")
+            {
+                accordionControlElement47.Visible = false;
+            }
+            if (Sign_in.basic.Substring(22, 2) == "00")
+            {
+                accordionControlElement46.Visible = false;
+            }
+            if (Sign_in.basic.Substring(20, 2) == "00")
+            {
+                accordionControlElement45.Visible = false;
+            }
+            if (Sign_in.basic.Substring(18, 2) == "00")
+            {
+                accordionControlElement44.Visible = false;
+            }
+            if (Sign_in.basic.Substring(16, 2) == "00")
+            {
+                accordionControlElement43.Visible = false;
+            }
+
+            if (Sign_in.basic.Substring(14, 2) == "00")
+            {
+                accordionControlElement42.Visible = false;
+            }
+            if (Sign_in.basic.Substring(12, 2) == "00")
+            {
+                accordionControlElement41.Visible = false;
+            }
+            if (Sign_in.basic.Substring(10, 2) == "00")
+            {
+                accordionControlElement40.Visible = false;
+            }
+            if (Sign_in.basic.Substring(8, 2) == "00")
+            {
+                accordionControlElement39.Visible = false;
+            }
+            if (Sign_in.basic.Substring(6, 2) == "00")
+            {
+                accordionControlElement38.Visible = false;
+            }
+            if (Sign_in.basic.Substring(4, 2) == "00")
+            {
+                accordionControlElement37.Visible = false;
+            }
+            if (Sign_in.basic.Substring(2, 2) == "00")
+            {
+                accordionControlElement36.Visible = false;
+            }
+            if (Sign_in.basic.Substring(0, 2) == "00")
+            {
+                accordionControlElement35.Visible = false;
+            }
+        }
         private void accordionControlElement1_Click(object sender, EventArgs e)
         {
 
@@ -110,6 +254,18 @@ namespace Demo1._1._3
             panel1.Controls.Clear();
             panel1.Controls.Add(main_role);
 
+            domain.权限.Role basic_set = new domain.权限.Role();
+
+            main_role.gridControl1.DataSource = showData<domain.权限.Role>(basic_set, main_role.now_Page.ToString());
+            main_role.gridView1.Columns[0].Visible = false;
+            main_role.gridView1.Columns[1].Caption = "角色名称";
+            main_role.gridView1.Columns[2].Caption = "派车权限码";
+            main_role.gridView1.Columns[3].Caption = "仓库权限码";
+            main_role.gridView1.Columns[4].Caption = "运输权限码";
+            main_role.gridView1.Columns[5].Caption = "基础权限码";
+            main_role.gridView1.Columns[6].Visible = false;
+            main_role.gridView1.BestFitColumns();
+
         }
         private void accordionControlElement4_Click(object sender, EventArgs e)
         {
@@ -142,6 +298,15 @@ namespace Demo1._1._3
             muser.Dock = DockStyle.Fill;
             panel1.Controls.Clear();
             panel1.Controls.Add(muser);
+
+            domain.权限.User basic_set = new domain.权限.User();
+           
+            muser.gridControl1.DataSource = showData<domain.权限.User>(basic_set, muser.now_Page.ToString());
+            muser.gridView1.Columns[0].Visible = false;
+            muser.gridView1.Columns[1].Caption = "姓名";
+            muser.gridView1.Columns[2].Caption = "密码";
+            muser.gridView1.Columns[3].Visible=false;
+            muser.gridView1.BestFitColumns();
         }
 
         /***************************************************************************************/
@@ -231,8 +396,8 @@ namespace Demo1._1._3
             domain.Decorate dec = new Decorate();
             domain.Discharge dis = new Discharge();
             domain.Transportations trans = new Transportations();
-            up.gridControl2.DataSource = showData<domain.Decorate>(dec,up.now_Page_Dec.ToString());
-            up.gridControl3.DataSource = showData<domain.Discharge>(dis,up.now_Page_Dis.ToString());
+            up.gridControl3.DataSource = showData<domain.Decorate>(dec,up.now_Page_Dec.ToString());
+            up.gridControl2.DataSource = showData<domain.Discharge>(dis,up.now_Page_Dis.ToString());
             up.gridControl4.DataSource = showData<domain.Transportations>(trans,up.now_Page_Trans.ToString());
         }
 
@@ -252,6 +417,14 @@ namespace Demo1._1._3
             ef.Dock = DockStyle.Fill;
             panel2.Controls.Clear();
             panel2.Controls.Add(ef);
+
+            ef.gridControl2.DataSource = showData(new domain.External_Vehicle(),ef.now_Page_Staff.ToString());
+
+            ef.gridView2.Columns[0].Visible = false;
+            ef.gridView2.Columns[1].Caption = "车队";
+            ef.gridView2.Columns[2].Caption = "车号";
+            ef.gridView2.Columns[3].Caption = "司机";
+            ef.gridView2.Columns[4].Caption = "说明";
         }
 
         /*
@@ -917,7 +1090,10 @@ namespace Demo1._1._3
            wf.Dock = DockStyle.Fill;
            panel2.Controls.Clear();
            panel2.Controls.Add(wf);
-       }
+
+           wf.gridControl2.DataSource = showData(new Warehouse_Staff(), wf.now_Page_Staff.ToString());
+           wf.gridControl3.DataSource = showData(new Warehouse_Space(), wf.now_Page_Space.ToString());
+        }
        private void accordionControlElement83_Click(object sender, EventArgs e)
        {
            carf = new CarFee();

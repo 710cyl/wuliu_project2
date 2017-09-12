@@ -31,7 +31,21 @@ namespace Demo1._1._3.Panel2_MyWorkBench
         public OilGasRegister()
         {
             InitializeComponent();
+            isEdit();
+        }
 
+
+        /// <summary>
+        /// 判断是否可以编辑
+        /// </summary>
+        private void isEdit()
+        {
+            if (Sign_in.transpotation.Substring(12, 2) == "01")
+            {
+                toolStripButton1.Visible = false;
+                toolStripButton2.Visible = false;
+                toolStripButton7.Visible = false;
+            }
         }
         //查看
         private void toolStripButton5_Click(object sender, EventArgs e)

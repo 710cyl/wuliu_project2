@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="domain" namespace="domain.权限">
+  <class name="User" table="T_User" lazy="true">
+    <id name="ID" type="int" column="ID">
+      <generator class="identity"/><!--identity 自增模式-->
+    </id>
+
+    <property name="name" type="string">
+      <column name="name" length="50" sql-type="nvarchar(50)"/>
+    </property>
+
+    <property name ="password" type="string">
+      <column name="password" length="50" sql-type="nvarchar(50)"/>
+    </property>
+    <!--多对多关系-->
+    <bag name="Role" generic="true" table="T_User_Role">
+      <key column="UserID" foreign-key="FK_T_UserRole_T_User"/>
+      <many-to-many column="RoleID" class="Role" foreign-key="FK_T_UserRole_T_Role"/>
+    </bag>
+  </class>
+
+
+  <class name="Role" table="T_Role" lazy="true">
+    <id name="ID" type="int" column="ID">
+      <generator class="identity"/>
+      <!--identity 自增模式-->
+    </id>
+
+    <property name="rolename" type="string">
+      <column name="rolename" length="50" sql-type="nvarchar(50)"/>
+    </property>
+
+    <property name="sendcar" type="string">
+      <column name="sendcar" length="50" sql-type="nvarchar(50)"/>
+    </property>
+
+    <property name="storage" type="string">
+      <column name="storage" length="50" sql-type="nvarchar(50)"/>
+    </property>
+
+    <property name="transpotation" type="string">
+      <column name="transpotation" length="50" sql-type="nvarchar(50)"/>
+    </property>
+
+    <property name="basic" type="string">
+      <column name="basic" length="50" sql-type="nvarchar(50)"/>
+    </property>
+    <!--多对多关系-->
+    <bag name="User" generic="true" table="T_User_Role">
+      <key column="RoleID" foreign-key="FK_T_UserRole_T_Role"/>
+      <many-to-many column="UserID" class="User" foreign-key="FK_T_UserRole_T_User"/>
+    </bag>
+  </class>
+
+  <!--<class name="UserRole" table="T_User_Role" lazy="true">
+    <id name="ID" type="int" column="ID">
+      <generator class="identity"/>
+    </id>
+  </class>-->
+</hibernate-mapping>

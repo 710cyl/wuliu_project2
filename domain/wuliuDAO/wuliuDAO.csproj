@@ -107,6 +107,7 @@
     <Compile Include="Car_ReimbursementDAO.cs" />
     <Compile Include="Driver_CheckDAOcs.cs" />
     <Compile Include="IBasic_SetDAO.cs" />
+    <Compile Include="IExternalFleetDAO.cs" />
     <Compile Include="IFleetPayment.cs" />
     <Compile Include="IFleetPayment_Detail.cs" />
     <Compile Include="IFleetPrice.cs" />
@@ -128,11 +129,15 @@
     <Compile Include="IStorageDetail.cs" />
     <Compile Include="ITransportationRegister.cs" />
     <Compile Include="ITransportationRegister_Detail.cs" />
+    <Compile Include="IUserDAO.cs" />
+    <Compile Include="IWarehouse_Space.cs" />
+    <Compile Include="IWarehouse_Staff.cs" />
     <Compile Include="OilGasRegister_DetailDAO.cs" />
     <Compile Include="OilGasRegister_MainDAO.cs" />
     <Compile Include="Outbound_CarDAO.cs" />
     <Compile Include="Outbound_Car_DetailDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="IRoleDAO.cs" />
     <Compile Include="TransportationClearing_DetailDAO.cs" />
     <Compile Include="TransportationClearing_MainDAO.cs" />
   </ItemGroup>

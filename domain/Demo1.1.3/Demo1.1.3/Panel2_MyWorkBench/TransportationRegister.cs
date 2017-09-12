@@ -45,7 +45,23 @@ namespace Demo1._1._3.Panel2_MyWorkBench
             fc.InitPage(dataNavigator_TransportationRegister, total_Page1, now_Page1);
             total_Page2 = fc.getTotal<domain.TransportationRegister_Detail>(trd, total_Page2);
             fc.InitPage(dataNavigator_TransportationRegister_Detail, total_Page2, now_Page2);
+
+            isEdit();
         }
+
+        /// <summary>
+        /// 判断可否编辑
+        /// </summary>
+        private void isEdit()
+        {
+            if (Sign_in.transpotation.Substring(0, 2) == "01")
+            {
+                toolStripButton1.Visible = false;
+                toolStripButton2.Visible = false;
+                toolStripButton4.Visible = false;
+            }
+        }
+
 
         /// <summary>
         /// 点击主表对应的明细表

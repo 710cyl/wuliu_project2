@@ -50,14 +50,23 @@ namespace wuliu_server
             wssv.AddWebSocketService<Combobox_CraneNumber>("/Combobox/Combobox_CraneNumber");
             wssv.AddWebSocketService<Combobox_Texture>("/Combobox/Combobox_Texture");
             wssv.AddWebSocketService<Combobox_Variety>("/Combobox/Combobox_Variety");
+
             wssv.AddWebSocketService<Combobox_refundMode>("/Combobox/Combobox_refundMode");
             wssv.AddWebSocketService<Combobox_oilVariety>("/Combobox/Combobox_oilVariety");
-            wssv.AddWebSocketService<Combobox_Transportation>("/Combobox/Combobox_Transportation");
 
+            wssv.AddWebSocketService<Combobox_Transportation>("/Combobox/Combobox_Transportation");
+            wssv.AddWebSocketService<Combobox_AddRole>("/Combobox/Combobox_AddRole");
 
             wssv.AddWebSocketService<ServerStorageDetails>("/ServerStorageDetails");
             wssv.AddWebSocketService<ServerOuBounceCarDetails>("/ServerOuBounceCarDetails");
 
+            wssv.AddWebSocketService<server_Login>("/server_Login");
+            wssv.AddWebSocketService<server_adduser>("/server_adduser");
+            wssv.AddWebSocketService<server_addrole>("/server_addrole");
+            wssv.AddWebSocketService<server_userrole>("/server_userrole");
+
+            wssv.AddWebSocketService<server_deleteUser>("/server_deleteUser");
+            wssv.AddWebSocketService<server_deleteRole>("/server_deleteRole");
             wssv.Start();
             Console.ReadKey();
             wssv.Stop();
@@ -336,6 +345,7 @@ namespace wuliu_server
                 StorageFormMain sfm = JsonConvert.DeserializeObject<StorageFormMain>(data);
                 IGoDownEntry gde = new IGoDownEntry();
                 gde.Save(sfm);
+                Console.WriteLine("主表保存成功！");
             }
             else if (name == "Outbound_Car")
             {
@@ -350,6 +360,7 @@ namespace wuliu_server
                 StorageFormMainOut sfm = JsonConvert.DeserializeObject<StorageFormMainOut>(data);
                 IOutBoundOrder gde = new IOutBoundOrder();
                 gde.Save(sfm);
+                Console.WriteLine("主表保存成功！");
             }
             else if (name == "StorageFormMainTrans")
             {
@@ -694,8 +705,9 @@ namespace wuliu_server
             }
             else if (s == "External_Vehicle")
             {
-                IList<External_Vehicle> fund_account = session.QueryOver<External_Vehicle>().List();
-                string json = JsonConvert.SerializeObject(fund_account);
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<External_Vehicle> basic_set = session.QueryOver<External_Vehicle>().Skip((page - 1) * 50).Take(50).List();
+                string json = JsonConvert.SerializeObject(basic_set);
                 return json;
             }
                
@@ -739,7 +751,8 @@ namespace wuliu_server
             }
             else if (s == "Warehouse_Space")
             {
-                IList<Warehouse_Space> fund_account = session.QueryOver<Warehouse_Space>().List();
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<Warehouse_Space> fund_account = session.QueryOver<Warehouse_Space>().Skip((page - 1) * 5).Take(5).List();
                 string json = JsonConvert.SerializeObject(fund_account);
                 return json;
             }
@@ -763,7 +776,8 @@ namespace wuliu_server
             }
             else if (s == "Warehouse_Staff")
             {
-                IList<Warehouse_Staff> fund_account = session.QueryOver<Warehouse_Staff>().List();
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<Warehouse_Staff> fund_account = session.QueryOver<Warehouse_Staff>().Skip((page - 1) * 5).Take(5).List();
                 string json = JsonConvert.SerializeObject(fund_account);
                 return json;
             }
@@ -922,6 +936,30 @@ namespace wuliu_server
                 int page = Convert.ToInt32(NowPage.nowpage);
                 IList<Driver_Check> cr = session.QueryOver<Driver_Check>().Skip((page - 1) * 5).Take(5).List();
                 string json = JsonConvert.SerializeObject(cr);
+                return json;
+            }
+
+
+            else if (s == "User")
+            {
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<domain.权限.User> cr = session.QueryOver<domain.权限.User>().Skip((page - 1) * 5).Take(5).List();
+                string json = JsonConvert.SerializeObject(cr, Formatting.None, new JsonSerializerSettings
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+                return json;
+            }
+
+
+            else if (s == "Role")
+            {
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<domain.权限.Role> cr = session.QueryOver<domain.权限.Role>().Skip((page - 1) * 5).Take(5).List();
+                string json = JsonConvert.SerializeObject(cr, Formatting.None, new JsonSerializerSettings
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
                 return json;
             }
 
@@ -1162,7 +1200,63 @@ namespace wuliu_server
                     //  Console.WriteLine(w.Message);
                     throw;
                 }
+            }
 
+            else if (GetClassName.classname == "Warehouse_Staff")
+            {
+                try
+                {
+                    IWarehouse_Staff crd = new IWarehouse_Staff();
+                    Warehouse_Staff cr = new Warehouse_Staff();
+                    cr = null;
+                    string tmp = null;
+                    tmp = e.Data;
+                    cr = JsonConvert.DeserializeObject<Warehouse_Staff>(tmp, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+                    crd.Save(cr);
+                }
+                catch (Exception)
+                {
+                    //  Console.WriteLine(w.Message);
+                    throw;
+                }
+            }
+
+            else if (GetClassName.classname == "Warehouse_Space")
+            {
+                try
+                {
+                    IWarehouse_Space crd = new IWarehouse_Space();
+                    Warehouse_Space cr = new Warehouse_Space();
+                    cr = null;
+                    string tmp = null;
+                    tmp = e.Data;
+                    cr = JsonConvert.DeserializeObject<Warehouse_Space>(tmp, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+                    crd.Save(cr);
+                }
+                catch (Exception)
+                {
+                    //  Console.WriteLine(w.Message);
+                    throw;
+                }
+            }
+
+            else if (GetClassName.classname == "External_Vehicle")
+            {
+                try
+                {
+                    IExternalFleetDAO crd = new IExternalFleetDAO();
+                    External_Vehicle cr = new External_Vehicle();
+                    cr = null;
+                    string tmp = null;
+                    tmp = e.Data;
+                    cr = JsonConvert.DeserializeObject<External_Vehicle>(tmp, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+                    crd.Save(cr);
+                }
+                catch (Exception)
+                {
+                    //  Console.WriteLine(w.Message);
+                    throw;
+                }
             }
         }
 
@@ -1205,7 +1299,38 @@ namespace wuliu_server
                 bsd.Update(bs);
             }
 
+            else if (GetClassName.classname == "Warehouse_Space")
+            {
+                IWarehouse_Space bsd = new IWarehouse_Space();
+                Warehouse_Space bs = new Warehouse_Space();
+                bs = null;
+                string tmp = null;
+                tmp = e.Data;
+                bs = JsonConvert.DeserializeObject<Warehouse_Space>(tmp);
+                bsd.Update(bs);
+            }
 
+            else if (GetClassName.classname == "Warehouse_Staff")
+            {
+                IWarehouse_Staff bsd = new IWarehouse_Staff();
+                Warehouse_Staff bs = new Warehouse_Staff();
+                bs = null;
+                string tmp = null;
+                tmp = e.Data;
+                bs = JsonConvert.DeserializeObject<Warehouse_Staff>(tmp);
+                bsd.Update(bs);
+            }
+
+            else if (GetClassName.classname == "External_Vehicle")
+            {
+                IExternalFleetDAO bsd = new IExternalFleetDAO();
+                External_Vehicle bs = new External_Vehicle();
+                bs = null;
+                string tmp = null;
+                tmp = e.Data;
+                bs = JsonConvert.DeserializeObject<External_Vehicle>(tmp);
+                bsd.Update(bs);
+            }
         }
     }
 
@@ -1232,6 +1357,30 @@ namespace wuliu_server
                 Driver_CheckDAO bs = new Driver_CheckDAO();
                 string str = e.Data;
                 var basicset = bs.Get<Driver_Check>(str);
+                bs.Delete(basicset);
+            }
+
+            else if (GetClassName.classname == "Warehouse_Space")
+            {
+                IWarehouse_Space bs = new IWarehouse_Space();
+                int str =Convert.ToInt32(e.Data);
+                var basicset = bs.Get<Warehouse_Space>(str);
+                bs.Delete(basicset);
+            }
+
+            else if (GetClassName.classname == "Warehouse_Staff")
+            {
+                IWarehouse_Staff bs = new IWarehouse_Staff();
+                int str = Convert.ToInt32(e.Data);
+                var basicset = bs.Get<Warehouse_Staff>(str);
+                bs.Delete(basicset);
+            }
+
+            else if (GetClassName.classname == "External_Vehicle")
+            {
+                IExternalFleetDAO bs = new IExternalFleetDAO();
+                int str = Convert.ToInt32(e.Data);
+                var basicset = bs.Get<External_Vehicle>(str);
                 bs.Delete(basicset);
             }
         }

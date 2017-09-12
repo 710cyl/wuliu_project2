@@ -55,6 +55,20 @@ namespace Demo1._1._3
             total_Page = fc.getTotal<domain.Outbound_Car>(bs,total_Page);
             fc.InitPage(dataNavigator_Outbound_Car, total_Page,now_Page);
         }
+
+        /// <summary>
+        /// 判断可否编辑
+        /// </summary>
+        private void isEdit()
+        {
+            if (Sign_in.sendcar.Substring(0, 2) == "01")
+            {
+                toolStripButton1.Visible = false;
+                toolStripButton2.Visible = false;
+                toolStripButton4.Visible = false;
+            }
+        }
+
         private void gridControl1_Click(object sender, EventArgs e)
         {
 

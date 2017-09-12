@@ -46,6 +46,21 @@ namespace Demo1._1._3.Panel2_MyWorkBench
             total_Page = fc.getTotal<domain.StorageFormMainOut>(bs, total_Page);
             fc.InitPage(dataNavigator_Basic_Set, total_Page, now_Page);
             fc.InitPage(dataNavigator1, 1, 1);
+
+            isEdit();
+        }
+
+        /// <summary>
+        /// 判断是否可编辑
+        /// </summary>
+        private void isEdit()
+        {
+            if (Sign_in.storage.Substring(2, 2) == "01")
+            {
+                toolStripButton1.Visible = false;
+                toolStripButton2.Visible = false;
+                toolStripButton7.Visible = false;
+            }
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e) //新建

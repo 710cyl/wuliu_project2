@@ -1,4 +1,4 @@
-﻿using System;
+﻿  using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -237,6 +237,14 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm
 
         private void simpleButton5_Click(object sender, EventArgs e) //保存
         {
+            domain.StorageFormMain storagemain = new StorageFormMain();//入库单主表
+            
+            List<StorageDetails> storagedetail = new List<domain.StorageDetails>();//入库单明细表
+
+
+            domain.StorageFormMainOut storagemainOut = new StorageFormMainOut();//出库单
+            List<StorageDetailsOut> storagedetailOut = new List<StorageDetailsOut>();//出库单明细
+
             if (Panel2_MyWorkBench.TransferList.isExist)
             {
                 sfm.StorageName = comboBox3.Text;
@@ -282,7 +290,7 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm
                 sfm.Craneman = comboBox5.Text;
                 sfm.Loader = comboBox2.Text;
                 sfm.Loader_1 = comboBox6.Text;
-                sfm.TotalStorage = Convert.ToDecimal(textBox14.Text);
+                sfm.TotalStorage = SumStorageQuantity()/* Convert.ToDecimal(textBox14.Text)*/;
                 sfm.KeyBoarder = textBox13.Text;
                 sfm.KeyTime = dateTimePicker2.Value;
                 sfm.Modifier = textBox12.Text;
@@ -293,6 +301,167 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm
                 string jsonMain = JsonConvert.SerializeObject(sfm);
 
                 fc.SaveData(jsonMain, Json, sfm.GetType().Name.ToString(), "StorageDetailsTrans");
+
+                Thread.Sleep(100);
+
+                storagemain.Storage = comboBox3.Text;
+                storagemain.StorageNumber = textBox10.Text;
+                storagemain.StorageTime = dateTimePicker1.Value;
+                storagemain.StorageWay = comboBox4.Text;
+                storagemain.StorageFleet = "移库车队";
+                storagemain.CarNumber = "移库车";
+                storagemain.Driver = "移库";
+                storagemain.TotalStorage = SumStorageQuantity();
+                storagemain.LoadingCity = "唐山";
+                storagemain.LoadingArea = "曹妃甸";
+                storagemain.LoadingSpot = comboBox3.Text;
+                storagemain.KeyBoarder = textBox13.Text;
+                storagemain.KeyTime = dateTimePicker2.Value;
+                storagemain.Modifier = textBox12.Text;
+                storagemain.ModifyTime = dateTimePicker3.Value;
+                storagemain.StorageKeeper = comboBox1.Text;
+                storagemain.Craneman = comboBox5.Text;
+                storagemain.Loader = comboBox2.Text;
+                storagemain.Others = "无";
+                storagemain.Statement = "";//总备注
+                storagemain.UnLoadingSpot = comboBox3.Text;
+                storagemain.UnLoadingCity = "唐山";
+                storagemain.UnLoadingArea = "曹妃甸";
+
+                for (int i =  0; i< StorageDetails.Count ; i++)
+                {
+                    domain.StorageDetails detail = new domain.StorageDetails();
+                    detail.StorageTime =Convert.ToDateTime(this.gridView1.GetRowCellValue(i, gridView1.Columns[16]));
+                    detail.StorageCode = this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[0]);
+                    detail.StorageWay = comboBox4.Text;
+                    detail.CargoOwner = textBox8.Text;
+                    detail.PackagesNumber =Convert.ToInt32(this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[13]));
+                    detail.Numbers = Convert.ToInt32(this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[14]));
+                    detail.SendNumber = Convert.ToInt32(this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[13]));
+                    detail.SendQuantity = Convert.ToInt32(this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[14]));
+                    detail.InventoryNumber = Convert.ToInt32(this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[13]));
+                    detail.StockQuantity = Convert.ToInt32(this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[14]));
+                    detail.ProductionDate = Convert.ToDateTime(this.gridView1.GetRowCellValue(i, gridView1.Columns[17]));
+                    detail.OrderNumber = this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[3]);
+                    detail.ItemNumber = this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[4]);
+                    detail.UnLoadingCity = "客户自定";
+                    detail.UnLoadingArea = "客户自定";
+                    detail.UnLoadingSpot = "客户自定";
+                    detail.ReelNumber = this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[5]);
+                    detail.Variety = this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[6]);
+                    detail.Material = this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[7]);
+                    detail.Specification = this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[8]);
+                    detail.CribNumber = this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[12]);
+                    detail.StorageFleet = "移库车队";
+                    detail.CarNumber = "移库车";
+                    detail.Drive = "移库";
+                    detail.LoadingSpot = comboBox3.Text;
+                    detail.LoadingCity = "唐山";
+                    detail.LoadingArea = "曹妃甸";
+                    detail.KeyBoarder = textBox13.Text;
+                    detail.KeyTime = dateTimePicker2.Value;
+                    detail.Modifier = textBox12.Text;
+                    detail.ModifyTime = dateTimePicker3.Value;
+                    detail.StorageKeeper = comboBox1.Text;
+                    detail.Loader = comboBox2.Text;
+                    detail.Craneman = comboBox5.Text;
+                    detail.Poll =Convert.ToInt32( this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[15]));
+                    detail.Statement = this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[18]);
+                    detail.TeamLog = "移库车队#移库车%移库";
+                    detail.StorageNumber = textBox10.Text;
+                    storagedetail.Add(detail);
+                }
+               
+                string Json_CHU = JsonConvert.SerializeObject(storagedetail);
+                string jsonMain_CHU = JsonConvert.SerializeObject(storagemain);
+
+                fc.SaveData(jsonMain_CHU, Json_CHU, storagemain.GetType().Name.ToString(), "StorageDetails");
+
+                Thread.Sleep(100);
+
+                storagemainOut.outStorageNumber = textBox10.Text;
+                storagemainOut.Storage = comboBox3.Text;
+                storagemainOut.StorageTime = dateTimePicker1.Value; 
+                storagemainOut.CargoOwner = textBox20.Text;
+                storagemainOut.PayUnits = textBox5.Text;
+                storagemainOut.TotalStorage = SumStorageQuantity();
+                storagemainOut.StorageWay = comboBox4.Text;
+                storagemainOut.StorageFleet = "移库车队";
+                storagemainOut.CarNumber = "移库车";
+                storagemainOut.Driver = "移库";
+                storagemainOut.StorageKeeper = comboBox1.Text;
+                storagemainOut.Craneman = comboBox5.Text;
+                storagemainOut.Loader = comboBox2.Text;
+                storagemainOut.Loader_1 = comboBox6.Text;
+                storagemainOut.Shipper = textBox13.Text;
+                storagemainOut.LogTime = dateTimePicker2.Value;
+                storagemainOut.Modifier = textBox13.Text;
+                storagemainOut.ModifyTime = dateTimePicker2.Value;
+                storagemainOut.Statement = "";//备注
+                storagemainOut.LoadingCity = "唐山";
+                storagemainOut.LoadingArea = "曹妃甸";
+                storagemainOut.LoadingSpot = comboBox3.Text;
+                storagemainOut.UnLoadingSpotActual = "客户自定";
+                storagemainOut.UnLoadingArea = "客户自定";
+                storagemainOut.UnLoadingCity = "客户自定";
+                storagemainOut.CollectionTime = dateTimePicker1.Value; 
+                //车队标识 无
+                //仓库 无
+                for (int i = 0; i < StorageDetails.Count; i++)
+                {
+                    domain.StorageDetailsOut detail = new domain.StorageDetailsOut();
+                    detail.StorageName = comboBox3.Text;
+                    detail.outStorageNumber = textBox10.Text;
+                    detail.outStorageTime = dateTimePicker1.Value;
+                    detail.StorageProperty = "仓储入库";
+                    detail.StorageTime = Convert.ToDateTime(this.gridView1.GetRowCellValue(i, gridView1.Columns[17]));
+                    detail.OrderNumber = this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[3]);
+                    detail.ItemNumber = this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[4]);
+                    detail.CargoOwner = textBox8.Text;
+                    detail.PayUnits = textBox20.Text;
+                    detail.UnLoadingCity = "客户自定";
+                    detail.UnLoadingSpot = "客户自定";
+                    detail.UnLoadingArea = "客户自定";
+                    detail.ReelNumber = this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[5]);
+                    detail.outStorageCode = this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[0]);
+                    detail.Variety = this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[6]);
+                    detail.Material = this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[7]);
+                    detail.Specification = this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[8]);
+                    detail.InventoryNumber = Convert.ToInt32(this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[9]));
+                    detail.StockQuantity = Convert.ToInt32(this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[10]));
+                    detail.Numbers = Convert.ToInt32(this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[14]));
+                    detail.PackagesNumber= Convert.ToInt32(this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[13]));
+                    detail.StorageCode = this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[1]);
+                    detail.StorageFleet = "移库车队";
+                    detail.CarNumber = "移库车";
+                    detail.Driver = "移库";
+                    detail.shipperTime = dateTimePicker1.Value;
+                    detail.shipper = textBox13.Text;
+                    detail.StorageKeeper = comboBox1.Text;
+                    detail.Loader = comboBox2.Text;
+                    detail.Craneman = comboBox5.Text;
+                    detail.Loader_1 = comboBox6.Text;
+                    detail.Statement = "";//总备注
+                    detail.UnLoadingCityACT = "唐山";
+                    detail.UnLoadingAreaACT = comboBox3.Text;
+                    detail.UnLoadingSpotACT = "曹妃甸";
+                    detail.LoadingCity = "唐山";
+                    detail.UnLoadingSpot = comboBox3.Text;
+                    detail.UnLoadingArea = "曹妃甸";
+                    detail.TeamLog = "移库车队#移库车%移库";
+                    detail.CribNumber = this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[11]);
+                    detail.Statement = this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[18]);
+                    detail.Modifier = textBox13.Text;
+                    detail.ModifyTime = dateTimePicker2.Value;
+                    detail.outStorageNumber = textBox10.Text;
+
+                    storagedetailOut.Add(detail);
+                }
+
+                string Json_RU = JsonConvert.SerializeObject(storagedetailOut);
+                string jsonMain_RU = JsonConvert.SerializeObject(storagemainOut);
+
+                fc.SaveData(jsonMain_RU, Json_RU, storagemainOut.GetType().Name.ToString(), "StorageDetailsOut");
             }
         }
 
@@ -381,6 +550,15 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm
             Demo1._1._3._1_NewViews.MyWorkBench.TabbedSection_StorageDetails sd = new _1_NewViews.MyWorkBench.TabbedSection_StorageDetails();
             sd.ReturnEvent += new _1_NewViews.MyWorkBench.TabbedSection_StorageDetails.ClickStorageDetails(ClickStorageDetails);
             sd.ShowDialog();
+        }
+
+        private decimal SumStorageQuantity()
+        {
+            int sum  = 10;
+
+                sum =Convert.ToInt32( gridView1.Columns[14].SummaryItem.SummaryValue);
+           
+            return Convert.ToDecimal( sum);
         }
     }
 }

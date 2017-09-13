@@ -727,7 +727,7 @@ namespace Demo1._1._3
             this.panel3.Location = new System.Drawing.Point(251, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1352, 846);
+            this.panel3.Size = new System.Drawing.Size(1352, 878);
             this.panel3.TabIndex = 5;
             // 
             // accordionControl2
@@ -745,7 +745,7 @@ namespace Demo1._1._3
             this.accordionControl2.Location = new System.Drawing.Point(0, 0);
             this.accordionControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.accordionControl2.Name = "accordionControl2";
-            this.accordionControl2.Size = new System.Drawing.Size(251, 846);
+            this.accordionControl2.Size = new System.Drawing.Size(251, 878);
             this.accordionControl2.TabIndex = 0;
             this.accordionControl2.Text = "accordionControl2";
             // 
@@ -948,7 +948,7 @@ namespace Demo1._1._3
             this.xtraTabPage3.Image = global::Demo1._1._3.Properties.Resources.design_32x32;
             this.xtraTabPage3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(1603, 846);
+            this.xtraTabPage3.Size = new System.Drawing.Size(1603, 878);
             this.xtraTabPage3.Text = "设计";
             // 
             // xtraTabPage4

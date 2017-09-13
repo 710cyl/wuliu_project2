@@ -361,7 +361,7 @@ namespace Demo1._1._3
         /****************************我的工作台左测导航栏点击事件****************************************/
         private void accordionControlElement35_Click(object sender, EventArgs e)
         {
-            main_basic = new Basic_Set();
+             main_basic = new Basic_Set();
             main_basic.Show();
             main_basic.Dock = DockStyle.Fill;
             panel2.Controls.Clear();

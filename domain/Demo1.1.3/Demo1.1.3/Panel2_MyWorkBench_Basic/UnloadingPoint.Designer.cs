@@ -189,21 +189,17 @@
             this.tabPane1.Controls.Add(this.tabNavigationPage2);
             this.tabPane1.Controls.Add(this.tabNavigationPage3);
             this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
-
-            this.tabPane1.Location = new System.Drawing.Point(0, 256);
+            this.tabPane1.Location = new System.Drawing.Point(0, 209);
             this.tabPane1.Margin = new System.Windows.Forms.Padding(4);
-
             this.tabPane1.Name = "tabPane1";
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabNavigationPage1,
             this.tabNavigationPage2,
             this.tabNavigationPage3});
-            this.tabPane1.RegularSize = new System.Drawing.Size(1252, 463);
+            this.tabPane1.RegularSize = new System.Drawing.Size(1252, 464);
             this.tabPane1.SelectedPage = this.tabNavigationPage1;
             this.tabPane1.SelectedPageIndex = 2;
-
-            this.tabPane1.Size = new System.Drawing.Size(1669, 585);
-
+            this.tabPane1.Size = new System.Drawing.Size(1252, 464);
             this.tabPane1.TabIndex = 11;
             // 
             // tabNavigationPage1
@@ -214,23 +210,19 @@
             this.tabNavigationPage1.Controls.Add(this.gridControl2);
             this.tabNavigationPage1.Controls.Add(this.panel3);
             this.tabNavigationPage1.Controls.Add(this.dataNavigator_discharge);
-
             this.tabNavigationPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
-            this.tabNavigationPage1.Size = new System.Drawing.Size(1647, 527);
-
+            this.tabNavigationPage1.Size = new System.Drawing.Size(1234, 418);
             // 
             // gridControl2
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-
             this.gridControl2.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
-            this.gridControl2.Location = new System.Drawing.Point(0, 196);
+            this.gridControl2.Location = new System.Drawing.Point(0, 158);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1647, 306);
-
+            this.gridControl2.Size = new System.Drawing.Size(1234, 240);
             this.gridControl2.TabIndex = 5;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -274,9 +266,7 @@
             this.panel3.Controls.Add(this.simpleButton4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
-
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1234, 158);
             this.panel3.TabIndex = 37;
@@ -285,10 +275,8 @@
             // textBox8
             // 
             this.textBox8.Font = new System.Drawing.Font("宋体", 9F);
-
-            this.textBox8.Location = new System.Drawing.Point(443, 32);
+            this.textBox8.Location = new System.Drawing.Point(333, 29);
             this.textBox8.Margin = new System.Windows.Forms.Padding(4);
-
             this.textBox8.Name = "textBox8";
             this.textBox8.ReadOnly = true;
             this.textBox8.Size = new System.Drawing.Size(148, 21);
@@ -297,10 +285,8 @@
             // textBox9
             // 
             this.textBox9.Font = new System.Drawing.Font("宋体", 9F);
-
-            this.textBox9.Location = new System.Drawing.Point(129, 31);
+            this.textBox9.Location = new System.Drawing.Point(99, 29);
             this.textBox9.Margin = new System.Windows.Forms.Padding(4);
-
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(148, 21);
             this.textBox9.TabIndex = 232;
@@ -308,10 +294,8 @@
             // textBox10
             // 
             this.textBox10.Font = new System.Drawing.Font("宋体", 9F);
-
-            this.textBox10.Location = new System.Drawing.Point(1077, 31);
+            this.textBox10.Location = new System.Drawing.Point(830, 26);
             this.textBox10.Margin = new System.Windows.Forms.Padding(4);
-
             this.textBox10.Name = "textBox10";
             this.textBox10.ReadOnly = true;
             this.textBox10.Size = new System.Drawing.Size(148, 21);
@@ -331,10 +315,8 @@
             // textBox11
             // 
             this.textBox11.Font = new System.Drawing.Font("宋体", 9F);
-
-            this.textBox11.Location = new System.Drawing.Point(759, 32);
+            this.textBox11.Location = new System.Drawing.Point(570, 26);
             this.textBox11.Margin = new System.Windows.Forms.Padding(4);
-
             this.textBox11.Name = "textBox11";
             this.textBox11.ReadOnly = true;
             this.textBox11.Size = new System.Drawing.Size(148, 21);
@@ -374,10 +356,8 @@
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("宋体", 9F);
-
-            this.textBox3.Location = new System.Drawing.Point(443, 90);
+            this.textBox3.Location = new System.Drawing.Point(333, 75);
             this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(148, 21);
             this.textBox3.TabIndex = 222;
@@ -385,10 +365,8 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("宋体", 9F);
-
-            this.textBox1.Location = new System.Drawing.Point(129, 89);
+            this.textBox1.Location = new System.Drawing.Point(99, 75);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(148, 21);
             this.textBox1.TabIndex = 220;
@@ -396,10 +374,8 @@
             // textBox18
             // 
             this.textBox18.Font = new System.Drawing.Font("宋体", 9F);
-
-            this.textBox18.Location = new System.Drawing.Point(759, 122);
+            this.textBox18.Location = new System.Drawing.Point(570, 113);
             this.textBox18.Margin = new System.Windows.Forms.Padding(4);
-
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(148, 21);
             this.textBox18.TabIndex = 176;
@@ -408,7 +384,7 @@
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("宋体", 9F);
-            this.label34.Location = new System.Drawing.Point(521, 101);
+            this.label34.Location = new System.Drawing.Point(521, 110);
             this.label34.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(41, 12);
@@ -418,10 +394,8 @@
             // textBox19
             // 
             this.textBox19.Font = new System.Drawing.Font("宋体", 9F);
-
-            this.textBox19.Location = new System.Drawing.Point(443, 122);
+            this.textBox19.Location = new System.Drawing.Point(333, 110);
             this.textBox19.Margin = new System.Windows.Forms.Padding(4);
-
             this.textBox19.Name = "textBox19";
             this.textBox19.Size = new System.Drawing.Size(148, 21);
             this.textBox19.TabIndex = 174;
@@ -430,7 +404,7 @@
             // 
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("宋体", 9F);
-            this.label35.Location = new System.Drawing.Point(285, 101);
+            this.label35.Location = new System.Drawing.Point(284, 110);
             this.label35.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(41, 12);
@@ -440,10 +414,8 @@
             // textBox20
             // 
             this.textBox20.Font = new System.Drawing.Font("宋体", 9F);
-
-            this.textBox20.Location = new System.Drawing.Point(129, 122);
+            this.textBox20.Location = new System.Drawing.Point(99, 110);
             this.textBox20.Margin = new System.Windows.Forms.Padding(4);
-
             this.textBox20.Name = "textBox20";
             this.textBox20.Size = new System.Drawing.Size(148, 21);
             this.textBox20.TabIndex = 172;
@@ -452,7 +424,7 @@
             // 
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("宋体", 9F);
-            this.label36.Location = new System.Drawing.Point(39, 101);
+            this.label36.Location = new System.Drawing.Point(38, 113);
             this.label36.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(53, 12);
@@ -462,10 +434,8 @@
             // textBox21
             // 
             this.textBox21.Font = new System.Drawing.Font("宋体", 9F);
-
-            this.textBox21.Location = new System.Drawing.Point(1077, 89);
+            this.textBox21.Location = new System.Drawing.Point(830, 75);
             this.textBox21.Margin = new System.Windows.Forms.Padding(4);
-
             this.textBox21.Name = "textBox21";
             this.textBox21.Size = new System.Drawing.Size(308, 21);
             this.textBox21.TabIndex = 170;
@@ -484,10 +454,8 @@
             // textBox22
             // 
             this.textBox22.Font = new System.Drawing.Font("宋体", 9F);
-
-            this.textBox22.Location = new System.Drawing.Point(759, 90);
+            this.textBox22.Location = new System.Drawing.Point(570, 72);
             this.textBox22.Margin = new System.Windows.Forms.Padding(4);
-
             this.textBox22.Name = "textBox22";
             this.textBox22.Size = new System.Drawing.Size(148, 21);
             this.textBox22.TabIndex = 166;
@@ -517,21 +485,19 @@
             // 
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("宋体", 9F);
-            this.label40.Location = new System.Drawing.Point(39, 75);
+            this.label40.Location = new System.Drawing.Point(50, 72);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(53, 12);
+            this.label40.Size = new System.Drawing.Size(41, 12);
             this.label40.TabIndex = 161;
-            this.label40.Text = "装卸点：";
+            this.label40.Text = "卸点：";
             // 
             // simpleButton3
             // 
             this.simpleButton3.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F);
             this.simpleButton3.Appearance.Options.UseFont = true;
             this.simpleButton3.Image = global::Demo1._1._3.Properties.Resources.cancel_16x16;
-
-            this.simpleButton3.Location = new System.Drawing.Point(1407, 141);
+            this.simpleButton3.Location = new System.Drawing.Point(959, 113);
             this.simpleButton3.Margin = new System.Windows.Forms.Padding(4);
-
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(61, 22);
             this.simpleButton3.TabIndex = 160;
@@ -543,10 +509,8 @@
             this.simpleButton4.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F);
             this.simpleButton4.Appearance.Options.UseFont = true;
             this.simpleButton4.Image = global::Demo1._1._3.Properties.Resources.save_16x16;
-
-            this.simpleButton4.Location = new System.Drawing.Point(1268, 141);
+            this.simpleButton4.Location = new System.Drawing.Point(830, 113);
             this.simpleButton4.Margin = new System.Windows.Forms.Padding(4);
-
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(98, 22);
             this.simpleButton4.TabIndex = 159;
@@ -581,10 +545,8 @@
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 4, true, true, "下一页", "下一页"),
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 5, true, true, "尾页", "尾页")});
             this.dataNavigator_discharge.Dock = System.Windows.Forms.DockStyle.Bottom;
-
-            this.dataNavigator_discharge.Location = new System.Drawing.Point(0, 502);
+            this.dataNavigator_discharge.Location = new System.Drawing.Point(0, 398);
             this.dataNavigator_discharge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-
             this.dataNavigator_discharge.Name = "dataNavigator_discharge";
             this.dataNavigator_discharge.Size = new System.Drawing.Size(1234, 20);
             this.dataNavigator_discharge.TabIndex = 6;
@@ -598,23 +560,19 @@
             this.tabNavigationPage2.Controls.Add(this.gridControl3);
             this.tabNavigationPage2.Controls.Add(this.panel2);
             this.tabNavigationPage2.Controls.Add(this.dataNavigator_decorate);
-
             this.tabNavigationPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabNavigationPage2.Name = "tabNavigationPage2";
-            this.tabNavigationPage2.Size = new System.Drawing.Size(1647, 527);
-
+            this.tabNavigationPage2.Size = new System.Drawing.Size(1234, 418);
             // 
             // gridControl3
             // 
             this.gridControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-
             this.gridControl3.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
-            this.gridControl3.Location = new System.Drawing.Point(0, 198);
+            this.gridControl3.Location = new System.Drawing.Point(0, 159);
             this.gridControl3.MainView = this.gridView3;
             this.gridControl3.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl3.Name = "gridControl3";
-            this.gridControl3.Size = new System.Drawing.Size(1647, 299);
-
+            this.gridControl3.Size = new System.Drawing.Size(1234, 235);
             this.gridControl3.TabIndex = 6;
             this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -658,9 +616,7 @@
             this.panel2.Controls.Add(this.simpleButton2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
-
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1234, 159);
             this.panel2.TabIndex = 38;
@@ -669,10 +625,8 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("宋体", 9F);
-
-            this.textBox2.Location = new System.Drawing.Point(443, 32);
+            this.textBox2.Location = new System.Drawing.Point(333, 29);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(148, 21);
@@ -681,10 +635,8 @@
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("宋体", 9F);
-
-            this.textBox4.Location = new System.Drawing.Point(129, 31);
+            this.textBox4.Location = new System.Drawing.Point(99, 26);
             this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(148, 21);
             this.textBox4.TabIndex = 232;
@@ -692,10 +644,8 @@
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("宋体", 9F);
-
-            this.textBox5.Location = new System.Drawing.Point(1077, 31);
+            this.textBox5.Location = new System.Drawing.Point(809, 29);
             this.textBox5.Margin = new System.Windows.Forms.Padding(4);
-
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(148, 21);
@@ -715,10 +665,8 @@
             // textBox6
             // 
             this.textBox6.Font = new System.Drawing.Font("宋体", 9F);
-
-            this.textBox6.Location = new System.Drawing.Point(759, 32);
+            this.textBox6.Location = new System.Drawing.Point(580, 29);
             this.textBox6.Margin = new System.Windows.Forms.Padding(4);
-
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(148, 21);
@@ -758,10 +706,8 @@
             // textBox7
             // 
             this.textBox7.Font = new System.Drawing.Font("宋体", 9F);
-
-            this.textBox7.Location = new System.Drawing.Point(443, 90);
+            this.textBox7.Location = new System.Drawing.Point(333, 69);
             this.textBox7.Margin = new System.Windows.Forms.Padding(4);
-
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(148, 21);
             this.textBox7.TabIndex = 222;
@@ -769,10 +715,8 @@
             // textBox12
             // 
             this.textBox12.Font = new System.Drawing.Font("宋体", 9F);
-
-            this.textBox12.Location = new System.Drawing.Point(129, 89);
+            this.textBox12.Location = new System.Drawing.Point(99, 66);
             this.textBox12.Margin = new System.Windows.Forms.Padding(4);
-
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(148, 21);
             this.textBox12.TabIndex = 220;
@@ -780,10 +724,8 @@
             // textBox14
             // 
             this.textBox14.Font = new System.Drawing.Font("宋体", 9F);
-
-            this.textBox14.Location = new System.Drawing.Point(759, 122);
+            this.textBox14.Location = new System.Drawing.Point(580, 110);
             this.textBox14.Margin = new System.Windows.Forms.Padding(4);
-
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(148, 21);
             this.textBox14.TabIndex = 176;
@@ -792,7 +734,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("宋体", 9F);
-            this.label10.Location = new System.Drawing.Point(521, 101);
+            this.label10.Location = new System.Drawing.Point(521, 110);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(41, 12);
@@ -802,10 +744,8 @@
             // textBox15
             // 
             this.textBox15.Font = new System.Drawing.Font("宋体", 9F);
-
-            this.textBox15.Location = new System.Drawing.Point(443, 122);
+            this.textBox15.Location = new System.Drawing.Point(333, 107);
             this.textBox15.Margin = new System.Windows.Forms.Padding(4);
-
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(148, 21);
             this.textBox15.TabIndex = 174;
@@ -814,7 +754,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("宋体", 9F);
-            this.label11.Location = new System.Drawing.Point(285, 101);
+            this.label11.Location = new System.Drawing.Point(284, 107);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(41, 12);
@@ -824,10 +764,8 @@
             // textBox16
             // 
             this.textBox16.Font = new System.Drawing.Font("宋体", 9F);
-
-            this.textBox16.Location = new System.Drawing.Point(129, 122);
+            this.textBox16.Location = new System.Drawing.Point(99, 107);
             this.textBox16.Margin = new System.Windows.Forms.Padding(4);
-
             this.textBox16.Name = "textBox16";
             this.textBox16.Size = new System.Drawing.Size(148, 21);
             this.textBox16.TabIndex = 172;
@@ -836,7 +774,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("宋体", 9F);
-            this.label12.Location = new System.Drawing.Point(39, 101);
+            this.label12.Location = new System.Drawing.Point(38, 107);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(53, 12);
@@ -846,10 +784,8 @@
             // textBox23
             // 
             this.textBox23.Font = new System.Drawing.Font("宋体", 9F);
-
-            this.textBox23.Location = new System.Drawing.Point(1077, 89);
+            this.textBox23.Location = new System.Drawing.Point(809, 75);
             this.textBox23.Margin = new System.Windows.Forms.Padding(4);
-
             this.textBox23.Name = "textBox23";
             this.textBox23.Size = new System.Drawing.Size(308, 21);
             this.textBox23.TabIndex = 170;
@@ -868,10 +804,8 @@
             // textBox24
             // 
             this.textBox24.Font = new System.Drawing.Font("宋体", 9F);
-
-            this.textBox24.Location = new System.Drawing.Point(759, 90);
+            this.textBox24.Location = new System.Drawing.Point(580, 75);
             this.textBox24.Margin = new System.Windows.Forms.Padding(4);
-
             this.textBox24.Name = "textBox24";
             this.textBox24.Size = new System.Drawing.Size(148, 21);
             this.textBox24.TabIndex = 166;
@@ -891,7 +825,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("宋体", 9F);
-            this.label15.Location = new System.Drawing.Point(261, 75);
+            this.label15.Location = new System.Drawing.Point(261, 69);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(65, 12);
             this.label15.TabIndex = 163;
@@ -901,7 +835,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("宋体", 9F);
-            this.label16.Location = new System.Drawing.Point(51, 74);
+            this.label16.Location = new System.Drawing.Point(51, 66);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(41, 12);
             this.label16.TabIndex = 161;
@@ -912,10 +846,8 @@
             this.simpleButton1.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F);
             this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.Image = global::Demo1._1._3.Properties.Resources.cancel_16x16;
-
-            this.simpleButton1.Location = new System.Drawing.Point(1407, 141);
+            this.simpleButton1.Location = new System.Drawing.Point(951, 110);
             this.simpleButton1.Margin = new System.Windows.Forms.Padding(4);
-
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(61, 22);
             this.simpleButton1.TabIndex = 160;
@@ -927,10 +859,8 @@
             this.simpleButton2.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F);
             this.simpleButton2.Appearance.Options.UseFont = true;
             this.simpleButton2.Image = global::Demo1._1._3.Properties.Resources.save_16x16;
-
-            this.simpleButton2.Location = new System.Drawing.Point(1268, 141);
+            this.simpleButton2.Location = new System.Drawing.Point(809, 110);
             this.simpleButton2.Margin = new System.Windows.Forms.Padding(4);
-
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(98, 22);
             this.simpleButton2.TabIndex = 159;
@@ -965,10 +895,8 @@
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 4, true, true, "下一页", "下一页"),
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 5, true, true, "尾页", "尾页")});
             this.dataNavigator_decorate.Dock = System.Windows.Forms.DockStyle.Bottom;
-
-            this.dataNavigator_decorate.Location = new System.Drawing.Point(0, 497);
+            this.dataNavigator_decorate.Location = new System.Drawing.Point(0, 394);
             this.dataNavigator_decorate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-
             this.dataNavigator_decorate.Name = "dataNavigator_decorate";
             this.dataNavigator_decorate.Size = new System.Drawing.Size(1234, 24);
             this.dataNavigator_decorate.TabIndex = 7;
@@ -982,23 +910,19 @@
             this.tabNavigationPage3.Controls.Add(this.gridControl4);
             this.tabNavigationPage3.Controls.Add(this.panel4);
             this.tabNavigationPage3.Controls.Add(this.dataNavigator_transp);
-
             this.tabNavigationPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabNavigationPage3.Name = "tabNavigationPage3";
-            this.tabNavigationPage3.Size = new System.Drawing.Size(1647, 527);
-
+            this.tabNavigationPage3.Size = new System.Drawing.Size(1234, 418);
             // 
             // gridControl4
             // 
             this.gridControl4.Dock = System.Windows.Forms.DockStyle.Fill;
-
             this.gridControl4.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
-            this.gridControl4.Location = new System.Drawing.Point(0, 199);
+            this.gridControl4.Location = new System.Drawing.Point(0, 160);
             this.gridControl4.MainView = this.gridView4;
             this.gridControl4.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl4.Name = "gridControl4";
-            this.gridControl4.Size = new System.Drawing.Size(1647, 298);
-
+            this.gridControl4.Size = new System.Drawing.Size(1234, 234);
             this.gridControl4.TabIndex = 6;
             this.gridControl4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -1042,9 +966,7 @@
             this.panel4.Controls.Add(this.simpleButton6);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
-
             this.panel4.Margin = new System.Windows.Forms.Padding(4);
-
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1234, 160);
             this.panel4.TabIndex = 38;
@@ -1053,10 +975,8 @@
             // textBox25
             // 
             this.textBox25.Font = new System.Drawing.Font("宋体", 9F);
-
-            this.textBox25.Location = new System.Drawing.Point(443, 32);
+            this.textBox25.Location = new System.Drawing.Point(333, 29);
             this.textBox25.Margin = new System.Windows.Forms.Padding(4);
-
             this.textBox25.Name = "textBox25";
             this.textBox25.ReadOnly = true;
             this.textBox25.Size = new System.Drawing.Size(148, 21);
@@ -1065,10 +985,8 @@
             // textBox26
             // 
             this.textBox26.Font = new System.Drawing.Font("宋体", 9F);
-
-            this.textBox26.Location = new System.Drawing.Point(129, 31);
+            this.textBox26.Location = new System.Drawing.Point(90, 26);
             this.textBox26.Margin = new System.Windows.Forms.Padding(4);
-
             this.textBox26.Name = "textBox26";
             this.textBox26.Size = new System.Drawing.Size(148, 21);
             this.textBox26.TabIndex = 232;
@@ -1076,10 +994,8 @@
             // textBox27
             // 
             this.textBox27.Font = new System.Drawing.Font("宋体", 9F);
-
-            this.textBox27.Location = new System.Drawing.Point(1077, 31);
+            this.textBox27.Location = new System.Drawing.Point(818, 29);
             this.textBox27.Margin = new System.Windows.Forms.Padding(4);
-
             this.textBox27.Name = "textBox27";
             this.textBox27.ReadOnly = true;
             this.textBox27.Size = new System.Drawing.Size(148, 21);
@@ -1099,10 +1015,8 @@
             // textBox28
             // 
             this.textBox28.Font = new System.Drawing.Font("宋体", 9F);
-
-            this.textBox28.Location = new System.Drawing.Point(759, 32);
+            this.textBox28.Location = new System.Drawing.Point(570, 29);
             this.textBox28.Margin = new System.Windows.Forms.Padding(4);
-
             this.textBox28.Name = "textBox28";
             this.textBox28.ReadOnly = true;
             this.textBox28.Size = new System.Drawing.Size(148, 21);
@@ -1142,9 +1056,7 @@
             // textBox29
             // 
             this.textBox29.Font = new System.Drawing.Font("宋体", 9F);
-
-            this.textBox29.Location = new System.Drawing.Point(443, 90);
-
+            this.textBox29.Location = new System.Drawing.Point(333, 69);
             this.textBox29.Name = "textBox29";
             this.textBox29.Size = new System.Drawing.Size(148, 21);
             this.textBox29.TabIndex = 222;
@@ -1152,10 +1064,8 @@
             // textBox30
             // 
             this.textBox30.Font = new System.Drawing.Font("宋体", 9F);
-
-            this.textBox30.Location = new System.Drawing.Point(129, 89);
+            this.textBox30.Location = new System.Drawing.Point(90, 69);
             this.textBox30.Margin = new System.Windows.Forms.Padding(4);
-
             this.textBox30.Name = "textBox30";
             this.textBox30.Size = new System.Drawing.Size(148, 21);
             this.textBox30.TabIndex = 220;
@@ -1163,10 +1073,8 @@
             // textBox32
             // 
             this.textBox32.Font = new System.Drawing.Font("宋体", 9F);
-
-            this.textBox32.Location = new System.Drawing.Point(759, 122);
+            this.textBox32.Location = new System.Drawing.Point(570, 110);
             this.textBox32.Margin = new System.Windows.Forms.Padding(4);
-
             this.textBox32.Name = "textBox32";
             this.textBox32.Size = new System.Drawing.Size(148, 21);
             this.textBox32.TabIndex = 176;
@@ -1175,7 +1083,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("宋体", 9F);
-            this.label22.Location = new System.Drawing.Point(521, 101);
+            this.label22.Location = new System.Drawing.Point(521, 113);
             this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(41, 12);
@@ -1185,10 +1093,8 @@
             // textBox33
             // 
             this.textBox33.Font = new System.Drawing.Font("宋体", 9F);
-
-            this.textBox33.Location = new System.Drawing.Point(443, 122);
+            this.textBox33.Location = new System.Drawing.Point(333, 107);
             this.textBox33.Margin = new System.Windows.Forms.Padding(4);
-
             this.textBox33.Name = "textBox33";
             this.textBox33.Size = new System.Drawing.Size(148, 21);
             this.textBox33.TabIndex = 174;
@@ -1197,7 +1103,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("宋体", 9F);
-            this.label23.Location = new System.Drawing.Point(285, 101);
+            this.label23.Location = new System.Drawing.Point(284, 110);
             this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(41, 12);
@@ -1207,10 +1113,8 @@
             // textBox34
             // 
             this.textBox34.Font = new System.Drawing.Font("宋体", 9F);
-
-            this.textBox34.Location = new System.Drawing.Point(129, 122);
+            this.textBox34.Location = new System.Drawing.Point(90, 107);
             this.textBox34.Margin = new System.Windows.Forms.Padding(4);
-
             this.textBox34.Name = "textBox34";
             this.textBox34.Size = new System.Drawing.Size(148, 21);
             this.textBox34.TabIndex = 172;
@@ -1219,7 +1123,7 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("宋体", 9F);
-            this.label24.Location = new System.Drawing.Point(39, 101);
+            this.label24.Location = new System.Drawing.Point(39, 110);
             this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(53, 12);
@@ -1229,10 +1133,8 @@
             // textBox35
             // 
             this.textBox35.Font = new System.Drawing.Font("宋体", 9F);
-
-            this.textBox35.Location = new System.Drawing.Point(1077, 89);
+            this.textBox35.Location = new System.Drawing.Point(818, 75);
             this.textBox35.Margin = new System.Windows.Forms.Padding(4);
-
             this.textBox35.Name = "textBox35";
             this.textBox35.Size = new System.Drawing.Size(308, 21);
             this.textBox35.TabIndex = 170;
@@ -1251,10 +1153,8 @@
             // textBox36
             // 
             this.textBox36.Font = new System.Drawing.Font("宋体", 9F);
-
-            this.textBox36.Location = new System.Drawing.Point(759, 90);
+            this.textBox36.Location = new System.Drawing.Point(570, 72);
             this.textBox36.Margin = new System.Windows.Forms.Padding(4);
-
             this.textBox36.Name = "textBox36";
             this.textBox36.Size = new System.Drawing.Size(148, 21);
             this.textBox36.TabIndex = 166;
@@ -1274,7 +1174,7 @@
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("宋体", 9F);
-            this.label27.Location = new System.Drawing.Point(261, 75);
+            this.label27.Location = new System.Drawing.Point(261, 69);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(65, 12);
             this.label27.TabIndex = 163;
@@ -1284,7 +1184,7 @@
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("宋体", 9F);
-            this.label28.Location = new System.Drawing.Point(27, 75);
+            this.label28.Location = new System.Drawing.Point(27, 66);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(65, 12);
             this.label28.TabIndex = 161;
@@ -1295,10 +1195,8 @@
             this.simpleButton5.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F);
             this.simpleButton5.Appearance.Options.UseFont = true;
             this.simpleButton5.Image = global::Demo1._1._3.Properties.Resources.cancel_16x16;
-
-            this.simpleButton5.Location = new System.Drawing.Point(1407, 141);
+            this.simpleButton5.Location = new System.Drawing.Point(975, 113);
             this.simpleButton5.Margin = new System.Windows.Forms.Padding(4);
-
             this.simpleButton5.Name = "simpleButton5";
             this.simpleButton5.Size = new System.Drawing.Size(61, 22);
             this.simpleButton5.TabIndex = 160;
@@ -1310,10 +1208,8 @@
             this.simpleButton6.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F);
             this.simpleButton6.Appearance.Options.UseFont = true;
             this.simpleButton6.Image = global::Demo1._1._3.Properties.Resources.save_16x16;
-
-            this.simpleButton6.Location = new System.Drawing.Point(1268, 141);
+            this.simpleButton6.Location = new System.Drawing.Point(818, 113);
             this.simpleButton6.Margin = new System.Windows.Forms.Padding(4);
-
             this.simpleButton6.Name = "simpleButton6";
             this.simpleButton6.Size = new System.Drawing.Size(98, 22);
             this.simpleButton6.TabIndex = 159;
@@ -1348,10 +1244,8 @@
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 4, true, true, "下一页", "下一页"),
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 5, true, true, "尾页", "尾页")});
             this.dataNavigator_transp.Dock = System.Windows.Forms.DockStyle.Bottom;
-
-            this.dataNavigator_transp.Location = new System.Drawing.Point(0, 497);
+            this.dataNavigator_transp.Location = new System.Drawing.Point(0, 394);
             this.dataNavigator_transp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-
             this.dataNavigator_transp.Name = "dataNavigator_transp";
             this.dataNavigator_transp.Size = new System.Drawing.Size(1234, 24);
             this.dataNavigator_transp.TabIndex = 8;
@@ -1629,12 +1523,10 @@
             // splitterControl1
             // 
             this.splitterControl1.Dock = System.Windows.Forms.DockStyle.Top;
-
-            this.splitterControl1.Location = new System.Drawing.Point(0, 248);
+            this.splitterControl1.Location = new System.Drawing.Point(0, 204);
             this.splitterControl1.Margin = new System.Windows.Forms.Padding(4);
-
             this.splitterControl1.Name = "splitterControl1";
-            this.splitterControl1.Size = new System.Drawing.Size(1252, 6);
+            this.splitterControl1.Size = new System.Drawing.Size(1252, 5);
             this.splitterControl1.TabIndex = 32;
             this.splitterControl1.TabStop = false;
             // 
@@ -1644,9 +1536,7 @@
             this.panel1.Controls.Add(this.dataNavigator2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 27);
-
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
-
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1252, 177);
             this.panel1.TabIndex = 31;
@@ -1654,12 +1544,10 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-
             this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(4);
-
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(1252, 153);
             this.gridControl1.TabIndex = 12;
@@ -1740,10 +1628,8 @@
             // dataNavigator2
             // 
             this.dataNavigator2.Dock = System.Windows.Forms.DockStyle.Bottom;
-
-            this.dataNavigator2.Location = new System.Drawing.Point(0, 191);
+            this.dataNavigator2.Location = new System.Drawing.Point(0, 153);
             this.dataNavigator2.Margin = new System.Windows.Forms.Padding(4);
-
             this.dataNavigator2.Name = "dataNavigator2";
             this.dataNavigator2.Size = new System.Drawing.Size(1252, 24);
             this.dataNavigator2.TabIndex = 35;
@@ -1757,9 +1643,7 @@
             this.Controls.Add(this.splitterControl1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
-
             this.Margin = new System.Windows.Forms.Padding(4);
-
             this.Name = "UnloadingPoint";
             this.Size = new System.Drawing.Size(1252, 673);
             this.tabPane1.ResumeLayout(false);
@@ -1854,7 +1738,6 @@
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.TextBox textBox19;
         private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.TextBox textBox20;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.TextBox textBox21;
         private System.Windows.Forms.Label label37;
@@ -1925,5 +1808,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn30;
         private DevExpress.XtraEditors.DataNavigator dataNavigator2;
+        private System.Windows.Forms.TextBox textBox20;
     }
 }

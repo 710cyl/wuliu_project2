@@ -134,6 +134,7 @@
     <Compile Include="IStorageDetail.cs" />
     <Compile Include="ITransportationRegister.cs" />
     <Compile Include="ITransportationRegister_Detail.cs" />
+    <Compile Include="ITransportationsDAO.cs" />
     <Compile Include="IUserDAO.cs" />
     <Compile Include="IWarehouse_Space.cs" />
     <Compile Include="IWarehouse_Staff.cs" />

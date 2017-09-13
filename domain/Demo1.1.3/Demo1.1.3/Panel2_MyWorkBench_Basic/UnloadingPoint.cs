@@ -129,13 +129,13 @@ namespace Demo1._1._3
                     panel3.Visible = true;
                     textBox1.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[1]);
                     textBox3.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[2]);
-                    textBox32.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[7]);
-                    textBox34.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[5]);
-                    textBox33.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[6]);
+                    textBox21.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[4]);
+                    textBox20.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[5]);
+                    textBox19.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[6]);
                     textBox22.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[3]);
-                    textBox21.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[2]);
-                    textBox28.Enabled = false;
-                    textBox27.Text = DateTime.Now.ToString();
+                    textBox18.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[7]);
+                    textBox11.Enabled = false;
+                    textBox10.Text = DateTime.Now.ToString();
                 }
                 else
                 {
@@ -154,6 +154,16 @@ namespace Demo1._1._3
                 {
                     isExist = true;
                     panel2.Visible = true;
+                    textBox12.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[1]);
+                    textBox7.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[2]);
+                    textBox24.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[3]);
+                    textBox23.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[4]);
+                    textBox16.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[5]);
+                    textBox15.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[6]);
+                    textBox14.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[7]);
+                    textBox6.Enabled = false;
+                    textBox5.Text = DateTime.Now.ToString();
+
                 }
                 else
                 {
@@ -172,6 +182,16 @@ namespace Demo1._1._3
                 {
                     isExist = true;
                     panel4.Visible = true;
+                    textBox30.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[1]);
+                    textBox29.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[2]);
+                    textBox36.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[3]);
+                    textBox35.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[4]);
+                    textBox34.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[5]);
+                    textBox33.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[6]);
+                    textBox32.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[7]);
+                    textBox28.Enabled = false;
+                    textBox27.Text = DateTime.Now.ToString();
+
                 }
                 else
                 {
@@ -265,7 +285,14 @@ namespace Demo1._1._3
         {
             if (isExist)
             {
-
+                dec.decorate_place = textBox12.Text;
+                dec.city = textBox7.Text;
+                dec.adress = textBox14.Text;
+                dec.linkman = textBox16.Text;
+                dec.phone_number = textBox15.Text;
+                dec.region = textBox24.Text;
+                dec.statement = textBox23.Text;
+                fc.updateData(dec, "Decorate");
             }
             else
             {
@@ -291,11 +318,25 @@ namespace Demo1._1._3
         {
             if (isExist)
             {
-
+                tran.transportation_place = textBox30.Text;
+                tran.city = textBox29.Text;
+                tran.region = textBox36.Text;
+                tran.statement = textBox35.Text;
+                tran.linkman = textBox34.Text;
+                tran.phone_number = textBox33.Text;
+                tran.adress = textBox32.Text;
+                fc.updateData(tran, "Transportations");
             }
             else
             {
-
+                tran.transportation_place = textBox30.Text;
+                tran.city = textBox29.Text;
+                tran.region = textBox36.Text;
+                tran.statement = textBox35.Text;
+                tran.linkman = textBox34.Text;
+                tran.phone_number = textBox33.Text;
+                tran.adress = textBox32.Text;
+                fc.saveData(tran, "Transportations");
             }
         }
 
@@ -305,5 +346,6 @@ namespace Demo1._1._3
             panel3.Visible = false;
             panel4.Visible = false;
         }
+
     }
 }

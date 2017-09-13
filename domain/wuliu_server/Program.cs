@@ -1321,6 +1321,24 @@ namespace wuliu_server
                 }
 
             }
+            else if (GetClassName.classname == "Transportations")
+            {
+                try
+                {
+                    ITransportationsDAO crd = new ITransportationsDAO();
+                    Transportations cr = new Transportations();
+                    cr = null;
+                    string tmp = null;
+                    tmp = e.Data;
+                    cr = JsonConvert.DeserializeObject<Transportations>(tmp, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+                    crd.Save(cr);
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+            }
         }
 
 
@@ -1395,6 +1413,36 @@ namespace wuliu_server
                 bs = JsonConvert.DeserializeObject<External_Vehicle>(tmp);
                 bsd.Update(bs);
             }
+            else if (GetClassName.classname == "Discharge")
+            {
+                IDischargeDAO bsd = new IDischargeDAO();
+                Discharge bs = new Discharge();
+                bs = null;
+                string tmp = null;
+                tmp = e.Data;
+                bs = JsonConvert.DeserializeObject<Discharge>(tmp);
+                bsd.Update(bs);
+            }
+            else if (GetClassName.classname == "Decorate")
+            {
+                IDecorateDAO bsd = new IDecorateDAO();
+                Decorate bs = new Decorate();
+                bs = null;
+                string tmp = null;
+                tmp = e.Data;
+                bs = JsonConvert.DeserializeObject<Decorate>(tmp);
+                bsd.Update(bs);
+            }
+            else if (GetClassName.classname == "Transportations")
+            {
+                ITransportationsDAO bsd = new ITransportationsDAO();
+                Transportations bs = new Transportations();
+                bs = null;
+                string tmp = null;
+                tmp = e.Data;
+                bs = JsonConvert.DeserializeObject<Transportations>(tmp);
+                bsd.Update(bs);
+            }
         }
     }
 
@@ -1446,6 +1494,30 @@ namespace wuliu_server
                 IExternalFleetDAO bs = new IExternalFleetDAO();
                 int str = Convert.ToInt32(e.Data);
                 var basicset = bs.Get<External_Vehicle>(str);
+
+                bs.Delete(basicset);
+            }
+            else if (GetClassName.classname == "Discharge")
+            {
+                IDischargeDAO bs = new IDischargeDAO();
+                int str = Convert.ToInt32(e.Data);
+                var basicset = bs.Get<Discharge>(str);
+
+                bs.Delete(basicset);
+            }
+            else if (GetClassName.classname == "Decorate")
+            {
+                IDecorateDAO bs = new IDecorateDAO();
+                int str = Convert.ToInt32(e.Data);
+                var basicset = bs.Get<Decorate>(str);
+
+                bs.Delete(basicset);
+            }
+            else if (GetClassName.classname == "Transportations")
+            {
+                ITransportationsDAO bs = new ITransportationsDAO();
+                int str = Convert.ToInt32(e.Data);
+                var basicset = bs.Get<Transportations>(str);
 
                 bs.Delete(basicset);
             }

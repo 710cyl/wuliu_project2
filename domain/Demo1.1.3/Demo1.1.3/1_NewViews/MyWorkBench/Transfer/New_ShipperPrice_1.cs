@@ -35,6 +35,7 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
         List<domain.ShipperPrice_Detail> sd = new List<ShipperPrice_Detail>();
         FunctionClass fc = new FunctionClass();
         public Demo1._1._3.Panel2_MyWorkBench.ShipperPrice shipperp;
+
         /// <summary>
         /// 车队、司机、车号
         /// </summary>
@@ -52,30 +53,17 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
         public New_ShipperPrice_1()
         {
             InitializeComponent();
-            int number = 0;
-            double total_money = 0;
-            double fare = 0;
+            
             shipperp = new Demo1._1._3.Panel2_MyWorkBench.ShipperPrice();
-            int rowCount = shipperp.gridView2.RowCount;
-            //MessageBox.Show(Convert.ToString(rowCount));
-            for (int i = 0; i < rowCount; i++)
-            {
-                number += Convert.ToInt32(shipperp.gridView2.Columns["数量"].SummaryText);
-                total_money += Convert.ToInt32(shipperp.gridView2.Columns["货主金额"].SummaryText);
-                fare += Convert.ToInt32(shipperp.gridView2.Columns["货主运价"].SummaryText);
-            }
+            
             if (Panel2_MyWorkBench.ShipperPrice.isExist)
             {
                 //主表显示
                 textBox5.Text = Panel2_MyWorkBench.ShipperPrice.array[0];
-                textBox7.Text = Convert.ToString(total_money);
                 textBox3.Text = Panel2_MyWorkBench.ShipperPrice.array[2];
                 dateTimePicker1.Value = Convert.ToDateTime(Panel2_MyWorkBench.ShipperPrice.array[3]);
                 textBox12.Text = Panel2_MyWorkBench.ShipperPrice.array[4];
                 dateTimePicker2.Value = Convert.ToDateTime(Panel2_MyWorkBench.ShipperPrice.array[5]);
-                textBox1.Text = Convert.ToString(rowCount);
-                textBox2.Text = Convert.ToString(number);
-                textBox6.Text = Convert.ToString(fare);
 
                 //明细表显示
 
@@ -95,10 +83,6 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
             {
                 DataGridViewInit();
                 textBox5.Text = fc.DateTimeToUnix("HJ");
-                textBox1.Text = Convert.ToString(rowCount);
-                textBox2.Text = Convert.ToString(number);
-                textBox6.Text = Convert.ToString(fare);
-                textBox7.Text = Convert.ToString(total_money);
             }
 
             this.gridView1.Columns[0].Caption = "货主";
@@ -159,7 +143,9 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
         private void simpleButton4_Click(object sender, EventArgs e)//添加
         {
             domain.ShipperPrice_Detail sd = new domain.ShipperPrice_Detail()
-            { transport_identifying = string.Format("{0}-{1}", textBox5.Text, ShipperPrice_Detail.Count + 1), price_ID = textBox5.Text };
+            { transport_identifying = string.Format("{0}-{1}", textBox5.Text, ShipperPrice_Detail.Count + 1), price_ID = textBox5.Text,
+              back_date = Convert.ToDateTime(DateTime.Now.ToString()), depart_date = Convert.ToDateTime(DateTime.Now.ToString())
+            };
             ShipperPrice_Detail.Add(sd);
         }
 
@@ -186,14 +172,30 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
                 sfm.enter_time = dateTimePicker1.Value;
                 sfm.change_staff = textBox12.Text;
                 sfm.change_time = dateTimePicker2.Value;
-               
+                int number = 0;
+                double total_money = 0;
+                double fare = 0;
+                int rowCount = ShipperPrice_Detail.Count;
+                for (int i = 0; i < rowCount; i++)
+                {
+                    number += Convert.ToInt32(this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[14]));
+                    total_money += Convert.ToInt32(this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[16]));
+                    fare += Convert.ToInt32(this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[15]));
+                }
+                textBox1.Text = Convert.ToString(rowCount);
+                textBox2.Text = Convert.ToString(number);
+                textBox6.Text = Convert.ToString(fare);
+                textBox7.Text = Convert.ToString(total_money);
 
 
-                List<domain.ShipperPrice_Detail> sd = ShipperPrice_Detail.ToList<domain.ShipperPrice_Detail>();
-                string Json = JsonConvert.SerializeObject(sd);
+                //List<domain.ShipperPrice_Detail> sd = ShipperPrice_Detail.ToList<domain.ShipperPrice_Detail>();
+                string Json = JsonConvert.SerializeObject(this.gridControl1.DataSource);
                 string jsonMain = JsonConvert.SerializeObject(sfm);
 
                 fc.ChangeData(jsonMain, Json, sfm.GetType().Name.ToString(), "ShipperPrice_Detail");
+                Thread.Sleep(500);
+                MessageBox.Show("修改完毕");
+                Close();
             }
 
             else   //保存
@@ -204,20 +206,36 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
                 sfm.enter_time = dateTimePicker1.Value;
                 sfm.change_staff = textBox12.Text;
                 sfm.change_time = dateTimePicker2.Value;
-                
+                int number = 0;
+                double total_money = 0;
+                double fare = 0;
+                int rowCount = ShipperPrice_Detail.Count;
+                for (int i = 0; i < rowCount; i++)
+                {
+                    number += Convert.ToInt32(this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[14]));
+                    total_money += Convert.ToInt32(this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[16]));
+                    fare += Convert.ToInt32(this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[15]));
+                }
+                textBox1.Text = Convert.ToString(rowCount);
+                textBox2.Text = Convert.ToString(number);
+                textBox6.Text = Convert.ToString(fare);
+                textBox7.Text = Convert.ToString(total_money);
 
-                List<domain.ShipperPrice_Detail> sd = ShipperPrice_Detail.ToList<domain.ShipperPrice_Detail>();
-                string Json = JsonConvert.SerializeObject(sd);
+                //List<domain.ShipperPrice_Detail> sd = ShipperPrice_Detail.ToList<domain.ShipperPrice_Detail>();
+                string Json = JsonConvert.SerializeObject(this.gridControl1.DataSource);
                 string jsonMain = JsonConvert.SerializeObject(sfm);
 
                 fc.SaveData(jsonMain, Json, sfm.GetType().Name.ToString(), "ShipperPrice_Detail");
+                Thread.Sleep(500);
+                MessageBox.Show("保存完毕");
+                Close();
             }
-            shipperp = new Demo1._1._3.Panel2_MyWorkBench.ShipperPrice();
-            domain.ShipperPrice fleetprice = new domain.ShipperPrice();
-            Demo1._1._3.Panel2_MyWorkBench.ShipperPrice dbs = new Panel2_MyWorkBench.ShipperPrice();
-            domain.ShipperPrice_Detail fleetprice_detail = new domain.ShipperPrice_Detail();
-            shipperp.gridControl1.DataSource = fc.showData<domain.ShipperPrice>(fleetprice, dbs.now_Page1.ToString());
-            shipperp.gridControl2.DataSource = fc.showData<domain.ShipperPrice_Detail>(fleetprice_detail, dbs.now_Page2.ToString());
+            //shipperp = new Demo1._1._3.Panel2_MyWorkBench.ShipperPrice();
+            //domain.ShipperPrice fleetprice = new domain.ShipperPrice();
+            //Demo1._1._3.Panel2_MyWorkBench.ShipperPrice dbs = new Panel2_MyWorkBench.ShipperPrice();
+            //domain.ShipperPrice_Detail fleetprice_detail = new domain.ShipperPrice_Detail();
+            //shipperp.gridControl1.DataSource = fc.showData<domain.ShipperPrice>(fleetprice, dbs.now_Page1.ToString());
+            //shipperp.gridControl2.DataSource = fc.showData<domain.ShipperPrice_Detail>(fleetprice_detail, dbs.now_Page2.ToString());
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)//取消

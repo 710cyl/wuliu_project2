@@ -18,7 +18,7 @@ namespace wuliu_server
     class Program
     {
         static void Main(string[] args)
-        {
+       {
             var wssv = new WebSocketServer("ws://localhost:9000");
             wssv.AddWebSocketService<GetField>("/GetField");
             wssv.AddWebSocketService<ShowData>("/ShowData");
@@ -98,7 +98,7 @@ namespace wuliu_server
         {
             try
             {
-                GetClass(GetClassName.classname, e.Data);
+                UpdateClassMain(GetClassName.classname, e.Data);
             }
             catch (Exception ex)
             {
@@ -106,7 +106,7 @@ namespace wuliu_server
             }
         }
 
-        private void GetClass(string name, string data)
+        private void UpdateClassMain(string name, string data)
         {
             if (name == "StorageFormMain")
             {
@@ -183,7 +183,7 @@ namespace wuliu_server
 
             try
             {
-                GetClass(GetClassName.classname, e.Data);
+                UpdateClassDetail(GetClassName.classname, e.Data);
             }
             catch (Exception ex)
             {
@@ -192,7 +192,7 @@ namespace wuliu_server
             }
         }
 
-        private void GetClass(string name, string data)
+        private void UpdateClassDetail(string name, string data)
 
         {
 
@@ -330,7 +330,7 @@ namespace wuliu_server
         {
             try
             {
-                GetClass(GetClassName.classname, e.Data);
+                GetClassMain(GetClassName.classname, e.Data);
             }
             catch (Exception ex)
             {
@@ -338,8 +338,9 @@ namespace wuliu_server
 
             }
         }
-        private void GetClass(string name, string data)
+        private void GetClassMain(string name, string data)
         {
+         
             if (name == "StorageFormMain")
             {
                 StorageFormMain sfm = JsonConvert.DeserializeObject<StorageFormMain>(data);
@@ -349,60 +350,66 @@ namespace wuliu_server
             }
             else if (name == "Outbound_Car")
             {
-                Outbound_Car sfm = JsonConvert.DeserializeObject<Outbound_Car>(data);
-                Outbound_CarDAO gde = new Outbound_CarDAO();
-                gde.Save(sfm);
+                Outbound_Car oc = JsonConvert.DeserializeObject<Outbound_Car>(data);
+                Outbound_CarDAO ocd = new Outbound_CarDAO();
+                ocd.Save(oc);
                 Console.WriteLine("出库派车主表保存成功！");
             }
 
             else if (name == "StorageFormMainOut")
             {
+
                 StorageFormMainOut sfm = JsonConvert.DeserializeObject<StorageFormMainOut>(data);
                 IOutBoundOrder gde = new IOutBoundOrder();
                 gde.Save(sfm);
                 Console.WriteLine("主表保存成功！");
+
             }
             else if (name == "StorageFormMainTrans")
             {
-                StorageFormMainTrans sfm = JsonConvert.DeserializeObject<StorageFormMainTrans>(data);
-                IOutBoundOrderTrans gde = new IOutBoundOrderTrans();
-                gde.Save(sfm);
+                StorageFormMainTrans sfmt = JsonConvert.DeserializeObject<StorageFormMainTrans>(data);
+                IOutBoundOrderTrans iobot = new IOutBoundOrderTrans();
+                iobot.Save(sfmt);
             }
             else if (name == "TransportationRegister")
             {
-                TransportationRegister sfm = JsonConvert.DeserializeObject<TransportationRegister>(data);
-                ITransportationRegister gde = new ITransportationRegister();
-                gde.Save(sfm);
+                TransportationRegister tr = JsonConvert.DeserializeObject<TransportationRegister>(data);
+                ITransportationRegister itr = new ITransportationRegister();
+                itr.Save(tr);
+                Console.WriteLine("运输登记主表保存成功！");
             }
             else if (name == "FleetPrice")
             {
-                FleetPrice sfm = JsonConvert.DeserializeObject<FleetPrice>(data);
-                IFleetPrice gde = new IFleetPrice();
-                gde.Save(sfm);
+                FleetPrice fpr = JsonConvert.DeserializeObject<FleetPrice>(data);
+                IFleetPrice ifp = new IFleetPrice();
+                ifp.Save(fpr);
             }
             else if (name == "FleetPayment")
             {
-                FleetPayment sfm = JsonConvert.DeserializeObject<FleetPayment>(data);
-                IFleetPayment gde = new IFleetPayment();
-                gde.Save(sfm);
+                FleetPayment fp = JsonConvert.DeserializeObject<FleetPayment>(data);
+                IFleetPayment ifp = new IFleetPayment();
+                ifp.Save(fp);
             }
             else if (name == "ShipperPrice")
             {
+
                 ShipperPrice sfm = JsonConvert.DeserializeObject<ShipperPrice>(data);
                 IShipperPrice gde = new IShipperPrice();
                 gde.Save(sfm);
+                Console.WriteLine("货主定价主表保存成功！");
+
             }
             else if (name == "OilGasRegister_Main")
             {
-                OilGasRegister_Main sfm = JsonConvert.DeserializeObject<OilGasRegister_Main>(data);
-                OilGasRegister_MainDAO gde = new OilGasRegister_MainDAO();
-                gde.Save(sfm);
+                OilGasRegister_Main ogrm = JsonConvert.DeserializeObject<OilGasRegister_Main>(data);
+                OilGasRegister_MainDAO ogrmd = new OilGasRegister_MainDAO();
+                ogrmd.Save(ogrm);
             }
             else if (name == "TransportationClearing_Main")
             {
-                TransportationClearing_Main sfm = JsonConvert.DeserializeObject<TransportationClearing_Main>(data);
-                TransportationClearing_MainDAO gde = new TransportationClearing_MainDAO();
-                gde.Save(sfm);
+                TransportationClearing_Main tcm = JsonConvert.DeserializeObject<TransportationClearing_Main>(data);
+                TransportationClearing_MainDAO tcmd = new TransportationClearing_MainDAO();
+                tcmd.Save(tcm);
             }
         }
     }
@@ -412,7 +419,7 @@ namespace wuliu_server
         {
             try
             {
-                GetClass(GetClassName.classname, e.Data);
+                GetClassDetail(GetClassName.classname, e.Data);
             }
             catch (Exception ex)
             {
@@ -420,7 +427,7 @@ namespace wuliu_server
                 // tran.Rollback();
             }
         }
-        private void GetClass(string name, string data)
+        private void GetClassDetail(string name, string data)
         {
             string json = null;
             if (name == "StorageDetails")
@@ -520,7 +527,7 @@ namespace wuliu_server
                 foreach (ShipperPrice_Detail item in sd)
                 {
                     isd.Save(item);
-                    Console.WriteLine("1111111111111111111");
+                    Console.WriteLine("货主定价明细表保存成功");
                 }
             }
             else if (name == "TransportationClearing_Detail")
@@ -532,7 +539,7 @@ namespace wuliu_server
                 foreach (TransportationClearing_Detail item in sd)
                 {
                     isd.Save(item);
-                    Console.WriteLine("1111111111111111111");
+                    Console.WriteLine("1111111111111111111"); 
                 }
             }
             else if (name == "OilGasRegister_Detail")
@@ -758,14 +765,22 @@ namespace wuliu_server
             }
             else if (s == "Decorate")
             {
-                IList<Decorate> fund_account = session.QueryOver<Decorate>().List();
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<Decorate> fund_account = session.QueryOver<Decorate>().Skip((page - 1) * 5).Take(5).List();
                 string json = JsonConvert.SerializeObject(fund_account);
+                //{
+                //    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                //});
                 return json;
             }
             else if (s == "Discharge")
             {
-                IList<Discharge> fund_account = session.QueryOver<Discharge>().List();
-                string json = JsonConvert.SerializeObject(fund_account);
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<Discharge> fund_account = session.QueryOver<Discharge>().Skip((page - 1) * 5).Take(5).List();
+                string json = JsonConvert.SerializeObject(fund_account, Formatting.None, new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
                 return json;
             }
             else if (s == "Transportations")
@@ -1270,6 +1285,60 @@ namespace wuliu_server
                     throw;
                 }
             }
+            else if (GetClassName.classname == "Decorate")
+            {
+                try
+                {
+                    IDecorateDAO crd = new IDecorateDAO();
+                    Decorate cr = new Decorate();
+                    cr = null;
+                    string tmp = null;
+                    tmp = e.Data;
+                    cr = JsonConvert.DeserializeObject<Decorate>(tmp, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+                    crd.Save(cr);
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+            }
+            else if (GetClassName.classname == "Discharge")
+            {
+                try
+                {
+                    IDischargeDAO crd = new IDischargeDAO();
+                    Discharge cr = new Discharge();
+                    cr = null;
+                    string tmp = null;
+                    tmp = e.Data;
+                    cr = JsonConvert.DeserializeObject<Discharge>(tmp, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+                    crd.Save(cr);
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+            }
+            else if (GetClassName.classname == "Transportations")
+            {
+                try
+                {
+                    ITransportationsDAO crd = new ITransportationsDAO();
+                    Transportations cr = new Transportations();
+                    cr = null;
+                    string tmp = null;
+                    tmp = e.Data;
+                    cr = JsonConvert.DeserializeObject<Transportations>(tmp, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+                    crd.Save(cr);
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+            }
         }
 
 
@@ -1333,6 +1402,7 @@ namespace wuliu_server
                 bsd.Update(bs);
             }
 
+
             else if (GetClassName.classname == "External_Vehicle")
             {
                 IExternalFleetDAO bsd = new IExternalFleetDAO();
@@ -1341,6 +1411,36 @@ namespace wuliu_server
                 string tmp = null;
                 tmp = e.Data;
                 bs = JsonConvert.DeserializeObject<External_Vehicle>(tmp);
+                bsd.Update(bs);
+            }
+            else if (GetClassName.classname == "Discharge")
+            {
+                IDischargeDAO bsd = new IDischargeDAO();
+                Discharge bs = new Discharge();
+                bs = null;
+                string tmp = null;
+                tmp = e.Data;
+                bs = JsonConvert.DeserializeObject<Discharge>(tmp);
+                bsd.Update(bs);
+            }
+            else if (GetClassName.classname == "Decorate")
+            {
+                IDecorateDAO bsd = new IDecorateDAO();
+                Decorate bs = new Decorate();
+                bs = null;
+                string tmp = null;
+                tmp = e.Data;
+                bs = JsonConvert.DeserializeObject<Decorate>(tmp);
+                bsd.Update(bs);
+            }
+            else if (GetClassName.classname == "Transportations")
+            {
+                ITransportationsDAO bsd = new ITransportationsDAO();
+                Transportations bs = new Transportations();
+                bs = null;
+                string tmp = null;
+                tmp = e.Data;
+                bs = JsonConvert.DeserializeObject<Transportations>(tmp);
                 bsd.Update(bs);
             }
         }
@@ -1372,6 +1472,7 @@ namespace wuliu_server
                 bs.Delete(basicset);
             }
 
+
             else if (GetClassName.classname == "Warehouse_Space")
             {
                 IWarehouse_Space bs = new IWarehouse_Space();
@@ -1393,6 +1494,31 @@ namespace wuliu_server
                 IExternalFleetDAO bs = new IExternalFleetDAO();
                 int str = Convert.ToInt32(e.Data);
                 var basicset = bs.Get<External_Vehicle>(str);
+
+                bs.Delete(basicset);
+            }
+            else if (GetClassName.classname == "Discharge")
+            {
+                IDischargeDAO bs = new IDischargeDAO();
+                int str = Convert.ToInt32(e.Data);
+                var basicset = bs.Get<Discharge>(str);
+
+                bs.Delete(basicset);
+            }
+            else if (GetClassName.classname == "Decorate")
+            {
+                IDecorateDAO bs = new IDecorateDAO();
+                int str = Convert.ToInt32(e.Data);
+                var basicset = bs.Get<Decorate>(str);
+
+                bs.Delete(basicset);
+            }
+            else if (GetClassName.classname == "Transportations")
+            {
+                ITransportationsDAO bs = new ITransportationsDAO();
+                int str = Convert.ToInt32(e.Data);
+                var basicset = bs.Get<Transportations>(str);
+
                 bs.Delete(basicset);
             }
         }
@@ -1578,7 +1704,7 @@ namespace wuliu_server
                     json = SwitchDetail(session, GetClassName.classname, e.Data);//判断是那个明细表
                     Send(json);
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     throw;
                 }

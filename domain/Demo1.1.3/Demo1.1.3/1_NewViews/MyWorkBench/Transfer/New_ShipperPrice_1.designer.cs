@@ -220,6 +220,7 @@
             this.textBox7.Location = new System.Drawing.Point(827, 30);
             this.textBox7.Margin = new System.Windows.Forms.Padding(2);
             this.textBox7.Name = "textBox7";
+            this.textBox7.ReadOnly = true;
             this.textBox7.Size = new System.Drawing.Size(138, 22);
             this.textBox7.TabIndex = 50;
             // 
@@ -230,6 +231,7 @@
             this.textBox6.Location = new System.Drawing.Point(585, 29);
             this.textBox6.Margin = new System.Windows.Forms.Padding(2);
             this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(138, 22);
             this.textBox6.TabIndex = 49;
             // 
@@ -251,6 +253,7 @@
             this.textBox1.Location = new System.Drawing.Point(102, 29);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(138, 22);
             this.textBox1.TabIndex = 2;
             // 
@@ -294,11 +297,13 @@
             this.textBox2.Location = new System.Drawing.Point(344, 29);
             this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(138, 22);
             this.textBox2.TabIndex = 48;
             // 
             // textBox5
             // 
+            this.textBox5.Enabled = false;
             this.textBox5.Font = new System.Drawing.Font("宋体", 9.5F);
             this.textBox5.Location = new System.Drawing.Point(114, 36);
             this.textBox5.Margin = new System.Windows.Forms.Padding(2);

@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using domain;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,13 +14,14 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
 {
     public partial class New_TransportationClearing : Form
     {
-        private BindingList<domain.TransportationClearing_Detail> tcd_bindinglist;
+        public BindingList<domain.TransportationClearing_Detail> tcd_bindinglist;
         domain.TransportationClearing_Main tcm = new domain.TransportationClearing_Main();
         List<domain.TransportationClearing_Detail> sd = new List<domain.TransportationClearing_Detail>();
         FunctionClass fc = new FunctionClass();
         public New_TransportationClearing()
         {
             InitializeComponent();
+            DataGridViewInit();
             if (Panel2_MyWorkBench.TransportationClearing.isExist)
             {
                 //主表显示
@@ -38,19 +40,23 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
                 textBox_billcompany_fullname.Text = Panel2_MyWorkBench.TransportationClearing.array[12];
                 textBox_billcompany_TFN.Text = Panel2_MyWorkBench.TransportationClearing.array[13];
                 textBox_total_money.Text = Panel2_MyWorkBench.TransportationClearing.array[14];
-                textBox_total_volume.Text = Panel2_MyWorkBench.TransportationClearing.array[15];
+                textBox_total_volume.Text = Panel2_MyWorkBench.TransportationClearing.array[16];
                 textBox_Daxie.Text = DaXie(Panel2_MyWorkBench.TransportationClearing.array[14]);
-                DataGridViewInit();
+
+                //明细表显示
+                sd = JsonConvert.DeserializeObject<List<domain.TransportationClearing_Detail>>(fc.FindDeteils(Demo1._1._3.Panel2_MyWorkBench.TransportationClearing.str, "TransportationClearing_Detail"));
+                tcd_bindinglist = new BindingList<domain.TransportationClearing_Detail>(sd);
+                gridControl1.DataSource = tcd_bindinglist;
             }
             else
             {
-                DataGridViewInit();
+                
 
             }
         }
         public void DataGridViewInit()
         {
-            List<domain.TransportationClearing_Detail> sd = null;
+            //List<domain.TransportationClearing_Detail> sd = null;
             sd = JsonConvert.DeserializeObject<List<domain.TransportationClearing_Detail>>(fc.GridViewInit("TransportationClearing_Detail"));
             tcd_bindinglist = new BindingList<domain.TransportationClearing_Detail>(sd);
             gridControl1.DataSource = tcd_bindinglist;
@@ -102,7 +108,7 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
         //保存
         private void simpleButton5_Click(object sender, EventArgs e)
         {
-            if (Panel2_MyWorkBench.GodownEntry.isExist) //保存修改
+            if (Panel2_MyWorkBench.TransportationClearing.isExist) //保存修改
             {
                 tcm.clearing_id = textBox_clearing_id.Text;
                 tcm.register_man = textBox_register_man.Text;
@@ -131,8 +137,8 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
                 tcm.total_money = Convert.ToDecimal(textBox_total_money.Text);
                 tcm.total_volume = Convert.ToDecimal(textBox_total_volume.Text);
 
-                List<domain.TransportationClearing_Detail> sd = tcd_bindinglist.ToList<domain.TransportationClearing_Detail>();
-                string Json = JsonConvert.SerializeObject(sd);
+                //List<domain.TransportationClearing_Detail> sd = tcd_bindinglist.ToList<domain.TransportationClearing_Detail>();
+                string Json = JsonConvert.SerializeObject(gridControl1.DataSource);
                 string jsonMain = JsonConvert.SerializeObject(tcm);
 
                 fc.ChangeData(jsonMain, Json, tcm.GetType().Name.ToString(), "TransportationClearing_Detail");
@@ -168,13 +174,14 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
                 tcm.total_money = Convert.ToDecimal(textBox_total_money.Text);
                 tcm.total_volume = Convert.ToDecimal(textBox_total_volume.Text);
 
-                List<domain.TransportationClearing_Detail> sd = tcd_bindinglist.ToList<domain.TransportationClearing_Detail>();
-                string Json = JsonConvert.SerializeObject(sd);
+                //List<domain.TransportationClearing_Detail> sd = tcd_bindinglist.ToList<domain.TransportationClearing_Detail>();
+                string Json = JsonConvert.SerializeObject(gridControl1.DataSource);
                 string jsonMain = JsonConvert.SerializeObject(tcm);
-                Panel2_MyWorkBench.GodownEntry.isExist = true;
+                Panel2_MyWorkBench.TransportationClearing.isExist = true;
                 fc.SaveData(jsonMain, Json, tcm.GetType().Name.ToString(), "TransportationClearing_Detail");
 
             }
+            Close();
         }
         //取消
         private void simpleButton2_Click(object sender, EventArgs e)

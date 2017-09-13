@@ -398,7 +398,9 @@ namespace Demo1._1._3
             domain.Transportations trans = new Transportations();
             up.gridControl3.DataSource = showData<domain.Decorate>(dec,up.now_Page_Dec.ToString());
             up.gridControl2.DataSource = showData<domain.Discharge>(dis,up.now_Page_Dis.ToString());
+
             up.gridControl4.DataSource = showData<domain.Transportations>(trans,up.now_Page_Trans.ToString());
+
         }
 
         private void accordionControlElement38_Click(object sender, EventArgs e)
@@ -916,7 +918,7 @@ namespace Demo1._1._3
             panel2.Controls.Add(tpc);
 
             domain.TransportationClearing_Main transportation_clearing_main = new domain.TransportationClearing_Main();
-            tpc.gridControl1.DataSource = showData<domain.TransportationClearing_Main>(transportation_clearing_main, tpc.now_Page.ToString());
+            tpc.gridControl1.DataSource = showData<domain.TransportationClearing_Main>(transportation_clearing_main, tpc.now_Page1.ToString());
             //明细表显示??
             string str;
             str = null;

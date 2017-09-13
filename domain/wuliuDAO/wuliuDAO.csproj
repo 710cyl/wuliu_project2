@@ -101,12 +101,17 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="websocket-sharp">
+      <HintPath>..\..\..\Users\ZTJ\Desktop\websocket-sharp\Example\bin\Debug_Ubuntu\websocket-sharp.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Basic_SetDAO.cs" />
     <Compile Include="Car_ReimbursementDAO.cs" />
     <Compile Include="Driver_CheckDAOcs.cs" />
     <Compile Include="IBasic_SetDAO.cs" />
+    <Compile Include="IDecorateDAO.cs" />
+    <Compile Include="IDischargeDAO.cs" />
     <Compile Include="IExternalFleetDAO.cs" />
     <Compile Include="IFleetPayment.cs" />
     <Compile Include="IFleetPayment_Detail.cs" />
@@ -129,6 +134,7 @@
     <Compile Include="IStorageDetail.cs" />
     <Compile Include="ITransportationRegister.cs" />
     <Compile Include="ITransportationRegister_Detail.cs" />
+    <Compile Include="ITransportationsDAO.cs" />
     <Compile Include="IUserDAO.cs" />
     <Compile Include="IWarehouse_Space.cs" />
     <Compile Include="IWarehouse_Staff.cs" />

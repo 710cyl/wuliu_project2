@@ -47,6 +47,7 @@ namespace Demo1._1._3
                 {
                     ws.OnMessage += (sender, e) =>
                     info = e.Data;
+                    Thread.Sleep(500);
                 }
                 ws.Close();
                 uselist = JsonConvert.DeserializeObject<List<domain.权限.User>>(info);

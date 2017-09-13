@@ -89,8 +89,8 @@
   </class>
 
   <class name="Fund_Accounts" table="T_Fund_Accounts">
-    <id name="ID" column="编号" type="Guid">
-      <generator class="assigned" />
+    <id name="ID" column="编号" type="int">
+      <generator class="identity" />
     </id>
 
     <property name="account_property" type="string">
@@ -131,8 +131,8 @@
   </class>
 
   <class name="Office_Supply" table="T_Office_Supply">
-    <id name="ID" column="编号" type="Guid">
-      <generator class="assigned" />
+    <id name="ID" column="编号" type="int">
+      <generator class="identity" />
     </id>
 
     <property name="quick_code" type="string">
@@ -153,8 +153,8 @@
   </class>
 
   <class name="Order_File" table="T_Order_File">
-    <id name="ID" type="int">
-      <generator class="assigned" />
+    <id name="ID" column="编号" type="int">
+      <generator class="identity" />
     </id>
     
     <property name="shipper" type="string">
@@ -167,8 +167,8 @@
   </class>
 
   <class name="Repair_Material" table="T_Repair_Material">
-    <id name="ID" column="编号" type="Guid">
-      <generator class="assigned" />
+    <id name="ID" column="编号" type="int">
+      <generator class="identity" />
     </id>
 
     <property name="quick_code" type="string">
@@ -194,8 +194,8 @@
 
 <class name="Transportations" table="T_Transportations" >
 
-    <id name="ID" column="ID" type="Guid">
-      <generator class="assigned" />
+    <id name="ID" column="ID" type="int">
+      <generator class="identity" />
     </id>
 
     <property name="transportation_place" type="string">
@@ -230,8 +230,8 @@
 
  <class name="Variety_Texture" table="T_Variety_Texture" >
 
-    <id name="ID" column="ID" type="Guid">
-      <generator class="assigned" />
+    <id name="ID" column="ID" type="int">
+      <generator class="identity" />
     </id>
 
     <property name="variety" type="string">
@@ -298,8 +298,8 @@
   
 <class name="Customer_File" table="T_Customer_File" >
 
-    <id name="ID" column="编号" type="Guid">
-      <generator class="assigned" />
+    <id name="ID" column="编号" type="int">
+      <generator class="identity" />
     </id>
 
     <property name="customer_name" type="string">
@@ -358,8 +358,8 @@
 
   <class name="Decorate" table="T_Decorate" >
 
-    <id name="ID" column="编号" type="Guid">
-      <generator class="assigned" />
+    <id name="ID" column="编号" type="int">
+      <generator class="identity" />
     </id>
 
     <property name="decorate_place" type="string">
@@ -394,8 +394,8 @@
 
   <class name="Discharge" table="T_Discharge" >
 
-    <id name="ID" column="编号" type="Guid">
-      <generator class="assigned" />
+    <id name="ID" column="编号" type="int">
+      <generator class="identity" />
     </id>
 
     <property name="discharge_place" type="string">

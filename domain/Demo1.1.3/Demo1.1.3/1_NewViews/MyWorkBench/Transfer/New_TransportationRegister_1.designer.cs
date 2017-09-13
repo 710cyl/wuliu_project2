@@ -32,6 +32,10 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panel_Main = new System.Windows.Forms.Panel();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
@@ -121,6 +125,10 @@
             // 
             this.panel_Main.AutoScroll = true;
             this.panel_Main.AutoScrollMinSize = new System.Drawing.Size(1204, 226);
+            this.panel_Main.Controls.Add(this.textBox6);
+            this.panel_Main.Controls.Add(this.textBox1);
+            this.panel_Main.Controls.Add(this.label23);
+            this.panel_Main.Controls.Add(this.label22);
             this.panel_Main.Controls.Add(this.dateTimePicker5);
             this.panel_Main.Controls.Add(this.dateTimePicker4);
             this.panel_Main.Controls.Add(this.dateTimePicker3);
@@ -170,6 +178,46 @@
             this.panel_Main.Size = new System.Drawing.Size(1204, 238);
             this.panel_Main.TabIndex = 12;
             this.panel_Main.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Main_Paint);
+            // 
+            // textBox6
+            // 
+            this.textBox6.Font = new System.Drawing.Font("宋体", 9.5F);
+            this.textBox6.Location = new System.Drawing.Point(835, 110);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(138, 22);
+            this.textBox6.TabIndex = 436;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("宋体", 9.5F);
+            this.textBox1.Location = new System.Drawing.Point(834, 81);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(138, 22);
+            this.textBox1.TabIndex = 435;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("宋体", 9.5F);
+            this.label23.Location = new System.Drawing.Point(757, 110);
+            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(72, 13);
+            this.label23.TabIndex = 434;
+            this.label23.Text = "货主运费：";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("宋体", 9.5F);
+            this.label22.Location = new System.Drawing.Point(757, 83);
+            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(72, 13);
+            this.label22.TabIndex = 433;
+            this.label22.Text = "车队运费：";
             // 
             // dateTimePicker5
             // 
@@ -504,6 +552,7 @@
             // 
             // textBox2
             // 
+            this.textBox2.Enabled = false;
             this.textBox2.Font = new System.Drawing.Font("宋体", 9.5F);
             this.textBox2.Location = new System.Drawing.Point(351, 54);
             this.textBox2.Margin = new System.Windows.Forms.Padding(2);
@@ -721,5 +770,9 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker5;
         private System.Windows.Forms.DateTimePicker dateTimePicker4;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

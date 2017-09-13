@@ -47,8 +47,8 @@ namespace Demo1._1._3
                     ws.Send(sendMsg); //传类名
                     while (total_Page == 0)
                     {
-                    
-                         ws.OnMessage += (sender, e) =>
+                    Thread.Sleep(1500);
+                    ws.OnMessage += (sender, e) =>
                                     total_Page = (Convert.ToInt64(e.Data) / 5) + 1;
                     Thread.Sleep(500);
                     }
@@ -223,8 +223,6 @@ namespace Demo1._1._3
         public void SaveData(string jsonMain, string Json, string main, string detail)
         {
 
-
-
             using (var wsn = new WebSocket("ws://localhost:9000/GetClassName/Main"))
             {
                 wsn.Connect();
@@ -234,7 +232,9 @@ namespace Demo1._1._3
                 {
                     wsm.Connect();
                     wsm.Send(jsonMain);
+                    Thread.Sleep(500);
                     wsm.Close();
+
                 }
 
                 wsn.Close();

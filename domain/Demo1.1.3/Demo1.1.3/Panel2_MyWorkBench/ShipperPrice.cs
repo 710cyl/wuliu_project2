@@ -38,7 +38,7 @@ namespace Demo1._1._3.Panel2_MyWorkBench
         domain.ShipperPrice tr = new domain.ShipperPrice();
         domain.ShipperPrice_Detail trd = new domain.ShipperPrice_Detail();
         FunctionClass fc = new FunctionClass();
-        public static BindingList<domain.ShipperPrice_Detail> ShipperPrice_Detail;
+        public static BindingList<domain.ShipperPrice_Detail> shipperprice_detail;
         
         public ShipperPrice()
         {

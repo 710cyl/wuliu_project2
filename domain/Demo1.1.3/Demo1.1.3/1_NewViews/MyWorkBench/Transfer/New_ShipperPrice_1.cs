@@ -32,9 +32,15 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
         DateTimePicker dtp = new DateTimePicker();
         private BindingList<domain.ShipperPrice_Detail> ShipperPrice_Detail;
         domain.ShipperPrice sfm = new domain.ShipperPrice();
+        domain.TransportationRegister_Detail dtrd = new TransportationRegister_Detail();
         List<domain.ShipperPrice_Detail> sd = new List<ShipperPrice_Detail>();
+        List<domain.TransportationRegister_Detail> trd = new List<TransportationRegister_Detail>();
         FunctionClass fc = new FunctionClass();
         public Demo1._1._3.Panel2_MyWorkBench.ShipperPrice shipperp;
+        private int numberSum = 0;
+        private double quantitySum = 0;
+        private double owner_fareSum = 0;
+        private double owner_amountSum = 0;
 
         /// <summary>
         /// 车队、司机、车号
@@ -60,9 +66,9 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
             {
                 //主表显示
                 textBox5.Text = Panel2_MyWorkBench.ShipperPrice.array[0];
-                textBox3.Text = Panel2_MyWorkBench.ShipperPrice.array[2];
+                textBox3.Text = Demo1._1._3.Sign_in.name;
                 dateTimePicker1.Value = Convert.ToDateTime(Panel2_MyWorkBench.ShipperPrice.array[3]);
-                textBox12.Text = Panel2_MyWorkBench.ShipperPrice.array[4];
+                textBox12.Text = Demo1._1._3.Sign_in.name; ;
                 dateTimePicker2.Value = Convert.ToDateTime(Panel2_MyWorkBench.ShipperPrice.array[5]);
 
                 //明细表显示
@@ -83,6 +89,8 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
             {
                 DataGridViewInit();
                 textBox5.Text = fc.DateTimeToUnix("HJ");
+                textBox3.Text = Demo1._1._3.Sign_in.name;
+                textBox12.Text = Demo1._1._3.Sign_in.name;
             }
 
             this.gridView1.Columns[0].Caption = "货主";
@@ -160,6 +168,22 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
             {
                 MessageBox.Show(ex.Message);
             }
+            for (int i = 0; i < gridView1.RowCount; i++)
+            {
+                numberSum += Convert.ToInt32(gridView1.GetRowCellDisplayText(i, gridView1.Columns[13]));
+                quantitySum += Convert.ToDouble(gridView1.GetRowCellDisplayText(i, gridView1.Columns[14]));
+                owner_fareSum += Convert.ToDouble(gridView1.GetRowCellDisplayText(i, gridView1.Columns[15]));
+                owner_amountSum += Convert.ToDouble(gridView1.GetRowCellDisplayText(i, gridView1.Columns[16]));
+            }
+            textBox1.Text = numberSum.ToString();
+            textBox2.Text = quantitySum.ToString();
+            textBox3.Text = owner_fareSum.ToString();
+            textBox7.Text = owner_amountSum.ToString();
+
+            numberSum = 0;
+            quantitySum = 0;
+            owner_fareSum = 0;
+            owner_amountSum = 0;
         }
 
         private void simpleButton5_Click(object sender, EventArgs e)//保存
@@ -182,10 +206,10 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
                     total_money += Convert.ToInt32(this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[16]));
                     fare += Convert.ToInt32(this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[15]));
                 }
-                textBox1.Text = Convert.ToString(rowCount);
-                textBox2.Text = Convert.ToString(number);
-                textBox6.Text = Convert.ToString(fare);
-                textBox7.Text = Convert.ToString(total_money);
+                textBox1.Text = Convert.ToString(numberSum);
+                textBox2.Text = Convert.ToString(quantitySum);
+                textBox6.Text = Convert.ToString(owner_fareSum);
+                textBox7.Text = Convert.ToString(owner_amountSum);
 
 
                 //List<domain.ShipperPrice_Detail> sd = ShipperPrice_Detail.ToList<domain.ShipperPrice_Detail>();
@@ -203,9 +227,9 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
                 sfm.price_ID = textBox5.Text;
                 //sfm.total_money = Convert.ToDecimal(textBox7.Text);
                 sfm.enter_staff = textBox3.Text;
-                sfm.enter_time = dateTimePicker1.Value;
+                sfm.enter_time = Convert.ToDateTime(dateTimePicker1.Text);
                 sfm.change_staff = textBox12.Text;
-                sfm.change_time = dateTimePicker2.Value;
+                sfm.change_time = Convert.ToDateTime(dateTimePicker2.Text);
                 int number = 0;
                 double total_money = 0;
                 double fare = 0;
@@ -216,10 +240,26 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
                     total_money += Convert.ToInt32(this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[16]));
                     fare += Convert.ToInt32(this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[15]));
                 }
-                textBox1.Text = Convert.ToString(rowCount);
-                textBox2.Text = Convert.ToString(number);
-                textBox6.Text = Convert.ToString(fare);
-                textBox7.Text = Convert.ToString(total_money);
+                textBox1.Text = Convert.ToString(numberSum);
+                textBox2.Text = Convert.ToString(quantitySum);
+                textBox6.Text = Convert.ToString(owner_fareSum);
+                textBox7.Text = Convert.ToString(owner_amountSum);
+                ////如果新建的货主定价的明细表的运输单标识等于运输登记明细表的运输单标识则将填充运输登记明细表的运输单标识
+                //for (int i = 0; i < ShipperPrice_Detail.Count; i++)
+                //{
+                //    trd = JsonConvert.DeserializeObject<List<domain.TransportationRegister_Detail>>(fc.finddate(sd[i].transport_identifying));
+                //    if (trd != null)
+                //    {
+                //        for (int j = 0; j < trd.Count; j++)
+                //        {
+                //            dtrd.owner_fare = sd[j].owner_fare;
+                //            dtrd.owner_amount = sd[j].owner_amount;
+                //            dtrd.outstanding_amount = sd[j].owner_amount;
+                //            trd.Add(dtrd);
+                //        }
+                //        fc.updateData(trd, "FleetPrice");
+                //    }
+                //}
 
                 //List<domain.ShipperPrice_Detail> sd = ShipperPrice_Detail.ToList<domain.ShipperPrice_Detail>();
                 string Json = JsonConvert.SerializeObject(this.gridControl1.DataSource);

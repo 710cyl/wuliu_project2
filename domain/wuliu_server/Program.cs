@@ -67,6 +67,9 @@ namespace wuliu_server
 
             wssv.AddWebSocketService<server_deleteUser>("/server_deleteUser");
             wssv.AddWebSocketService<server_deleteRole>("/server_deleteRole");
+            wssv.AddWebSocketService<ServerTransportationRegister>("/ServerTransportationRegister");
+            wssv.AddWebSocketService<ServerFleetPrice>("/ServerFleetPrice");
+            wssv.AddWebSocketService<ServerShipperPrice>("/ServerShipperPrice");
             wssv.Start();
             Console.ReadKey();
             wssv.Stop();
@@ -1339,6 +1342,24 @@ namespace wuliu_server
                 }
 
             }
+            else if (GetClassName.classname == "Variety_Texture")
+            {
+                try
+                {
+                    IVariety_TextureDAO crd = new IVariety_TextureDAO();
+                    Variety_Texture cr = new Variety_Texture();
+                    cr = null;
+                    string tmp = null;
+                    tmp = e.Data;
+                    cr = JsonConvert.DeserializeObject<Variety_Texture>(tmp, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+                    crd.Save(cr);
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+            }
         }
 
 
@@ -1441,6 +1462,16 @@ namespace wuliu_server
                 string tmp = null;
                 tmp = e.Data;
                 bs = JsonConvert.DeserializeObject<Transportations>(tmp);
+                bsd.Update(bs);
+            }
+            else if (GetClassName.classname == "Variety_Texture")
+            {
+                IVariety_TextureDAO bsd = new IVariety_TextureDAO();
+                Variety_Texture bs = new Variety_Texture();
+                bs = null;
+                string tmp = null;
+                tmp = e.Data;
+                bs = JsonConvert.DeserializeObject<Variety_Texture>(tmp);
                 bsd.Update(bs);
             }
         }
@@ -1659,6 +1690,22 @@ namespace wuliu_server
             {
                 AddDataTableToDB(dt, "dbo.T_Driver_Check");
             }
+            else if (GetClassName.classname == "Variety_Texture")
+            {
+                AddDataTableToDB(dt, "dbo.T_Variety_Texture");
+            }
+            else if (GetClassName.classname == "Decorate")
+            {
+                AddDataTableToDB(dt, "dbo.T_Decorate");
+            }
+            else if (GetClassName.classname == "Discharge")
+            {
+                AddDataTableToDB(dt, "dbo.T_Discharge");
+            }
+            else if (GetClassName.classname == "Transportations")
+            {
+                AddDataTableToDB(dt, "dbo.T_Transportations");
+            }
         }
 
         public void AddDataTableToDB(DataTable dt, string dbName) //批量导入excel
@@ -1713,7 +1760,6 @@ namespace wuliu_server
 
         public string SwitchDetail(ISession session, string classname, string primarykey)
         {
-
             string json = null;
             if (classname == "StorageDetails")
             {

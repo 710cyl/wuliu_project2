@@ -215,7 +215,6 @@
             // 
             // textBox7
             // 
-            this.textBox7.Enabled = false;
             this.textBox7.Font = new System.Drawing.Font("宋体", 9.5F);
             this.textBox7.Location = new System.Drawing.Point(827, 30);
             this.textBox7.Margin = new System.Windows.Forms.Padding(2);
@@ -226,7 +225,6 @@
             // 
             // textBox6
             // 
-            this.textBox6.Enabled = false;
             this.textBox6.Font = new System.Drawing.Font("宋体", 9.5F);
             this.textBox6.Location = new System.Drawing.Point(585, 29);
             this.textBox6.Margin = new System.Windows.Forms.Padding(2);
@@ -248,7 +246,6 @@
             // 
             // textBox1
             // 
-            this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("宋体", 9.5F);
             this.textBox1.Location = new System.Drawing.Point(102, 29);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
@@ -292,7 +289,6 @@
             // 
             // textBox2
             // 
-            this.textBox2.Enabled = false;
             this.textBox2.Font = new System.Drawing.Font("宋体", 9.5F);
             this.textBox2.Location = new System.Drawing.Point(344, 29);
             this.textBox2.Margin = new System.Windows.Forms.Padding(2);

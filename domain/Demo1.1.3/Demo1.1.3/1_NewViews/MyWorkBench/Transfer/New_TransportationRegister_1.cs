@@ -88,9 +88,9 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
                 textBox17.Text = Panel2_MyWorkBench.TransportationRegister.array[17];
                 textBox11.Text = Panel2_MyWorkBench.TransportationRegister.array[18];
                 textBox24.Text = Panel2_MyWorkBench.TransportationRegister.array[19];
-                textBox7.Text = Panel2_MyWorkBench.TransportationRegister.array[21];
+                textBox7.Text = Demo1._1._3.Sign_in.name;
                 dateTimePicker4.Value = Convert.ToDateTime(Panel2_MyWorkBench.TransportationRegister.array[22]);
-                textBox12.Text = Panel2_MyWorkBench.TransportationRegister.array[23];
+                textBox12.Text = Demo1._1._3.Sign_in.name;
                 dateTimePicker5.Value = Convert.ToDateTime(Panel2_MyWorkBench.TransportationRegister.array[24]);
 
                 //明细表显示
@@ -109,6 +109,8 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
             {
                 
                 textBox2.Text = fc.DateTimeToUnix("YJ");
+                textBox7.Text = Demo1._1._3.Sign_in.name;
+                textBox12.Text = Demo1._1._3.Sign_in.name;
 
             }
 

@@ -18,6 +18,12 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
         domain.TransportationClearing_Main tcm = new domain.TransportationClearing_Main();
         List<domain.TransportationClearing_Detail> sd = new List<domain.TransportationClearing_Detail>();
         FunctionClass fc = new FunctionClass();
+        //总件数总数量总金额
+        private int unitSum = 0;
+        private double amountSum = 0;
+        private double freight_ratesSum = 0;
+        private double moneySum = 0;
+
         public New_TransportationClearing()
         {
             InitializeComponent();
@@ -77,9 +83,9 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
             this.gridView1.Columns[14].Caption = "货主";
             this.gridView1.Columns[15].Visible = false;
             textBox_clearing_id.Text = fc.DateTimeToUnix("TCM");
-            textBox_register_man.Text = "裴哥";
+            textBox_register_man.Text = Sign_in.name;
             textBox_register_time.Text = DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss");
-            textBox_modifier.Text = "裴哥";
+            textBox_modifier.Text = Sign_in.name;
             textBox_modify_time.Text = DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss");
         }
         //添加
@@ -88,9 +94,20 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
             domain.TransportationClearing_Detail sd = new domain.TransportationClearing_Detail()
             {
                 order_id = string.Format("{0}-{1}", textBox_clearing_id.Text, tcd_bindinglist.Count + 1),
-                clearing_id = textBox_clearing_id.Text
+                clearing_id = textBox_clearing_id.Text,
+                depart_date = DateTime.Now,
+                return_date = DateTime.Now,
+                unit_number = 0,
+                freight_rates = 0,
+                amount = 0,
+                money = 0
+
             };
             tcd_bindinglist.Add(sd);
+
+
+            
+              
         }
         //删除
         private void simpleButton3_Click(object sender, EventArgs e)
@@ -104,6 +121,22 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
             {
                 MessageBox.Show(ex.Message);
             }
+            for (int i = 0; i < gridView1.RowCount; i++)
+            {
+                unitSum += Convert.ToInt32(gridView1.GetRowCellDisplayText(i, gridView1.Columns[8]));
+                amountSum += Convert.ToDouble(gridView1.GetRowCellDisplayText(i, gridView1.Columns[9]));
+                freight_ratesSum += Convert.ToDouble(gridView1.GetRowCellDisplayText(i, gridView1.Columns[10]));
+                moneySum += Convert.ToDouble(gridView1.GetRowCellDisplayText(i, gridView1.Columns[11]));
+            }
+            textBox_Unit.Text = unitSum.ToString();
+            textBox_total_volume.Text = amountSum.ToString();
+            textBox_freight_rates.Text = freight_ratesSum.ToString();
+            textBox_total_money.Text = moneySum.ToString();
+
+            unitSum = 0;
+            amountSum = 0;
+            freight_ratesSum = 0;
+            moneySum = 0;
         }
         //保存
         private void simpleButton5_Click(object sender, EventArgs e)
@@ -195,5 +228,57 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
             string d = Regex.Replace(s, @"((?<=-|^)[^1-9]*)|((?'z'0)[0A-E]*((?=[1-9])|(?'-z'(?=[F-L.]|$))))|((?'b'[F-L])(?'z'0)[0A-L]*((?=[1-9])|(?'-z'(?=[.]|$))))", "${b}${z}");
             return Regex.Replace(d, ".", delegate (Match m) { return "负圆空零壹贰叁肆伍陆柒捌玖空空空空空空空分角拾佰仟万億兆京垓秭穰"[m.Value[0] - '-'].ToString(); });
         }
+
+
+        //unitSum = Convert.ToInt32(gridView1.Columns[8].SummaryItem.SummaryValue);
+        //amountSum = Convert.ToDouble(gridView1.Columns[9].SummaryItem.SummaryValue);
+        //freight_ratesSum = Convert.ToDouble(gridView1.Columns[10].SummaryItem.SummaryValue);
+        //moneySum = Convert.ToDouble(gridView1.Columns[11].SummaryItem.SummaryValue);
+
+        //textBox_Unit.Text = unitSum.ToString();
+        //textBox_total_volume.Text = amountSum.ToString();
+        //textBox_freight_rates.Text = freight_ratesSum.ToString();
+        //textBox_total_money.Text = moneySum.ToString();
+
+        //值变化 ---表间公式
+        private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            //表间公式 ---求和
+            if (gridView1.FocusedColumn == gridView1.Columns[8])
+            {
+                for (int i = 0; i < gridView1.RowCount; i++)
+                    unitSum += Convert.ToInt32(gridView1.GetRowCellDisplayText(i, gridView1.Columns[8]));
+                textBox_Unit.Text = unitSum.ToString();
+                unitSum = 0;
+            }
+
+            else if (gridView1.FocusedColumn == gridView1.Columns[9])
+            {
+                for (int i = 0; i < gridView1.RowCount; i++)
+                    amountSum += Convert.ToDouble(gridView1.GetRowCellDisplayText(i, gridView1.Columns[9]));
+                textBox_total_volume.Text = amountSum.ToString();
+                amountSum = 0;
+            }
+
+            else if (gridView1.FocusedColumn == gridView1.Columns[10])
+            {
+                for (int i = 0; i < gridView1.RowCount; i++)
+                    freight_ratesSum += Convert.ToDouble(gridView1.GetRowCellDisplayText(i, gridView1.Columns[10]));
+                textBox_freight_rates.Text = freight_ratesSum.ToString();
+                freight_ratesSum = 0;
+            }
+
+            else if (gridView1.FocusedColumn == gridView1.Columns[11])
+            {
+                for (int i = 0; i < gridView1.RowCount; i++)
+                    moneySum += Convert.ToDouble(gridView1.GetRowCellDisplayText(i, gridView1.Columns[11]));
+                textBox_total_money.Text = moneySum.ToString();
+                moneySum = 0;
+            }
+
+            else
+                ;
+        }
+
     }
 }

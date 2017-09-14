@@ -54,6 +54,11 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
         /// 卸点、发卸城市、发卸地区
         /// </summary>
         private Demo1._1._3._1_NewViews.TabbedSection_Discharge discharge_form = new Demo1._1._3._1_NewViews.TabbedSection_Discharge();
+
+        private static double countSum = 0;
+        private static double moneySum = 0;
+
+
         public New_TransportationRegister()
         {
             InitializeComponent();
@@ -177,9 +182,9 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
                 transport_ID = textBox2.Text, fleet = textBox5.Text, transport_way = comboBox1.Text, car_number = textBox3.Text,
                 driver = textBox9.Text, ship_city = textBox4.Text, ship_area = textBox11.Text, ship_point = textBox14.Text,
                 unload_city = textBox16.Text, unload_area = textBox24.Text, unload_point = textBox23.Text, car_fee = Convert.ToDecimal(textBox1.Text),
-                tally_date = Convert.ToDateTime(DateTime.Now.ToString()), depart_date = Convert.ToDateTime(DateTime.Now.ToString()),
-                back_date = Convert.ToDateTime(DateTime.Now.ToString()), enter_time = Convert.ToDateTime(DateTime.Now.ToString()),
-                change_time = Convert.ToDateTime(DateTime.Now.ToString())
+                tally_date = DateTime.Now, depart_date = DateTime.Now,
+                back_date = DateTime.Now,
+                change_time = DateTime.Now
             };
             TransportationRegister_Detail.Add(trd);
         }

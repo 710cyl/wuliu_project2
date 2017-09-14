@@ -55,7 +55,7 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
             tcd_bindinglist = new BindingList<domain.OilGasRegister_Detail>(sd);
             gridControl1.DataSource = tcd_bindinglist;
             textBox_register_id.Text = fc.DateTimeToUnix("OR");
-            textBox_register_man.Text = "裴哥";
+            textBox_register_man.Text = Sign_in.name;
             textBox_register_time.Text = DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss");
             //设置下拉控件
             comboBox_oilgas_type.ValueMember = "value";
@@ -89,7 +89,8 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
             domain.OilGasRegister_Detail sd = new domain.OilGasRegister_Detail()
             {
                 OilGasRegister_Detail_Id = string.Format("{0}-{1}", textBox_register_id.Text, tcd_bindinglist.Count + 1),
-                register_id = textBox_register_id.Text
+                register_id = textBox_register_id.Text,
+                fueling_date = DateTime.Now
             };
             tcd_bindinglist.Add(sd);
         }

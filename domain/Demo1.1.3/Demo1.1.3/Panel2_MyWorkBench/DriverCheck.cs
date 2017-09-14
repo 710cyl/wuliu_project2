@@ -86,7 +86,7 @@ namespace Demo1._1._3.Panel2_MyWorkBench
             panel1.Visible = true;
             textBox_check_id.Text = fc.DateTimeToUnix("dc");
             textBox_check_month.Text = DateTime.Now.ToString("yyyy/MM");
-            textBox_input_man.Text = "裴哥";
+            textBox_input_man.Text = Sign_in.name;
             textBox_input_time.Text = DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss");
             textBox_bookkeeping_time.Text = DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss");
         }

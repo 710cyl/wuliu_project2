@@ -47,9 +47,8 @@ namespace Demo1._1._3
                     ws.Send(sendMsg); //传类名
                     while (total_Page == 0)
                     {
-                    Thread.Sleep(1500);
                     ws.OnMessage += (sender, e) =>
-                                    total_Page = (Convert.ToInt64(e.Data) / 5) + 1;
+                    total_Page = (Convert.ToInt64(e.Data) / 5) + 1;
                     Thread.Sleep(500);
                     }
                     ws.Close();

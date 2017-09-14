@@ -13,10 +13,10 @@ namespace domain
         ///<summary>
         ///编号
         ///</summary>
-        public virtual Guid ID { get; set; }
+        public virtual int ID { get; set; }
 
         /// <summary>
-        /// 岗位性质
+        /// 岗位设置
         /// </summary>
         public virtual string position_Set { get; set; }
 

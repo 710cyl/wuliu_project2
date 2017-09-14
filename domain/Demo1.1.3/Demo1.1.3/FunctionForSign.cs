@@ -29,6 +29,8 @@ namespace Demo1._1._3
     /// </summary>
      public class FunctionForSign
     {
+        private string IP = "localhost";
+        private string Host = "9000";
         /// <summary>
         /// 获取用户信息用于校验密码等信息
         /// </summary>
@@ -38,7 +40,7 @@ namespace Demo1._1._3
             string info = null;
             domain.权限.User user = new domain.权限.User();
             List<domain.权限.User> uselist = new List<domain.权限.User>();
-            using (var ws = new WebSocket("ws://localhost:9000/server_Login")) //////dwdwdw
+            using (var ws = new WebSocket("ws://" + IP + ":" + Host + "/server_Login")) //////dwdwdw
             {
                 ws.Connect();
                 ws.Send(username);
@@ -66,7 +68,7 @@ namespace Demo1._1._3
             string info = null;
             //domain.权限.Role Auth = new domain.权限.Role();
             List<domain.权限.Role> uselist = new List<domain.权限.Role>();
-            using (var ws = new WebSocket("ws://localhost:9000/server_userrole")) 
+            using (var ws = new WebSocket("ws://" + IP + ":" + Host + "/server_userrole")) 
             {
                 ws.Connect();
                 ws.Send(ID);
@@ -86,7 +88,7 @@ namespace Demo1._1._3
         public void saveUser(domain.权限.User user)
         {
             string json = JsonConvert.SerializeObject(user);
-            using (var ws = new WebSocket("ws://localhost:9000/server_adduser"))
+            using (var ws = new WebSocket("ws://" + IP + ":" + Host + "/server_adduser"))
             {
                 ws.Connect();
                 ws.Send(json);
@@ -97,7 +99,7 @@ namespace Demo1._1._3
         public void saveRole(domain.权限.Role role)
         {
             string json = JsonConvert.SerializeObject(role);
-            using (var ws = new WebSocket("ws://localhost:9000/server_addrole"))
+            using (var ws = new WebSocket("ws://" + IP + ":" + Host + "/server_addrole"))
             {
                 ws.Connect();
                 ws.Send(json);
@@ -107,7 +109,7 @@ namespace Demo1._1._3
 
        public void DeleteUser(string ID)
         {
-            using (var ws = new WebSocket("ws://localhost:9000/server_deleteUser"))
+            using (var ws = new WebSocket("ws://" + IP + ":" + Host + "/server_deleteUser"))
             {
                 ws.Connect();
                 ws.Send(ID);
@@ -117,7 +119,7 @@ namespace Demo1._1._3
 
         public void DeleteRole(string ID)
         {
-            using (var ws = new WebSocket("ws://localhost:9000/server_deleteRole"))
+            using (var ws = new WebSocket("ws://" + IP + ":" + Host + "/server_deleteRole"))
             {
                 ws.Connect();
                 ws.Send(ID);

@@ -373,6 +373,8 @@
             this.textBox28.Name = "textBox28";
             this.textBox28.Size = new System.Drawing.Size(183, 26);
             this.textBox28.TabIndex = 284;
+            this.textBox28.Tag = "0";
+            this.textBox28.Text = "0";
             // 
             // label33
             // 
@@ -626,6 +628,8 @@
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(183, 26);
             this.textBox14.TabIndex = 259;
+            this.textBox14.Tag = "0";
+            this.textBox14.Text = "0";
             // 
             // textBox12
             // 

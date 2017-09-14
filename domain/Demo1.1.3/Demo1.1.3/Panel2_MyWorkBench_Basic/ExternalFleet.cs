@@ -141,7 +141,7 @@ namespace Demo1._1._3
         private void toolStripButton5_Click(object sender, EventArgs e) //查看
         {
             simpleButton4.Visible = false;
-               colCount = gridView2.Columns.Count();
+             colCount = gridView2.Columns.Count();
             array = new string[colCount];
             for (int i = 0; i < colCount; i++)
             {

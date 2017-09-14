@@ -53,7 +53,7 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
             if (Panel2_Basic_UserControl.CapitalAccount.isExist)
             {
                 var guid = new Guid(Panel2_Basic_UserControl.CapitalAccount.array[0]);
-                bs.ID = guid;
+                bs.ID = 1;
                 bs.account_property = comboBox_account_property.Text;
                 bs.account_name = account_name.Text;
                 bs.bank_deposit = bank_deposit.Text;
@@ -68,7 +68,7 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
 
             else
             {
-                bs.ID = Guid.NewGuid();
+                bs.ID = 1;
                 bs.account_property = comboBox_account_property.Text;
                 bs.account_name = account_name.Text;
                 bs.bank_deposit = bank_deposit.Text;

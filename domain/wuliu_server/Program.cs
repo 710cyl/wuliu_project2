@@ -700,13 +700,15 @@ namespace wuliu_server
 
             else if (s == "Fund_Accounts")
             {
-                IList<Fund_Accounts> fund_account = session.QueryOver<Fund_Accounts>().List();
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<Fund_Accounts> fund_account = session.QueryOver<Fund_Accounts>().Skip((page - 1) * 50).Take(50).List();
                 string json = JsonConvert.SerializeObject(fund_account);
                 return json;
             }
             else if (s == "Internal_Vehicle")
             {
-                IList<Internal_Vehicle> fund_account = session.QueryOver<Internal_Vehicle>().List();
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<Internal_Vehicle> fund_account = session.QueryOver<Internal_Vehicle>().Skip((page - 1) * 50).Take(50).List();
                 string json = JsonConvert.SerializeObject(fund_account);
                 return json;
             }
@@ -720,7 +722,8 @@ namespace wuliu_server
                
             else if (s == "Customer_File")
             {
-                IList<Customer_File> fund_account = session.QueryOver<Customer_File>().List();
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<Customer_File> fund_account = session.QueryOver<Customer_File>().Skip((page - 1) * 50).Take(50).List();
                 string json = JsonConvert.SerializeObject(fund_account);
                 return json;
             }
@@ -728,31 +731,36 @@ namespace wuliu_server
 
             else if (s == "Office_Supply")
             {
-                IList<Office_Supply> fund_account = session.QueryOver<Office_Supply>().List();
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<Office_Supply> fund_account = session.QueryOver<Office_Supply>().Skip((page - 1) * 50).Take(50).List();
                 string json = JsonConvert.SerializeObject(fund_account);
                 return json;
             }
             else if (s == "Order_File")
             {
-                IList<Order_File> fund_account = session.QueryOver<Order_File>().List();
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<Order_File> fund_account = session.QueryOver<Order_File>().Skip((page - 1) * 50).Take(50).List();
                 string json = JsonConvert.SerializeObject(fund_account);
                 return json;
             }
             else if (s == "Repair_Material")
             {
-                IList<Repair_Material> fund_account = session.QueryOver<Repair_Material>().List();
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<Repair_Material> fund_account = session.QueryOver<Repair_Material>().Skip((page - 1) * 50).Take(50).List();
                 string json = JsonConvert.SerializeObject(fund_account);
                 return json;
             }
             else if (s == "Transportations")
             {
-                IList<Transportations> fund_account = session.QueryOver<Transportations>().List();
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<Transportations> fund_account = session.QueryOver<Transportations>().Skip((page - 1) * 50).Take(50).List();
                 string json = JsonConvert.SerializeObject(fund_account);
                 return json;
             }
             else if (s == "Variety_Texture")
             {
-                IList<Variety_Texture> fund_account = session.QueryOver<Variety_Texture>().List();
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<Variety_Texture> fund_account = session.QueryOver<Variety_Texture>().Skip((page - 1) * 50).Take(50).List();
                 string json = JsonConvert.SerializeObject(fund_account);
                 return json;
             }
@@ -785,7 +793,8 @@ namespace wuliu_server
             }
             else if (s == "Transportations")
             {
-                IList<Transportations> fund_account = session.QueryOver<Transportations>().List();
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<Transportations> fund_account = session.QueryOver<Transportations>().Skip((page - 1) * 50).Take(50).List();
                 string json = JsonConvert.SerializeObject(fund_account);
                 return json;
             }
@@ -1337,11 +1346,46 @@ namespace wuliu_server
                 {
                     throw;
                 }
+            }
+
+            else if (GetClassName.classname == "Customer_File")
+            {
+                try
+                {
+                    ICustomerFile crd = new ICustomerFile();
+                    Customer_File cr = new Customer_File();
+                    cr = null;
+                    string tmp = null;
+                    tmp = e.Data;
+                    cr = JsonConvert.DeserializeObject<Customer_File>(tmp, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+                    crd.Save(cr);
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
+            }
+
+            else if (GetClassName.classname == "Fund_Accounts")
+            {
+                try
+                {
+                    IFund_Accounts crd = new IFund_Accounts();
+                    Fund_Accounts cr = new Fund_Accounts();
+                    cr = null;
+                    string tmp = null;
+                    tmp = e.Data;
+                    cr = JsonConvert.DeserializeObject<Fund_Accounts>(tmp, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+                    crd.Save(cr);
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
 
             }
         }
-
-
     }
 
 
@@ -1443,6 +1487,17 @@ namespace wuliu_server
                 bs = JsonConvert.DeserializeObject<Transportations>(tmp);
                 bsd.Update(bs);
             }
+
+            else if (GetClassName.classname == "Fund_Accounts")
+            {
+                IFund_Accounts bsd = new IFund_Accounts();
+                Fund_Accounts bs = new Fund_Accounts();
+                bs = null;
+                string tmp = null;
+                tmp = e.Data;
+                bs = JsonConvert.DeserializeObject<Fund_Accounts>(tmp);
+                bsd.Update(bs);
+            }
         }
     }
 
@@ -1453,7 +1508,7 @@ namespace wuliu_server
             if (GetClassName.classname == "Basic_Set")
             {
                 Basic_SetDAO bs = new Basic_SetDAO();
-                Guid ID = new Guid(e.Data);
+                int ID =Convert.ToInt32(e.Data);
                 var basicset = bs.Get(ID);
                 bs.Delete(basicset);
             }
@@ -1518,6 +1573,24 @@ namespace wuliu_server
                 ITransportationsDAO bs = new ITransportationsDAO();
                 int str = Convert.ToInt32(e.Data);
                 var basicset = bs.Get<Transportations>(str);
+
+                bs.Delete(basicset);
+            }
+
+            else if (GetClassName.classname == "Customer_File")
+            {
+                ICustomerFile bs = new ICustomerFile();
+                int str = Convert.ToInt32(e.Data);
+                var basicset = bs.Get<Customer_File>(str);
+
+                bs.Delete(basicset);
+            }
+
+            else if (GetClassName.classname == "Fund_Accounts")
+            {
+                IFund_Accounts bs = new IFund_Accounts();
+                int str = Convert.ToInt32(e.Data);
+                var basicset = bs.Get<Fund_Accounts>(str);
 
                 bs.Delete(basicset);
             }

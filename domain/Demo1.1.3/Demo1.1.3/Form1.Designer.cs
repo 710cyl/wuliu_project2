@@ -948,6 +948,7 @@ namespace Demo1._1._3
             this.xtraTabPage3.Image = global::Demo1._1._3.Properties.Resources.design_32x32;
             this.xtraTabPage3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.xtraTabPage3.Name = "xtraTabPage3";
+            this.xtraTabPage3.PageVisible = false;
             this.xtraTabPage3.Size = new System.Drawing.Size(1603, 878);
             this.xtraTabPage3.Text = "设计";
             // 

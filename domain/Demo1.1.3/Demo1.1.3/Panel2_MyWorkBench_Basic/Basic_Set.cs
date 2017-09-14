@@ -26,7 +26,7 @@ namespace Demo1._1._3
 {
     public partial class Basic_Set : UserControl
     {
-        NewBasic nb;
+       
         StringReader streamToPrint = null;
         Font printFont;
         public static bool isExist = false;//执行修改操作时判断是否存在数据
@@ -76,9 +76,6 @@ namespace Demo1._1._3
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            isExist = false;
-            nb = new NewBasic();
-            nb.ShowDialog();
         }
 
         private void toolStripButton6_Click(object sender, EventArgs e)
@@ -158,9 +155,7 @@ namespace Demo1._1._3
             }
             if (array[0].Length > 0)
             {
-                isExist = true;
-                nb = new NewBasic();
-                nb.ShowDialog();
+  
             }
             else
             {
@@ -205,6 +200,150 @@ namespace Demo1._1._3
                     domain.Basic_Set bs = new domain.Basic_Set();
                     gridControl2.DataSource = fc.showData<domain.Basic_Set>(bs, now_Page.ToString());
                 }
+            }
+        }
+
+        private void toolStripButton1_Click_1(object sender, EventArgs e) //新建
+        {
+            panel3.Visible = true;
+            isExist = false;
+            textBox9.Text = Sign_in.name;
+            textBox11.Text = Sign_in.name;
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e) //关闭
+        {
+            panel3.Visible = false;
+            simpleButton4.Visible = true;
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e) //保存
+        {
+            if (isExist == false)
+            {
+                domain.Basic_Set bs = new domain.Basic_Set();
+                bs.position_Set = textBox1.Text;
+                bs.account_Receive =Convert.ToDecimal(textBox3.Text);
+                bs.account_Pay = Convert.ToDecimal(textBox22.Text);
+                bs.storage_Mode = textBox21.Text;
+                bs.outStorage_Mode = textBox6.Text;
+                bs.transportation_Mode = textBox20.Text;
+                bs.post_Property = textBox19.Text;
+                bs.borrow_Property = textBox18.Text;
+                bs.customer_Type = textBox17.Text;
+                bs.expense_Category = textBox16.Text;
+                bs.nationality = textBox2.Text;
+                bs.storage = textBox4.Text;
+                bs.refund_Mode = textBox5.Text;
+                bs.oil_Varirety = textBox7.Text;
+                fc.saveData(bs, "Basic_Set");
+            }
+            else if (isExist == true)
+            {
+                domain.Basic_Set bs = new domain.Basic_Set();
+                bs.ID = Convert.ToInt32(array[0]);
+                bs.position_Set = textBox1.Text;
+                bs.account_Receive = Convert.ToDecimal(textBox3.Text);
+                bs.account_Pay = Convert.ToDecimal(textBox22.Text);
+                bs.storage_Mode = textBox21.Text;
+                bs.outStorage_Mode = textBox6.Text;
+                bs.transportation_Mode = textBox20.Text;
+                bs.post_Property = textBox19.Text;
+                bs.borrow_Property = textBox18.Text;
+                bs.customer_Type = textBox17.Text;
+                bs.expense_Category = textBox16.Text;
+                bs.nationality = textBox2.Text;
+                bs.storage = textBox4.Text;
+                bs.refund_Mode = textBox5.Text;
+                bs.oil_Varirety = textBox7.Text;
+                fc.updateData(bs, "Basic_Set");
+            }
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e) //查看
+        {
+            simpleButton4.Visible = false;
+
+            colCount = gridView2.Columns.Count();
+            array = new string[colCount];
+            for (int i = 0; i < colCount; i++)
+            {
+                array[i] = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[i]);
+            }
+            if (array[0].Length > 0)
+            {
+                panel3.Visible = true;
+
+                textBox1.Text = array[1];
+                textBox3.Text = array[2];
+                textBox22.Text = array[3];
+                textBox21.Text = array[4];
+                textBox6.Text = array[5];
+                textBox20.Text = array[6];
+                textBox19.Text = array[7];
+                textBox18.Text = array[8];
+                textBox17.Text = array[9];
+                textBox16.Text = array[10];
+                textBox2.Text = array[11];
+                textBox4.Text = array[12];
+                textBox5.Text = array[13];
+                textBox7.Text = array[14];
+
+            }
+            else
+            {
+                MessageBox.Show("该条数据不含主键，无法修改");
+            }
+        }
+
+        private void toolStripButton2_Click_1(object sender, EventArgs e) //修改
+        {
+            panel3.Visible = true;
+
+            isExist = true;
+
+            colCount = gridView2.Columns.Count();
+            array = new string[colCount];
+            for (int i = 0; i < colCount; i++)
+            {
+                array[i] = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[i]);
+            }
+            if (array[0].Length > 0)
+            {
+                panel3.Visible = true;
+                textBox1.Text = array[1];
+                textBox3.Text = array[2];
+                textBox22.Text = array[3];
+                textBox21.Text = array[4];
+                textBox6.Text = array[5];
+                textBox20.Text = array[6];
+                textBox19.Text = array[7];
+                textBox18.Text = array[8];
+                textBox17.Text = array[9];
+                textBox16.Text = array[10];
+                textBox2.Text = array[11];
+                textBox4.Text = array[12];
+                textBox5.Text = array[13];
+                textBox7.Text = array[14];
+            }
+            else
+            {
+                MessageBox.Show("该条数据不含主键，无法修改");
+            }
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e) //删除
+        {
+            fc.DeleteData(this.gridView2, "Basic_Set");
+        }
+         
+        private void toolStripButton3_Click_1(object sender, EventArgs e) //导出数据
+        {
+            string localFilePath = fc.ShowSaveFileDialog();
+
+            if (localFilePath != null)
+            {
+                gridView2.Export(DevExpress.XtraPrinting.ExportTarget.Xls, localFilePath);
             }
         }
     }

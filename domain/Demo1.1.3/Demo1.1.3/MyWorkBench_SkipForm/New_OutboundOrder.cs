@@ -233,7 +233,7 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm
                 dateTimePicker2.Value = Convert.ToDateTime(Panel2_MyWorkBench.OutboundOrder.array[28]);
                 textBox4.Text = Panel2_MyWorkBench.OutboundOrder.array[10];
                 dateTimePicker3.Value = Convert.ToDateTime(Panel2_MyWorkBench.OutboundOrder.array[1]);
-                textBox12.Text = Panel2_MyWorkBench.OutboundOrder.array[11];
+                textBox12.Text = Sign_in.name;
                 dateTimePicker4.Value = Convert.ToDateTime(Panel2_MyWorkBench.OutboundOrder.array[12]);
 
                 sd = JsonConvert.DeserializeObject<List<domain.StorageDetailsOut>>(fc.FindDeteils(Panel2_MyWorkBench.OutboundOrder.str, "StorageDetailsOut"));
@@ -248,6 +248,8 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm
 
                 // textBox11.Text = fc.DateTimeToUnix("PC");
 
+                textBox12.Text = Sign_in.name;
+                textBox13.Text = Sign_in.name;
                 this.gridView1.Columns[0].Caption = "出库单识别码";
                 
                 this.gridView1.Columns[1].Caption = "出库单号";
@@ -446,6 +448,8 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm
                 string jsonMain = JsonConvert.SerializeObject(sfm);
 
                 fc.SaveData(jsonMain, Json, sfm.GetType().Name.ToString(), "StorageDetailsOut");
+                MessageBox.Show("保存完毕");
+                Close();
             }
         }
 

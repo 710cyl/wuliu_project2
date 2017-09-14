@@ -22,6 +22,9 @@ namespace Demo1._1._3
 {
     public partial class Form1 : DevExpress.XtraEditors.XtraForm
     {
+        private string IP = "localhost";
+        private string Host = "9000";
+
 
         public MainOganization main_oganization;
         public MainRole main_role;
@@ -76,11 +79,22 @@ namespace Demo1._1._3
         {
             InitializeComponent();
 
+            isAdmin();
+
             isStorage();
             isSendcar();
             isTranpotation();
             isBasic();
         }
+
+        private void isAdmin()
+        {
+            if (Sign_in.name != "admin")
+            {
+                xtraTabPage2.PageVisible = false;
+            }
+        }
+
         /// <summary>
         /// 仓库权限
         /// </summary>
@@ -336,11 +350,11 @@ namespace Demo1._1._3
             List<T> bs = null;
             string msg = null;
             string sendMsg = t.GetType().Name.ToString();
-            using (var ws = new WebSocket("ws://localhost:9000/ShowData"))
+            using (var ws = new WebSocket("ws://" + IP + ":" + Host + "/ShowData"))
             {
                 ws.Connect();
                 ws.Send(sendMsg);
-                using (var wsp = new WebSocket("ws://localhost:9000/NowPage"))
+                using (var wsp = new WebSocket("ws://" + IP + ":" + Host + "/NowPage"))
                 {
                     wsp.Connect();
                     wsp.Send(nowpage);
@@ -370,6 +384,20 @@ namespace Demo1._1._3
             Basic_Set dbs = new Basic_Set();
             main_basic.gridControl2.DataSource = showData<domain.Basic_Set>(basic_set, main_basic.now_Page.ToString());
             main_basic.gridView2.Columns[0].Caption ="编号";
+            main_basic.gridView2.Columns[1].Caption = "岗位设置";
+            main_basic.gridView2.Columns[2].Caption = "应收账款";
+            main_basic.gridView2.Columns[3].Caption = "应付账款";
+            main_basic.gridView2.Columns[4].Caption = "入库方式";
+            main_basic.gridView2.Columns[5].Caption = "出库方式";
+            main_basic.gridView2.Columns[6].Caption = "运输方式";
+            main_basic.gridView2.Columns[7].Caption = "岗位性质";
+            main_basic.gridView2.Columns[8].Caption = "借款性质";
+            main_basic.gridView2.Columns[9].Caption = "客户类型";
+            main_basic.gridView2.Columns[10].Caption = "费用类型";
+            main_basic.gridView2.Columns[11].Caption = "民族";
+            main_basic.gridView2.Columns[12].Caption = "仓库";
+            main_basic.gridView2.Columns[13].Caption = "报销类型";
+            main_basic.gridView2.Columns[14].Caption = "油气类型";
             main_basic.gridView2.BestFitColumns();
 
         }
@@ -384,6 +412,12 @@ namespace Demo1._1._3
             panel2.Controls.Add(internal_fleet);
             domain.Internal_Vehicle div = new Internal_Vehicle();
             internal_fleet.gridControl2.DataSource = showData<domain.Internal_Vehicle>(div, internal_fleet.now_Page.ToString());
+
+            internal_fleet.gridView2.Columns[0].Caption = "编号";
+            internal_fleet.gridView2.Columns[1].Caption = "车队";
+            internal_fleet.gridView2.Columns[2].Caption = "车号";
+            internal_fleet.gridView2.Columns[3].Caption = "司机";
+            internal_fleet.gridView2.Columns[4].Caption = "说明";
         }
 
         private void accordionControlElement37_Click(object sender, EventArgs e)
@@ -525,7 +559,19 @@ namespace Demo1._1._3
             panel2.Controls.Add(ca);
             CapitalAccount dca = new CapitalAccount();
             domain.Fund_Accounts fund_account = new domain.Fund_Accounts();
-            ca.gridControl2.DataSource=showData<domain.Fund_Accounts>(fund_account, dca.now_Page.ToString());     
+            ca.gridControl2.DataSource=showData<domain.Fund_Accounts>(fund_account, dca.now_Page.ToString());
+
+            ca.gridView2.Columns[0].Caption = "编号";
+            ca.gridView2.Columns[1].Caption = "账户性质";
+            ca.gridView2.Columns[2].Caption = "账户名称";
+            ca.gridView2.Columns[3].Caption = "开户行";
+            ca.gridView2.Columns[4].Caption = "账号";
+            ca.gridView2.Columns[5].Caption = "期初余额";
+            ca.gridView2.Columns[6].Caption = "收款总额";
+            ca.gridView2.Columns[7].Caption = "付款总额";
+            ca.gridView2.Columns[8].Caption = "现余额";
+            ca.gridView2.Columns[9].Caption = "说明";
+            ca.gridView2.BestFitColumns();
         }
 
         private void accordionControlElement45_Click(object sender, EventArgs e)
@@ -535,6 +581,26 @@ namespace Demo1._1._3
             cf.Dock = DockStyle.Fill;
             panel2.Controls.Clear();
             panel2.Controls.Add(cf);
+
+            cf.gridControl2.DataSource = showData<domain.Customer_File>(new Customer_File(), cf.now_Page_Staff.ToString());
+
+            cf.gridView2.Columns[0].Caption = "客户编号";
+            cf.gridView2.Columns[1].Caption = "客户简称";
+            cf.gridView2.Columns[2].Caption = "客户全称";
+            cf.gridView2.Columns[3].Caption = "速查码";
+            cf.gridView2.Columns[4].Caption = "地址";
+            cf.gridView2.Columns[5].Caption = "开户行";
+            cf.gridView2.Columns[6].Caption = "税号";
+            cf.gridView2.Columns[7].Caption = "联系人";
+            cf.gridView2.Columns[8].Caption = "电话";
+            cf.gridView2.Columns[9].Caption = "客户类型1";
+            cf.gridView2.Columns[10].Caption = "客户类型2";
+            cf.gridView2.Columns[11].Caption = "客户类型3";
+            cf.gridView2.Columns[12].Caption = "客户类型4";
+            cf.gridView2.Columns[13].Caption = "客户类型5";
+
+
+            cf.gridView2.BestFitColumns();
         }
 
         private void accordionControlElement46_Click(object sender, EventArgs e)
@@ -1094,7 +1160,18 @@ namespace Demo1._1._3
            panel2.Controls.Add(wf);
 
            wf.gridControl2.DataSource = showData(new Warehouse_Staff(), wf.now_Page_Staff.ToString());
-           wf.gridControl3.DataSource = showData(new Warehouse_Space(), wf.now_Page_Space.ToString());
+            wf.gridView2.Columns[0].Caption = "编号ID";
+            wf.gridView2.Columns[1].Caption = "库管";
+            wf.gridView2.Columns[2].Caption = "吊车";
+            wf.gridView2.Columns[3].Caption = "装卸工";
+            wf.gridView2.Columns[4].Caption = "其他";
+            wf.gridView2.Columns[5].Caption = "说明";
+
+            wf.gridControl3.DataSource = showData(new Warehouse_Space(), wf.now_Page_Space.ToString());
+            wf.gridView3.Columns[0].Caption = "编号ID";
+            wf.gridView3.Columns[1].Caption = "仓库";
+            wf.gridView3.Columns[2].Caption = "垛位号";
+            wf.gridView3.Columns[3].Caption = "说明";
         }
        private void accordionControlElement83_Click(object sender, EventArgs e)
        {

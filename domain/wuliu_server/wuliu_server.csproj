@@ -110,9 +110,12 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServerFleetPrice.cs" />
     <Compile Include="ServerOuBounceCarDetails.cs" />
     <Compile Include="ServerOutBounceCar.cs" />
+    <Compile Include="ServerShipperPrice.cs" />
     <Compile Include="ServerStorageDetails.cs" />
+    <Compile Include="ServerTransportationRegister.cs" />
     <Compile Include="server_combobox.cs" />
     <Compile Include="server_Login.cs" />
   </ItemGroup>

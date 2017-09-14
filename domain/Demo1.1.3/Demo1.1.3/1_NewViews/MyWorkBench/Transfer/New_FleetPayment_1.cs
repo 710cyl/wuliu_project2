@@ -32,7 +32,9 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
         DateTimePicker dtp = new DateTimePicker();
         private BindingList<domain.FleetPayment_Detail> FleetPayment_Detail;
         domain.FleetPayment sfm = new FleetPayment();
+        domain.FleetPrice dfp = new FleetPrice();
         List<domain.FleetPayment_Detail> sd = new List<FleetPayment_Detail>();
+        List<domain.FleetPrice> fp = new List<FleetPrice>();
         FunctionClass fc = new FunctionClass();
         public Demo1._1._3.Panel2_MyWorkBench.FleetPayment fleetpay;
         /// <summary>
@@ -51,7 +53,7 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
                 textBox20.Text = Panel2_MyWorkBench.FleetPayment.array[1];
                 //dateTimePicker2.Value = Convert.ToDateTime(Panel2_MyWorkBench.FleetPayment.array[2]);
                 textBox19.Text = Panel2_MyWorkBench.FleetPayment.array[2];
-                textBox17.Text = Panel2_MyWorkBench.FleetPayment.array[5];
+                textBox17.Text = Demo1._1._3.Sign_in.name;
                 dateTimePicker1.Value = Convert.ToDateTime(Panel2_MyWorkBench.FleetPayment.array[6]);
                 //明细表显示
 
@@ -71,6 +73,7 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
             {
                 DataGridViewInit();
                 textBox18.Text = fc.DateTimeToUnix("CK");
+                textBox17.Text = Demo1._1._3.Sign_in.name;
             }
 
             this.gridView1.Columns[0].Caption = "定价单号";
@@ -157,12 +160,20 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
 
                 fc.SaveData(jsonMain, Json, sfm.GetType().Name.ToString(), "FleetPayment_Detail");
             }
-            fleetpay = new Demo1._1._3.Panel2_MyWorkBench.FleetPayment();
-            domain.FleetPayment fleetprice = new domain.FleetPayment();
-            Demo1._1._3.Panel2_MyWorkBench.FleetPayment dbs = new Panel2_MyWorkBench.FleetPayment();
-            domain.FleetPayment_Detail fleetprice_detail = new domain.FleetPayment_Detail();
-            fleetpay.gridControl1.DataSource = fc.showData<domain.FleetPayment>(fleetprice, dbs.now_Page1.ToString());
-            fleetpay.gridControl2.DataSource = fc.showData<domain.FleetPayment_Detail>(fleetprice_detail, dbs.now_Page2.ToString());
+            ////如果新建的车队付款的明细表的定价单号等于司机定价的主表的定价单号则将司机定价主表中是否付款改为是
+            //for(int i = 0; i < FleetPayment_Detail.Count; i++)
+            //{
+            //    fp = JsonConvert.DeserializeObject<List<domain.FleetPrice>>(fc.Finddate(sd[i].price_ID));
+            //    if(fp != null)
+            //    {
+            //        for(int j = 0; j < fp.Count; j++)
+            //        {
+            //            fp[j].payment = "是";
+
+            //        }
+            //        fc.updateData(fp, "FleetPrice");
+            //    }
+            //}
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)//取消

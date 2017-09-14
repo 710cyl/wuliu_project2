@@ -198,7 +198,7 @@
             this.tabNavigationPage3});
             this.tabPane1.RegularSize = new System.Drawing.Size(1252, 464);
             this.tabPane1.SelectedPage = this.tabNavigationPage1;
-            this.tabPane1.SelectedPageIndex = 2;
+            this.tabPane1.SelectedPageIndex = 1;
             this.tabPane1.Size = new System.Drawing.Size(1252, 464);
             this.tabPane1.TabIndex = 11;
             // 
@@ -553,6 +553,7 @@
             this.dataNavigator_discharge.Text = "dataNavigator1";
             this.dataNavigator_discharge.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Begin;
             this.dataNavigator_discharge.TextStringFormat = "第  {0}页 , 共  {1}页";
+            this.dataNavigator_discharge.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.dataNavigator_discharge_ButtonClick);
             // 
             // tabNavigationPage2
             // 
@@ -903,6 +904,7 @@
             this.dataNavigator_decorate.Text = "dataNavigator_decorate";
             this.dataNavigator_decorate.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Begin;
             this.dataNavigator_decorate.TextStringFormat = "第  {0}页 , 共  {1}页";
+            this.dataNavigator_decorate.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.dataNavigator_decorate_ButtonClick);
             // 
             // tabNavigationPage3
             // 
@@ -1252,6 +1254,7 @@
             this.dataNavigator_transp.Text = "dataNavigator1";
             this.dataNavigator_transp.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Begin;
             this.dataNavigator_transp.TextStringFormat = "第  {0}页 , 共  {1}页";
+            this.dataNavigator_transp.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.dataNavigator_transp_ButtonClick);
             // 
             // toolStrip1
             // 

@@ -116,6 +116,5 @@
     <property name="price_ID" type="string">
       <column name="price_ID" length="20"/>
     </property>
-  
   </class>
 </hibernate-mapping>

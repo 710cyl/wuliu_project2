@@ -34,6 +34,7 @@ namespace Demo1._1._3.Panel2_MyWorkBench
         public long total_Page2 = 0; //明细表页码总条目
         public long now_Page2 = 1; //明细表当前页码
         public static string str = null;
+        private BindingList<domain.TransportationRegister> transportationRegister;
         public List<domain.TransportationRegister_Detail> sd = new List<TransportationRegister_Detail>(); //得到明细表的list
         domain.TransportationRegister tr = new domain.TransportationRegister();
         domain.TransportationRegister_Detail trd = new domain.TransportationRegister_Detail();

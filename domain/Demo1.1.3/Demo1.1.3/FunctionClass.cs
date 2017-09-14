@@ -47,7 +47,7 @@ namespace Demo1._1._3
                     ws.Send(sendMsg); //传类名
                     while (total_Page == 0)
                     {
-                    Thread.Sleep(1500);
+                    //Thread.Sleep(1500);
                     ws.OnMessage += (sender, e) =>
                                     total_Page = (Convert.ToInt64(e.Data) / 5) + 1;
                     Thread.Sleep(500);
@@ -315,8 +315,75 @@ namespace Demo1._1._3
             }
             return msg;
         }
-
-
+        /// <summary>
+        /// 判断运输登记主表里的运输单号和司机定价主表里的运输单号是否相等
+        /// </summary>
+        /// <param name="Transpot_ID"></param>
+        /// <returns></returns>
+        public string FindDate(string Transpot_ID)
+        {
+            string msg = null;
+            using (var ws = new WebSocket("ws://localhost:9000/ServerTransportationRegister"))
+            {
+                ws.Connect();
+                ws.Send(Transpot_ID);
+                while (msg == null)
+                {
+                    ws.OnMessage += (sender, e1) =>
+                    msg = e1.Data;
+                    Thread.Sleep(500);
+                }
+                //sd = JsonConvert.DeserializeObject<List<domain.StorageDetails>>(msg);
+                ws.Close();
+            }
+            return msg;
+        }
+        /// <summary>
+        /// 判断车队付款的明细表的定价单号是否等于司机定价的主表的定价单号
+        /// </summary>
+        /// <param name="Price_ID"></param>
+        /// <returns></returns>
+        public string Finddate(string Price_ID)
+        {
+            string msg = null;
+            using (var ws = new WebSocket("ws://localhost:9000/ServerFleetPrice"))
+            {
+                ws.Connect();
+                ws.Send(Price_ID);
+                while (msg == null)
+                {
+                    ws.OnMessage += (sender, e1) =>
+                    msg = e1.Data;
+                    Thread.Sleep(500);
+                }
+                //sd = JsonConvert.DeserializeObject<List<domain.StorageDetails>>(msg);
+                ws.Close();
+            }
+            return msg;
+        }
+        /// <summary>
+        /// 判断货主定价的明细表的运输单标识是否等于运输登记明细表的运输单标识
+        /// </summary>
+        /// <param name="Price_ID"></param>
+        /// <returns></returns>
+        public string finddate(string Price_ID)
+        {
+            string msg = null;
+            using (var ws = new WebSocket("ws://localhost:9000/ServerShipperPrice"))
+            {
+                ws.Connect();
+                ws.Send(Price_ID);
+                while (msg == null)
+                {
+                    ws.OnMessage += (sender, e1) =>
+                    msg = e1.Data;
+                    Thread.Sleep(500);
+                }
+                //sd = JsonConvert.DeserializeObject<List<domain.StorageDetails>>(msg);
+                ws.Close();
+            }
+            return msg;
+        }
         /// <summary>
         /// 明细表修改
         /// </summary>
@@ -468,6 +535,7 @@ namespace Demo1._1._3
             {
                 ws.Connect();
                 ws.Send(json);
+                Thread.Sleep(500);
                 ws.Close();
             }
 

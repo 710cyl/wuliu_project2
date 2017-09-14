@@ -32,7 +32,24 @@
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.dataNavigator_Basic_Set = new DevExpress.XtraEditors.DataNavigator();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.dataNavigator_variety = new DevExpress.XtraEditors.DataNavigator();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.FindToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -86,32 +103,15 @@
             this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dataNavigator1 = new DevExpress.XtraEditors.DataNavigator();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            this.panel3.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPane1
@@ -136,7 +136,7 @@
             this.tabNavigationPage1.Caption = "品种材质_明细";
             this.tabNavigationPage1.Controls.Add(this.gridControl2);
             this.tabNavigationPage1.Controls.Add(this.panel3);
-            this.tabNavigationPage1.Controls.Add(this.dataNavigator_Basic_Set);
+            this.tabNavigationPage1.Controls.Add(this.dataNavigator_variety);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
             this.tabNavigationPage1.Size = new System.Drawing.Size(1069, 352);
             // 
@@ -158,48 +158,235 @@
             this.gridView2.OptionsBehavior.Editable = false;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
-            // dataNavigator_Basic_Set
+            // panel3
             // 
-            this.dataNavigator_Basic_Set.Appearance.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataNavigator_Basic_Set.Appearance.Options.UseBackColor = true;
-            this.dataNavigator_Basic_Set.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.dataNavigator_Basic_Set.Buttons.Append.Enabled = false;
-            this.dataNavigator_Basic_Set.Buttons.Append.Visible = false;
-            this.dataNavigator_Basic_Set.Buttons.CancelEdit.Enabled = false;
-            this.dataNavigator_Basic_Set.Buttons.CancelEdit.Visible = false;
-            this.dataNavigator_Basic_Set.Buttons.EnabledAutoRepeat = false;
-            this.dataNavigator_Basic_Set.Buttons.EndEdit.Enabled = false;
-            this.dataNavigator_Basic_Set.Buttons.EndEdit.Visible = false;
-            this.dataNavigator_Basic_Set.Buttons.First.Enabled = false;
-            this.dataNavigator_Basic_Set.Buttons.First.Visible = false;
-            this.dataNavigator_Basic_Set.Buttons.Last.Enabled = false;
-            this.dataNavigator_Basic_Set.Buttons.Last.Visible = false;
-            this.dataNavigator_Basic_Set.Buttons.Next.Enabled = false;
-            this.dataNavigator_Basic_Set.Buttons.Next.Visible = false;
-            this.dataNavigator_Basic_Set.Buttons.NextPage.Enabled = false;
-            this.dataNavigator_Basic_Set.Buttons.NextPage.Visible = false;
-            this.dataNavigator_Basic_Set.Buttons.Prev.Enabled = false;
-            this.dataNavigator_Basic_Set.Buttons.Prev.Visible = false;
-            this.dataNavigator_Basic_Set.Buttons.PrevPage.Enabled = false;
-            this.dataNavigator_Basic_Set.Buttons.PrevPage.Visible = false;
-            this.dataNavigator_Basic_Set.Buttons.Remove.Enabled = false;
-            this.dataNavigator_Basic_Set.Buttons.Remove.Visible = false;
-            this.dataNavigator_Basic_Set.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.dataNavigator_Basic_Set.CustomButtons.AddRange(new DevExpress.XtraEditors.NavigatorCustomButton[] {
+            this.panel3.AutoScroll = true;
+            this.panel3.AutoScrollMinSize = new System.Drawing.Size(1260, 140);
+            this.panel3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.textBox8);
+            this.panel3.Controls.Add(this.textBox9);
+            this.panel3.Controls.Add(this.textBox10);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.textBox11);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.textBox3);
+            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.textBox22);
+            this.panel3.Controls.Add(this.label38);
+            this.panel3.Controls.Add(this.label39);
+            this.panel3.Controls.Add(this.label40);
+            this.panel3.Controls.Add(this.simpleButton3);
+            this.panel3.Controls.Add(this.simpleButton4);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1069, 165);
+            this.panel3.TabIndex = 34;
+            this.panel3.Visible = false;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Font = new System.Drawing.Font("宋体", 9F);
+            this.textBox8.Location = new System.Drawing.Point(332, 26);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.ReadOnly = true;
+            this.textBox8.Size = new System.Drawing.Size(148, 21);
+            this.textBox8.TabIndex = 233;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Font = new System.Drawing.Font("宋体", 9F);
+            this.textBox9.Location = new System.Drawing.Point(97, 25);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.ReadOnly = true;
+            this.textBox9.Size = new System.Drawing.Size(148, 21);
+            this.textBox9.TabIndex = 232;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Font = new System.Drawing.Font("宋体", 9F);
+            this.textBox10.Location = new System.Drawing.Point(808, 25);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.ReadOnly = true;
+            this.textBox10.Size = new System.Drawing.Size(148, 21);
+            this.textBox10.TabIndex = 231;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("宋体", 9F);
+            this.label1.Location = new System.Drawing.Point(736, 29);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 12);
+            this.label1.TabIndex = 230;
+            this.label1.Text = "修改时间：";
+            // 
+            // textBox11
+            // 
+            this.textBox11.Font = new System.Drawing.Font("宋体", 9F);
+            this.textBox11.Location = new System.Drawing.Point(569, 26);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.ReadOnly = true;
+            this.textBox11.Size = new System.Drawing.Size(148, 21);
+            this.textBox11.TabIndex = 229;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("宋体", 9F);
+            this.label2.Location = new System.Drawing.Point(509, 29);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 12);
+            this.label2.TabIndex = 228;
+            this.label2.Text = "修改人：";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("宋体", 9F);
+            this.label3.Location = new System.Drawing.Point(261, 29);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 12);
+            this.label3.TabIndex = 227;
+            this.label3.Text = "登记时间：";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("宋体", 9F);
+            this.label4.Location = new System.Drawing.Point(39, 29);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 12);
+            this.label4.TabIndex = 226;
+            this.label4.Text = "登记人：";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("宋体", 9F);
+            this.textBox3.Location = new System.Drawing.Point(332, 72);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(148, 21);
+            this.textBox3.TabIndex = 222;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("宋体", 9F);
+            this.textBox1.Location = new System.Drawing.Point(97, 71);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(148, 21);
+            this.textBox1.TabIndex = 220;
+            // 
+            // textBox22
+            // 
+            this.textBox22.Font = new System.Drawing.Font("宋体", 9F);
+            this.textBox22.Location = new System.Drawing.Point(569, 72);
+            this.textBox22.Name = "textBox22";
+            this.textBox22.Size = new System.Drawing.Size(387, 21);
+            this.textBox22.TabIndex = 166;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("宋体", 9F);
+            this.label38.Location = new System.Drawing.Point(521, 75);
+            this.label38.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(41, 12);
+            this.label38.TabIndex = 165;
+            this.label38.Text = "说明：";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("宋体", 9F);
+            this.label39.Location = new System.Drawing.Point(285, 75);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(41, 12);
+            this.label39.TabIndex = 163;
+            this.label39.Text = "材质：";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("宋体", 9F);
+            this.label40.Location = new System.Drawing.Point(50, 75);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(41, 12);
+            this.label40.TabIndex = 161;
+            this.label40.Text = "品种：";
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.simpleButton3.Appearance.Options.UseFont = true;
+            this.simpleButton3.Image = global::Demo1._1._3.Properties.Resources.cancel_16x16;
+            this.simpleButton3.Location = new System.Drawing.Point(895, 110);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(61, 22);
+            this.simpleButton3.TabIndex = 160;
+            this.simpleButton3.Text = "关闭";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
+            // 
+            // simpleButton4
+            // 
+            this.simpleButton4.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F);
+            this.simpleButton4.Appearance.Options.UseFont = true;
+            this.simpleButton4.Image = global::Demo1._1._3.Properties.Resources.save_16x16;
+            this.simpleButton4.Location = new System.Drawing.Point(791, 110);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(98, 22);
+            this.simpleButton4.TabIndex = 159;
+            this.simpleButton4.Text = "保存";
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
+            // 
+            // dataNavigator_variety
+            // 
+            this.dataNavigator_variety.Appearance.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataNavigator_variety.Appearance.Options.UseBackColor = true;
+            this.dataNavigator_variety.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.dataNavigator_variety.Buttons.Append.Enabled = false;
+            this.dataNavigator_variety.Buttons.Append.Visible = false;
+            this.dataNavigator_variety.Buttons.CancelEdit.Enabled = false;
+            this.dataNavigator_variety.Buttons.CancelEdit.Visible = false;
+            this.dataNavigator_variety.Buttons.EnabledAutoRepeat = false;
+            this.dataNavigator_variety.Buttons.EndEdit.Enabled = false;
+            this.dataNavigator_variety.Buttons.EndEdit.Visible = false;
+            this.dataNavigator_variety.Buttons.First.Enabled = false;
+            this.dataNavigator_variety.Buttons.First.Visible = false;
+            this.dataNavigator_variety.Buttons.Last.Enabled = false;
+            this.dataNavigator_variety.Buttons.Last.Visible = false;
+            this.dataNavigator_variety.Buttons.Next.Enabled = false;
+            this.dataNavigator_variety.Buttons.Next.Visible = false;
+            this.dataNavigator_variety.Buttons.NextPage.Enabled = false;
+            this.dataNavigator_variety.Buttons.NextPage.Visible = false;
+            this.dataNavigator_variety.Buttons.Prev.Enabled = false;
+            this.dataNavigator_variety.Buttons.Prev.Visible = false;
+            this.dataNavigator_variety.Buttons.PrevPage.Enabled = false;
+            this.dataNavigator_variety.Buttons.PrevPage.Visible = false;
+            this.dataNavigator_variety.Buttons.Remove.Enabled = false;
+            this.dataNavigator_variety.Buttons.Remove.Visible = false;
+            this.dataNavigator_variety.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.dataNavigator_variety.CustomButtons.AddRange(new DevExpress.XtraEditors.NavigatorCustomButton[] {
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 0, true, true, "首页", "首页"),
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 1, true, true, "上一页", "上一页"),
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 4, true, true, "下一页", "下一页"),
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 5, true, true, "尾页", "尾页")});
-            this.dataNavigator_Basic_Set.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataNavigator_Basic_Set.Location = new System.Drawing.Point(0, 330);
-            this.dataNavigator_Basic_Set.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dataNavigator_Basic_Set.Name = "dataNavigator_Basic_Set";
-            this.dataNavigator_Basic_Set.ShowToolTips = true;
-            this.dataNavigator_Basic_Set.Size = new System.Drawing.Size(1069, 22);
-            this.dataNavigator_Basic_Set.TabIndex = 7;
-            this.dataNavigator_Basic_Set.Text = "dataNavigator1";
-            this.dataNavigator_Basic_Set.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Begin;
-            this.dataNavigator_Basic_Set.TextStringFormat = "第 {0}页，共 {1}页";
+            this.dataNavigator_variety.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataNavigator_variety.Location = new System.Drawing.Point(0, 330);
+            this.dataNavigator_variety.Margin = new System.Windows.Forms.Padding(2);
+            this.dataNavigator_variety.Name = "dataNavigator_variety";
+            this.dataNavigator_variety.ShowToolTips = true;
+            this.dataNavigator_variety.Size = new System.Drawing.Size(1069, 22);
+            this.dataNavigator_variety.TabIndex = 7;
+            this.dataNavigator_variety.Text = "dataNavigator1";
+            this.dataNavigator_variety.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Begin;
+            this.dataNavigator_variety.TextStringFormat = "第 {0}页，共 {1}页";
+            this.dataNavigator_variety.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.dataNavigator_variety_ButtonClick);
             // 
             // toolStrip1
             // 
@@ -375,6 +562,7 @@
             this.导出表单ToolStripMenuItem.Name = "导出表单ToolStripMenuItem";
             this.导出表单ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.导出表单ToolStripMenuItem.Text = "导出表单";
+            this.导出表单ToolStripMenuItem.Click += new System.EventHandler(this.导出表单ToolStripMenuItem_Click);
             // 
             // 打印表单ToolStripMenuItem
             // 
@@ -430,6 +618,7 @@
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(56, 24);
             this.toolStripButton1.Text = "新建";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripButton2
             // 
@@ -438,6 +627,7 @@
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(56, 24);
             this.toolStripButton2.Text = "修改";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripButton7
             // 
@@ -446,6 +636,7 @@
             this.toolStripButton7.Name = "toolStripButton7";
             this.toolStripButton7.Size = new System.Drawing.Size(56, 24);
             this.toolStripButton7.Text = "删除";
+            this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
             // 
             // toolStripButton6
             // 
@@ -454,6 +645,7 @@
             this.toolStripButton6.Name = "toolStripButton6";
             this.toolStripButton6.Size = new System.Drawing.Size(80, 24);
             this.toolStripButton6.Text = "导入数据";
+            this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
             // 
             // toolStripSeparator13
             // 
@@ -617,190 +809,6 @@
             this.dataNavigator1.TabIndex = 13;
             this.dataNavigator1.Text = "dataNavigator1";
             // 
-            // panel3
-            // 
-            this.panel3.AutoScroll = true;
-            this.panel3.AutoScrollMinSize = new System.Drawing.Size(1260, 140);
-            this.panel3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.textBox8);
-            this.panel3.Controls.Add(this.textBox9);
-            this.panel3.Controls.Add(this.textBox10);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.textBox11);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.textBox3);
-            this.panel3.Controls.Add(this.textBox1);
-            this.panel3.Controls.Add(this.textBox22);
-            this.panel3.Controls.Add(this.label38);
-            this.panel3.Controls.Add(this.label39);
-            this.panel3.Controls.Add(this.label40);
-            this.panel3.Controls.Add(this.simpleButton3);
-            this.panel3.Controls.Add(this.simpleButton4);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1069, 165);
-            this.panel3.TabIndex = 34;
-            this.panel3.Visible = false;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Font = new System.Drawing.Font("宋体", 9F);
-            this.textBox8.Location = new System.Drawing.Point(332, 26);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(148, 21);
-            this.textBox8.TabIndex = 233;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Font = new System.Drawing.Font("宋体", 9F);
-            this.textBox9.Location = new System.Drawing.Point(97, 25);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(148, 21);
-            this.textBox9.TabIndex = 232;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Font = new System.Drawing.Font("宋体", 9F);
-            this.textBox10.Location = new System.Drawing.Point(808, 25);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.ReadOnly = true;
-            this.textBox10.Size = new System.Drawing.Size(148, 21);
-            this.textBox10.TabIndex = 231;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("宋体", 9F);
-            this.label1.Location = new System.Drawing.Point(736, 29);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 12);
-            this.label1.TabIndex = 230;
-            this.label1.Text = "修改时间：";
-            // 
-            // textBox11
-            // 
-            this.textBox11.Font = new System.Drawing.Font("宋体", 9F);
-            this.textBox11.Location = new System.Drawing.Point(569, 26);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.ReadOnly = true;
-            this.textBox11.Size = new System.Drawing.Size(148, 21);
-            this.textBox11.TabIndex = 229;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("宋体", 9F);
-            this.label2.Location = new System.Drawing.Point(509, 29);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 12);
-            this.label2.TabIndex = 228;
-            this.label2.Text = "修改人：";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("宋体", 9F);
-            this.label3.Location = new System.Drawing.Point(261, 29);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 12);
-            this.label3.TabIndex = 227;
-            this.label3.Text = "登记时间：";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("宋体", 9F);
-            this.label4.Location = new System.Drawing.Point(39, 29);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 12);
-            this.label4.TabIndex = 226;
-            this.label4.Text = "登记人：";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("宋体", 9F);
-            this.textBox3.Location = new System.Drawing.Point(332, 72);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(148, 21);
-            this.textBox3.TabIndex = 222;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("宋体", 9F);
-            this.textBox1.Location = new System.Drawing.Point(97, 71);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(148, 21);
-            this.textBox1.TabIndex = 220;
-            // 
-            // textBox22
-            // 
-            this.textBox22.Font = new System.Drawing.Font("宋体", 9F);
-            this.textBox22.Location = new System.Drawing.Point(569, 72);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(387, 21);
-            this.textBox22.TabIndex = 166;
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("宋体", 9F);
-            this.label38.Location = new System.Drawing.Point(521, 75);
-            this.label38.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(41, 12);
-            this.label38.TabIndex = 165;
-            this.label38.Text = "说明：";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("宋体", 9F);
-            this.label39.Location = new System.Drawing.Point(285, 75);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(41, 12);
-            this.label39.TabIndex = 163;
-            this.label39.Text = "材质：";
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("宋体", 9F);
-            this.label40.Location = new System.Drawing.Point(50, 75);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(41, 12);
-            this.label40.TabIndex = 161;
-            this.label40.Text = "品种：";
-            // 
-            // simpleButton3
-            // 
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.Image = global::Demo1._1._3.Properties.Resources.cancel_16x16;
-            this.simpleButton3.Location = new System.Drawing.Point(895, 110);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(61, 22);
-            this.simpleButton3.TabIndex = 160;
-            this.simpleButton3.Text = "关闭";
-            // 
-            // simpleButton4
-            // 
-            this.simpleButton4.Appearance.Font = new System.Drawing.Font("微软雅黑", 9F);
-            this.simpleButton4.Appearance.Options.UseFont = true;
-            this.simpleButton4.Image = global::Demo1._1._3.Properties.Resources.save_16x16;
-            this.simpleButton4.Location = new System.Drawing.Point(791, 110);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(98, 22);
-            this.simpleButton4.TabIndex = 159;
-            this.simpleButton4.Text = "保存";
-            // 
             // VarietyMaterial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -815,13 +823,13 @@
             this.tabNavigationPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -875,7 +883,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         public DevExpress.XtraGrid.GridControl gridControl2;
         public DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        public DevExpress.XtraEditors.DataNavigator dataNavigator_Basic_Set;
+        public DevExpress.XtraEditors.DataNavigator dataNavigator_variety;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox9;

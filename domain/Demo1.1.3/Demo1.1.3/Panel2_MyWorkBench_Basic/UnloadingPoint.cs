@@ -58,7 +58,7 @@ namespace Demo1._1._3
             fc.InitPage(dataNavigator_discharge, total_Page_Dis, now_Page_Dis);
 
             total_Page_Trans = fc.getTotal<domain.Transportations>(tran, total_Page_Trans);
-            fc.InitPage(dataNavigator_transp, total_Page_Trans, now_Page_Trans);
+            fc.InitPage(dataNavigator_transp, total_Page_Trans, total_Page_Trans);
 
             isEdit();
         }
@@ -104,6 +104,12 @@ namespace Demo1._1._3
             textBox2.Text = DateTime.Now.ToString();
             textBox8.Text = DateTime.Now.ToString();
             textBox25.Text = DateTime.Now.ToString();
+            textBox9.Text = Demo1._1._3.Sign_in.name;
+            textBox11.Text = Demo1._1._3.Sign_in.name;
+            textBox4.Text = Demo1._1._3.Sign_in.name;
+            textBox6.Text = Demo1._1._3.Sign_in.name;
+            textBox26.Text = Demo1._1._3.Sign_in.name;
+            textBox28.Text = Demo1._1._3.Sign_in.name;
             textBox6.Enabled = false;
             textBox5.Enabled = false;
             textBox10.Enabled = false;
@@ -134,6 +140,8 @@ namespace Demo1._1._3
                     textBox19.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[6]);
                     textBox22.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[3]);
                     textBox18.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[7]);
+                    textBox9.Text = Demo1._1._3.Sign_in.name;
+                    textBox11.Text = Demo1._1._3.Sign_in.name;
                     textBox11.Enabled = false;
                     textBox10.Text = DateTime.Now.ToString();
                 }
@@ -154,13 +162,15 @@ namespace Demo1._1._3
                 {
                     isExist = true;
                     panel2.Visible = true;
-                    textBox12.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[1]);
-                    textBox7.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[2]);
-                    textBox24.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[3]);
-                    textBox23.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[4]);
-                    textBox16.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[5]);
-                    textBox15.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[6]);
-                    textBox14.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[7]);
+                    textBox12.Text = gridView3.GetFocusedRowCellDisplayText(gridView3.Columns[1]);
+                    textBox7.Text = gridView3.GetFocusedRowCellDisplayText(gridView3.Columns[2]);
+                    textBox24.Text = gridView3.GetFocusedRowCellDisplayText(gridView3.Columns[3]);
+                    textBox23.Text = gridView3.GetFocusedRowCellDisplayText(gridView3.Columns[4]);
+                    textBox16.Text = gridView3.GetFocusedRowCellDisplayText(gridView3.Columns[5]);
+                    textBox15.Text = gridView3.GetFocusedRowCellDisplayText(gridView3.Columns[6]);
+                    textBox14.Text = gridView3.GetFocusedRowCellDisplayText(gridView3.Columns[7]);
+                    textBox4.Text = Demo1._1._3.Sign_in.name;
+                    textBox6.Text = Demo1._1._3.Sign_in.name;
                     textBox6.Enabled = false;
                     textBox5.Text = DateTime.Now.ToString();
 
@@ -182,13 +192,15 @@ namespace Demo1._1._3
                 {
                     isExist = true;
                     panel4.Visible = true;
-                    textBox30.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[1]);
-                    textBox29.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[2]);
-                    textBox36.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[3]);
-                    textBox35.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[4]);
-                    textBox34.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[5]);
-                    textBox33.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[6]);
-                    textBox32.Text = gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[7]);
+                    textBox30.Text = gridView4.GetFocusedRowCellDisplayText(gridView4.Columns[1]);
+                    textBox29.Text = gridView4.GetFocusedRowCellDisplayText(gridView4.Columns[2]);
+                    textBox36.Text = gridView4.GetFocusedRowCellDisplayText(gridView4.Columns[3]);
+                    textBox35.Text = gridView4.GetFocusedRowCellDisplayText(gridView4.Columns[4]);
+                    textBox34.Text = gridView4.GetFocusedRowCellDisplayText(gridView4.Columns[5]);
+                    textBox33.Text = gridView4.GetFocusedRowCellDisplayText(gridView4.Columns[6]);
+                    textBox32.Text = gridView4.GetFocusedRowCellDisplayText(gridView4.Columns[7]);
+                    textBox26.Text = Demo1._1._3.Sign_in.name;
+                    textBox28.Text = Demo1._1._3.Sign_in.name;
                     textBox28.Enabled = false;
                     textBox27.Text = DateTime.Now.ToString();
 
@@ -251,6 +263,7 @@ namespace Demo1._1._3
         {
             if(isExist)
             {
+                dis.ID = Convert.ToInt32(gridView2.GetFocusedRowCellDisplayText(gridView2.Columns[0]));
                 dis.discharge_place = textBox1.Text;
                 dis.city = textBox3.Text;
                 dis.adress = textBox32.Text;
@@ -259,6 +272,10 @@ namespace Demo1._1._3
                 dis.region = textBox22.Text;
                 dis.statement = textBox21.Text;
                 fc.updateData(dis, "Discharge");
+                MessageBox.Show("修改成功");
+                panel2.Visible = false;
+                panel3.Visible = false;
+                panel4.Visible = false;
             }
             else
             {
@@ -270,6 +287,10 @@ namespace Demo1._1._3
                 dis.region = textBox22.Text;
                 dis.statement = textBox21.Text;
                 fc.saveData(dis, "Discharge");
+                MessageBox.Show("保存成功");
+                panel2.Visible = false;
+                panel3.Visible = false;
+                panel4.Visible = false;
             }
        
         }
@@ -285,6 +306,7 @@ namespace Demo1._1._3
         {
             if (isExist)
             {
+                dis.ID = Convert.ToInt32(gridView3.GetFocusedRowCellDisplayText(gridView3.Columns[0]));
                 dec.decorate_place = textBox12.Text;
                 dec.city = textBox7.Text;
                 dec.adress = textBox14.Text;
@@ -293,6 +315,10 @@ namespace Demo1._1._3
                 dec.region = textBox24.Text;
                 dec.statement = textBox23.Text;
                 fc.updateData(dec, "Decorate");
+                MessageBox.Show("修改成功");
+                panel2.Visible = false;
+                panel3.Visible = false;
+                panel4.Visible = false;
             }
             else
             {
@@ -304,6 +330,10 @@ namespace Demo1._1._3
                 dec.region = textBox24.Text;
                 dec.statement = textBox23.Text;
                 fc.saveData(dec, "Decorate");
+                MessageBox.Show("保存成功");
+                panel2.Visible = false;
+                panel3.Visible = false;
+                panel4.Visible = false;
             }
         }
 
@@ -318,6 +348,7 @@ namespace Demo1._1._3
         {
             if (isExist)
             {
+                dis.ID = Convert.ToInt32(gridView4.GetFocusedRowCellDisplayText(gridView4.Columns[0]));
                 tran.transportation_place = textBox30.Text;
                 tran.city = textBox29.Text;
                 tran.region = textBox36.Text;
@@ -326,6 +357,10 @@ namespace Demo1._1._3
                 tran.phone_number = textBox33.Text;
                 tran.adress = textBox32.Text;
                 fc.updateData(tran, "Transportations");
+                MessageBox.Show("修改成功");
+                panel2.Visible = false;
+                panel3.Visible = false;
+                panel4.Visible = false;
             }
             else
             {
@@ -337,6 +372,10 @@ namespace Demo1._1._3
                 tran.phone_number = textBox33.Text;
                 tran.adress = textBox32.Text;
                 fc.saveData(tran, "Transportations");
+                MessageBox.Show("保存成功");
+                panel2.Visible = false;
+                panel3.Visible = false;
+                panel4.Visible = false;
             }
         }
 
@@ -347,5 +386,115 @@ namespace Demo1._1._3
             panel4.Visible = false;
         }
 
+        private void dataNavigator_transp_ButtonClick(object sender, NavigatorButtonClickEventArgs e)
+        {
+            NavigatorButtonType btnType = (NavigatorButtonType)e.Button.ButtonType;
+            if (e.Button is NavigatorCustomButton)
+            {
+                NavigatorCustomButton btn = (NavigatorCustomButton)e.Button;
+                if (btn.Tag.ToString() == "下一页" && now_Page_Trans < total_Page_Trans)
+                {
+                    now_Page_Trans++;
+                    dataNavigator_transp.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page_Trans, total_Page_Trans);
+                    domain.TransportationRegister bs = new domain.TransportationRegister();
+                    gridControl1.DataSource = fc.showData<domain.TransportationRegister>(bs, now_Page_Trans.ToString());
+                }
+                else if (btn.Tag.ToString() == "上一页" && now_Page_Trans > 1)
+                {
+                    now_Page_Trans--;
+                    dataNavigator_transp.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page_Trans, total_Page_Trans);
+                    domain.TransportationRegister bs = new domain.TransportationRegister();
+                    gridControl1.DataSource = fc.showData<domain.TransportationRegister>(bs, now_Page_Trans.ToString());
+                }
+                else if (btn.Tag.ToString() == "首页")
+                {
+                    now_Page_Trans = 1;
+                    dataNavigator_transp.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page_Trans, total_Page_Trans);
+                    domain.TransportationRegister bs = new domain.TransportationRegister();
+                    gridControl1.DataSource = fc.showData<domain.TransportationRegister>(bs, now_Page_Trans.ToString());
+                }
+                else if (btn.Tag.ToString() == "尾页")
+                {
+                    now_Page_Trans = total_Page_Trans;
+                    dataNavigator_transp.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page_Trans, total_Page_Trans);
+                    domain.TransportationRegister bs = new domain.TransportationRegister();
+                    gridControl1.DataSource = fc.showData<domain.TransportationRegister>(bs, now_Page_Trans.ToString());
+                }
+            }
+        }
+
+        private void dataNavigator_discharge_ButtonClick(object sender, NavigatorButtonClickEventArgs e)
+        {
+            NavigatorButtonType btnType = (NavigatorButtonType)e.Button.ButtonType;
+            if (e.Button is NavigatorCustomButton)
+            {
+                NavigatorCustomButton btn = (NavigatorCustomButton)e.Button;
+                if (btn.Tag.ToString() == "下一页" && now_Page_Dis < total_Page_Dis)
+                {
+                    now_Page_Dis++;
+                    dataNavigator_discharge.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page_Dis, total_Page_Dis);
+                    domain.TransportationRegister bs = new domain.TransportationRegister();
+                    gridControl1.DataSource = fc.showData<domain.TransportationRegister>(bs, now_Page_Dis.ToString());
+                }
+                else if (btn.Tag.ToString() == "上一页" && total_Page_Dis > 1)
+                {
+                    now_Page_Dis--;
+                    dataNavigator_discharge.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page_Dis, total_Page_Dis);
+                    domain.TransportationRegister bs = new domain.TransportationRegister();
+                    gridControl1.DataSource = fc.showData<domain.TransportationRegister>(bs, now_Page_Dis.ToString());
+                }
+                else if (btn.Tag.ToString() == "首页")
+                {
+                    now_Page_Dis = 1;
+                    dataNavigator_discharge.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page_Dis, total_Page_Dis);
+                    domain.TransportationRegister bs = new domain.TransportationRegister();
+                    gridControl1.DataSource = fc.showData<domain.TransportationRegister>(bs, now_Page_Dis.ToString());
+                }
+                else if (btn.Tag.ToString() == "尾页")
+                {
+                    now_Page_Dis = total_Page_Dis;
+                    dataNavigator_discharge.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page_Dis, total_Page_Dis);
+                    domain.TransportationRegister bs = new domain.TransportationRegister();
+                    gridControl1.DataSource = fc.showData<domain.TransportationRegister>(bs, now_Page_Dis.ToString());
+                }
+            }
+        }
+
+        private void dataNavigator_decorate_ButtonClick(object sender, NavigatorButtonClickEventArgs e)
+        {
+            NavigatorButtonType btnType = (NavigatorButtonType)e.Button.ButtonType;
+            if (e.Button is NavigatorCustomButton)
+            {
+                NavigatorCustomButton btn = (NavigatorCustomButton)e.Button;
+                if (btn.Tag.ToString() == "下一页" && now_Page_Dec < total_Page_Dec)
+                {
+                    now_Page_Dec++;
+                    dataNavigator_decorate.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page_Dec, total_Page_Dec);
+                    domain.TransportationRegister bs = new domain.TransportationRegister();
+                    gridControl1.DataSource = fc.showData<domain.TransportationRegister>(bs, now_Page_Dec.ToString());
+                }
+                else if (btn.Tag.ToString() == "上一页" && total_Page_Dec > 1)
+                {
+                    now_Page_Dec--;
+                    dataNavigator_decorate.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page_Dec, total_Page_Dec);
+                    domain.TransportationRegister bs = new domain.TransportationRegister();
+                    gridControl1.DataSource = fc.showData<domain.TransportationRegister>(bs, now_Page_Dec.ToString());
+                }
+                else if (btn.Tag.ToString() == "首页")
+                {
+                    now_Page_Dec = 1;
+                    dataNavigator_decorate.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page_Dec, total_Page_Dec);
+                    domain.TransportationRegister bs = new domain.TransportationRegister();
+                    gridControl1.DataSource = fc.showData<domain.TransportationRegister>(bs, now_Page_Dec.ToString());
+                }
+                else if (btn.Tag.ToString() == "尾页")
+                {
+                    now_Page_Dec = total_Page_Dec;
+                    dataNavigator_decorate.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page_Dec, total_Page_Dec);
+                    domain.TransportationRegister bs = new domain.TransportationRegister();
+                    gridControl1.DataSource = fc.showData<domain.TransportationRegister>(bs, now_Page_Dec.ToString());
+                }
+            }
+        }
     }
 }

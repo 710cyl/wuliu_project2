@@ -398,8 +398,33 @@ namespace Demo1._1._3
             domain.Transportations trans = new Transportations();
             up.gridControl3.DataSource = showData<domain.Decorate>(dec,up.now_Page_Dec.ToString());
             up.gridControl2.DataSource = showData<domain.Discharge>(dis,up.now_Page_Dis.ToString());
-
             up.gridControl4.DataSource = showData<domain.Transportations>(trans,up.now_Page_Trans.ToString());
+            up.gridView2.Columns[0].Caption = "编号";
+            up.gridView2.Columns[1].Caption = "卸点";
+            up.gridView2.Columns[2].Caption = "所在城市";
+            up.gridView2.Columns[3].Caption = "所在区域";
+            up.gridView2.Columns[4].Caption = "说明";
+            up.gridView2.Columns[5].Caption = "联系人";
+            up.gridView2.Columns[6].Caption = "电话";
+            up.gridView2.Columns[7].Caption = "地址";
+
+            up.gridView3.Columns[0].Caption = "编号";
+            up.gridView3.Columns[1].Caption = "装点";
+            up.gridView3.Columns[2].Caption = "所在城市";
+            up.gridView3.Columns[3].Caption = "所在区域";
+            up.gridView3.Columns[4].Caption = "说明";
+            up.gridView3.Columns[5].Caption = "联系人";
+            up.gridView3.Columns[6].Caption = "电话";
+            up.gridView3.Columns[7].Caption = "地址";
+
+            up.gridView4.Columns[0].Caption = "编号";
+            up.gridView4.Columns[1].Caption = "集运卸点";
+            up.gridView4.Columns[2].Caption = "所在城市";
+            up.gridView4.Columns[3].Caption = "所在区域";
+            up.gridView4.Columns[4].Caption = "说明";
+            up.gridView4.Columns[5].Caption = "联系人";
+            up.gridView4.Columns[6].Caption = "电话";
+            up.gridView4.Columns[7].Caption = "地址";
 
         }
 
@@ -410,6 +435,11 @@ namespace Demo1._1._3
             vm.Dock = DockStyle.Fill;
             panel2.Controls.Clear();
             panel2.Controls.Add(vm);
+            vm.gridControl2.DataSource = showData(new domain.Variety_Texture(), vm.now_Page_vm.ToString());
+            vm.gridView2.Columns[0].Caption = "编号";
+            vm.gridView2.Columns[1].Caption = "品种";
+            vm.gridView2.Columns[2].Caption = "材质";
+            vm.gridView2.Columns[3].Caption = "说明";
         }
 
         private void accordionControlElement39_Click(object sender, EventArgs e)

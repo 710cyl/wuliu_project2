@@ -14,16 +14,16 @@
     </property>
 
     
-    <property name="car_number" type="string" insert="false" update="false">
+    <property name="car_number" type="string"  insert="false" update="false">
       <column name="car_number" length="20"/>
     </property>
 
-    <property name="transport_gross" type="decimal" insert="false" update="false">
+    <property name="transport_gross" type="decimal"  insert="false" update="false">
       <column name="transport_gross" length="20"/>
       <column name="transport_gross" precision="3"/>
     </property>
 
-    <property name="car_fee" type="decimal" insert="false" update="false">
+    <property name="car_fee" type="decimal"  insert="false" update="false">
       <column name="car_fee" length="20"/>
       <column name="car_fee" precision="2"/>
     </property>
@@ -32,7 +32,7 @@
       <column name="make_staff" length="20"/>
     </property>
 
-    <property name="make_time" type="DateTime" insert="false" update="false">
+    <property name="make_time" type="DateTime"  insert="false" update="false">
       <column name="make_time"/>
     </property>
 
@@ -40,9 +40,9 @@
       <column name="statement" length="20"/>
     </property>
 
-    <bag name="FleetPayment_Details" inverse="true" cascade="all">
-      <key column="list_ID"/>
-      <one-to-many class="FleetPayment_Detail"/>
+    <bag name="FleetPayment_Details" inverse="true" cascade="all" >
+      <key column="list_ID" />
+      <one-to-many class="FleetPayment_Detail" />
     </bag>
 
   </class>

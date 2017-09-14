@@ -35,6 +35,7 @@ namespace Demo1._1._3.Panel2_MyWorkBench
         public long now_Page2 = 1; //明细表当前页码
         public static string str = null;
         public List<domain.ShipperPrice_Detail> sd = new List<ShipperPrice_Detail>(); //得到明细表的list
+        private BindingList<domain.ShipperPrice> shipperprice;
         domain.ShipperPrice tr = new domain.ShipperPrice();
         domain.ShipperPrice_Detail trd = new domain.ShipperPrice_Detail();
         FunctionClass fc = new FunctionClass();
@@ -82,6 +83,8 @@ namespace Demo1._1._3.Panel2_MyWorkBench
 
         private void toolStripButton2_Click(object sender, EventArgs e)//修改
         {
+            //this.gridView1.SetRowCellValue((shipperprice.Count - 1), gridView1.Columns[3], DateTime.Now.ToString());
+            //this.gridView1.SetRowCellValue((shipperprice.Count - 1), gridView1.Columns[5], DateTime.Now.ToString());
             colCount = gridView1.Columns.Count() - 1;
             array = new string[colCount];
             for (int i = 0; i < colCount; i++)

@@ -122,5 +122,6 @@ namespace domain
         /// 定价单号
         /// </summary>
         public virtual string price_ID { get; set; }
+
     }
 }

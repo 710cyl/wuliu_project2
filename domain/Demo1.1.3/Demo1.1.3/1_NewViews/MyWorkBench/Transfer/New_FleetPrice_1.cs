@@ -31,8 +31,12 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
         DateTimePicker dtp = new DateTimePicker();
         private BindingList<domain.FleetPrice_Detail> FleetPrice_Detail;
         domain.FleetPrice fp = new FleetPrice();
+        domain.FleetPrice_Detail fpd = new domain.FleetPrice_Detail();
         List<domain.FleetPrice_Detail> sd = new List<FleetPrice_Detail>();
+        public List<domain.TransportationRegister> tr = new List<TransportationRegister>();
+        public List<domain.TransportationRegister_Detail> trd = new List<TransportationRegister_Detail>();
         FunctionClass fc = new FunctionClass();
+        public static string Transport_ID = null;
         public Demo1._1._3.Panel2_MyWorkBench.FleetPrice fleetp;
         /// <summary>
         /// 车队、司机、车号
@@ -72,8 +76,8 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
                 dateTimePicker3.Value = Convert.ToDateTime(Panel2_MyWorkBench.FleetPrice.array[12]);
                 //dateTimePicker3.Value = Convert.ToDateTime(Panel2_MyWorkBench.FleetPrice.array[14]);
                 dateTimePicker4.Value = Convert.ToDateTime(Panel2_MyWorkBench.FleetPrice.array[13]);
-                textBox7.Text = Panel2_MyWorkBench.FleetPrice.array[14];
-                textBox12.Text = Panel2_MyWorkBench.FleetPrice.array[15];
+                textBox7.Text = Demo1._1._3.Sign_in.name;
+                textBox12.Text = Demo1._1._3.Sign_in.name;
                 dateTimePicker1.Value = Convert.ToDateTime(Panel2_MyWorkBench.FleetPrice.array[16]);
                 dateTimePicker2.Value = Convert.ToDateTime(Panel2_MyWorkBench.FleetPrice.array[17]);
                 //明细表显示
@@ -94,6 +98,8 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
             {
                 DataGridViewInit();
                 textBox5.Text = fc.DateTimeToUnix("SJ");
+                textBox7.Text = Demo1._1._3.Sign_in.name;
+                textBox12.Text = Demo1._1._3.Sign_in.name;
 
             }
 
@@ -194,18 +200,35 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
                 fp.enter_time = dateTimePicker1.Value;
                 fp.change_time = dateTimePicker2.Value;
 
-                //List<domain.FleetPrice_Detail> sd = FleetPrice_Detail.ToList<domain.FleetPrice_Detail>();
-                string Json = JsonConvert.SerializeObject(this.gridControl1.DataSource);
-                string jsonMain = JsonConvert.SerializeObject(fp);
-
-                fc.SaveData(jsonMain, Json, fp.GetType().Name.ToString(), "FleetPrice_Detail");
+                //如果新建的车队定价里的司机定价的主表的运输单号与运输登记的主表的运输单号一致，则填充运输登记里的明细表的数据
+                Transport_ID = textBox5.Text;
+                tr = JsonConvert.DeserializeObject<List<domain.TransportationRegister>>(fc.FindDate(Transport_ID));
+                if (tr != null)
+                {
+                    trd = JsonConvert.DeserializeObject<List<domain.TransportationRegister_Detail>>(fc.FindDeteils(textBox5.Text, "TransportationRegister_Detail"));
+                    for (int i = 0; i < trd.Count; i++)
+                    {
+                        fpd.order_ID = trd[i].order_number;
+                        fpd.owner = trd[i].owner;
+                        fpd.reel_number = trd[i].reel_number;
+                        fpd.variety = trd[i].variety;
+                        fpd.texture = trd[i].texture;
+                        fpd.standard = trd[i].standard;
+                        fpd.number = trd[i].number;
+                        fpd.quantity = trd[i].quantity;
+                        sd.Add(fpd);
+                    }
+                    string json = JsonConvert.SerializeObject(sd);
+                    string jsonMain = JsonConvert.SerializeObject(fp);
+                    fc.SaveData(jsonMain, json, fp.GetType().Name.ToString(), "FleetPrice_Detail");
+                }
+                else
+                {
+                    string Json = JsonConvert.SerializeObject(this.gridControl1.DataSource);
+                    string jsonMain = JsonConvert.SerializeObject(fp);
+                    fc.SaveData(jsonMain, Json, fp.GetType().Name.ToString(), "FleetPrice_Detail");
+                }
             }
-            fleetp = new Demo1._1._3.Panel2_MyWorkBench.FleetPrice();
-            domain.FleetPrice fleetprice = new domain.FleetPrice();
-            Demo1._1._3.Panel2_MyWorkBench.FleetPrice dbs = new Panel2_MyWorkBench.FleetPrice();
-            domain.FleetPrice_Detail fleetprice_detail = new domain.FleetPrice_Detail();
-            fleetp.gridControl1.DataSource = fc.showData<domain.FleetPrice>(fleetprice, dbs.now_Page1.ToString());
-            fleetp.gridControl2.DataSource = fc.showData<domain.FleetPrice_Detail>(fleetprice_detail, dbs.now_Page2.ToString());
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)//取消

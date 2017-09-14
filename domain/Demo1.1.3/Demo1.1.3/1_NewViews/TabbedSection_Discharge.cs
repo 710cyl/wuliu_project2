@@ -1,11 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using NHibernate;
+using NHibernate.Cfg;
+using NHibernate.ByteCode.Castle;
+using domain;
+using WebSocketSharp;
+using Basic_SetTest;
+using System.Threading;
+using Newtonsoft.Json;
+using System.Reflection;
+using System.Data.OleDb;
+using Newtonsoft.Json.Converters;
+using Demo1._1._3.MyWorkBench_SkipForm;
+using System.IO;
+using DevExpress.XtraEditors;
+using System.Drawing.Printing;
 
 namespace Demo1._1._3._1_NewViews
 {
@@ -32,10 +47,14 @@ namespace Demo1._1._3._1_NewViews
         {
             InitializeComponent();
 
+            
+
             domain.Discharge di = new domain.Discharge();
             gridView1.ClearGrouping();
             gridControl1.DataSource = fc.showData(di, now_Page.ToString());
-            
+
+            total_Page = fc.getTotal<domain.Discharge>(di, total_Page);
+            fc.InitPage(dataNavigator_Basic_Set, total_Page, now_Page);
 
             this.gridView1.Columns[0].Caption = "编号";
             this.gridView1.Columns[1].Caption = "卸点";
@@ -77,6 +96,43 @@ namespace Demo1._1._3._1_NewViews
         private void simpleButton2_Click(object sender, EventArgs e) //取消
         {
             Close();
+        }
+
+        private void dataNavigator_Basic_Set_ButtonClick(object sender, DevExpress.XtraEditors.NavigatorButtonClickEventArgs e)
+        {
+            NavigatorButtonType btnType = (NavigatorButtonType)e.Button.ButtonType;
+            if (e.Button is NavigatorCustomButton)
+            {
+                NavigatorCustomButton btn = (NavigatorCustomButton)e.Button;
+                if (btn.Tag.ToString() == "下一页" && now_Page < total_Page)
+                {
+                    now_Page++;
+                    dataNavigator_Basic_Set.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
+                    domain.Discharge bs = new domain.Discharge();
+                    gridControl1.DataSource = fc.showData<domain.Discharge>(bs, now_Page.ToString());
+                }
+                else if (btn.Tag.ToString() == "上一页" && now_Page > 1)
+                {
+                    now_Page--;
+                    dataNavigator_Basic_Set.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
+                    domain.Discharge bs = new domain.Discharge();
+                    gridControl1.DataSource = fc.showData<domain.Discharge>(bs, now_Page.ToString());
+                }
+                else if (btn.Tag.ToString() == "首页")
+                {
+                    now_Page = 1;
+                    dataNavigator_Basic_Set.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
+                    domain.Discharge bs = new domain.Discharge();
+                    gridControl1.DataSource = fc.showData<domain.Discharge>(bs, now_Page.ToString());
+                }
+                else if (btn.Tag.ToString() == "尾页")
+                {
+                    now_Page = total_Page;
+                    dataNavigator_Basic_Set.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
+                    domain.Discharge bs = new domain.Discharge();
+                    gridControl1.DataSource = fc.showData<domain.Discharge>(bs, now_Page.ToString());
+                }
+            }
         }
     }
 }

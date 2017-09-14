@@ -35,7 +35,7 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
             if (Internal_Fleet.isExist)
             {
                 var guid = new Guid(Internal_Fleet.array[0]);
-                iv.ID = guid;
+                iv.ID = 1;
                 iv.car_driver = comboBox_driver.Text;
                 iv.car_number = comboBox_carnumber.Text;
                 iv.motorcade = comboBox_motorcade.Text;
@@ -45,7 +45,7 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
             }
             else
             {
-                iv.ID = Guid.NewGuid();
+                iv.ID = 1;
                 iv.car_driver = comboBox_driver.Text;
                 iv.car_number = comboBox_carnumber.Text;
                 iv.motorcade = comboBox_motorcade.Text;

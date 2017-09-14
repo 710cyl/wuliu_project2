@@ -33,6 +33,12 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
             //gridControl1.DataSource = fc.showData<domain.Internal_Vehicle>(iv, now_Page.ToString());
             domain.External_Vehicle ev = new domain.External_Vehicle();
             gridControl1.DataSource = fc.showData<domain.External_Vehicle>(ev, now_Page.ToString());
+
+            gridView1.Columns[0].Caption = "编号";
+            gridView1.Columns[1].Caption = "车队";
+            gridView1.Columns[2].Caption = "车号";
+            gridView1.Columns[3].Caption = "司机";
+            gridView1.Columns[4].Caption = "说明";
         }
 
         //取消
@@ -82,6 +88,12 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
             IsInternal = true;
             domain.Internal_Vehicle iv = new domain.Internal_Vehicle();
             gridControl1.DataSource = fc.showData<domain.Internal_Vehicle>(iv, now_Page.ToString());
+
+            gridView1.Columns[0].Caption = "编号";
+            gridView1.Columns[1].Caption = "车队";
+            gridView1.Columns[2].Caption = "车号";
+            gridView1.Columns[3].Caption = "司机";
+            gridView1.Columns[4].Caption = "说明";
         }
         //外部车队事件
         private void accordionControlElement4_Click(object sender, EventArgs e)
@@ -89,6 +101,12 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
             IsInternal = false;
             domain.External_Vehicle ev = new domain.External_Vehicle();
             gridControl1.DataSource = fc.showData<domain.External_Vehicle>(ev, now_Page.ToString());
+
+            gridView1.Columns[0].Caption = "编号";
+            gridView1.Columns[1].Caption = "车队";
+            gridView1.Columns[2].Caption = "车号";
+            gridView1.Columns[3].Caption = "司机";
+            gridView1.Columns[4].Caption = "说明";
         }
 
 

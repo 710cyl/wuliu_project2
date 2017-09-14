@@ -138,7 +138,7 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm
                 textBox14.Text = Panel2_MyWorkBench.TransferList.array[14];
                 textBox13.Text = Panel2_MyWorkBench.TransferList.array[6];
                 dateTimePicker2.Value =Convert.ToDateTime( Panel2_MyWorkBench.TransferList.array[7]);
-                textBox12.Text = Panel2_MyWorkBench.TransferList.array[8];
+                textBox12.Text = Sign_in.name;
                 dateTimePicker3.Value = Convert.ToDateTime(Panel2_MyWorkBench.TransferList.array[9]);
 
 
@@ -153,6 +153,8 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm
             {
                 DataGridViewInit();
                 textBox10.Text = fc.DateTimeToUnix("YK");
+                textBox12.Text = Sign_in.name;
+                textBox13.Text = Sign_in.name;
             }
 
             this.gridView1.Columns[0].Caption = "移库识别码";
@@ -462,6 +464,9 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm
                 string jsonMain_RU = JsonConvert.SerializeObject(storagemainOut);
 
                 fc.SaveData(jsonMain_RU, Json_RU, storagemainOut.GetType().Name.ToString(), "StorageDetailsOut");
+
+                MessageBox.Show("保存完毕");
+                Close();
             }
         }
 

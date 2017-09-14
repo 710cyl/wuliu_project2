@@ -1,11 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using NHibernate;
+using NHibernate.Cfg;
+using NHibernate.ByteCode.Castle;
+using domain;
+using WebSocketSharp;
+using Basic_SetTest;
+using System.Threading;
+using Newtonsoft.Json;
+using System.Reflection;
+using System.Data.OleDb;
+using Newtonsoft.Json.Converters;
+using Demo1._1._3.MyWorkBench_SkipForm;
+using System.IO;
+using DevExpress.XtraEditors;
+using System.Drawing.Printing;
 
 namespace Demo1._1._3._1_NewViews
 {
@@ -101,6 +116,28 @@ namespace Demo1._1._3._1_NewViews
             InitializeComponent();
             order_number = Demo1._1._3.Views.MyWorkBench_SkipForm.New_OutboundOrder.ordernum;
             gridControl1.DataSource = fc.getOutBounceCarDetails(order_number);
+
+            gridView1.Columns[0].Caption = "入库标识码";
+            gridView1.Columns[1].Caption = "订单号";
+            gridView1.Columns[2].Caption = "入库性质";
+            gridView1.Columns[3].Caption = "入库日期";
+            gridView1.Columns[4].Caption = "项目号";
+            gridView1.Columns[5].Caption = "卷号";
+            gridView1.Columns[6].Caption = "品种";
+            gridView1.Columns[7].Caption = "材质";
+            gridView1.Columns[8].Caption = "规格";
+            gridView1.Columns[9].Caption = "可派件数";
+            gridView1.Columns[10].Caption = "可派数量";
+            gridView1.Columns[11].Caption = "拟发件数";
+            gridView1.Columns[12].Caption = "拟发数量";
+            gridView1.Columns[13].Caption = "派车时间";
+            gridView1.Columns[14].Caption = "订单卸城";
+            gridView1.Columns[15].Caption = "订单卸区";
+            gridView1.Columns[16].Caption = "订单卸点";
+            gridView1.Columns[17].Caption = "垛位号";
+            gridView1.Columns[18].Caption = "备注";
+
+            gridView1.BestFitColumns();
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
@@ -144,6 +181,11 @@ namespace Demo1._1._3._1_NewViews
             {
                 gridControl1.DataSource = fc.showDataLike<domain.Outbound_Car_Detail>(ocd, now_Page.ToString(), input_val);
             }
+        }
+
+        private void dataNavigator_Basic_Set_ButtonClick(object sender, DevExpress.XtraEditors.NavigatorButtonClickEventArgs e)
+        {
+
         }
     }
 }

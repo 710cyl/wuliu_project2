@@ -27,6 +27,8 @@ namespace Demo1._1._3
 {
         public class FunctionClass //存有各个表功能的相关接口的接口定义
         {
+            private string IP = "localhost"; //ip地址
+            private string Host = "9000";  //端口信息
         /// <summary>
         /// 初始化分页
         /// </summary>
@@ -39,23 +41,22 @@ namespace Demo1._1._3
             }
 
              public long getTotal<T>(T t,long total_Page) //获得总条目函数
+        {
+            using (var ws = new WebSocket("ws://" + IP + ":" + Host + "/GetCount"))
             {
-                 using (var ws = new WebSocket("ws://localhost:9000/GetCount"))
-               {
-                    ws.Connect();
-                    string sendMsg = t.GetType().Name.ToString();
-                    ws.Send(sendMsg); //传类名
-                    while (total_Page == 0)
-                    {
-
+                ws.Connect();
+                string sendMsg = t.GetType().Name.ToString();
+                ws.Send(sendMsg); //传类名
+                while (total_Page == 0)
+                {
                     ws.OnMessage += (sender, e) =>
                     total_Page = (Convert.ToInt64(e.Data) / 5) + 1;
                     Thread.Sleep(500);
-                    }
-                    ws.Close();
-                 }
+                }
+                ws.Close();
+            }
                     return total_Page;
-             }
+        }
         /// <summary>
         /// 单表删除
         /// </summary>
@@ -80,13 +81,13 @@ namespace Demo1._1._3
         /// <param name="deleteIndex"></param>
         public void deleteData(string deleteIndex, string myclassname)
         {
-            using (var wsa = new WebSocket("ws://localhost:9000/GetClassName/Main"))
+            using (var wsa = new WebSocket("ws://"+IP+":"+Host+"/GetClassName/Main"))
             {
                 wsa.Connect();
                 wsa.Send(myclassname);
                 wsa.Close();
             }
-            using (var ws = new WebSocket("ws://localhost:9000/DeleteData"))
+            using (var ws = new WebSocket("ws://" + IP + ":" + Host + "/DeleteData"))
             {
                 ws.Connect();
                 ws.Send(deleteIndex);
@@ -115,12 +116,12 @@ namespace Demo1._1._3
         /// <param name="deleteIndex"></param>
         public void deleteMain(string deleteIndex,string classname)
         {
-            using (var wsn = new WebSocket("ws://localhost:9000/GetClassName/Main"))
+            using (var wsn = new WebSocket("ws://" + IP + ":" + Host + "/GetClassName/Main"))
             {
                 wsn.Connect();
                 wsn.Send(classname);
                 
-                using (var ws = new WebSocket("ws://localhost:9000/DeleteMain"))
+                using (var ws = new WebSocket("ws://" + IP + ":" + Host + "/DeleteMain"))
                 {
                     ws.Connect();
                     ws.Send(deleteIndex);
@@ -189,11 +190,11 @@ namespace Demo1._1._3
             List<T> bs = null;
             string msg = null;
             string sendMsg = t.GetType().Name.ToString();
-            using (var ws = new WebSocket("ws://localhost:9000/ShowData"))
+            using (var ws = new WebSocket("ws://" + IP + ":" + Host + "/ShowData"))
             {
                 ws.Connect();
                 ws.Send(sendMsg);
-                using (var wsp = new WebSocket("ws://localhost:9000/NowPage"))
+                using (var wsp = new WebSocket("ws://" + IP + ":" + Host + "/NowPage"))
                 {
                     wsp.Connect();
                     wsp.Send(nowpage);
@@ -223,12 +224,12 @@ namespace Demo1._1._3
         public void SaveData(string jsonMain, string Json, string main, string detail)
         {
 
-            using (var wsn = new WebSocket("ws://localhost:9000/GetClassName/Main"))
+            using (var wsn = new WebSocket("ws://" + IP + ":" + Host + "/GetClassName/Main"))
             {
                 wsn.Connect();
                 wsn.Send(main);
                
-                using (var wsm = new WebSocket("ws://localhost:9000/MainSave")) //保存主表
+                using (var wsm = new WebSocket("ws://"+IP+":"+Host+"/MainSave")) //保存主表
                 {
                     wsm.Connect();
                     wsm.Send(jsonMain);
@@ -240,12 +241,12 @@ namespace Demo1._1._3
                 wsn.Close();
             }
             Thread.Sleep(2000);
-            using (var wsn = new WebSocket("ws://localhost:9000/GetClassName/Detail"))
+            using (var wsn = new WebSocket("ws://" + IP + ":" + Host + "/GetClassName/Detail"))
             {
                 wsn.Connect();
                 wsn.Send(detail);
 
-                using (var ws = new WebSocket("ws://localhost:9000/MutiSave")) //保存明细表
+                using (var ws = new WebSocket("ws://"+IP+":"+Host+"/MutiSave")) //保存明细表
                 {
                     ws.Connect();
                     ws.Send(Json);
@@ -262,12 +263,12 @@ namespace Demo1._1._3
         public string GridViewInit(string name)
         {
             string json = null;
-            using (var wsn = new WebSocket("ws://localhost:9000/GetClassName/Main"))
+            using (var wsn = new WebSocket("ws://" + IP + ":" + Host + "/GetClassName/Main"))
             {
                 wsn.Connect();
                 wsn.Send(name);
 
-                using (var ws = new WebSocket("ws://localhost:9000/GetField"))
+                using (var ws = new WebSocket("ws://" + IP + ":" + Host + "/GetField"))
                 {
                     ws.Connect();
                      ws.Send("GetFieldDetail!!");
@@ -294,11 +295,11 @@ namespace Demo1._1._3
         public string FindDeteils(string primaryKey,string detailsname)
         {
             string msg = null;
-            using (var wsn = new WebSocket("ws://localhost:9000/GetClassName/Detail"))
+            using (var wsn = new WebSocket("ws://" + IP + ":" + Host + "/GetClassName/Detail"))
             {
                 wsn.Connect();
                 wsn.Send(detailsname);
-                using (var ws = new WebSocket("ws://localhost:9000/FindDetails"))
+                using (var ws = new WebSocket("ws://" + IP + ":" + Host + "/FindDetails"))
                 {
                     ws.Connect();
                     ws.Send(primaryKey);
@@ -323,7 +324,7 @@ namespace Demo1._1._3
         public string FindDate(string Transpot_ID)
         {
             string msg = null;
-            using (var ws = new WebSocket("ws://localhost:9000/ServerTransportationRegister"))
+            using (var ws = new WebSocket("ws://" + IP + ":" + Host + "/ServerTransportationRegister"))
             {
                 ws.Connect();
                 ws.Send(Transpot_ID);
@@ -346,7 +347,7 @@ namespace Demo1._1._3
         public string Finddate(string Price_ID)
         {
             string msg = null;
-            using (var ws = new WebSocket("ws://localhost:9000/ServerFleetPrice"))
+            using (var ws = new WebSocket("ws://" + IP + ":" + Host + "/ServerFleetPrice"))
             {
                 ws.Connect();
                 ws.Send(Price_ID);
@@ -369,7 +370,7 @@ namespace Demo1._1._3
         public string finddate(string Price_ID)
         {
             string msg = null;
-            using (var ws = new WebSocket("ws://localhost:9000/ServerShipperPrice"))
+            using (var ws = new WebSocket("ws://" + IP + ":" + Host + "/ServerShipperPrice"))
             {
                 ws.Connect();
                 ws.Send(Price_ID);
@@ -394,7 +395,7 @@ namespace Demo1._1._3
         public void ChangeData(string jsonMain, string Json, string main, string detail)
         {
             string error = null;
-            using (var wsn = new WebSocket("ws://localhost:9000/GetClassName/Main"))
+            using (var wsn = new WebSocket("ws://" + IP + ":" + Host + "/GetClassName/Main"))
             {
                 try
                 {
@@ -407,7 +408,7 @@ namespace Demo1._1._3
                     throw;
                 }
                 
-                using (var wsm = new WebSocket("ws://localhost:9000/MainChange")) //修改主表
+                using (var wsm = new WebSocket("ws://" + IP + ":" + Host + "/MainChange")) //修改主表
                 {
                     try
                     {
@@ -431,11 +432,11 @@ namespace Demo1._1._3
                 wsn.Close();
             }
           Thread.Sleep(1500);
-            using (var wsn = new WebSocket("ws://localhost:9000/GetClassName/Detail"))
+            using (var wsn = new WebSocket("ws://" + IP + ":" + Host + "/GetClassName/Detail"))
             {
                 wsn.Connect();
                 wsn.Send(detail);
-                using (var ws = new WebSocket("ws://localhost:9000/DetailsChange")) //修改明细表
+                using (var ws = new WebSocket("ws://" + IP + ":" + Host + "/DetailsChange")) //修改明细表
                 {
                     try
                     {
@@ -503,11 +504,11 @@ namespace Demo1._1._3
         {
             string json = null;
             json = JsonConvert.SerializeObject(t);
-            using (var wsa = new WebSocket("ws://localhost:9000/GetClassName/Main"))
+            using (var wsa = new WebSocket("ws://" + IP + ":" + Host + "/GetClassName/Main"))
             {
                 wsa.Connect();
                 wsa.Send(myclassname);
-                using (var ws = new WebSocket("ws://localhost:9000/SaveData"))
+                using (var ws = new WebSocket("ws://" + IP + ":" + Host + "/SaveData"))
                 {
                     ws.Connect();
                     ws.Send(json);
@@ -525,13 +526,13 @@ namespace Demo1._1._3
             string json;
             json = JsonConvert.SerializeObject(t);
 
-            using (var wsa = new WebSocket("ws://localhost:9000/GetClassName/Main"))
+            using (var wsa = new WebSocket("ws://" + IP + ":" + Host + "/GetClassName/Main"))
             {
                 wsa.Connect();
                 wsa.Send(myclassname);
                 wsa.Close();
             }
-            using (var ws = new WebSocket("ws://localhost:9000/UpdateData"))
+            using (var ws = new WebSocket("ws://" + IP + ":" + Host + "/UpdateData"))
             {
                 ws.Connect();
                 ws.Send(json);
@@ -554,17 +555,17 @@ namespace Demo1._1._3
             List<T> bs = null;
             string msg = null;
             string sendMsg = t.GetType().Name.ToString();
-            using (var ws = new WebSocket("ws://localhost:9000/ShowDataLike"))
+            using (var ws = new WebSocket("ws://" + IP + ":" + Host + "/ShowDataLike"))
             {
                 ws.Connect();
                 ws.Send(sendMsg);
-                using (var wsp = new WebSocket("ws://localhost:9000/GetValLike"))
+                using (var wsp = new WebSocket("ws://" + IP + ":" + Host + "/GetValLike"))
                 {
                     wsp.Connect();
                     wsp.Send(input_val);
                     wsp.Close();
                 }
-                using (var wb = new WebSocket("ws://localhost:9000/NowPage"))
+                using (var wb = new WebSocket("ws://" + IP + ":" + Host + "/NowPage"))
                 {
                     wb.Connect();
                     wb.Send(nowpage);
@@ -605,7 +606,7 @@ namespace Demo1._1._3
         {
             string msg = null;
            
-            using (var ws = new WebSocket("ws://localhost:9000/Combobox/Combobox_StorageWay"))
+            using (var ws = new WebSocket("ws://" + IP + ":" + Host + "/Combobox/Combobox_StorageWay"))
             {
                 ws.Connect();
                 ws.Send("combobox");
@@ -630,7 +631,7 @@ namespace Demo1._1._3
         {
             string msg = null;
 
-            using (var ws = new WebSocket("ws://localhost:9000/Combobox/Combobox_StorageName"))
+            using (var ws = new WebSocket("ws://" + IP + ":" + Host + "/Combobox/Combobox_StorageName"))
             {
                 ws.Connect();
                 ws.Send("Combobox_StorageName");
@@ -654,7 +655,7 @@ namespace Demo1._1._3
         {
             string msg = null;
 
-            using (var ws = new WebSocket("ws://localhost:9000/Combobox/Combobox_keeper"))
+            using (var ws = new WebSocket("ws://" + IP + ":" + Host + "/Combobox/Combobox_keeper"))
             {
                 ws.Connect();
                 ws.Send("Combobox_keeper");
@@ -678,7 +679,7 @@ namespace Demo1._1._3
         {
             string msg = null;
 
-            using (var ws = new WebSocket("ws://localhost:9000/Combobox/Combobox_Crane"))
+            using (var ws = new WebSocket("ws://" + IP + ":" + Host + "/Combobox/Combobox_Crane"))
             {
                 ws.Connect();
                 ws.Send("Combobox_Crane");
@@ -702,7 +703,7 @@ namespace Demo1._1._3
         {
             string msg = null;
 
-            using (var ws = new WebSocket("ws://localhost:9000/Combobox/Combobox_CraneNumber"))
+            using (var ws = new WebSocket("ws://" + IP + ":" + Host + "/Combobox/Combobox_CraneNumber"))
             {
                 ws.Connect();
                 ws.Send("Combobox_CraneNumber");
@@ -727,7 +728,7 @@ namespace Demo1._1._3
         {
             string msg = null;
 
-            using (var ws = new WebSocket("ws://localhost:9000/Combobox/Combobox_Loader"))
+            using (var ws = new WebSocket("ws://" + IP + ":" + Host + "/Combobox/Combobox_Loader"))
             {
                 ws.Connect();
                 ws.Send("Combobox_Loader");
@@ -751,7 +752,7 @@ namespace Demo1._1._3
         {
             string msg = null;
 
-            using (var ws = new WebSocket("ws://localhost:9000/Combobox/Combobox_Variety"))
+            using (var ws = new WebSocket("ws://" + IP + ":" + Host + "/Combobox/Combobox_Variety"))
             {
                 ws.Connect();
                 ws.Send("Combobox_Variety");
@@ -775,7 +776,7 @@ namespace Demo1._1._3
         {
             string msg = null;
 
-            using (var ws = new WebSocket("ws://localhost:9000/Combobox/Combobox_AddRole"))
+            using (var ws = new WebSocket("ws://" + IP + ":" + Host + "/Combobox/Combobox_AddRole"))
             {
                 ws.Connect();
                 ws.Send("Combobox_AddRole");
@@ -799,7 +800,7 @@ namespace Demo1._1._3
         {
             string msg = null;
 
-            using (var ws = new WebSocket("ws://localhost:9000/Combobox/Combobox_Texture"))
+            using (var ws = new WebSocket("ws://" + IP + ":" + Host + "/Combobox/Combobox_Texture"))
             {
                 ws.Connect();
                 ws.Send("Combobox_Texture");
@@ -823,7 +824,7 @@ namespace Demo1._1._3
         {
             string msg = null;
 
-            using (var ws = new WebSocket("ws://localhost:9000/Combobox/Combobox_refundMode"))
+            using (var ws = new WebSocket("ws://" + IP + ":" + Host + "/Combobox/Combobox_refundMode"))
             {
                 ws.Connect();
                 ws.Send("?????");
@@ -844,7 +845,7 @@ namespace Demo1._1._3
         public List<string> getTransportation()
         {
             string msg = null;
-            using (var ws = new WebSocket("ws://localhost:9000/Combobox/Combobox_Transportation"))
+            using (var ws = new WebSocket("ws://" + IP + ":" + Host + "/Combobox/Combobox_Transportation"))
             {
                 ws.Connect();
                 ws.Send("Combobox_Transportation");
@@ -869,7 +870,7 @@ namespace Demo1._1._3
         {
             string msg = null;
 
-            using (var ws = new WebSocket("ws://localhost:9000/ServerStorageDetails"))
+            using (var ws = new WebSocket("ws://" + IP + ":" + Host + "/ServerStorageDetails"))
             {
                 ws.Connect();
                 ws.Send(storagename);
@@ -894,7 +895,7 @@ namespace Demo1._1._3
         {
             string msg = null;
 
-            using (var ws = new WebSocket("ws://localhost:9000/Combobox/Combobox_oilVariety"))
+            using (var ws = new WebSocket("ws://" + IP + ":" + Host + "/Combobox/Combobox_oilVariety"))
             {
                 ws.Connect();
                 ws.Send("?????");
@@ -917,7 +918,7 @@ namespace Demo1._1._3
         {
             string msg = null;
 
-            using (var ws = new WebSocket("ws://localhost:9000/ServerOutBounceCar"))
+            using (var ws = new WebSocket("ws://" + IP + ":" + Host + "/ServerOutBounceCar"))
             {
                 ws.Connect();
                 ws.Send("ServerOutBounceCar");
@@ -941,7 +942,7 @@ namespace Demo1._1._3
         {
             string msg = null;
 
-            using (var ws = new WebSocket("ws://localhost:9000/ServerOuBounceCarDetails"))
+            using (var ws = new WebSocket("ws://" + IP + ":" + Host + "/ServerOuBounceCarDetails"))
             {
                 ws.Connect();
                 ws.Send(storagename);

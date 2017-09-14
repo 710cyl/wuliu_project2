@@ -897,8 +897,10 @@
             this.textBox21.Location = new System.Drawing.Point(761, 192);
             this.textBox21.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox21.Name = "textBox21";
+            this.textBox21.ReadOnly = true;
             this.textBox21.Size = new System.Drawing.Size(183, 25);
             this.textBox21.TabIndex = 48;
+            this.textBox21.Click += new System.EventHandler(this.textBox15_Click_1);
             // 
             // label3
             // 
@@ -932,8 +934,10 @@
             this.textBox20.Location = new System.Drawing.Point(439, 192);
             this.textBox20.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox20.Name = "textBox20";
+            this.textBox20.ReadOnly = true;
             this.textBox20.Size = new System.Drawing.Size(183, 25);
             this.textBox20.TabIndex = 46;
+            this.textBox20.Click += new System.EventHandler(this.textBox15_Click_1);
             // 
             // label4
             // 
@@ -967,8 +971,10 @@
             this.textBox15.Location = new System.Drawing.Point(116, 191);
             this.textBox15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox15.Name = "textBox15";
+            this.textBox15.ReadOnly = true;
             this.textBox15.Size = new System.Drawing.Size(183, 25);
             this.textBox15.TabIndex = 44;
+            this.textBox15.Click += new System.EventHandler(this.textBox15_Click_1);
             // 
             // label22
             // 

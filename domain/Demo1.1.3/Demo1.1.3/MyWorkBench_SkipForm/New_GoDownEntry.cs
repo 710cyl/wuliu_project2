@@ -73,10 +73,13 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
 
         }
 
-        
 
-        
-
+        void setDischargeValue(string a, string b, string c)
+        {
+            textBox15.Text = b;
+            textBox20.Text = a;
+            textBox21.Text = c;
+        }
         
         public New_GoDownEntry()
         {
@@ -124,7 +127,7 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
                 textBox11.Text = Panel2_MyWorkBench.GodownEntry.array[10];
                 textBox13.Text = Panel2_MyWorkBench.GodownEntry.array[11];
                 dateTimePicker1.Value = Convert.ToDateTime(Panel2_MyWorkBench.GodownEntry.array[12]);
-                textBox14.Text = Panel2_MyWorkBench.GodownEntry.array[13];
+                textBox14.Text = Sign_in.name;
                 dateTimePicker3.Value = Convert.ToDateTime(Panel2_MyWorkBench.GodownEntry.array[14]);
                 comboBox3.Text = Panel2_MyWorkBench.GodownEntry.array[15];
                 comboBox4.Text = Panel2_MyWorkBench.GodownEntry.array[16];
@@ -149,6 +152,8 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
             {
                 DataGridViewInit();
                 textBox2.Text = fc.DateTimeToUnix("RK");
+                textBox14.Text = Sign_in.name;
+                textBox13.Text = Sign_in.name;
             }
 
             this.gridView1.Columns[0].Caption = "入库单识别码";
@@ -524,6 +529,12 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
                 discharge_form.ReturnEvent += new TabbedSection_Discharge.ClickCity(getDischargeValue);
                 discharge_form.ShowDialog();
             }
+        }
+
+        private void textBox15_Click_1(object sender, EventArgs e) //发卸
+        {
+            discharge_form.ReturnEvent += new TabbedSection_Discharge.ClickCity(setDischargeValue);
+            discharge_form.ShowDialog();
         }
     }
 }

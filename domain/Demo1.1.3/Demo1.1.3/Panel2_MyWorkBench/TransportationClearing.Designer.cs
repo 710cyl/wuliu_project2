@@ -30,6 +30,7 @@
         {
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.dataNavigator_TransportationClearing_Detail = new DevExpress.XtraEditors.DataNavigator();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -76,18 +77,17 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataNavigator_TransportationClearing_Main = new DevExpress.XtraEditors.DataNavigator();
-            this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
-            this.dataNavigator_TransportationClearing_Detail = new DevExpress.XtraEditors.DataNavigator();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPane1
@@ -95,15 +95,15 @@
             this.tabPane1.BackColor = System.Drawing.SystemColors.Control;
             this.tabPane1.Controls.Add(this.tabNavigationPage1);
             this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabPane1.Location = new System.Drawing.Point(0, 293);
-            this.tabPane1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPane1.Location = new System.Drawing.Point(0, 295);
+            this.tabPane1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPane1.Name = "tabPane1";
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabNavigationPage1});
-            this.tabPane1.RegularSize = new System.Drawing.Size(1432, 556);
+            this.tabPane1.RegularSize = new System.Drawing.Size(1432, 554);
             this.tabPane1.SelectedPage = this.tabNavigationPage1;
             this.tabPane1.SelectedPageIndex = 0;
-            this.tabPane1.Size = new System.Drawing.Size(1432, 556);
+            this.tabPane1.Size = new System.Drawing.Size(1432, 554);
             this.tabPane1.TabIndex = 28;
             // 
             // tabNavigationPage1
@@ -113,19 +113,63 @@
             this.tabNavigationPage1.Caption = "运输结算_明细";
             this.tabNavigationPage1.Controls.Add(this.dataNavigator_TransportationClearing_Detail);
             this.tabNavigationPage1.Controls.Add(this.gridControl2);
-            this.tabNavigationPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabNavigationPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
-            this.tabNavigationPage1.Size = new System.Drawing.Size(1410, 498);
+            this.tabNavigationPage1.Size = new System.Drawing.Size(1410, 496);
+            // 
+            // dataNavigator_TransportationClearing_Detail
+            // 
+            this.dataNavigator_TransportationClearing_Detail.Appearance.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataNavigator_TransportationClearing_Detail.Appearance.Options.UseBackColor = true;
+            this.dataNavigator_TransportationClearing_Detail.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.Append.Enabled = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.Append.Visible = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.CancelEdit.Enabled = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.CancelEdit.Visible = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.EnabledAutoRepeat = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.EndEdit.Enabled = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.EndEdit.Visible = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.First.Enabled = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.First.Visible = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.Last.Enabled = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.Last.Visible = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.Next.Enabled = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.Next.Visible = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.NextPage.Enabled = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.NextPage.Visible = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.Prev.Enabled = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.Prev.Visible = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.PrevPage.Enabled = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.PrevPage.Visible = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.Remove.Enabled = false;
+            this.dataNavigator_TransportationClearing_Detail.Buttons.Remove.Visible = false;
+            this.dataNavigator_TransportationClearing_Detail.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.dataNavigator_TransportationClearing_Detail.CustomButtons.AddRange(new DevExpress.XtraEditors.NavigatorCustomButton[] {
+            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 0, true, true, "首页", "首页"),
+            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 1, true, true, "上一页", "上一页"),
+            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 4, true, true, "下一页", "下一页"),
+            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 5, true, true, "尾页", "尾页")});
+            this.dataNavigator_TransportationClearing_Detail.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataNavigator_TransportationClearing_Detail.Location = new System.Drawing.Point(0, 464);
+            this.dataNavigator_TransportationClearing_Detail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataNavigator_TransportationClearing_Detail.Name = "dataNavigator_TransportationClearing_Detail";
+            this.dataNavigator_TransportationClearing_Detail.ShowToolTips = true;
+            this.dataNavigator_TransportationClearing_Detail.Size = new System.Drawing.Size(1410, 32);
+            this.dataNavigator_TransportationClearing_Detail.TabIndex = 42;
+            this.dataNavigator_TransportationClearing_Detail.Text = "dataNavigator2";
+            this.dataNavigator_TransportationClearing_Detail.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Begin;
+            this.dataNavigator_TransportationClearing_Detail.TextStringFormat = "第 {0}页，共 {1}页";
+            this.dataNavigator_TransportationClearing_Detail.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.dataNavigator_TransportationClearing_Detail_ButtonClick);
             // 
             // gridControl2
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridControl2.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl2.Location = new System.Drawing.Point(0, 0);
             this.gridControl2.MainView = this.gridView2;
-            this.gridControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridControl2.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1410, 498);
+            this.gridControl2.Size = new System.Drawing.Size(1410, 496);
             this.gridControl2.TabIndex = 22;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -453,7 +497,7 @@
             this.panel1.Controls.Add(this.gridControl1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 27);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1432, 260);
             this.panel1.TabIndex = 29;
@@ -502,68 +546,6 @@
             this.dataNavigator_TransportationClearing_Main.TextStringFormat = "第 {0}页，共 {1}页";
             this.dataNavigator_TransportationClearing_Main.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.dataNavigator_TransportationClearing_Main_ButtonClick);
             // 
-            // splitterControl1
-            // 
-            this.splitterControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.splitterControl1.Location = new System.Drawing.Point(0, 287);
-            this.splitterControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.splitterControl1.Name = "splitterControl1";
-            this.splitterControl1.Size = new System.Drawing.Size(1432, 6);
-            this.splitterControl1.TabIndex = 38;
-            this.splitterControl1.TabStop = false;
-            // 
-            // dataNavigator_TransportationClearing_Detail
-            // 
-            this.dataNavigator_TransportationClearing_Detail.Appearance.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataNavigator_TransportationClearing_Detail.Appearance.Options.UseBackColor = true;
-            this.dataNavigator_TransportationClearing_Detail.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.Append.Enabled = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.Append.Visible = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.CancelEdit.Enabled = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.CancelEdit.Visible = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.EnabledAutoRepeat = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.EndEdit.Enabled = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.EndEdit.Visible = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.First.Enabled = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.First.Visible = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.Last.Enabled = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.Last.Visible = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.Next.Enabled = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.Next.Visible = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.NextPage.Enabled = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.NextPage.Visible = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.Prev.Enabled = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.Prev.Visible = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.PrevPage.Enabled = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.PrevPage.Visible = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.Remove.Enabled = false;
-            this.dataNavigator_TransportationClearing_Detail.Buttons.Remove.Visible = false;
-            this.dataNavigator_TransportationClearing_Detail.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.dataNavigator_TransportationClearing_Detail.CustomButtons.AddRange(new DevExpress.XtraEditors.NavigatorCustomButton[] {
-            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 0, true, true, "首页", "首页"),
-            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 1, true, true, "上一页", "上一页"),
-            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 4, true, true, "下一页", "下一页"),
-            new DevExpress.XtraEditors.NavigatorCustomButton(-1, 5, true, true, "尾页", "尾页")});
-            this.dataNavigator_TransportationClearing_Detail.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataNavigator_TransportationClearing_Detail.Location = new System.Drawing.Point(0, 466);
-            this.dataNavigator_TransportationClearing_Detail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataNavigator_TransportationClearing_Detail.Name = "dataNavigator_TransportationClearing_Detail";
-            this.dataNavigator_TransportationClearing_Detail.ShowToolTips = true;
-            this.dataNavigator_TransportationClearing_Detail.Size = new System.Drawing.Size(1410, 32);
-            this.dataNavigator_TransportationClearing_Detail.TabIndex = 42;
-            this.dataNavigator_TransportationClearing_Detail.Text = "dataNavigator2";
-            this.dataNavigator_TransportationClearing_Detail.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Begin;
-            this.dataNavigator_TransportationClearing_Detail.TextStringFormat = "第 {0}页，共 {1}页";
-            this.dataNavigator_TransportationClearing_Detail.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.dataNavigator_TransportationClearing_Detail_ButtonClick);
-            // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.Editable = false;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
-            // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -577,6 +559,24 @@
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
+            // 
+            // splitterControl1
+            // 
+            this.splitterControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.splitterControl1.Location = new System.Drawing.Point(0, 287);
+            this.splitterControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.splitterControl1.Name = "splitterControl1";
+            this.splitterControl1.Size = new System.Drawing.Size(1432, 8);
+            this.splitterControl1.TabIndex = 38;
+            this.splitterControl1.TabStop = false;
+            // 
             // TransportationClearing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -585,7 +585,7 @@
             this.Controls.Add(this.splitterControl1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TransportationClearing";
             this.Size = new System.Drawing.Size(1432, 849);
             this.tabPane1.ResumeLayout(false);
@@ -595,8 +595,8 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

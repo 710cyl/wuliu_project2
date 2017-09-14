@@ -2,8 +2,8 @@
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="domain" namespace="domain">
   <class name="Basic_Set" table="T_Basic_Set" >
     
-    <id name="ID" column="编号" type="Guid">
-      <generator class="assigned" />
+    <id name="ID" column="编号" type="int">
+      <generator class="identity" />
     </id>
 
     <property name="position_Set" type="string">
@@ -67,8 +67,8 @@
   </class>
 
   <class  name="Internal_Vehicle" table="T_Internal_Vehicle">
-     <id name="ID" column="编号" type="Guid">
-      <generator class="assigned" />
+     <id name="ID" column="编号" type="int">
+      <generator class="identity" />
     </id>
   
     <property name="motorcade" type="string">
@@ -110,19 +110,19 @@
     </property>
 
     <property name="initial_balance" type="decimal">
-      <column name="期初余额" length="12" precision="2"/>
+      <column name="期初余额" length="12" precision="3" sql-type="decimal(12,3)" />
     </property>
 
     <property name="collection_sum" type="decimal">
-      <column name="收款总额" length="12" precision="2"/>
+      <column name="收款总额" length="12"  precision="3" sql-type="decimal(12,3)" />
     </property>
 
     <property name="payment_sum" type="decimal">
-      <column name="付款总额" length="12" precision="2"/>
+      <column name="付款总额" length="12"  precision="3" sql-type="decimal(12,3)" />
     </property>
 
     <property name="remaining_sum" type="decimal">
-      <column name="现余额" length="12" precision="2"/>
+      <column name="现余额" length="12"  precision="3" sql-type="decimal(12,3)" />
     </property>
 
     <property name="statement" type="string">

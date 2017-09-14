@@ -61,7 +61,7 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
             if (Basic_Set.isExist)
             {
                 var guid = new Guid(Basic_Set.array[0]);
-                bs.ID = guid;
+                bs.ID = 1;
                 bs.position_Set = textBox_position_Set.Text;
                 bs.account_Receive = Convert.ToDecimal(textBox_account_Receive.Text);
                 bs.account_Pay = Convert.ToDecimal(textBox_account_Pay.Text);
@@ -81,7 +81,7 @@ namespace Demo1._1._3.MyWorkBench_SkipForm
             }
             else
             {
-                bs.ID = Guid.NewGuid();
+                bs.ID = 1;
                 bs.position_Set = textBox_position_Set.Text;
                 bs.account_Receive = Convert.ToDecimal(textBox_account_Receive.Text);
                 bs.account_Pay = Convert.ToDecimal(textBox_account_Pay.Text);

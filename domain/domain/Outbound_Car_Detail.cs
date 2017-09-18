@@ -16,10 +16,13 @@ namespace domain
         /// </summary>
         public virtual string store_code { get; set; }
 
+       
+
         /// <summary>
-        /// 订单号
+        /// 派车单号
         /// </summary>
-        public virtual string order_num { get; set; }
+        public virtual string sendcar_num { get; set; }
+
 
         /// <summary>
         /// 入库性质
@@ -30,7 +33,11 @@ namespace domain
         /// </summary>
         public virtual DateTime store_date { get; set; }
 
-       
+        /// <summary>
+        /// 订单号
+        /// </summary>
+        public virtual string order_num { get; set; }
+
         /// <summary>
         /// 项目号
         /// </summary>

@@ -65,10 +65,14 @@ namespace Demo1._1._3
         private void toolStripButton1_Click(object sender, EventArgs e) //新建
         {
             panel3.Visible = true;
+            isExist = false;
+            textBox9.Text = Sign_in.name;
+            textBox11.Text = Sign_in.name;
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e) //修改
         {
+            isExist = true;
             colCount = gridView2.Columns.Count();
             array = new string[colCount];
             for (int i = 0; i < colCount; i++)
@@ -78,7 +82,11 @@ namespace Demo1._1._3
             if (array[0].Length > 0)
             {
                 isExist = true;
-                
+                panel3.Visible = true;
+                textBox1.Text = array[1];
+                textBox3.Text = array[2];
+                textBox22.Text = array[3];
+                textBox20.Text = array[4];
             }
             else
             {
@@ -151,6 +159,35 @@ namespace Demo1._1._3
                     domain.Internal_Vehicle bs = new domain.Internal_Vehicle();
                     gridControl2.DataSource = fc.showData<domain.Internal_Vehicle>(bs, now_Page.ToString());
                 }
+            }
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e) //关闭
+        {
+            panel3.Visible = false;
+            simpleButton4.Visible = true;
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e) //保存
+        {
+            if (isExist == false)
+            {
+                domain.Internal_Vehicle iv = new Internal_Vehicle();
+                iv.motorcade = textBox1.Text;
+                iv.car_number = textBox3.Text;
+                iv.car_driver = textBox22.Text;
+                iv.statement = textBox20.Text;
+                fc.saveData(iv, "Internal_Vehicle");
+            }
+            else if (isExist == true)
+            {
+                domain.Internal_Vehicle iv = new Internal_Vehicle();
+                iv.ID = Convert.ToInt32(array[0]);
+                iv.motorcade = textBox1.Text;
+                iv.car_number = textBox3.Text;
+                iv.car_driver = textBox22.Text;
+                iv.statement = textBox20.Text;
+                fc.updateData(iv, "Internal_Vehicle");
             }
         }
     }

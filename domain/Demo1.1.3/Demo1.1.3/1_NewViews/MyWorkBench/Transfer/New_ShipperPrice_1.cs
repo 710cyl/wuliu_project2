@@ -152,7 +152,11 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
         {
             domain.ShipperPrice_Detail sd = new domain.ShipperPrice_Detail()
             { transport_identifying = string.Format("{0}-{1}", textBox5.Text, ShipperPrice_Detail.Count + 1), price_ID = textBox5.Text,
-              back_date = Convert.ToDateTime(DateTime.Now.ToString()), depart_date = Convert.ToDateTime(DateTime.Now.ToString())
+              back_date = Convert.ToDateTime(DateTime.Now.ToString()), depart_date = Convert.ToDateTime(DateTime.Now.ToString()),
+                number = 0,
+                quantity = 0,
+                owner_fare = 0,
+                owner_amount = 0
             };
             ShipperPrice_Detail.Add(sd);
         }
@@ -196,21 +200,12 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
                 sfm.enter_time = dateTimePicker1.Value;
                 sfm.change_staff = textBox12.Text;
                 sfm.change_time = dateTimePicker2.Value;
-                int number = 0;
-                double total_money = 0;
-                double fare = 0;
-                int rowCount = ShipperPrice_Detail.Count;
-                for (int i = 0; i < rowCount; i++)
-                {
-                    number += Convert.ToInt32(this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[14]));
-                    total_money += Convert.ToInt32(this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[16]));
-                    fare += Convert.ToInt32(this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[15]));
-                }
+
                 textBox1.Text = Convert.ToString(numberSum);
                 textBox2.Text = Convert.ToString(quantitySum);
                 textBox6.Text = Convert.ToString(owner_fareSum);
                 textBox7.Text = Convert.ToString(owner_amountSum);
-
+                sfm.total_money = Convert.ToDecimal(textBox7.Text);
 
                 //List<domain.ShipperPrice_Detail> sd = ShipperPrice_Detail.ToList<domain.ShipperPrice_Detail>();
                 string Json = JsonConvert.SerializeObject(this.gridControl1.DataSource);
@@ -230,20 +225,12 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
                 sfm.enter_time = Convert.ToDateTime(dateTimePicker1.Text);
                 sfm.change_staff = textBox12.Text;
                 sfm.change_time = Convert.ToDateTime(dateTimePicker2.Text);
-                int number = 0;
-                double total_money = 0;
-                double fare = 0;
-                int rowCount = ShipperPrice_Detail.Count;
-                for (int i = 0; i < rowCount; i++)
-                {
-                    number += Convert.ToInt32(this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[14]));
-                    total_money += Convert.ToInt32(this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[16]));
-                    fare += Convert.ToInt32(this.gridView1.GetRowCellDisplayText(i, gridView1.Columns[15]));
-                }
+              
                 textBox1.Text = Convert.ToString(numberSum);
                 textBox2.Text = Convert.ToString(quantitySum);
                 textBox6.Text = Convert.ToString(owner_fareSum);
                 textBox7.Text = Convert.ToString(owner_amountSum);
+                sfm.total_money = Convert.ToDecimal(textBox7.Text);
                 ////如果新建的货主定价的明细表的运输单标识等于运输登记明细表的运输单标识则将填充运输登记明细表的运输单标识
                 //for (int i = 0; i < ShipperPrice_Detail.Count; i++)
                 //{
@@ -341,6 +328,41 @@ namespace Demo1._1._3.Views.MyWorkBench_SkipForm.Transport
             this.gridView1.SetRowCellValue((ShipperPrice_Detail.Count - 1), gridView1.Columns[18], a);
             this.gridView1.SetRowCellValue((ShipperPrice_Detail.Count - 1), gridView1.Columns[19], b);
             this.gridView1.SetRowCellValue((ShipperPrice_Detail.Count - 1), gridView1.Columns[20], c);
+        }
+
+        private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            if (gridView1.FocusedColumn == gridView1.Columns[13])
+            {
+                for (int i = 0; i < gridView1.RowCount; i++)
+                    numberSum += Convert.ToInt32(gridView1.GetRowCellDisplayText(i, gridView1.Columns[13]));
+                textBox1.Text = numberSum.ToString();
+                numberSum = 0;
+            }
+
+            else if (gridView1.FocusedColumn == gridView1.Columns[14])
+            {
+                for (int i = 0; i < gridView1.RowCount; i++)
+                    quantitySum += Convert.ToDouble(gridView1.GetRowCellDisplayText(i, gridView1.Columns[14]));
+                textBox2.Text = quantitySum.ToString();
+                quantitySum = 0;
+            }
+
+            else if (gridView1.FocusedColumn == gridView1.Columns[15])
+            {
+                for (int i = 0; i < gridView1.RowCount; i++)
+                    owner_fareSum += Convert.ToDouble(gridView1.GetRowCellDisplayText(i, gridView1.Columns[15]));
+                textBox6.Text = owner_fareSum.ToString();
+                owner_fareSum = 0;
+            }
+
+            else if (gridView1.FocusedColumn == gridView1.Columns[16])
+            {
+                for (int i = 0; i < gridView1.RowCount; i++)
+                    owner_amountSum += Convert.ToDouble(gridView1.GetRowCellDisplayText(i, gridView1.Columns[16]));
+                textBox7.Text = owner_amountSum.ToString();
+                owner_amountSum = 0;
+            }
         }
     }
 }

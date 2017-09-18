@@ -58,7 +58,7 @@ namespace Demo1._1._3
                 Form1 form = new Form1();
                 form.ShowDialog();
 
-                Close();
+                this.Close();
                 
             }
             else

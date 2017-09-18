@@ -9,27 +9,27 @@ using Newtonsoft.Json;
 namespace wuliuDAO
 {
     
-    public class Outbound_CarDAO : IOutbound_CarDAO
+    public class YaohaoPacDAO : IYaohaoPacDAO
     {
         private ISessionFactory sessionFactory;
 
-        public Outbound_CarDAO()
+        public YaohaoPacDAO()
         {
             var cfg = new NHibernate.Cfg.Configuration().Configure("Config/hibernate.cfg.xml");
             sessionFactory = cfg.BuildSessionFactory();
         }
 
-        public object Save(domain.Outbound_Car entity)
+        public object Save(domain.YaohaoPac entity)
         {
             using (ISession session = sessionFactory.OpenSession())
             {
-                var sendcar_num = session.Save(entity);
+                var package_num = session.Save(entity);
                 session.Flush();
-                return sendcar_num;
+                return package_num;
             }
         }
 
-        public void Update(domain.Outbound_Car entity)
+        public void Update(domain.YaohaoPac entity)
         {
             using (ISession session = sessionFactory.OpenSession())
             {
@@ -40,7 +40,7 @@ namespace wuliuDAO
         }
 
         
-        public void Delete<Outbound_Car>(Outbound_Car entity)
+        public void Delete<YaohaoPac>(YaohaoPac entity)
         {
             using (ISession session = sessionFactory.OpenSession())
             {
@@ -49,39 +49,39 @@ namespace wuliuDAO
             }
         }
 
-        public object Get<Outbound_Car>(object id)
+        public object Get<YaohaoPac>(object id)
         {
             using (ISession session = sessionFactory.OpenSession())
             {
-                return session.Get<domain.Outbound_Car>(id);
+                return session.Get<domain.YaohaoPac>(id);
             }
         }
-        public domain.Outbound_Car Get(object order_num)
+        public domain.YaohaoPac Get(object order_num)
         {
             using (ISession session = sessionFactory.OpenSession())
             {
-                return session.Get<domain.Outbound_Car>(order_num);
+                return session.Get<domain.YaohaoPac>(order_num);
             }
                 
         }
-        public domain.Outbound_Car Load(object order_num)
+        public domain.YaohaoPac Load(object order_num)
         {
             using (ISession session = sessionFactory.OpenSession())
             {
-                return session.Load<domain.Outbound_Car>(order_num);
+                return session.Load<domain.YaohaoPac>(order_num);
             }
         }
 
 
-        public IList<Outbound_Car> LoadALL()
+        public IList<YaohaoPac> LoadALL()
         {
             using (ISession session = sessionFactory.OpenSession())
             {
-                return session.Query<domain.Outbound_Car>().ToList();
+                return session.Query<domain.YaohaoPac>().ToList();
             }
         }
 
-        public void BatchSave(List<Outbound_Car> records)
+        public void BatchSave(List<YaohaoPac> records)
         {
 
             using (ISession session = sessionFactory.OpenSession())
@@ -93,8 +93,7 @@ namespace wuliuDAO
                         session.SetBatchSize(50);
                         foreach (var obj in records)
                         {
-                            //Basic_Set item = (Basic_Set)obj;
-                            Outbound_Car item = (Outbound_Car)obj;
+                            YaohaoPac item = (YaohaoPac)obj;
                             session.SaveOrUpdate(item);
                            session.Flush();
                         }

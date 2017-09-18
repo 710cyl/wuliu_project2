@@ -25,7 +25,7 @@ using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 
 namespace Demo1._1._3
 {
-    public partial class Outbound_Car : UserControl
+    public partial class OutCar_Close : UserControl
     {
        
         StringReader streamToPrint = null;
@@ -48,12 +48,12 @@ namespace Demo1._1._3
         private BindingList<Outbound_Car_Detail> carDetailList;
         public static string str = null;
 
-        public Outbound_Car()
+        public OutCar_Close()
         {
             InitializeComponent();
             
             total_Page = fc.getTotal<domain.Outbound_Car>(bs,total_Page);
-            fc.InitPage(dataNavigator_Outbound_Car, total_Page,now_Page);
+            fc.InitPage(dataNavigator_OutCar_Close, total_Page,now_Page);
         }
         private void gridControl1_Click(object sender, EventArgs e)
         {
@@ -62,7 +62,7 @@ namespace Demo1._1._3
 
         private void toolStripButtonDelete_Click(object sender, EventArgs e) //删除出库派车主表
         {
-            fc.DeleteMain(this.gridView1, "OutBound_Car", "sendcar_num");
+           fc.DeleteMain(this.gridView1, "OutBound_Car", "sendcar_num");
             
         }
 
@@ -143,35 +143,40 @@ namespace Demo1._1._3
                 if (btn.Tag.ToString() == "下一页" && now_Page < total_Page)
                 {
                     now_Page++;
-                    dataNavigator_Outbound_Car.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
+                    dataNavigator_OutCar_Close.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
                     domain.Outbound_Car bs = new domain.Outbound_Car();
                     gridControl1.DataSource = fc.showData<domain.Outbound_Car>(bs, now_Page.ToString());
                 }
                 else if (btn.Tag.ToString() == "上一页" && now_Page > 1)
                 {
                     now_Page--;
-                    dataNavigator_Outbound_Car.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
+                    dataNavigator_OutCar_Close.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
                     domain.Outbound_Car bs = new domain.Outbound_Car();
                     gridControl1.DataSource = fc.showData<domain.Outbound_Car>(bs, now_Page.ToString());
                 }
                 else if (btn.Tag.ToString() == "首页")
                 {
                     now_Page = 1;
-                    dataNavigator_Outbound_Car.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
+                    dataNavigator_OutCar_Close.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
                     domain.Outbound_Car bs = new domain.Outbound_Car();
                     gridControl1.DataSource = fc.showData<domain.Outbound_Car>(bs, now_Page.ToString());
                 }
                 else if (btn.Tag.ToString() == "尾页")
                 {
                     now_Page = total_Page;
-                    dataNavigator_Outbound_Car.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
+                    dataNavigator_OutCar_Close.TextStringFormat = string.Format("第 {0}页，共 {1}页", now_Page, total_Page);
                     domain.Outbound_Car bs = new domain.Outbound_Car();
                     gridControl1.DataSource = fc.showData<domain.Outbound_Car>(bs, now_Page.ToString());
                 }
             }
         }
 
-  
+     
+        private void dataNavigato1_ButtonClick(object sender, NavigatorButtonClickEventArgs e)
+        {
+
+        }
+       
 
         //主表触发明细 fairy
         private void gridControl1_MouseClick(object sender, MouseEventArgs e)
@@ -185,41 +190,17 @@ namespace Demo1._1._3
             if (hi.InRow)
             {
                 string colValue = this.gridView1.GetRowCellValue(this.gridView1.FocusedRowHandle, this.gridView1.Columns[0]).ToString();
+                MessageBox.Show(colValue);
                 String carDetail = "Outbound_Car_Detail";
                 String detail = fc.FindDeteils(colValue, carDetail);
                 sd = JsonConvert.DeserializeObject<List<domain.Outbound_Car_Detail>>(detail);
                 carDetailList = new BindingList<Outbound_Car_Detail>(sd);
-                if (sd.Count == 0)
-                {
-                    this.gridControl2.DataSource = carDetailList;
-                    MessageBox.Show("没有详细数据，请输入！");
-                    
-                }
-                else { 
-                    this.gridControl2.DataSource = carDetailList;
-                    this.gridView2.Columns[0].Caption = "入库标识码";
-                    this.gridView2.Columns[1].Visible = false;
-                    this.gridView2.Columns[2].Caption = "入库性质";
-                    this.gridView2.Columns[3].Caption = "入库日期";
-                    this.gridView2.Columns[4].Caption = "派车单号";
-                    this.gridView2.Columns[5].Caption = "项目号";
-                    this.gridView2.Columns[6].Caption = "卷号";
-                    this.gridView2.Columns[7].Caption = "品种";
-                    this.gridView2.Columns[8].Caption = "材质";
-                    this.gridView2.Columns[9].Caption = "规格";
-                    this.gridView2.Columns[10].Caption = "可派件数";
-                    this.gridView2.Columns[11].Caption = "可派数量";
-                    this.gridView2.Columns[12].Caption = "拟发件数";
-                    this.gridView2.Columns[13].Caption = "拟发数量";
-                    this.gridView2.Columns[14].Caption = "派车时间";
-                    this.gridView2.Columns[15].Caption = "订单卸城";
-                    this.gridView2.Columns[16].Caption = "订单卸区";
-                    this.gridView2.Columns[17].Caption = "订单卸点";
-                    this.gridView2.Columns[18].Caption = "垛位号";
-                    this.gridView2.Columns[19].Caption = "备注";
-                    this.gridView2.BestFitColumns();
-                }
-           
+                this.gridControl2.DataSource = carDetailList;
+                this.gridView2.Columns[0].Caption = "入库标识码";
+                this.gridView2.Columns[1].Caption = "订单号";
+                this.gridView2.BestFitColumns();
+                
+              
             }
         }
 
@@ -228,16 +209,14 @@ namespace Demo1._1._3
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
              
-            New_OutBound_Car nb = new New_OutBound_Car();
-            nb.textEdit2.Text = fc.DateTimeToUnix("PC");
-            nb.textEdit2.ReadOnly = true;
-            nb.ShowDialog();
+             New_OutBound_Car nb = new New_OutBound_Car();
+             nb.ShowDialog();
         }
 
 
         //修改数据 fairy 2017-07-12
         private void toolStripButton2_Click(object sender, EventArgs e)
-        {   
+        {
             if (gridView1.SelectedRowsCount > 0)// && gridView1.GetFocusedDataSourceRowIndex() >0
             {
                 colCount = gridView1.Columns.Count();
@@ -248,11 +227,11 @@ namespace Demo1._1._3
                 }
                 if (array[0].Length > 0)
                 {
-                    isExist = true;
+                  
                     //如果选择的处理
                     New_OutBound_Car nb = new New_OutBound_Car();
                     nb.textEdit2.Text = array[0];
-                    //nb.text_sendcar_num.Text = array[1];
+                   // nb.text_sendcar_num.Text = array[1];
                     nb.text_owner_unit.Text = array[2];
                     nb.text_warehouse_send.Text = array[3];
                     nb.text_deliver_quantity.Text = array[4].ToString();//发货量
@@ -264,14 +243,15 @@ namespace Demo1._1._3
                     nb.text_carnum.Text = array[10];
                     nb.text_driver.Text = array[11];
                     nb.text_sendcar_staff.Text = array[12];
-                    nb.dateEdit1.DateTime = Convert.ToDateTime(array[13]);
+                    //bs.sendcar_time = Convert.ToDateTime(date_sendcar_time.SelectedText.ToString());
                     nb.textEditCity.Text = array[14];
                     nb.text_unload_area.Text = array[15];
                     nb.text_unload_point.Text = array[16];
-                    nb.comboBox2.SelectedText = array[17].ToString();//打包
+                    //nb.checkedComboBoxpackge.SelectedText = array[17].ToString();//打包
                     nb.checkedComboBoxclose.SelectedText = array[18].ToString();
-                    nb.comboBox2.Text = array[19];
-                    nb.date_close_time.DateTime = Convert.ToDateTime(array[20]);
+                    //bs.is_close = int.Parse(clo);
+                    nb.text_close_staff.Text = array[19];
+                    // bs.close_time = Convert.ToDateTime(date_close_time.SelectedText.ToString());
                     nb.text_explain.Text = array[21];
 
                     //明细表显示
@@ -280,7 +260,7 @@ namespace Demo1._1._3
                     carDetails = new BindingList<domain.Outbound_Car_Detail>(sd);
                     nb.gridControl1.DataSource = carDetails;
                     nb.ShowDialog();
-                    
+                    isExist = true;
 
                 }
                 else

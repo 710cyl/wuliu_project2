@@ -142,6 +142,7 @@
     <Compile Include="IVariety_TextureDAO.cs" />
     <Compile Include="IWarehouse_Space.cs" />
     <Compile Include="IWarehouse_Staff.cs" />
+    <Compile Include="IYaohaoPacDAO.cs" />
     <Compile Include="OilGasRegister_DetailDAO.cs" />
     <Compile Include="OilGasRegister_MainDAO.cs" />
     <Compile Include="Outbound_CarDAO.cs" />
@@ -150,6 +151,7 @@
     <Compile Include="IRoleDAO.cs" />
     <Compile Include="TransportationClearing_DetailDAO.cs" />
     <Compile Include="TransportationClearing_MainDAO.cs" />
+    <Compile Include="YaohaoPacDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\domain\domain.csproj">

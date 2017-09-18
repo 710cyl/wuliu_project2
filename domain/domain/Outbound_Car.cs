@@ -13,12 +13,16 @@ namespace domain
         /// <summary>
         /// 订单号
         /// </summary>
-        public virtual string order_num { get; set; }
+        //public virtual string order_num { get; set; }
 
         /// <summary>
         /// 派车单号
         /// </summary>
         public virtual string sendcar_num { get; set; }
+        /// <summary>
+        /// 打包单号
+        /// </summary>
+        public virtual string package_num { get; set; }
         /// <summary>
         /// 货主单位
         /// </summary>
@@ -105,6 +109,7 @@ namespace domain
 
 
         public virtual IList<Outbound_Car_Detail> Outbound_Car_Detail { get; set; }
+        
 
     }
 }

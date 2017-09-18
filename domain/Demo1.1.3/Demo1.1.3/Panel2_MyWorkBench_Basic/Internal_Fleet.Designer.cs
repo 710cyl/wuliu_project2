@@ -682,6 +682,7 @@
             this.simpleButton3.Size = new System.Drawing.Size(81, 28);
             this.simpleButton3.TabIndex = 160;
             this.simpleButton3.Text = "关闭";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // simpleButton4
             // 
@@ -694,6 +695,7 @@
             this.simpleButton4.Size = new System.Drawing.Size(131, 28);
             this.simpleButton4.TabIndex = 159;
             this.simpleButton4.Text = "保存";
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
             // dataNavigator_InternalFleet
             // 

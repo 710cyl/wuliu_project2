@@ -1,10 +1,9 @@
 ﻿using DevExpress.XtraEditors;
 using System.Windows.Forms;
-using System;
 
 namespace Demo1._1._3
 {
-    partial class Outbound_Car
+    partial class OutCar_Close
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -82,7 +81,7 @@ namespace Demo1._1._3
             this.panel1 = new System.Windows.Forms.Panel();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.dataNavigator_Outbound_Car = new DevExpress.XtraEditors.DataNavigator();
+            this.dataNavigator_OutCar_Close = new DevExpress.XtraEditors.DataNavigator();
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -506,7 +505,7 @@ namespace Demo1._1._3
             // panel1
             // 
             this.panel1.Controls.Add(this.gridControl1);
-            this.panel1.Controls.Add(this.dataNavigator_Outbound_Car);
+            this.panel1.Controls.Add(this.dataNavigator_OutCar_Close);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -534,49 +533,49 @@ namespace Demo1._1._3
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
             // 
-            // dataNavigator_Outbound_Car
+            // dataNavigator_OutCar_Close
             // 
-            this.dataNavigator_Outbound_Car.Appearance.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataNavigator_Outbound_Car.Appearance.Options.UseBackColor = true;
-            this.dataNavigator_Outbound_Car.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.dataNavigator_Outbound_Car.Buttons.Append.Enabled = false;
-            this.dataNavigator_Outbound_Car.Buttons.Append.Visible = false;
-            this.dataNavigator_Outbound_Car.Buttons.CancelEdit.Enabled = false;
-            this.dataNavigator_Outbound_Car.Buttons.CancelEdit.Visible = false;
-            this.dataNavigator_Outbound_Car.Buttons.EnabledAutoRepeat = false;
-            this.dataNavigator_Outbound_Car.Buttons.EndEdit.Enabled = false;
-            this.dataNavigator_Outbound_Car.Buttons.EndEdit.Visible = false;
-            this.dataNavigator_Outbound_Car.Buttons.First.Enabled = false;
-            this.dataNavigator_Outbound_Car.Buttons.First.Visible = false;
-            this.dataNavigator_Outbound_Car.Buttons.Last.Enabled = false;
-            this.dataNavigator_Outbound_Car.Buttons.Last.Visible = false;
-            this.dataNavigator_Outbound_Car.Buttons.Next.Enabled = false;
-            this.dataNavigator_Outbound_Car.Buttons.Next.Visible = false;
-            this.dataNavigator_Outbound_Car.Buttons.NextPage.Enabled = false;
-            this.dataNavigator_Outbound_Car.Buttons.NextPage.Visible = false;
-            this.dataNavigator_Outbound_Car.Buttons.Prev.Enabled = false;
-            this.dataNavigator_Outbound_Car.Buttons.Prev.Visible = false;
-            this.dataNavigator_Outbound_Car.Buttons.PrevPage.Enabled = false;
-            this.dataNavigator_Outbound_Car.Buttons.PrevPage.Visible = false;
-            this.dataNavigator_Outbound_Car.Buttons.Remove.Enabled = false;
-            this.dataNavigator_Outbound_Car.Buttons.Remove.Visible = false;
-            this.dataNavigator_Outbound_Car.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.dataNavigator_Outbound_Car.CustomButtons.AddRange(new DevExpress.XtraEditors.NavigatorCustomButton[] {
+            this.dataNavigator_OutCar_Close.Appearance.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataNavigator_OutCar_Close.Appearance.Options.UseBackColor = true;
+            this.dataNavigator_OutCar_Close.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.dataNavigator_OutCar_Close.Buttons.Append.Enabled = false;
+            this.dataNavigator_OutCar_Close.Buttons.Append.Visible = false;
+            this.dataNavigator_OutCar_Close.Buttons.CancelEdit.Enabled = false;
+            this.dataNavigator_OutCar_Close.Buttons.CancelEdit.Visible = false;
+            this.dataNavigator_OutCar_Close.Buttons.EnabledAutoRepeat = false;
+            this.dataNavigator_OutCar_Close.Buttons.EndEdit.Enabled = false;
+            this.dataNavigator_OutCar_Close.Buttons.EndEdit.Visible = false;
+            this.dataNavigator_OutCar_Close.Buttons.First.Enabled = false;
+            this.dataNavigator_OutCar_Close.Buttons.First.Visible = false;
+            this.dataNavigator_OutCar_Close.Buttons.Last.Enabled = false;
+            this.dataNavigator_OutCar_Close.Buttons.Last.Visible = false;
+            this.dataNavigator_OutCar_Close.Buttons.Next.Enabled = false;
+            this.dataNavigator_OutCar_Close.Buttons.Next.Visible = false;
+            this.dataNavigator_OutCar_Close.Buttons.NextPage.Enabled = false;
+            this.dataNavigator_OutCar_Close.Buttons.NextPage.Visible = false;
+            this.dataNavigator_OutCar_Close.Buttons.Prev.Enabled = false;
+            this.dataNavigator_OutCar_Close.Buttons.Prev.Visible = false;
+            this.dataNavigator_OutCar_Close.Buttons.PrevPage.Enabled = false;
+            this.dataNavigator_OutCar_Close.Buttons.PrevPage.Visible = false;
+            this.dataNavigator_OutCar_Close.Buttons.Remove.Enabled = false;
+            this.dataNavigator_OutCar_Close.Buttons.Remove.Visible = false;
+            this.dataNavigator_OutCar_Close.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.dataNavigator_OutCar_Close.CustomButtons.AddRange(new DevExpress.XtraEditors.NavigatorCustomButton[] {
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 0, true, true, "首页", "首页"),
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 1, true, true, "上一页", "上一页"),
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 4, true, true, "下一页", "下一页"),
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 5, true, true, "尾页", "尾页")});
-            this.dataNavigator_Outbound_Car.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataNavigator_Outbound_Car.Location = new System.Drawing.Point(0, 409);
-            this.dataNavigator_Outbound_Car.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataNavigator_Outbound_Car.Name = "dataNavigator_Outbound_Car";
-            this.dataNavigator_Outbound_Car.ShowToolTips = true;
-            this.dataNavigator_Outbound_Car.Size = new System.Drawing.Size(1669, 32);
-            this.dataNavigator_Outbound_Car.TabIndex = 8;
-            this.dataNavigator_Outbound_Car.Text = "dataNavigator_Outbound_Car";
-            this.dataNavigator_Outbound_Car.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Begin;
-            this.dataNavigator_Outbound_Car.TextStringFormat = "第 {0}页，共 {1}页";
-            this.dataNavigator_Outbound_Car.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.dataNavigator_Outbound_Car_ButtonClick);
+            this.dataNavigator_OutCar_Close.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataNavigator_OutCar_Close.Location = new System.Drawing.Point(0, 409);
+            this.dataNavigator_OutCar_Close.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataNavigator_OutCar_Close.Name = "dataNavigator_OutCar_Close";
+            this.dataNavigator_OutCar_Close.ShowToolTips = true;
+            this.dataNavigator_OutCar_Close.Size = new System.Drawing.Size(1669, 32);
+            this.dataNavigator_OutCar_Close.TabIndex = 8;
+            this.dataNavigator_OutCar_Close.Text = "dataNavigator_OutCar_Close";
+            this.dataNavigator_OutCar_Close.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Begin;
+            this.dataNavigator_OutCar_Close.TextStringFormat = "第 {0}页，共 {1}页";
+            this.dataNavigator_OutCar_Close.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.dataNavigator_Outbound_Car_ButtonClick);
             // 
             // tabPane1
             // 
@@ -641,11 +640,6 @@ namespace Demo1._1._3
 
         }
 
-        private void dataNavigato1_ButtonClick(object sender, NavigatorButtonClickEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
         #endregion
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
@@ -696,7 +690,7 @@ namespace Demo1._1._3
         private Panel panel1;
         public DevExpress.XtraGrid.GridControl gridControl1;
         public DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        public DataNavigator dataNavigator_Outbound_Car;
+        public DataNavigator dataNavigator_OutCar_Close;
         private DevExpress.XtraBars.Navigation.TabPane tabPane1;
         private Label label1;
         private TextBox textBox1;

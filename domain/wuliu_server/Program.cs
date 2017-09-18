@@ -70,6 +70,14 @@ namespace wuliu_server
             wssv.AddWebSocketService<ServerTransportationRegister>("/ServerTransportationRegister");
             wssv.AddWebSocketService<ServerFleetPrice>("/ServerFleetPrice");
             wssv.AddWebSocketService<ServerShipperPrice>("/ServerShipperPrice");
+
+            #region //add fairy 0910
+            wssv.AddWebSocketService<ShowDataType>("/ShowDataType");
+            wssv.AddWebSocketService<getKind>("/getKind");
+            wssv.AddWebSocketService<GetPacList>("/GetPacList");
+            #endregion
+
+
             wssv.Start();
             Console.ReadKey();
             wssv.Stop();
@@ -78,6 +86,17 @@ namespace wuliu_server
         }
     }
 
+
+    #region //add 0910 fairy
+    public class getKind : WebSocketBehavior //获取派车模块类型 0-派车出库 1-摇号打包 2-派车关闭
+    {
+        public static string kinds;
+        protected override void OnMessage(MessageEventArgs e)
+        {
+            kinds = e.Data;
+        }
+    }
+    #endregion
 
     public class GetClassName : WebSocketBehavior //获取对象类名
     {
@@ -125,6 +144,16 @@ namespace wuliu_server
                 gde.Update(sfm);
                 Console.WriteLine("出库派车主表修改成功！");
             }
+
+            #region
+            else if (name == "YaohaoPac")
+            {
+                YaohaoPac yh = JsonConvert.DeserializeObject<YaohaoPac>(data);
+                YaohaoPacDAO gde = new YaohaoPacDAO();
+                gde.Update(yh);
+                Console.WriteLine("摇号打包主表修改成功！");
+            }
+            #endregion
 
             else if (name == "StorageFormMainOut")
             {
@@ -225,6 +254,20 @@ namespace wuliu_server
                     Console.WriteLine("出库派车明细表修改成功！");
                 }
             }
+            #region
+            else if (name == "Outbound_Car")
+            {
+                List<domain.Outbound_Car> sd = null;
+                Outbound_CarDAO isd = new Outbound_CarDAO();
+                json = data;
+                sd = JsonConvert.DeserializeObject<List<domain.Outbound_Car>>(json);
+                foreach (Outbound_Car item in sd)
+                {
+                    isd.Update(item);
+                    Console.WriteLine("出库派车主表的明细修改成功！");
+                }
+            }
+            #endregion
             else if (name == "StorageDetailsOut")
             {
                 List<domain.StorageDetailsOut> sd = null;
@@ -326,6 +369,101 @@ namespace wuliu_server
             }
         }
     }
+    #region //add 0910 fairy
+    public class ShowDataType : WebSocketBehavior
+    {
+        protected override void OnMessage(MessageEventArgs e)
+        {
+            var cfg = new NHibernate.Cfg.Configuration().Configure("Config/hibernate.cfg.xml");
+            using (ISessionFactory sessionFactory = cfg.BuildSessionFactory())
+            {
+                ISession session = null;
+                try
+                {
+                    session = sessionFactory.OpenSession();
+                    string json = SwitchDataType(session, e.Data);
+
+                    Console.WriteLine(e.Data);
+                    Console.WriteLine(json);
+                    Send(json);
+
+                }
+                catch (Exception ex)
+                {
+
+                    Send(ex.Message);
+                }
+                session.Close();
+            }
+        }
+
+
+        public string SwitchDataType(ISession session, string s)
+        {
+            if (s == "Outbound_Car" && getKind.kinds == "2")
+            {
+                int page = Convert.ToInt32(NowPage.nowpage);//,a.oper_apart,a.oper_staff,a.cars,a.carnum,a.driver,a.sendcar_staff 
+                String str = "select a.* from WL_sendcar a,WL_sendcar_detail b where a.sendcar_num = b.order_num and a.is_close ='是' and  a.packge ='是'";
+                ISQLQuery query = session.CreateSQLQuery(str)
+                .AddEntity("Outbound_Car", typeof(domain.Outbound_Car));
+                IList<Outbound_Car> list = query.List<domain.Outbound_Car>();
+                string json = JsonConvert.SerializeObject(list, Formatting.None, new JsonSerializerSettings());
+                return json;
+            }
+            else
+                return null;
+        }
+    }
+    #endregion
+
+    #region
+    //add 0910 fairy
+    public class GetPacList : WebSocketBehavior
+    {
+        protected override void OnMessage(MessageEventArgs e)
+        {
+            var cfg = new NHibernate.Cfg.Configuration().Configure("Config/hibernate.cfg.xml");
+            using (ISessionFactory sessionFactory = cfg.BuildSessionFactory())
+            {
+                ISession session = null;
+                try
+                {
+                    session = sessionFactory.OpenSession();
+                    string json = GetPacListSel(session, e.Data);
+                    Console.WriteLine("aaa");
+                    Console.WriteLine(e.Data);
+                    Console.WriteLine(json);
+                    Send(json);
+
+                }
+                catch (Exception ex)
+                {
+
+                    Send(ex.Message);
+                }
+                session.Close();
+            }
+        }
+
+
+        public string GetPacListSel(ISession session, String s)
+        {
+            if (s == "Outbound_Car")
+            {
+                int page = Convert.ToInt32(NowPage.nowpage);
+                // String str = "select a.order_num,a.sendcar_num,a.is_close,a.out_way from WL_sendcar a where a.packge ='否' order by desc sendcar_time ";
+                String str = "select  a.* from WL_sendcar a where packge ='否' and is_close ='否' order by  sendcar_time desc ";
+                ISQLQuery query = session.CreateSQLQuery(str)
+                .AddEntity("Outbound_Car", typeof(domain.Outbound_Car));
+                IList<Outbound_Car> list = query.List<domain.Outbound_Car>();
+                string json = JsonConvert.SerializeObject(list, Formatting.None, new JsonSerializerSettings());
+                return json;
+            }
+            else
+                return null;
+        }
+    }
+    #endregion
 
     public class MainSave : WebSocketBehavior  //主表保存
     {
@@ -358,6 +496,33 @@ namespace wuliu_server
                 ocd.Save(oc);
                 Console.WriteLine("出库派车主表保存成功！");
             }
+            #region
+            else if (name == "YaohaoPac")
+            {
+                YaohaoPac sfm = JsonConvert.DeserializeObject<YaohaoPac>(data);
+                YaohaoPacDAO yp = new YaohaoPacDAO();
+                yp.Save(sfm);
+                Console.WriteLine("派车单号保存成功！");
+            }
+            #endregion
+
+            #region
+            //add fairy 0910
+            else if (name == "Outbound_Car")
+            {
+                string json = null;
+                List<domain.Outbound_Car> sfm = null;
+                Outbound_CarDAO isd = new Outbound_CarDAO();
+                json = data;
+                sfm = JsonConvert.DeserializeObject<List<domain.Outbound_Car>>(json);
+                foreach (Outbound_Car item in sfm)
+                {
+                    object a = isd.Save(item);
+                    Console.WriteLine(a);
+                    Console.WriteLine("出库派车主表打包保存成功！");
+                }
+            }
+            #endregion
 
             else if (name == "StorageFormMainOut")
             {
@@ -445,6 +610,7 @@ namespace wuliu_server
                     Console.WriteLine("1111111111111111111");
                 }
             }
+
             else if (name == "Outbound_Car_Detail")
             {
                 List<domain.Outbound_Car_Detail> sd = null;
@@ -457,6 +623,22 @@ namespace wuliu_server
                     Console.WriteLine("出库派车明细表保存成功！");
                 }
             }
+            #region
+            //add fairy 0910
+            else if (name == "Outbound_Car")
+            {
+                List<domain.Outbound_Car> sfm = null;
+                Outbound_CarDAO isd = new Outbound_CarDAO();
+                json = data;
+                sfm = JsonConvert.DeserializeObject<List<domain.Outbound_Car>>(json);
+                foreach (Outbound_Car item in sfm)
+                {
+                    object a = isd.Save(item);
+                    Console.WriteLine(a);
+                    Console.WriteLine("出库派车主表打包保存成功！");
+                }
+            }
+            #endregion
 
             else if (name == "StorageDetailsOut")
             {
@@ -601,6 +783,12 @@ namespace wuliu_server
             if (name == "Outbound_Car_Detail")
             {
                 IList<domain.Outbound_Car_Detail> basic_set = session.QueryOver<domain.Outbound_Car_Detail>().Skip(0).Take(0).List();
+                json = JsonConvert.SerializeObject(basic_set);
+            }
+            //add fairy 0910 
+            if (name == "Outbound_Car")
+            {
+                IList<domain.Outbound_Car> basic_set = session.QueryOver<domain.Outbound_Car>().Skip(0).Take(0).List();
                 json = JsonConvert.SerializeObject(basic_set);
             }
 
@@ -823,10 +1011,20 @@ namespace wuliu_server
             {
 
                 int page = Convert.ToInt32(NowPage.nowpage);
+                String str = "select a.* from WL_sendcar a,WL_sendcar_detail b where a.sendcar_num = b.order_num and a.is_close ='否' and  a.packge ='否'";
                 IList<Outbound_Car> Outbound_Car = session.QueryOver<Outbound_Car>().Skip((page - 1) * 5).Take(5).List();
                 string json = JsonConvert.SerializeObject(Outbound_Car, Formatting.None, new JsonSerializerSettings());
                 return json;
             }
+            #region
+            else if (s == "YaohaoPac")
+            {
+                int page = Convert.ToInt32(NowPage.nowpage);
+                IList<YaohaoPac> YaohaoPac = session.QueryOver<YaohaoPac>().Skip((page - 1) * 5).Take(5).List();
+                string json = JsonConvert.SerializeObject(YaohaoPac, Formatting.None, new JsonSerializerSettings());
+                return json;
+            }
+            #endregion
             else if (s == "StorageFormMainOut")
             {
                 int page = Convert.ToInt32(NowPage.nowpage);
@@ -1181,6 +1379,19 @@ namespace wuliu_server
             {
                 total = session.QueryOver<domain.权限.Role>().RowCountInt64();
                 return total;
+            } else if (className == "Outbound_Car") {
+                total = session.QueryOver<domain.Outbound_Car>().RowCountInt64();
+                return total;
+            }
+            else if (className == "Outbound_Car_Detail")
+            {
+                total = session.QueryOver<Outbound_Car_Detail>().RowCountInt64();
+                return total;
+            }
+            else if (className == "YaohaoPac")
+            {
+                total = session.QueryOver<domain.YaohaoPac>().RowCountInt64();
+                return total;
             }
             return total;
         }
@@ -1297,6 +1508,26 @@ namespace wuliu_server
                     throw;
                 }
             }
+
+            else if (GetClassName.classname == "Internal_Vehicle")
+            {
+                try
+                {
+                    InternalCar crd = new InternalCar();
+                    domain.Internal_Vehicle cr = new Internal_Vehicle();
+                    cr = null;
+                    string tmp = null;
+                    tmp = e.Data;
+                    cr = JsonConvert.DeserializeObject<Internal_Vehicle>(tmp, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+                    crd.Save(cr);
+                }
+                catch (Exception)
+                {
+                    //  Console.WriteLine(w.Message);
+                    throw;
+                }
+            }
+
             else if (GetClassName.classname == "Decorate")
             {
                 try
@@ -1476,6 +1707,17 @@ namespace wuliu_server
                 string tmp = null;
                 tmp = e.Data;
                 bs = JsonConvert.DeserializeObject<External_Vehicle>(tmp);
+                bsd.Update(bs);
+            }
+
+            else if (GetClassName.classname == "Internal_Vehicle")
+            {
+                InternalCar bsd = new InternalCar();
+                domain.Internal_Vehicle bs = new Internal_Vehicle();
+                bs = null;
+                string tmp = null;
+                tmp = e.Data;
+                bs = JsonConvert.DeserializeObject<Internal_Vehicle>(tmp);
                 bsd.Update(bs);
             }
             else if (GetClassName.classname == "Discharge")
@@ -1660,6 +1902,14 @@ namespace wuliu_server
                     var Outbound_Car = gde.Get<Outbound_Car>(id);
                     gde.Delete<Outbound_Car>((Outbound_Car)Outbound_Car);
                 }
+                #region
+                else if (classname == "YaohaoPac")
+                {
+                    YaohaoPacDAO gde = new YaohaoPacDAO();
+                    var YaohaoPac = gde.Get<YaohaoPac>(id);
+                    gde.Delete<YaohaoPac>((YaohaoPac)YaohaoPac);
+                }
+                #endregion
                 else if (classname == "StorageFormMainOut")
                 {
                     IOutBoundOrder gde = new IOutBoundOrder();
@@ -1860,12 +2110,44 @@ namespace wuliu_server
             {
 
                 int page = Convert.ToInt32(NowPage.nowpage);
-                String sql = "select a.* from WL_sendcar b,WL_sendcar_detail a where a.order_num =b.order_num and a.order_num= ? ";
+                String sql = "select a.* from WL_sendcar b,WL_sendcar_detail a where b.sendcar_num =a.order_num and b.sendcar_num= ? ";
                 ISQLQuery query = session.CreateSQLQuery(sql)
                 .AddEntity("Outbound_Car_Detail", typeof(Outbound_Car_Detail));
                 query.SetString(0, primarykey);
                 IList<Outbound_Car_Detail> Outbound_Car_detail = query.List<Outbound_Car_Detail>();
                 json = JsonConvert.SerializeObject(Outbound_Car_detail, Formatting.None, new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+            }
+            #region
+            else if (classname == "YaohaoPac") //2017-09-02
+            {
+
+                int page = Convert.ToInt32(NowPage.nowpage);
+                //String sql = "select a.package_num,a.warehouse_send,a.owner_unit,a.unload_city,a.unload_point,a.oper_apart,a.oper_staff from WL_sendcar a,WL_package b where a.package_num =b.package_num and a.package_num= ? ";
+                String sql = "select a.* from WL_sendcar a,WL_package b where a.package_num =b.package_num and a.package_num= ?";
+                ISQLQuery query = session.CreateSQLQuery(sql)
+                .AddEntity("Outbound_Car", typeof(Outbound_Car));
+                query.SetString(0, primarykey);
+                IList<Outbound_Car> Outbound_Car = query.List<Outbound_Car>();
+                json = JsonConvert.SerializeObject(Outbound_Car, Formatting.None, new JsonSerializerSettings()
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+                });
+            }
+            #endregion
+            else if (classname == "Outbound_Car") //2017-09-09
+            {
+
+                int page = Convert.ToInt32(NowPage.nowpage);
+                //String sql = "select a.package_num,a.warehouse_send,a.owner_unit,a.unload_city,a.unload_point,a.oper_apart,a.oper_staff from WL_sendcar a,WL_package b where a.package_num =b.package_num and a.package_num= ? ";
+                String sql = "select a.* from WL_sendcar a,WL_package b where a.package_num =b.package_num and a.package_num= ?";
+                ISQLQuery query = session.CreateSQLQuery(sql)
+                .AddEntity("Outbound_Car", typeof(Outbound_Car));
+                query.SetString(0, primarykey);
+                IList<Outbound_Car> Outbound_Car = query.List<Outbound_Car>();
+                json = JsonConvert.SerializeObject(Outbound_Car, Formatting.None, new JsonSerializerSettings()
                 {
                     ReferenceLoopHandling = ReferenceLoopHandling.Ignore
                 });
@@ -2079,7 +2361,49 @@ namespace wuliu_server
             {
                 int page = Convert.ToInt32(NowPage.nowpage);
                 string input_val = GetValLike.input_val;
-                String sql = "select c.* from WL_sendcar c where c.order_num  like '%" + input_val + "%' or c.sendcar_num  like '%" + input_val + "%'" +
+                String sql = "select c.* from WL_sendcar c where  c.sendcar_num  like '%" + input_val + "%'" +
+                      "or c.owner_unit  like '%" + input_val + "%'or c.warehouse_send  like '%" + input_val + "%' or c.deliver_quantity  like '%" + input_val + "%' or c.out_way  like '%" + input_val + "%' " +
+                      "or c.oper_apart  like '%" + input_val + "%'" +
+                       "or c.pay_unit  like '%" + input_val + "%'" +
+                       "or c.cars  like '%" + input_val + "%'" +
+                       "or c.carnum  like '%" + input_val + "%'" +
+                       "or c.driver  like '%" + input_val + "%'" +
+                       "or c.sendcar_staff  like '%" + input_val + "%'" +
+                       "or c.sendcar_time  like '%" + input_val + "%'" +
+                       "or c.unload_city  like '%" + input_val + "%'" +
+                       "or c.unload_area  like '%" + input_val + "%'" +
+                       "or c.unload_point  like '%" + input_val + "%'" +
+                       "or c.packge  like '%" + input_val + "%'" +
+                       "or c.is_close  like '%" + input_val + "%'" +
+                       "or c.close_staff  like '%" + input_val + "%'" +
+                       "or c.close_time  like '%" + input_val + "%'";
+                ISQLQuery query = session.CreateSQLQuery(sql)
+               .AddEntity("Outbound_Car", typeof(Outbound_Car));
+                IList<Outbound_Car> Outbound_Car = query.List<Outbound_Car>();
+                string json = JsonConvert.SerializeObject(Outbound_Car, Formatting.None, new JsonSerializerSettings());
+                return json;
+            }
+            #region // 出库派车 主表模糊查询 strat 2017-09-09 fairy
+            else if (s == "YaohaoPac")
+            {
+                int page = Convert.ToInt32(NowPage.nowpage);
+                string input_val = GetValLike.input_val;
+                String sql = "select c.* from WL_package c where c.package_num  like '%" + input_val + "%'" +
+                      "or c.lottery_state  like '%" + input_val + "%'or c.ordernum_num  like '%" + input_val + "%' or c.quantity_all  like '%" + input_val + "%' or c.pac_staff  like '%" + input_val + "%' " +
+                      "or c.pac_time  like '%" + input_val + "%'";
+                ISQLQuery query = session.CreateSQLQuery(sql)
+               .AddEntity("YaohaoPac", typeof(YaohaoPac));
+                IList<YaohaoPac> YaohaoPac = query.List<YaohaoPac>();
+                string json = JsonConvert.SerializeObject(YaohaoPac, Formatting.None, new JsonSerializerSettings());
+                return json;
+            }
+            #endregion
+            // 出库派车 主表模糊查询 strat 2017-09-09 fairy
+            else if (s == "Outbound_Car")
+            {
+                int page = Convert.ToInt32(NowPage.nowpage);
+                string input_val = GetValLike.input_val;
+                String sql = "select c.* from WL_sendcar c where c.is_close='是' and  c.sendcar_num  like '%" + input_val + "%'" +
                       "or c.owner_unit  like '%" + input_val + "%'or c.warehouse_send  like '%" + input_val + "%' or c.deliver_quantity  like '%" + input_val + "%' or c.out_way  like '%" + input_val + "%' " +
                       "or c.oper_apart  like '%" + input_val + "%'" +
                        "or c.pay_unit  like '%" + input_val + "%'" +

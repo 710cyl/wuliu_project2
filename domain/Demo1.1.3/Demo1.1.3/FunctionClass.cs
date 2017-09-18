@@ -958,6 +958,36 @@ namespace Demo1._1._3
             List<Outbound_Car_Detail> storage = JsonConvert.DeserializeObject<List<Outbound_Car_Detail>>(msg);
             return storage;
         }
+
+
+        #region
+        //add 0910 -fairy
+        public List<T> getPacList<T>(T t, string nowpage)
+        {
+            List<T> db = null;
+            string msg = null;
+            string sendMsg = t.GetType().Name.ToString();
+            using (var ws = new WebSocket("ws://localhost:9000/GetPacList"))
+            {
+                ws.Connect();
+                ws.Send(sendMsg);
+                using (var wsp = new WebSocket("ws://localhost:9000/NowPage"))
+                {
+                    wsp.Connect();
+                    wsp.Send(nowpage);
+                    wsp.Close();
+                }
+                while (msg == null)
+                {
+                    ws.OnMessage += (sender, e) =>
+                    msg = e.Data;
+                }
+                ws.Close();
+                db = JsonConvert.DeserializeObject<List<T>>(msg);
+            }
+            return db;
+        }
+        #endregion
     }
     
 }

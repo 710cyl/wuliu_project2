@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="domain" namespace="domain">
+ 
+  <!-- 摇号打包 派车单号作为外键start-->
+  <class name="YaohaoPac" table="WL_package" >
+
+    <!--打包单号-->
+    <id name="package_num" column="package_num" type="string">
+      <generator class="assigned" />
+    </id>
+    <!--一对多关系:一个客户可以有一个或者多个订单-->
+    <bag name="Outbound_Car" inverse="true" cascade="all">
+      <key column="package_num"></key>
+      <one-to-many class="Outbound_Car"></one-to-many>
+    </bag>
+   
+    <!--摇号状态-->
+    <property name="lottery_state" type="string">
+      <column name="lottery_state" length="100"/>
+    </property>
+    <!--派车单数量-->
+    <property name="ordernum_num" type="string">
+      <column name="ordernum_num" length="50"/>
+    </property>
+    <!--发货总量-->
+    <property name="quantity_all" type="decimal">
+      <column name="quantity_all" length="18" />
+    </property>
+
+    <!--打包人-->
+    <property name="pac_staff" type="string">
+      <column name="pac_staff" length="50" />
+    </property>
+    <!--打包时间-->
+    <property name="pac_time" type="date">
+      <column name="pac_time" sql-type="datetime2(7)"/>
+    </property>
+    <!-- 摇号打包 end -->
+  </class>
+  
+</hibernate-mapping>
+

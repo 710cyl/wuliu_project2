@@ -136,6 +136,7 @@
     <Compile Include="TransportationClearing_Main.cs" />
     <Compile Include="TransportationRegister.cs" />
     <Compile Include="TransportationRegister_Detail.cs" />
+    <Compile Include="YaohaoPac.cs" />
     <Compile Include="仓库\StorageDetails.cs" />
     <Compile Include="仓库\StorageFormMain.cs" />
     <Compile Include="权限\Role.cs" />
@@ -195,6 +196,9 @@
     <EmbeddedResource Include="权限\Role.hbm.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="YaohaoPac.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

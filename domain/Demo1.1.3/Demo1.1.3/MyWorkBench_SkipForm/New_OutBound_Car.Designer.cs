@@ -28,20 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
             DevExpress.XtraEditors.FormatConditionRuleDateOccuring formatConditionRuleDateOccuring1 = new DevExpress.XtraEditors.FormatConditionRuleDateOccuring();
             this.panel_Main = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textEditCar = new DevExpress.XtraEditors.TextEdit();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.date_close_time = new DevExpress.XtraEditors.DateEdit();
             this.text_explain = new DevExpress.XtraEditors.TextEdit();
             this.labelControl43 = new DevExpress.XtraEditors.LabelControl();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
-            this.checkedComboBoxpackge = new DevExpress.XtraEditors.CheckedComboBoxEdit();
-            this.checkedComboBoxEdit1 = new DevExpress.XtraEditors.CheckedComboBoxEdit();
             this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
             this.text_close_staff = new DevExpress.XtraEditors.TextEdit();
             this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
@@ -50,13 +49,12 @@
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.text_unload_area = new DevExpress.XtraEditors.TextEdit();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.textEditCity = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.text_sendcar_staff = new DevExpress.XtraEditors.TextEdit();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.checkedComboBoxEdit2 = new DevExpress.XtraEditors.CheckedComboBoxEdit();
             this.text_driver = new DevExpress.XtraEditors.TextEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.text_carnum = new DevExpress.XtraEditors.TextEdit();
@@ -76,8 +74,6 @@
             this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
             this.text_owner_unit = new DevExpress.XtraEditors.TextEdit();
             this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
-            this.text_sendcar_num = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl26 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl27 = new DevExpress.XtraEditors.LabelControl();
             this.date_sendcar_time = new DevExpress.XtraEditors.DateEdit();
             this.checkedComboBoxclose = new DevExpress.XtraEditors.CheckedComboBoxEdit();
@@ -105,20 +101,18 @@
             this.button8 = new System.Windows.Forms.Button();
             this.panel_Main.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditCar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_close_time.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_close_time.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.text_explain.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkedComboBoxpackge.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkedComboBoxEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.text_close_staff.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.text_unload_point.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.text_unload_area.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditCity.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.text_sendcar_staff.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkedComboBoxEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.text_driver.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.text_carnum.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.text_pay_unit.Properties)).BeginInit();
@@ -128,7 +122,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.text_deliver_quantity.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.text_warehouse_send.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.text_owner_unit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.text_sendcar_num.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_sendcar_time.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_sendcar_time.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkedComboBoxclose.Properties)).BeginInit();
@@ -167,16 +160,14 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.textEditCar);
+            this.panel1.Controls.Add(this.comboBox2);
+            this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.textEdit2);
             this.panel1.Controls.Add(this.date_close_time);
             this.panel1.Controls.Add(this.text_explain);
             this.panel1.Controls.Add(this.labelControl43);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.dateEdit1);
-            this.panel1.Controls.Add(this.checkedComboBoxpackge);
-            this.panel1.Controls.Add(this.checkedComboBoxEdit1);
             this.panel1.Controls.Add(this.labelControl19);
             this.panel1.Controls.Add(this.text_close_staff);
             this.panel1.Controls.Add(this.labelControl20);
@@ -185,13 +176,12 @@
             this.panel1.Controls.Add(this.labelControl16);
             this.panel1.Controls.Add(this.text_unload_area);
             this.panel1.Controls.Add(this.labelControl17);
-            this.panel1.Controls.Add(this.textEdit1);
+            this.panel1.Controls.Add(this.textEditCity);
             this.panel1.Controls.Add(this.labelControl3);
             this.panel1.Controls.Add(this.text_sendcar_staff);
             this.panel1.Controls.Add(this.labelControl13);
             this.panel1.Controls.Add(this.labelControl14);
             this.panel1.Controls.Add(this.labelControl5);
-            this.panel1.Controls.Add(this.checkedComboBoxEdit2);
             this.panel1.Controls.Add(this.text_driver);
             this.panel1.Controls.Add(this.labelControl10);
             this.panel1.Controls.Add(this.text_carnum);
@@ -211,13 +201,41 @@
             this.panel1.Controls.Add(this.labelControl24);
             this.panel1.Controls.Add(this.text_owner_unit);
             this.panel1.Controls.Add(this.labelControl25);
-            this.panel1.Controls.Add(this.text_sendcar_num);
-            this.panel1.Controls.Add(this.labelControl26);
             this.panel1.Controls.Add(this.labelControl27);
             this.panel1.Location = new System.Drawing.Point(3, 26);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1286, 240);
             this.panel1.TabIndex = 137;
+            // 
+            // textEditCar
+            // 
+            this.textEditCar.Location = new System.Drawing.Point(82, 72);
+            this.textEditCar.Name = "textEditCar";
+            this.textEditCar.Size = new System.Drawing.Size(136, 20);
+            this.textEditCar.TabIndex = 146;
+            this.textEditCar.Click += new System.EventHandler(this.textEditCar_Click);
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "是",
+            "否"});
+            this.comboBox2.Location = new System.Drawing.Point(569, 106);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(169, 20);
+            this.comboBox2.TabIndex = 145;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "是",
+            "否"});
+            this.comboBox1.Location = new System.Drawing.Point(82, 188);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(136, 20);
+            this.comboBox1.TabIndex = 144;
             // 
             // textEdit2
             // 
@@ -242,7 +260,7 @@
             // 
             this.text_explain.Location = new System.Drawing.Point(902, 104);
             this.text_explain.Name = "text_explain";
-            this.text_explain.Size = new System.Drawing.Size(237, 20);
+            this.text_explain.Size = new System.Drawing.Size(219, 20);
             this.text_explain.TabIndex = 141;
             // 
             // labelControl43
@@ -252,33 +270,6 @@
             this.labelControl43.Size = new System.Drawing.Size(28, 14);
             this.labelControl43.TabIndex = 140;
             this.labelControl43.Text = "说明:";
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(1031, 182);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 139;
-            this.button5.Text = "关闭";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(933, 182);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 138;
-            this.button6.Text = "取消";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(839, 182);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 137;
-            this.button7.Text = "保存";
-            this.button7.UseVisualStyleBackColor = true;
             // 
             // dateEdit1
             // 
@@ -291,26 +282,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit1.Size = new System.Drawing.Size(136, 20);
             this.dateEdit1.TabIndex = 136;
-            // 
-            // checkedComboBoxpackge
-            // 
-            this.checkedComboBoxpackge.EditValue = "是";
-            this.checkedComboBoxpackge.Location = new System.Drawing.Point(569, 113);
-            this.checkedComboBoxpackge.Name = "checkedComboBoxpackge";
-            this.checkedComboBoxpackge.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.checkedComboBoxpackge.Size = new System.Drawing.Size(169, 20);
-            this.checkedComboBoxpackge.TabIndex = 135;
-            // 
-            // checkedComboBoxEdit1
-            // 
-            this.checkedComboBoxEdit1.EditValue = "是";
-            this.checkedComboBoxEdit1.Location = new System.Drawing.Point(82, 192);
-            this.checkedComboBoxEdit1.Name = "checkedComboBoxEdit1";
-            this.checkedComboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.checkedComboBoxEdit1.Size = new System.Drawing.Size(136, 20);
-            this.checkedComboBoxEdit1.TabIndex = 134;
             // 
             // labelControl19
             // 
@@ -373,12 +344,13 @@
             this.labelControl17.TabIndex = 126;
             this.labelControl17.Text = "卸货区域:";
             // 
-            // textEdit1
+            // textEditCity
             // 
-            this.textEdit1.Location = new System.Drawing.Point(82, 152);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(136, 20);
-            this.textEdit1.TabIndex = 125;
+            this.textEditCity.Location = new System.Drawing.Point(82, 152);
+            this.textEditCity.Name = "textEditCity";
+            this.textEditCity.Size = new System.Drawing.Size(136, 20);
+            this.textEditCity.TabIndex = 125;
+            this.textEditCity.Click += new System.EventHandler(this.textEditCity_Click);
             // 
             // labelControl3
             // 
@@ -418,16 +390,6 @@
             this.labelControl5.Size = new System.Drawing.Size(52, 14);
             this.labelControl5.TabIndex = 120;
             this.labelControl5.Text = "派车时间:";
-            // 
-            // checkedComboBoxEdit2
-            // 
-            this.checkedComboBoxEdit2.EditValue = "内部车队";
-            this.checkedComboBoxEdit2.Location = new System.Drawing.Point(82, 72);
-            this.checkedComboBoxEdit2.Name = "checkedComboBoxEdit2";
-            this.checkedComboBoxEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.checkedComboBoxEdit2.Size = new System.Drawing.Size(136, 20);
-            this.checkedComboBoxEdit2.TabIndex = 119;
             // 
             // text_driver
             // 
@@ -471,7 +433,7 @@
             // 
             this.text_pay_unit.Location = new System.Drawing.Point(902, 39);
             this.text_pay_unit.Name = "text_pay_unit";
-            this.text_pay_unit.Size = new System.Drawing.Size(169, 20);
+            this.text_pay_unit.Size = new System.Drawing.Size(138, 20);
             this.text_pay_unit.TabIndex = 113;
             // 
             // labelControl7
@@ -575,28 +537,13 @@
             this.labelControl25.TabIndex = 100;
             this.labelControl25.Text = "货主单位:";
             // 
-            // text_sendcar_num
-            // 
-            this.text_sendcar_num.Location = new System.Drawing.Point(326, 13);
-            this.text_sendcar_num.Name = "text_sendcar_num";
-            this.text_sendcar_num.Size = new System.Drawing.Size(136, 20);
-            this.text_sendcar_num.TabIndex = 99;
-            // 
-            // labelControl26
-            // 
-            this.labelControl26.Location = new System.Drawing.Point(243, 16);
-            this.labelControl26.Name = "labelControl26";
-            this.labelControl26.Size = new System.Drawing.Size(52, 14);
-            this.labelControl26.TabIndex = 98;
-            this.labelControl26.Text = "派车单号:";
-            // 
             // labelControl27
             // 
-            this.labelControl27.Location = new System.Drawing.Point(24, 16);
+            this.labelControl27.Location = new System.Drawing.Point(12, 16);
             this.labelControl27.Name = "labelControl27";
-            this.labelControl27.Size = new System.Drawing.Size(40, 14);
+            this.labelControl27.Size = new System.Drawing.Size(52, 14);
             this.labelControl27.TabIndex = 96;
-            this.labelControl27.Text = "订单号:";
+            this.labelControl27.Text = "派车单号:";
             // 
             // date_sendcar_time
             // 
@@ -721,6 +668,9 @@
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
+            gridLevelNode1.RelationName = "Level1";
+            this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Margin = new System.Windows.Forms.Padding(2);
@@ -741,6 +691,7 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ColumnAutoWidth = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridView1_RowCellClick);
             // 
             // dataGridView1
             // 
@@ -854,20 +805,18 @@
             this.panel_Main.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditCar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_close_time.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_close_time.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.text_explain.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkedComboBoxpackge.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkedComboBoxEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.text_close_staff.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.text_unload_point.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.text_unload_area.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditCity.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.text_sendcar_staff.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkedComboBoxEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.text_driver.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.text_carnum.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.text_pay_unit.Properties)).EndInit();
@@ -877,7 +826,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.text_deliver_quantity.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.text_warehouse_send.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.text_owner_unit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.text_sendcar_num.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_sendcar_time.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date_sendcar_time.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkedComboBoxclose.Properties)).EndInit();
@@ -915,15 +863,10 @@
         private DevExpress.XtraEditors.TextEdit text_order_num;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.Panel panel1;
-        private DevExpress.XtraEditors.DateEdit date_close_time;
+        public DevExpress.XtraEditors.DateEdit date_close_time;
         public DevExpress.XtraEditors.TextEdit text_explain;
         private DevExpress.XtraEditors.LabelControl labelControl43;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private DevExpress.XtraEditors.DateEdit dateEdit1;
-        public DevExpress.XtraEditors.CheckedComboBoxEdit checkedComboBoxpackge;
-        private DevExpress.XtraEditors.CheckedComboBoxEdit checkedComboBoxEdit1;
+        public DevExpress.XtraEditors.DateEdit dateEdit1;
         private DevExpress.XtraEditors.LabelControl labelControl19;
         public DevExpress.XtraEditors.TextEdit text_close_staff;
         private DevExpress.XtraEditors.LabelControl labelControl20;
@@ -932,13 +875,12 @@
         private DevExpress.XtraEditors.LabelControl labelControl16;
         public DevExpress.XtraEditors.TextEdit text_unload_area;
         private DevExpress.XtraEditors.LabelControl labelControl17;
-        public DevExpress.XtraEditors.TextEdit textEdit1;
+        public DevExpress.XtraEditors.TextEdit textEditCity;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         public DevExpress.XtraEditors.TextEdit text_sendcar_staff;
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.CheckedComboBoxEdit checkedComboBoxEdit2;
         public DevExpress.XtraEditors.TextEdit text_driver;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         public DevExpress.XtraEditors.TextEdit text_carnum;
@@ -958,8 +900,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl24;
         public DevExpress.XtraEditors.TextEdit text_owner_unit;
         private DevExpress.XtraEditors.LabelControl labelControl25;
-        public DevExpress.XtraEditors.TextEdit text_sendcar_num;
-        private DevExpress.XtraEditors.LabelControl labelControl26;
         private DevExpress.XtraEditors.LabelControl labelControl27;
         private System.Windows.Forms.Button button_Add;
         private System.Windows.Forms.Button button9;
@@ -968,5 +908,8 @@
         public System.Windows.Forms.DataGridView dataGridView1;
         public DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        public System.Windows.Forms.ComboBox comboBox2;
+        public System.Windows.Forms.ComboBox comboBox1;
+        public DevExpress.XtraEditors.TextEdit textEditCar;
     }
 }

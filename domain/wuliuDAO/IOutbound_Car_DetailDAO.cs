@@ -14,9 +14,9 @@ namespace wuliuDAO
 
         void Delete(Outbound_Car_Detail entity);
 
-        Outbound_Car_Detail Get(object order_num);
+        Outbound_Car_Detail Get(object sendcar_num);
 
-        Outbound_Car_Detail Load(object order_num);
+        Outbound_Car_Detail Load(object sendcar_num);
 
          IList<Outbound_Car_Detail> LoadALL();
 

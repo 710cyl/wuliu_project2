@@ -1,10 +1,9 @@
 ﻿using DevExpress.XtraEditors;
 using System.Windows.Forms;
-using System;
 
 namespace Demo1._1._3
 {
-    partial class Outbound_Car
+    partial class package
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -82,7 +81,7 @@ namespace Demo1._1._3
             this.panel1 = new System.Windows.Forms.Panel();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.dataNavigator_Outbound_Car = new DevExpress.XtraEditors.DataNavigator();
+            this.dataNavigator_package = new DevExpress.XtraEditors.DataNavigator();
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -506,7 +505,7 @@ namespace Demo1._1._3
             // panel1
             // 
             this.panel1.Controls.Add(this.gridControl1);
-            this.panel1.Controls.Add(this.dataNavigator_Outbound_Car);
+            this.panel1.Controls.Add(this.dataNavigator_package);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -534,49 +533,49 @@ namespace Demo1._1._3
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
             // 
-            // dataNavigator_Outbound_Car
+            // dataNavigator_package
             // 
-            this.dataNavigator_Outbound_Car.Appearance.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataNavigator_Outbound_Car.Appearance.Options.UseBackColor = true;
-            this.dataNavigator_Outbound_Car.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.dataNavigator_Outbound_Car.Buttons.Append.Enabled = false;
-            this.dataNavigator_Outbound_Car.Buttons.Append.Visible = false;
-            this.dataNavigator_Outbound_Car.Buttons.CancelEdit.Enabled = false;
-            this.dataNavigator_Outbound_Car.Buttons.CancelEdit.Visible = false;
-            this.dataNavigator_Outbound_Car.Buttons.EnabledAutoRepeat = false;
-            this.dataNavigator_Outbound_Car.Buttons.EndEdit.Enabled = false;
-            this.dataNavigator_Outbound_Car.Buttons.EndEdit.Visible = false;
-            this.dataNavigator_Outbound_Car.Buttons.First.Enabled = false;
-            this.dataNavigator_Outbound_Car.Buttons.First.Visible = false;
-            this.dataNavigator_Outbound_Car.Buttons.Last.Enabled = false;
-            this.dataNavigator_Outbound_Car.Buttons.Last.Visible = false;
-            this.dataNavigator_Outbound_Car.Buttons.Next.Enabled = false;
-            this.dataNavigator_Outbound_Car.Buttons.Next.Visible = false;
-            this.dataNavigator_Outbound_Car.Buttons.NextPage.Enabled = false;
-            this.dataNavigator_Outbound_Car.Buttons.NextPage.Visible = false;
-            this.dataNavigator_Outbound_Car.Buttons.Prev.Enabled = false;
-            this.dataNavigator_Outbound_Car.Buttons.Prev.Visible = false;
-            this.dataNavigator_Outbound_Car.Buttons.PrevPage.Enabled = false;
-            this.dataNavigator_Outbound_Car.Buttons.PrevPage.Visible = false;
-            this.dataNavigator_Outbound_Car.Buttons.Remove.Enabled = false;
-            this.dataNavigator_Outbound_Car.Buttons.Remove.Visible = false;
-            this.dataNavigator_Outbound_Car.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.dataNavigator_Outbound_Car.CustomButtons.AddRange(new DevExpress.XtraEditors.NavigatorCustomButton[] {
+            this.dataNavigator_package.Appearance.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataNavigator_package.Appearance.Options.UseBackColor = true;
+            this.dataNavigator_package.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.dataNavigator_package.Buttons.Append.Enabled = false;
+            this.dataNavigator_package.Buttons.Append.Visible = false;
+            this.dataNavigator_package.Buttons.CancelEdit.Enabled = false;
+            this.dataNavigator_package.Buttons.CancelEdit.Visible = false;
+            this.dataNavigator_package.Buttons.EnabledAutoRepeat = false;
+            this.dataNavigator_package.Buttons.EndEdit.Enabled = false;
+            this.dataNavigator_package.Buttons.EndEdit.Visible = false;
+            this.dataNavigator_package.Buttons.First.Enabled = false;
+            this.dataNavigator_package.Buttons.First.Visible = false;
+            this.dataNavigator_package.Buttons.Last.Enabled = false;
+            this.dataNavigator_package.Buttons.Last.Visible = false;
+            this.dataNavigator_package.Buttons.Next.Enabled = false;
+            this.dataNavigator_package.Buttons.Next.Visible = false;
+            this.dataNavigator_package.Buttons.NextPage.Enabled = false;
+            this.dataNavigator_package.Buttons.NextPage.Visible = false;
+            this.dataNavigator_package.Buttons.Prev.Enabled = false;
+            this.dataNavigator_package.Buttons.Prev.Visible = false;
+            this.dataNavigator_package.Buttons.PrevPage.Enabled = false;
+            this.dataNavigator_package.Buttons.PrevPage.Visible = false;
+            this.dataNavigator_package.Buttons.Remove.Enabled = false;
+            this.dataNavigator_package.Buttons.Remove.Visible = false;
+            this.dataNavigator_package.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.dataNavigator_package.CustomButtons.AddRange(new DevExpress.XtraEditors.NavigatorCustomButton[] {
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 0, true, true, "首页", "首页"),
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 1, true, true, "上一页", "上一页"),
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 4, true, true, "下一页", "下一页"),
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 5, true, true, "尾页", "尾页")});
-            this.dataNavigator_Outbound_Car.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataNavigator_Outbound_Car.Location = new System.Drawing.Point(0, 409);
-            this.dataNavigator_Outbound_Car.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataNavigator_Outbound_Car.Name = "dataNavigator_Outbound_Car";
-            this.dataNavigator_Outbound_Car.ShowToolTips = true;
-            this.dataNavigator_Outbound_Car.Size = new System.Drawing.Size(1669, 32);
-            this.dataNavigator_Outbound_Car.TabIndex = 8;
-            this.dataNavigator_Outbound_Car.Text = "dataNavigator_Outbound_Car";
-            this.dataNavigator_Outbound_Car.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Begin;
-            this.dataNavigator_Outbound_Car.TextStringFormat = "第 {0}页，共 {1}页";
-            this.dataNavigator_Outbound_Car.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.dataNavigator_Outbound_Car_ButtonClick);
+            this.dataNavigator_package.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataNavigator_package.Location = new System.Drawing.Point(0, 409);
+            this.dataNavigator_package.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataNavigator_package.Name = "dataNavigator_Outbound_Car";
+            this.dataNavigator_package.ShowToolTips = true;
+            this.dataNavigator_package.Size = new System.Drawing.Size(1669, 32);
+            this.dataNavigator_package.TabIndex = 8;
+            this.dataNavigator_package.Text = "dataNavigator_Outbound_Car";
+            this.dataNavigator_package.TextLocation = DevExpress.XtraEditors.NavigatorButtonsTextLocation.Begin;
+            this.dataNavigator_package.TextStringFormat = "第 {0}页，共 {1}页";
+            this.dataNavigator_package.ButtonClick += new DevExpress.XtraEditors.NavigatorButtonClickEventHandler(this.dataNavigator_Outbound_Car_ButtonClick);
             // 
             // tabPane1
             // 
@@ -641,11 +640,6 @@ namespace Demo1._1._3
 
         }
 
-        private void dataNavigato1_ButtonClick(object sender, NavigatorButtonClickEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
         #endregion
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
@@ -696,7 +690,7 @@ namespace Demo1._1._3
         private Panel panel1;
         public DevExpress.XtraGrid.GridControl gridControl1;
         public DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        public DataNavigator dataNavigator_Outbound_Car;
+        public DataNavigator dataNavigator_package;
         private DevExpress.XtraBars.Navigation.TabPane tabPane1;
         private Label label1;
         private TextBox textBox1;

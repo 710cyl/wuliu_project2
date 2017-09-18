@@ -5,19 +5,24 @@
   <class name="Outbound_Car" table="WL_sendcar" >
 
     <!--订单号-->
-   <id name="order_num" column="order_num" type="string">
+   <!--<id name="order_num" column="order_num" type="string">
      <generator class="assigned" />
     </id>
+    -->
 
+    <id name="sendcar_num" column="sendcar_num" type="string">
+      <generator class="assigned" />
+    </id>
     <!--一对多关系:一个客户可以有一个或者多个订单-->
     <bag name="Outbound_Car_Detail" inverse="true" cascade="all">
-      <key column="order_num"></key>
+      <key column="sendcar_num"></key>
       <one-to-many class="Outbound_Car_Detail"></one-to-many>
     </bag>
     <!--派车单号-->
-    <property name="sendcar_num"  type="string">
+   <!-- <property name="sendcar_num"  type="string">
       <column name="sendcar_num" length="50"/>
     </property>
+    -->
     <!--货主单位-->
     <property name="owner_unit" type="string">
       <column name="owner_unit" length="100"/>

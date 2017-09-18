@@ -315,6 +315,12 @@
     <Compile Include="MyWorkBench_SkipForm\New_OutBound_Car.designer.cs">
       <DependentUpon>New_OutBound_Car.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyWorkBench_SkipForm\New_Package.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyWorkBench_SkipForm\New_Package.designer.cs">
+      <DependentUpon>New_Package.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyWorkBench_SkipForm\New_TransferList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -495,11 +501,23 @@
     <Compile Include="Panel2_MyWorkBench_Basic\Outbound_Car.designer.cs">
       <DependentUpon>Outbound_Car.cs</DependentUpon>
     </Compile>
+    <Compile Include="Panel2_MyWorkBench_Basic\OutCar_Close.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench_Basic\OutCar_Close.designer.cs">
+      <DependentUpon>OutCar_Close.cs</DependentUpon>
+    </Compile>
     <Compile Include="Panel2_MyWorkBench_Basic\OwnVehicle.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Panel2_MyWorkBench_Basic\OwnVehicle.Designer.cs">
       <DependentUpon>OwnVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench_Basic\package.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel2_MyWorkBench_Basic\package.designer.cs">
+      <DependentUpon>package.cs</DependentUpon>
     </Compile>
     <Compile Include="Panel2_MyWorkBench_Basic\WarehousingPrice.cs">
       <SubType>UserControl</SubType>
@@ -568,6 +586,12 @@
     </Compile>
     <Compile Include="Panel2_MyWorkBench_Basic\WarehouseFile.Designer.cs">
       <DependentUpon>WarehouseFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\MainRole.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Resources\MainRole.Designer.cs">
+      <DependentUpon>MainRole.cs</DependentUpon>
     </Compile>
     <Compile Include="Sign_in.cs">
       <SubType>Form</SubType>
@@ -659,6 +683,9 @@
     <EmbeddedResource Include="MyWorkBench_SkipForm\New_OutBound_Car.resx">
       <DependentUpon>New_OutBound_Car.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyWorkBench_SkipForm\New_Package.resx">
+      <DependentUpon>New_Package.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyWorkBench_SkipForm\New_TransferList.resx">
       <DependentUpon>New_TransferList.cs</DependentUpon>
     </EmbeddedResource>
@@ -749,8 +776,14 @@
     <EmbeddedResource Include="Panel2_MyWorkBench_Basic\Outbound_Car.resx">
       <DependentUpon>Outbound_Car.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Panel2_MyWorkBench_Basic\OutCar_Close.resx">
+      <DependentUpon>OutCar_Close.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Panel2_MyWorkBench_Basic\OwnVehicle.resx">
       <DependentUpon>OwnVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel2_MyWorkBench_Basic\package.resx">
+      <DependentUpon>package.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panel2_MyWorkBench_Basic\WarehousingPrice.resx">
       <DependentUpon>WarehousingPrice.cs</DependentUpon>
@@ -795,6 +828,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Panel2_MyWorkBench_Basic\WarehouseFile.resx">
       <DependentUpon>WarehouseFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\MainRole.resx">
+      <DependentUpon>MainRole.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sign_in.resx">
       <DependentUpon>Sign_in.cs</DependentUpon>
@@ -888,6 +924,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\add_16x16.png" />
+    <Content Include="Resources\save_16x161.png" />
+    <Content Include="Resources\save_16x162.png" />
+    <Content Include="Resources\save_32x32.png" />
     <None Include="Resources\technology_32x32.png" />
     <None Include="Resources\pivot_32x32.png" />
     <None Include="Resources\tag_32x32.png" />

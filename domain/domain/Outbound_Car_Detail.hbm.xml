@@ -18,6 +18,7 @@
     </property>
       />
     </set> -->
+    <!--订单号 -->
     <property name="order_num" type="string">
       <column name="order_num"/>
     </property>
@@ -31,6 +32,9 @@
     <property name="store_date" type="date">
       <column name="store_date" sql-type="datetime2(7)"/>
     </property>
+    
+   
+   
     <!--项目号 -->
     <property name="pro_num" type="decimal">
       <column name="pro_num" length="18" />

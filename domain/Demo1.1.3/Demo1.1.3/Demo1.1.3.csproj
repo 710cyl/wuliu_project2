@@ -587,12 +587,6 @@
     <Compile Include="Panel2_MyWorkBench_Basic\WarehouseFile.Designer.cs">
       <DependentUpon>WarehouseFile.cs</DependentUpon>
     </Compile>
-    <Compile Include="Resources\MainRole.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Resources\MainRole.Designer.cs">
-      <DependentUpon>MainRole.cs</DependentUpon>
-    </Compile>
     <Compile Include="Sign_in.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -828,9 +822,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Panel2_MyWorkBench_Basic\WarehouseFile.resx">
       <DependentUpon>WarehouseFile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\MainRole.resx">
-      <DependentUpon>MainRole.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sign_in.resx">
       <DependentUpon>Sign_in.cs</DependentUpon>

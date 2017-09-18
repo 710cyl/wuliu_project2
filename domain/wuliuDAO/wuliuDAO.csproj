@@ -124,6 +124,7 @@
     <Compile Include="ILotteryDetails.cs" />
     <Compile Include="ILotteryMain.cs" />
     <Compile Include="InterfaceDAO.cs" />
+    <Compile Include="InternalCar.cs" />
     <Compile Include="Internal_VehicleDAO.cs" />
     <Compile Include="IOutBoundOrder.cs" />
     <Compile Include="IOutBoundOrderDetails.cs" />

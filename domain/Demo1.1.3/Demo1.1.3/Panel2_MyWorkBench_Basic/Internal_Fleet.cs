@@ -64,9 +64,7 @@ namespace Demo1._1._3
 
         private void toolStripButton1_Click(object sender, EventArgs e) //新建
         {
-            isExist = false;
-            ni = new New_InternalFleet();
-            ni.ShowDialog();
+            panel3.Visible = true;
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e) //修改
@@ -80,8 +78,7 @@ namespace Demo1._1._3
             if (array[0].Length > 0)
             {
                 isExist = true;
-                ni = new New_InternalFleet();
-                ni.ShowDialog();
+                
             }
             else
             {
@@ -91,7 +88,7 @@ namespace Demo1._1._3
 
         private void toolStripButton7_Click(object sender, EventArgs e) //删除
         {
-            fc.DeleteData(this.gridView2, "Basic_Set");
+            fc.DeleteData(this.gridView2, "Internal_Vehicle");
         }
 
         private void toolStripButton6_Click(object sender, EventArgs e) //导入数据

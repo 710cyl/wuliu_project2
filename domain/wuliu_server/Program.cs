@@ -1582,6 +1582,15 @@ namespace wuliu_server
 
                 bs.Delete(basicset);
             }
+
+            else if (GetClassName.classname == "Internal_Vehicle")
+            {
+                InternalCar bs = new InternalCar();
+                int str = Convert.ToInt32(e.Data);
+                var basicset = bs.Get<Internal_Vehicle>(str);
+
+                bs.Delete(basicset);
+            }
             else if (GetClassName.classname == "Discharge")
             {
                 IDischargeDAO bs = new IDischargeDAO();

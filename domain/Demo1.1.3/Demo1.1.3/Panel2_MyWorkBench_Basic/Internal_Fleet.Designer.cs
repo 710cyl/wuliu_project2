@@ -432,15 +432,15 @@
             this.tabPane1.BackColor = System.Drawing.SystemColors.Control;
             this.tabPane1.Controls.Add(this.tabNavigationPage1);
             this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabPane1.Location = new System.Drawing.Point(0, 269);
-            this.tabPane1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPane1.Location = new System.Drawing.Point(0, 267);
+            this.tabPane1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPane1.Name = "tabPane1";
             this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.tabNavigationPage1});
-            this.tabPane1.RegularSize = new System.Drawing.Size(1473, 709);
+            this.tabPane1.RegularSize = new System.Drawing.Size(1473, 711);
             this.tabPane1.SelectedPage = this.tabNavigationPage1;
             this.tabPane1.SelectedPageIndex = 0;
-            this.tabPane1.Size = new System.Drawing.Size(1473, 709);
+            this.tabPane1.Size = new System.Drawing.Size(1473, 711);
             this.tabPane1.TabIndex = 7;
             // 
             // tabNavigationPage1
@@ -451,19 +451,19 @@
             this.tabNavigationPage1.Controls.Add(this.gridControl2);
             this.tabNavigationPage1.Controls.Add(this.panel3);
             this.tabNavigationPage1.Controls.Add(this.dataNavigator_InternalFleet);
-            this.tabNavigationPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabNavigationPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
-            this.tabNavigationPage1.Size = new System.Drawing.Size(1451, 650);
+            this.tabNavigationPage1.Size = new System.Drawing.Size(1451, 653);
             // 
             // gridControl2
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridControl2.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl2.Location = new System.Drawing.Point(0, 205);
             this.gridControl2.MainView = this.gridView2;
-            this.gridControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridControl2.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1451, 415);
+            this.gridControl2.Size = new System.Drawing.Size(1451, 418);
             this.gridControl2.TabIndex = 5;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -501,7 +501,7 @@
             this.panel3.Controls.Add(this.simpleButton4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1451, 205);
             this.panel3.TabIndex = 33;
@@ -511,7 +511,7 @@
             // 
             this.textBox8.Font = new System.Drawing.Font("宋体", 9F);
             this.textBox8.Location = new System.Drawing.Point(443, 32);
-            this.textBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(4);
             this.textBox8.Name = "textBox8";
             this.textBox8.ReadOnly = true;
             this.textBox8.Size = new System.Drawing.Size(196, 25);
@@ -521,7 +521,7 @@
             // 
             this.textBox9.Font = new System.Drawing.Font("宋体", 9F);
             this.textBox9.Location = new System.Drawing.Point(129, 31);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(4);
             this.textBox9.Name = "textBox9";
             this.textBox9.ReadOnly = true;
             this.textBox9.Size = new System.Drawing.Size(196, 25);
@@ -531,7 +531,7 @@
             // 
             this.textBox10.Font = new System.Drawing.Font("宋体", 9F);
             this.textBox10.Location = new System.Drawing.Point(1077, 31);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox10.Margin = new System.Windows.Forms.Padding(4);
             this.textBox10.Name = "textBox10";
             this.textBox10.ReadOnly = true;
             this.textBox10.Size = new System.Drawing.Size(196, 25);
@@ -552,7 +552,7 @@
             // 
             this.textBox11.Font = new System.Drawing.Font("宋体", 9F);
             this.textBox11.Location = new System.Drawing.Point(759, 32);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox11.Margin = new System.Windows.Forms.Padding(4);
             this.textBox11.Name = "textBox11";
             this.textBox11.ReadOnly = true;
             this.textBox11.Size = new System.Drawing.Size(196, 25);
@@ -595,7 +595,7 @@
             // 
             this.textBox3.Font = new System.Drawing.Font("宋体", 9F);
             this.textBox3.Location = new System.Drawing.Point(443, 90);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(196, 25);
             this.textBox3.TabIndex = 222;
@@ -604,7 +604,7 @@
             // 
             this.textBox1.Font = new System.Drawing.Font("宋体", 9F);
             this.textBox1.Location = new System.Drawing.Point(129, 89);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(196, 25);
             this.textBox1.TabIndex = 220;
@@ -613,7 +613,7 @@
             // 
             this.textBox20.Font = new System.Drawing.Font("宋体", 9F);
             this.textBox20.Location = new System.Drawing.Point(129, 122);
-            this.textBox20.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox20.Margin = new System.Windows.Forms.Padding(4);
             this.textBox20.Name = "textBox20";
             this.textBox20.Size = new System.Drawing.Size(509, 25);
             this.textBox20.TabIndex = 172;
@@ -633,7 +633,7 @@
             // 
             this.textBox22.Font = new System.Drawing.Font("宋体", 9F);
             this.textBox22.Location = new System.Drawing.Point(759, 90);
-            this.textBox22.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox22.Margin = new System.Windows.Forms.Padding(4);
             this.textBox22.Name = "textBox22";
             this.textBox22.Size = new System.Drawing.Size(196, 25);
             this.textBox22.TabIndex = 166;
@@ -677,7 +677,7 @@
             this.simpleButton3.Appearance.Options.UseFont = true;
             this.simpleButton3.Image = global::Demo1._1._3.Properties.Resources.cancel_16x16;
             this.simpleButton3.Location = new System.Drawing.Point(1193, 138);
-            this.simpleButton3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.simpleButton3.Margin = new System.Windows.Forms.Padding(4);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(81, 28);
             this.simpleButton3.TabIndex = 160;
@@ -689,7 +689,7 @@
             this.simpleButton4.Appearance.Options.UseFont = true;
             this.simpleButton4.Image = global::Demo1._1._3.Properties.Resources.save_16x16;
             this.simpleButton4.Location = new System.Drawing.Point(1055, 138);
-            this.simpleButton4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.simpleButton4.Margin = new System.Windows.Forms.Padding(4);
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(131, 28);
             this.simpleButton4.TabIndex = 159;
@@ -723,7 +723,7 @@
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 4, true, true, "下一页", "下一页"),
             new DevExpress.XtraEditors.NavigatorCustomButton(-1, 5, true, true, "尾页", "尾页")});
             this.dataNavigator_InternalFleet.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataNavigator_InternalFleet.Location = new System.Drawing.Point(0, 620);
+            this.dataNavigator_InternalFleet.Location = new System.Drawing.Point(0, 623);
             this.dataNavigator_InternalFleet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataNavigator_InternalFleet.Name = "dataNavigator_InternalFleet";
             this.dataNavigator_InternalFleet.Size = new System.Drawing.Size(1451, 30);
@@ -737,9 +737,9 @@
             // 
             this.splitterControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.splitterControl1.Location = new System.Drawing.Point(0, 261);
-            this.splitterControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitterControl1.Margin = new System.Windows.Forms.Padding(4);
             this.splitterControl1.Name = "splitterControl1";
-            this.splitterControl1.Size = new System.Drawing.Size(1473, 8);
+            this.splitterControl1.Size = new System.Drawing.Size(1473, 6);
             this.splitterControl1.TabIndex = 25;
             this.splitterControl1.TabStop = false;
             // 
@@ -749,7 +749,7 @@
             this.panel1.Controls.Add(this.dataNavigator1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 27);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1473, 234);
             this.panel1.TabIndex = 24;
@@ -757,10 +757,10 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(4);
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(1473, 204);
             this.gridControl1.TabIndex = 9;
@@ -842,7 +842,7 @@
             // 
             this.dataNavigator1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataNavigator1.Location = new System.Drawing.Point(0, 204);
-            this.dataNavigator1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataNavigator1.Margin = new System.Windows.Forms.Padding(4);
             this.dataNavigator1.Name = "dataNavigator1";
             this.dataNavigator1.Size = new System.Drawing.Size(1473, 30);
             this.dataNavigator1.TabIndex = 10;
@@ -856,7 +856,7 @@
             this.Controls.Add(this.splitterControl1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Internal_Fleet";
             this.Size = new System.Drawing.Size(1473, 978);
             this.toolStrip1.ResumeLayout(false);
